@@ -1,0 +1,3 @@
+v3_largegain_constants_with_wrong_constant: 53/55 passed -> FAIL  [0.0s]
+   FAILED: {"source": "author script", "id": "c1: phi Psi_1(a3) - ell/K0 >= C1", "lhs": "0.37452562893275438446", "op": ">=", "rhs": "0.38", "margin": "-0.00547437106725", "relative_margin": -0.005474371067245616, "passed": false}
+   FAILED: {"source": "author script", "id": "interval placement: 0.3 C1^2/sqrt8 <= 0.015 <= c#  (z_1(k) < z^sharp)", "lhs": "0.015315932880500619379", "op": "<=", "rhs": "0.015", "margin": "-0.000315932880501", "relative_margin": -0.00031593288050061935, "passed": false}

@@ -1,0 +1,404 @@
+Started: wh-planar-referee (pid 96116)
+##### 1 1.5
+== mu=1.0 rho=1.5 k=3 gamE=2.174559 lam_u=0.087280+1.171312j
+   spiral: 64 crests, t_conv=429.1, r0=2.45e-04, t_skip=16.10  [0s]
+   spiral samples: 2430  [2s]
+   cycle: T=7.490666 crest U=1.816932 Umin=-6.029 res=5.2e-13
+   A8(a): lambda_c  Riccati <eta>-mu = -0.1463893409 | integral I/T = -0.1463893409 | QR (no Riccati) = -0.1463893408 | log(max eig M)/T = -0.1463893409
+   M^T n = m_s n rel.err 4.99e-14;  n.f on cycle rel 3.34e-12
+   A5: max|O|rel=1.68e-11  min K/sc=1.680e-05  min W/sc=7.146e-01  A6: min LamE/sc=1.680e-05  #C+=0 #C-=0
+   A2 bounds: eta in [0.2715,2.241] vs [0.03694,4.296]; zeta in [0.01643,5.508] vs [0.001364,17.8]  ok=True
+   A3: 8581970 ordered pairs; worst Delta/scale = -5.606e-07 (abs max -3.273e-13); #(rel>1e-9) = 0; #(rel>=0) = 0
+   Prop 8.1:  u -> R1(u);  R1' predicted g(u)e^iota/g(R1) vs variational (M(1,zeta))_U ; parallel defect
+      u=0.000412605 R1=0.000658941 iota=+0.93633 pred=1.596952e+00 var=1.596952e+00 rel=6.9e-11 par=-1.9e-14
+      u=0.0174104 R1=0.0277519 iota=+0.93429 pred=1.590837e+00 var=1.590837e+00 rel=7.1e-13 par=7.3e-14
+      u=0.633579 R1=0.912187 iota=+0.69148 pred=1.239867e+00 var=1.239867e+00 rel=1.0e-12 par=8.4e-14
+      u=1.81627 R1=1.81671 iota=-1.09500 pred=3.343926e-01 var=3.343926e-01 rel=1.0e-12 par=3.2e-13
+      u=1.81693 R1=1.81693 iota=-1.09655 pred=3.340203e-01 var=3.340203e-01 rel=2.1e-12 par=9.4e-13
+      u=1.81693 R1=1.81693 iota=-1.09655 pred=3.340203e-01 var=3.340203e-01 rel=2.0e-12 par=9.5e-13
+      u=1.81693 R1=1.81693 iota=-1.09655 pred=3.340203e-01 var=3.340203e-01 rel=1.9e-12 par=8.3e-13
+      u=1.81693 R1=1.81693 iota=-1.09655 pred=3.340203e-01 var=3.340203e-01 rel=2.0e-12 par=8.6e-13
+   gtilde formula rel.err 1.79e-12; crests increasing: True
+      FD: u=0.000412605 du0=-1.23e-07 fd=1.596951e+00 pred=1.596952e+00 rel=4.5e-07
+      FD: u=0.0174104 du0=-5.17e-06 fd=1.590837e+00 pred=1.590837e+00 rel=9.3e-09
+      FD: u=0.633579 du0=-1.57e-04 fd=1.239867e+00 pred=1.239867e+00 rel=2.1e-09
+      FD: u=1.81627 du0=-4.63e-07 fd=3.343926e-01 pred=3.343926e-01 rel=1.2e-07
+   A2 pull-back from (0.0, 0.0): gap at t=1,2,5,10,20,40: 1.4e-01 8.7e-02 1.0e-02 6.2e-07 4.6e-13 5.8e-13
+   A2 pull-back from (1000000.0, 1000000.0): gap at t=1,2,5,10,20,40: 1.4e-01 6.7e-02 9.4e-03 5.4e-07 9.0e-13 4.5e-13
+   A2 pull-back from (0.0, 1000000.0): gap at t=1,2,5,10,20,40: 1.3e-01 4.0e-02 4.3e-03 1.1e-07 3.1e-13 3.5e-13
+   A2 pull-back from (1000000.0, 0.0): gap at t=1,2,5,10,20,40: 2.0e-01 7.7e-02 1.2e-02 7.0e-07 1.0e-12 5.7e-13
+   A2 rate constants: m0=7.226e-03 M0=6.052e+01 Delta0=18.066 1-tau0=2.388e-04
+   done in 3s -> /Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/out_v1_1_1.5.json
+##### 1 4
+== mu=1.0 rho=4.0 k=8 gamE=2.716189 lam_u=0.358094+1.678414j
+   spiral: 20 crests, t_conv=149.7, r0=9.91e-06, t_skip=12.89  [0s]
+   spiral samples: 2427  [1s]
+   cycle: T=13.841594 crest U=3.547094 Umin=-64.185 res=2.5e-13
+   A8(a): lambda_c  Riccati <eta>-mu = -0.3959403430 | integral I/T = -0.3959403430 | QR (no Riccati) = -0.3959403430 | log(max eig M)/T = -0.3959403431
+   M^T n = m_s n rel.err 3.85e-14;  n.f on cycle rel 1.69e-10
+   A5: max|O|rel=2.93e-10  min K/sc=8.423e-06  min W/sc=5.976e-01  A6: min LamE/sc=8.423e-06  #C+=0 #C-=0
+   A2 bounds: eta in [0.08716,5.848] vs [7.771e-15,16.66]; zeta in [1.451e-06,38.36] vs [6.039e-29,277.7]  ok=True
+   A3: 8564402 ordered pairs; worst Delta/scale = -2.122e-07 (abs max -3.924e-14); #(rel>1e-9) = 0; #(rel>=0) = 0
+   Prop 8.1:  u -> R1(u);  R1' predicted g(u)e^iota/g(R1) vs variational (M(1,zeta))_U ; parallel defect
+      u=0.000513906 R1=0.00196323 iota=+2.68089 pred=3.819353e+00 var=3.819353e+00 rel=1.2e-10 par=4.0e-14
+      u=0.00749518 R1=0.028545 iota=+2.67841 pred=3.795812e+00 var=3.795812e+00 rel=1.9e-11 par=1.2e-13
+      u=0.107703 R1=0.392282 iota=+2.63748 pred=3.466709e+00 var=3.466709e+00 rel=3.7e-13 par=3.3e-14
+      u=1.25659 R1=2.75336 iota=+1.49547 pred=1.063547e+00 var=1.063547e+00 rel=8.4e-13 par=1.9e-13
+      u=3.5158 R1=3.54695 iota=-5.27378 pred=5.002754e-03 var=5.002754e-03 rel=1.7e-10 par=-2.1e-10
+      u=3.54709 R1=3.54709 iota=-5.48044 pred=4.167487e-03 var=4.167487e-03 rel=6.7e-10 par=-3.6e-10
+      u=3.54709 R1=3.54709 iota=-5.48045 pred=4.167473e-03 var=4.167473e-03 rel=6.9e-10 par=-3.6e-10
+      u=3.54709 R1=3.54709 iota=-5.48045 pred=4.167473e-03 var=4.167473e-03 rel=6.7e-10 par=-3.6e-10
+   gtilde formula rel.err 3.04e-12; crests increasing: True
+      FD: u=0.000513906 du0=-4.39e-07 fd=3.819354e+00 pred=3.819353e+00 rel=3.2e-08
+      FD: u=0.00749518 du0=-6.39e-06 fd=3.795812e+00 pred=3.795812e+00 rel=1.9e-09
+      FD: u=0.107703 du0=-9.03e-05 fd=3.466709e+00 pred=3.466709e+00 rel=8.7e-09
+      FD: u=1.25659 du0=-8.25e-04 fd=1.063547e+00 pred=1.063547e+00 rel=9.3e-09
+      FD: u=3.5158 du0=-9.90e-05 fd=5.002758e-03 pred=5.002754e-03 rel=8.0e-07
+   A2 pull-back from (0.0, 0.0): gap at t=1,2,5,10,20,40: 1.2e-01 8.3e-02 6.0e-02 5.4e-02 3.0e-08 1.5e-11
+   A2 pull-back from (1000000.0, 1000000.0): gap at t=1,2,5,10,20,40: 1.7e-01 1.1e-01 7.8e-02 6.9e-02 4.2e-08 5.1e-12
+   A2 pull-back from (0.0, 1000000.0): gap at t=1,2,5,10,20,40: 1.8e-02 1.1e-02 1.2e-02 1.1e-02 6.3e-10 1.8e-11
+   A2 pull-back from (1000000.0, 0.0): gap at t=1,2,5,10,20,40: 2.0e-01 1.3e-01 9.3e-02 8.3e-02 5.1e-08 4.3e-12
+   A2 rate constants: m0=1.067e-27 M0=1.817e+04 Delta0=143.825 1-tau0=0.000e+00
+   done in 1s -> /Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/out_v1_1_4.json
+##### 1 12
+== mu=1.0 rho=12.0 k=24 gamE=3.586753 lam_u=0.793376+2.462081j
+   spiral: 16 crests, t_conv=204.2, r0=4.34e-07, t_skip=9.76  [0s]
+   spiral samples: 2304  [1s]
+   cycle: T=34.488334 crest U=5.578012 Umin=-668.276 res=8.4e-13
+   A8(a): lambda_c  Riccati <eta>-mu = -0.6741262022 | integral I/T = -0.6741262022 | QR (no Riccati) = -0.6741262022 | log(max eig M)/T = -0.6733047553
+   M^T n = m_s n rel.err 1.92e-14;  n.f on cycle rel 1.00e+00
+   A5: max|O|rel=1.00e+00  min K/sc=2.998e-06  min W/sc=4.495e-01  A6: min LamE/sc=2.998e-06  #C+=0 #C-=0
+   A2 bounds: eta in [0.03043,17.04] vs [4.192e-146,79.68]; zeta in [-1.373e-11,327.8] vs [1.757e-291,6349]  ok=False
+   A3: 7859612 ordered pairs; worst Delta/scale = 1.000e+00 (abs max 1.546e-09); #(rel>1e-9) = 13380; #(rel>=0) = 13380
+   Prop 8.1:  u -> R1(u);  R1' predicted g(u)e^iota/g(R1) vs variational (M(1,zeta))_U ; parallel defect
+      u=0.000180011 R1=0.00136311 iota=+4.04924 pred=7.571102e+00 var=7.571102e+00 rel=1.2e-10 par=-4.7e-15
+      u=0.00136311 R1=0.0103104 iota=+4.04841 pred=7.554052e+00 var=7.554052e+00 rel=3.8e-11 par=1.2e-13
+      u=0.0103104 R1=0.0773263 iota=+4.04209 pred=7.426502e+00 var=7.426502e+00 rel=8.7e-12 par=-7.0e-14
+      u=0.544805 R1=2.64099 iota=+3.52317 pred=3.022992e+00 var=3.022992e+00 rel=2.3e-12 par=5.7e-13
+      u=2.64099 R1=5.38701 iota=+1.17727 pred=4.206216e-01 var=4.206216e-01 rel=9.3e-12 par=-5.2e-12
+      u=5.57801 R1=5.57801 iota=-23.24951 pred=7.995902e-11 var=7.866670e-11 rel=1.6e-02 par=-2.1e-01
+      u=5.57801 R1=5.57801 iota=-23.24949 pred=7.996041e-11 var=6.886422e-11 rel=1.4e-01 par=-1.6e-01
+      u=5.57801 R1=5.57801 iota=-23.24949 pred=7.996041e-11 var=1.024454e-10 rel=2.8e-01 par=-1.5e-02
+   gtilde formula rel.err 5.60e-12; crests increasing: True
+      FD: u=0.000180011 du0=-2.32e-07 fd=7.571102e+00 pred=7.571102e+00 rel=3.3e-09
+      FD: u=0.00136311 du0=-1.76e-06 fd=7.554052e+00 pred=7.554052e+00 rel=6.0e-11
+      FD: u=0.0103104 du0=-1.33e-05 fd=7.426502e+00 pred=7.426502e+00 rel=4.4e-09
+      FD: u=0.544805 du0=-6.45e-04 fd=3.022992e+00 pred=3.022992e+00 rel=8.0e-08
+      FD: u=2.64099 du0=-1.95e-03 fd=4.206216e-01 pred=4.206216e-01 rel=4.2e-08
+   A2 pull-back from (0.0, 0.0): gap at t=1,2,5,10,20,40: 5.4e-02 3.6e-02 2.6e-02 2.3e-02 2.2e-02 1.1e-10
+   A2 pull-back from (1000000.0, 1000000.0): gap at t=1,2,5,10,20,40: 1.0e-01 6.7e-02 4.8e-02 4.3e-02 4.0e-02 2.2e-10
+   A2 pull-back from (0.0, 1000000.0): gap at t=1,2,5,10,20,40: 2.3e-03 1.3e-03 1.5e-03 1.5e-03 1.5e-03 1.3e-13
+   A2 pull-back from (1000000.0, 0.0): gap at t=1,2,5,10,20,40: 1.1e-01 7.4e-02 5.2e-02 4.7e-02 4.4e-02 2.4e-10
+   A2 rate constants: m0=1.418e-289 M0=2.421e+10 Delta0=1378.016 1-tau0=0.000e+00
+   done in 1s -> /Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/out_v1_1_12.json
+##### 1 1.01
+== mu=1.0 rho=1.01 k=2.02 gamE=2.003987 lam_u=0.001994+1.003985j
+   spiral: 1196 crests, t_conv=7509.9, r0=9.66e-04, t_skip=17.47  [3s]
+   spiral samples: 2426  [8s]
+   cycle: T=6.304213 crest U=0.368908 Umin=-0.436 res=2.2e-16
+   A8(a): lambda_c  Riccati <eta>-mu = -0.0039839981 | integral I/T = -0.0039839981 | QR (no Riccati) = -0.0039839981 | log(max eig M)/T = -0.0039839981
+   M^T n = m_s n rel.err 5.88e-14;  n.f on cycle rel 7.92e-12
+   A5: max|O|rel=2.93e-11  min K/sc=2.016e-05  min W/sc=7.990e-01  A6: min LamE/sc=2.016e-05  #C+=0 #C-=0
+   A2 bounds: eta in [0.862,1.145] vs [0.6944,1.709]; zeta in [0.7133,1.348] vs [0.4822,1.724]  ok=True
+   A3: 8558550 ordered pairs; worst Delta/scale = 1.165e-08 (abs max 4.994e-14); #(rel>1e-9) = 1; #(rel>=0) = 1
+   Prop 8.1:  u -> R1(u);  R1' predicted g(u)e^iota/g(R1) vs variational (M(1,zeta))_U ; parallel defect
+      u=0.000499045 R1=0.000505309 iota=+0.02495 pred=1.012552e+00 var=1.012552e+00 rel=1.3e-11 par=-1.6e-15
+      u=0.00415851 R1=0.00421067 iota=+0.02493 pred=1.012529e+00 var=1.012529e+00 rel=6.6e-12 par=2.5e-14
+      u=0.0343367 R1=0.0347615 iota=+0.02447 pred=1.012089e+00 var=1.012089e+00 rel=2.8e-12 par=8.5e-14
+      u=0.223736 R1=0.225482 iota=+0.00718 pred=9.987356e-01 var=9.987356e-01 rel=5.6e-13 par=1.1e-13
+      u=0.364438 R1=0.364547 iota=-0.02385 pred=9.761025e-01 var=9.761025e-01 rel=1.9e-13 par=-2.0e-13
+      u=0.368844 R1=0.368846 iota=-0.02510 pred=9.752098e-01 var=9.752098e-01 rel=1.8e-12 par=7.3e-14
+      u=0.368907 R1=0.368907 iota=-0.02512 pred=9.751970e-01 var=9.751970e-01 rel=6.1e-13 par=1.3e-14
+      u=0.368908 R1=0.368908 iota=-0.02512 pred=9.751968e-01 var=9.751968e-01 rel=1.8e-12 par=3.2e-14
+   gtilde formula rel.err 2.46e-12; crests increasing: True
+      FD: u=0.000499045 du0=-4.15e-09 fd=1.012552e+00 pred=1.012552e+00 rel=2.0e-07
+      FD: u=0.00415851 du0=-3.46e-08 fd=1.012529e+00 pred=1.012529e+00 rel=7.3e-07
+      FD: u=0.0343367 du0=-2.82e-07 fd=1.012089e+00 pred=1.012089e+00 rel=5.7e-09
+      FD: u=0.223736 du0=-1.17e-06 fd=9.987356e-01 pred=9.987356e-01 rel=1.1e-09
+      FD: u=0.364438 du0=-7.35e-08 fd=9.761025e-01 pred=9.761025e-01 rel=7.1e-09
+   A2 pull-back from (0.0, 0.0): gap at t=1,2,5,10,20,40: 3.8e-01 5.5e-02 1.9e-04 9.9e-09 5.3e-13 4.3e-14
+   A2 pull-back from (1000000.0, 1000000.0): gap at t=1,2,5,10,20,40: 2.1e-01 3.7e-02 1.3e-04 6.6e-09 8.1e-13 6.6e-14
+   A2 pull-back from (0.0, 1000000.0): gap at t=1,2,5,10,20,40: 4.8e-01 5.6e-02 2.9e-04 1.0e-08 1.9e-12 5.9e-14
+   A2 pull-back from (1000000.0, 0.0): gap at t=1,2,5,10,20,40: 3.1e-01 3.7e-02 1.6e-04 7.0e-09 2.1e-13 6.4e-14
+   A2 rate constants: m0=1.022e+00 M0=5.690e+00 Delta0=3.435 1-tau0=3.045e-01
+   done in 14s -> /Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/out_v1_1_1.01.json
+##### 0.3 1.5
+== mu=0.3 rho=1.5 k=0.585 gamE=1.387621 lam_u=0.043811+0.647816j
+   spiral: 61 crests, t_conv=775.9, r0=3.31e-04, t_skip=25.22  [0s]
+   spiral samples: 2421  [2s]
+   cycle: T=14.703421 crest U=2.011024 Umin=-7.462 res=8.1e-14
+   A8(a): lambda_c  Riccati <eta>-mu = -0.0563597953 | integral I/T = -0.0563597953 | QR (no Riccati) = -0.0563597953 | log(max eig M)/T = -0.0563597953
+   M^T n = m_s n rel.err 1.40e-14;  n.f on cycle rel 4.17e-12
+   A5: max|O|rel=3.68e-11  min K/sc=4.790e-05  min W/sc=7.088e-01  A6: min LamE/sc=4.790e-05  #C+=0 #C-=0
+   A2 bounds: eta in [0.005035,1.059] vs [0.0001733,1.77]; zeta in [0.001004,2.03] vs [0.0001214,4.37]  ok=True
+   A3: 8529320 ordered pairs; worst Delta/scale = -2.495e-06 (abs max -6.374e-12); #(rel>1e-9) = 0; #(rel>=0) = 0
+   Prop 8.1:  u -> R1(u);  R1' predicted g(u)e^iota/g(R1) vs variational (M(1,zeta))_U ; parallel defect
+      u=0.000924953 R1=0.00141456 iota=+0.84976 pred=1.529191e+00 var=1.529191e+00 rel=2.9e-11 par=6.0e-15
+      u=0.0275607 R1=0.0420382 iota=+0.84718 pred=1.521054e+00 var=1.521054e+00 rel=2.3e-12 par=-1.0e-14
+      u=0.699311 R1=0.968099 iota=+0.62245 pred=1.201838e+00 var=1.201838e+00 rel=5.1e-13 par=4.9e-13
+      u=1.99935 R1=2.00589 iota=-0.81032 pred=4.419130e-01 var=4.419130e-01 rel=4.7e-12 par=-4.5e-12
+      u=2.01101 R1=2.01102 iota=-0.82866 pred=4.366315e-01 var=4.366315e-01 rel=1.1e-12 par=-9.7e-13
+      u=2.01102 R1=2.01102 iota=-0.82868 pred=4.366245e-01 var=4.366245e-01 rel=6.0e-13 par=-7.0e-13
+      u=2.01102 R1=2.01102 iota=-0.82868 pred=4.366245e-01 var=4.366245e-01 rel=1.0e-12 par=-9.9e-13
+      u=2.01102 R1=2.01102 iota=-0.82868 pred=4.366245e-01 var=4.366245e-01 rel=1.0e-12 par=-9.7e-13
+   gtilde formula rel.err 1.65e-12; crests increasing: True
+      FD: u=0.000924953 du0=-2.50e-07 fd=1.529192e+00 pred=1.529191e+00 rel=5.1e-08
+      FD: u=0.0275607 du0=-7.42e-06 fd=1.521054e+00 pred=1.521054e+00 rel=1.5e-08
+      FD: u=0.699311 du0=-1.54e-04 fd=1.201838e+00 pred=1.201838e+00 rel=1.9e-09
+      FD: u=1.99935 du0=-6.10e-06 fd=4.419130e-01 pred=4.419130e-01 rel=1.4e-09
+   A2 pull-back from (0.0, 0.0): gap at t=1,2,5,10,20,40: 2.8e-01 6.7e-02 4.5e-02 1.6e-02 3.6e-09 3.8e-13
+   A2 pull-back from (1000000.0, 1000000.0): gap at t=1,2,5,10,20,40: 1.5e-01 9.4e-02 5.0e-02 2.0e-02 4.6e-09 4.6e-13
+   A2 pull-back from (0.0, 1000000.0): gap at t=1,2,5,10,20,40: 4.8e-01 1.0e-01 3.3e-02 3.4e-03 8.5e-10 3.1e-13
+   A2 pull-back from (1000000.0, 0.0): gap at t=1,2,5,10,20,40: 3.9e-01 1.4e-01 5.9e-02 3.0e-02 6.6e-09 3.5e-13
+   A2 rate constants: m0=2.651e-04 M0=8.819e+00 Delta0=20.824 1-tau0=6.013e-05
+   done in 3s -> /Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/out_v1_0.3_1.5.json
+##### 0.3 4
+== mu=0.3 rho=4.0 k=1.56 gamE=1.676235 lam_u=0.188117+0.946187j
+   spiral: 27 crests, t_conv=531.2, r0=1.97e-05, t_skip=20.88  [0s]
+   spiral samples: 2394  [1s]
+   cycle: T=29.759329 crest U=3.880938 Umin=-88.622 res=1.7e-13
+   A8(a): lambda_c  Riccati <eta>-mu = -0.1265703397 | integral I/T = -0.1265703397 | QR (no Riccati) = -0.1265703397 | log(max eig M)/T = -0.1265703397
+   M^T n = m_s n rel.err 8.21e-14;  n.f on cycle rel 4.45e-04
+   A5: max|O|rel=4.84e-04  min K/sc=2.273e-05  min W/sc=5.901e-01  A6: min LamE/sc=2.273e-05  #C+=0 #C-=0
+   A2 bounds: eta in [4.318e-08,3.441] vs [0,8.353]; zeta in [3.356e-11,15.95] vs [5.423e-40,75.61]  ok=True
+   A3: 8372342 ordered pairs; worst Delta/scale = 5.476e-01 (abs max 2.362e-13); #(rel>1e-9) = 36; #(rel>=0) = 36
+   Prop 8.1:  u -> R1(u);  R1' predicted g(u)e^iota/g(R1) vs variational (M(1,zeta))_U ; parallel defect
+      u=0.00171832 R1=0.00598865 iota=+2.49788 pred=3.482794e+00 var=3.482794e+00 rel=1.0e-10 par=5.2e-14
+      u=0.0720677 R1=0.244222 iota=+2.47468 pred=3.291046e+00 var=3.291046e+00 rel=5.4e-13 par=1.4e-13
+      u=1.97093 R1=3.32158 iota=+0.80766 pred=7.098458e-01 var=7.098458e-01 rel=1.8e-12 par=-7.3e-13
+      u=3.88006 R1=3.88092 iota=-3.76269 pred=2.320611e-02 var=2.320611e-02 rel=1.8e-12 par=-1.4e-10
+      u=3.88094 R1=3.88094 iota=-3.76665 pred=2.312946e-02 var=2.312946e-02 rel=6.0e-11 par=-1.4e-10
+      u=3.88094 R1=3.88094 iota=-3.76665 pred=2.312946e-02 var=2.312946e-02 rel=5.3e-11 par=-1.4e-10
+      u=3.88094 R1=3.88094 iota=-3.76665 pred=2.312946e-02 var=2.312946e-02 rel=4.7e-11 par=-1.4e-10
+      u=3.88094 R1=3.88094 iota=-3.76665 pred=2.312946e-02 var=2.312946e-02 rel=3.4e-11 par=-1.4e-10
+   gtilde formula rel.err 6.37e-12; crests increasing: True
+      FD: u=0.00171832 du0=-1.37e-06 fd=3.482794e+00 pred=3.482794e+00 rel=1.1e-08
+      FD: u=0.0720677 du0=-5.66e-05 fd=3.291046e+00 pred=3.291046e+00 rel=3.6e-09
+      FD: u=1.97093 du0=-9.37e-04 fd=7.098458e-01 pred=7.098458e-01 rel=2.7e-09
+      FD: u=3.88006 du0=-2.12e-06 fd=2.320596e-02 pred=2.320611e-02 rel=6.4e-06
+   A2 pull-back from (0.0, 0.0): gap at t=1,2,5,10,20,40: 1.2e-01 8.8e-02 6.3e-02 6.0e-02 6.0e-02 6.9e-13
+   A2 pull-back from (1000000.0, 1000000.0): gap at t=1,2,5,10,20,40: 2.1e-01 1.3e-01 9.3e-02 8.8e-02 8.8e-02 8.0e-13
+   A2 pull-back from (0.0, 1000000.0): gap at t=1,2,5,10,20,40: 6.3e-02 1.5e-02 8.4e-03 8.5e-03 8.5e-03 6.7e-13
+   A2 pull-back from (1000000.0, 0.0): gap at t=1,2,5,10,20,40: 2.8e-01 1.8e-01 1.2e-01 1.2e-01 1.2e-01 8.2e-13
+   A2 rate constants: m0=4.000e-39 M0=6.647e+02 Delta0=189.828 1-tau0=0.000e+00
+   done in 2s -> /Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/out_v1_0.3_4.json
+##### 0.3 12
+== mu=0.3 rho=12.0 k=4.68 gamE=2.162253 lam_u=0.431126+1.406606j
+   spiral: 17 crests, t_conv=536.0, r0=9.32e-07, t_skip=16.19  [0s]
+   spiral samples: 2282  [1s]
+   cycle: T=74.678587 crest U=5.919896 Umin=-926.101 res=3.7e-13
+   A8(a): lambda_c  Riccati <eta>-mu = -0.2039603703 | integral I/T = -0.2039603703 | QR (no Riccati) = -0.2039603703 | log(max eig M)/T = -0.2039617322
+   M^T n = m_s n rel.err 1.11e-13;  n.f on cycle rel 1.00e+00
+   A5: max|O|rel=1.00e+00  min K/sc=1.116e-05  min W/sc=-1.000e+00  A6: min LamE/sc=1.116e-05  #C+=0 #C-=0
+   A2 bounds: eta in [-4.003e-13,10.56] vs [0,41.4]; zeta in [-5.219e-14,138] vs [0,1743]  ok=False
+   A3: 7736742 ordered pairs; worst Delta/scale = 1.000e+00 (abs max 2.936e-11); #(rel>1e-9) = 97133; #(rel>=0) = 97133
+   Prop 8.1:  u -> R1(u);  R1' predicted g(u)e^iota/g(R1) vs variational (M(1,zeta))_U ; parallel defect
+      u=0.000736907 R1=0.00505246 iota=+3.85116 pred=6.851943e+00 var=6.851943e+00 rel=2.2e-11 par=5.9e-14
+      u=0.00505246 R1=0.0345125 iota=+3.84848 pred=6.801093e+00 var=6.801093e+00 rel=1.8e-11 par=-2.3e-14
+      u=0.229877 R1=1.30683 iota=+3.68126 pred=4.678221e+00 var=4.678221e+00 rel=5.0e-13 par=9.3e-13
+      u=1.30683 R1=4.02061 iota=+2.73655 pred=1.490070e+00 var=1.490070e+00 rel=3.2e-12 par=8.3e-14
+      u=5.89643 R1=5.9199 iota=-14.91568 pred=3.274248e-07 var=3.274460e-07 rel=6.5e-05 par=-3.9e-05
+      u=5.9199 R1=5.9199 iota=-15.23147 pred=2.426921e-07 var=2.426738e-07 rel=7.6e-05 par=-3.6e-05
+      u=5.9199 R1=5.9199 iota=-15.23147 pred=2.426921e-07 var=2.426787e-07 rel=5.5e-05 par=-6.3e-05
+      u=5.9199 R1=5.9199 iota=-15.23147 pred=2.426921e-07 var=2.426773e-07 rel=6.1e-05 par=-4.5e-05
+   gtilde formula rel.err 1.52e-12; crests increasing: True
+      FD: u=0.000736907 du0=-9.03e-07 fd=6.851943e+00 pred=6.851943e+00 rel=2.4e-08
+      FD: u=0.00505246 du0=-6.19e-06 fd=6.801093e+00 pred=6.801093e+00 rel=3.5e-09
+      FD: u=0.229877 du0=-2.72e-04 fd=4.678220e+00 pred=4.678221e+00 rel=5.4e-08
+      FD: u=1.30683 du0=-1.27e-03 fd=1.490070e+00 pred=1.490070e+00 rel=1.6e-08
+   A2 pull-back from (0.0, 0.0): gap at t=1,2,5,10,20,40: 6.9e-02 4.4e-02 3.1e-02 2.9e-02 2.9e-02 2.9e-02
+   A2 pull-back from (1000000.0, 1000000.0): gap at t=1,2,5,10,20,40: 1.4e-01 8.5e-02 5.9e-02 5.6e-02 5.6e-02 5.6e-02
+   A2 pull-back from (0.0, 1000000.0): gap at t=1,2,5,10,20,40: 7.5e-03 1.9e-03 1.0e-03 1.1e-03 1.1e-03 1.1e-03
+   A2 pull-back from (1000000.0, 0.0): gap at t=1,2,5,10,20,40: 1.6e-01 9.7e-02 6.8e-02 6.4e-02 6.4e-02 6.4e-02
+   A2 rate constants: m0=0.000e+00 M0=1.277e+07 Delta0=inf 1-tau0=0.000e+00
+   done in 2s -> /Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/out_v1_0.3_12.json
+##### 0.3 1.01
+== mu=0.3 rho=1.01 k=0.3939 gamE=1.301955 lam_u=0.000977+0.550040j
+   spiral: 1314 crests, t_conv=15078.5, r0=9.74e-04, t_skip=26.88  [3s]
+   spiral samples: 2441  [9s]
+   cycle: T=11.525642 crest U=0.403273 Umin=-0.481 res=6.3e-16
+   A8(a): lambda_c  Riccati <eta>-mu = -0.0019422805 | integral I/T = -0.0019422805 | QR (no Riccati) = -0.0019422805 | log(max eig M)/T = -0.0019422805
+   M^T n = m_s n rel.err 8.71e-14;  n.f on cycle rel 1.03e-11
+   A5: max|O|rel=8.24e-11  min K/sc=6.034e-05  min W/sc=7.809e-01  A6: min LamE/sc=6.033e-05  #C+=0 #C-=0
+   A2 bounds: eta in [0.2261,0.3808] vs [0.1843,0.4938]; zeta in [0.2023,0.4216] vs [0.163,0.4978]  ok=True
+   A3: 8646540 ordered pairs; worst Delta/scale = 1.085e-07 (abs max 7.264e-14); #(rel>1e-9) = 1; #(rel>=0) = 1
+   Prop 8.1:  u -> R1(u);  R1' predicted g(u)e^iota/g(R1) vs variational (M(1,zeta))_U ; parallel defect
+      u=0.000844776 R1=0.000854259 iota=+0.02233 pred=1.011224e+00 var=1.011224e+00 rel=6.5e-12 par=1.4e-14
+      u=0.00680633 R1=0.00688263 iota=+0.02230 pred=1.011188e+00 var=1.011188e+00 rel=2.1e-12 par=2.4e-14
+      u=0.0539753 R1=0.0545653 iota=+0.02151 pred=1.010457e+00 var=1.010457e+00 rel=1.7e-12 par=1.4e-13
+      u=0.293717 R1=0.295238 iota=-0.00073 pred=9.935023e-01 var=9.935023e-01 rel=1.4e-14 par=2.0e-13
+      u=0.400546 R1=0.400605 iota=-0.02175 pred=9.783146e-01 var=9.783146e-01 rel=3.1e-13 par=2.7e-14
+      u=0.403231 R1=0.403232 iota=-0.02238 pred=9.778696e-01 var=9.778696e-01 rel=1.5e-13 par=5.7e-14
+      u=0.403272 R1=0.403272 iota=-0.02239 pred=9.778628e-01 var=9.778628e-01 rel=7.2e-13 par=8.3e-14
+      u=0.403273 R1=0.403273 iota=-0.02239 pred=9.778627e-01 var=9.778627e-01 rel=2.5e-14 par=8.5e-14
+   gtilde formula rel.err 2.01e-12; crests increasing: True
+      FD: u=0.000844776 du0=-6.50e-09 fd=1.011224e+00 pred=1.011224e+00 rel=3.2e-07
+      FD: u=0.00680633 du0=-5.23e-08 fd=1.011188e+00 pred=1.011188e+00 rel=1.2e-07
+      FD: u=0.0539753 du0=-4.04e-07 fd=1.010458e+00 pred=1.010457e+00 rel=5.2e-07
+      FD: u=0.293717 du0=-1.05e-06 fd=9.935023e-01 pred=9.935023e-01 rel=6.2e-08
+      FD: u=0.400546 du0=-4.16e-08 fd=9.783148e-01 pred=9.783146e-01 rel=2.0e-07
+   A2 pull-back from (0.0, 0.0): gap at t=1,2,5,10,20,40: 8.7e-01 1.9e-01 3.0e-03 5.2e-06 3.1e-11 8.4e-15
+   A2 pull-back from (1000000.0, 1000000.0): gap at t=1,2,5,10,20,40: 9.3e-01 2.6e-01 4.7e-03 8.4e-06 5.0e-11 2.0e-14
+   A2 pull-back from (0.0, 1000000.0): gap at t=1,2,5,10,20,40: 1.4e+00 5.1e-01 9.1e-03 2.6e-05 8.9e-11 1.6e-14
+   A2 pull-back from (1000000.0, 0.0): gap at t=1,2,5,10,20,40: 6.8e-01 1.8e-01 9.2e-03 7.1e-06 2.2e-11 2.1e-14
+   A2 rate constants: m0=1.928e-01 M0=2.897e+00 Delta0=5.420 1-tau0=1.248e-01
+   done in 17s -> /Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/out_v1_0.3_1.01.json
+##### 0.02 1.5
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/v1_attractor.py:236: RuntimeWarning: invalid value encountered in log
+  g = np.maximum(np.abs(np.log(a_.y[3] / b_.y[3])), np.abs(np.log(a_.y[4] / b_.y[4])))
+== mu=0.02 rho=1.5 k=0.0306 gamE=1.029447 lam_u=0.004723+0.172344j
+   spiral: 106 crests, t_conv=8749.7, r0=8.52e-04, t_skip=34.00  [1s]
+   spiral samples: 2405  [6s]
+   cycle: T=130.066679 crest U=3.835101 Umin=-53.436 res=3.3e-14
+   A8(a): lambda_c  Riccati <eta>-mu = -0.0032599002 | integral I/T = -0.0032599002 | QR (no Riccati) = -0.0032599002 | log(max eig M)/T = -0.0032599002
+   M^T n = m_s n rel.err 1.15e-13;  n.f on cycle rel 1.00e+00
+   A5: max|O|rel=1.00e+00  min K/sc=4.136e-05  min W/sc=-1.000e+00  A6: min LamE/sc=4.137e-05  #C+=0 #C-=0
+   A2 bounds: eta in [-1.7e-10,0.533] vs [0,0.7972]; zeta in [-5.896e-12,0.8707] vs [1.057e-25,1.417]  ok=False
+   A3: 8436120 ordered pairs; worst Delta/scale = 1.000e+00 (abs max 4.052e-10); #(rel>1e-9) = 581731; #(rel>=0) = 581731
+   Prop 8.1:  u -> R1(u);  R1' predicted g(u)e^iota/g(R1) vs variational (M(1,zeta))_U ; parallel defect
+      u=0.000996873 R1=0.00118416 iota=+0.34439 pred=1.187836e+00 var=1.187836e+00 rel=9.4e-11 par=9.6e-13
+      u=0.0110884 R1=0.0131674 iota=+0.34431 pred=1.187063e+00 var=1.187063e+00 rel=4.6e-10 par=2.1e-12
+      u=0.143413 R1=0.16957 iota=+0.34303 pred=1.176821e+00 var=1.176821e+00 rel=2.0e-11 par=-1.1e-12
+      u=1.44038 R1=1.62864 iota=+0.29838 pred=1.073737e+00 var=1.073737e+00 rel=1.3e-12 par=9.5e-14
+      u=3.73736 R1=3.76955 iota=-0.34819 pred=6.866600e-01 var=6.866600e-01 rel=3.1e-12 par=-1.7e-12
+      u=3.83492 R1=3.83498 iota=-0.42386 pred=6.544821e-01 var=6.544821e-01 rel=2.9e-12 par=-1.5e-12
+      u=3.8351 R1=3.8351 iota=-0.42400 pred=6.544211e-01 var=6.544211e-01 rel=9.5e-12 par=-8.3e-12
+      u=3.8351 R1=3.8351 iota=-0.42400 pred=6.544210e-01 var=6.544210e-01 rel=8.7e-12 par=-8.5e-12
+   gtilde formula rel.err 3.34e-10; crests increasing: True
+      FD: u=0.000996873 du0=-1.10e-07 fd=1.187836e+00 pred=1.187836e+00 rel=1.6e-07
+      FD: u=0.0110884 du0=-1.22e-06 fd=1.187063e+00 pred=1.187063e+00 rel=6.3e-08
+      FD: u=0.143413 du0=-1.54e-05 fd=1.176821e+00 pred=1.176821e+00 rel=7.3e-09
+      FD: u=1.44038 du0=-1.16e-04 fd=1.073737e+00 pred=1.073737e+00 rel=6.9e-12
+      FD: u=3.73736 du0=-2.46e-05 fd=6.866600e-01 pred=6.866600e-01 rel=1.0e-09
+   A2 pull-back from (0.0, 0.0): gap at t=1,2,5,10,20,40: 5.6e-01 1.1e-01 2.6e-02 2.5e-02 2.5e-02 3.9e-01
+   A2 pull-back from (1000000.0, 1000000.0): gap at t=1,2,5,10,20,40: 5.6e-01 8.6e-02 5.4e-02 5.1e-02 5.1e-02 nan
+   A2 pull-back from (0.0, 1000000.0): gap at t=1,2,5,10,20,40: 1.0e+00 3.3e-01 5.1e-02 1.8e-02 6.0e-03 3.4e+00
+   A2 pull-back from (1000000.0, 0.0): gap at t=1,2,5,10,20,40: 5.5e-01 2.2e-01 9.1e-02 8.5e-02 8.5e-02 2.4e+00
+   A2 rate constants: m0=1.373e-25 M0=3.124e+00 Delta0=116.773 1-tau0=0.000e+00
+   done in 8s -> /Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/out_v1_0.02_1.5.json
+##### 0.02 4
+== mu=0.02 rho=4.0 k=0.0816 gamE=1.072314 lam_u=0.026157+0.274614j
+   spiral: 31 crests, t_conv=4576.0, r0=4.26e-04, t_skip=32.64  [0s]
+   spiral samples: 2218  [2s]
+   cycle: T=343.057784 crest U=6.079370 Umin=-793.112 res=2.8e-13
+   A8(a): lambda_c  Riccati <eta>-mu = -0.0077236526 | integral I/T = -0.0077236526 | QR (no Riccati) = -0.0077236526 | log(max eig M)/T = -0.0077236526
+   M^T n = m_s n rel.err 9.87e-13;  n.f on cycle rel 1.00e+00
+   A5: max|O|rel=1.00e+00  min K/sc=6.546e-05  min W/sc=-1.000e+00  A6: min LamE/sc=6.547e-05  #C+=0 #C-=0
+   A2 bounds: eta in [-4.749e-10,2.471] vs [0,5.5]; zeta in [-5.544e-12,9.523] vs [0,35.64]  ok=False
+   A3: 7384806 ordered pairs; worst Delta/scale = 1.000e+00 (abs max 4.901e-09); #(rel>1e-9) = 1977083; #(rel>=0) = 1977084
+   Prop 8.1:  u -> R1(u);  R1' predicted g(u)e^iota/g(R1) vs variational (M(1,zeta))_U ; parallel defect
+      u=0.0013609 R1=0.00247548 iota=+1.19688 pred=1.818656e+00 var=1.818656e+00 rel=4.9e-11 par=1.8e-13
+      u=0.00818593 R1=0.0148761 iota=+1.19656 pred=1.815224e+00 var=1.815224e+00 rel=1.2e-10 par=-8.6e-13
+      u=0.0884669 R1=0.158999 iota=+1.19245 pred=1.775419e+00 var=1.775419e+00 rel=1.3e-12 par=8.8e-14
+      u=0.842894 R1=1.37286 iota=+1.13367 pred=1.463656e+00 var=1.463656e+00 rel=3.9e-13 par=1.0e-13
+      u=4.24008 R1=5.36951 iota=+0.60666 pred=7.652387e-01 var=7.652387e-01 rel=3.5e-12 par=-1.1e-11
+      u=6.07868 R1=6.07932 iota=-2.64733 pred=7.080689e-02 var=7.080689e-02 rel=6.5e-10 par=-3.0e-10
+      u=6.07937 R1=6.07937 iota=-2.64966 pred=7.067530e-02 var=7.067530e-02 rel=3.2e-10 par=-2.0e-10
+      u=6.07937 R1=6.07937 iota=-2.64966 pred=7.067530e-02 var=7.067530e-02 rel=5.8e-10 par=-3.1e-10
+   gtilde formula rel.err 8.02e-11; crests increasing: True
+      FD: u=0.0013609 du0=-5.19e-07 fd=1.818656e+00 pred=1.818656e+00 rel=3.7e-09
+      FD: u=0.00818593 du0=-3.12e-06 fd=1.815224e+00 pred=1.815224e+00 rel=8.6e-10
+      FD: u=0.0884669 du0=-3.32e-05 fd=1.775419e+00 pred=1.775419e+00 rel=3.9e-10
+      FD: u=0.842894 du0=-2.75e-04 fd=1.463656e+00 pred=1.463656e+00 rel=1.3e-09
+      FD: u=4.24008 du0=-7.78e-04 fd=7.652387e-01 pred=7.652387e-01 rel=5.6e-09
+      FD: u=6.07868 du0=-1.17e-06 fd=7.080701e-02 pred=7.080689e-02 rel=1.8e-06
+   A2 pull-back from (0.0, 0.0): gap at t=1,2,5,10,20,40: 9.9e-02 8.4e-02 6.3e-02 6.1e-02 6.1e-02 2.2e+00
+   A2 pull-back from (1000000.0, 1000000.0): gap at t=1,2,5,10,20,40: 2.3e-01 1.5e-01 1.1e-01 1.0e-01 1.0e-01 2.9e+00
+   A2 pull-back from (0.0, 1000000.0): gap at t=1,2,5,10,20,40: 1.2e-01 3.3e-02 8.4e-03 3.7e-03 1.6e-03 1.2e+00
+   A2 pull-back from (1000000.0, 0.0): gap at t=1,2,5,10,20,40: 3.4e-01 2.2e-01 1.5e-01 1.5e-01 1.5e-01 9.5e-01
+   A2 rate constants: m0=0.000e+00 M0=1.561e+02 Delta0=inf 1-tau0=0.000e+00
+   done in 3s -> /Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/out_v1_0.02_4.json
+##### 0.02 12
+== mu=0.02 rho=12.0 k=0.2448 gamE=1.179114 lam_u=0.079557+0.448647j
+   spiral: 17 crests, t_conv=3921.3, r0=9.43e-05, t_skip=29.68  [0s]
+Traceback (most recent call last):
+  File "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/v1_attractor.py", line 46, in <module>
+    sol = run_aug(mu, k, spiral_start(mu, k, r0, th), 0.0, tconv, t_eval=te)
+  File "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/vlib.py", line 64, in run_aug
+    return solve_ivp(aug_rhs(mu, k), [t0, t1], s0, method=method, rtol=rtol, atol=atol_vec(mu, k),
+                     t_eval=t_eval, events=events, dense_output=dense)
+  File "/Users/admin/.venvs/analysis-py313/lib/python3.13/site-packages/scipy/integrate/_ivp/ivp.py", line 657, in solve_ivp
+    message = solver.step()
+  File "/Users/admin/.venvs/analysis-py313/lib/python3.13/site-packages/scipy/integrate/_ivp/base.py", line 201, in step
+    success, message = self._step_impl()
+                       ~~~~~~~~~~~~~~~^^
+  File "/Users/admin/.venvs/analysis-py313/lib/python3.13/site-packages/scipy/integrate/_ivp/rk.py", line 144, in _step_impl
+    y_new, f_new = rk_step(self.fun, t, y, self.f, h, self.A,
+                   ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                           self.B, self.C, self.K)
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/admin/.venvs/analysis-py313/lib/python3.13/site-packages/scipy/integrate/_ivp/rk.py", line 64, in rk_step
+    K[s] = fun(t + c * h, y + dy)
+           ~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/admin/.venvs/analysis-py313/lib/python3.13/site-packages/scipy/integrate/_ivp/base.py", line 158, in fun
+    return self.fun_single(t, y)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/admin/.venvs/analysis-py313/lib/python3.13/site-packages/scipy/integrate/_ivp/base.py", line 24, in fun_wrapped
+    return np.asarray(fun(t, y), dtype=dtype)
+                      ~~~^^^^^^
+  File "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/vlib.py", line 36, in f
+    x = k * ex(U)
+            ~~^^^
+OverflowError: math range error
+##### 0.02 1.01
+== mu=0.02 rho=1.01 k=0.020604 gamE=1.020192 lam_u=0.000096+0.142113j
+   spiral: 3470 crests, t_conv=157396.6, r0=9.97e-04, t_skip=34.31  [25s]
+   spiral samples: 2439  [66s]
+   cycle: T=46.409550 crest U=0.901803 Umin=-1.306 res=6.8e-15
+   A8(a): lambda_c  Riccati <eta>-mu = -0.0001819322 | integral I/T = -0.0001819322 | QR (no Riccati) = -0.0001819322 | log(max eig M)/T = -0.0001819322
+   M^T n = m_s n rel.err 6.59e-14;  n.f on cycle rel 2.54e-10
+   A5: max|O|rel=9.63e-08  min K/sc=2.908e-05  min W/sc=7.190e-01  A6: min LamE/sc=2.904e-05  #C+=0 #C-=0
+   A2 bounds: eta in [0.005719,0.04629] vs [0.0054,0.04932]; zeta in [0.005593,0.04803] vs [0.005321,0.0505]  ok=True
+   A3: 8634782 ordered pairs; worst Delta/scale = -7.722e-07 (abs max -3.547e-14); #(rel>1e-9) = 0; #(rel>=0) = 0
+   Prop 8.1:  u -> R1(u);  R1' predicted g(u)e^iota/g(R1) vs variational (M(1,zeta))_U ; parallel defect
+      u=0.000990784 R1=0.000995005 iota=+0.00850 pred=1.004259e+00 var=1.004259e+00 rel=1.0e-10 par=5.0e-12
+      u=0.00811604 R1=0.00815057 iota=+0.00850 pred=1.004248e+00 var=1.004248e+00 rel=3.7e-10 par=2.0e-13
+      u=0.065776 R1=0.066052 iota=+0.00843 pred=1.004113e+00 var=1.004113e+00 rel=7.2e-11 par=5.1e-13
+      u=0.44865 R1=0.450044 iota=+0.00488 pred=1.001064e+00 var=1.001064e+00 rel=5.5e-13 par=2.0e-13
+      u=0.880732 R1=0.880902 iota=-0.00755 pred=9.921982e-01 var=9.921982e-01 rel=4.1e-12 par=-8.6e-13
+      u=0.901468 R1=0.901471 iota=-0.00843 pred=9.916019e-01 var=9.916019e-01 rel=6.0e-12 par=5.5e-13
+      u=0.901797 R1=0.901797 iota=-0.00844 pred=9.915923e-01 var=9.915923e-01 rel=7.9e-12 par=9.2e-13
+      u=0.901802 R1=0.901802 iota=-0.00844 pred=9.915922e-01 var=9.915922e-01 rel=2.5e-12 par=7.1e-14
+   gtilde formula rel.err 9.22e-10; crests increasing: True
+      FD: u=0.000990784 du0=-2.95e-09 fd=1.004258e+00 pred=1.004259e+00 rel=6.2e-07
+      FD: u=0.00811604 du0=-2.41e-08 fd=1.004246e+00 pred=1.004248e+00 rel=1.9e-06
+      FD: u=0.065776 du0=-1.93e-07 fd=1.004113e+00 pred=1.004113e+00 rel=6.2e-08
+      FD: u=0.44865 du0=-9.74e-07 fd=1.001064e+00 pred=1.001064e+00 rel=2.0e-09
+      FD: u=0.880732 du0=-1.20e-07 fd=9.921980e-01 pred=9.921982e-01 rel=1.2e-07
+   A2 pull-back from (0.0, 0.0): gap at t=1,2,5,10,20,40: 1.2e+00 4.5e-01 2.9e-02 2.8e-04 5.5e-09 2.4e-15
+   A2 pull-back from (1000000.0, 1000000.0): gap at t=1,2,5,10,20,40: 2.9e+00 1.9e+00 2.8e-01 3.1e-03 6.1e-08 2.7e-15
+   A2 pull-back from (0.0, 1000000.0): gap at t=1,2,5,10,20,40: 3.4e+00 2.3e+00 4.8e-01 7.2e-03 2.6e-07 2.7e-15
+   A2 pull-back from (1000000.0, 0.0): gap at t=1,2,5,10,20,40: 2.6e+00 1.3e+00 5.7e-02 8.1e-04 3.7e-07 1.3e-15
+   A2 rate constants: m0=4.035e-03 M0=2.733e+00 Delta0=13.036 1-tau0=2.949e-03
+   done in 112s -> /Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/out_v1_0.02_1.01.json
+##### 3 1.5
+== mu=3.0 rho=1.5 k=18 gamE=4.281300 lam_u=0.140650+2.045617j
+   spiral: 63 crests, t_conv=245.7, r0=3.17e-04, t_skip=8.18  [0s]
+   spiral samples: 2431  [2s]
+   cycle: T=4.590258 crest U=1.977669 Umin=-7.194 res=1.9e-13
+   A8(a): lambda_c  Riccati <eta>-mu = -0.1877519962 | integral I/T = -0.1877519962 | QR (no Riccati) = -0.1877519962 | log(max eig M)/T = -0.1877519962
+   M^T n = m_s n rel.err 1.13e-14;  n.f on cycle rel 7.34e-12
+   A5: max|O|rel=3.37e-11  min K/sc=2.797e-06  min W/sc=7.097e-01  A6: min LamE/sc=2.797e-06  #C+=0 #C-=0
+   A2 bounds: eta in [2.024,5.354] vs [2.001,12.45]; zeta in [0.01348,19.6] vs [0.001006,43.35]  ok=True
+   A3: 8587830 ordered pairs; worst Delta/scale = -3.921e-08 (abs max -1.462e-12); #(rel>1e-9) = 0; #(rel>=0) = 0
+   Prop 8.1:  u -> R1(u);  R1' predicted g(u)e^iota/g(R1) vs variational (M(1,zeta))_U ; parallel defect
+      u=0.000144716 R1=0.000222911 iota=+0.86401 pred=1.540309e+00 var=1.540309e+00 rel=7.6e-11 par=-9.6e-15
+      u=0.00458273 R1=0.00705579 iota=+0.86359 pred=1.538941e+00 var=1.538941e+00 rel=7.2e-13 par=2.2e-14
+      u=0.141424 R1=0.214517 iota=+0.84488 pred=1.491504e+00 var=1.491504e+00 rel=2.0e-13 par=-2.9e-14
+      u=1.74759 R1=1.86777 iota=-0.50406 pred=5.349570e-01 var=5.349570e-01 rel=2.7e-13 par=8.0e-14
+      u=1.97755 R1=1.97762 iota=-0.86162 pred=4.224458e-01 var=4.224458e-01 rel=2.0e-12 par=8.2e-13
+      u=1.97767 R1=1.97767 iota=-0.86183 pred=4.223884e-01 var=4.223884e-01 rel=1.8e-12 par=7.0e-13
+      u=1.97767 R1=1.97767 iota=-0.86183 pred=4.223884e-01 var=4.223884e-01 rel=1.8e-12 par=7.7e-13
+      u=1.97767 R1=1.97767 iota=-0.86183 pred=4.223884e-01 var=4.223884e-01 rel=2.0e-12 par=7.0e-13
+   gtilde formula rel.err 7.28e-12; crests increasing: True
+      FD: u=0.000144716 du0=-3.98e-08 fd=1.540310e+00 pred=1.540309e+00 rel=5.7e-07
+      FD: u=0.00458273 du0=-1.26e-06 fd=1.538941e+00 pred=1.538941e+00 rel=1.0e-08
+      FD: u=0.141424 du0=-3.78e-05 fd=1.491504e+00 pred=1.491504e+00 rel=1.4e-09
+      FD: u=1.74759 du0=-1.02e-04 fd=5.349570e-01 pred=5.349570e-01 rel=1.5e-08
+   A2 pull-back from (0.0, 0.0): gap at t=1,2,5,10,20,40: 1.3e-01 8.4e-02 9.6e-08 3.1e-12 4.4e-13 7.4e-13
+   A2 pull-back from (1000000.0, 1000000.0): gap at t=1,2,5,10,20,40: 7.6e-02 4.6e-02 6.0e-08 3.1e-12 4.5e-13 7.4e-13
+   A2 pull-back from (0.0, 1000000.0): gap at t=1,2,5,10,20,40: 3.2e-02 3.2e-02 1.0e-08 1.8e-11 3.9e-12 6.3e-13
+   A2 pull-back from (1000000.0, 0.0): gap at t=1,2,5,10,20,40: 8.4e-02 4.8e-02 6.9e-08 4.7e-12 6.0e-12 7.1e-13
+   A2 rate constants: m0=2.326e-02 M0=4.113e+03 Delta0=24.166 1-tau0=1.131e-05
+   done in 3s -> /Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/out_v1_3_1.5.json
+ALLDONE

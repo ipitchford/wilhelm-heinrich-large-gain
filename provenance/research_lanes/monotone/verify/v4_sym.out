@@ -1,0 +1,32 @@
+OK  e_s=(a,-b,-c) solves v'=Jv given a'=-b, b'=-mu b-c, c'=-x a-c
+OK  r' = r^2 - mu r - s
+OK  s' = s r - s - x
+OK  r'' + (A-3r) r' + r(r-1)(r-mu) = x
+OK  c~ = -(b'+b)
+OK  c~' = -x a - mu c~
+OK  r' = r^2 - r - c~/a
+OK  L3[a] = a''' + A a'' + mu a' + x a = 0
+OK  Psi' = -J^T Psi for Psi = e^{At} z' x e_s
+OK  Psi = e^{At} a (r y' - s p', y' + s p, -(p' + r p))
+OK  Psi . z' = 0
+OK  Psi . e_s = 0
+OK  (Psi.d)' = Psi_3 x (e^{dU} - 1 - dU)
+OK  (Psi.z'')' = Psi_3 x p^2
+OK  theta' = theta^2 - mu theta + y'/p
+OK  (theta - r)' - [(theta-r)(theta+r-mu) + y'/p + s] = 0  (so = y'/p + s at theta=r)
+OK  g2' = s psi_p/p - g2 (1 + p'/p)   (so g2' = s psi_p/p on g2=0)
+OK  g1' = x psi_p/(r p') + g1 (mu - 1 + y'/p' + s/r)   (so g1' = x psi_p/(r p') on g1=0)
+OK  p'^2 - p p'' = p'^2 + mu p p' + p y'
+OK  at p'=-r p:  p'^2 - p p'' = p^2 r (r-mu) + p y'
+OK  omega' - J omega = -L3[phi] e3
+OK  L3[1] = x
+OK  L3[p] = 0
+OK  L3[p'] = -x p^2
+OK  L3[U] = k(1 - e^U + U e^U)
+OK  L3[y] = x(k + p^2)
+OK  p'' + r p' = (r-mu) p' - y'
+OK  compound: d/dt (v^u) = C (v^u)
+OK  wedge of (dU,0,dy) with z'=(0,k-y,x-y) is ((y-k)dU,(x-y)dU,(y-k)dy)
+OK  (Mu) x v + u x (Mv) = (tr M - M^T)(u x v)
+OK  g=1+eta: g'' + (3g-A) g' + g(g-1)(g-mu) = x
+ALL OK

@@ -1,0 +1,45 @@
+% Shared preamble for every section of the v3.0 paper. Do not redefine these macros in a section file.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=26mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{microtype,booktabs,array,enumitem,fancyhdr,xcolor,longtable,graphicx}
+\usepackage[hyphens]{url}
+\definecolor{inklink}{HTML}{51426B}
+\usepackage[colorlinks=true,linkcolor=inklink,citecolor=inklink,urlcolor=inklink,pdfauthor={}]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+% --- symbols inherited from v2.0 ---
+\newcommand{\R}{\mathbb R}
+\newcommand{\avg}[1]{\left\langle #1\right\rangle}
+\newcommand{\dd}{\,\mathrm dt}
+\newcommand{\cP}{\mathcal P}      % oscillatory parameter domain {k>mu(1+mu)}
+\newcommand{\cN}{\mathcal N}      % neutral parameter set
+\newcommand{\cS}{\mathcal S}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\spr}{spr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\inter}{int}
+\DeclareMathOperator{\sign}{sign}
+% --- new global symbols (v3.0) ---
+\newcommand{\cA}{\mathcal A}                 % global attractor = union of log-bounded entire orbits
+\newcommand{\Dom}{\mathcal D_{\mu,k}}        % chemical domain {x>0,y>0,p<lambda}
+\newcommand{\Dsc}{\mathsf D}                 % projection of the attractor to the (U,p) plane
+\newcommand{\Dt}{\mathbb D}                  % derivative along the flow of a function of the state
+\newcommand{\kH}{k_{\mathrm H}}              % Hopf value mu(1+mu)
+\newcommand{\LamE}{\Lambda_E}                % (y-k)-zeta_E U+eta_E p
+\newcommand{\Sg}{\Sigma}                     % star gauge  p^2-U p'
+\newcommand{\Xg}{\Xi}                        % convexity gauge  p'^2-p p''
+\newcommand{\etaz}{\eta_0}                   % explicit state function with mean mu
+\newcommand{\psiU}{\psi}                     % psi(U)=U e^U-e^U+1
+\newcommand{\Rem}{\mathcal R}                % R(d)=e^d-1-d
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{1.2em}
+\setlist{nosep,leftmargin=1.7em}

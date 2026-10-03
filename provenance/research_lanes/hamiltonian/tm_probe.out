@@ -1,0 +1,19 @@
+Started: wh-hamiltonian-tm (pid 80450)
+# warm-up / compile
+mu=1 k=2.4 T=0.500 delta=1e-04 orderQ=2 orderT=18 integ1: steps=4 reached t=0.500 (100%) time=3.07s  set widths at t_end U=2.59e-04 p=5.29e-04 y=1.96e-03
+mu=1 k=2.4 T=6.734 delta=1e-06 orderQ=2 orderT=18 integ1: steps=26 reached t=6.734 (100%) time=1.06s  set widths at t_end U=8.65e-06 p=3.64e-05 y=9.20e-05
+mu=1 k=2.4 T=6.734 delta=1e-04 orderQ=2 orderT=18 integ1: steps=28 reached t=6.734 (100%) time=1.35s  set widths at t_end U=6.84e-04 p=3.17e-03 y=8.67e-03
+mu=1 k=2.4 T=6.734 delta=1e-03 orderQ=2 orderT=18 integ1: steps=29 reached t=6.734 (100%) time=1.48s  set widths at t_end U=6.29e-03 p=3.02e-02 y=8.48e-02
+mu=1 k=2.4 T=6.734 delta=1e-02 orderQ=2 orderT=18 integ1: steps=30 reached t=6.734 (100%) time=1.78s  set widths at t_end U=5.68e-02 p=2.84e-01 y=8.33e-01
+mu=1 k=4 T=8.790 delta=1e-06 orderQ=2 orderT=18 integ1: steps=40 reached t=8.790 (100%) time=0.75s  set widths at t_end U=1.19e-05 p=1.54e-04 y=7.06e-04
+mu=1 k=4 T=8.790 delta=1e-04 orderQ=2 orderT=18 integ1: steps=40 reached t=8.790 (100%) time=0.95s  set widths at t_end U=1.19e-03 p=1.54e-02 y=7.03e-02
+mu=1 k=4 T=8.790 delta=1e-03 orderQ=2 orderT=18 integ1: steps=40 reached t=8.790 (100%) time=1.00s  set widths at t_end U=1.20e-02 p=1.54e-01 y=7.05e-01
+mu=1 k=4 T=8.790 delta=1e-02 orderQ=2 orderT=18 integ1: steps=41 reached t=8.790 (100%) time=1.23s  set widths at t_end U=1.19e-01 p=1.53e+00 y=7.18e+00
+mu=0.2 k=0.36 T=19.187 delta=1e-06 orderQ=2 orderT=18 integ1: steps=44 reached t=19.187 (100%) time=2.17s  set widths at t_end U=1.43e-05 p=6.13e-05 y=1.23e-04
+mu=0.2 k=0.36 T=19.187 delta=1e-04 orderQ=2 orderT=18 integ1: steps=47 reached t=19.187 (100%) time=2.53s  set widths at t_end U=1.05e-03 p=5.38e-03 y=1.12e-02
+mu=0.2 k=0.36 T=19.187 delta=1e-03 orderQ=2 orderT=18 integ1: steps=49 reached t=19.187 (100%) time=2.70s  set widths at t_end U=9.30e-03 p=5.13e-02 y=1.09e-01
+mu=0.2 k=0.36 T=19.187 delta=1e-02 orderQ=2 orderT=18 integ1: steps=51 reached t=19.187 (100%) time=3.08s  set widths at t_end U=9.07e-02 p=5.02e-01 y=1.09e+00
+mu=1 k=16 T=24.111 delta=1e-06 orderQ=2 orderT=18 integ1: steps=75 reached t=24.111 (100%) time=1.64s  set widths at t_end U=4.61e-05 p=5.19e-03 y=8.61e-02
+mu=1 k=16 T=24.111 delta=1e-04 orderQ=2 orderT=18 integ1: steps=75 reached t=24.111 (100%) time=1.75s  set widths at t_end U=4.73e-03 p=5.21e-01 y=8.63e+00
+mu=1 k=16 T=24.111 delta=1e-03 orderQ=2 orderT=18 integ1: steps=75 reached t=24.111 (100%) time=1.90s  set widths at t_end U=5.70e-02 p=5.33e+00 y=8.86e+01
+mu=1 k=16 T=24.111 delta=1e-02 orderQ=2 orderT=18 integ1: steps=79 reached t=24.111 (100%) time=2.04s  set widths at t_end U=1.47e+00 p=6.26e+01 y=1.07e+03

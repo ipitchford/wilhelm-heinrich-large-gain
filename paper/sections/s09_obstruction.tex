@@ -1,0 +1,100 @@
+% s09_obstruction.tex -- Hopf collar, neutral locus, count preservation.
+% Exported labels: sec:obstruction lem:collar eq:neutralset thm:neutral cor:neutralconditions eq:neutralcriteria
+% eq:variancewindow.  Internal labels carry the prefix obs:.
+\section{The finite neutral-cycle obstruction}\label{sec:obstruction}
+This section describes how the number of cycles can change with the parameters. Near each Hopf point there is exactly one cycle in the whole positive domain. Away from the parameters at which some cycle has an additional multiplier $+1$, the number of cycles is locally constant. Consequently a second cycle at a finite parameter requires a neutral cycle on the path from the Hopf point.
+
+\paragraph{Local symbols.} In Lemma~\ref{lem:collar} the rate ratio $\mu$ is fixed, $\varphi^k_t$ is the flow of \eqref{eq:filters} in the physical variables $(X,Y,Z)$ on the open positive octant $\R^3_{>0}$, $E_{\rm ph}=(1,1,1)$ is the equilibrium in those variables, $\mathcal U\supset\mathcal V$ are neighbourhoods of $E_{\rm ph}$, $\mathcal B$ is a compact box, and $\kappa_0,\kappa_1,\kappa_2$ are positive numbers; they are unrelated to the gauge ratio $\kappa$ of Section~\ref{sec:gauges}. $\cP_1$ denotes the set of parameters in $\cP$ at which every cycle has $\lambda_c<0$.
+
+\subsection{A globally unique starting cycle near each Hopf point}
+\begin{lemma}[Global Hopf collar at every fixed rate ratio]\label{lem:collar}
+For each fixed $\mu>0$ there is $\kappa_2>0$ such that for every $k\in(\kH,\kH+\kappa_2]$ the system has exactly one cycle in the positive domain, and that cycle is hyperbolic and attracting.
+\end{lemma}
+\begin{proof}
+\emph{Step 1: the local statement.} Appendix~\ref{app:hopf} verifies that the pair of critical eigenvalues crosses the imaginary axis at $k=\kH$ with positive speed, from the left half-plane to the right as $k$ increases, that the first Lyapunov coefficient is negative, and that the third eigenvalue is negative. The equilibrium $E_{\rm ph}$ does not depend on $k$. Every complete orbit contained in a sufficiently small neighbourhood of $E_{\rm ph}$, and hence every periodic orbit contained there, lies on the local centre manifold, which is two-dimensional and depends smoothly on $k$; on that manifold the flow is planar with a weak focus whose first Lyapunov coefficient is negative. Hence there are an open neighbourhood $\mathcal U\subset\R^3_{>0}$ of $E_{\rm ph}$ and $\kappa_0\in(0,\kH)$ with the following property: for $\kH-\kappa_0\le k\le\kH$ no cycle is contained in $\mathcal U$, and for $\kH<k\le\kH+\kappa_0$ exactly one cycle is contained in $\mathcal U$, and it is hyperbolic and attracting. Moreover $E_{\rm ph}$ is locally asymptotically stable at $k=\kH$.
+
+\emph{Step 2: global stability at the critical value.} Global asymptotic stability of the positive equilibrium for $0<r_0\le a_0+b_0$, that is for $0<k\le\kH$, is part of the published summary for this system \cite[Theorem 13]{BH23}. It also follows from the results of this paper, without that reference, as follows. Let $0<k\le\kH$.
+
+On $s>\max(0,\mu-1)$ the function $f_\mu(s)=s(s+1)(s+1-\mu)$ of \eqref{eq:gainprimitive} is increasing and strictly convex, since $f_\mu''(s)=6s+4-2\mu>0$ both for $\mu\le1$ and for $\mu>1$. On a nonconstant cycle $\eta$ is nonconstant (see the remark after \eqref{eq:gainprimitive}) and takes values in that range by \eqref{eq:etaminbasic}, so strict Jensen gives $f_\mu(\avg\eta)<\avg{f_\mu(\eta)}=k\le\kH=f_\mu(\mu)$. Hence every cycle satisfies $\avg\eta<\mu$; by Proposition~\ref{prop:multipliers} both transverse multipliers lie in $(0,1)$, and the cycle is orbitally asymptotically stable (item (I3c) of Section~\ref{att:sec:setting}). The equilibrium is locally asymptotically stable: for $k<\kH$ by the Routh--Hurwitz criterion applied to $z^3+Az^2+\mu z+k$, and for $k=\kH$ by Step~1.
+
+By Theorem~\ref{thm:attractor}(A1),(A4),(A5), which hold for all $\mu,k>0$, the flow has a compact connected global attractor $\cA\ni E$ on which it is conjugate to the flow of a Lipschitz planar field on $\Dsc=\pi(\cA)$, with the projection of $E$ as its only equilibrium. Let $\mathbf a\in\cA$ be neither $E$ nor a point of a cycle. Its $\alpha$-limit set lies in $\cA$, and by the Poincar\'e--Bendixson theorem in reversed time (item (I2a) of Section~\ref{att:sec:setting}) it is $\{E\}$, or a cycle, or it contains an orbit other than $E$ that converges to $E$ as $t\to-\infty$. The first and the third alternative contradict the Lyapunov stability of $E$: an orbit that comes arbitrarily close to $E$ in the past would have to remain arbitrarily close to $E$ at all later times, hence be $E$. The second contradicts the orbital stability of the cycle: the backward orbit of $\mathbf a$ would enter every neighbourhood of the cycle, forward orbits starting sufficiently close to the cycle remain in any prescribed neighbourhood of it, and so $\mathbf a$ would lie on the cycle. Therefore $\cA$ is the union of $\{E\}$ and the cycles. The cycles are finite in number: they do not accumulate at $E$, because a neighbourhood of $E$ consists of points attracted to $E$, and they do not accumulate at a cycle, because a neighbourhood of an orbitally asymptotically stable cycle consists of points attracted to it. A connected set cannot be the union of two or more disjoint nonempty compact sets, finite in number. Hence $\cA=\{E\}$: there is no cycle, and every solution in the positive domain converges to the equilibrium.
+
+\emph{Step 3: a common box.} Put $I_0=[\kH-\kappa_0,\kH+\kappa_0]$. The set $\{\mu\}\times I_0$ is a compact subset of $\{\mu>0,\ k>0\}$, so Lemma~\ref{lem:statebox} gives a compact box
+\[
+\mathcal B=[\beta,M]^3\subset\R^3_{>0}
+\]
+that contains every cycle with $k\in I_0$. The box is taken in the physical variables, whose positive domain does not depend on $k$. A box in the coordinates $(U,p,y)$ assembled across different values of $k$ need not lie in the chemical domain at the critical parameter.
+
+\emph{Step 4: two nested neighbourhoods.} Choose a compact neighbourhood $\mathcal V$ of $E_{\rm ph}$ with $\mathcal V\subset\mathcal U$. Since $E_{\rm ph}$ is stable at $k=\kH$, there is an open neighbourhood $\mathcal V_0\subset\inter\mathcal V$ of $E_{\rm ph}$ with $\varphi^{\kH}_t(\mathcal V_0)\subset\inter\mathcal V$ for all $t\ge0$. By Step 2, for each $z\in\mathcal B$ there is $t_z\ge0$ with $\varphi^{\kH}_{t_z}(z)\in\mathcal V_0$, and by continuity an open neighbourhood $N_z$ of $z$ with $\varphi^{\kH}_{t_z}(N_z)\subset\mathcal V_0$. Finitely many $N_{z_1},\dots,N_{z_m}$ cover $\mathcal B$. With $\tau=\max_jt_{z_j}$, every $z\in N_{z_j}$ satisfies $\varphi^{\kH}_\tau(z)=\varphi^{\kH}_{\tau-t_{z_j}}\bigl(\varphi^{\kH}_{t_{z_j}}(z)\bigr)\in\inter\mathcal V$. Hence
+\[
+\varphi^{\kH}_\tau(\mathcal B)\subset\inter\mathcal V .
+\]
+The set $\varphi^{\kH}_\tau(\mathcal B)$ is compact, so its distance $\epsilon_0$ to the complement of $\mathcal U$ is positive.
+
+\emph{Step 5: nearby parameters.} Solutions of \eqref{eq:filters} starting in the positive octant exist for all $t\ge0$, because $X'\le\lambda X$ and $Y,Z$ are outputs of stable linear filters. The map $(z,k)\mapsto\varphi^k_\tau(z)$ is continuous, hence uniformly continuous on the compact set $\mathcal B\times I_0$. Choose $\kappa_1\in(0,\kappa_0]$ such that $|\varphi^k_\tau(z)-\varphi^{\kH}_\tau(z)|<\epsilon_0$ for all $z\in\mathcal B$ and $|k-\kH|\le\kappa_1$. Then
+\[
+\varphi^k_\tau(\mathcal B)\subset\mathcal U\qquad\text{for }|k-\kH|\le\kappa_1 .
+\]
+
+\emph{Step 6: every cycle is local.} Let $\Gamma$ be a cycle at a parameter $k$ with $\kH<k\le\kH+\kappa_1$. Then $\Gamma\subset\mathcal B$ by Step 3, and $\varphi^k_\tau(\Gamma)=\Gamma$ because $\Gamma$ is invariant. Therefore $\Gamma=\varphi^k_\tau(\Gamma)\subset\varphi^k_\tau(\mathcal B)\subset\mathcal U$. By Step 1 there is exactly one cycle contained in $\mathcal U$. The lemma holds with $\kappa_2=\kappa_1$.
+\end{proof}
+The number $\kappa_2$ is not explicit: it depends on the size of the neighbourhood in the Hopf theorem and on the time $\tau$.
+
+\subsection{Closed neutral locus and count preservation}
+Define
+\begin{equation}\label{eq:neutralset}
+\cN=\{(\mu,k)\in\cP:\text{some nonconstant positive cycle has }m_t=1\}.
+\end{equation}
+\begin{theorem}[Closed obstruction locus and local constancy]\label{thm:neutral}
+The set $\cN$ is relatively closed in $\cP$. On $\cP\setminus\cN$ the number of positive cycles is finite and locally constant. In particular it is constant along every compact path avoiding $\cN$.
+For fixed $\mu>0$, choose $k_0$ in the collar of Lemma~\ref{lem:collar}. If uniqueness fails at $k_1>k_0$, then some $k_*\in(k_0,k_1]$ has a nonconstant cycle with transverse multipliers $1$ and $e^{-AT}$.
+\end{theorem}
+\begin{proof}
+For a sequence of neutral parameters converging to a point of $\cP$, the parameters eventually belong to a compact subset of $\cP$. Theorem~\ref{thm:compact} gives a subsequential crest-fixed nonconstant cycle limit, with crests, periods and solutions converging and with the limiting period least. At a crest $p'=k-y<0$, so the section $\{p=0\}$ is transverse to the flow there, for the limit cycle and for the nearby cycles; the first-return maps to this section and their derivatives therefore converge. Each neutral cycle in the sequence has a crest-return derivative with the eigenvalue $1$ (Proposition~\ref{prop:crestmap}), so the crest-return derivative of the limit cycle has the eigenvalue $1$. Its eigenvalues are the transverse multipliers $m_s<1$ and $m_t$ of the limit cycle; hence $m_t=1$. Thus $\cN$ is relatively closed.
+
+Outside $\cN$, Proposition~\ref{prop:multipliers} makes every cycle hyperbolic. There are finitely many at a fixed parameter: otherwise Theorem~\ref{thm:compact} would give an accumulating cycle, contrary to local isolation of its hyperbolic crest fixed point. Each persists uniquely: on the crest section, which stays transverse for nearby parameters, the return map is $C^1$ in the state and the parameters, and $I-M$ is invertible because neither transverse multiplier equals $1$, so the implicit-function theorem applies. No other cycle can appear at sufficiently nearby parameters, because compactness would give one of those existing cycles as a limit and contradict local uniqueness. The count is therefore locally constant and is constant on each connected path image avoiding $\cN$.
+
+If the fixed-rate interval $[k_0,k_1]$ contained no neutral cycle, its count would remain the initial value one. Thus a neutral cycle occurs; it is not at $k_0$ because the starting cycle is hyperbolic. The other transverse multiplier is determined by their product \eqref{eq:multipliers}.
+\end{proof}
+Since $AT=(a_0+b_0)T_{\rm phys}$, Theorem~\ref{thm:neutral} proves Theorem~\ref{thm:main}. Along a compact path, the only possible loss of hyperbolicity is an additional $+1$: period doubling and a nonreal transverse pair are excluded by Proposition~\ref{prop:multipliers}, and escape to the boundary of the state space, collapse onto the equilibrium and an infinite least period are excluded by Theorem~\ref{thm:compact}. A generic fold is one possible event, but genericity is neither proved nor required.
+
+\begin{corollary}[The set of parameters with a unique attracting cycle]\label{obs:cor:uniqueset}
+Let $\cP_1$ be the set of $(\mu,k)\in\cP$ at which every cycle has $\lambda_c<0$. At each point of $\cP_1$ there is exactly one cycle. The set $\cP_1$ is open in $\cP$ and its boundary relative to $\cP$ is contained in $\cN$. It contains the collar of Lemma~\ref{lem:collar} for every $\mu$ and the large-gain region of Theorem~\ref{thm:largegain}. If $\cN=\emptyset$, then $\cP_1=\cP$.
+\end{corollary}
+\begin{proof}
+Uniqueness at points of $\cP_1$ is Corollary~\ref{cor:criterion}(ii). Let $(\mu_0,k_0)\in\cP_1$ with its unique cycle $\Gamma_0$, and suppose parameters $(\mu_n,k_n)\to(\mu_0,k_0)$ carry cycles $\Gamma_n$ with $\lambda_c(\Gamma_n)\ge0$. By Theorem~\ref{thm:compact}(d) a subsequence converges, with crests, periods and $C^1$ convergence on compact time intervals, to a cycle at $(\mu_0,k_0)$, which is $\Gamma_0$. The crest-return derivative depends continuously on the crest and the parameters, so $m_t(\Gamma_n)\to m_t(\Gamma_0)<1$ and $T_n\to T_0$, contradicting $\lambda_c(\Gamma_n)\ge0$. Hence $\cP_1$ is open.
+
+Let $(\mu,k)\in\cP$ be a boundary point of $\cP_1$ and suppose $(\mu,k)\notin\cN$. Every cycle at $(\mu,k)$ is then hyperbolic, and by Theorem~\ref{thm:neutral} the number of cycles is constant near $(\mu,k)$; it equals one, its value at nearby points of $\cP_1$. The unique cycle at $(\mu,k)$ is hyperbolic and has $\lambda_c\le0$ by Corollary~\ref{cor:criterion}(i), so $\lambda_c<0$ and $(\mu,k)\in\cP_1$. This contradicts the openness of $\cP_1$, since a boundary point of an open set does not belong to it. Hence the boundary lies in $\cN$. The inclusions are Lemma~\ref{lem:collar} and Theorem~\ref{thm:largegain} with Corollary~\ref{cor:lgreciprocal}. Finally $\cP$ is connected and $\cP_1$ is nonempty and open; if $\cN=\emptyset$ its relative boundary is empty, so $\cP_1=\cP$.
+\end{proof}
+
+\begin{remark}[Two ways of localising a failure of uniqueness]\label{obs:rem:twoways}
+Corollary~\ref{cor:criterion}(iii) and Theorem~\ref{thm:neutral} give different necessary conditions. If there are two cycles at $(\mu,k_1)$, the first provides, at that same parameter and without any continuation, a cycle with $\lambda_c\ge0$. The second provides an exactly neutral cycle at some $k_*\le k_1$ on the fixed-$\mu$ path from the collar. The first is the statement used in Section~\ref{sec:largegain}: it suffices to bound $\avg\eta$ on every cycle at the parameter in question. Neither statement asserts that a neutral cycle changes the count.
+\end{remark}
+
+\begin{corollary}[Equivalent tests and a necessary variance window]\label{cor:neutralconditions}
+For any nonconstant cycle, the following are equivalent:
+\begin{equation}\label{eq:neutralcriteria}
+m_t=1\quad\Longleftrightarrow\quad\avg\eta=\mu
+\quad\Longleftrightarrow\quad\tr M=1+e^{-AT}.
+\end{equation}
+Moreover
+\[
+\tr M-1-\det M=(m_t-1)(1-m_s),
+\]
+so its sign equals the sign of $\lambda_c$. At neutrality the eigenvalue $1$ of the two-dimensional return derivative is simple, with a strictly positive eigenvector.
+Let $\delta=k-\mu(1+\mu)>0$ and let $\eta_+$ be the bound of Lemma~\ref{lem:projectivebounds} for $x_+=\max x$ on the cycle. Every neutral nonconstant cycle must satisfy
+\begin{equation}\label{eq:variancewindow}
+\frac{\delta}{2+\mu+\eta_+}
+<\avg{(\eta-\mu)^2}
+<\frac{\delta}{2(1+\mu)-\min(\mu,1)}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+The multiplier formulas \eqref{eq:exponent} give \eqref{eq:neutralcriteria}; the trace identity follows by expansion, and trace and determinant do not depend on the section coordinates. The other return eigenvalue is $e^{-AT}<1$, and strict positivity of $M$ (Proposition~\ref{prop:crestmap}) gives the Perron eigenvector statement.
+At neutrality put $q=\eta-\mu$, so $\avg q=0$. Expanding $f_\mu(\mu+q)=\kH+(A^2+\mu)q+2Aq^2+q^3$ in $k=\avg{f_\mu(\eta)}$ gives
+\[
+\delta=2(1+\mu)\avg{q^2}+\avg{q^3}.
+\]
+By \eqref{eq:etaminbasic}, $q>-\min(\mu,1)$; also $q\le\eta_+-\mu$. Multiplying these bounds by $q^2$ and averaging gives \eqref{eq:variancewindow} with non-strict inequalities; both are strict. The continuous function $q$ has mean zero and is not identically zero, so it is negative on a nonempty open set and its variance is positive. For the upper bound in \eqref{eq:variancewindow}, $q^3>-\min(\mu,1)\,q^2$ wherever $q\ne0$, so $\avg{q^3}>-\min(\mu,1)\avg{q^2}$. For the lower bound, put $b=\eta_+-\mu$; then $b>0$, since $q\le b$ and $q$ takes positive values. On the open set where $q<0$ we have $q^3<0<bq^2$, and $q^3\le bq^2$ elsewhere, so $\avg{q^3}<b\avg{q^2}$.
+\end{proof}
+These conditions are necessary, not inconsistent. Excluding $\avg\eta=\mu$ on every nonconstant cycle would give uniqueness at every parameter, by Corollary~\ref{obs:cor:uniqueset}; this paper does so only in the regions listed there. A neutral cycle alone need not change the cycle count.

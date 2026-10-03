@@ -1,0 +1,9 @@
+mu=0.02 rho=1.5: as v6 (gap 1e-6, 4001 vertices): 5962/6000 inside; flagged points sit on spiral turns 76..82 of 83 (crest gaps to cycle: 7.95e-05)
+mu=0.02 rho=1.5: gap 1e-6, 160001 vertices: 6000/6000 inside
+mu=0.02 rho=1.5: gap 1e-3, 160001 vertices: 6000/6000 inside
+mu=0.3 rho=4.0: as v6 (gap 1e-6, 4001 vertices): 5978/6000 inside; flagged points sit on spiral turns 13..13 of 14 (crest gaps to cycle: 1.05e-03)
+mu=0.3 rho=4.0: gap 1e-6, 160001 vertices: 6000/6000 inside
+mu=0.3 rho=4.0: gap 1e-3, 160001 vertices: 6000/6000 inside
+mu=0.02 rho=12.0: as v6 (gap 1e-6, 4001 vertices): 5993/6000 inside; flagged points sit on spiral turns 11..12 of 13 (crest gaps to cycle: 2.87e+00)
+mu=0.02 rho=12.0: gap 1e-6, 160001 vertices: 5999/6000 inside; flagged points sit on spiral turns 12..12 of 13 (crest gaps to cycle: 4.11e-01)
+mu=0.02 rho=12.0: gap 1e-3, 160001 vertices: 6000/6000 inside

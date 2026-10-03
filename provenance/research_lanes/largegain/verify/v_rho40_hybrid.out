@@ -1,0 +1,47 @@
+== mu=1.0 k=80.0  lambda=80 rho=40  section-map increments: 2.0e-01 0.0e+00 0.0e+00
+   T=107.433  T*mu/lambda=1.34291  T_-=107.272 T_+=0.16106  p_k/lambda=0.999848  D=7969 h=7.9246
+   s_w=4.6239 s_0=6.5045 tau_1=0.11337  M_+/p_k^2=1.3411  W_c=4877.8  int eta=14.7 (spike 5.28 + trough 9.421)
+   <eta>=1.368338e-01  <eta>/mu=1.368e-01  log m_t=(<eta>-mu)T=-92.7323
+   [ok  ] sanity L5a: M_+ = w_d+P_d+|w_k|+p_k (cycle closure)  rel=2.1e-16
+   [ok  ] sanity F6: <x> = k  <x>/k=1.000000000
+   [ok  ] L6: T_+ < pi/omega  T_+=0.16106 pi/omega=0.84722
+   [ok  ] L6: T_- > T_0(k)  
+   [ok  ] F4: T > 2pi/sqrt(mu)  
+   [ok  ] F2: Lambda_E > 0 (spike + trough samples)  min=2.106e+02
+   [ok  ] F5: h <= H = log M0, p<=lambda, y>=-1e-10 (strict margins ~e^{-mu T} are below double precision; y starts at underflowed 0)  h=7.9246 H=8.7889 lam-max p=0.000e+00 min y=-1.945e-14
+   [ok  ] L7: w_d>0, w_k<0, W_c>0, w(trough)<0, s_w<s_0  
+   [ok  ] L8: |U(s_w/2)| >= k c_i(s_w)(1-e^-v)  v=5679.7 rhs=4934.1
+   [ok  ] L8: D >= phi2 k c_i(s_w)  D=7969.2 rhs=3931.5
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=294.14 rhs=82.646
+   [ok  ] L9: D - v_w >= k phi(s_w) c_ii(u)  211.49 >= 96.606
+   [ok  ] L9: P_w < (gamma_E - mu) v_w  ratio=0.009479
+   [ok  ] L9: D >= phi2 k c_ii(u)  D=7969.2 rhs=76.976
+   [ok  ] L10a: T_- - s_0 >= p_k/k ; D >= p_k^2/(2k)  100.77>=0.99985; 7969.2>=39.988
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k)  100.742 >= 14.1131
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l); p_k >= p(s_l) - mu l  p(s_l)/lam=0.999979 rhs/lam=0.864665
+   [ok  ] L10d: tau_b < 0.36 (and k c_b(tau_b) < l/phi_l)  tau_b=0.025
+   mu=1.0 k=80.0: min(lambda-p) on trough (closed form) = 0.000e+00 ; on spike part = 0.000e+00 ; lambda*exp(-mu*t_r) = 4.786e-45
+== mu=0.6 k=38.4  lambda=64 rho=40  section-map increments: 2.0e-01 0.0e+00 0.0e+00
+   T=143.242  T*mu/lambda=1.34289  T_-=143.039 T_+=0.20256  p_k/lambda=0.999857  D=8481 h=7.9891
+   s_w=4.8981 s_0=8.8355 tau_1=0.14273  M_+/p_k^2=1.3412  W_c=3121.8  int eta=10.496 (spike 5.232 + trough 5.264)
+   <eta>=7.327296e-02  <eta>/mu=1.221e-01  log m_t=(<eta>-mu)T=-75.4494
+   [ok  ] sanity L5a: M_+ = w_d+P_d+|w_k|+p_k (cycle closure)  rel=1.7e-16
+   [ok  ] sanity F6: <x> = k  <x>/k=1.000000000
+   [ok  ] L6: T_+ < pi/omega  T_+=0.20256 pi/omega=1.0834
+   [ok  ] L6: T_- > T_0(k)  
+   [ok  ] F4: T > 2pi/sqrt(mu)  
+   [ok  ] F2: Lambda_E > 0 (spike + trough samples)  min=1.311e+02
+   [ok  ] F5: h <= H = log M0, p<=lambda, y>=-1e-10 (strict margins ~e^{-mu T} are below double precision; y starts at underflowed 0)  h=7.9891 H=8.8534 lam-max p=0.000e+00 min y=-5.656e-14
+   [ok  ] L7: w_d>0, w_k<0, W_c>0, w(trough)<0, s_w<s_0  
+   [ok  ] L8: |U(s_w/2)| >= k c_i(s_w)(1-e^-v)  v=5042.9 rhs=3301.6
+   [ok  ] L8: D >= phi2 k c_i(s_w)  D=8481.1 rhs=2630.7
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=539.32 rhs=113.54
+   [ok  ] L9: D - v_w >= k phi(s_w) c_ii(u)  709.63 >= 262.94
+   [ok  ] L9: P_w < (gamma_E - mu) v_w  ratio=0.02083
+   [ok  ] L9: D >= phi2 k c_ii(u)  D=8481.1 rhs=209.51
+   [ok  ] L10a: T_- - s_0 >= p_k/k ; D >= p_k^2/(2k)  134.2>=1.6664; 8481.1>=53.318
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k)  134.173 >= 21.0148
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l); p_k >= p(s_l) - mu l  p(s_l)/lam=0.999981 rhs/lam=0.864665
+   [ok  ] L10d: tau_b < 0.36 (and k c_b(tau_b) < l/phi_l)  tau_b=0.03125
+   mu=0.6 k=38.4: min(lambda-p) on trough (closed form) = 0.000e+00 ; on spike part = 0.000e+00 ; lambda*exp(-mu*t_r) = 6.408e-36
+FAILS: none

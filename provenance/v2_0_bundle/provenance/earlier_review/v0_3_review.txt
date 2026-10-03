@@ -1,0 +1,396 @@
+# Review: *No escape and global cycle uniqueness in a singular wedge of the Wilhelm–Heinrich oscillator*
+
+**Recommendation: Minor revisions.**  
+**Provisional REF assessment: strong 3★ overall.**
+
+Manuscript references below refer to the supplied wilhelm_heinrich_v0_3_manuscript.pdf[v0.3 paper](sandbox:/mnt/data/wilhelm_heinrich_v0_3_manuscript.pdf). The rerun logs, independently written checks, results and validation-bug demonstration are collected in the wilhelm_heinrich_v0_3_referee_checks.zip[referee-check bundle](sandbox:/mnt/data/wilhelm_heinrich_v0_3_referee_checks.zip).
+
+## 1. Executive assessment
+
+This manuscript presents a substantive mathematical advance: it promotes a locally selected periodic orbit to **global uniqueness throughout a precisely defined singular parameter wedge**, excluding hypothetical distant, unstable or disconnected periodic branches. Its strongest contribution is the compact-capture argument, which combines an exact logarithmic-filter moment identity, a pointwise corrected energy and an exact equation for departure from a slow invariant graph.
+
+My audit found **no fatal or major mathematical defect in that argument**. In particular, the manuscript does not confuse a compact visit with permanent confinement, does not assume the global slow manifold it needs to establish, and handles arbitrarily small positive distance from Hopf using an appropriately scaled return map rather than a nonuniform local bifurcation assertion.
+
+All supplied checks reproduce. Independently written symbolic calculations and integrations in different coordinates also support the reported results. I found one genuine, bounded software defect: a return diagnostic can report `passed=True` even when its sign-agreement check fails. All nine actual submitted signs nevertheless agree with their predictions.
+
+The remaining revisions concern proof traceability, primary-source positioning and diagnostic semantics—not replacement of the central proof. My assessment is **strong 3★**, rather than an established 4★ output: the paper makes a nonroutine contribution to a recognised problem, but its present scope and demonstrated methodological reach do not yet clearly establish world-leading significance.
+
+## 2. Scope and evidence limits
+
+This is a theoretical dynamical-systems paper with computational supplements, directed principally at researchers in nonlinear ordinary differential equations, singular perturbation theory and mathematical reaction-network dynamics.
+
+I inspected the complete 13-page manuscript, its LaTeX source, the supplied code, numerical evidence, claim and source ledgers, provenance material and self-audit. I checked the mathematical chain from the chemical equations through the global uniqueness theorem and Appendix A. I also verified the archive’s checksums before rerunning scripts that overwrite their evidence files.
+
+The review distinguishes three kinds of evidence:
+
+**Written mathematics:** the actual basis for the no-escape and uniqueness conclusions.
+
+**Exact computation:** symbolic verification of specified identities and expansions, not formal verification of the entire proof.
+
+**Floating-point diagnostics:** consistency and convergence checks on finitely many meshes and trajectories, not certified exclusion of other cycles.
+
+The inherited orbit meshes were audited as supplied; their original generation was not independently reconstructed. The full original 1996 Wilhelm–Heinrich paper was not obtained, so the priority assessment remains bounded by its publisher abstract and later full-text accounts.
+
+In the absence of journal-specific instructions, I have applied the standard of a specialist mathematical research journal: a clearly delimited original contribution, complete arguments, accurate dependence on prior results and reproducible supporting calculations.
+
+## 3. Contribution and positioning
+
+The strongest defensible thesis is:
+
+> For every bounded range of the rescaled distance above Hopf, sufficiently strong separation of the two filter rates makes the original Wilhelm–Heinrich oscillator possess exactly one positive nonconstant periodic orbit, and that orbit is hyperbolic attracting.
+
+More precisely, with
+\[
+\sigma=a+b,\qquad ab=1,\qquad
+\rho=\frac r\sigma,\qquad
+\nu=\sigma^2(\rho-1),
+\]
+Theorem 1.1 asserts that, for every finite \(N>0\), there is a common threshold \(S_N\) such that uniqueness holds whenever
+\[
+\sigma\ge S_N,\qquad 0<\nu\le N.
+\]
+
+The theorem also bounds **every possible periodic orbit** by
+\[
+\max_\Gamma H_0\le 2000(1+N),
+\]
+and concentrates its energy within \(O(\sigma^{-1})\) of the uniquely selected value \(E_\nu\).
+
+The distinction between **global in state space** and **global in parameter space** is essential. The manuscript establishes the former inside its wedge; it does not claim the latter.
+
+This is not simply the classical local Hopf result written in different variables. For fixed positive \(\nu\), the selected energy approaches a positive \(E_\nu\), even though \(\rho-1\to0\). A local bifurcation theorem with parameter-dependent neighbourhoods would not, by itself, exclude other cycles in this singular limit.
+
+The relevant prior distinction is also genuine. Smith establishes convergence to periodic orbits in the unstable-equilibrium regime, but not uniqueness of the attracting destination. Boros and Hofbauer explicitly retain the number of cycles of the original oscillator as an open question. The submitted theorem addresses that missing cycle-count conclusion in a restricted but nontrivial regime. [arXiv](https://arxiv.org/html/1109.5204v1)
+
+The most plausible original ingredients are the logarithmic-filter cubic identity, its use to obtain a parameter-uniform compact visit, and the capture mechanism that makes a compact slow-graph analysis globally exhaustive.
+
+## 4. Major comments
+
+**No major mathematical defect was identified.** The following are the principal revision and scrutiny points; their present scale is consistent with **minor revisions**.
+
+### 4.1 Make the persistence and differentiability dependencies completely explicit
+
+**Issue.** The proof’s most important imported result is parameter-dependent compact normally hyperbolic persistence. The required differentiability subsequently passes through several Taylor divisions.
+
+**Manuscript evidence.** Lemma 5.1 constructs a jointly \(C^k\) slow graph, suggesting \(k=12\). Lemma 5.2 needs uniform state derivatives of remainders, while Lemma 8.1 divides the return displacement by \(\varepsilon^3s\) and requires a jointly \(C^2\) extension.
+
+**Why it matters.** These steps appear compatible, but the reader should not have to reconstruct the full regularity accounting. In particular, the finite parameter interval should be placed within an appropriate smooth extension, and the retained differentiability after each division should be stated.
+
+**Required revision.** Add a short dependency paragraph giving the precise persistence theorem used, its compactness and parameter hypotheses, the chosen differentiability order, and the order retained after the divisions. This is a request for proof traceability, not a finding that the proposed construction fails. Eldering’s discussion of smooth parameter dependence supports the method used here. [Jaap Eldering](https://www.jaapeldering.nl/files/NHIM-noncompact-book.pdf)
+
+### 4.2 Position the result directly against the foundational papers
+
+**Issue.** The bibliography is too compressed for a paper whose significance depends on advancing an established model-specific question.
+
+**Manuscript evidence.** The introduction compares the result with Smith and Boros–Hofbauer, and discusses the preceding Evidence Press version, but the bibliography omits direct entries for Wilhelm and Heinrich’s 1995 and 1996 papers.
+
+**Why it matters.** Readers need to distinguish the original model, the existing local Hopf analysis, the later global convergence result and the present global cycle-count theorem. The publisher’s 1996 abstract specifically describes a centre-manifold and normal-form analysis near bifurcation; it does not establish the submitted global wedge theorem. [Springer](https://link.springer.com/article/10.1007/BF01165134)
+
+**Required revision.** Add the two primary references and a compact comparison paragraph. Preserve the disclosure that the original 1996 full text was not inspected unless that access gap is subsequently closed. Do not convert a bounded negative literature search into a priority claim.
+
+### 4.3 Correct the executable meaning of a successful diagnostic
+
+**Issue.** The numerical return-test success flag does not mean that the scientific diagnostic passed.
+
+**Manuscript evidence.** In `code/return_trials.py`, a successful return updates both
+`sign_matches_prediction=bool(delta*M>0)` and `passed=True`, independently of one another.
+
+**Decisive test.** I deliberately reversed the predictor in an isolated imported copy of the module, leaving the integrated dynamics unchanged. The resulting record contained:
+\[
+\texttt{sign\_matches\_prediction=False},\qquad
+\texttt{passed=True}.
+\]
+
+**Why it matters.** Automated consumers could treat successful integration as successful validation. This is particularly relevant to a machine-readable evidence bundle.
+
+**Required revision.** Separate successful integration, successful return detection and sign agreement. If `passed` denotes the combined scientific check, it must depend on all required conditions. The driver should also exit unsuccessfully when a required diagnostic fails.
+
+**Severity:** minor. All nine submitted sign checks are genuinely true, and the analytic theorem does not depend on them.
+
+## 5. Rigour, results and inference
+
+### 5.1 Reconstruction and the exact moment identity
+
+The scalar-to-chemical reconstruction in §2 is sound. Positivity of the reconstructed filter variables is established through their periodic stable-filter representations rather than assumed. The interchange of filter order is justified by commuting convolution operators; it is not an arbitrary relabelling of unequal equations.
+
+For
+\[
+q=(\log Y)',\qquad \delta=r-a-b,\qquad
+S=\langle q^2\rangle,
+\]
+Lemma 3.1 obtains
+\[
+q>-a,\qquad \langle q\rangle=0,\qquad
+\langle q^3\rangle=\delta S.
+\]
+
+I independently checked the general-rate identity, including a total-derivative representation. The support argument then gives
+\[
+0\le
+\left\langle(q+a)\left(q-\frac Sa\right)^2\right\rangle
+=(a+\delta)S-\frac{S^2}{a},
+\]
+hence \(S\le a(a+\delta)\).
+
+This is a useful exact constraint, not merely an asymptotic observation. The manuscript correctly limits its sharpness claim to the associated moment problem: the two-point extremising distribution is not asserted to be an attainable chemical cycle.
+
+### 5.2 The compact visit is established without assuming bounded amplitude
+
+Section 4 combines the moment bound with periodic filter estimates to control an average of \(H_0+w^2\). This forces every periodic orbit to visit the fixed compact set
+\[
+K_N=\{H_0+w^2\le750(1+N)\}.
+\]
+
+The crucial logical point is respected: **a bounded average gives a compact visit, not a uniform maximum bound**. A trajectory might otherwise make a short, arbitrarily distant excursion. The manuscript explicitly recognises this and supplies a separate argument to prevent it.
+
+I checked the displayed constant estimates and the use of the ordered rates. No circular dependence on the desired maximum-energy bound was found.
+
+### 5.3 The corrected energy provides the right kind of drift
+
+The slow-graph expansion through order three is consistent with its invariance equation. I independently derived the coefficients recursively and checked the cancellations in \(H^{(2)}\).
+
+The averaged third-order displacement is
+\[
+M_\nu(E)=J_2(E)\{\nu-\nu_*(E)\}.
+\]
+
+A negative average alone would not make a proposed capture boundary point inward at every point. The phase correction in §5 repairs precisely that problem:
+\[
+\mathcal H=H^{(2)}+\varepsilon^3\chi_\nu,
+\]
+with
+\[
+D_h\mathcal H
+=\varepsilon^3m_\nu(H_0)+\varepsilon^4\mathcal R,
+\qquad
+|\mathcal R|\le C H_0.
+\]
+
+I checked the sign in the cohomological equation defining \(\chi_\nu\). It is correct.
+
+The **energy-weighted remainder** is especially important. An unweighted \(O(\varepsilon^4)\) remainder would become inadequate when energy tends to zero. The manuscript obtains the stronger estimate from uniform Taylor control and vanishing value and first state derivative at the equilibrium. That reasoning is coherent.
+
+### 5.4 The no-escape construction closes the stated gap
+
+This is the strongest part of the paper.
+
+Set
+\[
+\eta=w-h(u,v;\varepsilon,\nu).
+\]
+Subtracting the graph equation from the full equation gives
+\[
+\eta'=-(\varepsilon^{-1}+h_v)\eta.
+\]
+
+This equation is **exact**, not a linearisation near the graph. Consequently, the proof may use it even when the vertical displacement is large, provided the base point remains within the graph’s fixed domain.
+
+For
+\[
+V=\mathcal H+C_*\varepsilon|\eta|,
+\]
+the manuscript derives
+\[
+D^+V\le D_h\mathcal H-|\eta|.
+\]
+
+The boundary argument then covers both possibilities. Where the energy contribution is large, the selector inequality makes the corrected drift negative. Where it is not large, the vertical displacement must be sufficiently large for \(-|\eta|\) to dominate.
+
+The order of construction avoids circularity:
+
+The graph is first constructed on a prescribed finite disk. The capture set is then shown to remain strictly inside that disk. Every periodic orbit visits \(K_N\), which lies inside the capture set for sufficiently small \(\varepsilon\). Forward invariance captures the orbit; periodicity places its entire trajectory there. Finally, exact normal contraction over a period forces \(\eta\equiv0\).
+
+**I found no missing “remote-cycle” case in this chain.** No period upper bound is required, and a global invariant graph on the original unbounded state space is not assumed.
+
+### 5.5 Energy localisation is uniform down to the equilibrium
+
+At extrema of \(\mathcal H\) along a cycle, the weighted drift yields
+\[
+|\nu-\nu_*(E)|\le C\varepsilon.
+\]
+
+The division by energy is justified by the weighted remainder and by the positive continuous extension of
+\[
+k(E)=\frac{J_2(E)}{T(E)E}
+\]
+to \(E=0\). Together with \(\nu_*'(E)\ge4/5\), this gives the stated uniform energy localisation.
+
+Importantly, localisation is not treated as sufficient by itself to prove uniqueness at the degenerating Hopf endpoint. Section 8 supplies an additional argument.
+
+### 5.6 The small-\(\nu\) return-map argument addresses the genuine endpoint difficulty
+
+For positive \(\nu\) bounded away from zero, the simple zero of the averaged displacement gives the expected return-map argument.
+
+Near \(\nu=0\), the manuscript instead considers
+\[
+D(s;\varepsilon,\nu)
+=\frac{P(s;\varepsilon,\nu)-s}{\varepsilon^3s}.
+\]
+
+Its cancellation and smooth-division argument produces the required extension, with
+\[
+D(s;0,\nu)
+=\pi\nu-\frac{\pi}{2}s^2+O(\nu s^2+s^4),
+\qquad
+D_{ss}(0;0,0)=-\pi.
+\]
+
+The decisive further step is the **exact sign at zero amplitude**. Instability of the equilibrium for positive \(\varepsilon,\nu\) gives \(P_s(0)>1\), hence \(D(0)>0\), without requiring an asymptotic remainder to be smaller than an arbitrarily tiny \(\nu\).
+
+As an additional independent check, the characteristic equation gives
+\[
+\left.\frac{\partial\,\Re\lambda}{\partial\nu}\right|_{\nu=0}
+=\frac{\varepsilon^3}{2(1+\varepsilon^2)}>0.
+\]
+
+Strict concavity, positivity at zero and negativity at the outer section point then give exactly one positive fixed point. The multiplier argument establishes attraction, and monotonicity excludes higher-period points of the planar return map.
+
+This is substantially stronger than simply invoking “supercritical Hopf” without controlling how its neighbourhood behaves in the singular limit.
+
+### 5.7 The selector inequality is analytically supported
+
+Appendix A proves the needed integral-concavity statement using a one-dimensional transport argument. I checked the minimisation step, the tangent-line integration and the resulting estimate
+\[
+\frac{BA'}{A^2}\le\frac9{10},
+\qquad
+\nu_*'(E)\ge\frac45.
+\]
+
+The appendix therefore supplies an analytic global selector inequality. Its numerical verification is corroboration, not the proof.
+
+### 5.8 Computational audit
+
+The following results are recorded in the downloadable referee bundle.
+
+| Check | Outcome |
+|---|---|
+| Original archive integrity | **32/32** file hashes matched |
+| Supplied exact symbolic checks | **32/32** passed |
+| Supplied inherited-mesh diagnostics | **12/12** passed |
+| Supplied full-system returns | **9/9** returned; every displacement sign agreed |
+| Independently written exact checks | **17/17** passed |
+| Independent selector quadrature | 101 energies from \(10^{-4}\) to \(10^3\); minimum sampled slope **0.80079415** |
+| Independent chemical-coordinate integrations | **9/9** signs agreed; maximum relative discrepancy from the supplied scaled displacements **\(1.63\times10^{-7}\)** |
+
+The independent integrations used **DOP853 in chemical coordinates**, rather than the supplied **Radau integration of the scalar third-order equation**. This provides a useful cross-formulation check.
+
+The mesh audit reproduced a maximum relative cubic-balance discrepancy of approximately \(1.62\times10^{-9}\), and a maximum ratio
+\[
+\frac{\langle q^2\rangle}{a(a+\delta)}
+\approx0.7580.
+\]
+
+The return tests also show why numerical agreement should not be overstated. At \(E=20\), the relative discrepancy from the leading averaged displacement is approximately **25.1%, 14.3% and 7.47%** for \(\sigma=32,64,128\). That is consistent with convergence, but not with uniformly high accuracy of the leading approximation at those finite parameters. The manuscript reports this limitation appropriately.
+
+The trajectory-convergence corollary also uses its external input correctly: Smith supplies convergence to some periodic orbit, and the new uniqueness theorem identifies which one. It is not an unsupported claim that the capture set absorbs every positive initial condition. [arXiv](https://arxiv.org/html/1109.5204v1)
+
+## 6. External literature check
+
+**Search date:** 2 October 2026.
+
+**Resources used:** live web search, arXiv full texts, publisher records, an author-hosted invariant-manifold monograph and official REF guidance.
+
+Representative searches combined “Wilhelm”, “Heinrich”, “uniqueness”, “periodic orbit”, “limit cycles”, “singular perturbation” and 2025–2026 date terms, followed by exact-title and DOI checks. The search prioritised the original differential equation, while screening nearby reaction-network papers for potentially misleading similarities. This was **not an exhaustive systematic search**.
+
+**Wilhelm and Heinrich, 1995 and 1996.** Publisher records establish the foundational model paper and the subsequent mathematical analysis. The 1996 abstract describes local bifurcation analysis using centre manifolds and normal forms. These are necessary primary references, but my assessment of their detailed scope is limited by lack of access to the complete original articles. [Springer](https://link.springer.com/article/10.1007/BF01165134)
+
+**Smith, 2012 — full text inspected.** Theorem 1.1(c) supplies the relevant global convergence result and finiteness of periodic orbits in the unstable-equilibrium regime. It does not supply the uniqueness theorem claimed here. The submitted corollary is therefore a legitimate combination, rather than a duplicate result. [arXiv](https://arxiv.org/html/1109.5204v1)
+
+**Boros and Hofbauer, 2023 — full text inspected.** Their discussion of the original Wilhelm–Heinrich oscillator, particularly Theorem 13 and the following paragraph, explicitly retains the cycle-count problem. Their mass-conserving extension is a different system; its more complicated dynamics neither contradict nor pre-empt the submitted result. [arXiv](https://arxiv.org/html/2202.11034v2)
+
+**Eldering, 2013 — relevant sections inspected.** The discussion of smooth parameter dependence supports the compact persistence approach. The manuscript does not need the stronger assertion of a globally persistent noncompact slow manifold. [Jaap Eldering](https://www.jaapeldering.nl/files/NHIM-noncompact-book.pdf)
+
+**Salih, 2025 — model and principal result inspected.** This newer paper concerns centre bifurcation for a different three-dimensional bimolecular mass-action system. Its one-cycle bifurcation conclusion is not global uniqueness for the Wilhelm–Heinrich equations. It was screened because the title and terminology could otherwise create a false priority match. [EJPAM](https://www.ejpam.com/ejpam/article/view/6752/2504)
+
+**Literature conclusion:** I found no inspected source establishing the submitted bounded-wedge global theorem. That supports treating the result as a plausible original contribution, but does not establish priority conclusively.
+
+## 7. Minor comments
+
+**Version citation.** Replace the informal reference to “the prior v0.2 manuscript” with a stable version identifier or archived citation. The present proof is sufficiently self-contained that the reader should not need that earlier version, but provenance should remain traceable.
+
+**Bibliography presentation.** Move detailed retrieval notes from bibliographic entries into the source ledger or a short literature-access statement. Retain the substantive disclosure concerning the unavailable original 1996 full text.
+
+**Numerical reporting.** Retain the existing distinction between mesh diagnostics, initial-value return tests and analytic proof. After repairing the validation predicate, report successful integration and successful scientific checks separately.
+
+**Threshold terminology.** Preserve the present warning that the preliminary explicit parameter bound is not the full uniqueness threshold. The absence of a numerical \(S_N\) is not a defect in an existential theorem, but must not disappear in a release summary.
+
+## 8. Prioritised revision plan
+
+### Must fix before final publication
+
+Repair the diagnostic success semantics and failure exit status. Add the foundational references and a direct comparison with prior local and global results. Make the persistence theorem and finite-differentiability dependencies explicit.
+
+**This review does not require a new central mathematical argument.**
+
+### Should fix to strengthen the paper
+
+Add a compact proof-dependency summary explaining where uniformity in \(N\), energy and small amplitude enters. A short paragraph identifying which ingredients are model-specific would sharpen the significance claim: the exact filter balance and defect equation appear more distinctive than the standard persistence machinery itself.
+
+Close the original-paper access gap before making any stronger priority statement.
+
+### Could improve applicability or future work
+
+A certified finite-parameter instance—for example, an explicit admissible threshold for one fixed \(N\)—would make the theorem easier to apply. It is not required for publication of the present existential result.
+
+The most promising route to substantially greater significance is to show that the compact-visit-plus-exact-defect capture mechanism works beyond this oscillator, rather than merely polishing the existing numerical diagnostics.
+
+## 9. Editorial recommendation
+
+**Minor revisions.**
+
+My confidence is **moderately high in the mathematical assessment**, and **moderate in the originality and significance calibration**, chiefly because the literature search was bounded.
+
+The central reason for recommending publication after revision is that the paper addresses the actual global obstruction: it excludes unseen remote periodic orbits before relying on a planar return-map count. The endpoint argument also deals explicitly with a potentially nonuniform limit.
+
+A demonstrated failure of the stated smooth persistence construction, or an earlier equivalent global theorem, would change this recommendation. Neither was found. The software defect is real but does not overturn the paper’s analytic conclusion.
+
+## 10. Provisional REF calibration
+
+The most appropriate disciplinary home is **Unit of Assessment 10: Mathematical Sciences**, within Main Panel B. [REF 2029](https://2029.ref.ac.uk/panels/main-and-sub-panels/main-panel-b/)
+
+I checked current REF2029 guidance. Its overview still describes the detailed panel criteria and working methods as forthcoming, and says the quality-rating system will be specified in that guidance. Accordingly, the star calibration below uses the **published REF2021 Main Panel B definitions as an explicitly provisional benchmark**, not as confirmed REF2029 panel rules. [REF 2029](https://2029.ref.ac.uk/guidance/section-1-overview/)
+
+Those definitions distinguish work making important internationally excellent contributions from work with the novelty, influence or field-leading character associated with the highest category. The distinction is not determined by paper length, journal prestige or whether an output resolves an entire named conjecture. [REF 2021](https://2021.ref.ac.uk/media/1450/ref-2019_02-panel-criteria-and-working-methods.pdf)
+
+| Dimension | Provisional rating | Rationale | Confidence |
+|---|---:|---|---|
+| **Originality** | **3★** | A nonroutine combination of an exact moment constraint, compact capture and a uniform endpoint return map. No equivalent theorem was found, but primary-source priority checking remains incomplete. | Moderate |
+| **Significance** | **3★** | A meaningful global cycle-count result for an established oscillator and a recognised unresolved question. Present coverage is a singular wedge; broader methodological influence is plausible but not yet demonstrated. | Moderately high |
+| **Rigour** | **3★ — strong** | The argument controls compactness, graph membership, weighted remainders and endpoint degeneration. Independent checks support its algebra and numerical reporting. Remaining revisions concern explicit dependencies and diagnostic robustness. | Moderately high |
+| **Overall output quality** | **3★ — strong** | A substantial specialist contribution, beyond a routine calculation or local bifurcation note, but not yet a clearly established world-leading output. | Moderate |
+
+### Why not 4★ now?
+
+**Not because the all-parameter conjecture remains open.** A restricted theorem can certainly merit 4★. Nor does the absence of a formal proof-assistant certificate disqualify ordinary rigorous mathematics.
+
+The reservation is about the **demonstrated scale of the contribution**. The paper currently establishes a strong theorem for one model in one asymptotic regime. Its most interesting mechanism may have broader reach, but that reach is not yet established by a general result or another substantive application.
+
+Correcting the bibliography and software will improve the paper; those corrections alone do not establish 4★ significance. A broader uniform theorem, or a reusable capture theorem demonstrated on another difficult system, would provide a more convincing basis for reconsideration.
+
+**Overall judgement: a credible, strong 3★ Evidence Press candidate. The no-escape proof appears to succeed within its stated scope.** This is an indicative assessment, not an official REF panel decision or an eligibility determination.
+
+## 11. References
+
+### Wilhelm–Heinrich oscillator and related reaction-network dynamics
+
+Wilhelm, T., & Heinrich, R. (1995). Smallest chemical reaction system with Hopf bifurcation. *Journal of Mathematical Chemistry, 17*, 1–14. DOI: **10.1007/BF01165134**. Publisher abstract and metadata consulted. [Springer](https://link.springer.com/article/10.1007/BF01165134)
+
+Wilhelm, T., & Heinrich, R. (1996). Mathematical analysis of the smallest chemical reaction system with Hopf bifurcation. *Journal of Mathematical Chemistry, 19*, 111–130. DOI: **10.1007/BF01165179**. Publisher abstract and metadata consulted. [Springer](https://link.springer.com/article/10.1007/BF01165179)
+
+Smith, H. L. (2012). Global dynamics of the smallest chemical reaction system with Hopf bifurcation. *Journal of Mathematical Chemistry, 50*, 989–995. DOI: **10.1007/s10910-011-9946-9**. [arXiv](https://arxiv.org/html/1109.5204v1)
+
+Boros, B., & Hofbauer, J. (2023). Some minimal bimolecular mass-action systems with limit cycles. *Nonlinear Analysis: Real World Applications, 72*, Article 103839. DOI: **10.1016/j.nonrwa.2023.103839**. [arXiv](https://arxiv.org/html/2202.11034v2)
+
+Salih, R. H. (2025). Center bifurcation for the smallest bimolecular mass-action system. *European Journal of Pure and Applied Mathematics, 18*(4), Article 6752. DOI: **10.29020/nybg.ejpam.v18i4.6752**. [EJPAM](https://www.ejpam.com/ejpam/article/view/6752/2504)
+
+### Invariant-manifold theory
+
+Eldering, J. (2013). *Normally hyperbolic invariant manifolds: The noncompact case*. Atlantis Press. DOI: **10.2991/978-94-6239-003-4**. Relevant sections of the author-hosted 2018 version consulted. [Jaap Eldering](https://www.jaapeldering.nl/files/NHIM-noncompact-book.pdf)
+
+### REF assessment framework
+
+Research Excellence Framework. (2019). *Panel criteria and working methods* (REF 2019/02). Main Panel B, paragraph 202, pp. 36–37. [REF 2021](https://2021.ref.ac.uk/media/1450/ref-2019_02-panel-criteria-and-working-methods.pdf)
+
+Research Excellence Framework. (n.d.). *Section 1—Overview*. REF2029. Retrieved 2 October 2026. [REF 2029](https://2029.ref.ac.uk/guidance/section-1-overview/)
+
+Research Excellence Framework. (2026, June 1). *Main Panel B—Physical sciences, engineering and mathematics*. REF2029. [REF 2029](https://2029.ref.ac.uk/panels/main-and-sub-panels/main-panel-b/)

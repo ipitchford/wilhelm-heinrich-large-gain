@@ -1,0 +1,26 @@
+PASS  L3[1]=x
+PASS  L3[U]=k g(U)
+PASS  L3[p]=0
+PASS  L3[p']=-x p^2
+PASS  L3[y]=x(k+p^2)
+PASS  L3[lambda-p]... Q[q]=x
+PASS  L3[a]=0
+PASS  r''+(A-3r)r'+chi(r)=x
+PASS  L3[1] = L2'[(D+r)1]
+PASS  L3[U] = L2'[(D+r)U]
+PASS  L3[p'] = L2'[(D+r)p']
+PASS  L3[y] = L2'[(D+r)y]
+PASS  L3[p] = L2'[(D+r)p]
+PASS  L2'[r]=x
+PASS  Psi' = -J^T Psi
+PASS  Psi.z'=0
+PASS  theta'
+PASS  (theta-r)' at zero
+PASS  (y'/p+s)' at zero = s psi_p/p
+PASS  (y'/p'-s/r)' at zero = x psi_p/(r p')
+PASS  L''(t1)
+PASS  compound w'=C w
+PASS  (v x u)' = (tr J - J^T)(v x u)
+PASS  chord remainder
+PASS  scaled residual
+25/25 exact identities pass

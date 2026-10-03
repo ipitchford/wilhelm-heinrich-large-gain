@@ -1,0 +1,54 @@
+{
+ "schema_version": "3.0",
+ "name": "v3_largegain_lemmas_small_mu_supplement",
+ "kind": "floating_point_diagnostic",
+ "passed": false,
+ "counts": {
+  "attempted": 37,
+  "passed": 36,
+  "failed": 1
+ },
+ "worst_residuals": {},
+ "parameters": {
+  "mu": 0.02,
+  "k": 1000.0
+ },
+ "seconds": 420.52171112500946,
+ "scope": "One computed cycle; supplementary, retained with its unresolved comparison.",
+ "not_interval_certified": true,
+ "note": "Author script at mu = 0.02, k = 1000 (lambda = 50000, T about 3.26e6).  The comparison \"C: M+ < k T-\" is equivalent to the positivity of the integral of x over the negative lobe, which is of order k/p_k; M+ and k T- are of order 3e9 and M+ is obtained by trapezoid quadrature on 400001 nodes, whose relative error (measured by the mass-identity comparison of the same run, about 7e-12) exceeds the relative gap of the two sides.  The comparison is below the resolution of the script; it is reported as failed, not relabelled.  The referee integrator covers this parameter pair in v3_largegain_lemmas (group A).",
+ "part_of_default_run": false,
+ "unresolved_comparison": {
+  "name": "C: M+ < k T-",
+  "lhs": 3259811286.0827665,
+  "rhs": 3259811286.081722,
+  "relative_gap": 3.204940783177964e-13
+ },
+ "records": [
+  {
+   "group": "B author cycles",
+   "id": "mu_0.02_k_1000",
+   "mu": 0.02,
+   "k": 1000.0,
+   "attempted": 37,
+   "n_passed": 36,
+   "failed_comparisons": [
+    {
+     "name": "C: M+ < k T-",
+     "lhs": 3259811286.0827665,
+     "op": "<=",
+     "rhs": 3259811286.081722,
+     "passed": false
+    }
+   ],
+   "passed": false,
+   "T": 3259811.2867276818,
+   "T_mu_over_lambda": 1.3039245146910727,
+   "pk_over_lambda": 0.9999999999920013,
+   "log_mt": -65173.34039958629,
+   "mean_eta_over_mu": 0.00035102238986228773,
+   "lambda_tau_c": 45.113205181754175,
+   "seconds": 420.07488107681274
+  }
+ ]
+}

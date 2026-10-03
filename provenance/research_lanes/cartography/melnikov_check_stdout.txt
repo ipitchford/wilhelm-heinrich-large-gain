@@ -1,0 +1,6 @@
+h=0.1: period=6.28589308  oint U_s^2 = 0.032496837075  oint U_ss^2 = 0.032496837075  relative difference = 3.57e-14
+h=0.5: period=6.36128759  oint U_s^2 = 0.940245402529  oint U_ss^2 = 0.940245402529  relative difference = 2.75e-14
+h=1.0: period=6.66385602  oint U_s^2 = 4.649326938597  oint U_ss^2 = 4.649326938597  relative difference = 4.39e-15
+h=2.0: period=8.58521394  oint U_s^2 = 32.689271775550  oint U_ss^2 = 32.689271775549  relative difference = 2.67e-14
+h=4.0: period=21.17100754  oint U_s^2 = 747.752081762598  oint U_ss^2 = 747.752081762538  relative difference = 8.06e-14
+h=6.0: period=56.90838883  oint U_s^2 = 15244.408340875078  oint U_ss^2 = 15244.408340874570  relative difference = 3.33e-14

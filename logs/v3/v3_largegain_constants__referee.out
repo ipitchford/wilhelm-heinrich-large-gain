@@ -1,0 +1,97 @@
+[ok  ] v2 root, phi2<=1-exp(-v2) v2=1.5936243 1-e^-v2=0.79681213
+[ok  ] v/(1-e^-v) increasing (grid) 
+[ok  ] c_i closed form a=0.36 
+[ok  ] c_ii closed form a=0.36 
+[ok  ] Psi_mu closed form mu=0.02 a=0.36 
+[ok  ] Psi_mu>=Psi_1 mu=0.02 a=0.36 
+[ok  ] Psi_mu closed form mu=0.3 a=0.36 
+[ok  ] Psi_mu>=Psi_1 mu=0.3 a=0.36 
+[ok  ] Psi_mu closed form mu=1.0 a=0.36 
+[ok  ] Psi_mu>=Psi_1 mu=1.0 a=0.36 
+[ok  ] c_i closed form a=1.48 
+[ok  ] c_ii closed form a=1.48 
+[ok  ] Psi_mu closed form mu=0.02 a=1.48 
+[ok  ] Psi_mu>=Psi_1 mu=0.02 a=1.48 
+[ok  ] Psi_mu closed form mu=0.3 a=1.48 
+[ok  ] Psi_mu>=Psi_1 mu=0.3 a=1.48 
+[ok  ] Psi_mu closed form mu=1.0 a=1.48 
+[ok  ] Psi_mu>=Psi_1 mu=1.0 a=1.48 
+[ok  ] c_i closed form a=1.99 
+[ok  ] c_ii closed form a=1.99 
+[ok  ] Psi_mu closed form mu=0.02 a=1.99 
+[ok  ] Psi_mu>=Psi_1 mu=0.02 a=1.99 
+[ok  ] Psi_mu closed form mu=0.3 a=1.99 
+[ok  ] Psi_mu>=Psi_1 mu=0.3 a=1.99 
+[ok  ] Psi_mu closed form mu=1.0 a=1.99 
+[ok  ] Psi_mu>=Psi_1 mu=1.0 a=1.99 
+[ok  ] c_i closed form a=2.06 
+[ok  ] c_ii closed form a=2.06 
+[ok  ] Psi_mu closed form mu=0.02 a=2.06 
+[ok  ] Psi_mu>=Psi_1 mu=0.02 a=2.06 
+[ok  ] Psi_mu closed form mu=0.3 a=2.06 
+[ok  ] Psi_mu>=Psi_1 mu=0.3 a=2.06 
+[ok  ] Psi_mu closed form mu=1.0 a=2.06 
+[ok  ] Psi_mu>=Psi_1 mu=1.0 a=2.06 
+[ok  ] c_i closed form a=3.0 
+[ok  ] c_ii closed form a=3.0 
+[ok  ] Psi_mu closed form mu=0.02 a=3.0 
+[ok  ] Psi_mu>=Psi_1 mu=0.02 a=3.0 
+[ok  ] Psi_mu closed form mu=0.3 a=3.0 
+[ok  ] Psi_mu>=Psi_1 mu=0.3 a=3.0 
+[ok  ] Psi_mu closed form mu=1.0 a=3.0 
+[ok  ] Psi_mu>=Psi_1 mu=1.0 a=3.0 
+omega0(K0)= 8.04673847  T0(K0)= 5.892767169
+[ok  ] T0(K0) >= a1+a2+a3+a4 = 5.89 margin=0.00276717
+[ok  ] omega>=omega0(k), gamma_E-mu<k^(1/3)+1, gamma_E^3>k on grid min omega/omega0=1.00311
+[ok  ] K0 c_i(a1) >= 2 1388.7403
+[ok  ] kappa_ii(a2) >= 2 at K0 102.42686
+[ok  ] K0 c_b(a4) >= ell/phi_ell 2.3690039 vs 2.3130353
+[ok  ] case1 r_l >= 1.48 1.486303
+[ok  ] case2 r_l >= 1.48 1.4863185
+[ok  ] phi_l Psi_1(1.48) - l/K0 >= c1 0.37452563
+[ok  ] rho >= K0/2 > e^l 
+[ok  ] sbar<=0.492 at p_k=10 0.49193496
+[ok  ] 1.21(1-sbar/3) >= 1.0115 > 1 1.0115862
+[ok  ] c_i(a)e^-a = f3(a) 
+[ok  ] f3(3) >= 0.34 0.34351211
+[ok  ] sqrt(0.68 phi2 T^2 - 2l/K0) >= 0.73T at T=22 
+[ok  ] 0.68 phi2 > 0.73^2 
+[ok  ] T' >= 15.4 at T=22 15.457915
+[ok  ] kappa_ii(2) >= 2 at K0 
+[ok  ] quadratic difference positive at u=2 and phi2>0.89^2 0.9812
+[ok  ] (0.89T'-1)/1.89 >= 0.4708T'-0.5292 
+[ok  ] T'-2 >= 0.4708T'-0.5292 for T'>=2.79 
+[ok  ] 0.4708*0.36+0.5292 <= 0.6987 and 2*0.4708=0.9416 
+[ok  ] 0.1708T-0.9416logT-0.6987 >0 at 22, increasing 0.148374
+[ok  ] 1-e^-3 >= 0.95 
+Htilde(K0)= 14.921148 eps1bar= 0.21508012 delta1(K0)= 0.19401605
+[ok  ] delta1(K0) < 1 (=0.19402) 
+[ok  ] delta1 decreasing on grid 
+[ok  ] mu*H <= Htilde(k) on grid 
+T1(K0)= 43.897796
+[ok  ] T1(K0) > 22 
+[ok  ] 0.3 T1(K0) - 3 >= z10 10.169339
+[ok  ] 0.01 phi_l K0 z10/(1+z10) >= l 
+kappa0= 0.20968598 0.3kappa0= 0.062905793
+[ok  ] h(z1) endpoint coefficient <= 0.3 kappa0 0.0178975 <= 0.0629058
+[ok  ] h(z#) endpoint coefficient <= 0.3 kappa0 at K0 0.0602838 <= 0.0629058
+[ok  ] 0.3 c1^2/sqrt8 < 0.015 < c# 
+[ok  ] c_p: 0.95 phi_l (1-e^-55) - l/K0 >= 0.819 0.81943148
+[ok  ] no z in [z1,z#] with h(z) > 0.3 kappa0 k (grid 6x5x2001) 
+{'Lh': '7.8885845', 'Hh': '13.81751', 'Hl': '14.921148', 'e1h': '0.06637153', 'dp': '0.077722079', 'ac': '3.6345453', 'A1': '23.175455', 'tb1': '0.028297259', 'What': '28135.212', 'vf': '0.040066454'}
+C_tau(K0)= 71.78465
+[ok  ] C_tau(K0) <= 71.79 
+[ok  ] slope c_b <= 12.28 12.272348
+[ok  ] crest side conditions for lambda in [1e3,1e15] (601 pts) []
+at K0: drop factor= 1.0116222  v_plus= 3.3719475
+[ok  ] v-1+e^-v >= v^2/3 on [0,1] 
+[ok  ] 1-(1+v)e^-v >= v^2/2 - v^3/3 on [0,3] 
+[ok  ] L0<=Lhat, H<=Hhat, mu H<=Htilde_lambda on grid 
+q(K0)= 0.077177383  parts: 5.54383 8.60536
+[ok  ] q(K0) < 0.0772 
+[ok  ] q decreasing on [1e3,1e15] grid 
+[ok  ] 0.75 + 0.0772 < 0.83 
+final margin at K0: 31.68456
+[ok  ] alpha<=2, beta<=4/3, 1/beta<2 on mu grid 
+
+FAILS: none

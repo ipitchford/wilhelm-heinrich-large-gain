@@ -1,0 +1,560 @@
+ADVERSARIAL REFEREE REQUEST. You are refereeing one section of a mathematics paper. Your task is to REFUTE it: find every error, unjustified step, circular argument, misuse of an imported theorem, or statement that is stronger than what is proved. Do not summarise or praise. Check proofs line by line, re-derive every displayed identity, and test inequalities on special cases. Report each defect as: location (label or quoted phrase) | severity (FATAL: the statement is false or the proof cannot be repaired locally; GAP: a step is unjustified but the statement is probably true; MINOR: wording, missing hypothesis that is clearly satisfied, typo) | what is wrong | the repair, if you see one. End with a one-line verdict per theorem/proposition/lemma: HOLDS / GAP / FALSE. If you find nothing wrong with a statement after genuinely checking it, say HOLDS and state which steps you re-derived.
+
+CONTEXT (established earlier in the paper; take as given). System, parameters mu>0, k>0, A=1+mu, lambda=k/mu, k_H=mu(1+mu):
+  U' = p,  p' = k - mu p - y,  y' = k e^U - y,  x = k e^U;  equilibrium E=(0,0,k).  Chemical domain: y>0, p<lambda.  P = {k>k_H}.
+  A cycle is a nonconstant periodic orbit with least period T; <f> is the time average. Log-bounded entire solution: (U,p,y) bounded on R.
+  Jacobian J=[[0,1,0],[0,-mu,-1],[x,0,-1]]; B=-S J^T S=[[0,0,x],[1,mu,0],[0,1,1]], S=diag(1,-1,-1).
+  (eq:projective) Along a cycle there are positive T-periodic adjoint ratios eta, zeta: eta' = zeta+(mu-1)eta-eta^2, zeta' = x-(1+eta)zeta, eta>max(0,mu-1) (eq:etaminbasic).
+  (prop:multipliers) Transverse multipliers 0<m_s<m_t, m_s<1, m_s m_t=e^{-AT}; m_s=e^{-(1+<eta>)T}, m_t=e^{(<eta>-mu)T}; lambda_c:=<eta>-mu.
+  (prop:factor) zeta p - eta p' = x - y (eq:orthogonality); p''=(eta-mu)p'-zeta p (eq:tangent); D^3+AD^2+mu D+x=(D+1+eta)(D^2+(mu-eta)D+zeta).
+  (lem:projectivebounds) explicit bounds eta_-<=eta<=eta_+, zeta_-<=zeta<=zeta_+ from 0<x_-<=x<=x_+.
+  (eq:gainprimitive) (zeta+eta+eta^2/2)' = x - f_mu(eta), f_mu(s)=s(s+1)(s+1-mu).
+  (thm:support) base z1 = a cycle or E with its (eta,zeta), z2 a distinct log-bounded entire solution: Delta=zeta(U2-U1)-eta(p2-p1)-(y2-y1) satisfies Delta'+(1+eta)Delta=-x1 Rem(U2-U1), Rem(d)=e^d-1-d, and Delta<0.
+  (cor:cones) K:=zeta U-eta p-y+k>0 with K'+(1+eta)K=k psi(U), psi(U)=Ue^U-e^U+1; Lambda_E:=(y-k)-zeta_E U+eta_E p>0 with Lambda_E'=-gamma_E Lambda_E+k Rem(U), gamma_E>A root of gamma(gamma-1)(gamma-mu)=k, eta_E=gamma_E-1, zeta_E=eta_E(eta_E+1-mu); no cycle point r=(U,p,y-k) in the closed cones C_+={U>=0,p<=0,y-k<=0}, C_-=-C_+.
+  (lem:curvature) W:=zeta' p-eta' p'>0, W'+(1+eta)W=x p^2.
+  (thm:geometry) every cycle projects to a regular clockwise Jordan curve in the (U,p) plane enclosing the origin; U and p each have one nondegenerate max and min per period; distinct cycles are nested. At a zero of p (eq:crestidentities): x-k=(1+eta)(y-k), x-y=eta(y-k), p'=k-y.
+  (thm:six) the six extrema of X=x/k, Z=y/k, Y=1-p/lambda occur in the order X_min<Z_min<Y_min<X_max<Z_max<Y_max.
+  (prop:crestmap) the crest-return derivative M (section p=0, coords (U,y)) is entrywise positive, eigenvalues m_s,m_t, det M=e^{-AT}<e^{-4pi}, T>2pi/sqrt(mu); compound system w'=Cw, C=[[-mu,1,0],[0,-1,1],[x,0,-A]] (eq:compound).
+Macros: \cA attractor, \Dom chemical domain, \Dsc=pi(attractor), \Dt derivative along the flow, \kH=k_H, \LamE=Lambda_E, \Sg=Sigma=p^2-Up', \Xg=Xi=p'^2-pp'', \etaz=eta_0, \psiU=psi, \Rem=R.
+
+THE SECTION UNDER REVIEW (LaTeX source) FOLLOWS.
+ADDITIONAL CONTEXT (proved in other sections of the paper; take as given).
+  (thm:gauges) on every cycle Sigma=p^2-Up'>0 and Xi=p'^2-pp''>0, Sigma'=(eta-mu)Sigma+pK, Xi'=(eta-mu)Xi+pW; lambda_c=-<pK/Sigma>=-<pW/Xi>; eta_0=[U(x-y)-p(y-k)]/Sigma has mean mu and eta-eta_0=-pK/Sigma.
+  (prop:kappa) kappa=K/Sigma solves kappa'=k psi(U)/Sigma-(1+2 eta_0-mu)kappa+p kappa^2.
+  (lem:strongstable) strong-stable Floquet vector e_s=(a,-b,-c), a,b,c>0, ratios r=b/a, s=c/a.
+  (prop:crestmonotone) the crest return map P on {p=0, k e^U>=y>k} exists, is C^1, DP entrywise positive.
+  (thm:attractor) for all mu,k>0 the union A of log-bounded entire orbits is a compact connected global attractor; pi(U,p,y)=(U,p) is injective on A; A is the graph y=h(U,p) over D=pi(A) of the restriction of a convex function H, h is C^1 in int D with grad h=(zeta,-eta), where (eta,zeta) are the positive adjoint ratios extended to A; the reduced planar field F(u,v)=(v,k-mu v-H(u,v)) has divergence eta-mu in int D. For k>k_H: E is a source in A; D is the closed Jordan domain bounded by the outermost projected cycle J_out; innermost and outermost cycles have lambda_c<=0; (cor:criterion) if every cycle has lambda_c<0 the cycle is unique and attracts every positive orbit off W^s(E); if there are two cycles one has lambda_c>=0.
+  (prop:crestaxis) on the crest half-axis {v=0,0<u<=xi_out} of D the first-return map R_1 is C^1 with R_1'(u)=g(u)exp(iota(u))/g(R_1(u)), g(u)=h(u,0)-k>0, iota(u)=integral of (eta-mu) dt over the turn from (u,0) to (R_1(u),0); fixed points of R_1 are the crests of cycles; in the energy coordinate G_*(u)=int_0^u g the return map R_* has derivative exp(iota).
+  (att:prop:scaling) for q in D and 0<=theta<=1: F(theta q)^F(q) = -v[theta(H(q)-k)+k-H(theta q)] with nonnegative bracket.
+  (att:cor:dulac) constraints on Dulac functions for the reduced flow.
+  (lem:statebox) all cycles lie in [beta_0,M_0]^3 in chemical variables, M_0=(lambda+mu)(lambda+1)/mu; (lem:eqseparation),(lem:speed),(thm:compact): uniform compactness of cycle families on compact subsets of P; (lem:collar): unique cycle near Hopf; (thm:neutral): count locally constant off the neutral set N.
+  (thm:largegain) for 0<mu<=1 and k>=1000 every cycle has <eta><=0.83 mu; (cor:lgreciprocal) same for mu>=1, k>=1000 mu^3.
+  (app:hopf) frequency-one time tau=sqrt(mu) t, sigma=(1+mu)/sqrt(mu): U_ttt+sigma U_tt+U_t+sigma rho(e^U-1)=0, rho=k/k_H; first Lyapunov coefficient l_1=-sigma/((sigma^2+1)(sigma^2+4))<0.
+THE SECTION UNDER REVIEW (LaTeX source) FOLLOWS.
+=====================================================================
+% s12_negative.tex -- certificates that fail, proved obstructions, candidate structural statements.
+% Exported labels: sec:negative thm:failed eq:radial eq:radialfailure prop:nodulac prop:nomonomial lem:rigidity.
+% Internal labels carry the prefix neg:.
+\section{Certificates that fail, and what a proof must do}\label{sec:negative}
+The sign of the weak exponent $\lambda_c$ on an arbitrary cycle is not determined in this paper. This section records the certificates that were examined for that purpose and do not work. Its proved statements are the following. A componentwise contraction test for the crest map fails on the Hopf branch (Theorem~\ref{thm:failed}, Proposition~\ref{neg:prop:charts}). A Dulac function for the reduced planar flow can only have one sign, cannot be regular at the equilibrium, and must be singular there with at least a definite strength (Proposition~\ref{prop:nodulac}). No supersolution of the compound system keeps the ratios of the three chemical variables (Proposition~\ref{prop:nomonomial}). Every certificate of comparison type must agree with the true adjoint ratios to first order at the Hopf point (Lemma~\ref{lem:rigidity}). The sign hypotheses of three published planar criteria fail for the reduced field (Proposition~\ref{neg:prop:planar}). Table~\ref{neg:tab:candidates} lists the candidate structural statements that were tested, with their status. One of them, monotonicity of the one-turn mean of $\eta-\mu$ on the crest half-axis of the attractor, survived every floating-point test and is unproved; Proposition~\ref{neg:prop:signchange} proves that it would imply uniqueness, and that a single change of sign of the one-turn integral already would. The last subsection states what a proof of uniqueness at all parameters has to accomplish. Nothing in this section decides the uniqueness question.
+
+The words \emph{proved}, \emph{floating-point evidence} and \emph{refuted by floating-point computation} are used as follows. A statement is proved if its proof is written in this paper. Floating-point evidence refers to the computations described in Section~\ref{sec:evidence}; they are not interval computations and they enter no proof. A candidate statement is refuted by floating-point computation if such a computation produced a violation that is stable under changes of tolerance; this is weaker than a proof that the statement is false, and where a proof of failure is available it is given.
+
+\paragraph{Local symbols.}
+$\xi=U_{\max}>0$ is the crest amplitude of a cycle, as in Section~\ref{sec:attractor}, and $u$ is a point of the crest half-axis as in Proposition~\ref{prop:crestaxis}; points of the $(U,p)$ plane are written $q=(U,p)$. In Section~\ref{neg:sec:radial}, $v$ is the test vector \eqref{eq:radial}, $r_v$ and $r_e$ are ratios of second to first components, $M_0$ is the limit of $M_{(U,z)}$ at the Hopf point, and
+\begin{equation}\label{neg:eq:constants}
+D_\mu=\mu^2+6\mu+1,\qquad C_\mu=\mu^2+3\mu+1=A^2+\mu,\qquad q_f=e^{-2\pi(1+\mu)/\sqrt\mu},
+\end{equation}
+with $c_{20},c_{11},c_{02}$ the coefficients \eqref{neg:eq:centrecoeff}. The constants $D_\mu$ and $C_\mu$ are unrelated to the operator $D$ and to the compound matrix $C$. In Section~\ref{neg:sec:dulac}, $\alpha_E\pm i\omega_E$ are the unstable eigenvalues of the linearisation at $E$, $Q_E$ is the quadratic form \eqref{neg:eq:QE}, and $R_\Lambda=\Dt\Lambda+\eta-\mu$ for a function $\Lambda$. In Sections~\ref{neg:sec:monomial} and~\ref{neg:sec:rigidity}, $w$ is a positive vector function, $\mathsf M$ a positive scalar function (unrelated to the crest derivative $M$), $(\tilde\eta,\tilde\zeta)$ a trial pair, $g_1,g_2,g_3$ its defects \eqref{neg:eq:defects} and $\mathfrak m=\min_ig_i$; $k_j$, $\Gamma_j$, $T_j$, $\xi_j$, $\delta_j$, $r_j$ refer to a sequence of cycles approaching the Hopf point, $r=(U,p,y-k)$ as in Corollary~\ref{cor:cones}, $T_0=2\pi/\sqrt\mu$, $\avg{\cdot}_0$ is the mean over one period $T_0$, $U_1,p_1,y_1,r_1,a_*,b_*$ are the first-order profiles \eqref{neg:eq:firstorder} and \eqref{neg:eq:astar}, and $J_0$, $L$, $\mathbf w_j$, $\mathbf N_j$, $B_1,B_2,B_3$ are introduced in the proof of Lemma~\ref{lem:rigidity}. In Section~\ref{neg:sec:planar}, $w_2=p-(y-k)+\mu U$ and $\mathfrak p_4$ are the Li\'enard variable and the reduced field of the last remark of Section~\ref{sec:attractor}. In Section~\ref{neg:sec:candidates}, $\bar\iota=\iota/T_1$ is the one-turn mean, $R_\ast$ the energy return map and $d(\varepsilon)$ its displacement. In the paragraph on concave maps, $\mathcal T$ is a map of an order interval and $\mathsf p,\mathsf x,\mathsf y,\mathsf c$ are points of $\R^n_+$.
+
+\subsection{A failed contraction certificate}\label{neg:sec:radial}
+At a crest use the section coordinates $(U,z)$ with $z=y/k$, and let $M_{(U,z)}$ be the positive return derivative of Proposition~\ref{prop:crestmap} in these coordinates. A positive vector $v$ with $M_{(U,z)}v<v$ componentwise would imply $\spr(M_{(U,z)})<1$, that is, $m_t<1$. The square-root radial choice
+\begin{equation}\label{eq:radial}
+v=\begin{pmatrix}2(1-e^{-U/2})\\2(z-\sqrt z)\end{pmatrix}>0 ,
+\end{equation}
+evaluated at the crest of the cycle, is not a universal certificate. It is the radial vector of the chart $(2(e^{U/2}-1),\,2(\sqrt z-1))$ centred at $E$, expressed in the coordinates $(U,z)$.
+
+\begin{theorem}[The square-root direction fails near Hopf]\label{thm:failed}
+Fix $0<\mu<1$. On the small attracting Hopf branch with crest amplitude $\xi=U_{\max}>0$, and with $D_\mu$, $C_\mu$, $q_f$ as in \eqref{neg:eq:constants},
+\begin{equation}\label{eq:radialfailure}
+\frac{(M_{(U,z)}(\xi)\,v(\xi))_1}{v_1(\xi)}-1
+=\frac{(1-q_f)\mu^2(1-\mu)(\mu+3)}
+ {4(1+\mu)C_\mu D_\mu}\,\xi+O(\xi^2)>0
+\end{equation}
+for sufficiently small positive $\xi$.
+\end{theorem}
+\begin{proof}
+At $\kH=\mu A$ the quadratic centre graph is
+\begin{equation}\label{neg:eq:centregraph}
+y-k=\mu U-\mu p+c_{20}U^2+c_{11}Up+c_{02}p^2+O(3),
+\end{equation}
+where direct substitution in its invariance equation gives
+\begin{equation}\label{neg:eq:centrecoeff}
+c_{20}=\frac{\mu(\mu^2+4\mu+1)}{2D_\mu},\qquad
+c_{11}=-\frac{\mu A}{D_\mu},\qquad c_{02}=\frac\mu{D_\mu}.
+\end{equation}
+On the branch, $k=\kH+O(\xi^2)$. The tangent to the centre-graph crest section is the weak return eigendirection, with component ratio
+\[
+r_e=\frac1A+\frac{\mu^2+4\mu+1}{AD_\mu}\,\xi+O(\xi^2).
+\]
+Since $z=1+\xi/A+(c_{20}/\kH)\xi^2+O(\xi^3)$ at the crest, the vector \eqref{eq:radial} instead has the ratio $r_v=v_2/v_1$ with
+\begin{equation}\label{neg:eq:mismatch}
+r_v-r_e=\frac{\mu(1-\mu)(\mu+3)}{4A^2D_\mu}\,\xi+O(\xi^2).
+\end{equation}
+The limiting crest derivative is
+\begin{equation}\label{neg:eq:Mzero}
+M_0=\begin{pmatrix}
+1-(1-q_f)\mu/C_\mu &(1-q_f)A\mu/C_\mu\\
+(1-q_f)A/C_\mu &1-(1-q_f)A^2/C_\mu
+\end{pmatrix}.
+\end{equation}
+To verify it, the linear system in $(U,p,z-1)$ has stable vector $(1,-A,-1/\mu)$ and frequency $\sqrt\mu$. Its full-period map is the identity on the centre plane and multiplication by $q_f$ on the stable line. Project along the limiting crest tangent to $p=0$ to obtain $M_0$.
+The weak multiplier is $m_t(\xi)=1+O(\xi^2)$. Hence, with $M_{11}$ and $M_{12}$ the entries of the first row of $M_{(U,z)}(\xi)$,
+\[
+M_{11}+M_{12}r_v=m_t(\xi)+M_{12}(r_v-r_e),
+\]
+which proves \eqref{eq:radialfailure}. Every factor of its leading coefficient is positive in the stated range.
+\end{proof}
+This is a counterexample to a proposed sufficient inequality, not a counterexample to attraction or uniqueness. The proof uses the classical expansion of the Hopf branch in powers of the amplitude: $k=\kH+O(\xi^2)$, $m_t=1+O(\xi^2)$, and a return derivative that depends smoothly on $\xi$ with limit $M_0$. Remark~\ref{neg:rem:selfcontained} derives the first-order terms, and with them the sign in \eqref{eq:radialfailure}, from results proved in this paper. In the floating-point computations of Section~\ref{sec:evidence} the test $M_{(U,z)}v<v$ fails on nine of 31 cycles; at $\mu=0.3$, $\xi=0.01$ the two ratios $(M_{(U,z)}v)_i/v_i$ are $1.0000581$ and $0.9995967$ while $m_t=0.9999883$.
+
+Theorem~\ref{thm:failed} concerns one vector, one component and $\mu<1$. The next statement separates the two components and treats a family of charts.
+
+\begin{proposition}[Both components, and power charts]\label{neg:prop:charts}
+Let $v>0$ be a vector at the crest of a cycle, in the coordinates $(U,z)$, with ratio $r_v=v_2/v_1$. Let $M_{12},M_{22}$ be entries of $M_{(U,z)}$, let $\zeta_{\rm cr}$ be the value of $\zeta$ at the crest, and let $r_e=\zeta_{\rm cr}/k$, the ratio of the Perron eigenvector of $M_{(U,z)}$.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item Exactly,
+\begin{equation}\label{neg:eq:twocomponents}
+\begin{aligned}
+\frac{(M_{(U,z)}v)_1}{v_1}-1&=(m_t-1)+M_{12}\,(r_v-r_e),\\
+\frac{(M_{(U,z)}v)_2}{v_2}-1&=\frac{(m_t-1)\,r_e-(1-M_{22})\,(r_v-r_e)}{r_v}.
+\end{aligned}
+\end{equation}
+\item On the Hopf branch, suppose $r_v-r_e=c\,\xi+O(\xi^2)$ with a constant $c$. Then
+\[
+\frac{(M_{(U,z)}v)_1}{v_1}-1=\frac{(1-q_f)A\mu}{C_\mu}\,c\,\xi+O(\xi^2),\qquad
+\frac{(M_{(U,z)}v)_2}{v_2}-1=-\frac{(1-q_f)A^3}{C_\mu}\,c\,\xi+O(\xi^2).
+\]
+If $c\ne0$, the inequality $M_{(U,z)}v<v$ fails for all sufficiently small $\xi$: in the first component if $c>0$, in the second if $c<0$.
+\item For $a,b>0$ let $v$ be the radial vector of the chart $\bigl((e^{aU}-1)/a,\ (z^{b}-1)/b\bigr)$, that is,
+$v=\bigl((1-e^{-aU})/a,\ (z-z^{1-b})/b\bigr)^{\mathsf T}$ at the crest. Then (ii) applies with
+\begin{equation}\label{neg:eq:chartmismatch}
+c=c(a,b)=\frac{1-b}{2A^2}+\frac{a}{2A}-\frac{\mu^2+4\mu+1}{2AD_\mu}.
+\end{equation}
+The formula remains valid in the limit $a\to0$, in which the first chart coordinate is $U$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(i) By Proposition~\ref{prop:crestmonotone}(d) the Perron eigenvector of $M$ is $(1,\zeta_{\rm cr})^{\mathsf T}$, and by Proposition~\ref{prop:crestmap} a vector for $M$ corresponds to its image under $\diag(1,1/k)$ for $M_{(U,z)}$; hence $M_{(U,z)}(1,r_e)^{\mathsf T}=m_t(1,r_e)^{\mathsf T}$. Write $v=v_1\bigl[(1,r_e)^{\mathsf T}+(r_v-r_e)(0,1)^{\mathsf T}\bigr]$. Then $M_{(U,z)}v=v_1\bigl[m_t(1,r_e)^{\mathsf T}+(r_v-r_e)(M_{12},M_{22})^{\mathsf T}\bigr]$. The first component divided by $v_1$ is $m_t+M_{12}(r_v-r_e)$. The second divided by $v_2=v_1r_v$ is $[m_tr_e+(r_v-r_e)M_{22}]/r_v$, and $m_tr_e+(r_v-r_e)M_{22}-r_v=(m_t-1)r_e-(1-M_{22})(r_v-r_e)$.
+
+(ii) As in the proof of Theorem~\ref{thm:failed}, $m_t=1+O(\xi^2)$, $M_{(U,z)}(\xi)=M_0+O(\xi)$ and $r_e=1/A+O(\xi)$, hence $r_v=1/A+O(\xi)$. Insert these in \eqref{neg:eq:twocomponents}: the first expression is $(M_0)_{12}\,c\,\xi+O(\xi^2)$ and the second is $-A\,(1-(M_0)_{22})\,c\,\xi+O(\xi^2)$, with $(M_0)_{12}=(1-q_f)A\mu/C_\mu$ and $1-(M_0)_{22}=(1-q_f)A^2/C_\mu$ from \eqref{neg:eq:Mzero}. Both coefficients of $c$ are nonzero and have opposite signs.
+
+(iii) At the crest $U=\xi$ and $z=1+d$ with $d=\xi/A+(c_{20}/\kH)\xi^2+O(\xi^3)$. Then $v_1=\xi-a\xi^2/2+O(\xi^3)$ and $v_2=(z-z^{1-b})/b=d+(1-b)d^2/2+O(d^3)$, so
+\[
+r_v=\frac1A+\Bigl[\frac{c_{20}}{\kH}+\frac{1-b}{2A^2}+\frac{a}{2A}\Bigr]\xi+O(\xi^2),\qquad
+r_e=\frac1A+\frac{2c_{20}}{\kH}\,\xi+O(\xi^2),
+\]
+and $c_{20}/\kH=(\mu^2+4\mu+1)/(2AD_\mu)$ by \eqref{neg:eq:centrecoeff}.
+\end{proof}
+For $a=b=\tfrac12$, \eqref{neg:eq:chartmismatch} is the coefficient in \eqref{neg:eq:mismatch}, and the first formula in (ii) is \eqref{eq:radialfailure}. For the same vector and $\mu>1$ the coefficient $c$ is negative, and the second component gives
+\[
+\frac{(M_{(U,z)}v)_2}{v_2}-1=\frac{(1-q_f)A\mu(\mu-1)(\mu+3)}{4C_\mu D_\mu}\,\xi+O(\xi^2)>0 .
+\]
+Thus the square-root vector \eqref{eq:radial} fails near the Hopf point for every $\mu\ne1$; for $\mu=1$ the first-order term vanishes and this expansion does not decide. For the linear chart $(U,z-1)$, which is $a\to0$, $b=1$, one has $c=-(\mu^2+4\mu+1)/(2AD_\mu)<0$ for every $\mu$, so the second component fails. The coefficient $c(a,b)$ vanishes only on the line $a=(\mu^2+4\mu+1)/D_\mu-(1-b)/A$, which depends on the rate ratio. We know no chart for which $M_{(U,z)}v<v$ holds on every cycle. For a fixed chart the failure is confined to a neighbourhood of the Hopf point. In the floating-point computations on 24 cycles with $\mu\in\{0.2,1,5\}$ and $1.02\le\rho\le8$, the test fails for the linear chart at $\rho\le1.2$ ($\mu=0.2$ and $\mu=5$) and at $\rho\le1.05$ ($\mu=1$), and for the square-root vector only at $(\mu,\rho)=(5,1.02)$; for the chart $(a,b)=(1,1)$, for which $c=\mu/(AD_\mu)>0$, it holds on all 24 cycles, so its failure occurs only closer to the Hopf point.
+
+\paragraph{Relation to concave monotone maps.}
+A theorem of H.~L.~Smith \cite{SmithHL86} is considered here in the form in which it is quoted in \cite[Theorem~1 of the preprint]{FG10}; the original article was not obtained, and the theorem is not used in any proof. Let $\mathsf p\in\R^n_+$ have positive entries and let $\mathcal T$ map the order interval $[0,\mathsf p]$ continuously into itself, with $\mathcal T$ of class $C^1$ in the interior, $D\mathcal T(0)=\lim_{\mathsf x\to0}D\mathcal T(\mathsf x)$ existing, $\mathcal T(0)=0$, $\mathcal T\mathsf p<\mathsf p$ and $\spr D\mathcal T(0)>1$. If $\mathcal T$ is monotone, $D\mathcal T(\mathsf x)>0$ entrywise, and order-concave, $D\mathcal T(\mathsf y)\le D\mathcal T(\mathsf x)$ with $D\mathcal T(\mathsf y)\ne D\mathcal T(\mathsf x)$ whenever $0<\mathsf x<\mathsf y<\mathsf p$, then $\mathcal T$ has exactly one nonzero fixed point, and it attracts every nonzero point of the interval. Suppose the crest map, written in a chart centred at $E$, satisfied these hypotheses on an order interval containing the crest $\mathsf c$ of a cycle. Then $\mathsf c=\mathcal T(\mathsf c)=\int_0^1D\mathcal T(s\mathsf c)\,\mathsf c\,\mathrm ds\ge D\mathcal T(\mathsf c)\,\mathsf c$, which in the coordinates $(U,z)$ reads $M_{(U,z)}v\le v$ for the radial vector $v$ of the chart. Proposition~\ref{neg:prop:charts} shows that this consequence fails near the Hopf point in every power chart with $c(a,b)\ne0$. Monotonicity of the crest map is proved on the region $\mathcal Q$ of Proposition~\ref{prop:crestmonotone}, which is not an order interval; on rectangles it is supported by floating-point evidence only. Away from the Hopf point order-concavity is refuted by floating-point computation in each of five power charts (Table~\ref{neg:tab:candidates}, row A3).
+
+\subsection{Constraints on Dulac functions}\label{neg:sec:dulac}
+Throughout this subsection $k>\kH$. The reduced field $F$, its flow $\chi_t$ and the domain $\Dsc$ are those of Theorem~\ref{thm:attractor}, and $\eta$, $\zeta$, $K$ are regarded as functions on $\Dsc$ through the homeomorphism $\pi|_\cA$. For a real function $\Lambda$ on a subset of $\Dsc$ that is differentiable along the reduced flow, with derivative $\Dt\Lambda$, put
+\[
+R_\Lambda=\Dt\Lambda+\eta-\mu .
+\]
+If $\Lambda\in C^1(V)$ for an open set $V\subset\R^2$, then $\Dt\Lambda=\nabla\Lambda\cdot F$ and $\diver(e^{\Lambda}F)=e^{\Lambda}R_\Lambda$ on $V\cap\inter\Dsc$, so $e^\Lambda$ is a Dulac function in the classical sense when $R_\Lambda$ has one sign. By Theorem~\ref{thm:attractor}(A8)(f), a function with $R_\Lambda\le0$ on every cycle, not identically zero on any of them, would give uniqueness and hyperbolic attraction of the cycle.
+
+By (A4)--(A6) of Theorem~\ref{thm:attractor}, $(0,0)$ is an interior point of $\Dsc$ and $F$ is $C^1$ on $\inter\Dsc$ with Jacobian matrix $\begin{psmallmatrix}0&1\\-\zeta&\eta-\mu\end{psmallmatrix}$. At the equilibrium this is
+\[
+DF(0,0)=\begin{pmatrix}0&1\\-\zeta_E&2\alpha_E\end{pmatrix},\qquad 2\alpha_E:=\eta_E-\mu=\gamma_E-A>0 .
+\]
+Since $\zeta_E=k/\gamma_E$, the characteristic polynomial of $J_E$ is $z^3+Az^2+\mu z+k=(z+\gamma_E)(z^2-2\alpha_Ez+\zeta_E)$. A real cubic with positive coefficients has no nonnegative real root, and the two roots of the quadratic factor have positive sum and positive product; they are therefore not real. Write them as $\alpha_E\pm i\omega_E$ with $\omega_E^2=\zeta_E-\alpha_E^2>0$. The quadratic form
+\begin{equation}\label{neg:eq:QE}
+Q_E(U,p)=p^2-2\alpha_E\,Up+\zeta_E\,U^2
+\end{equation}
+is then positive definite, and along the linear flow $q'=DF(0,0)q$ it satisfies $Q_E'=2\alpha_EQ_E$.
+
+\begin{proposition}[Dulac functions: forced sign, forced singularity]\label{prop:nodulac}
+Assume $k>\kH$.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item \emph{Forced sign.} Let $V\subset\R^2$ be an open set containing the innermost projected cycle $\mathcal J_{\rm in}$ and let $\Lambda\in C^1(V)$. Then every neighbourhood of $\mathcal J_{\rm in}$ contains a point of $\operatorname{ins}\mathcal J_{\rm in}$ at which $R_\Lambda<0$. Consequently there are no open set $V\supset\Dsc\setminus\{(0,0)\}$ and $\Lambda\in C^1(V)$ with $R_\Lambda\ge0$ on $\Dsc\setminus\{(0,0)\}$: a Dulac function for the reduced flow can only have the sign $R_\Lambda\le0$. No hyperbolicity of any cycle is assumed.
+\item \emph{No Dulac function is regular at the equilibrium.} Let $\Phi$ be a real $C^1$ function on a neighbourhood of $(0,0,k,\eta_E,\zeta_E)$ in $\R^5$, and let $\Lambda=\Phi(U,p,y,\eta,\zeta)$ on $\cA$ near $E$. Then $\Lambda$ is differentiable along the flow, $\Dt\Lambda$ is continuous near $E$ on $\cA$ and vanishes at $E$, and
+\[
+R_\Lambda(E)=\eta_E-\mu=\gamma_E-A=2\alpha_E>0 .
+\]
+Hence $R_\Lambda>0$ on a neighbourhood of $E$ in $\cA$. This covers every $\Lambda$ that is $C^1$ in $(U,p)$ near the origin, in particular $\Lambda=\beta(U)$ and polynomials in $(U,p)$, and the logarithms of $x$, $y$, $\ell$, $\eta$, $\zeta$ and $1+\eta$.
+\item \emph{Forced singularity.} Let $N\subset\inter\Dsc$ be a neighbourhood of $(0,0)$ and let $\Lambda$ be continuous on $N\setminus\{(0,0)\}$ and differentiable along the reduced flow, with $R_\Lambda\le0$ on $N\setminus\{(0,0)\}$. Then for every $\vartheta\in(0,2)$ there are $c>0$ and $r_0>0$ such that
+\[
+e^{\Lambda(q)}\ge c\,|q|^{-\vartheta}\qquad(0<|q|<r_0).
+\]
+In particular $\Lambda(q)\to+\infty$ as $q\to(0,0)$: the weight $e^\Lambda$ is unbounded at the equilibrium, and a weight that is bounded near the equilibrium, or vanishes there, is excluded.
+\item \emph{No local obstruction.} For every constant $c>1$ the function $\Lambda=-c\log Q_E$ satisfies $R_\Lambda<0$ on a punctured neighbourhood of $(0,0)$ in $\Dsc$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(i) The first sentence is Corollary~\ref{att:cor:dulac}(ii). If $V\supset\Dsc\setminus\{(0,0)\}$, then $V\supset\mathcal J_{\rm in}$, and the points of $\operatorname{ins}\mathcal J_{\rm in}$ near $\mathcal J_{\rm in}$ belong to $\Dsc\setminus\{(0,0)\}$; at one of them $R_\Lambda<0$.
+
+(ii) Let $\mathbf a\in\cA$ be near $E$. By Theorem~\ref{thm:attractor}(A2), $t\mapsto(\eta,\zeta)(\varphi_t\mathbf a)$ is the solution of the Riccati system \eqref{eq:projective} along the orbit of $\mathbf a$. By the chain rule,
+\[
+\Dt\Lambda=\Phi_U\,p+\Phi_p\,(k-\mu p-y)+\Phi_y\,(x-y)+\Phi_\eta\,\bigl(\zeta+(\mu-1)\eta-\eta^2\bigr)+\Phi_\zeta\,\bigl(x-(1+\eta)\zeta\bigr),
+\]
+where the partial derivatives of $\Phi$ are evaluated at $(U,p,y,\eta,\zeta)$. The right side is a continuous function on $\cA$ near $E$, because $\eta$ and $\zeta$ are continuous on $\cA$. At $E$ the five factors $p$, $k-\mu p-y$, $x-y$, $\zeta_E+(\mu-1)\eta_E-\eta_E^2$ and $k-(1+\eta_E)\zeta_E$ vanish, the last two because $(\eta_E,\zeta_E)$ is the constant Riccati solution at $E$. Hence $\Dt\Lambda(E)=0$ and $R_\Lambda(E)=\eta_E-\mu$, which equals $\gamma_E-A>0$ for $k>\kH$. The case in which $\Phi$ depends on $(U,p)$ only is Corollary~\ref{att:cor:dulac}(i). The functions $x=ke^U$, $y$, $\ell=\lambda-p$, $\eta$, $\zeta$, $1+\eta$ are positive at $E$, so their logarithms are of the form considered.
+
+(iii) Since $F$ is $C^1$ on $\inter\Dsc$ and $F(0,0)=0$, we have $F(q)=DF(0,0)\,q+o(|q|)$ as $q\to(0,0)$. With $|\nabla Q_E(q)|=O(|q|)$ and the identity for the linear flow,
+\[
+\Dt Q_E(q)=\nabla Q_E(q)\cdot F(q)=2\alpha_E\,Q_E(q)+o(|q|^2),
+\]
+and $Q_E(q)\ge c_0|q|^2$ with $c_0>0$. Hence $\Dt\log Q_E\to2\alpha_E$ as $q\to(0,0)$. Also $\eta-\mu\to2\alpha_E$, by continuity of $\eta$ on $\Dsc$.
+
+Fix $\vartheta\in(0,2)$ and choose $\epsilon\in(0,\alpha_E)$ with $(2\alpha_E-\epsilon)/(2\alpha_E+\epsilon)\ge\vartheta/2$. Choose $r_1>0$ such that $N_1=\{Q_E\le r_1^2\}$ is contained in $N$ and such that $|\Dt\log Q_E-2\alpha_E|\le\epsilon$ and $\eta-\mu\ge2\alpha_E-\epsilon$ on $N_1\setminus\{(0,0)\}$. Put $\Psi=\Lambda+\tfrac\vartheta2\log Q_E$ on $N_1\setminus\{(0,0)\}$. Then
+\[
+\Dt\Psi=R_\Lambda-(\eta-\mu)+\tfrac\vartheta2\,\Dt\log Q_E\le-(2\alpha_E-\epsilon)+\tfrac\vartheta2\,(2\alpha_E+\epsilon)\le0 .
+\]
+Let $q\in N_1\setminus\{(0,0)\}$. As long as $\chi_tq$ remains in $N_1$, it is not the equilibrium and $Q_E(\chi_tq)\ge Q_E(q)\,e^{(2\alpha_E-\epsilon)t}$. So there is a first time $t_q\ge0$ with $Q_E(\chi_{t_q}q)=r_1^2$, and $\chi_tq\in N_1\setminus\{(0,0)\}$ for $0\le t\le t_q$. On this arc $\Psi$ is nonincreasing, hence
+\[
+\Psi(q)\ge\Psi(\chi_{t_q}q)\ge m:=\min_{\{Q_E=r_1^2\}}\Psi ,
+\]
+and $m$ is finite because $\Psi$ is continuous on the compact ellipse $\{Q_E=r_1^2\}$. Therefore $e^{\Lambda(q)}\ge e^{m}\,Q_E(q)^{-\vartheta/2}\ge e^{m}c_1^{-\vartheta/2}\,|q|^{-\vartheta}$, where $Q_E(q)\le c_1|q|^2$.
+
+(iv) By the limits in (iii), $R_\Lambda=-c\,\Dt\log Q_E+\eta-\mu\to2\alpha_E(1-c)<0$ as $q\to(0,0)$.
+\end{proof}
+
+Part (i) does not follow from the cycle-average identity $\avg{R_\Lambda}=\lambda_c$ of Theorem~\ref{thm:attractor}(A8)(f) alone. The cycle whose existence is known is orbitally asymptotically stable \cite{Smith12}, which gives $\lambda_c\le0$ and allows $\lambda_c=0$; on a cycle with $\lambda_c=0$ the average identity is compatible with $R_\Lambda\ge0$. Corollary~\ref{att:cor:dulac}(ii) removes this case by a flux argument on the inner side of $\mathcal J_{\rm in}$.
+
+Parts (ii)--(iv) locate the singularity. A weight that is regular at $E$, such as $e^{\beta(U)}$ or a polynomial, fails near $E$. A weight must grow at least like $|q|^{-\vartheta}$ for every $\vartheta<2$, and weights of the order $|q|^{-2c}$ with $c>1$ do satisfy the sign condition near $E$. The proof of (iii) uses only the continuity of $\eta$ at $E$; if $\eta-\eta_E=O(|q|)$, which would follow from $C^2$ regularity of the attractor graph at $E$ and is not proved in Section~\ref{sec:attractor}, the same argument gives the bound with $\vartheta=2$. There is thus no obstruction at the equilibrium to a singular Dulac function; the unresolved difficulty is on the rest of $\Dsc$. The convexity gauges $K$ and $W$ of Theorem~\ref{thm:attractor}(A5) vanish at $E$, so $-\log K$ and $-\log W$ are singular there and are not covered by (ii). For $\Lambda=\beta(U)$ there is a second, separate failure: $\Dt\Lambda=\beta'(U)p$ vanishes on the $U$-axis, so $R_\Lambda=\eta-\mu$ at every crest and trough, and in the floating-point computations $\eta>\mu$ at the crest of every cycle examined (Table~\ref{neg:tab:candidates}, row D4).
+
+On a cycle, Proposition~\ref{prop:kappa}(v) writes $R_\Lambda=\varepsilon_\Lambda-p\,\kappa$ for every $C^1$ function $\Lambda$ of the state, with $\varepsilon_\Lambda$ an explicit function of the state. The requirement $R_\Lambda\le0$ is then a lower bound for $\kappa$ on the rising arc and an upper bound on the falling arc. By Proposition~\ref{prop:kappa}(i), functions of $(U,p,y,\eta,\zeta,K,W)$ are functions of $(U,p,y,\kappa)$ and lead to the same requirement, and by Proposition~\ref{prop:kappa}(vi) the supporting-plane inequalities bound $\kappa$ from below only. Floating-point searches for Dulac functions in explicit finite-dimensional families are summarised in rows B7--B10 of Table~\ref{neg:tab:candidates}: for each of ten parameter pairs a function with $R_\Lambda\le0$ on the sampled attractor was found in a family of 26 functions, and no single choice of coefficients serves all ten pairs.
+
+\subsection{Supersolutions that keep the chemical ratios}\label{neg:sec:monomial}
+Let $\Gamma$ be a cycle with period $T$ and let $C$ be the compound matrix \eqref{eq:compound} along it. For a positive $T$-periodic $C^1$ function $w:\R\to\R^3$ define its \emph{defects}
+\begin{equation}\label{neg:eq:defects}
+g_1=\frac{w_1'+\mu w_1-w_2}{w_1},\quad
+g_2=\frac{w_2'+w_2-w_3}{w_2},\quad
+g_3=\frac{w_3'+Aw_3-x\,w_1}{w_3},\qquad \mathfrak m=\min(g_1,g_2,g_3),
+\end{equation}
+so that $w'=Cw+\diag(g_1,g_2,g_3)\,w$. For $w=\varphi\,(1,\tilde\eta,\tilde\zeta)^{\mathsf T}$ these are the defects of Proposition~\ref{prop:strongidentity}(v), which gives
+\begin{equation}\label{neg:eq:comparison}
+\lambda_c\le-\avg{\mathfrak m},
+\end{equation}
+with equality for the true pair $(\tilde\eta,\tilde\zeta)=(\eta,\zeta)$; the mean $\avg{\mathfrak m}$ depends on the ratios $w_2/w_1$ and $w_3/w_1$ only. We call $w$ a \emph{supersolution} if $g_i\ge0$ for $i=1,2,3$, that is, $w'\ge Cw$ componentwise; a cycle that carries a supersolution has $\lambda_c\le0$. Every cycle with $\lambda_c\le0$ carries one: for the true pair and $\varphi=\exp\int_0^t(\eta-\avg\eta)\dd$ all three defects equal the constant $-\lambda_c$. The vector of chemical variables $w=(\ell,y,x)^{\mathsf T}$ has $g_1=g_2=0$ and $g_3=A+2p-\lambda$ by Proposition~\ref{prop:strongidentity}(ii). The next statement excludes every certificate built on these three ratios.
+
+\begin{proposition}[No supersolution keeps the chemical ratios]\label{prop:nomonomial}
+Let $(\mu,k)\in\cP$, let $\Gamma$ be a cycle with period $T$, let $\mathsf M$ be a positive $T$-periodic $C^1$ function and $c_1,c_2,c_3>0$ constants, and put
+\[
+w=\mathsf M(t)\,\bigl(c_1\,\ell,\ c_2\,y,\ c_3\,x\bigr)^{\mathsf T}.
+\]
+Then the defects \eqref{neg:eq:defects} of $w$ have the means
+\begin{equation}\label{neg:eq:monomialdefects}
+\avg{g_1}=\mu\Bigl(1-\frac{c_2}{c_1}\Bigr),\qquad
+\avg{g_2}=1-\frac{c_3}{c_2},\qquad
+\avg{g_3}=A-\lambda\,\frac{c_1}{c_3},
+\end{equation}
+and
+\begin{equation}\label{neg:eq:monomialbound}
+\min_i\avg{g_i}\le-(\gamma_E-A)<0 ,
+\end{equation}
+with equality if and only if $(c_1,c_2,c_3)$ is proportional to $(\mu,\eta_E,\zeta_E)$. Consequently $w$ is not a supersolution along $\Gamma$ for any choice of $\mathsf M$ and of the constants, and the bound \eqref{neg:eq:comparison} evaluated on $w$ is never better than $\lambda_c\le\gamma_E-A$. In particular no vector $\mathsf M\,(c_1\ell,c_2y,c_3x)^{\mathsf T}$ in which $\mathsf M$ is a product of real powers of $x$, $y$ and $\ell$ is a supersolution along any cycle.
+\end{proposition}
+\begin{proof}
+By the proof of Proposition~\ref{prop:lvchain}(i), $(\log\ell)'=y/\ell-\mu$, $(\log y)'=x/y-1$ and $(\log x)'=p$. Hence
+\[
+g_1=(\log\mathsf M)'+\Bigl(1-\frac{c_2}{c_1}\Bigr)\frac y\ell,\qquad
+g_2=(\log\mathsf M)'+\Bigl(1-\frac{c_3}{c_2}\Bigr)\frac xy,\qquad
+g_3=(\log\mathsf M)'+p+A-\frac{c_1}{c_3}\,\ell .
+\]
+The mean of $(\log\mathsf M)'$ and the mean of $p$ vanish, and $\avg{y/\ell}=\mu$, $\avg{x/y}=1$, $\avg\ell=\lambda$ by Proposition~\ref{prop:lvchain}(i). This gives \eqref{neg:eq:monomialdefects}.
+
+Put $a_1=c_2/c_1$, $a_2=c_3/c_2$ and $\theta=-\min_i\avg{g_i}=\max\bigl(\mu(a_1-1),\ a_2-1,\ \lambda/(a_1a_2)-A\bigr)$. Then
+\[
+0<a_1\le1+\frac\theta\mu,\qquad 0<a_2\le1+\theta,\qquad \frac{\lambda}{a_1a_2}\le A+\theta .
+\]
+The first two inequalities give $\theta>-\min(1,\mu)$, so $A+\theta>\max(1,\mu)$. Multiplying the three,
+\[
+k=\mu\lambda\le(A+\theta)\,(\mu+\theta)\,(1+\theta)=\chi(A+\theta),\qquad \chi(\gamma)=\gamma(\gamma-1)(\gamma-\mu).
+\]
+The function $\chi$ is strictly increasing on $\gamma>\max(1,\mu)$ and $\chi(\gamma_E)=k$ (Corollary~\ref{cor:cones}). Hence $A+\theta\ge\gamma_E$, which is \eqref{neg:eq:monomialbound}; and $\gamma_E>A$ in $\cP$. Equality requires equality in all three inequalities with $\theta=\gamma_E-A$, that is, $a_1=(\gamma_E-1)/\mu=\eta_E/\mu$ and $a_2=\gamma_E-\mu=\zeta_E/\eta_E$; conversely these values give $\lambda/(a_1a_2)=k/\zeta_E=\gamma_E$.
+
+If $w$ were a supersolution, all three means would be nonnegative. Finally $\avg{\mathfrak m}\le\min_i\avg{g_i}$, so $-\avg{\mathfrak m}\ge\gamma_E-A$. The last sentence of the statement is a special case, since a product of powers of $x$, $y$, $\ell$ is positive, $C^1$ and $T$-periodic along $\Gamma$.
+\end{proof}
+The bound $\lambda_c\le\gamma_E-A$ is the statement $\gamma\le\gamma_E$, which is weaker than the Jensen bound recorded after Proposition~\ref{prop:strongidentity}. At the equaliser, the value of $w$ at $E$ is a multiple of $(1,\eta_E,\zeta_E)^{\mathsf T}$, which is the positive eigenvector of the compound matrix $C$ at $E$, with eigenvalue $\gamma_E-A$. Proposition~\ref{prop:nomonomial} holds on every cycle, including attracting ones, on which supersolutions exist. A certificate must therefore change the ratios $\ell:y:x$ in a way that depends on the phase. The proposition does not cover pairs in which $\tilde\eta$ and $\tilde\zeta$ are two different monomials in $x,y,\ell$; floating-point results for such families are reported at the end of the next subsection.
+
+Two further explicit pairs are excluded on every cycle in $\cP$ by one-line arguments. For a constant pair $(\tilde\eta,\tilde\zeta)=(e_0,z_0)$ the defects of $(1,e_0,z_0)^{\mathsf T}$ are $\mu-e_0$, $1-z_0/e_0$ and $A-x/z_0$, and $\avg x=k$; $\avg{\mathfrak m}\ge0$ would require $z_0\le e_0\le\mu$ and $z_0\ge k/A>\mu$. For the pair $(\etaz,\zeta_0)$ of Proposition~\ref{prop:kappa}, on a cycle on which $\etaz>0$, the residuals of \eqref{eq:projective} are $R_1=k\psiU(U)\,p/\Sg$ and $R_2=k\psiU(U)\,p'/\Sg$ by Proposition~\ref{prop:kappa}(iii), and Proposition~\ref{prop:strongidentity}(v) gives $\mathfrak m=\mu-\etaz-\max(0,-R_1/\etaz,-R_2/\zeta_0)$. On the falling arc $R_1<0$ wherever $U\ne0$, so $\mathfrak m<\mu-\etaz$ there, and $\avg{\mathfrak m}<\mu-\avg{\etaz}=0$ by Theorem~\ref{thm:gauges}(vi).
+
+\subsection{First-order rigidity at the Hopf point}\label{neg:sec:rigidity}
+Fix $\mu>0$. Let $k_j>\kH$ with $k_j\to\kH$, and let $\Gamma_j=(U_j,p_j,y_j)$ be a cycle at $(\mu,k_j)$ such that
+\[
+\delta_j:=\max_t\bigl|r_j(t)\bigr|\to0,\qquad r_j=(U_j,\ p_j,\ y_j-k_j),
+\]
+with $|\cdot|$ the Euclidean norm. By Lemma~\ref{lem:collar} and local Hopf theory these are the cycles of the Hopf branch. The argument in the proof of that lemma applies to every neighbourhood of the equilibrium, so every sequence of cycles with $k_j\downarrow\kH$ has this property; this remark is not used below. Let $T_j$ be the least period and $\xi_j$ the crest amplitude of $\Gamma_j$, let the crest be at $t=0$, and let $\eta_j,\zeta_j$ be the adjoint ratios of $\Gamma_j$. Put $T_0=2\pi/\sqrt\mu$, write $\avg f_0$ for the mean of a $T_0$-periodic function over one period, and define
+\begin{equation}\label{neg:eq:firstorder}
+U_1(t)=\cos(\sqrt\mu\,t),\quad p_1(t)=U_1'(t)=-\sqrt\mu\,\sin(\sqrt\mu\,t),\quad y_1=\mu\,U_1-\mu\,p_1,\quad r_1=(U_1,p_1,y_1),
+\end{equation}
+\begin{equation}\label{neg:eq:astar}
+a_*=\frac{\mu A}{D_\mu}\,U_1-\frac{2\mu}{D_\mu}\,p_1,\qquad
+b_*=\frac{\mu(\mu^2+4\mu+1)}{D_\mu}\,U_1-\frac{\mu A}{D_\mu}\,p_1 ,
+\end{equation}
+with $D_\mu$ as in \eqref{neg:eq:constants}. In this subsection a remainder $o(\xi_j)$ in a formula for a function of $t$ is uniform for $t$ in every compact interval, and ``with first derivatives'' means that the formula may be differentiated once in $t$ with a remainder of the same kind. A \emph{trial pair} along $\Gamma_j$ is a pair $(\tilde\eta_j,\tilde\zeta_j)$ of positive $T_j$-periodic $C^1$ functions; $g_{1,j},g_{2,j},g_{3,j}$ and $\mathfrak m_j$ denote the defects \eqref{neg:eq:defects} of $w=(1,\tilde\eta_j,\tilde\zeta_j)^{\mathsf T}$,
+\[
+g_1=\mu-\tilde\eta,\qquad g_2=\frac{\tilde\eta'+\tilde\eta-\tilde\zeta}{\tilde\eta},\qquad g_3=\frac{\tilde\zeta'+A\tilde\zeta-x}{\tilde\zeta}.
+\]
+By \eqref{neg:eq:comparison}, a trial pair with $\avg{\mathfrak m_j}\ge0$ certifies $\lambda_c(\Gamma_j)\le0$.
+
+\begin{lemma}[First-order rigidity at the Hopf point]\label{lem:rigidity}
+With the notation above the following hold.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item \emph{Cycles.} $T_j\to T_0$, $\delta_j=O(\xi_j)$, $k_j-\kH=o(\xi_j)$, and
+\[
+r_j(t)=\xi_j\,r_1(t)+o(\xi_j)\qquad\text{with first derivatives.}
+\]
+\item \emph{Adjoint ratios.} $\eta_j=\mu+\xi_j\,a_*+o(\xi_j)$ and $\zeta_j=\mu+\xi_j\,b_*+o(\xi_j)$, with first derivatives. Consequently $\lambda_c(\Gamma_j)=o(\xi_j)$, and at the crest
+\[
+\frac{\zeta_j(0)}{k_j}=\frac1A+\frac{\mu^2+4\mu+1}{AD_\mu}\,\xi_j+o(\xi_j).
+\]
+\item \emph{Rigidity.} Let $(\tilde\eta_j,\tilde\zeta_j)$ be trial pairs along $\Gamma_j$ such that
+\[
+\tilde\eta_j=e_0+\sigma_j+\xi_j\,a+o(\xi_j),\qquad \tilde\zeta_j=z_0+\tau_j+\xi_j\,b+o(\xi_j),\qquad\text{with first derivatives,}
+\]
+where $e_0,z_0>0$ are constants, $\sigma_j,\tau_j$ are real numbers tending to $0$, and $a,b$ are $C^1$ functions of period $T_0$ with $\avg a_0=\avg b_0=0$. If $\avg{\mathfrak m_j}\ge0$ for all large $j$, then
+\[
+e_0=z_0=\mu,\qquad \sigma_j=o(\xi_j),\qquad \tau_j=o(\xi_j),\qquad a=a_*,\qquad b=b_* .
+\]
+\item \emph{State functions.} Let $\tilde\eta(r;k)$ and $\tilde\zeta(r;k)$ be positive functions of $r=(U,p,y-k)$ and $k$ which, together with their first partial derivatives in $r$, are continuous on a neighbourhood of $(0;\kH)$, and let $\tilde\eta_j(t)=\tilde\eta(r_j(t);k_j)$, $\tilde\zeta_j(t)=\tilde\zeta(r_j(t);k_j)$. If $\avg{\mathfrak m_j}\ge0$ for all large $j$, then $\tilde\eta(0;\kH)=\tilde\zeta(0;\kH)=\mu$, $\tilde\eta(0;k_j)-\mu=o(\xi_j)$, $\tilde\zeta(0;k_j)-\mu=o(\xi_j)$, and at $(0;\kH)$
+\begin{equation}\label{neg:eq:jet}
+\begin{aligned}
+\partial_U\tilde\eta+\mu\,\partial_y\tilde\eta&=\frac{\mu A}{D_\mu},&\qquad \partial_p\tilde\eta-\mu\,\partial_y\tilde\eta&=-\frac{2\mu}{D_\mu},\\
+\partial_U\tilde\zeta+\mu\,\partial_y\tilde\zeta&=\frac{\mu(\mu^2+4\mu+1)}{D_\mu},&\qquad \partial_p\tilde\zeta-\mu\,\partial_y\tilde\zeta&=-\frac{\mu A}{D_\mu}.
+\end{aligned}
+\end{equation}
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+\emph{(i), Step 1: rescaling.} Put $\hat r_j=r_j/\delta_j=(\hat U_j,\hat p_j,\hat y_j)$, so that $\max_t|\hat r_j(t)|=1$. By \eqref{eq:logsystem},
+\[
+\hat U_j'=\hat p_j,\qquad \hat p_j'=-\mu\,\hat p_j-\hat y_j,\qquad \hat y_j'=k_j\,\frac{e^{\delta_j\hat U_j}-1}{\delta_j}-\hat y_j .
+\]
+Since $|e^{s}-1-s|\le s^2e^{|s|}/2$ and $|\hat U_j|\le1$, the last right side differs from $\kH\hat U_j-\hat y_j$ by at most $|k_j-\kH|+k_j\delta_je^{\delta_j}/2$. Hence $\hat r_j'=J_0\,\hat r_j+o(1)$ uniformly on $\R$, where $J_0$ is the matrix $J$ of \eqref{eq:adjointmatrices} with $x=\kH$; its characteristic polynomial is $(z+A)(z^2+\mu)$. The function $r_1$ of \eqref{neg:eq:firstorder} solves $r'=J_0r$, and the solutions of this linear system that are bounded on $\R$ are exactly the functions $c\,r_1(\cdot+\phi)$ with $c\ge0$ and $\phi\in\R$: a bounded solution has no component along the eigenvector of $-A$, and the remaining invariant plane is spanned by $r_1$ and its translates.
+
+Since $\Gamma_j$ is $T_j$-periodic there is $s_j\in[0,T_j)$ with $|\hat r_j(s_j)|=1$. The functions $\hat r_j(\cdot+s_j)$ are bounded by $1$ and have uniformly bounded derivatives. By the Arzel\`a--Ascoli theorem every subsequence has a further subsequence along which $\hat r_j(\cdot+s_j)$ converges, uniformly on compact intervals and together with its first derivative, to a solution $\hat r$ of $\hat r'=J_0\hat r$ on $\R$ with $|\hat r|\le1$ and $|\hat r(0)|=1$. Thus $\hat r=c_1\,r_1(\cdot+\phi)$ with $c_1=1/\max_t|r_1(t)|$.
+
+\emph{Step 2: period and phase.} The second component of $\hat r$ is $c_1p_1(\cdot+\phi)$. Its zeros are simple, they are spaced $T_0/2$ apart, and its derivative is negative exactly at the zeros $-\phi+mT_0$, $m\in\mathbb Z$. Because of the $C^1$ convergence, for large $j$ in the subsequence the zeros of $\hat p_j(\cdot+s_j)$ in a fixed compact interval are simple, there is exactly one of them near each zero of $\hat p$ and none elsewhere, and the derivative has the same sign as in the limit. By Theorem~\ref{thm:geometry}, $p_j$ has exactly two zeros per period, and those with $p_j'<0$ are the crest times $mT_j$. The zeros of $\hat p_j(\cdot+s_j)$ with negative derivative are therefore the points $-s_j+mT_j$. Comparing consecutive ones with those of the limit gives $T_j\to T_0$, and $s_j\to\phi$ modulo $T_0$. Consequently $\hat r_j(t)=\hat r_j\bigl((t-s_j)+s_j\bigr)\to\hat r(t-\phi)=c_1r_1(t)$, uniformly on compact intervals and with first derivatives. The limit does not depend on the subsequence, so the whole sequence converges.
+
+\emph{Step 3: amplitude.} Since $U_1(0)=1$, $\xi_j=U_j(0)=\delta_j\hat U_j(0)=\delta_j\,(c_1+o(1))$. Hence $\delta_j=O(\xi_j)$ and $r_j=\delta_j\hat r_j=\xi_j\,r_1+o(\xi_j)$ with first derivatives.
+
+\emph{Step 4: the gain.} On any cycle multiply \eqref{eq:scalar} by $U''$ and integrate over a period. The integrals of $U'''U''$ and $U'U''$ vanish, and $\int_0^T(e^U-1)U''\dd=-\int_0^Te^UU'^2\dd$. Hence $A\avg{p'^2}=k\avg{e^Up^2}$. With $\avg{p'^2}=\mu\avg{p^2}$ from the proof of Proposition~\ref{prop:crestmap},
+\begin{equation}\label{neg:eq:gainidentity}
+k\,\avg{e^Up^2}=\kH\,\avg{p^2},\qquad\text{that is,}\qquad (k-\kH)\,\avg{e^Up^2}=-\kH\,\avg{(e^U-1)\,p^2}.
+\end{equation}
+For $\Gamma_j$, Step 3 gives $e^{U_j}p_j^2=\xi_j^2p_1^2+o(\xi_j^2)$ and $(e^{U_j}-1)p_j^2=\xi_j^3U_1p_1^2+o(\xi_j^3)$. Since $T_j\to T_0$, the means over $[0,T_j]$ are $\xi_j^2\,(\avg{p_1^2}_0+o(1))=\xi_j^2\,(\mu/2+o(1))$ and $\xi_j^3\,(\avg{U_1p_1^2}_0+o(1))=o(\xi_j^3)$, because $\avg{U_1p_1^2}_0=0$. By \eqref{neg:eq:gainidentity}, $k_j-\kH=o(\xi_j)$.
+
+\emph{(ii), Step 1: convergence to $(\mu,\mu)$.} By (i), $x_j=k_je^{U_j}\to\kH$ uniformly. By Lemma~\ref{lem:projectivebounds}, applied with the extreme values of $x_j$, which tend to $\kH$, the pairs $(\eta_j,\zeta_j)$ take values in a fixed compact subset of $(0,\infty)^2$ for large $j$, and by \eqref{eq:projective} their derivatives are uniformly bounded. Suppose that $(\eta_j,\zeta_j)$ does not converge to $(\mu,\mu)$ uniformly on $\R$. Then there are $\epsilon_0>0$, a subsequence and times $t_j$ with $|(\eta_j,\zeta_j)(t_j)-(\mu,\mu)|\ge\epsilon_0$, and a further subsequence along which $(\eta_j,\zeta_j)(\cdot+t_j)$ converges uniformly on compact intervals to a solution of the Riccati system \eqref{eq:projective} with $x\equiv\kH$ which is defined and nonnegative on $\R$ and differs from $(\mu,\mu)$ at $t=0$. The constant pair $(\mu,\mu)$ solves that system, because $\mu+(\mu-1)\mu-\mu^2=0$ and $\kH-A\mu=0$. By Proposition~\ref{prop:riccatientire}(i), applied with the constant function $x\equiv\kH$, it is the only solution that is nonnegative on $\R$. This is a contradiction.
+
+\emph{Step 2: first order.} Put $\mathbf w_j=(\eta_j-\mu,\ \zeta_j-\mu)^{\mathsf T}$. By \eqref{eq:projective} and $\kH=\mu A$,
+\[
+\mathbf w_j'=L\,\mathbf w_j+\mathbf N_j,\qquad L=\begin{pmatrix}-A&1\\-\mu&-A\end{pmatrix},\qquad
+\mathbf N_j=\begin{pmatrix}-(\eta_j-\mu)^2\\ x_j-\kH-(\eta_j-\mu)(\zeta_j-\mu)\end{pmatrix}.
+\]
+The eigenvalues of $L$ are $-A\pm i\sqrt\mu$, so $\|e^{Ls}\|\le c_Le^{-As}$ for $s\ge0$ with a constant $c_L$, and a solution of $\mathbf w'=L\mathbf w+\mathbf N$ that is bounded on $\R$, with $\mathbf N$ bounded and continuous, equals $\int_{-\infty}^te^{L(t-s)}\mathbf N(s)\,\mathrm ds$; in particular it is unique. Hence $\sup|\mathbf w_j|\le(c_L/A)\bigl(\sup|x_j-\kH|+2\sup|\mathbf w_j|^2\bigr)$. By Step 1, $\sup|\mathbf w_j|\to0$, so for large $j$
+\[
+\sup|\mathbf w_j|\le\frac{2c_L}{A}\,\sup|x_j-\kH|=O(\xi_j),
+\]
+the last by (i), since $x_j-\kH=k_j(e^{U_j}-1)+(k_j-\kH)$. Consequently $\sup_\R|\mathbf N_j|=O(\xi_j)$ and, by (i) again, $\mathbf N_j=\xi_j\,(0,\kH U_1)^{\mathsf T}+o(\xi_j)$. Substituting \eqref{neg:eq:astar} and $U_1'=p_1$, $p_1'=-\mu U_1$ shows that $\mathbf w_*=(a_*,b_*)^{\mathsf T}$ satisfies
+\begin{equation}\label{neg:eq:linriccati}
+a_*'=b_*-A\,a_*,\qquad b_*'=\kH\,U_1-A\,b_*-\mu\,a_* ,
+\end{equation}
+that is, $\mathbf w_*'=L\mathbf w_*+(0,\kH U_1)^{\mathsf T}$, and $\mathbf w_*$ is bounded. For every $L_0>0$ and $t$ in a compact interval,
+\[
+\mathbf w_j(t)-\xi_j\mathbf w_*(t)=\Bigl(\int_{t-L_0}^t+\int_{-\infty}^{t-L_0}\Bigr)e^{L(t-s)}\bigl[\mathbf N_j(s)-\xi_j\,(0,\kH U_1(s))^{\mathsf T}\bigr]\,\mathrm ds=o(\xi_j)+O\bigl(e^{-AL_0}\xi_j\bigr).
+\]
+As $L_0$ is arbitrary, $\mathbf w_j=\xi_j\mathbf w_*+o(\xi_j)$, and then $\mathbf w_j'=L\mathbf w_j+\mathbf N_j=\xi_j\mathbf w_*'+o(\xi_j)$. Finally $\lambda_c(\Gamma_j)=\avg{\eta_j}-\mu=\xi_j\,(\avg{a_*}_0+o(1))+o(\xi_j)=o(\xi_j)$, because $\avg{a_*}_0=0$ and $T_j\to T_0$; and $\zeta_j(0)=\mu+\xi_jb_*(0)+o(\xi_j)$ with $b_*(0)=\mu(\mu^2+4\mu+1)/D_\mu$ and $k_j=\mu A+o(\xi_j)$.
+
+\emph{(iii), order zero.} By hypothesis $\tilde\eta_j\to e_0$, $\tilde\zeta_j\to z_0$, $\tilde\eta_j'\to0$, $\tilde\zeta_j'\to0$, and by (i) $x_j\to\kH$, all uniformly. Hence $\mathfrak m_j\to\min(\mu-e_0,\ 1-z_0/e_0,\ A-\kH/z_0)$ uniformly, and $\avg{\mathfrak m_j}\ge0$ gives $e_0\le\mu$, $z_0\le e_0$ and $z_0\ge\kH/A=\mu$. So $e_0=z_0=\mu$.
+
+\emph{Order one.} Put $\varsigma_j=\sigma_j/\xi_j$, $\varrho_j=\tau_j/\xi_j$ and $\Theta_j=1+|\varsigma_j|+|\varrho_j|$. Then $\tilde\eta_j=\mu+\xi_j(\varsigma_j+a)+o(\xi_j)$, $\tilde\zeta_j=\mu+\xi_j(\varrho_j+b)+o(\xi_j)$, and by (i) $x_j=\kH(1+\xi_jU_1)+o(\xi_j)$. The numerators of $g_2$ and $g_3$ are $\tilde\eta'+\tilde\eta-\tilde\zeta$ and $\tilde\zeta'+A\tilde\zeta-x$, and the denominators tend to $\mu$. Therefore
+\begin{align*}
+g_{1,j}&=-\xi_j\,(\varsigma_j+a)+o(\xi_j),\\
+g_{2,j}&=\frac{\xi_j}{\mu}\,\bigl(\varsigma_j-\varrho_j+a'+a-b\bigr)+o(\xi_j\Theta_j),\\
+g_{3,j}&=\frac{\xi_j}{\mu}\,\bigl(A\varrho_j+b'+Ab-\mu AU_1\bigr)+o(\xi_j\Theta_j).
+\end{align*}
+The functions $a$, $b$, $a'$, $b'$, $U_1$ are $T_0$-periodic with zero mean and $T_j\to T_0$, so their means over $[0,T_j]$ tend to $0$, and
+\[
+\avg{g_{1,j}}=-\xi_j\varsigma_j+o(\xi_j),\qquad
+\avg{g_{2,j}}=\frac{\xi_j}{\mu}(\varsigma_j-\varrho_j)+o(\xi_j\Theta_j),\qquad
+\avg{g_{3,j}}=\frac{\xi_j}{\mu}A\varrho_j+o(\xi_j\Theta_j).
+\]
+Each of these is at least $\avg{\mathfrak m_j}\ge0$. The combination $\avg{g_{1,j}}+\mu\avg{g_{2,j}}+(\mu/A)\avg{g_{3,j}}$ equals $o(\xi_j\Theta_j)$ and its three terms are nonnegative, so each mean is $o(\xi_j\Theta_j)$. Thus $\varsigma_j$, $\varsigma_j-\varrho_j$ and $\varrho_j$ are $o(\Theta_j)$, that is, $|\varsigma_j|+|\varrho_j|=o(1+|\varsigma_j|+|\varrho_j|)$, which forces $\varsigma_j\to0$ and $\varrho_j\to0$.
+
+Now $g_{i,j}=\xi_jB_i+o(\xi_j)$ with
+\begin{equation}\label{neg:eq:brackets}
+B_1=-a,\qquad B_2=\frac{a'+a-b}{\mu},\qquad B_3=\frac{b'+Ab-\mu AU_1}{\mu},
+\end{equation}
+and $\mathfrak m_j=\xi_j\min_iB_i+o(\xi_j)$, because the minimum of three numbers is a Lipschitz function of them. Dividing $\avg{\mathfrak m_j}\ge0$ by $\xi_j$ and letting $j\to\infty$ gives $\avg{\min_iB_i}_0\ge0$. Each $B_i$ is continuous and $T_0$-periodic with $\avg{B_i}_0=0$, and $B_i-\min_lB_l$ is nonnegative with mean at most $0$; so $B_i=\min_lB_l$ identically. Hence $B_1=B_2=B_3$, which is the system \eqref{neg:eq:linriccati} for $(a,b)$. By the uniqueness of bounded solutions noted in the proof of (ii), $(a,b)=(a_*,b_*)$.
+
+\emph{(iv).} By the mean value theorem, $\tilde\eta_j(t)-\tilde\eta(0;k_j)$ is the scalar product of $r_j(t)$ with $\nabla_r\tilde\eta$ at a point of the segment from $0$ to $r_j(t)$ and at the parameter $k_j$. By continuity of $\nabla_r\tilde\eta$ at $(0;\kH)$ and by (i),
+\[
+\tilde\eta_j=\tilde\eta(0;k_j)+\xi_j\,a+o(\xi_j),\qquad a(t)=\nabla_r\tilde\eta(0;\kH)\cdot r_1(t),
+\]
+and $\tilde\eta_j'=\nabla_r\tilde\eta(r_j;k_j)\cdot r_j'=\xi_j\,a'+o(\xi_j)$. The function $a$ is $T_0$-periodic with zero mean, because the components of $r_1$ are. So the hypotheses of (iii) hold with $e_0=\tilde\eta(0;\kH)$ and $\sigma_j=\tilde\eta(0;k_j)-\tilde\eta(0;\kH)$, and in the same way for $\tilde\zeta$. By (iii), $a=a_*$ and $b=b_*$. Since $r_1=(U_1,p_1,\mu U_1-\mu p_1)$,
+\[
+a=\bigl(\partial_U\tilde\eta+\mu\,\partial_y\tilde\eta\bigr)\,U_1+\bigl(\partial_p\tilde\eta-\mu\,\partial_y\tilde\eta\bigr)\,p_1 ,
+\]
+with $\partial_y$ the derivative in the third component of $r$, and $U_1,p_1$ are linearly independent. Comparison with \eqref{neg:eq:astar} gives \eqref{neg:eq:jet}.
+\end{proof}
+
+\begin{remark}[Reading of the lemma]\label{neg:rem:jet}
+(a) By \eqref{neg:eq:centrecoeff}, $b_*=2c_{20}U_1+c_{11}p_1$ and $-a_*=c_{11}U_1+2c_{02}p_1$: the pair $(b_*,-a_*)$ is the gradient of the quadratic part of the centre graph \eqref{neg:eq:centregraph}, in accordance with $\nabla h=(\zeta,-\eta)$ in Theorem~\ref{thm:attractor}(A4). Conditions \eqref{neg:eq:jet} say that a certificate given by $C^1$ functions of the state must have, at the Hopf point and on the centre plane $\{y-k=\mu U-\mu p\}$, the same differential as the true pair. In this sense it must reproduce the second-order jet of the attractor at $E$.
+
+(b) Part (iii) leaves no freedom at first order. For the true pair $\avg{\mathfrak m_j}=-\lambda_c(\Gamma_j)=o(\xi_j)$ by (ii). The classical normal form with the coefficient $l_1$ of Appendix~\ref{app:hopf} gives the sharper statement $\lambda_c=-A\mu^2\xi^2/(2C_\mu D_\mu)+o(\xi^2)$ on the Hopf branch; this value is imported and is not used in any proof here. The margin available to a certificate near the Hopf point is thus of second order in the amplitude, while the functions $g_i$ oscillate at first order.
+
+(c) The chemical pair $(\tilde\eta,\tilde\zeta)=(y/\ell,x/\ell)$ has $\partial_U\tilde\eta+\mu\partial_y\tilde\eta=\mu/A$ and $\partial_p\tilde\eta-\mu\partial_y\tilde\eta=0$ at $(0;\kH)$, where $y=\kH$ and $\ell=A$. Both differ from the values in \eqref{neg:eq:jet} for every $\mu>0$, since $D_\mu-A^2=4\mu$. This is consistent with Proposition~\ref{prop:nomonomial}.
+
+(d) The lemma is a necessary condition near the Hopf point. It does not assert that a pair satisfying \eqref{neg:eq:jet} is a certificate.
+\end{remark}
+
+\begin{remark}[The sign in Theorem~\ref{thm:failed} without the normal form]\label{neg:rem:selfcontained}
+Let $\Gamma_j$ be as in Lemma~\ref{lem:rigidity}. By part (ii) of the lemma and Proposition~\ref{neg:prop:charts}(i), $m_t=e^{\lambda_cT_j}=1+o(\xi_j)$ and $r_e=\zeta_j(0)/k_j=1/A+(\mu^2+4\mu+1)\xi_j/(AD_\mu)+o(\xi_j)$. By \eqref{eq:crestidentities}, the crest value of $z=y/k$ is $1+(e^{\xi_j}-1)/(1+\eta_j(0))$, and $\eta_j(0)=\mu+\xi_j\mu A/D_\mu+o(\xi_j)$, so
+\[
+z=1+\frac{\xi_j}{A}+\frac1A\Bigl(\frac12-\frac{\mu}{D_\mu}\Bigr)\xi_j^2+o(\xi_j^2)=1+\frac{\xi_j}{A}+\frac{c_{20}}{\kH}\,\xi_j^2+o(\xi_j^2).
+\]
+Hence \eqref{neg:eq:mismatch} and \eqref{neg:eq:chartmismatch} hold with remainders $o(\xi_j)$. The matrix $M_{(U,z)}$ of $\Gamma_j$ is obtained from the fundamental matrix of the variational equation along $\Gamma_j$ over $[0,T_j]$ by projecting along the flow direction at the crest onto $\{p=0\}$. By part (i) the coefficient matrix converges uniformly to $J_0$, $T_j\to T_0$, and the flow direction at the crest, normalised by its $p$-component, converges to $(0,1,-\mu)$, which is $(0,1,-1/A)$ in the coordinates $(U,p,z)$. Hence $M_{(U,z)}\to M_0$, the matrix \eqref{neg:eq:Mzero}. Inserting these limits in the exact identities \eqref{neg:eq:twocomponents} gives \eqref{eq:radialfailure} and Proposition~\ref{neg:prop:charts}(ii) with remainders $o(\xi_j)$ in place of $O(\xi^2)$, for every sequence of cycles that converges to $E$ as $k_j\downarrow\kH$. The sign statements of Section~\ref{neg:sec:radial} therefore rest only on results proved in this paper.
+\end{remark}
+
+\paragraph{Floating-point results for explicit families.}
+If $\log\tilde\eta$ and $\log\tilde\zeta$ are linear combinations of fixed functions of the state, then $-\avg{\mathfrak m}$ is a convex function of the coefficients (Proposition~\ref{prop:strongidentity}(v)). The best pair of such a family on a given cycle is the solution of a convex programme, and a negative optimal value of $\avg{\mathfrak m}$ shows, up to the tolerance of the solver, that the family contains no certificate on that cycle. The following results are floating-point evidence. They were obtained on 55 cycles with $\mu\in\{0.05,0.1,0.2,0.5,1\}$ and $\rho\in\{1.001,1.003,1.01,1.03,1.1,1.3,1.6,2,3,5,10\}$. The optimal value is quoted in units of $|\lambda_c|$, so that the true pair has the value $1$.
+\begin{itemize}
+\item $\log\tilde\eta$, $\log\tilde\zeta$ affine in $(U,p,y)$: negative on all 55 cycles, between $-1.87$ and $-0.24$.
+\item Affine in $(U,\log y,\log\ell)$, that is, $\tilde\eta$ and $\tilde\zeta$ independent monomials in $x,y,\ell$: negative on 11 cycles, those with $\mu\le0.1$, $\rho\le1.03$ and with $\mu=0.2$, $\rho\le1.01$; the lowest value is $-0.41$ at $(\mu,\rho)=(0.05,1.001)$. Positive on the other 44 cycles, between $0.005$ and $0.82$.
+\item With $\log\LamE$ added: negative on 5 cycles, $\mu=0.05$ with $\rho\le1.01$ and $\mu=0.1$ with $\rho\le1.003$; the lowest value is $-0.12$.
+\item With $\log\ell^*$ added, where $\ell^*=\ell+\ell'=y+(1-\mu)\ell$: positive on all 55 cycles, between $0.27$ and $0.99$.
+\item For the last family with coefficients required to be the same for all $\rho$ at fixed $\mu$, no certificate was found. That search is not exhaustive and is not counted as a refutation.
+\end{itemize}
+The failures are concentrated near the Hopf point, where Lemma~\ref{lem:rigidity} applies and the available margin is of second order. A pair that is positive on each cycle separately is not a proof: the inequality $\avg{\mathfrak m}\ge0$ is an average along a cycle that is not known in advance, and a proof would need the pointwise inequalities $g_i\ge0$ on an explicit region that contains every cycle.
+
+\subsection{Published planar criteria whose hypotheses fail}\label{neg:sec:planar}
+By Theorem~\ref{thm:attractor} the uniqueness question concerns the planar field $F(U,p)=(p,\ k-\mu p-h(U,p))$ on $\Dsc$. This subsection records why the planar uniqueness criteria that were examined do not apply to $F$. None of the cited theorems is used in this paper. The statements of \cite{SV10,GG21,Sabatini10} were read in the preprints listed in the bibliography; the original articles \cite{Massera54,Zhang86,Duff53} were not obtained, and what is said about them below is limited to the general form of their hypotheses as recalled in the secondary literature.
+
+\begin{proposition}[Three hypotheses that fail]\label{neg:prop:planar}
+Assume $k>\kH$.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item \emph{Radial angular function.} For $q=(U,p)\in\inter\Dsc$,
+\begin{equation}\label{neg:eq:ram}
+F(q)\wedge\bigl(DF(q)\,q\bigr)=-p\,K(q),
+\end{equation}
+where $(a_1,a_2)\wedge(b_1,b_2)=a_1b_2-a_2b_1$. Since $K>0$ on $\Dsc\setminus\{(0,0)\}$, the left side is negative where $p>0$ and positive where $p<0$.
+\item \emph{Curvature and angular Dulac functions.} Along every cycle, $\Xg'-(\eta-\mu)\,\Xg=pW$ and $\Sg'-(\eta-\mu)\,\Sg=pK$, with $W>0$ and $K>0$. Both right sides change sign at the crest and at the trough and at no other phase.
+\item \emph{The Li\'enard plane is not separable.} Let $w_2=p-(y-k)+\mu U$, so that $w_2'=-k(e^{U}-1)$, and let $U'=\mathfrak p_4(U,w_2)$ be the reduced field in the plane $(U,w_2)$ described at the end of Section~\ref{sec:attractor}. Then $\partial\mathfrak p_4/\partial w_2=1/(1+\eta)$ on the image of $\inter\Dsc$. For the cycles $\Gamma_j$ of Lemma~\ref{lem:rigidity} and all large $j$, there are two points of $\Gamma_j$ with the same value of $w_2$, strictly between the minimum and the maximum of $w_2$ on $\Gamma_j$, and different values of $\eta$. Hence at the parameters $(\mu,k_j)$ the function $\mathfrak p_4$ is not of the form $\varphi(w_2)-\Phi(U)$ with $\varphi$ of class $C^1$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(i) On $\inter\Dsc$, $DF=\begin{psmallmatrix}0&1\\-\zeta&\eta-\mu\end{psmallmatrix}$ by Theorem~\ref{thm:attractor}(A4),(A5), so $DF(q)\,q=(p,\ -\zeta U+(\eta-\mu)p)$ and
+\[
+F\wedge(DF\,q)=p\,\bigl(-\zeta U+(\eta-\mu)p\bigr)-\bigl(k-\mu p-h\bigr)\,p=-p\,\bigl(\zeta U-\eta p-h+k\bigr)=-p\,K .
+\]
+Positivity of $K$ is part of (A5). The identity is also the derivative at $\theta=1$ of the scaling identity of Proposition~\ref{att:prop:scaling}.
+
+(ii) These are the equations \eqref{eq:gaugeodes}, with $K>0$ by \eqref{eq:positiveK} and $W>0$ by Lemma~\ref{lem:curvature}; $p$ has exactly two zeros per period, both simple (Theorem~\ref{thm:geometry}).
+
+(iii) On $\inter\Dsc$ the map $(U,p)\mapsto(U,w_2)$, with $w_2=p-h(U,p)+k+\mu U$, has $\partial w_2/\partial p=1-h_p=1+\eta>0$, which gives the formula for $\partial\mathfrak p_4/\partial w_2$. If $\mathfrak p_4=\varphi(w_2)-\Phi(U)$ with $\varphi\in C^1$, then $1/(1+\eta)=\varphi'(w_2)$ on $\inter\Dsc$, so $\eta=\Theta(w_2)$ there with $\Theta=1/\varphi'-1$ continuous on the interval $w_2(\inter\Dsc)$. This interval contains every value lying strictly between the minimum and the maximum of $w_2$ on $\Dsc$. Since $\eta$ and $w_2$ are continuous on $\Dsc$, two points of $\Dsc$ at which $w_2$ takes the same such value have the same $\eta$. It therefore suffices to prove the statement about $\Gamma_j$. Along $\Gamma_j$, Lemma~\ref{lem:rigidity}(i) gives $w_2=\xi_j\,(p_1-y_1+\mu U_1)+o(\xi_j)=\xi_j\,A\,p_1+o(\xi_j)$ with first derivatives. The function $p_1$ takes the same value at $t=T_0/8$ and at $t=3T_0/8$, and $p_1'(T_0/8)\ne0$. By the intermediate value theorem there are $t_j\to T_0/8$ with $w_2(t_j)=w_2(3T_0/8)$ along $\Gamma_j$. By Lemma~\ref{lem:rigidity}(ii),
+\[
+\eta_j(t_j)-\eta_j(3T_0/8)=\xi_j\,\bigl[a_*(T_0/8)-a_*(3T_0/8)\bigr]+o(\xi_j)=\xi_j\,\frac{\sqrt2\,\mu A}{D_\mu}+o(\xi_j),
+\]
+which is nonzero for large $j$. The common value of $w_2$ is $-\xi_jA\sqrt{\mu/2}+o(\xi_j)$, while the extreme values of $w_2$ on $\Gamma_j$ are $\pm\xi_jA\sqrt\mu+o(\xi_j)$.
+\end{proof}
+
+\emph{Radial criteria.} The criterion of radial angular monotonicity \cite[Theorem~6]{SV10}, which descends from the theorems of Sansone and Massera \cite{Massera54}, requires the function \eqref{neg:eq:ram} to have one sign. By (i) it has the sign of $-p$. Geometrically this is the content of Proposition~\ref{att:prop:scaling}: the flow crosses the radial dilations of a projected cycle in opposite directions on the two sides of the $U$-axis. Sabatini's criterion \cite{Sabatini10} applies to equations $u''+u'\,\Phi(u,u')+g(u)=0$, a form which the reduced equation has with $g=g_\ast$ and $\Phi(U,p)=\mu+(h(U,p)-h(U,0))/p$, and requires a function $S$ built from $\Phi$ and $g$ to be nonzero; in floating-point computation $S$ takes both signs on the cycle (row B3 of Table~\ref{neg:tab:candidates}). In Massera's theorem, as it is recalled in the secondary literature, the damping function is monotone on each side of the equilibrium and is therefore extremal there. Here the divergence of $F$ is $\eta-\mu$, and by Lemma~\ref{lem:rigidity}(ii) it equals, to first order along the cycles of the Hopf branch, the linear function $(\mu A/D_\mu)\,U-(2\mu/D_\mu)\,p$ of the state: the effective damping changes sign across the equilibrium and is not extremal there.
+
+\emph{Dulac functions built from curvature.} The extended Bendixson--Dulac criterion of \cite[Theorem~2.3]{GG21} uses the numerator of the curvature of the orbits as the function $V$ and requires $\Dt V-V\diver F$ to have one sign. On a cycle that numerator is $\Xg$, and $\Dt\Xg-(\eta-\mu)\Xg=pW$ by (ii). The angular function $\Sg$ gives $pK$ in the same way.
+
+\emph{Zhang's theorem.} The uniqueness theorem of Zhang \cite{Zhang86} concerns Li\'enard systems with separated variables and a monotonicity condition on the ratio of the damping and the restoring force. By (iii) the reduced field is not of the separated form near the Hopf point. Pointwise analogues of the monotonicity condition are refuted by floating-point computation (rows B5 and B6).
+
+\emph{Rotated families.} A one-parameter family of planar fields is rotated in the sense of \cite{Duff53} if the cross product of the field with its derivative in the parameter has one sign. For the reduced fields in the parameter $k$ this was tested in the plane $(U,w_2/k)$, in which the second component of the field does not depend on $k$, and refuted by floating-point computation (row B12). In the classical theory a rotated family does not by itself exclude the appearance of a pair of cycles at a semistable cycle.
+
+\emph{Concave monotone maps.} See the end of Section~\ref{neg:sec:radial}.
+
+\subsection{Candidate structural statements}\label{neg:sec:candidates}
+Table~\ref{neg:tab:candidates} lists the structural statements that were formulated as possible routes to $\lambda_c<0$, with their status. In the status column, ``proved'' refers to a proof in this paper; ``refuted (fp)'' means refuted by floating-point computation; ``survives (fp)'' means that the floating-point tests listed found no violation, which is evidence and not proof. Parameters are given as pairs $(\mu,\rho)$. The last column names the output file that records the computation; paths are relative to the directory \path{provenance/research_lanes/} of the accompanying bundle, except in row A1, where the path is relative to \path{provenance/}. Section~\ref{sec:evidence} describes these computations and their limits.
+
+{\footnotesize
+\setlength{\LTleft}{0pt}\setlength{\LTright}{0pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.04\textwidth}>{\raggedright\arraybackslash}p{0.33\textwidth}>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}@{}}
+\caption{Candidate structural statements and their status.}\label{neg:tab:candidates}\\
+\toprule
+ & Statement & Status & Extent, parameters $(\mu,\rho)$, evidence file\\
+\midrule
+\endfirsthead
+\toprule
+ & Statement & Status & Extent, parameters $(\mu,\rho)$, evidence file\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+\multicolumn{4}{@{}l}{\emph{A. Contraction and concavity of the crest return map}}\\
+A1 & $M_{(U,z)}v<v$ for the square-root vector \eqref{eq:radial} & fails near the Hopf point for $\mu\ne1$: proved (Theorem~\ref{thm:failed}, Proposition~\ref{neg:prop:charts}); refuted (fp) on 9 of 31 cycles & $\mu=0.3$, $\xi=0.01$: ratios $1.0000581$ and $0.9995967$, $m_t=0.9999883$. \path{v2_0_bundle/evidence/manuscript_summary.json}\\
+A2 & Radial sublinearity about $E$ of the crest map $P$ of Proposition~\ref{prop:crestmonotone}, in the coordinates $(U,y-k)$ & fails near the Hopf point: proved (Proposition~\ref{neg:prop:charts} with $a\to0$, $b=1$); refuted (fp) & violated at 19, 5, 28, 95, 17 of 98 test pairs at $(1,1.3)$, $(1,2.5)$, $(0.2,1.5)$, $(0.2,1.1)$, $(3,1.5)$. \path{monotone/retmap.out}, \path{literature/sublinear_chart_test.out}\\
+A3 & Order-concavity of $P$ in the power charts $(a,b)=(1,1)$, $(a_0,1)$, $(\tfrac12,\tfrac12)$, $(0,1)$, $(0,0)$, where $a_0=(\mu^2+4\mu+1)/D_\mu$ & refuted (fp) & 96 to 281 of 832 ordered comparisons violated in each chart at $(1,2)$, $(1,1.1)$, $(0.2,1.5)$; second differences of $P$ along the coordinate directions take both signs. \path{literature/concavity_grid_test.out}, \path{monotone/retmap.out}\\
+A4 & $R_1$ is concave on the crest half-axis in the coordinate $u$; in $y-k$, $e^{U}-1$, $\sqrt K$, $\sqrt W$; in $\LamE$ & refuted (fp) & $u$: fails at 13 of 62 pairs ($\mu=0.002$, $\rho\ge1.3$; $\mu=0.01$, $\rho\ge3.5$; $(0.0027,5.02)$; $(0.002,13.92)$; $(500,34)$). The four middle coordinates: 62 of 62. $\LamE$: 19 of 62. \path{cartography/stests_results.json}\\
+A5 & $R_1(u)/u$ is strictly decreasing (first hypothesis of Proposition~\ref{prop:crestaxis}(iii)) & refuted (fp) & fails at 9 of 62 pairs: $\mu=0.002$ with $\rho\in\{1.3,2.5,3.5,5,9,21\}$; $(0.0027,5.02)$; $(0.002,13.92)$; $(500,34)$. Largest $\mathrm d\log R_1/\mathrm d\log u$: $1.079$ at $(0.002,9)$. \path{cartography/stests_results.json}\\
+A6 & $\iota$ is strictly decreasing (second hypothesis of Proposition~\ref{prop:crestaxis}(iii)) & refuted (fp) & fails at 19 of 62 pairs: $\mu=0.002$, $\rho\ge1.3$; $\mu=0.01$, $\rho\ge2.5$; $(0.05,21)$; $\mu=50$, $\rho\ge3.5$; $(0.0027,5.02)$; $(0.002,13.92)$; $(500,34)$. Holds at the other 43 pairs and at 14 further pairs with $\rho\le3$. \path{cartography/stests_results.json}, \path{planar/job2_a.json}\\
+A7 & The one-turn integral of $\eta-\mu$ is decreasing along the trough half-axis & refuted (fp) & fails at 14 of 14 pairs, $\mu$ from $0.03$ to $10$, $\rho$ from $1.02$ to $3$. \path{planar/job2_a.json}\\
+A8 & The one-turn mean $\bar\iota=\iota/T_1$ is strictly decreasing on the crest half-axis of the attractor & survives (fp); unproved; implies uniqueness (Proposition~\ref{neg:prop:signchange}) & no violation at 62 of 62 pairs, $\mu$ from $0.002$ to $500$, $\rho$ from $1.003$ to $34$. \path{cartography/stests_summary.csv}\\
+\midrule
+\multicolumn{4}{@{}l}{\emph{B. Planar criteria and Dulac functions for the reduced field}}\\
+B1 & Radial angular monotonicity, $F\wedge(DF\,q)\ge0$ \cite[Theorem~6]{SV10} & fails: proved (Proposition~\ref{neg:prop:planar}(i)) & the function equals $-pK$\\
+B2 & One-signed defect of the curvature Dulac function \cite[Theorem~2.3]{GG21} and of the angular one & fails on every cycle: proved (Proposition~\ref{neg:prop:planar}(ii)) & the defects are $pW$ and $pK$\\
+B3 & Sabatini's function $S$ is nonzero \cite{Sabatini10} & refuted (fp) & on the cycle $S$ ranges over $[-0.25,0.54]$ at $(1,1.1)$, $[-0.36,1.11]$ at $(1,1.3)$, $[-0.21,0.58]$ at $(0.3,1.1)$. \path{literature/starshaped_test.out}\\
+B4 & Radial Dulac weights $1/(F\wedge\nu)$, $\nu$ the radial field of one of twelve charts of the attractor & refuted (fp) & defect positive on 28\% to 52\% of sampled points in every chart at $(1,1.1)$, $(1,2)$, $(0.3,1.5)$, $(3,1.3)$. \path{planar/job2_massera.json}\\
+B5 & Zhang-type monotonicity in the plane $(U,w_2)$: $\partial_U\bigl(\partial_U\mathfrak p_4/(e^{U}-1)\bigr)\le0$ at fixed $w_2$ & refuted (fp) & violated on 4\% to 18\% ($U>0$) and 2\% to 18\% ($U<0$) of sampled points at 7 pairs, and at each of 62 further pairs. \path{planar/job2_b.json}, \path{cartography/stests_summary.csv}\\
+B6 & $(\mu-\zeta(u,0))/(e^{u}-1)$ is increasing in $u$ on the crest half-axis & refuted (fp) & fails at $(1,5)$ and $(1,9)$ in a layer next to the cycle; holds at the other 60 pairs, and on the trough half-axis at 62 of 62. \path{cartography/stests_summary.csv}, \path{cartography/s3a_cycle_scan.json}\\
+B7 & $R_\Lambda\le0$ for eleven explicit combinations of logarithms of $W$, $K$, $\zeta$, $\eta$, $y$, $\ell$, $\LamE$ & refuted (fp) & $R_\Lambda>0$ on 21\% to 65\% of sampled points at four pairs; a linear programme over 14 such functions has a positive optimal value of $\max R_\Lambda$ in 8 of 8 runs. \path{planar/job2_c.json}\\
+B8 & $R_\Lambda\le0$ for $\Lambda$ in the span of the logarithms of $\zeta$, $\eta$, $K$, $W$, $\LamE$, $x$, $y$, $\ell$, $1+\eta$ & refuted (fp) & at ten pairs with $\mu\in\{0.05,0.2,0.5,1\}$ the smallest attainable $\sup R_\Lambda$ equals $2\alpha_E$ to four digits. \path{dulac/lp_G.out}\\
+B9 & $R_\Lambda\le0$ in a family of 26 functions that adds $\log\Sg$, $\log\Xg$, $\log Q_E$ and ratios of gauges & holds on the samples at each of the ten pairs (fp); with coefficients common to the ten pairs: refuted (fp) & \path{dulac/lp_run2.out}, \path{dulac/lp_shared.out}\\
+B10 & A weight $e^{G(U)}/\Sg$; requires $\sup_{p<0}\kappa\le\inf_{p>0}\kappa$ at each $U$ & refuted (fp) & violated in 26 to 60 of 60 bins of $U$ at each of the ten pairs. \path{dulac/explore2.out}\\
+B11 & $\kappa_{\rm up}(U)\ge\kappa_{\rm down}(U)$ for all $U$ (one-signed integrand in Proposition~\ref{prop:kappa}(iv)) & refuted (fp) & $\kappa_{\rm up}<\kappa_{\rm down}$ near the crest on the cycles examined; the analogous difference for $W/\Xg$ is negative on 46\% to 95\% of the range of $U$ on 18 cycles. \path{dulac/explore4.out}, \path{literature/branch_compare_test.out}\\
+B12 & The reduced fields form a rotated family in $k$ \cite{Duff53} & refuted (fp) & rotation determinant positive on only 69\% to 74\% of sampled points at $(1,1.3)$, $(1,2)$, $(0.3,1.5)$, $(3,1.5)$. \path{planar/job2_d.json}\\
+B13 & $K-(\zeta-\mu)\,\varkappa(U)$ has one sign on the attractor, where $\varkappa(U)=U-2(e^{U}-1-U)/(e^{U}-1)$. In the plane $(\mathsf w,w_2)$, $\mathsf w=\sign(U)\sqrt{2(e^{U}-1-U)}$, the radial angular function of the reduced field is $\mathsf w$ times this quantity, up to a positive factor & refuted (fp) & negative on a patch with $U<0$, $p<0$ at 40 of 62 pairs and on 126 of 300 cycles; the patch first appears at $\rho-1=0.74$ for $\mu=0.002$ and at $\rho-1=2.05$ for $\mu\ge0.1$. \path{cartography/stests_summary.csv}, \path{cartography/cycle_tests.csv}\\
+B14 & For small $\mu$ at fixed $\rho$ the cycle is governed by a planar Li\'enard equation obtained by slaving $y$ to $x$ & refuted (fp) & along the computed cycles the energy of that equation varies by 1.1 to 7.0 times its mean at $\mu\in\{0.02,0.05,0.2\}$, $\rho\in\{1.5,3,8\}$. \path{literature/toda_ratio.out}\\
+\midrule
+\multicolumn{4}{@{}l}{\emph{C. Comparison pairs and supersolutions}}\\
+C1 & $w=\mathsf M\,(c_1\ell,c_2y,c_3x)^{\mathsf T}$ is a supersolution & fails on every cycle: proved (Proposition~\ref{prop:nomonomial}) & \\
+C2 & A constant pair, or the pair $(\etaz,\zeta_0)$, is a certificate & fails on every cycle: proved (Section~\ref{neg:sec:monomial}) & \\
+C3 & Any certificate that is $C^1$ in the state at $E$ & constrained to first order at the Hopf point: proved (Lemma~\ref{lem:rigidity}) & \\
+C4 & Log-linear families of trial pairs (list at the end of Section~\ref{neg:sec:rigidity}) & three families refuted (fp) on 55, 11 and 5 of 55 cycles; a fourth survives cycle by cycle & \path{supersolution/table_A_out.txt}\\
+\midrule
+\multicolumn{4}{@{}l}{\emph{D. Pointwise statements on cycles and on the attractor}}\\
+D1 & One sign on a cycle for $x/\zeta-A$, $\zeta/\eta-1$, $k\psiU(U)/K-A$ or $xp^2/W-A$, each of which has mean $\lambda_c$ & refuted (fp) & each takes both signs on 300 of 300 cycles. \path{cartography/cycle_tests.csv}\\
+D2 & $(\eta-\mu)^2<4\zeta$ on every cycle & refuted (fp) & fails on 10 of 15 cycles, among them $(1,1.3)$, $(0.5,2)$, $(0.2,1.5)$, $(0.1,1.5)$, $(4,2)$. \path{monotone/twelve.out}\\
+D3 & $\etaz>0$ on every cycle & refuted (fp) & $\etaz<0$ on part of the cycle at $\mu=0.1$, $\rho\ge1.1$ and at $\mu=0.3$, $\rho\ge8$. \path{dulac/quadrant_facts.out}\\
+D4 & On every cycle $\eta<\mu$ where $p>0$ and $p'>0$, $\eta>\mu$ where $p<0$ and $p'<0$, $\eta>\mu$ at the crest and $\eta<\mu$ at the trough & survives (fp) on 20 cycles; unproved & $\mu\in\{0.1,0.3,0.7,1\}$, $\rho\in\{1.001,1.1,2.5,8,20\}$. \path{dulac/quadrant_facts.out}\\
+D5 & $\int(\eta-\mu)\,\mathrm dt$ is negative over the rising arc and positive over the falling arc & survives (fp) on 18 cycles; unproved & $\mu\in\{0.05,0.2,1\}$, $\rho$ from $1.05$ to $5$. \path{literature/branch_compare_test.out}\\
+D6 & The Hessian of $h$ is positive definite in the interior of $\Dsc$ & survives (fp) at 62 of 62 pairs; unproved & \path{cartography/stests_summary.csv}\\
+\end{longtable}
+}
+
+The statements of row D4 concern cycles only: by Proposition~\ref{prop:nodulac}(ii), $\eta>\mu$ on a neighbourhood of $E$ in the attractor, whatever the signs of $p$ and $p'$. The means in row D1 are those of the last remark of Section~\ref{sec:attractor}, together with $\avg{k\psiU(U)/K}=\avg{xp^2/W}=1+\avg\eta$, which follow from the equations for $K$ and $W$ in Theorem~\ref{thm:attractor}(A5).
+
+\paragraph{The surviving monotonicity statement.}
+According to rows A4--A6, which are floating-point results, neither hypothesis of Proposition~\ref{prop:crestaxis}(iii) holds at all parameters: at extreme rate ratios and gains not close to the Hopf value the return map $R_1$ on the crest half-axis is not concave in the amplitude or in the energy coordinate, and for $\min(\mu,1/\mu)\le0.003$ the ratio $R_1(u)/u$ is not monotone. The violations are not marginal: at $(\mu,\rho)=(0.01,2.5)$, for example, $\iota$ rises from $0.569$ at $u=0.11\,\xi_{\rm out}$ to $0.671$ at $u=0.48\,\xi_{\rm out}$ before it falls to $\lambda_cT=-1.27$ at the cycle, while the one-turn mean decreases throughout. What survived every test is the statement of row A8 about the one-turn mean. The next proposition shows that it suffices, and that a weaker statement, a single change of sign of the one-turn integral, already gives uniqueness.
+
+\begin{proposition}[One sign change of the one-turn integral suffices]\label{neg:prop:signchange}
+Assume $k>\kH$, and let $R_1$, $T_1$, $\iota$, $g_\ast$, $G_\ast$ and $\xi_{\rm out}$ be as in Proposition~\ref{prop:crestaxis}.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $\iota$ extends continuously to $(0,\xi_{\rm out}]$, with $\iota(\xi_{\rm out})=\lambda_c(\Gamma_{\rm out})\,T(\Gamma_{\rm out})\le0$, where $T(\Gamma_{\rm out})$ is the period of $\Gamma_{\rm out}$. The one-turn mean $\bar\iota=\iota/T_1$ is continuous on $(0,\xi_{\rm out}]$ and $\bar\iota(\xi_{\rm out})=\lambda_c(\Gamma_{\rm out})$.
+\item Suppose there is $u_0\in[0,\xi_{\rm out}]$ such that $\iota>0$ on $(0,u_0)$ and $\iota<0$ on $(u_0,\xi_{\rm out})$. Then $\Gamma_{\rm out}$ is the only cycle. If in addition $\iota(\xi_{\rm out})<0$, the cycle is hyperbolic and orbitally asymptotically stable, and it is the $\omega$-limit set of every solution in $\Dom$ that does not converge to $E$.
+\item Suppose $\bar\iota$ is strictly decreasing on $(0,\xi_{\rm out})$. Then the hypothesis of \textup{(ii)} holds with some $u_0\in[0,\xi_{\rm out})$, and $\iota(\xi_{\rm out})<0$. Hence the cycle is unique, hyperbolic and orbitally asymptotically stable.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(i) By Proposition~\ref{prop:crestaxis}(i), $T_1$ is continuous on $(0,\xi_{\rm out}]$, and $T_1(\xi_{\rm out})$ is the period of $\Gamma_{\rm out}$. The function $\eta$ is continuous on the compact set $\Dsc$ by Theorem~\ref{thm:attractor}(A2),(A4), and $(t,u)\mapsto\chi_t(u,0)$ is continuous. Hence $\iota(u)=\int_0^{T_1(u)}(\eta-\mu)(\chi_t(u,0))\dd$ is continuous on $(0,\xi_{\rm out}]$, and at $u=\xi_{\rm out}$ it is the integral of $\eta-\mu$ over one period of $\Gamma_{\rm out}$, which is $\lambda_cT$ by \eqref{eq:exponent} and is nonpositive by Corollary~\ref{cor:criterion}(i). Since $T_1>0$ is continuous, so is $\bar\iota$.
+
+(ii) Put $\varepsilon_{\max}=G_\ast(\xi_{\rm out})$. Since $g_\ast>0$ on $(0,\xi_{\rm out}]$, $G_\ast$ is an increasing $C^1$ bijection of $(0,\xi_{\rm out}]$ onto $(0,\varepsilon_{\max}]$. Let $R_\ast=G_\ast\circ R_1\circ G_\ast^{-1}$ and $d(\varepsilon)=R_\ast(\varepsilon)-\varepsilon$ on $(0,\varepsilon_{\max}]$. By Proposition~\ref{prop:crestaxis}(i),(ii), $d$ is continuous on $(0,\varepsilon_{\max}]$ and $C^1$ on $(0,\varepsilon_{\max})$, with
+\[
+d'(\varepsilon)=e^{\iota(u)}-1,\quad u=G_\ast^{-1}(\varepsilon);\qquad d(\varepsilon_{\max})=0;\qquad d(\varepsilon)>-\varepsilon ,
+\]
+the last because $R_\ast>0$. Put $\varepsilon_0=G_\ast(u_0)$, with $\varepsilon_0=0$ if $u_0=0$. By hypothesis $d$ is strictly increasing on $(0,\varepsilon_0]\cap(0,\varepsilon_{\max})$ and strictly decreasing on $[\varepsilon_0,\varepsilon_{\max})\cap(0,\varepsilon_{\max})$.
+
+Let $0<\varepsilon\le\varepsilon_0$, $\varepsilon<\varepsilon_{\max}$. For $0<\varepsilon'<\varepsilon/2$ we have $d(\varepsilon/2)>d(\varepsilon')>-\varepsilon'$; letting $\varepsilon'\to0$ gives $d(\varepsilon/2)\ge0$, and then $d(\varepsilon)>d(\varepsilon/2)\ge0$. Let $\varepsilon_0\le\varepsilon<\varepsilon_{\max}$, $\varepsilon>0$, and fix $\varepsilon''$ with $\varepsilon<\varepsilon''<\varepsilon_{\max}$. Since $d$ is decreasing on $[\varepsilon'',\varepsilon_{\max})$ and continuous at $\varepsilon_{\max}$, $d(\varepsilon'')\ge d(\varepsilon_{\max})=0$, and so $d(\varepsilon)>d(\varepsilon'')\ge0$. Thus $d>0$ on $(0,\varepsilon_{\max})$: the map $R_\ast$ has no fixed point there, and $R_1$ has no fixed point in $(0,\xi_{\rm out})$. By Proposition~\ref{prop:crestaxis}(i) there is no crest in $(0,\xi_{\rm out})$, so $\Gamma_{\rm out}$ is the only cycle.
+
+If $\iota(\xi_{\rm out})<0$, then $\lambda_c(\Gamma_{\rm out})<0$ by (i). Every cycle then has $\lambda_c<0$, and Corollary~\ref{cor:criterion}(ii) gives the remaining assertions.
+
+(iii) Let $0<u<u'<\xi_{\rm out}$. Then $\bar\iota(u)>\bar\iota(u')\ge\lim_{u''\uparrow\xi_{\rm out}}\bar\iota(u'')=\bar\iota(\xi_{\rm out})$ by (i). Hence $\bar\iota>\bar\iota(\xi_{\rm out})$ on $(0,\xi_{\rm out})$. Let $u_0$ be the supremum of the set of $u\in(0,\xi_{\rm out})$ with $\bar\iota(u)>0$, and $u_0=0$ if this set is empty. By strict monotonicity $\bar\iota>0$ on $(0,u_0)$ and $\bar\iota<0$ on $(u_0,\xi_{\rm out})$; and $\iota=T_1\bar\iota$ has the sign of $\bar\iota$. So the hypothesis of (ii) holds, and $\Gamma_{\rm out}$ is the only cycle.
+
+It remains to show $\bar\iota(\xi_{\rm out})<0$. By (i), $\bar\iota(\xi_{\rm out})\le0$. If $\bar\iota(\xi_{\rm out})=0$, then $\bar\iota>0$ and $\iota>0$ on $(0,\xi_{\rm out})$, so $d$ is strictly increasing on $(0,\varepsilon_{\max})$. The first argument in the proof of (ii) then gives $d(\varepsilon_{\max}/2)>0$, and $d(\varepsilon_{\max})=\lim_{\varepsilon\uparrow\varepsilon_{\max}}d(\varepsilon)\ge d(\varepsilon_{\max}/2)>0$, which contradicts $d(\varepsilon_{\max})=0$. Hence $\bar\iota(\xi_{\rm out})<0$, so $u_0<\xi_{\rm out}$ and $\iota(\xi_{\rm out})<0$, and (ii) applies.
+\end{proof}
+Proposition~\ref{neg:prop:signchange} is conditional: neither of its hypotheses is proved. The hypothesis of (iii) is the statement of row A8. The equilibrium is a focus of the $C^1$ field $F$, with eigenvalues $\alpha_E\pm i\omega_E$ (Section~\ref{neg:sec:dulac}), so as $u\to0$ the return time $T_1(u)$ stays bounded and the arc of one turn shrinks to the origin; since $\eta$ is continuous on $\Dsc$ with $\eta(0,0)=\eta_E$, the one-turn mean tends to $\eta_E-\mu=\gamma_E-A>0$. Under the hypothesis of (iii), $\bar\iota$ therefore decreases from $\gamma_E-A$ to $\lambda_c(\Gamma_{\rm out})<0$. In the floating-point computations this is what is observed at each of the 62 parameter pairs, including those at which $\iota$ itself and the concavity of $R_1$ fail (rows A4--A6). The hypothesis of Proposition~\ref{prop:crestaxis}(iii) that $\iota$ is strictly decreasing is the special case in which the displacement $d$ is concave; part (ii) needs only that $d$ increases and then decreases.
+
+\subsection{What a proof must accomplish}\label{neg:sec:requirements}
+By Corollary~\ref{cor:criterion}, uniqueness at a parameter follows from $\lambda_c<0$ on every cycle there. The results of this section and of Sections~\ref{sec:gauges}--\ref{sec:attractor} restrict the form that a proof of this inequality at all parameters can take.
+
+\emph{Exactness to second order at the equilibrium.} Near the Hopf point $\lambda_c$ is of second order in the amplitude by the normal form (Remark~\ref{neg:rem:jet}(b)), whereas $\eta-\mu$, the Dulac defects and the defects of every trial pair oscillate at first order with zero mean. An argument that covers a neighbourhood of the Hopf curve must therefore be exact to first order at $E$ and must carry, at second order, the sign of the Lyapunov coefficient of Appendix~\ref{app:hopf}. Lemma~\ref{lem:rigidity} makes this precise for comparison pairs that admit a first-order expansion, in particular for $C^1$ functions of the state, Proposition~\ref{neg:prop:charts} for componentwise tests of the crest map, and Proposition~\ref{prop:nodulac} for Dulac functions, which must be singular at $E$. An estimate that is valid with a constant to spare at large amplitude does not extend to the Hopf curve; conversely the local theory at the Hopf point gives a collar whose width is not explicit (Lemma~\ref{lem:collar}).
+
+\emph{An upper bound on the falling arc.} Every exact formula for the exponent obtained in Section~\ref{sec:gauges} has the form $\lambda_c=-\avg{pN/S}$ with $N,S>0$, and the supporting planes of Theorems~\ref{thm:support} and~\ref{thm:twoorbit} bound $\kappa$ from below on both arcs (Proposition~\ref{prop:kappa}(vi)). A proof by way of these formulas, or of a Dulac function built from functions of the state, needs an upper bound for $\eta$ on the falling arc, equivalently for $\kappa$ or for $K$, that is sharp enough to be compared with the rising arc; convexity of the attractor graph does not supply one. This describes the routes examined here; it is a sufficient route and not a statement about every conceivable proof. Row B11 of Table~\ref{neg:tab:candidates} indicates that the comparison cannot be made pointwise in $U$: in the computations the integrand of the branch formula of Proposition~\ref{prop:kappa}(iv) has the unfavourable sign on most of the interval $0<U<U_{\max}$, and the negative total comes from the long excursion $U<0$.
+
+\emph{An asymmetry between crest and trough.} The comparisons that convexity yields reverse with the sign of $p$ (Proposition~\ref{att:prop:scaling}), and statements that treat the two half-axes alike fail: the one-turn integral is never monotone on the trough half-axis in the computations (row A7), and concavity of the return map depends on the coordinate and fails for extreme rate ratios (rows A4--A6). The one statement that survived, row A8, concerns the crest half-axis and the mean rather than the integral. A proof along this line has to use the nonlinearity $e^{U}-1$ itself, which is sublinear for $U<0$ and superlinear for $U>0$, and not convexity of $h$ alone.
+
+\emph{Three regimes and two parameters.} In the distributed-delay form of Section~\ref{sec:model} the system is the logistic equation with a two-stage delay kernel. For a pure delay it is Wright's equation $\mathsf u'(t)=-\alpha\,(e^{\mathsf u(t-1)}-1)$, with the same nonlinearity, and the corresponding uniqueness statement, Jones' conjecture, was not obtained from a structural theorem. Xie \cite{Xie93} proved that the slowly oscillating periodic solution is unique whenever every such solution is asymptotically stable, which is the analogue of Corollary~\ref{cor:criterion}, and established this stability for $\alpha\ge5.67$ by large-parameter asymptotics. Jaquette, Lessard and Mischaikow \cite{JLM17} covered $1.9\le\alpha\le6.0$ by computer-assisted bounds on all slowly oscillating periodic solutions and on their Floquet multipliers. Near the Hopf value $\alpha=\pi/2$, where the stability argument degenerates, van den Berg and Jaquette \cite{vdBJ18} and Jaquette \cite{Jaquette19} used computer-assisted analysis of the Fourier coefficients to cover $\pi/2<\alpha\le1.9$. The statements about \cite{Xie93} are taken from the account in \cite{JLM17}. The three regimes have counterparts here: Theorem~\ref{thm:largegain} for large gain, proved with a threshold that is not uniform in the rate ratio; Lemma~\ref{lem:collar} at the Hopf curve, proved without an explicit width; and the region in between, which is open. The present problem is easier in one respect and harder in another. It is an ordinary differential equation in which every cycle is a fixed point of a monotone planar map on an explicit region (Proposition~\ref{prop:crestmonotone}), and the attractor is a planar graph. But it has two parameters, and the parameter set is not compact as $\min(\mu,1/\mu)\to0$, an end that has no counterpart in Wright's equation. Section~\ref{sec:status} sets out the resulting programme. None of it is carried out in this paper.

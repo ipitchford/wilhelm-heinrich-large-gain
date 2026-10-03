@@ -1,0 +1,79 @@
+K0 = 1000.0
+== elementary constants
+  v2 = 1.59362426004,  phi2 = 1-exp(-v2) = v2/2 = 0.79681213002
+  [ok] phi2 >= 0.7968:  0.79681213 >= 0.7968
+  [ok] 1-exp(-3) >= 0.95:  0.95021293 >= 0.95
+  [ok] c_i(3) e^{-3} >= 0.34:  0.34351211 >= 0.34
+  [ok] max_{0<mu<=1} 3 mu log(1/mu) = 3/e <= 1.1037:  1.1036383 <= 1.1037
+  [ok] ell/phi_ell (strip ratio) <= 2.3131:  2.3130353 <= 2.3131
+  [ok] s_+ lemma: 1.21 (1 - 1.1 sqrt(2/10)/3) >= 1:  1.0115862 >= 1
+== Lemma 2/3: frequency and first foothold
+  omega_0(K0) = 8.04673847,  T_0(K0) = 2 pi - pi/omega_0 = 5.892767169
+  [ok] windows fit: a1+a2+a3+a4 <= T_0(K0):  5.89 <= 5.8927672
+== Lemma 7/8: Stage 1
+  [ok] K0 c_i(a1) >= 2:  1388.7403 >= 2
+  [ok] kappa_ii(a2) = K0 (a2-1+e^{-a2})/(K0^{1/3}+1) >= 2:  102.42686 >= 2
+  [ok] K0 c_b(a4) >= ell/phi_ell:  2.3690039 >= 2.3130353
+  R_i = 1.486303, R_ii = 1.4863185, a3 = 1.48
+  [ok] R_i >= a3:  1.486303 >= 1.48
+  [ok] R_ii >= a3:  1.4863185 >= 1.48
+  [ok] c1: phi Psi_1(a3) - ell/K0 >= C1:  0.37452563 >= 0.374
+  [ok] C1 K0 >= 10 (needed for the s_+ bound):  374.0 >= 10
+== Lemma 9/10: spike mass with p_k >= C1 k
+  Htilde(K0) = 14.921148, eps1bar = 0.21508, delta_1 = 0.194016
+  [ok] delta_1 < 1:  0.19401605 <= 0.999
+  T_1(K0) = 43.897796
+  [ok] T_1(K0) >= 22:  43.897796 >= 22
+== Lemma 11: Stage 2 (continuum bootstrap)
+  [ok] Stage-2 r_l: 0.89/1.89 >= 0.4708:  0.47089947 >= 0.4708
+  [ok] Stage-2 r_l: 1/1.89 <= 0.5292:  0.52910053 <= 0.5292
+  [ok] Stage-2 r_l: 0.4708*a4 + 0.5292 <= 0.6987:  0.698688 <= 0.6987
+  [ok] Stage-2 r_l: 0.1708*22 - 0.9416 log 22 - 0.6987 >= 0:  0.14837443 >= 0
+  [ok] Stage-2 r_l: derivative 0.1708 - 0.9416/22 >= 0:  0.128 >= 0
+  [ok] Stage-2 r_l: T' = 22 - 2 log 22 - a4 >= 2.79 (case u<2):  15.457915 >= 2.79
+  [ok] Stage-2 r_l: 0.5292*2.79 >= 2 - 0.5292:  1.476468 >= 1.4708
+  [ok] Stage-2: 2 log 22 >= 3 (so c_i(a) >= 0.34 e^a):  6.1820849 >= 3
+  [ok] Stage-2: sqrt(2*phi2*0.34 - 2 ell/(K0*22^2)) >= 0.73:  0.73608134 >= 0.73
+  [ok] Stage-2: (0.89u-1)^2 <= 2 phi2 (u^2/2-1) - 2 ell/K0 at u=2:  0.6084 <= 1.5896
+  [ok] Stage-2: coefficient phi2 - 0.89^2 >= 0 (monotone in u):  0.0047 >= 0
+  [ok] Stage-2: kappa_ii(2) >= 2:  103.2123 >= 2
+  z_1(K0) = 0.3 T_1 - 3 = 10.169339
+  [ok] z_1(K0) >= 3.6 (i.e. T_1 >= 22):  10.169339 >= 3.6
+  [ok] 0.01 phi K0 z10/(1+z10) >= ell (0.95 -> 0.94):  7.8725058 >= 2.0
+  kappa_0 = 0.20968598,  0.3 kappa_0 = 0.062905793
+  [ok] endpoint z_1: 0.3 kappa_0 - 0.3 C1^2 (1+1/z10)^2/sqrt8 >= 0:  0.045008433 >= 0
+  [ok] endpoint z^sharp: c#(1+3.15/(c# K0))(1+1/(c# K0))^2 <= 0.3 kappa_0:  0.060283769 <= 0.062905793
+  [ok] c_p: 0.95 phi (1-exp(-c# K0)) - ell/K0 >= CP:  0.81943148 >= 0.819
+  [ok] interval placement: 0.3 C1^2/sqrt8 <= 0.015 <= c#  (z_1(k) < z^sharp):  0.01483609 <= 0.015
+  [ok] interval placement: 0.015 <= c#:  0.015 <= 0.055
+  c_T = c#/0.3 = 0.18333333
+== Lemma 12: crest duration at lambda = K0 (all majorants are decreasing in lambda)
+  [ok] delta' < 1:  0.077722079 <= 0.999
+  Hhat=13.81751 Lhat=7.8885845 eps1=0.0663715 delta'=0.0777221 a_c=3.6345453
+  A_1=23.175455 tau1bar=0.0282973 What=28135.212 v_f=0.0400665
+  [ok] (a) c_p^2 lam >= 2 Lhat  (p_k^2 >= 2 k L_0):  670.761 >= 15.777169
+  [ok] (a') C_P lam >= 10:  819.0 >= 10
+  [ok] (c) v_c <= a_c/(c_p lam) <= 1:  0.0044377843 <= 1
+  [ok] (d) v_f <= log(1+What/lam):  0.040066454 <= 3.3719475
+  [ok] (e) b^2 [1-(2/3)(1+lam/What) v_f] >= 1:  1.0116222 >= 1
+  [ok] (e') v_f <= 1:  0.040066454 <= 1
+  [ok] monotonicity: Hhat(K0) >= 3:  13.81751 >= 3
+  [ok] monotonicity: Hhat + Lhat >= 4:  21.706094 >= 4
+  [ok] monotonicity: 2 < 2 log(2) + 3/e (Htilde_lam/lam decreasing for lam>=1):  2.0 <= 2.4899327
+  tau_c_hat(K0) = 0.087627656
+  [ok] AM-GM majorant: c_p lam v_f <= kf (Hhat+Lhat+A1):  32.814426 <= 32.832026
+  C_tau(K0) = 71.78465, log-coefficient c_b = 12.272348
+  [ok] C_tau(K0) <= 71.79 and c_b <= 12.28 (majorant Cbar_tau):  -0.0053503293 <= 0
+  [ok] C_tau/sqrt(lam) decreasing for lam>=K0:  c_b <= C_tau(K0)/2:  12.272348 <= 35.892325
+  [ok] C_tau/lam decreasing (same criterion, weaker): c_b <= C_tau(K0):  12.272348 <= 71.78465
+== Lemma 13 + final inequality (nu = mu/2, s = 2 sqrt(lam))
+  [ok] s = 2 sqrt(K0) >= sqrt(2):  63.245553 >= 1.4142136
+  (c_T/4) lam = 45.833333,  2 C_tau/(c_p sqrt(lam)) = 5.5434187,  log term = 8.6053551
+  [ok] FINAL: (c_T/4) K0 - 2 C_tau(K0)/(c_p sqrt(K0)) - log(1+4 sqrt(K0)+16 K0/3) > 0:  31.684146 >= 1.0e-6
+  [ok] monotonicity of the final expression: c_T/4 >= 1/K0:  0.045833333 >= 0.001
+  [ok] q(K0) < 0.0772:  0.077177383 <= 0.0772
+  [ok] majorant monotone: 12.28 <= Cbar/2:  12.28 <= 35.895
+  by-product: <eta> - mu <= -(1/4 - q) mu with q = 0.0771774  ->  <eta> <= 0.827177 mu
+  [ok] by-product: 3/4 + q <= 0.83:  0.82717738 <= 0.83
+
+ALL CONSTANT CHECKS PASSED for K0 = 1000.0

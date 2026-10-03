@@ -1,0 +1,525 @@
+{
+  "kind": "release_bookkeeping_and_finite_receipt_consistency",
+  "checks": [
+    {
+      "id": "exact_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "exact_actual_equalities",
+      "passed": true,
+      "detail": "Residual strings are checked as well as pass flags."
+    },
+    {
+      "id": "numerical_audit_actual_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "numerical_audit_all_predicates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "cross_method_actual_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "cross_method_all_predicates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "reciprocal_rates_actual_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "reciprocal_rates_all_predicates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "envelope_checks_actual_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "envelope_checks_all_predicates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "negative_controls_actual_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "negative_controls_all_predicates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "BVP_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "BVP_acceptance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "saved_cycle_meshes_finite",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "id": "saved_profiles_finite_and_all_predicates",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "id": "framework_table_sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "framework_real_checker_failure_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "framework_deliberate_wrong_claim_rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_exact_identities_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_exact_identities_certification_flag",
+      "passed": true,
+      "detail": "every receipt that is not an exact symbolic equality carries not_interval_certified: true"
+    },
+    {
+      "id": "v3_exact_identities_passed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_exact_identities_counts_match_records",
+      "passed": true,
+      "detail": [
+        148,
+        148
+      ]
+    },
+    {
+      "id": "v3_gauges_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_gauges_certification_flag",
+      "passed": true,
+      "detail": "every receipt that is not an exact symbolic equality carries not_interval_certified: true"
+    },
+    {
+      "id": "v3_gauges_passed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_gauges_counts_match_records",
+      "passed": true,
+      "detail": [
+        66,
+        66
+      ]
+    },
+    {
+      "id": "v3_largegain_constants_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_largegain_constants_certification_flag",
+      "passed": true,
+      "detail": "every receipt that is not an exact symbolic equality carries not_interval_certified: true"
+    },
+    {
+      "id": "v3_largegain_constants_passed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_largegain_constants_counts_match_records",
+      "passed": true,
+      "detail": [
+        141,
+        141
+      ]
+    },
+    {
+      "id": "v3_largegain_lemmas_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_largegain_lemmas_certification_flag",
+      "passed": true,
+      "detail": "every receipt that is not an exact symbolic equality carries not_interval_certified: true"
+    },
+    {
+      "id": "v3_largegain_lemmas_passed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_largegain_lemmas_counts_match_records",
+      "passed": true,
+      "detail": [
+        29561,
+        29561
+      ]
+    },
+    {
+      "id": "v3_attractor_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_attractor_certification_flag",
+      "passed": true,
+      "detail": "every receipt that is not an exact symbolic equality carries not_interval_certified: true"
+    },
+    {
+      "id": "v3_attractor_passed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_attractor_counts_match_records",
+      "passed": true,
+      "detail": [
+        156,
+        156
+      ]
+    },
+    {
+      "id": "v3_weak_adjoint_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_weak_adjoint_certification_flag",
+      "passed": true,
+      "detail": "every receipt that is not an exact symbolic equality carries not_interval_certified: true"
+    },
+    {
+      "id": "v3_weak_adjoint_passed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_weak_adjoint_counts_match_records",
+      "passed": true,
+      "detail": [
+        180,
+        180
+      ]
+    },
+    {
+      "id": "v3_wedge_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_wedge_certification_flag",
+      "passed": true,
+      "detail": "every receipt that is not an exact symbolic equality carries not_interval_certified: true"
+    },
+    {
+      "id": "v3_wedge_passed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_wedge_counts_match_records",
+      "passed": true,
+      "detail": [
+        211,
+        211
+      ]
+    },
+    {
+      "id": "v3_cartography_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_cartography_certification_flag",
+      "passed": true,
+      "detail": "every receipt that is not an exact symbolic equality carries not_interval_certified: true"
+    },
+    {
+      "id": "v3_cartography_passed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_cartography_counts_match_records",
+      "passed": true,
+      "detail": [
+        140,
+        140
+      ]
+    },
+    {
+      "id": "v3_negative_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_negative_certification_flag",
+      "passed": true,
+      "detail": "every receipt that is not an exact symbolic equality carries not_interval_certified: true"
+    },
+    {
+      "id": "v3_negative_passed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_negative_counts_match_records",
+      "passed": true,
+      "detail": [
+        123,
+        123
+      ]
+    },
+    {
+      "id": "v3_controls_fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_controls_certification_flag",
+      "passed": true,
+      "detail": "every receipt that is not an exact symbolic equality carries not_interval_certified: true"
+    },
+    {
+      "id": "v3_controls_passed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_controls_counts_match_records",
+      "passed": true,
+      "detail": [
+        6,
+        6
+      ]
+    },
+    {
+      "id": "v3_exact_residuals_are_zero",
+      "passed": true,
+      "detail": "residual strings are checked as well as pass flags"
+    },
+    {
+      "id": "v3_gauges_all_signs_resolved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_cartography_includes_recomputation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "control_exact_wrong_sign_fails",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "control_largegain_wrong_c1_fails",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "control_largegain_wrong_cp_fails",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "retained_gauge_checker_failure",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "retained_small_mu_supplement",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "generated_evidence_macros.tex",
+      "passed": true,
+      "detail": "file on disk equals the text rebuilt from the receipts"
+    },
+    {
+      "id": "generated_evidence_counts.tex",
+      "passed": true,
+      "detail": "file on disk equals the text rebuilt from the receipts"
+    },
+    {
+      "id": "generated_cycle_examples.tex",
+      "passed": true,
+      "detail": "file on disk equals the text rebuilt from the receipts"
+    },
+    {
+      "id": "generated_phase_example.tex",
+      "passed": true,
+      "detail": "file on disk equals the text rebuilt from the receipts"
+    },
+    {
+      "id": "generated_v3_counts.tex",
+      "passed": true,
+      "detail": "file on disk equals the text rebuilt from the receipts"
+    },
+    {
+      "id": "generated_v3_macros.tex",
+      "passed": true,
+      "detail": "file on disk equals the text rebuilt from the receipts"
+    },
+    {
+      "id": "generated_v3_cartography.tex",
+      "passed": true,
+      "detail": "file on disk equals the text rebuilt from the receipts"
+    },
+    {
+      "id": "generated_v3_largegain_constants.tex",
+      "passed": true,
+      "detail": "file on disk equals the text rebuilt from the receipts"
+    },
+    {
+      "id": "v3_summary_sources_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "v3_summary_macros_current",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "macro_names_letters_only",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "every_macro_matches_its_receipt",
+      "passed": true,
+      "detail": "115 v3 macros compared with values recomputed from the receipts"
+    },
+    {
+      "id": "every_used_macro_is_defined",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "id": "every_generated_input_exists",
+      "passed": true,
+      "detail": [
+        "generated/evidence_macros",
+        "generated/v3_cartography",
+        "generated/v3_counts",
+        "generated/v3_largegain_constants",
+        "generated/v3_macros"
+      ]
+    },
+    {
+      "id": "every_referenced_file_exists",
+      "passed": true,
+      "detail": "68 file references resolved inside the bundle"
+    },
+    {
+      "id": "every_referenced_receipt_exists",
+      "passed": true,
+      "detail": "7 evidence references resolved"
+    },
+    {
+      "id": "run_record_passed",
+      "passed": true,
+      "detail": {
+        "regenerated_cycles": true,
+        "quick": false
+      }
+    },
+    {
+      "id": "run_record_single_thread_no_network",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "executed_code_unchanged",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "id": "no_unrecorded_code",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "id": "peak_memory_below_1500_MB",
+      "passed": true,
+      "detail": 405.75
+    },
+    {
+      "id": "environment_matches_run",
+      "passed": true,
+      "detail": {
+        "numpy": "2.4.4",
+        "scipy": "1.17.1",
+        "sympy": "1.14.0",
+        "mpmath": "1.3.0",
+        "numba": "0.65.0",
+        "llvmlite": "0.47.0"
+      }
+    },
+    {
+      "id": "v2_0_bundle_matches_its_manifest",
+      "passed": true,
+      "detail": "121 files"
+    },
+    {
+      "id": "library_copies_have_provenance",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "id": "shipped_cartography_tables_equal_research_outputs",
+      "passed": true,
+      "detail": "every shipped table and log is byte-identical to the research output"
+    },
+    {
+      "id": "skipped_list_present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "no_font_files",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "number_checked": 94,
+  "number_passed": 94,
+  "passed": true,
+  "scope": "Not proof verification and not a numerical enclosure."
+}

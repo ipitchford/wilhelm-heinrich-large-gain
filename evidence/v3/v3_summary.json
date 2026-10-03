@@ -1,0 +1,584 @@
+{
+ "schema_version": "3.0",
+ "macros": {
+  "VthreeExactPassed": {
+   "tex": "148",
+   "source": "v3_exact_identities counts.passed"
+  },
+  "VthreeExactAttempted": {
+   "tex": "148",
+   "source": "v3_exact_identities counts.attempted"
+  },
+  "VthreeFrameworkExact": {
+   "tex": "50",
+   "source": "exact_checks number_checked"
+  },
+  "VthreeGaugeCycles": {
+   "tex": "66",
+   "source": "v3_gauges counts.attempted"
+  },
+  "VthreeGaugeCyclesPassed": {
+   "tex": "66",
+   "source": "v3_gauges counts.passed"
+  },
+  "VthreeGaugeSaved": {
+   "tex": "31",
+   "source": "v3_gauges number_saved_cycles"
+  },
+  "VthreeGaugeExtended": {
+   "tex": "35",
+   "source": "v3_gauges number_extended_cycles"
+  },
+  "VthreeGaugeSamples": {
+   "tex": "137\\,357",
+   "source": "v3_gauges worst.total_samples"
+  },
+  "VthreeGaugeUnresolved": {
+   "tex": "0",
+   "source": "v3_gauges worst.unresolved_sign_samples"
+  },
+  "VthreeGaugeExponentGap": {
+   "tex": "2.926\\times10^{-11}",
+   "source": "v3_gauges worst.max_exponent_gap_relative"
+  },
+  "VthreeGaugeEtaZeroGap": {
+   "tex": "6.866\\times10^{-11}",
+   "source": "v3_gauges worst.max_eta0_mean_relative"
+  },
+  "VthreeGaugePolarError": {
+   "tex": "8.341\\times10^{-8}",
+   "source": "v3_gauges worst.max_polar_angle_error"
+  },
+  "VthreeGaugeMinSigma": {
+   "tex": "2.270\\times10^{-3}",
+   "source": "v3_gauges worst.min_star_gauge_ratio"
+  },
+  "VthreeGaugeMinXi": {
+   "tex": "3.289\\times10^{-6}",
+   "source": "v3_gauges worst.min_convexity_gauge_ratio"
+  },
+  "VthreeGaugeMinK": {
+   "tex": "1.133\\times10^{-6}",
+   "source": "v3_gauges worst.min_K_ratio"
+  },
+  "VthreeGaugeMinW": {
+   "tex": "4.242\\times10^{-7}",
+   "source": "v3_gauges worst.min_W_ratio"
+  },
+  "VthreeGaugeMaxLambda": {
+   "tex": "-1.021\\times10^{-6}",
+   "source": "v3_gauges worst.max_lambda_c"
+  },
+  "VthreeGaugeMaxFormEigenvalue": {
+   "tex": "-1.308\\times10^{-6}",
+   "source": "v3_gauges worst.max_monotone_form_eigenvalue"
+  },
+  "VthreeGaugeUmin": {
+   "tex": "-24\\,294",
+   "source": "v3_gauges ranges.U_min (rounded)"
+  },
+  "VthreeGaugeHolderLower": {
+   "tex": "0.999994",
+   "source": "v3_gauges worst.max_holder_lower_over_middle"
+  },
+  "VthreeGaugeHolderUpper": {
+   "tex": "0.999990",
+   "source": "v3_gauges worst.max_holder_middle_over_upper"
+  },
+  "VthreeGaugeEtaZeroNegative": {
+   "tex": "10",
+   "source": "v3_gauges cycles_with_eta0_negative_somewhere"
+  },
+  "VthreeGaugeEtaOneNegative": {
+   "tex": "37",
+   "source": "v3_gauges cycles_with_eta1_negative_somewhere"
+  },
+  "VthreeGaugeAttracting": {
+   "tex": "66",
+   "source": "v3_gauges number_attracting"
+  },
+  "VthreeLgConstChecks": {
+   "tex": "141",
+   "source": "v3_largegain_constants counts.attempted"
+  },
+  "VthreeLgConstAuthor": {
+   "tex": "55",
+   "source": "v3_largegain_constants number_author_comparisons"
+  },
+  "VthreeLgConstReferee": {
+   "tex": "86",
+   "source": "v3_largegain_constants number_referee_checks"
+  },
+  "VthreeLgConstMinMargin": {
+   "tex": "1.2\\times10^{-5}",
+   "source": "v3_largegain_constants worst.min_relative_margin_author_script"
+  },
+  "VthreeLgLemmaChecks": {
+   "tex": "29\\,561",
+   "source": "v3_largegain_lemmas counts.attempted"
+  },
+  "VthreeLgCycleChecks": {
+   "tex": "474",
+   "source": "v3_largegain_lemmas groups A + B attempted"
+  },
+  "VthreeLgBelowChecks": {
+   "tex": "96",
+   "source": "v3_largegain_lemmas group B2 attempted"
+  },
+  "VthreeLgSegmentChecks": {
+   "tex": "28\\,991",
+   "source": "v3_largegain_lemmas groups C-F attempted"
+  },
+  "VthreeLgMaxEtaRatio": {
+   "tex": "0.017",
+   "source": "v3_largegain_lemmas worst.max_mean_eta_over_mu_on_cycles"
+  },
+  "VthreeLgMinPeriodRatio": {
+   "tex": "1.304",
+   "source": "v3_largegain_lemmas worst.min_T_mu_over_lambda_on_cycles"
+  },
+  "VthreeLgMinStageRatio": {
+   "tex": "0.917",
+   "source": "v3_largegain_lemmas worst.min_pk_over_k_stage1_nonperiodic"
+  },
+  "VthreeLgLogMtSixteen": {
+   "tex": "-13.98",
+   "source": "v3_largegain_lemmas worst.log_mt_below_threshold.mu_1_k_16"
+  },
+  "VthreeLgLogMtSixty": {
+   "tex": "-67.5",
+   "source": "v3_largegain_lemmas worst.log_mt_below_threshold.mu_1_k_60"
+  },
+  "VthreeLgLogMtThreeHundred": {
+   "tex": "-375.6",
+   "source": "v3_largegain_lemmas worst.log_mt_below_threshold.mu_1_k_300"
+  },
+  "VthreeAttPairs": {
+   "tex": "13",
+   "source": "v3_attractor parameter_pairs + cancellation_free_pairs"
+  },
+  "VthreeAttBatteryPairs": {
+   "tex": "11",
+   "source": "v3_attractor parameter_pairs"
+  },
+  "VthreeAttChecks": {
+   "tex": "156",
+   "source": "v3_attractor counts.attempted"
+  },
+  "VthreeAttOrderedPairs": {
+   "tex": "1.09\\times10^{8}",
+   "source": "v3_attractor worst.ordered_pairs_total"
+  },
+  "VthreeAttNonnegPairs": {
+   "tex": "4",
+   "source": "v3_attractor worst.pairs_nonnegative_total"
+  },
+  "VthreeAttBeyondRounding": {
+   "tex": "0",
+   "source": "v3_attractor worst.pairs_beyond_rounding_total"
+  },
+  "VthreeAttWorstSeparated": {
+   "tex": "-2.0\\times10^{-7}",
+   "source": "v3_attractor worst.max_support_value_separated_pairs"
+  },
+  "VthreeAttGradPairs": {
+   "tex": "9",
+   "source": "v3_attractor worst.gradient_fd_pairs_applicable"
+  },
+  "VthreeAttGradSamples": {
+   "tex": "2\\,572",
+   "source": "v3_attractor worst.gradient_fd_samples_total"
+  },
+  "VthreeAttGradError": {
+   "tex": "5.7\\times10^{-4}",
+   "source": "v3_attractor worst.max_gradient_fd_error"
+  },
+  "VthreeAttGradMedian": {
+   "tex": "4.8\\times10^{-7}",
+   "source": "v3_attractor worst.max_gradient_fd_median_error"
+  },
+  "VthreeAttReturnError": {
+   "tex": "9.7\\times10^{-10}",
+   "source": "v3_attractor worst.max_return_derivative_error"
+  },
+  "VthreeAttReturnFdError": {
+   "tex": "1.4\\times10^{-4}",
+   "source": "v3_attractor worst.max_return_derivative_fd_error"
+  },
+  "VthreeAttExponentGap": {
+   "tex": "1.8\\times10^{-11}",
+   "source": "v3_attractor worst.max_exponent_difference_riccati_vs_qr"
+  },
+  "VthreeAttCrestValueError": {
+   "tex": "6.8\\times10^{-11}",
+   "source": "v3_attractor worst.max_crest_axis_value_error"
+  },
+  "VthreeWeakCycles": {
+   "tex": "20",
+   "source": "v3_weak_adjoint cycles"
+  },
+  "VthreeWeakChecks": {
+   "tex": "180",
+   "source": "v3_weak_adjoint counts.attempted"
+  },
+  "VthreeWeakChordPairs": {
+   "tex": "5\\,770\\,615",
+   "source": "v3_weak_adjoint worst.chord_pairs_total"
+  },
+  "VthreeWeakChordViolations": {
+   "tex": "0",
+   "source": "v3_weak_adjoint worst.chord_violations_total"
+  },
+  "VthreeWeakWindowError": {
+   "tex": "5.8\\times10^{-6}",
+   "source": "v3_weak_adjoint worst.max_window_error_counted_test_functions"
+  },
+  "VthreeWeakTies": {
+   "tex": "4",
+   "source": "v3_weak_adjoint worst.cycles_with_tied_events"
+  },
+  "VthreeWeakPhiYGood": {
+   "tex": "15",
+   "source": "v3_weak_adjoint worst.cycles_with_phi_y_error_below_1e-5"
+  },
+  "VthreeWeakExponentSpread": {
+   "tex": "1.1\\times10^{-11}",
+   "source": "v3_weak_adjoint worst.max_exponent_spread"
+  },
+  "VthreeWedgeChecks": {
+   "tex": "211",
+   "source": "v3_wedge counts.attempted"
+  },
+  "VthreeWedgeKurtosisToda": {
+   "tex": "1.7999988",
+   "source": "v3_wedge worst.max_kurtosis_toda"
+  },
+  "VthreeWedgeKurtosisTodaMargin": {
+   "tex": "1.2\\times10^{-6}",
+   "source": "9/5 - v3_wedge worst.max_kurtosis_toda"
+  },
+  "VthreeWedgeKurtosisOtherMargin": {
+   "tex": "1.5\\times10^{-8}",
+   "source": "9/5 - v3_wedge worst.max_kurtosis_other_convex"
+  },
+  "VthreeWedgeMinRselPrime": {
+   "tex": "0.8000008",
+   "source": "v3_wedge worst.min_Rsel_prime"
+  },
+  "VthreeWedgeIdentityDefect": {
+   "tex": "3.2\\times10^{-11}",
+   "source": "v3_wedge worst.max_identity_defect"
+  },
+  "VthreeWedgeIdentityCycles": {
+   "tex": "14",
+   "source": "v3_wedge worst.cycles"
+  },
+  "VthreeWedgeSelectionError": {
+   "tex": "4.0\\times10^{-4}",
+   "source": "v3_wedge worst.max_selection_error_smallest_mu_amplitude_le_1"
+  },
+  "VthreeWedgeExponentError": {
+   "tex": "7.5\\times10^{-4}",
+   "source": "v3_wedge worst.max_exponent_error_smallest_mu_amplitude_le_1"
+  },
+  "VthreeWedgeRatioMin": {
+   "tex": "9.1",
+   "source": "v3_wedge records: smallest error ratio between mu = 1e-3 and mu = 1e-4"
+  },
+  "VthreeWedgeRatioMax": {
+   "tex": "9.9",
+   "source": "v3_wedge records: largest error ratio between mu = 1e-3 and mu = 1e-4"
+  },
+  "VthreeWedgeRatioPredicted": {
+   "tex": "9.98",
+   "source": "v3_wedge records: predicted_for_second_order"
+  },
+  "VthreeWedgeSelectionErrorAll": {
+   "tex": "1.8\\times10^{-3}",
+   "source": "v3_wedge worst.max_selection_error_smallest_mu"
+  },
+  "VthreeWedgeExponentErrorAll": {
+   "tex": "6.7\\times10^{-3}",
+   "source": "v3_wedge worst.max_exponent_error_smallest_mu"
+  },
+  "VthreeCartChecks": {
+   "tex": "140",
+   "source": "v3_cartography counts.attempted"
+  },
+  "VthreeCartGridCycles": {
+   "tex": "300",
+   "source": "v3_cartography worst.grid_cycles"
+  },
+  "VthreeCartBranchCycles": {
+   "tex": "827",
+   "source": "v3_cartography worst.branch_cycles"
+  },
+  "VthreeCartHuntPoints": {
+   "tex": "240",
+   "source": "v3_cartography worst.hunt_points"
+  },
+  "VthreeCartHuntDirect": {
+   "tex": "239",
+   "source": "v3_cartography worst.hunt_points_computed_directly"
+  },
+  "VthreeCartMaxLambda": {
+   "tex": "-1.93\\times10^{-6}",
+   "source": "v3_cartography worst.grid_max_lambda_c"
+  },
+  "VthreeCartMaxLogMt": {
+   "tex": "-2.83\\times10^{-4}",
+   "source": "v3_cartography worst.grid_max_log_mt"
+  },
+  "VthreeCartMinLogMt": {
+   "tex": "-505.2",
+   "source": "v3_cartography worst.grid_min_log_mt"
+  },
+  "VthreeCartBranchMaxLambda": {
+   "tex": "-2.0\\times10^{-10}",
+   "source": "v3_cartography worst.branch_max_lambda_c"
+  },
+  "VthreeCartHuntMaxLogMt": {
+   "tex": "-4.17\\times10^{-4}",
+   "source": "v3_cartography worst.hunt_max_log_mt"
+  },
+  "VthreeCartHuntPairs": {
+   "tex": "239\\,103",
+   "source": "v3_cartography worst.hunt_pairs"
+  },
+  "VthreeCartHuntLongRuns": {
+   "tex": "1\\,673",
+   "source": "v3_cartography worst.hunt_long_runs"
+  },
+  "VthreeCartHuntNotFinished": {
+   "tex": "25",
+   "source": "v3_cartography worst.hunt_long_not_finished"
+  },
+  "VthreeCartHuntNewton": {
+   "tex": "2\\,868",
+   "source": "v3_cartography worst.hunt_newton_starts"
+  },
+  "VthreeCartRecomputedCycles": {
+   "tex": "51",
+   "source": "v3_cartography worst.recomputed_grid_cycles"
+  },
+  "VthreeCartRecomputedHunts": {
+   "tex": "24",
+   "source": "v3_cartography worst.recomputed_hunts"
+  },
+  "VthreeCartRecomputedDiffT": {
+   "tex": "7.1\\times10^{-12}",
+   "source": "v3_cartography worst.recomputed_grid_max_rel_diff_T"
+  },
+  "VthreeCartRecomputedDiffLogMt": {
+   "tex": "1.0\\times10^{-9}",
+   "source": "v3_cartography worst.recomputed_grid_max_diff_log_mt"
+  },
+  "VthreeCartRecomputedHuntPairs": {
+   "tex": "24\\,244",
+   "source": "v3_cartography worst.recomputed_hunt_pairs"
+  },
+  "VthreeCartRecomputedLongRuns": {
+   "tex": "168",
+   "source": "v3_cartography worst.recomputed_hunt_long_runs"
+  },
+  "VthreeCartRecomputedNotFinished": {
+   "tex": "3",
+   "source": "v3_cartography worst.recomputed_hunt_long_runs_not_finished"
+  },
+  "VthreeCartRecomputedNewton": {
+   "tex": "288",
+   "source": "v3_cartography worst.recomputed_hunt_newton_starts"
+  },
+  "VthreeCartRecomputedNewPoints": {
+   "tex": "0",
+   "source": "v3_cartography worst.recomputed_hunt_new_fixed_points"
+  },
+  "VthreeCartIndependentChecks": {
+   "tex": "23",
+   "source": "v3_cartography worst.independent_primary_checks"
+  },
+  "VthreeCartIndependentDiffLogMt": {
+   "tex": "2.2\\times10^{-9}",
+   "source": "v3_cartography worst.independent_max_diff_log_mt"
+  },
+  "VthreeCartNegativeEhatCycles": {
+   "tex": "126",
+   "source": "v3_cartography worst.cycle_tests_cycles_with_negative_Ehat"
+  },
+  "VthreeNegChecks": {
+   "tex": "123",
+   "source": "v3_negative counts.attempted"
+  },
+  "VthreeNegRise": {
+   "tex": "0.0250",
+   "source": "v3_negative worst.return_ratio_rise"
+  },
+  "VthreeNegRatioAtE": {
+   "tex": "0.2871",
+   "source": "v3_negative worst.return_ratio_at_E"
+  },
+  "VthreeNegSlope": {
+   "tex": "-0.132",
+   "source": "v3_negative worst.section_ratio_slope_near_cycle"
+  },
+  "VthreeNegSlopeMid": {
+   "tex": "0.052",
+   "source": "v3_negative worst.section_ratio_slope_mid"
+  },
+  "VthreeNegSignChanges": {
+   "tex": "72",
+   "source": "v3_negative worst.candidate_sign_changes"
+  },
+  "VthreeControls": {
+   "tex": "6",
+   "source": "v3_controls counts.attempted"
+  },
+  "VthreeControlsPassed": {
+   "tex": "6",
+   "source": "v3_controls counts.passed"
+  },
+  "VthreeTotalAttempted": {
+   "tex": "30\\,732",
+   "source": "sum of counts.attempted over the ten v3 receipts"
+  },
+  "VthreeTotalPassed": {
+   "tex": "30\\,732",
+   "source": "sum of counts.passed over the ten v3 receipts"
+  },
+  "VthreeRuntimeMinutes": {
+   "tex": "7.3",
+   "source": "run_receipt computation_seconds / 60"
+  },
+  "VthreePeakMemoryMb": {
+   "tex": "406",
+   "source": "run_receipt peak_rss_mb (rounded)"
+  },
+  "VthreeCartTopRhoMaxLogMt": {
+   "tex": "-251.0",
+   "source": "evidence/v3/cartography/grid_table.csv: largest log_mt at the largest rho"
+  },
+  "VthreeCartTopRhoMinLogMt": {
+   "tex": "-505.2",
+   "source": "evidence/v3/cartography/grid_table.csv: smallest log_mt at the largest rho"
+  }
+ },
+ "cartography_table_values": {
+  "mu=0.002,rho_index=0": -0.00028291459939278063,
+  "mu=0.01,rho_index=0": -0.0006159626608885915,
+  "mu=0.05,rho_index=0": -0.0012780974598747274,
+  "mu=0.2,rho_index=0": -0.0020546590550685195,
+  "mu=0.5,rho_index=0": -0.0024229471261367763,
+  "mu=1,rho_index=0": -0.002513118933579861,
+  "mu=0.002,rho_index=5": -0.004171737067893921,
+  "mu=0.01,rho_index=5": -0.00782552262959535,
+  "mu=0.05,rho_index=5": -0.01595717841878863,
+  "mu=0.2,rho_index=5": -0.025892643321724584,
+  "mu=0.5,rho_index=5": -0.03071114147043552,
+  "mu=1,rho_index=5": -0.03190003043241685,
+  "mu=0.002,rho_index=10": -0.10330497938371552,
+  "mu=0.01,rho_index=10": -0.11566224397220948,
+  "mu=0.05,rho_index=10": -0.17122362273064273,
+  "mu=0.2,rho_index=10": -0.29172643783343943,
+  "mu=0.5,rho_index=10": -0.37312878911401537,
+  "mu=1,rho_index=10": -0.3958867981863534,
+  "mu=0.002,rho_index=14": -1.0213392867844795,
+  "mu=0.01,rho_index=14": -1.0407840432795226,
+  "mu=0.05,rho_index=14": -1.1361913479522063,
+  "mu=0.2,rho_index=14": -1.4685243737984544,
+  "mu=0.5,rho_index=14": -1.9973119964812547,
+  "mu=1,rho_index=14": -2.3119544096165177,
+  "mu=0.002,rho_index=18": -9.20408779125848,
+  "mu=0.01,rho_index=18": -9.300982030991358,
+  "mu=0.05,rho_index=18": -9.786342612987157,
+  "mu=0.2,rho_index=18": -11.614190203565466,
+  "mu=0.5,rho_index=18": -15.234202924838009,
+  "mu=1,rho_index=18": -19.541125272375304,
+  "mu=0.002,rho_index=24": -251.0197405009718,
+  "mu=0.01,rho_index=24": -253.0943496693694,
+  "mu=0.05,rho_index=24": -263.4682908625481,
+  "mu=0.2,rho_index=24": -302.3776913861129,
+  "mu=0.5,rho_index=24": -380.1582616903516,
+  "mu=1,rho_index=24": -505.17702667126
+ },
+ "totals": {
+  "attempted": 30732,
+  "passed": 30732
+ },
+ "receipts": {
+  "v3_exact_identities": {
+   "kind": "exact_symbolic_equality",
+   "passed": true,
+   "attempted": 148,
+   "n_passed": 148
+  },
+  "v3_gauges": {
+   "kind": "floating_point_diagnostic",
+   "passed": true,
+   "attempted": 66,
+   "n_passed": 66
+  },
+  "v3_largegain_constants": {
+   "kind": "high_precision_constant_check",
+   "passed": true,
+   "attempted": 141,
+   "n_passed": 141
+  },
+  "v3_largegain_lemmas": {
+   "kind": "floating_point_diagnostic",
+   "passed": true,
+   "attempted": 29561,
+   "n_passed": 29561
+  },
+  "v3_attractor": {
+   "kind": "floating_point_diagnostic",
+   "passed": true,
+   "attempted": 156,
+   "n_passed": 156
+  },
+  "v3_weak_adjoint": {
+   "kind": "floating_point_diagnostic",
+   "passed": true,
+   "attempted": 180,
+   "n_passed": 180
+  },
+  "v3_wedge": {
+   "kind": "floating_point_diagnostic",
+   "passed": true,
+   "attempted": 211,
+   "n_passed": 211
+  },
+  "v3_cartography": {
+   "kind": "floating_point_table_recomputation",
+   "passed": true,
+   "attempted": 140,
+   "n_passed": 140
+  },
+  "v3_negative": {
+   "kind": "floating_point_diagnostic",
+   "passed": true,
+   "attempted": 123,
+   "n_passed": 123
+  },
+  "v3_controls": {
+   "kind": "deliberate_error_regression",
+   "passed": true,
+   "attempted": 6,
+   "n_passed": 6
+  }
+ },
+ "source_sha256": {
+  "evidence/v3/v3_exact_identities.json": "e241503eeb22061e9aa695bc777e68f69994570729a5bb029abbdad6cbbf5397",
+  "evidence/v3/v3_gauges.json": "55836e9c6881c2209ec072ca677508fe6db2972d3e27042bd6c19e7fed44fbd2",
+  "evidence/v3/v3_largegain_constants.json": "7773bebddc30007b9ecb111ff97c2bbc42472b65d6a740f9e2498115c4091baf",
+  "evidence/v3/v3_largegain_lemmas.json": "e4e38bb6e40e4a567f75cf48ce6210ca52913c8de06bd65f869c9554259907fa",
+  "evidence/v3/v3_attractor.json": "8a683512b0f6b9f3083558aa82a0c1191ad385a8dbb5fbbdda8852830a4db840",
+  "evidence/v3/v3_weak_adjoint.json": "55d38017b6c56117bd2e364f070d92a7de810542e2438c0157dfbdcc2d0692d3",
+  "evidence/v3/v3_wedge.json": "073844e81ef9a3febedacb703fda0fc69395e8e505b6804a8567f94b09ace510",
+  "evidence/v3/v3_cartography.json": "32b277687b85544dc4a5cb2208e61135345da54d08d30842cbbe47b933513cc2",
+  "evidence/v3/v3_negative.json": "dff08a505ba45b51e0503ac9937c383d622ebe3b70d8bd8426a7be10e7c32ec6",
+  "evidence/v3/v3_controls.json": "8a1836ea9204430cf8cd55bbc746b178e7b70ac0b7dcee689c34c482c59df4cc",
+  "evidence/v3/cartography/grid_table.csv": "79da2c33d5a09295d846e76fb1cac8feb3917dddb9edc350d9a05da1a359e336"
+ },
+ "passed": true,
+ "claim_boundary": "Finite computations. Exact symbolic equalities are exact; everything else is floating point or high-precision arithmetic without interval enclosure."
+}

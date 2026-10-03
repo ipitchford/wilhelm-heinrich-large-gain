@@ -1,0 +1,192 @@
+{
+  "kind": "exact symbolic equalities; geometric arguments remain written proofs",
+  "checks": [
+    {
+      "name": "adjoint_covector_0",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "adjoint_covector_1",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "adjoint_covector_2",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "orthogonality_defect",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "tangent_second_order_factor",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "third_order_factor_D2",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "third_order_factor_D1",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "third_order_factor_D0",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "gain_moment_primitive",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "chemical_derivative_energy_primitive",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "weighted_tangent_primitive",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "equilibrium_support_primitive",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "support_curvature_primitive",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "two_trajectory_strict_support",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "crest_identity",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "physical_projective_first",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "physical_projective_second",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "physical_logarithmic_derivative",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "compound_conjugacy_matrix",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "Hopf_graph_quadratic_20",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "Hopf_graph_quadratic_11",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "Hopf_graph_quadratic_02",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "stable_vector_normalisation",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "stable_eigenvector_0",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "stable_eigenvector_1",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "stable_eigenvector_2",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "Hopf_crest_matrix_0",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "Hopf_crest_matrix_1",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "Hopf_crest_matrix_2",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "Hopf_crest_matrix_3",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "Hopf_crest_tangent_eigenvector_0",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "Hopf_crest_tangent_eigenvector_1",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "Hopf_crest_determinant",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "square_root_radial_mismatch",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "square_root_false_certificate_coefficient",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "adjusted_power_cancels_first_mismatch",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "positive_coefficient_mu_half",
+      "residual": "0",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "count": 37
+}

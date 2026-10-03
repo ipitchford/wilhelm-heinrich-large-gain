@@ -1,0 +1,183 @@
+{
+  "version": "2.0",
+  "date": "2026-10-02",
+  "claims": [
+    {
+      "id": "P1",
+      "claim": "Published permanence and competitive Poincare–Bendixson properties",
+      "status": "imported_primary_result",
+      "location": "Section 1.3",
+      "dependencies": [
+        "Smith 2012, Theorems 1.3 and 1.4; model-specific Poincare–Bendixson statement"
+      ],
+      "boundary": "Positive rates and the original, not mass-conserving, oscillator."
+    },
+    {
+      "id": "T1",
+      "claim": "Exact projective Floquet mean and factorisation",
+      "status": "written_proof",
+      "location": "Propositions 2.1–2.2",
+      "dependencies": [
+        "positive adjoint Perron theory",
+        "Liouville formula",
+        "exact algebra"
+      ],
+      "boundary": "Applies to arbitrary positive mu; equality of the mean is neutral and does not decide nonlinear stability."
+    },
+    {
+      "id": "T2",
+      "claim": "Explicit period-independent projective bounds",
+      "status": "written_proof",
+      "location": "Lemma 2.3",
+      "dependencies": [
+        "periodic extrema of positive ratio equations"
+      ],
+      "boundary": "Requires a positive state range for the considered cycle; no period upper bound is assumed."
+    },
+    {
+      "id": "T3",
+      "claim": "Strict supporting-plane comparison and equilibrium cones",
+      "status": "written_proof",
+      "location": "Theorem 3.1 and Corollary 3.2",
+      "dependencies": [
+        "T1",
+        "strict convexity of the exponential",
+        "entire bounded solutions"
+      ],
+      "boundary": "Base must be a cycle or equilibrium; the other trajectory is bounded in logarithmic coordinates for all time."
+    },
+    {
+      "id": "T4",
+      "claim": "One crest and trough, nested planar projections and ordered crests",
+      "status": "written_proof",
+      "location": "Theorem 4.1 and Corollary 4.3",
+      "dependencies": [
+        "T1",
+        "T3",
+        "Jordan winding"
+      ],
+      "boundary": "Every possible nonconstant positive cycle, not only stable cycles."
+    },
+    {
+      "id": "T5",
+      "claim": "Six nondegenerate chemical extrema in the original filter order",
+      "status": "written_proof",
+      "location": "Theorem 4.2",
+      "dependencies": [
+        "T4",
+        "linear filter identities"
+      ],
+      "boundary": "X-min < Z-min < Y-min < X-max < Z-max < Y-max, cyclically; no swap of physical filters."
+    },
+    {
+      "id": "T6",
+      "claim": "Positive crest derivative and determinant less than exp(-4*pi)",
+      "status": "written_proof",
+      "location": "Proposition 4.4",
+      "dependencies": [
+        "positive compound evolution",
+        "periodic Wirtinger inequality",
+        "strict exponential convexity"
+      ],
+      "boundary": "A positive small-determinant return matrix need not have spectral radius below one."
+    },
+    {
+      "id": "T7",
+      "claim": "Convex supporting epigraph, rank-one local Hessian and graph defect",
+      "status": "written_proof",
+      "location": "Theorem 5.1 and Proposition 5.2",
+      "dependencies": [
+        "T1",
+        "T3",
+        "strict supporting curvature",
+        "implicit-function theorem"
+      ],
+      "boundary": "Finite selected family of actual cycles plus equilibrium; epigraph is invariant, graph generally is not. No algorithm to find cycles and no equivalence for unrelated planar trajectories."
+    },
+    {
+      "id": "T8",
+      "claim": "Proper family of all crest-fixed cycles on finite parameter sets",
+      "status": "written_proof",
+      "location": "Theorem 6.1",
+      "dependencies": [
+        "T2",
+        "T3",
+        "T4",
+        "T6",
+        "uniform hyperbolic equilibrium splitting"
+      ],
+      "boundary": "Compact sets strictly inside mu>0 and k>mu*(1+mu); no compactness at Hopf, zero rate or infinity."
+    },
+    {
+      "id": "T9",
+      "claim": "Globally unique Hopf starting collar for every fixed rate ratio",
+      "status": "written_proof_using_published_inputs",
+      "location": "Lemma 7.1 and Appendix A",
+      "dependencies": [
+        "P1",
+        "T1 gain identity",
+        "local Hopf calculation",
+        "uniform attraction in a common physical positive box"
+      ],
+      "boundary": "Existential collar; no numerical width is certified."
+    },
+    {
+      "id": "T10",
+      "claim": "Relatively closed neutral locus and finite-path count obstruction",
+      "status": "written_proof",
+      "location": "Theorems 1.1 and 7.2",
+      "dependencies": [
+        "T6",
+        "T8",
+        "T9",
+        "hyperbolic return-map continuation"
+      ],
+      "boundary": "Failure of uniqueness forces a nonconstant cycle with extra +1, possibly at the target endpoint. Neutrality is not itself a counterexample."
+    },
+    {
+      "id": "T11",
+      "claim": "Equivalent trace test and necessary neutral-variance window",
+      "status": "written_proof",
+      "location": "Corollary 7.3",
+      "dependencies": [
+        "T1",
+        "T2",
+        "T6",
+        "gain polynomial"
+      ],
+      "boundary": "Necessary constraints, not an exclusion of neutral cycles."
+    },
+    {
+      "id": "N1",
+      "claim": "Square-root radial contraction vector is not a universal certificate",
+      "status": "written_proof_and_fresh_numerical_check",
+      "location": "Theorem 8.1",
+      "dependencies": [
+        "exact quadratic centre graph",
+        "limiting crest derivative"
+      ],
+      "boundary": "Analytic failure for each 0<mu<1 sufficiently close to Hopf; not a counterexample to cycle attraction or uniqueness."
+    },
+    {
+      "id": "E1",
+      "claim": "50 exact equalities and complete 31-cycle finite audit reproduce",
+      "status": "executed_diagnostic",
+      "location": "Section 9; evidence/run_receipt.json",
+      "dependencies": [
+        "bundled active code and saved meshes"
+      ],
+      "boundary": "No formal proof assistant; no interval arithmetic; finite checks do not exclude other cycles."
+    },
+    {
+      "id": "U1",
+      "claim": "Original all-parameter uniqueness conjecture",
+      "status": "unresolved",
+      "location": "Section 10",
+      "dependencies": [],
+      "boundary": "No full solution, no no-neutral theorem and no certified multicycle counterexample."
+    }
+  ],
+  "independent_referee_review_of_current_paper": false,
+  "priority_established": false,
+  "current_evidence_is_interval_certified": false
+}

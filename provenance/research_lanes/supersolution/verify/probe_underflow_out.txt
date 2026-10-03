@@ -1,0 +1,6 @@
+W equation, atol=1e-200: min W = -2.748e-199  (W true order in the trough ~ exp(-800) ~ 1e-347, below double range)
+W equation, atol=1e-250: min W = -7.065e-249  (W true order in the trough ~ exp(-800) ~ 1e-347, below double range)
+W equation, atol=1e-300: min W = -3.364e-299  (W true order in the trough ~ exp(-800) ~ 1e-347, below double range)
+(delta,nu) backward, atol=1e-250: min(beta-1) = -7.360e-249, min(kappa-(1-mu)beta) = -1.472e-250
+(delta,nu) backward, atol=1e-290: min(beta-1) = -3.320e-289, min(kappa-(1-mu)beta) = -6.640e-291
+(delta,nu) backward, atol=1e-320: min(beta-1) = -1.726e-319, min(kappa-(1-mu)beta) = -2.956e-320

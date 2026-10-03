@@ -1,0 +1,450 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,longtable,array}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\hypersetup{pdftitle={Supporting planes and a neutral-cycle obstruction in the Wilhelm--Heinrich oscillator},pdfauthor={Evidence Press research candidate}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{Wilhelm--Heinrich oscillator}\fancyhead[R]{Research addendum v1.2}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\av}[1]{\left\langle #1\right\rangle}
+\newcommand{\R}{\mathbb R}\newcommand{\dd}{\mathrm d}
+\title{Supporting planes, compact cycle families and a neutral-cycle obstruction in the Wilhelm--Heinrich oscillator}
+\author{Evidence Press research candidate, version 1.2}
+\date{2 October 2026}
+\begin{document}\maketitle
+\noindent\textbf{Claim boundary.} This paper does not settle the all-parameter uniqueness conjecture. It gives an exact finite-parameter reduction, proves a compactness and neutral-cycle obstruction theorem, and disproves one proposed contraction certificate. No additional chemical cycle or neutral cycle is certified. Numerical failures are retained. The new geometric proofs have received author-side scrutiny, not independent mathematical referee review; priority is not established.
+\begin{abstract}
+We examine the original Wilhelm--Heinrich oscillator at arbitrary positive filter rates in its oscillatory regime. A positive projective adjoint provides an exact two-variable description of the nontrivial Floquet exponent and factors the third-order variational operator. Strict convexity of the exponential then gives a supporting-plane identity for any two bounded entire solutions when the base is a cycle or the equilibrium. It follows that every periodic orbit has an injective regular projection into logarithmic concentration and its derivative, exactly one crest and one trough, and a positive crest-return derivative. On every compact strictly oscillatory parameter set, all cycles remain uniformly separated from the equilibrium and have uniformly bounded least periods. Consequently, a failure of global cycle uniqueness anywhere would require a nonconstant cycle with transverse multiplier $+1$ at a finite oscillatory parameter. We do not exclude that remaining event. Separately, an exact Hopf expansion shows that a natural square-root radial supersolution fails for every fixed pair of unequal filter rates sufficiently close to Hopf, despite the attracting cycle. Amplitude continuation, boundary-value multistarts, adjoint audits and failed neutral-cycle solves are supplied as diagnostics, not global exclusion certificates.
+\end{abstract}
+
+\section{Problem, coordinates and established inputs}
+The target is one geometric nonconstant positive periodic orbit for every parameter choice in the oscillatory regime of
+\begin{equation}\label{original}
+ \dot x_c=x_c(r_0-y_c),\qquad \dot y_c=a_0(z_c-y_c),\qquad \dot z_c=b_0(x_c-z_c),\qquad r_0>a_0+b_0>0.
+\end{equation}
+These are concentration-scaled versions of the original reaction equations. In the usual reaction notation $r_0=\kappa_1-\kappa_4$, $a_0=\kappa_3$ and $b_0=\kappa_5$; the raw concentrations are rescaled by $\kappa_2\kappa_4/a_0$, $\kappa_2$ and $\kappa_2b_0/a_0$, respectively. The model and its local Hopf analysis originate with Wilhelm and Heinrich \cite{WH95,WH96}. Smith \cite{Smith} establishes permanence and convergence to periodic orbits off the equilibrium's stable manifold in the unstable regime. Boros and Hofbauer \cite[Theorem 13 and the following paragraph]{BH} summarise the established dynamics and explicitly leave the number of cycles unresolved. Their mass-conserving extension is not equation \eqref{original}.
+
+Normalise time by $\tau=\sqrt{a_0b_0}\,t$ and concentrations by $r_0$. Put
+\[
+ a=\frac{a_0}{\sqrt{a_0b_0}},\quad b=\frac{b_0}{\sqrt{a_0b_0}},\quad r=\frac{r_0}{\sqrt{a_0b_0}},\quad ab=1.
+\]
+The normalised concentrations satisfy
+\begin{equation}\label{normal}
+ X_\tau=rX(1-Y),\qquad Y_\tau=a(Z-Y),\qquad Z_\tau=b(X-Z).
+\end{equation}
+On periodic solutions the two stable convolution filters commute. Their order may therefore be chosen so that $a\le b=1/a$, without changing $X,Y$ or the period; the intermediate $Z$ reconstructs positively in either ordering. Set
+\[
+ \mu=a^2\in(0,1],\quad \lambda=ra,\quad k=\mu\lambda,\quad A=1+\mu,\quad s_f=\tau/a.
+\]
+With $x=kX$, $y=kZ$ and $p=\lambda(1-Y)$, equation \eqref{normal} becomes
+\begin{equation}\label{fast}
+ x'=px,\qquad p'=k-\mu p-y,\qquad y'=x-y.
+\end{equation}
+Primes throughout refer to $s_f$, except where a different derivative is specified. Its chemical domain and oscillatory parameter domain are
+\[
+ \mathcal D_{\mu,k}=\{x>0,\ y>0,\ p<k/\mu\},\qquad
+ \mathcal P=\{0<\mu\le1,\ k>\mu(1+\mu)\}.
+\]
+The equilibrium is $(k,0,k)$. In the logarithmic coordinate $U=\log(x/k)$ the equations are
+\begin{equation}\label{log}
+ U'=p,\qquad p'=k-\mu p-y,\qquad y'=ke^U-y,
+\end{equation}
+and
+\begin{equation}\label{scalar}
+ U'''+AU''+\mu U'+k(e^U-1)=0.
+\end{equation}
+A cycle always means its image with its least period, not a phase choice or a multiple traversal. A transverse multiplier $+1$ means an additional unit multiplier beyond the autonomous tangent multiplier.
+
+The new arguments below use ordinary Perron theory for a strictly positive linear evolution, smooth dependence and the implicit-function theorem, the Jordan curve theorem, and the local Hopf theorem. Permanence, the competitive Poincar\'e--Bendixson property and the known sign of the Hopf coefficient are imported from the model's established theory. The argument does not require the newer singular-transfer claims in research draft v1.1. Geometric conclusions familiar from monotone cyclic feedback \cite{MPS} are proved directly here; no priority claim is made for them.
+
+\section{A positive adjoint and an exact factorisation}
+Fix any nonconstant positive $T$-periodic orbit. The Jacobian of \eqref{log} and its sign-conjugated negative transpose are
+\[
+ J=\begin{pmatrix}0&1&0\\0&-\mu&-1\\x&0&-1\end{pmatrix},\qquad
+ B=\begin{pmatrix}0&0&x\\1&\mu&0\\0&1&1\end{pmatrix}.
+\]
+Indeed $B=-S J^\top S$ for $S=\operatorname{diag}(1,-1,-1)$. Because $x>0$, the evolution of $H'=BH$ is strictly positive over every positive time interval. Its Perron solution has positive components and periodic component ratios. Define
+\begin{equation}\label{ratios}
+ s=H_2/H_3>0,\qquad t=H_1/H_3>0.
+\end{equation}
+The symbol $t$ in \eqref{ratios} is a component ratio, not time. Direct differentiation gives
+\begin{equation}\label{projective}
+ s'=t+(\mu-1)s-s^2,\qquad t'=x-(1+s)t.
+\end{equation}
+The principal adjoint exponent is $\gamma=1+\av{s}>1$, where $\av{f}=T^{-1}\int_0^T f\,\dd s_f$.
+
+\begin{proposition}\label{multipliers}
+The two transverse multipliers can be labelled
+\[
+ 0<m_s<m_t,\qquad m_s<1,\qquad m_sm_t=e^{-AT}.
+\]
+Moreover
+\begin{equation}\label{exponent}
+ m_s=e^{-(1+\av{s})T},\qquad
+ m_t=e^{(\av{s}-\mu)T},\qquad \lambda_c:=T^{-1}\log m_t=\av{s}-\mu.
+\end{equation}
+Thus hyperbolic attraction is equivalent to $\av{s}<\mu$. Equality is a neutral transverse multiplier and does not determine nonlinear stability.
+\end{proposition}
+\begin{proof}
+The adjoint monodromy is sign-conjugate to the inverse transpose of the original monodromy. Its simple positive Perron multiplier is $e^{\gamma T}>1$ and dominates the moduli of the others. Its reciprocal $m_s$ is an original multiplier smaller in modulus than either remaining multiplier. One remaining multiplier is the tangent multiplier $1$. The trace of $J$ is $-A$, so Liouville's formula gives $m_sm_t=e^{-AT}>0$. The remaining real multiplier $m_t$ is therefore positive. This proves the ordering and \eqref{exponent}.
+\end{proof}
+
+\begin{proposition}\label{factorisation}
+Along every cycle,
+\begin{equation}\label{orthogonal}
+ tp-sp'-(x-y)=0,
+\end{equation}
+and its scalar tangent $p=U'$ satisfies
+\begin{equation}\label{second}
+ p''=(s-\mu)p'-tp.
+\end{equation}
+As differential operators with the displayed periodic coefficients,
+\begin{equation}\label{factor}
+ D^3+AD^2+\mu D+x=(D+1+s)\bigl[D^2+(\mu-s)D+t\bigr].
+\end{equation}
+\end{proposition}
+\begin{proof}
+Put $n=(t,-s,-1)^\top$. Equations \eqref{projective} imply
+\[
+ n'+J^\top n+(1+s)n=0.
+\]
+Pairing with the tangent to \eqref{log} gives $O'+(1+s)O=0$ for $O=tp-sp'-(x-y)$. Since $O$ is periodic and $1+s>1$, it is identically zero. Also $p''=-\mu p'-x+y$, which gives \eqref{second}. Expanding the right side of \eqref{factor} yields coefficients $A$, $t-s'+(1+s)(\mu-s)=\mu$ and $t'+(1+s)t=x$, proving the operator identity.
+\end{proof}
+
+\begin{remark}[The sign still missing]\label{signmissing}
+The reduction \eqref{exponent} does not prove $\av{s}<\mu$. Useful exact averages are
+\begin{align}
+ k&=\av{(1-\mu)s+(2-\mu)s^2+s^3},\label{gainmoment}\\
+ 0&=\av{\bigl[(1+s)(s-\mu)+\tfrac32s'\bigr]p^2}.\label{weighted}
+\end{align}
+For \eqref{gainmoment}, differentiate $t+s+s^2/2$ and use $\av{x}=k$. For \eqref{weighted}, differentiate $(1+s)p^2/2+x-kU$ and use \eqref{orthogonal}. The variable weight and the derivative term in \eqref{weighted} cannot be discarded to conclude the unweighted sign.
+\end{remark}
+
+\section{Strict supporting planes}
+\begin{theorem}\label{support}
+Let $z_1=(U_1,p_1,y_1)$ be a periodic solution of \eqref{log}, or its equilibrium, with the positive ratios $s,t$ of its adjoint. Let $z_2$ be a distinct entire solution at the same parameters, bounded in logarithmic coordinates for all real times. Set
+\[
+ \Delta=t(U_2-U_1)-s(p_2-p_1)-(y_2-y_1).
+\]
+Then
+\begin{equation}\label{supporteq}
+ \Delta'+(1+s)\Delta
+ =-x_1\left[e^{U_2-U_1}-1-(U_2-U_1)\right],
+\end{equation}
+and $\Delta<0$ at every time. Distinct phases of the same cycle are allowed as $z_1,z_2$.
+\end{theorem}
+\begin{proof}
+Subtract the two vector fields. Their difference is $J_1(z_2-z_1)$ plus $(0,0,x_2-x_1-x_1(U_2-U_1))^\top$. Pairing with $n$ proves \eqref{supporteq}. Its unique bounded entire solution is
+\[
+ \Delta(v)=-\int_{-\infty}^v
+ \exp\!\left[-\int_\tau^v(1+s(\xi))\,\dd\xi\right]
+ x_1(\tau)\left[e^{U_2(\tau)-U_1(\tau)}-1-U_2(\tau)+U_1(\tau)\right]\dd\tau.
+\]
+The integral converges because $1+s\ge1$ and the trajectories and ratios are bounded. The integrand is nonnegative by strict convexity of the exponential. Were it identically zero on a past half-line, the two $U$ components would agree there; differentiating \eqref{log} would make $p,y$ agree there too, and uniqueness would identify the solutions. Hence the integral is strictly negative.
+\end{proof}
+
+The theorem is an exact comparison, not a small-displacement Taylor approximation. It does not assert existence of a globally smooth convex invariant surface.
+
+For a cycle compared with the equilibrium, it gives
+\begin{equation}\label{cycleplane}
+ K:=tU-sp-y+k>0,\qquad K'+(1+s)K=xU-x+k.
+\end{equation}
+The reverse comparison, \emph{using the equilibrium as the base}, is equally important. Let $\gamma_E>A$ be the unique root of
+\[
+ k=\gamma_E(\gamma_E-1)(\gamma_E-\mu),
+\]
+and put $s_E=\gamma_E-1$, $t_E=(\gamma_E-1)(\gamma_E-\mu)$. Then every cycle point satisfies
+\begin{equation}\label{equilplane}
+ t_EU-s_Ep-y+k<0.
+\end{equation}
+It would be an error to try to obtain both signs from \eqref{cycleplane} alone.
+
+\begin{corollary}\label{cones}
+In coordinates $r=(U,p,y-k)$, no cycle point belongs to either closed cone
+\[
+ C_+=\{U\ge0,\ p\le0,\ y-k\le0\},\qquad C_-=-C_+.
+\]
+\end{corollary}
+\begin{proof}
+Equation \eqref{equilplane} excludes $C_+$, since its left side is nonnegative there. Equation \eqref{cycleplane} excludes $C_-$, since its left side is nonpositive there. Both statements include the boundaries.
+\end{proof}
+
+For another exact check, let $W=t'p-s'p'$. Differentiation and \eqref{orthogonal} give
+\[
+ W'+(1+s)W=xp^2.
+\]
+The bounded periodic solution satisfies $W>0$. This is supporting curvature along the trajectory; it is not a proof of the unresolved mean inequality in Remark~\ref{signmissing}.
+
+\section{One crest and one trough at arbitrary parameters}
+\begin{theorem}\label{onecrest}
+Every nonconstant positive cycle of \eqref{fast} has an injective regular projection into $(U,p)$. Its projected curve is a Jordan curve enclosing $(0,0)$, oriented clockwise. In each least period it has exactly one maximum and one minimum of $x$, and $p$ has exactly one positive maximum and one negative minimum. Distinct cycles at the same parameters project to disjoint, nested Jordan curves.
+\end{theorem}
+\begin{proof}
+If two distinct periodic points had the same $(U,p)$, Theorem~\ref{support} with the first point as base would require the second to have larger $y$. Interchanging the bases would require the first to have larger $y$. This is impossible. The same argument applies to two phases of one cycle, proving injectivity.
+
+If the projected tangent vanished, then $p=p'=0$. Equation \eqref{orthogonal} gives $x=y$, while $p'=k-y$ gives $x=y=k$. The point would be the equilibrium, which a nonconstant orbit cannot meet. The projection is therefore a regular embedded circle.
+
+At a zero of $p$, equation \eqref{orthogonal} gives
+\begin{equation}\label{crest}
+ x-k=(1+s)(y-k),\qquad x-y=s(y-k),\qquad p'=k-y.
+\end{equation}
+No such zero has $U=0$, since that would again give the equilibrium. Every crossing of the positive $U$ axis is consequently downward, and every crossing of the negative $U$ axis is upward. The identity $\av{x}=k$ forces both $U>0$ and $U<0$ on the orbit. In particular, the global maximum of $U$ is a downward crossing of the positive axis. The winding number of a Jordan curve about a point off it is $0$ or $\pm1$. Counting the transverse positive-ray crossings, all with the same sign, shows that there is exactly one and the winding number is $-1$. The negative ray likewise has exactly one crossing. Thus $p$ has exactly two simple zeros.
+
+Between these zeros $p$ has a fixed sign. At a critical point $p'=0$, equation \eqref{second} gives $p''=-tp$. On the positive half-cycle every critical point is a strict maximum, so there is exactly one; on the negative half-cycle there is exactly one strict minimum. Finally, projections of distinct cycles cannot intersect by the first comparison argument. Since they all surround the origin, their Jordan interiors are nested.
+\end{proof}
+
+\begin{proposition}\label{crestmatrix}
+At every cycle crest, the local first downward return on $p=0$, in section coordinates $(U,y)$, has an entrywise positive derivative $M$. Furthermore,
+\begin{equation}\label{detbound}
+ \det M=e^{-AT}<e^{-4\pi}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+At a crest, \eqref{crest} gives $x>y>k$. For a section variation $(\delta U,0,\delta y)$, the sign-conjugated wedge of the tangent and this variation is
+\[
+ w=\bigl((y-k)\delta U,\ (x-y)\delta U,\ (y-k)\delta y\bigr).
+\]
+It evolves by
+\[
+ w'=Cw,\qquad C=\begin{pmatrix}-\mu&1&0\\0&-1&1\\x&0&-A\end{pmatrix}.
+\]
+A nonzero weakly positive initial section variation gives a nonzero weakly positive $w$, which becomes strictly positive. At the return crest its first and third entries recover $\delta U,\delta y$ by division by $y-k>0$. The event-time correction is a multiple of the tangent and therefore does not alter the wedge. Applying this argument to the two coordinate variations proves $M>0$.
+
+Multiplying \eqref{scalar} by $U'$ and integrating gives $\int(p')^2=\mu\int p^2$. Wirtinger's inequality for the mean-zero function $p$ yields $T\ge2\pi/\sqrt\mu$. Equality would force $U$ to be a nonconstant sinusoid; substitution into \eqref{scalar} would make its exponential affine in the sinusoid, contradicting strict convexity. Thus $AT>2\pi(\sqrt\mu+1/\sqrt\mu)\ge4\pi$. Liouville's identity proves \eqref{detbound}.
+\end{proof}
+
+Small determinant and positive derivative do not exclude a Perron multiplier at or above one. They do exclude a negative multiplier or a nonreal pair as the first transverse instability of a cycle in this family.
+
+\section{Compactness of all cycle families away from Hopf}
+\begin{theorem}\label{compactness}
+Let $Q$ be any compact subset of $\mathcal P$. There are constants $d_Q>0$ and $T_Q<\infty$ such that every nonconstant positive cycle with parameters in $Q$ stays at logarithmic-coordinate distance at least $d_Q$ from its equilibrium and has least period at most $T_Q$. The cycle states also lie in a common compact subset of the positive chemical domain. Phase-fixing at the crest makes the family of cycles sequentially compact, with a nonconstant cycle of least period as every limit.
+\end{theorem}
+\begin{proof}
+\textbf{1. A common state box.} Write $\lambda=k/\mu$ and use the normalised physical variables $X=x/k$, $Y=(\lambda-p)/\lambda$, $Z=y/k$. Their filter rates in fast time are $\mu,1$ and their growth rate is $\lambda$. At the minimum of $Z/X$, its differential equation gives $Z/X\ge1/(\lambda+1)$. At the minimum of $Y/X$, it gives $Y/X\ge\mu/((\lambda+\mu)(\lambda+1))$. At a maximum of $X$ one has $Y=1$. Thus all three variables are bounded above by
+\[
+ M=\frac{(\lambda+\mu)(\lambda+1)}\mu.
+\]
+The periodic filter formulas propagate the bound from $X$ to $Y,Z$.
+
+For completeness, set $m=\min(\mu,1)$, $L=(2/m)\log(8M)$ and $d=\frac12e^{-\lambda(M-1)L}$. On an excursion $X<1/2$ beginning at $X=1/2$, the two-filter step-response bound is
+\[
+ Y(s)\le\tfrac12+(M-\tfrac12)(1+ms)e^{-ms}
+ \le\tfrac12+2(M-\tfrac12)e^{-ms/2}.
+\]
+After $s=L$ the right side is below $3/4$, so $X$ must increase as long as the excursion continues. Its minimum is attained earlier and is at least $d$, because $(\log X)'\ge-\lambda(M-1)$. The excursion has finite endpoints since $\av{X}=1$. The positive filters have minima at least $\min X$. Thus $(X,Y,Z)\in[d,M]^3$. These bounds are uniform on $Q$ and give a common compact box for $(U,p,y)$, including $x$ bounded away from zero and $p$ bounded away from $\lambda$.
+
+\textbf{2. Separation from the equilibrium.} The equilibrium Jacobian has characteristic polynomial
+\[
+ \zeta^3+A\zeta^2+\mu\zeta+k.
+\]
+In $\mathcal P$ it has one simple real root $-\gamma_E<-A$ and an unstable nonreal pair. This follows from the Routh--Hurwitz criterion, positivity of the coefficients (which excludes positive real roots), and the strict increase of $\gamma(\gamma-1)(\gamma-\mu)$ for $\gamma>A$. A stable eigenvector is
+\[
+ v_s=(1,-\gamma_E,k/(1-\gamma_E))^\top,
+\]
+strictly inside $C_+$. Its negative is strictly inside $C_-$. The cone exclusion in Corollary~\ref{cones} therefore implies
+\begin{equation}\label{conebound}
+ |r|\le C_Q|P_u r|
+\end{equation}
+for every cycle point $r=(U,p,y-k)$, where $P_u$ is the spectral projection onto the unstable plane. To see uniformity, an unbounded ratio would give, after normalisation and a parameter subsequence, a nonzero stable vector outside the interiors of both cones, which is impossible.
+
+On that plane choose the positive quadratic form
+\[
+ V(r)=\int_0^\infty |e^{-J_Et}P_u r|^2\,\dd t.
+\]
+The integral converges on the unstable plane; its coefficients and positive equivalence bounds are uniform on $Q$. Along the linearised field, $V'=|P_ur|^2$. Along the nonlinear field, Taylor's theorem and \eqref{conebound} consequently give
+\[
+ V'\ge c_Q V>0
+\]
+whenever an allowed cycle point is sufficiently close to the equilibrium. All constants can be made uniform on $Q$. A minimum of $V$ along a cycle cannot occur in that neighbourhood. Outside it, \eqref{conebound} and the uniform quadratic equivalence bound $V$ below by a common positive number. Since $V\le C|r|^2$, this minimum proves a common positive lower bound on $|r|$ at every cycle point. This excludes a cycle's approach along the equilibrium's stable direction; instability alone would not have done so.
+
+\textbf{3. Uniform projective bounds.} On the common state box, the coefficients of the positive adjoint matrix $B$ are bounded and its cyclic links are bounded below by positive constants. Over each unit interval its evolution matrix has every entry bounded between common constants $c>0$ and $C<\infty$. A direct proof uses the positive iterated-integral expansion: every ordered pair of coordinates is connected by a path of length at most two. Standard integral upper bounds give $C$. Applying this matrix to a positive vector bounds all component ratios above and below by constants depending only on $c,C$. Hence $s,t$ are uniformly bounded on every cycle, independently of its period.
+
+\textbf{4. Projected speed and length.} Suppose the projected speed $\sqrt{p^2+(p')^2}$ could tend to zero at cycle points. The common box gives a subsequential state and parameter limit. Equation \eqref{orthogonal} and the projective bounds then imply $x-y\to0$, while $p'=k-\mu p-y$ implies $y-k\to0$. Therefore $U,p,y-k\to0$, contradicting Step 2. The projected speed thus has a common positive lower bound $c_*>0$.
+
+By Theorem~\ref{onecrest}, $U$ and $p$ each have one maximum and one minimum in a least period. The projected arclength is at most
+\[
+ \int_0^T(|U'|+|p'|)\,\dd s_f
+ =2(\max U-\min U)+2(\max p-\min p),
+\]
+which is uniformly bounded by Step 1. Dividing by $c_*$ proves the uniform upper bound on $T$.
+
+\textbf{5. Limits retain the least period.} Choose each initial phase at its unique crest. The initial states, parameters and periods have convergent subsequences, with positive limiting period by Proposition~\ref{crestmatrix}. Smooth finite-time dependence gives a periodic limit. Step 2 makes it nonconstant. If the limiting period traversed its orbit more than once, the limit would have several transverse downward crest crossings in that period. Those crossings persist under $C^1$ convergence and would give several crests on the approximating cycles, contrary to Theorem~\ref{onecrest}. The limit period is therefore least. This proves the stated compactness.
+\end{proof}
+
+The constants in Theorem~\ref{compactness} are existential except for the initial conservative state box. The theorem does not supply a practical certified mesh covering a prescribed parameter rectangle. Compactness is asserted only inside the strictly oscillatory parameter domain, not at Hopf or infinity.
+
+\section{The finite neutral-cycle obstruction}
+We first record why the count starts at one on every fixed-shape path.
+
+\begin{lemma}\label{hopfcollar}
+For each fixed $\mu\in(0,1]$, there is a right-hand neighbourhood of $k_H=\mu(1+\mu)$ in which the positive nonconstant cycle is globally unique and hyperbolic attracting.
+\end{lemma}
+\begin{proof}
+The established supercritical Hopf bifurcation supplies a fixed neighbourhood containing one local attracting branch for nearby supercritical parameters. The equilibrium is globally asymptotically stable at the threshold, as stated in \cite[Theorem 13(v)]{BH}. An alternative check of that critical assertion uses the projective identity: with $q=s-\mu$ and $F(q)=(q+\mu)(q+1)(q+A)$, equation \eqref{gainmoment} gives $\av{F(q)}=k$. On $q>-\mu$ the function $F$ is increasing and strictly convex for $0<\mu\le1$. Strict Jensen gives $F(\lambda_c)<k$ on a nonconstant cycle. At $k\le\mu A=F(0)$, every hypothetical cycle would be hyperbolic attracting. Local equilibrium stability through the critical value follows from Routh--Hurwitz below it and the negative Hopf coefficient at it; in frequency-one scalar coordinates the latter is
+\[
+ l_1=-\frac{\sigma}{(\sigma^2+1)(\sigma^2+4)}<0,\qquad \sigma=A/\sqrt\mu.
+\]
+Permanence and the competitive Poincar\'e--Bendixson property imply that every positive trajectory tends to that locally stable equilibrium or to a periodic orbit. If all such cycles were attracting, their open basins and the equilibrium's open basin would partition a connected domain. Thus only the equilibrium basin exists, proving global stability.
+
+The state box in Step 1 of Theorem~\ref{compactness} is uniform for $k$ in a compact neighbourhood of $k_H$; that step requires only positive parameters. At $k_H$, attraction of this compact box to the stable equilibrium is uniform. A fixed sufficiently long time sends the box into a smaller local Hopf neighbourhood. Finite-time continuous dependence preserves inclusion in the original Hopf neighbourhood for nearby $k$. Every cycle is invariant under that fixed-time map, so every possible cycle lies in the local neighbourhood. Local Hopf uniqueness is therefore global.
+\end{proof}
+
+\begin{theorem}\label{neutraltheorem}
+On a compact parameter path contained in $\mathcal P$ and containing no cycle with $m_t=1$, the number of positive cycles is constant. In particular, if the original all-parameter uniqueness conjecture is false, then at some finite parameter $(\mu,k)\in\mathcal P$ there is a nonconstant positive cycle with transverse multipliers
+\[
+ 1\quad\hbox{and}\quad e^{-(1+\mu)T}.
+\]
+Equivalently, this cycle has $\av{s}=\mu$ in \eqref{projective}. Such a neutral cycle is necessary for failure of uniqueness somewhere; its existence would not by itself refute uniqueness.
+\end{theorem}
+\begin{proof}
+When $m_t\ne1$, Proposition~\ref{multipliers} makes every cycle hyperbolic. The compact crest family from Theorem~\ref{compactness} contains only finitely many isolated fixed points at a fixed parameter: an infinite sequence would have a cycle limit, and local isolation at a hyperbolic fixed point would be contradicted. Each persists uniquely by the implicit-function theorem for its crest-return map. No other cycles can appear at nearby parameters, since their crest and period limits would give one of the existing hyperbolic cycles, again contradicting local uniqueness. The count is therefore locally constant, hence constant along the path.
+
+Now fix a parameter with more than one cycle, keep its $\mu$ fixed, and join its $k$ to a point in the right-hand Hopf collar of Lemma~\ref{hopfcollar}. This is a compact strictly oscillatory interval. If no neutral cycle occurred on it, local constancy would preserve the initial count of one. Therefore a neutral nonconstant cycle must occur at an intermediate finite parameter. The other multiplier is fixed by the determinant identity.
+\end{proof}
+
+\begin{remark}[What this removes, and what it does not]
+Along such a compact path, cycles cannot be created unnoticed at infinite amplitude, at the boundary of the positive domain, by collapse onto the equilibrium, or by divergence of the least period. Period doubling and torus bifurcations are also excluded by positivity of the two real transverse multipliers. The remaining possible event is an additional unit multiplier, generically a fold of cycles but not necessarily a generic fold. Theorem~\ref{neutraltheorem} does not prove that event impossible. It also does not make the entire unbounded parameter domain into one finitely certified computation.
+\end{remark}
+
+\section{A proposed radial certificate is analytically false}
+This section records a failed proof route with an exact explanation. At a crest use coordinates $(U,z)$ with $z=y/k$, and let $M$ be the corresponding positive return derivative. A positive vector $v$ with $Mv<v$ componentwise would certify spectral radius less than one. A natural square-root radial choice was
+\begin{equation}\label{rootvector}
+ v=\bigl(2(1-e^{-U/2}),\ 2(z-\sqrt z)\bigr)^\top.
+\end{equation}
+It is positive at a crest because $U>0,z>1$.
+
+\begin{theorem}\label{falsecertificate}
+Fix $0<\mu<1$. Along the small attracting Hopf branch, parameterised by crest amplitude $h=U_{\max}>0$, the first component of $Mv<v$ for \eqref{rootvector} fails for all sufficiently small positive $h$. More precisely, put
+\[
+ D_\mu=\mu^2+6\mu+1,\qquad C_\mu=\mu^2+3\mu+1,\qquad
+ q_f=e^{-2\pi(1+\mu)/\sqrt\mu}.
+\]
+Then
+\begin{equation}\label{falsecoefficient}
+ \frac{(M(h)v(h))_1}{v_1(h)}-1
+ =\frac{(1-q_f)\mu^2(1-\mu)(\mu+3)}{4(1+\mu)C_\mu D_\mu}\,h+O(h^2)>0.
+\end{equation}
+This is a counterexample to the proposed sufficient inequality, not to cycle uniqueness or attraction.
+\end{theorem}
+\begin{proof}
+Use $H=y-k$, $U=\log(x/k)$, and $p$ near $k_H=\mu A$. The quadratic centre graph is
+\[
+ H=\mu U-\mu p+c_{20}U^2+c_{11}Up+c_{02}p^2+O(3),
+\]
+where
+\[
+ c_{20}=\frac{\mu(\mu^2+4\mu+1)}{2D_\mu},\qquad
+ c_{11}=-\frac{\mu A}{D_\mu},\qquad c_{02}=\frac\mu{D_\mu}.
+\]
+Substitution in its invariance equation verifies the coefficients. On the Hopf branch $k=k_H+O(h^2)$, and the centre-graph intersection with the crest section is the weak eigendirection of the return map. Its component ratio is therefore
+\[
+ r_e=\frac1A+\frac{\mu^2+4\mu+1}{A D_\mu}h+O(h^2).
+\]
+The square-root vector's ratio, using $z=1+h/A+(c_{20}/k_H)h^2+O(h^3)$, differs by
+\begin{equation}\label{mismatch}
+ r_v-r_e=\frac{\mu(1-\mu)(\mu+3)}{4A^2D_\mu}h+O(h^2).
+\end{equation}
+The limiting crest derivative at Hopf is
+\[
+ M_0=\begin{pmatrix}
+ 1-(1-q_f)\mu/C_\mu &(1-q_f)A\mu/C_\mu\\
+ (1-q_f)A/C_\mu&1-(1-q_f)A^2/C_\mu
+ \end{pmatrix}.
+\]
+For a direct verification, the linearised system in $(U,p,z-1)$ has stable vector $(1,-A,-1/\mu)$, the frequency is $\sqrt\mu$, and its full-period map is the identity on the centre plane and multiplication by $q_f$ on that stable vector. Project along the limiting crest tangent onto $p=0$ to obtain $M_0$. The exact calculation is included in the symbolic checks.
+
+Let $m_t(h)=1+O(h^2)$ be the weak Hopf multiplier. Since the centre-graph section vector is its eigenvector,
+\[
+ M_{11}(h)+M_{12}(h)r_v(h)
+ =m_t(h)+M_{12}(h)(r_v(h)-r_e(h)).
+\]
+Combining this with \eqref{mismatch} and the strictly positive $M_{0,12}$ gives \eqref{falsecoefficient}. Its leading coefficient is positive for every fixed $0<\mu<1$.
+\end{proof}
+
+A rate-adapted exponent
+\[
+ \beta(\mu)=\frac12+\frac{\mu(1-\mu)(\mu+3)}{2D_\mu},\qquad
+ v_2=\frac{z-z^{1-\beta}}\beta
+\]
+while retaining $v_1$ in \eqref{rootvector}, cancels the first-order directional mismatch. That cancellation is an exact algebraic observation. It does not prove the corrected sufficient inequality globally. It passes on all 33 saved successful return matrices in a separate audit, which reuses those matrices rather than performing new integrations. This finite agreement does not repair that logical gap.
+
+\section{Executed research and retained failures}
+\subsection{Finite-parameter branch and counterexample trials}
+All computations in this section are ordinary floating-point calculations. No interval enclosure or exhaustive exclusion is supplied in this version. The operative evidence is the JSON receipts, with every attempted solve retained.
+
+Amplitude-held boundary-value continuation fixes $U(0)=h$, $p(0)=0$, periodic boundary conditions, and solves for the period and gain. With $\mu\in\{1,0.3,0.1\}$ and 25 amplitudes from $0.1$ to $6$, 70 of 75 attempts met the stated acceptance conditions; five exhausted the permitted mesh. Every accepted approximation had a negative computed compound exponent, and all consecutive successful gain secants were positive. Three accepted high-amplitude traces entered the explicitly guarded exponential-underflow range. They are retained as limited diagnostics, not rigorous solutions unaffected by floating-point approximations.
+
+A separate boundary-value multistart used 72 combinations of rate, amplitude, initial period, gain, waveform skew and one-, two- or three-turn seeds. Twenty-three returned accepted nonconstant approximations, all matching the already found geometric branch to the numerical comparison tolerance. Some outputs were multiple traversals. Twenty-six attempts exhausted the mesh, 21 had a singular collocation Jacobian, and two reached a solver convergence flag but failed the scientific acceptance criteria. This finite search does not exclude other branches.
+
+The differentiated amplitude boundary-value problem succeeded in 13 of 21 attempts. All 13 computed gain and period derivatives were positive. The other eight exhausted their mesh allowance. Positivity on those thirteen cases is not a global monotonicity theorem.
+
+\subsection{Direct targeting of the neutral event}
+Theorem~\ref{neutraltheorem} suggests solving the full cycle equations together with the positive adjoint ratios and $\av{s}=\mu$. This was attempted rather than inferred from forward integration. In normalised time $\tau=\sqrt\mu\,s_f$, use $V=p/\sqrt\mu$, $z=y/k$, $S=s/\mu$, $R=t/\mu$. The additional equations are
+\[
+ S_\tau=\frac{R+(\mu-1)S-\mu S^2}{\sqrt\mu},\qquad
+ R_\tau=\frac{\lambda e^U-(1+\mu S)R}{\sqrt\mu},\qquad
+ I_\tau=(S-1)/\mu.
+\]
+Periodic conditions on the five state/ratio variables, $I(0)=I(T)=0$, and the crest phase and amplitude conditions determine a boundary-value problem with period, $\mu$ and supercritical gain as unknowns. The division in the $I$ equation rescales the zero-mean constraint; it is not part of an analytic exclusion proof.
+
+\textbf{All 24 neutral-cycle attempts failed.} Thirteen exhausted the mesh and eleven encountered a singular Jacobian. Several iterates reached guards or had large residuals. No neutral candidate passed the acceptance conditions. This is an unsuccessful numerical attack, not evidence that the boundary-value problem has no solution. The failed outputs, parameter guards and residuals are preserved.
+
+A second formulation fixes $\mu$ and solves for the amplitude $h$ rather than the rate. With $s=\mu(1+ha)$ and $\rho=1+h^2\chi$, the exact gain identity gives
+\[
+ (1+\mu)\chi=\frac{1+3\mu+\mu^2}{h}\av{a}
+ +2(1+\mu)\mu\av{a^2}+\mu^2h\av{a^3}.
+\]
+Thus the neutral condition is the vanishing average of $(1+\mu)\chi-2(1+\mu)\mu a^2-\mu^2ha^3$. This avoids using the small difference of two independently computed Floquet exponents. It was seeded with numerically converged projective profiles at eighteen cycle approximations. All eighteen solves failed: six exhausted their mesh and twelve encountered a singular Jacobian. The lowest recorded maximum residual was about $0.0155$, far above the requested $2\times10^{-6}$ tolerance. Thirteen hit a parameter or state guard. No exclusion conclusion is drawn from these failures either.
+
+\subsection{Checks of the identities and the failed certificate}
+The current finite algebra suite executes 37 structural symbolic equality checks and six additional checks of the fixed-rate neutral rescaling; all 43 pass in their final runs. An earlier run caught an incorrect expected rational constant in one spot-check: the coefficient at $\mu=1/2$ is $7(1-q_f)/1122$, not $7(1-q_f)/2244$. The failed receipt is retained; the exact expression, not a forced pass flag, supplies the correction. Equality checks do not formalise the geometric or compactness proofs.
+
+Twenty-one saved cycle meshes were audited by projective propagation and by a separately implemented positive linear-adjoint propagation. All 21 pass their stated identity tolerances. The largest observed exponent discrepancy between the two formulations is below $2.15\times10^{-12}$, and the largest scaled orthogonality discrepancy is below $1.35\times10^{-10}$. These are observed comparisons, not certified error bounds. On all 21 cycles the natural physical comparison $s_0=y/(\lambda-p)$ crosses the projective $s$; a pointwise ordering proof using it is therefore unavailable.
+
+A further 21-cycle diagnostic checks both supporting-plane signs, the supporting curvature, two sampled zeros of $p$ and winding number $-1$. It passes all stated tolerances. Some strict support gaps in deep tails are extremely small; finite phase sampling neither establishes their continuous signs nor provides a uniform lower bound. Theorem~\ref{support} supplies the sign proof.
+
+Of 42 refined return-matrix trials, 33 succeeded and nine exhausted the mesh. Every successful matrix had computed spectral radius below one. Nevertheless the square-root vector test failed in seven of the 33, including $\mu=0.3$, $h=0.01$, where its first component ratio was approximately $1.00005814$ while the computed spectral radius was approximately $0.99998828$. Theorem~\ref{falsecertificate} explains this failure analytically.
+
+\begin{center}\small
+\begin{tabular}{p{79mm}rr}
+\toprule Experiment & Accepted/passed & Attempts\\\midrule
+Exact symbolic equalities &43&43\\
+Amplitude-held cycle approximation &70&75\\
+Boundary-value multistart &23&72\\
+Amplitude-sensitivity solve &13&21\\
+Projective/linear adjoint identity audit &21&21\\
+Supporting-plane geometry diagnostic &21&21\\
+Refined return matrix &33&42\\
+Neutral-cycle candidate, rate unknown &0&24\\
+Neutral-cycle candidate, rate fixed &0&18\\\bottomrule
+\end{tabular}
+\end{center}
+Eight non-finite diagnostic values in two rejected multistart records are represented as null in the canonical JSON. The exact original text and a replacement ledger are preserved; no acceptance flag was changed.
+
+The different rows are not statistically independent replicates and must not be summed into a probability of correctness. Several reuse the same saved cycle approximations. Solver convergence, acceptance of a numerical approximation and a theorem are different statuses.
+
+\section{Remaining proof obligation and assessment}
+The mathematical result of this attempt is the finite neutral-cycle obstruction, not a resolution of the original conjecture. The projective condition
+\[
+ \av{s}<\mu
+\]
+would settle every cycle's hyperbolic attraction directly. Excluding only $\av{s}=\mu$ for all nonconstant cycles would also suffice, by Theorem~\ref{neutraltheorem} and continuation from the global Hopf collar. Neither inequality nor exclusion is proved here. A neutral cycle need not destroy uniqueness, so this remains a sufficient route stronger than the original assertion.
+
+Other attempted routes are recorded in the research ledger: fixed-coefficient positive supersolutions, polynomial linear-programming searches, curvature-based power/gauge ans\"atze, pointwise physical/projective comparison, and fixed transverse metrics. Their restricted searches failed to yield a global certificate. Failure of a particular ansatz is not proof that a better certificate does not exist. The square-root obstruction in Section 7 is stronger: it analytically disproves that particular universal ansatz.
+
+The supplied earlier referee report assessed v0.3's shrinking-wedge argument, not this addendum or the later v1.1 transfer arguments. The present supporting-plane and compactness proofs are written in full to permit independent scrutiny. A bounded literature search found no applicable all-parameter theorem, but this is not a priority certificate. The full 1995 and 1996 originals, and the exact hypotheses of a potentially relevant 1981 third-order neuron-model uniqueness paper, were not obtained. No uninspected theorem is imported from them.
+
+The archive includes the executable research, meshes, observed successes and failures, claim boundaries and integrity hashes. It should be described as an all-parameter research attempt with an explicit remaining neutral-cycle problem, not as a completed solution or a final publication acceptance.
+
+\begin{thebibliography}{9}
+\bibitem{WH95} Wilhelm, T., \& Heinrich, R. (1995). Smallest chemical reaction system with Hopf bifurcation. \emph{Journal of Mathematical Chemistry, 17}, 1--14. \url{https://doi.org/10.1007/BF01165134}.
+\bibitem{WH96} Wilhelm, T., \& Heinrich, R. (1996). Mathematical analysis of the smallest chemical reaction system with Hopf bifurcation. \emph{Journal of Mathematical Chemistry, 19}, 111--130. \url{https://doi.org/10.1007/BF01165179}.
+\bibitem{Smith} Smith, H. L. (2012). Global dynamics of the smallest chemical reaction system with Hopf bifurcation. \emph{Journal of Mathematical Chemistry, 50}, 989--995. \url{https://doi.org/10.1007/s10910-011-9946-9}. Author preprint: \url{https://arxiv.org/abs/1109.5204}.
+\bibitem{BH} Boros, B., \& Hofbauer, J. (2023). Some minimal bimolecular mass-action systems with limit cycles. \emph{Nonlinear Analysis: Real World Applications, 72}, 103839. \url{https://doi.org/10.1016/j.nonrwa.2023.103839}. Inspected preprint: \url{https://arxiv.org/abs/2202.11034}.
+\bibitem{MPS} Mallet-Paret, J., \& Smith, H. L. (1990). The Poincar\'e--Bendixson theorem for monotone cyclic feedback systems. \emph{Journal of Dynamics and Differential Equations, 2}, 367--421. \url{https://doi.org/10.1007/BF01054041}.
+\end{thebibliography}
+\end{document}

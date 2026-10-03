@@ -1,0 +1,25 @@
+% appB_reproduce.tex -- reproduction and verification boundary. Exported label: app:reproduce.
+% The line below loads the generated macros when the section is compiled on its own; in the full manuscript they are already loaded.
+\ifdefined\VthreeExactPassed\else\input{generated/v3_macros}\fi
+\section{Reproduction and verification boundary}\label{app:reproduce}
+\paragraph{Layout of the bundle.}
+The code is under \path{code/}: the framework checks in \path{code/}, the checks of Sections~\ref{sec:gauges}--\ref{sec:negative} in \path{code/v3/}, and under \path{code/v3/lib/} the research scripts that those checks execute, each a copy whose first lines name its original and list the changes made to it (none, or the removal of an absolute path, or the collection of the printed results into a list). Receipts are under \path{evidence/} and \path{evidence/v3/}, the outputs of the wrapped scripts under \path{logs/}, the generated tables and macros under \path{paper/generated/}, and the record of the research phase under \path{provenance/research_lanes/}.
+
+\paragraph{Commands.}
+The packages listed in \texttt{requirements.txt} are assumed to be installed under Python~3.13. From the root of the bundle:
+\begin{verbatim}
+python code/run_all.py               # all checks, on the 31 saved cycles
+python code/run_all.py --regenerate  # also recompute the 31 saved cycles
+python code/run_all.py --quick       # skip the cartography recomputation
+python code/check_consistency.py     # receipts, tables, macros, references
+python code/verify_manifest.py       # byte integrity against MANIFEST.sha256
+\end{verbatim}
+\begin{sloppypar}\noindent The first command runs, in order: the exact identities, the audit and the additional checks of the framework; the ten checks \texttt{v3\_exact\_identities}, \texttt{v3\_gauges}, \texttt{v3\_largegain\_constants}, \texttt{v3\_largegain\_lemmas}, \texttt{v3\_attractor}, \texttt{v3\_weak\_adjoint}, \texttt{v3\_wedge}, \texttt{v3\_cartography}, \texttt{v3\_negative} and \texttt{v3\_controls}; the generation of the tables and macros of Section~\ref{sec:evidence}; and the consistency check. It writes \texttt{evidence/run\_receipt.json}, with the exit status, running time and log of every step and the SHA-256 digest of every executed source file, and exits with a non-zero status if any required step or receipt fails. Each check can also be run alone, for example \texttt{python code/v3/v3\_gauges.py}. With \texttt{-{}-quick} the shipped cartography tables are still checked, the recomputation of the subsample is skipped, and the receipt of the shipped full run is left in place. The supplementary run of Section~\ref{num:sec:failure} is \texttt{python code/v3/v3\_largegain\_lemmas.py -{}-small-mu-supplement}; it takes about seven minutes and records one unresolved comparison by design.\end{sloppypar}
+
+A run rewrites receipts, logs and generated tables. The time-boxed searches of the cartography check, and running times, differ from run to run, so a rerun changes the digests of those receipts; a rerun should be made on a copy if the manifest of the release is to remain valid. The paper is built with \texttt{pdflatex} run twice on \texttt{paper/manuscript.tex}; the generated files are shipped, so the paper can be built without running the checks.
+
+\paragraph{Environment and cost.}
+\begin{sloppypar}\noindent The recorded run used Python~3.13.5 with numpy~2.4.4, scipy~1.17.1, sympy~1.14.0, mpmath~1.3.0 and numba~0.65.0 on an arm64 machine under macOS (\texttt{ENVIRONMENT.json}); numba is needed only for the recomputation of the searches in the cartography check. The run is a sequence of single processes with one thread each and uses no network access. It took $\VthreeRuntimeMinutes$ minutes, and the largest resident memory of a step was $\VthreePeakMemoryMb$\,MB. The framework checks were first executed, for the earlier release, with numpy~2.3.5 and scipy~1.17.0 under Linux, and reproduce in the present environment.\end{sloppypar}
+
+\paragraph{Verification boundary.}
+The exact checks verify finite polynomial identities. The high-precision check verifies the scalar inequalities of Section~\ref{sec:largegain} to the precision stated in Section~\ref{num:sec:classes}, without interval arithmetic. All other checks are floating-point computations on approximate orbits at finitely many parameters; they are diagnostics and evidence, as described in Section~\ref{sec:evidence}, and no theorem depends on them. The consistency check verifies bookkeeping: that printed numbers equal receipt values, that referenced files exist, and that the receipts were produced by the shipped code. None of these steps verifies a proof. The analysis, the positivity and averaging arguments, the topological steps and the imported theorems are verified only by reading the proofs.

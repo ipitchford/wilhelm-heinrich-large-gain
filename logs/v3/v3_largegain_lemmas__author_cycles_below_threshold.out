@@ -1,0 +1,99 @@
+mu=1.0 k=16.0 lam=16 T=24.1109 T-=23.5428 T+=0.5681 s_w=2.965 s_0=4.519 D=284.99 h=4.81 pk=15.944 (pk/lam=0.9965) Pd=50.456 wd=293.93 wk=-15.057
+  A: T+ < pi/omega                                 0.568111 <=        1.46761  OK
+  B: T > 2pi/sqrt(mu)                               24.1109 >=        6.28319  OK
+  sign: w_d>0                                       293.931 >=              0  OK
+  sign: w_k<0                                       15.0572 >=              0  OK
+  order s_w<s_0                                     2.96472 <=        4.51941  OK
+  Lambda_E(0)>0: wd - etaE*Pd                       181.578 >=              0  OK
+  Lambda_E(T-)>0: etaE*pk - |wk|                    20.4475 >=              0  OK
+  x_min<k_H: D > log rho                             284.99 >=        2.07944  OK
+  C: mass identity (rel err, quadrature)        3.18171e-11 <=          1e-06  OK
+  C: M+ < k T-                                      375.389 <=        376.684  OK
+  E: p(s_l) >= k phi Psi(r_l)                       15.9925 >=        13.8346  OK
+  E: p_k >= p(s_l) - mu*ell                         15.9445 >=        13.9925  OK
+  E: r_l >= sqrt(2(D-ell)/k)                        18.8981 >=        5.94758  OK
+  Stage2: r_l >= 0.3 T-                             18.8981 >=        7.06283  OK
+  D(i): D >= 0.7968 k c_i(s_w)                       284.99 >=        83.3481  OK
+  D(ii): P_w >= k phi(v_w)(u-1+e^-u)                34.8628 >=        12.2551  OK
+  D(ii): P_w < (gE-mu) v_w                          34.8628 <=        584.265  OK
+  D(ii): D >= 0.7968 k c_ii(u)                       284.99 >=         9.5389  OK
+  F: P1 <= pk(1+eps1)                               15.9444 <=        22.1779  OK
+  box: h <= H                                       4.80995 <=        5.66643  OK
+  F: M+(M+ + mu P1) >= Q                             146902 >=       -3585.92  OK
+  F: exp(U_theta) >= E_theta                        68.0621 >=       -18.8786  OK
+  F: tau1 - s_theta >= theta pk/(mu P1+M+)        0.0898466 >=      0.0288104  OK
+  G1: tau_rise <= 2 L0/pk                            0.2348 <=       0.470811  OK
+  G1: D >= pk^2/(2k)                                 284.99 >=        7.94459  OK
+  G2: s_theta <= H/(theta pk)                      0.282775 <=        0.50259  OK
+  G2: tau1 - s_theta <= v_c                       0.0898466 <=            inf  OK
+  G3: W_c >= pk e^-tau1/tau1                        191.446 >=        29.4792  OK
+  G3: fall time <= v_f                              0.26024 <=            inf  OK
+  H: log m_t <= Lyapunov bound (actual tau_c, M_c)       -13.9823 <=        5.10754  OK
+  H: log m_t <= bound with M_c<=kT                 -13.9823 <=        5.10799  OK
+  [info] tau_c=0.8677 tau_rise=0.2348 tau1=0.3726 fall=0.2602 v_f=inf log m_t=-13.982 bound=5.1075 bound2=5.108  M+/pk^2=1.4766 T mu/lam=1.5069 r_l/T-=0.803
+mu=1.0 k=60.0 lam=60 T=81.3653 T-=81.162 T+=0.2033 s_w=4.33 s_0=6.159 D=4430.5 h=7.358 pk=59.984 (pk/lam=0.9997) Pd=251.37 wd=4498.1 wk=-59.016
+  A: T+ < pi/omega                                 0.203343 <=       0.933778  OK
+  B: T > 2pi/sqrt(mu)                               81.3653 >=        6.28319  OK
+  sign: w_d>0                                       4498.12 >=              0  OK
+  sign: w_k<0                                       59.0163 >=              0  OK
+  order s_w<s_0                                     4.33037 <=        6.15937  OK
+  Lambda_E(0)>0: wd - etaE*Pd                       3591.09 >=              0  OK
+  Lambda_E(T-)>0: etaE*pk - |wk|                    157.424 >=              0  OK
+  x_min<k_H: D > log rho                            4430.52 >=         3.4012  OK
+  C: mass identity (rel err, quadrature)        8.35014e-12 <=          1e-06  OK
+  C: M+ < k T-                                      4868.49 <=        4869.72  OK
+  E: p(s_l) >= k phi Psi(r_l)                       59.9978 >=        51.8799  OK
+  E: p_k >= p(s_l) - mu*ell                         59.9839 >=        57.9978  OK
+  E: r_l >= sqrt(2(D-ell)/k)                        74.9693 >=        12.1498  OK
+  Stage2: r_l >= 0.3 T-                             74.9693 >=        24.3486  OK
+  D(i): D >= 0.7968 k c_i(s_w)                      4430.52 >=        2047.76  OK
+  D(ii): P_w >= k phi(v_w)(u-1+e^-u)                203.921 >=        59.3747  OK
+  D(ii): P_w < (gE-mu) v_w                          203.921 <=        15465.1  OK
+  D(ii): D >= 0.7968 k c_ii(u)                      4430.52 >=        53.8744  OK
+  F: P1 <= pk(1+eps1)                               59.9835 <=        72.0354  OK
+  box: h <= H                                       7.35808 <=        8.22175  OK
+  F: M+(M+ + mu P1) >= Q                        2.39942e+07 >=         728486  OK
+  F: exp(U_theta) >= E_theta                        868.497 >=        287.253  OK
+  F: tau1 - s_theta >= theta pk/(mu P1+M+)        0.0238864 >=     0.00860611  OK
+  G1: tau_rise <= 2 L0/pk                         0.0845907 <=       0.169218  OK
+  G1: D >= pk^2/(2k)                                4430.52 >=        29.9839  OK
+  G2: s_theta <= H/(theta pk)                      0.117849 <=       0.193841  OK
+  G2: tau1 - s_theta <= v_c                       0.0238864 <=       0.091473  OK
+  G3: W_c >= pk e^-tau1/tau1                        2739.44 >=        367.283  OK
+  G3: fall time <= v_f                            0.0792115 <=       0.308515  OK
+  H: log m_t <= Lyapunov bound (actual tau_c, M_c)       -67.5063 <=       -9.89717  OK
+  H: log m_t <= bound with M_c<=kT                 -67.5063 <=       -9.89714  OK
+  [info] tau_c=0.3055 tau_rise=0.08459 tau1=0.1417 fall=0.07921 v_f=0.3085 log m_t=-67.506 bound=-9.8972 bound2=-9.8971  M+/pk^2=1.3531 T mu/lam=1.3561 r_l/T-=0.924
+mu=1.0 k=300.0 lam=300 T=394.266 T-=394.213 T+=0.0534 s_w=5.961 s_0=8.049 D=1.1551e+05 h=10.55 pk=300 (pk/lam=1.0000) Pd=1547.3 wd=1.1612e+05 wk=-299
+  A: T+ < pi/omega                                0.0534016 <=       0.543283  OK
+  B: T > 2pi/sqrt(mu)                               394.266 >=        6.28319  OK
+  sign: w_d>0                                        116116 >=              0  OK
+  sign: w_k<0                                       299.003 >=              0  OK
+  order s_w<s_0                                     5.96115 <=        8.04862  OK
+  Lambda_E(0)>0: wd - etaE*Pd                        106250 >=              0  OK
+  Lambda_E(T-)>0: etaE*pk - |wk|                    1614.09 >=              0  OK
+  x_min<k_H: D > log rho                             115512 >=        5.01064  OK
+  C: mass identity (rel err, quadrature)        2.32067e-12 <=          1e-06  OK
+  C: M+ < k T-                                       118263 <=         118264  OK
+  E: p(s_l) >= k phi Psi(r_l)                           300 >=        259.399  OK
+  E: p_k >= p(s_l) - mu*ell                         299.997 >=            298  OK
+  E: r_l >= sqrt(2(D-ell)/k)                        386.158 >=        27.7501  OK
+  Stage2: r_l >= 0.3 T-                             386.158 >=        118.264  OK
+  D(i): D >= 0.7968 k c_i(s_w)                       115512 >=        70259.4  OK
+  D(ii): P_w >= k phi(v_w)(u-1+e^-u)                 1493.1 >=        363.441  OK
+  D(ii): P_w < (gE-mu) v_w                           1493.1 <=         729422  OK
+  D(ii): D >= 0.7968 k c_ii(u)                       115512 >=        373.288  OK
+  F: P1 <= pk(1+eps1)                               299.997 <=        326.941  OK
+  box: h <= H                                       10.5484 <=        11.4142  OK
+  F: M+(M+ + mu P1) >= Q                        1.40216e+10 >=    8.58305e+08  OK
+  F: exp(U_theta) >= E_theta                        21117.4 >=        13488.1  OK
+  F: tau1 - s_theta >= theta pk/(mu P1+M+)       0.00476729 >=     0.00178918  OK
+  G1: tau_rise <= 2 L0/pk                         0.0222821 <=      0.0445646  OK
+  G1: D >= pk^2/(2k)                                 115512 >=        149.997  OK
+  G2: s_theta <= H/(theta pk)                     0.0342064 <=      0.0538077  OK
+  G2: tau1 - s_theta <= v_c                      0.00476729 <=       0.012653  OK
+  G3: W_c >= pk e^-tau1/tau1                        68830.3 >=        7403.18  OK
+  G3: fall time <= v_f                            0.0182177 <=      0.0717322  OK
+  H: log m_t <= Lyapunov bound (actual tau_c, M_c)       -375.648 <=       -88.4322  OK
+  H: log m_t <= bound with M_c<=kT                 -375.648 <=       -88.4326  OK
+  [info] tau_c=0.07947 tau_rise=0.02228 tau1=0.03897 fall=0.01822 v_f=0.07173 log m_t=-375.65 bound=-88.432 bound2=-88.433  M+/pk^2=1.3141 T mu/lam=1.3142 r_l/T-=0.980

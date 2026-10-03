@@ -1,0 +1,43 @@
+% appA_hopf.tex -- local Hopf coefficient and the critical equilibrium.
+% Exported label: app:hopf.  Internal labels carry the prefix hopf:.
+% The frame issues \appendix before this file is input.
+\section{Local Hopf coefficient and the critical equilibrium}\label{app:hopf}
+Local symbols of this appendix: $\sigma$, the spectral variable $\nu$, the matrix $J_0$, the right and left eigenvectors $q$ and $\chi$, the multilinear forms $\mathcal B$ and $\mathcal C$ with generic arguments $\xi,\vartheta,\varsigma\in\mathbb C^3$, the basis vector $e_3=(0,0,1)^{\mathsf T}$, and the coefficients $G_{21}$ and $l_1$. Subscripts $\tau$ denote derivatives in the frequency-one time $\tau=\sqrt\mu\,t$.
+
+Use the time $\tau$ in \eqref{eq:scalar}, and put
+\[
+\sigma=\frac{1+\mu}{\sqrt\mu}\ge2,\qquad
+\rho=\frac{k}{\kH}=\frac{k}{\mu(1+\mu)}.
+\]
+The scalar equation becomes
+\begin{equation}\label{hopf:eq:scaled}
+U_{\tau\tau\tau}+\sigma U_{\tau\tau}+U_\tau+\sigma\rho(e^U-1)=0.
+\end{equation}
+At $\rho=1$ its characteristic polynomial is $(\nu+\sigma)(\nu^2+1)$. Implicit differentiation at $\nu=i$ gives
+\[
+\left.\frac{\partial\Re\nu}{\partial\rho}\right|_{\rho=1}
+=\frac{\sigma}{2(1+\sigma^2)}>0.
+\]
+In the variables $(U,U_\tau,U_{\tau\tau})$ the first-order Jacobian at $\rho=1$ is
+\[
+J_0=\begin{pmatrix}0&1&0\\0&0&1\\-\sigma&-1&-\sigma\end{pmatrix},\quad
+q=(1,i,-1)^{\mathsf T},\quad
+\chi=\frac{(i\sigma,\sigma+i,1)}{-2+2i\sigma},\quad \chi q=1.
+\]
+In the convention $f(\xi)=J_0\xi+\mathcal B(\xi,\xi)/2+\mathcal C(\xi,\xi,\xi)/6+\cdots$, the only nonzero components are
+\[
+\mathcal B(\xi,\vartheta)=-\sigma\,\xi_1\vartheta_1\,e_3,\qquad
+\mathcal C(\xi,\vartheta,\varsigma)=-\sigma\,\xi_1\vartheta_1\varsigma_1\,e_3.
+\]
+The cubic coefficient is
+\[
+G_{21}=\chi\left[\mathcal C(q,q,\bar q)-2\mathcal B\bigl(q,J_0^{-1}\mathcal B(q,\bar q)\bigr)
++\mathcal B\bigl(\bar q,(2iI-J_0)^{-1}\mathcal B(q,q)\bigr)\right].
+\]
+Here $J_0^{-1}\mathcal B(q,\bar q)=(1,0,0)^{\mathsf T}$ and the first component of $(2iI-J_0)^{-1}\mathcal B(q,q)$ is $\sigma/[3(\sigma+2i)]$. Thus
+\begin{equation}\label{hopf:eq:l1}
+G_{21}=\frac{\sigma(\sigma+3i)}{3(\sigma+2i)(-1+i\sigma)},\qquad
+l_1=\tfrac12\Re G_{21}
+=-\frac{\sigma}{(\sigma^2+1)(\sigma^2+4)}<0.
+\end{equation}
+The nonzero transversality and negative cubic coefficient give the locally unique supercritical attracting branch. At criticality the centre-manifold radial cubic term is negative and the remaining eigenvalue is $-\sigma$, giving local asymptotic stability of the full equilibrium. This recovers the established local result (see \cite{WH95,WH96} and \cite[Theorem~13]{BH23}) in a fixed convention.

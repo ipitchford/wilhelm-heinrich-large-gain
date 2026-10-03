@@ -1,0 +1,585 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem,booktabs}
+\usepackage[hyphens]{url}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\avg}[1]{\left\langle #1\right\rangle}
+\newcommand{\dd}{\,\mathrm d}
+\setlist{nosep,leftmargin=1.8em}
+\title{A large-gain theorem for the Wilhelm--Heinrich oscillator:\\
+every cycle is a relaxation cycle and is attracting when $k\ge 1000$}
+\author{Anonymous (lane \texttt{largegain}, 3 October 2026)}
+\date{}
+\begin{document}
+\maketitle
+
+\noindent\textbf{Status.} Every step below is written out. The proof imports six facts from the v2.0
+manuscript (listed as (F1)--(F6) with their locations) and, for the uniqueness corollary only, the
+convergence theorem of Smith (F7). All numerical constants are recomputed by
+\texttt{constants.py}; the lemmas were tested on computed cycles (\texttt{check\_lemmas.py}) and
+their derivation steps on random non-periodic orbit segments (\texttt{test\_segments.py},
+\texttt{test\_stage.py}). A cross-model adversarial review found no error in the lemmas behind
+Theorem~\ref{thm:main}; the presentation gaps and the one false sentence it found (in the proof of
+Corollary~\ref{cor:recip}) are repaired in this version. Nothing here has been refereed by a human.
+
+\section{Statement}
+Scaled system (v2.0, eq.\ (1.5)), with $\mu>0$, $k>0$, $A=1+\mu$, $\lambda=k/\mu$, $x=ke^U$,
+$w:=y-k$:
+\begin{equation}\label{eq:sys}
+U'=p,\qquad p'=-\mu p-w,\qquad w'=-w+k(e^U-1).
+\end{equation}
+$k_H=\mu(1+\mu)$, $\rho=k/k_H$. A \emph{cycle} is a nonconstant periodic solution with $x>0$, $y>0$,
+$p<\lambda$, of least period $T$; $\eta,\zeta$ are its positive adjoint ratios and
+$m_s<m_t$ its transverse multipliers, $m_t=\exp\{(\avg\eta-\mu)T\}$.
+
+\begin{theorem}[Large gain]\label{thm:main}
+Let $0<\mu\le 1$ and $k\ge K_0:=1000$, i.e.\ $\rho\ge 1000/(\mu(1+\mu))$. Then every cycle of
+\eqref{eq:sys} satisfies:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $T\ge c_T\,\lambda/\mu$ with $c_T=0.1833$;
+\item at the unique time per period where $U$ crosses $0$ upwards, $p\ge c_p\lambda$ with $c_p=0.819$;
+\item the set $\{t\in[0,T):x(t)>c_0\}$, $c_0=\tfrac{\mu}{2}\bigl(1-\tfrac{\mu^2}{4}\bigr)$, is an interval of
+length $\tau_c\le \bigl(71.79+12.28\log(\lambda/1000)\bigr)/(0.819\,\lambda)$;
+\item $\avg\eta\le 0.83\,\mu<\mu$. Hence $0<m_s<m_t<1$: the cycle is hyperbolic and orbitally
+asymptotically stable.
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}[Uniqueness; uses (F7)]\label{cor:unique}
+For $0<\mu\le1$ and $k\ge1000$ the system has exactly one cycle, and it attracts every orbit of the
+positive domain $\mathcal D=\{x>0,\ y>0,\ p<\lambda\}$ that does not lie on the one-dimensional stable
+manifold $W^s(E)$ of the equilibrium.
+\end{corollary}
+
+\begin{corollary}[Reciprocal rates]\label{cor:recip}
+Let $\mu\ge1$ and $k\ge1000\,\mu^3$. Then every cycle has $0<m_s<m_t<1$, more precisely
+$\avg\eta\le\mu-0.17$, and the conclusion of Corollary~\ref{cor:unique} holds. In terms of $\rho$,
+for every $\mu>0$ the condition
+\[
+\rho\ \ge\ \rho_0(\mu):=\frac{1000}{m(1+m)},\qquad m=\min(\mu,1/\mu),
+\]
+suffices for $\avg\eta<\mu$ on every cycle and for uniqueness; $\rho_0(1)=500$ and
+$\rho_0(\mu)=\rho_0(1/\mu)$.
+\end{corollary}
+
+\begin{remark}[Honest scope]\label{rem:scope}
+(a) The threshold is far from the truth: numerically the cycle is attracting for every $\rho>1$
+tested, and the computed cycles have $T\mu/\lambda\to1.305$, $p_k/\lambda\to1$.
+(b) \emph{Uniformity as $\mu\to0$ is not achieved}: $\rho_0(\mu)\sim1000/\mu$. The hypothesis actually
+used is that the \emph{fast} scale is separated, $k\ge K_0$; see Remark~\ref{rem:mu}.
+(c) Theorem~\ref{thm:main} needs no continuation and no information about other parameter values.
+\end{remark}
+
+\section{Imported facts and notation}
+We use the following facts about an arbitrary cycle at $(\mu,k)$ with $k>k_H$.
+\begin{enumerate}[label=\textup{(F\arabic*)}]
+\item (v2.0 Prop.~2.1 and \S2.1.) There is a positive solution $\mathbf H=(H_1,H_2,H_3)$ of
+$H_1'=xH_3$, $H_2'=H_1+\mu H_2$, $H_3'=H_2+H_3$ with $\mathbf H(t+T)=e^{(1+\avg\eta)T}\mathbf H(t)$, and
+$m_t=\exp\{(\avg\eta-\mu)T\}$, $0<m_s<m_t$, $m_sm_t=e^{-AT}$.
+\item (v2.0 Cor.~3.2.) $\Lambda_E:=w-\zeta_EU+\eta_Ep>0$ along the cycle, where $\gamma_E>A$ is the
+root of $\gamma(\gamma-1)(\gamma-\mu)=k$, $\eta_E=\gamma_E-1$, $\zeta_E=(\gamma_E-1)(\gamma_E-\mu)$.
+Moreover no cycle point lies in $C_+=\{U\ge0,\ p\le0,\ w\le0\}$ or in $C_-=\{U\le0,\ p\ge0,\ w\ge0\}$.
+\item (v2.0 Thm.~4.1.) In one period $p$ has exactly two zeros, both simple: the crest ($U=\max U>0$)
+and the trough ($U=\min U<0$). Hence $U$ is strictly monotone between them, and each level of $U$ in
+$(\min U,\max U)$ is attained exactly twice per period.
+\item (v2.0 Prop.~4.4.) $T>2\pi/\sqrt\mu$.
+\item (v2.0 Thm.~6.1, Step~1.) $x\le kM_0$, $M_0:=(\lambda+\mu)(\lambda+1)/\mu$; also $y>0$ and
+$p<\lambda$ (definition of the positive domain), i.e.\ $w>-k$.
+\item (Averaging \eqref{eq:sys}; v2.0, proof of Prop.~4.4.) $\avg x=k$, $\avg p=0$,
+$\avg{p'^2}=\mu\avg{p^2}$.
+\item (Smith 2012, as quoted in v2.0 \S1.3.) For $k>k_H$ every orbit in $\mathcal D\setminus W^s(E)$
+converges to a cycle.
+\end{enumerate}
+\paragraph{Events.} Shift time so that $t=0$ is the downward crossing of $U=0$. By (F3) there are
+$0<s_0<T_-<T_-+\tau_1<T$ with:
+$U<0$ on $(0,T_-)$ (the \emph{negative lobe}), $U>0$ on $(T_-,T)$ (the \emph{positive lobe},
+of length $T_+:=T-T_-$); $p<0$ on $[0,s_0)$, $p(s_0)=0$ (trough, $U(s_0)=-D$), $p>0$ on $(s_0,T_-+\tau_1)$,
+$p(T_-+\tau_1)=0$ (crest, $U=h$), $p<0$ on $(T_-+\tau_1,T]$. Write
+\begin{gather*}
+P_d:=-p(0)>0,\qquad w_d:=w(0),\qquad p_k:=p(T_-)>0,\qquad w_k:=w(T_-),\\
+\varphi(t):=1-e^{U(t)}\in(0,1)\quad\text{on }(0,T_-).
+\end{gather*}
+\paragraph{Fixed functions and constants.} Throughout $0<\mu\le1$ and
+\begin{gather*}
+\ell:=2,\qquad \varphi_\ell:=1-e^{-2},\qquad \theta:=2^{-1/2},\\
+\Psi_\mu(u):=\int_0^u e^{-\mu(u-r)}(1-e^{-r})\dd r,\qquad \Psi_1(u)=1-(1+u)e^{-u},\\
+c_{\rm i}(a):=(e^a-e^{a/2})\bigl(1-(1+\tfrac a2)e^{-a/2}\bigr),\qquad
+c_{\rm ii}(a):=\tfrac{a^2}{2}-1+(1+a)e^{-a},\\
+c_{\rm b}(a):=\Psi_1(\tfrac a2)(1-e^{-a/2}).
+\end{gather*}
+$\Psi_\mu(u)$ is increasing in $u$ and decreasing in $\mu$, so $\Psi_\mu\ge\Psi_1$; also
+$(1-e^{-\mu t})/\mu\ge1-e^{-t}$. Let $v_2=1.5936\ldots$ be the positive root of $v=2(1-e^{-v})$ and
+$\varphi_2:=0.7968\le 1-e^{-v_2}$. Since $v\mapsto v/(1-e^{-v})$ is increasing on $(0,\infty)$,
+\begin{equation}\label{eq:v2}
+v>0,\ \ \frac{v}{1-e^{-v}}\ge2\quad\Longrightarrow\quad v\ge v_2\ \text{ and }\ 1-e^{-v}\ge\varphi_2 .
+\end{equation}
+
+\section{Identities, the short positive lobe, and signs}
+\begin{lemma}[Identities]\label{lem:id}
+\textup{(a)} $M_+:=\int_{T_-}^{T}(x-k)\dd t=\int_0^{T_-}(k-x)\dd t=w_d+P_d+|w_k|+p_k$, and
+$M_+<kT_-$.
+\textup{(b)} $\avg{(x-k_H)p^2}=0$; hence $\min x<k_H$, i.e.\ $D>\log\rho$.
+\end{lemma}
+\begin{proof}
+(a) The two integrals agree because $\avg x=k$ (F6). On the positive lobe $\int p\dd t=U(T)-U(T_-)=0$,
+so integrating $p'=-\mu p-w$ gives $-P_d-p_k=-\int_{T_-}^Tw$, and integrating $w'=-w+(x-k)$ gives
+$w_d-w_k=-\int_{T_-}^Tw+M_+$. Hence $M_+=w_d-w_k+P_d+p_k$, and $w_k<0$ by Lemma~\ref{lem:signs}(a)
+(whose proof does not use the present lemma). Finally $k-x<k$.
+(b) Multiply $U'''+AU''+\mu U'+k(e^U-1)=0$ by $U''$ and integrate over a period:
+$A\int p'^2=\int xp^2$. With (F6), $\int xp^2=A\mu\int p^2=k_H\int p^2$. As $p\not\equiv0$ and $x$ is
+nonconstant, $x-k_H$ changes sign.
+\end{proof}
+
+\begin{lemma}[The positive lobe is short]\label{lem:short}
+Let $-\gamma_E$, $\sigma\pm i\omega$ be the roots of $z^3+Az^2+\mu z+k$ $(k>k_H)$. Then
+$T_+<\pi/\omega$. Moreover $\gamma_E-\mu<k^{1/3}+1$, and for $k\ge1$
+\[
+\omega\ \ge\ \omega_0(k):=\tfrac12\sqrt{3k^{2/3}-4k^{1/3}-1}\quad\text{whenever the radicand is positive.}
+\]
+Consequently $T_->T_0(k):=2\pi-\pi/\omega_0(k)$, and $T_0$ is increasing in $k$.
+\end{lemma}
+\begin{proof}
+$z^3+Az^2+\mu z+k=(z+\gamma_E)(z^2-2\sigma z+\zeta_E)$ with $2\sigma=\gamma_E-A=\eta_E-\mu$ and
+$\zeta_E=\sigma^2+\omega^2$. From \eqref{eq:sys},
+$U''-2\sigma U'+\zeta_EU=-\mu p-w-(\eta_E-\mu)p+\zeta_EU=-\Lambda_E<0$ by (F2).
+Put $s=t-T_-$ and $z(s)=e^{-\sigma s}U$; then $z''+\omega^2z=-e^{-\sigma s}\Lambda_E<0$,
+$z(0)=0$, and $z>0$ on $(0,T_+)$. If $T_+\ge\pi/\omega$ then
+\[
+0>\int_0^{\pi/\omega}(z''+\omega^2z)\sin(\omega s)\dd s
+=\bigl[z'\sin\omega s-\omega z\cos\omega s\bigr]_0^{\pi/\omega}=\omega z(\pi/\omega)\ge0,
+\]
+a contradiction. Next, for $\gamma>A$ each of $\gamma,\gamma-1,\gamma-\mu$ exceeds $\gamma-A>0$, so
+$(\gamma_E-A)^3<k$, i.e.\ $\gamma_E-\mu<k^{1/3}+1$; and $\gamma_E^3>k$. Finally
+$4\omega^2=4\zeta_E-(\gamma_E-A)^2=3\gamma_E^2-2A\gamma_E-(1-\mu)^2$, which is increasing in
+$\gamma_E\ge A/3$; with $\gamma_E>k^{1/3}\ge1>A/3$, $A\le2$ and $(1-\mu)^2\le1$ this gives the bound.
+By (F4) and $\mu\le1$, $T_-=T-T_+>2\pi-\pi/\omega_0(k)$.
+\end{proof}
+
+\begin{lemma}[Signs on the two lobes]\label{lem:signs}
+\textup{(a)} $w_d>0$, $w_k<0$, $w(s_0)<0$, and $w>0$ at the crest.
+\textup{(b)} There is a unique $s_w\in(0,s_0)$ with $w>0$ on $[0,s_w)$ and $w<0$ on $(s_w,T_-]$.
+\textup{(c)} $\varphi$ is increasing on $[0,s_0]$ and decreasing on $[s_0,T_-]$.
+\textup{(d)} On the positive lobe $t\mapsto e^tw(t)$ is nondecreasing.
+\textup{(e)} For all $t$ and $v\ge0$: $w(t+v)+k\ge e^{-v}(w(t)+k)$.
+\end{lemma}
+\begin{proof}
+(a) At $t=0$: $U=0$, $p<0$; $w\le0$ would put the point in $C_+$. At $T_-$: $U=0$, $p>0$; $w\ge0$
+would put it in $C_-$. At the trough ($U<0$, $p=0$) $w\ge0$ is excluded by $C_-$; at the crest
+$w\le0$ by $C_+$ (F2).
+(b) On the negative lobe $w'=-w-k\varphi<-w$, so once $w\le0$ it stays negative while $U<0$. With (a)
+this gives a unique zero, located before $s_0$. (c) follows from the sign of $p$.
+(d) $(e^tw)'=e^t(x-k)\ge0$ where $U\ge0$. (e) $w'=-w+k(e^U-1)\ge-w-k$, so $(e^t(w+k))'\ge0$.
+\end{proof}
+
+\section{The negative lobe: four durations}
+By Lemma~\ref{lem:id}(b), $D>\log\rho$; whenever $\rho\ge e^{\ell}$ there is a unique
+$s_\ell\in(s_0,T_-)$ with $U(s_\ell)=-\ell$. Put
+\[
+u:=s_0-s_w,\qquad r_\ell:=s_\ell-s_0,\qquad \tau_b:=T_--s_\ell,\qquad\text{so}\quad
+T_-=s_w+u+r_\ell+\tau_b .
+\]
+\begin{lemma}[Phase (i): $w>0$]\label{lem:i}
+If $s_w\ge a>0$ then $v:=|U(a/2)|$ satisfies $v\ge k\,c_{\rm i}(a)\,(1-e^{-v})$. If in addition
+$k\,c_{\rm i}(a)\ge2$, then $D\ge\varphi_2\,k\,c_{\rm i}(a)$.
+\end{lemma}
+\begin{proof}
+On $[0,s_w]$, $(e^rw)'=-ke^r\varphi$ and $w(s_w)=0$, so $w(r)=ke^{-r}\int_r^{s_w}e^v\varphi(v)\dd v$.
+For $r\le a/2$, by monotonicity of $\varphi$ (Lemma~\ref{lem:signs}(c), $a\le s_w<s_0$),
+$w(r)\ge ke^{-r}\varphi(a/2)(e^a-e^{a/2})$. On $[0,s_0)$, $|p|'=w-\mu|p|$, hence for $s\le a/2$
+\[
+|p|(s)\ \ge\int_0^se^{-\mu(s-r)}w(r)\dd r\ \ge\int_0^se^{-(s-r)}w(r)\dd r
+\ \ge k\varphi(a/2)(e^a-e^{a/2})\,se^{-s}
+\]
+($w\ge0$, $\mu\le1$). Integrating over $[0,a/2]$: $|U(a/2)|\ge k\varphi(a/2)c_{\rm i}(a)$ and
+$\varphi(a/2)=1-e^{-v}$. If $kc_{\rm i}(a)\ge2$, \eqref{eq:v2} gives $1-e^{-v}\ge\varphi_2$, so
+$D\ge v\ge\varphi_2kc_{\rm i}(a)$.
+\end{proof}
+
+\begin{lemma}[Phase (ii): $w<0$, $p<0$]\label{lem:ii}
+Let $v_w:=|U(s_w)|$, $P_w:=|p(s_w)|$. Then
+\[
+P_w\ge k\varphi(s_w)(u-1+e^{-u}),\qquad D-v_w\ge k\varphi(s_w)\,c_{\rm ii}(u),\qquad
+P_w<(\gamma_E-\mu)\,v_w .
+\]
+If $u\ge a$ and $\kappa_{\rm ii}(a):=k(a-1+e^{-a})/(k^{1/3}+1)\ge2$, then $D\ge\varphi_2\,k\,c_{\rm ii}(a)$.
+\end{lemma}
+\begin{proof}
+On $[s_w,s_0]$: $|w|'=-|w|+k\varphi$, $|w|(s_w)=0$, so
+$|w|(r)=k\int_{s_w}^re^{-(r-v)}\varphi(v)\dd v\ge k\varphi(s_w)(1-e^{-(r-s_w)})$. Also
+$|p|'=-\mu|p|-|w|$ and $|p|(s_0)=0$, so $|p|(s)=\int_s^{s_0}e^{\mu(r-s)}|w(r)|\dd r\ge\int_s^{s_0}|w|$.
+Thus $P_w\ge k\varphi(s_w)\int_0^u(1-e^{-r})\dd r$ and
+$D-v_w=\int_{s_w}^{s_0}|p|\ge\int_{s_w}^{s_0}(r-s_w)|w(r)|\dd r\ge k\varphi(s_w)\int_0^ur(1-e^{-r})\dd r
+=k\varphi(s_w)c_{\rm ii}(u)$. At $s_w$, $w=0$, $U=-v_w$, $p=-P_w$, so (F2) reads
+$\zeta_Ev_w-\eta_EP_w>0$ and $\zeta_E/\eta_E=\gamma_E-\mu$.
+If $u\ge a$: both $u-1+e^{-u}$ and $c_{\rm ii}$ are increasing, and by Lemma~\ref{lem:short}
+\[
+\frac{v_w}{1-e^{-v_w}}>\frac{k(a-1+e^{-a})}{\gamma_E-\mu}>\kappa_{\rm ii}(a)\ge2 ;
+\]
+by \eqref{eq:v2},
+$\varphi(s_w)\ge\varphi_2$ and $D\ge\varphi_2kc_{\rm ii}(a)$.
+\end{proof}
+
+\begin{lemma}[Rising phase]\label{lem:rise}
+On $[s_0,T_-]$ one has $p'=-\mu p+|w|$, $|w|'=-|w|+k\varphi$, $0<|w|<k$. Moreover:
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item $p(T_--\varsigma)\ge p_k-k\varsigma$ for $0\le\varsigma\le T_--s_0$; hence $T_--s_0\ge p_k/k$,
+$D\ge p_k^2/(2k)$, and for $0<L\le p_k^2/(2k)$ the time $t_L\in(s_0,T_-)$ with $U(t_L)=-L$ satisfies
+$T_--t_L\le 2L/p_k$.
+\item If $D>\ell$: $r_\ell\ge\sqrt{2(D-\ell)/k}$.
+\item If $D>\ell$: $p(s_\ell)\ge k\varphi_\ell\Psi_\mu(r_\ell)$ and $p_k\ge p(s_\ell)-\mu\ell$.
+\item If $D>\ell$, $a>0$ and $k\,c_{\rm b}(a)\ge\ell/\varphi_\ell$, then $\tau_b<a$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+The equations are \eqref{eq:sys} with $w<0$ (Lemma~\ref{lem:signs}(b)); $|w|<k$ is (F5).
+(a) $p'\le|w|<k$ gives the first inequality; $p(s_0)=0$ gives $T_--s_0\ge p_k/k$; integrating,
+$U(T_--\varsigma)\le-(p_k\varsigma-k\varsigma^2/2)$ for $\varsigma\le p_k/k$, so $D\ge p_k^2/(2k)$, and
+$U(T_--\varsigma_L)\le-L$ for $\varsigma_L:=(p_k-\sqrt{p_k^2-2kL})/k\le 2L/p_k$; as $U$ increases on the
+rising phase, $t_L\ge T_--\varsigma_L$.
+(b) $p'<k$ and $p(s_0)=0$ give $U(s)+D<k(s-s_0)^2/2$.
+(c) For $s_0\le r\le s\le s_\ell$, $U(r)\le-\ell$, so $|w|(s)\ge k\varphi_\ell(1-e^{-(s-s_0)})$ and
+$p(s_\ell)=\int_{s_0}^{s_\ell}e^{-\mu(s_\ell-r)}|w(r)|\dd r\ge k\varphi_\ell\Psi_\mu(r_\ell)$. After
+$s_\ell$, $p'\ge-\mu p$, so $\ell=\int_{s_\ell}^{T_-}p\ge p(s_\ell)(1-e^{-\mu\tau_b})/\mu$ and
+$p_k\ge p(s_\ell)e^{-\mu\tau_b}\ge p(s_\ell)-\mu\ell$.
+(d) Suppose $\tau_b\ge a$ and let $s:=s_\ell+a/2$. For $s_\ell\le r\le s$, since $\varphi$ decreases,
+$|w|(r)\ge k\varphi(s)(1-e^{-(r-s_\ell)})$, whence $p(s)\ge k\varphi(s)\Psi_\mu(a/2)$. As
+$p(s')\ge p(s)e^{-\mu(s'-s)}$ for $s'\ge s$ and $T_--s\ge a/2$,
+$|U(s)|=\int_s^{T_-}p\ge p(s)(1-e^{-\mu a/2})/\mu\ge k\varphi(s)\,c_{\rm b}(a)$. With
+$v=|U(s)|\in(0,\ell)$ this reads $v/(1-e^{-v})\ge kc_{\rm b}(a)\ge\ell/\varphi_\ell$, contradicting the
+strict monotonicity of $v/(1-e^{-v})$.
+\end{proof}
+
+\begin{lemma}[Stage 1: a first foothold]\label{lem:stage1}
+Let $k\ge K_0=1000$ and $(a_1,a_2,a_3,a_4)=(2.06,\,1.99,\,1.48,\,0.36)$. Then $p_k\ge c_1k$ with
+$c_1=0.374$.
+\end{lemma}
+\begin{proof}
+$\rho\ge K_0/2>e^\ell$, so $D>\ell$. By Lemma~\ref{lem:short},
+$T_->T_0(k)\ge T_0(K_0)=5.8927\ldots\ge5.89=a_1+a_2+a_3+a_4$. Since $kc_{\rm b}(a_4)\ge
+K_0c_{\rm b}(0.36)=2.369>\ell/\varphi_\ell=2.3131$, Lemma~\ref{lem:rise}(d) gives $\tau_b<a_4$.
+Hence $s_w\ge a_1$, or $u\ge a_2$, or $r_\ell\ge a_3$. In the first case
+($kc_{\rm i}(a_1)\ge2$) Lemma~\ref{lem:i} and Lemma~\ref{lem:rise}(b) give
+$r_\ell\ge\sqrt{2(\varphi_2c_{\rm i}(a_1)-\ell/k)}\ge1.4863$; in the second
+($\kappa_{\rm ii}(a_2)\ge2$; $\kappa_{\rm ii}$ is increasing in $k$) Lemma~\ref{lem:ii} gives
+$r_\ell\ge\sqrt{2(\varphi_2c_{\rm ii}(a_2)-\ell/k)}\ge1.4863$. So $r_\ell\ge1.48$ in all cases and,
+by Lemma~\ref{lem:rise}(c) and $\Psi_\mu\ge\Psi_1$, $\mu\le1$,
+$p_k\ge k\bigl(\varphi_\ell\Psi_1(1.48)-\ell/k\bigr)\ge0.3745\,k$.
+\end{proof}
+
+\section{The spike: mass from slope}
+On the positive lobe put $s=t-T_-$, $m(s):=\int_0^s(x-k)$, so $m$ is nondecreasing, $m\le M_+$, and
+\begin{equation}\label{eq:wm}
+w(s)=w_ke^{-s}+\int_0^se^{-(s-r)}(x-k)\dd r,\qquad e^{-s}\bigl(m(s)-|w_k|\bigr)\le w(s)\le m(s).
+\end{equation}
+Let $P_1:=\max_{[0,\tau_1]}p$ and $H:=\log M_0\ge h$ (F5).
+
+\begin{lemma}\label{lem:P1}
+If $p_k\ge10$ then $P_1\le p_k(1+\varepsilon_1)$, $\varepsilon_1:=1.1\sqrt2\,k\,p_k^{-3/2}$. Also
+$P_1<\lambda$.
+\end{lemma}
+\begin{proof}
+Let $s_+:=\sup\{s\le\tau_1:\ w\le0\text{ on }[0,s]\}$. On $[0,s_+]$, $p'\ge-\mu p$, so
+$p\ge p_ke^{-\mu r}$, $U(r)\ge p_k(r-r^2/2)$, and, as $x-k\ge kU$, $m(s)\ge kp_k(s^2/2-s^3/6)$.
+By \eqref{eq:wm}, $w(s)\le0$ forces $m(s)\le|w_k|<k$; hence $p_k(s^2/2-s^3/6)<1$ for every
+$s\in[0,s_+]$. At $\bar s:=1.1\sqrt{2/p_k}\le0.492$ the left side equals
+$1.21(1-\bar s/3)\ge1.0115$; hence $s_+<\bar s$. On $[0,s_+]$, $p'\le-w\le|w_k|<k$; after
+$s_+$, $w>0$ (Lemma~\ref{lem:signs}(d)) and $p'<0$ while $p\ge0$. So $P_1\le p_k+k\bar s$.
+\end{proof}
+
+\begin{lemma}[Mass from slope]\label{lem:mass}
+With $\theta=2^{-1/2}$, let $s_\theta\in(0,\tau_1)$ be the first time with $p=\theta p_k$ and
+$U_\theta:=U(s_\theta)$. Then
+\begin{gather}
+e^{U_\theta}\ \ge\ E_\theta:=\frac{\theta p_k\bigl[\tfrac12p_k^2-2\mu P_1H\bigr]}{2k},\qquad
+\tau_1-s_\theta\ \ge\ \frac{\theta p_k}{\mu P_1+M_+},\label{eq:Etheta}\\
+M_+(M_++\mu P_1)\ \ge\ Q:=\tfrac14p_k^2\bigl[\tfrac12p_k^2-2\mu P_1H\bigr]-\tfrac{1}{\sqrt2}\,p_kk .\label{eq:Q}
+\end{gather}
+If $p_k\ge10$, then with $\tilde H(k):=2\log(k+1)+3/e\ \ge\mu H$ and
+$\delta_Q(p):=4(1+\varepsilon_1)\tilde H(k)/p+4\sqrt2\,k/p^3$,
+\begin{equation}\label{eq:massfinal}
+T_-\ >\ \frac{M_+}{k}\ \ge\ \frac{p_k^2\sqrt{1-\delta_Q(p_k)}}{\sqrt8\,k}-\frac12
+\qquad\text{provided }\delta_Q(p_k)<1 .
+\end{equation}
+\end{lemma}
+\begin{proof}
+On $[0,s_\theta]$, $p\ge\theta p_k$, so $m(s)=\int_0^{U(s)}k(e^V-1)\dd V/p\le k(e^{U(s)}-1-U(s))/(\theta p_k)$.
+From $(p^2/2)'=-\mu p^2-wp$, $w\le m$ and $p>0$:
+\[
+\tfrac12p_k^2-\tfrac12\theta^2p_k^2=\mu\!\int_0^{U_\theta}\!p\dd V+\!\int_0^{s_\theta}\!wp\dd s
+\le\mu P_1U_\theta+\!\int_0^{U_\theta}\!m\dd V\le\mu P_1H+\frac{ke^{U_\theta}}{\theta p_k},
+\]
+which is the first part of \eqref{eq:Etheta} ($1-\theta^2=\tfrac12$, $U_\theta<h\le H$). On $[s_\theta,\tau_1]$,
+$p'=-\mu p-w\ge-\mu P_1-M_+$ and $p$ falls from $\theta p_k$ to $0$: the second part. On the same
+interval $U\ge U_\theta$, so $x-k\ge k(E_\theta-1)$ and
+$M_+\ge k(E_\theta-1)\,\theta p_k/(\mu P_1+M_+)$, which is \eqref{eq:Q}.
+For \eqref{eq:massfinal}: $M_0=(k+\mu^2)(k+\mu)/\mu^3$, so
+$\mu H\le2\mu\log(k+1)+3\mu\log(1/\mu)\le\tilde H(k)$. By Lemma~\ref{lem:P1},
+$Q\ge\tfrac18p_k^4(1-\delta_Q(p_k))$. From \eqref{eq:Q},
+$M_+\ge\tfrac12(-\mu P_1+\sqrt{\mu^2P_1^2+4Q})\ge\sqrt Q-\mu P_1/2$, and $\mu P_1<\mu\lambda=k$.
+$T_->M_+/k$ is Lemma~\ref{lem:id}(a).
+\end{proof}
+
+\section{Bootstrap to the relaxation scale}
+\begin{lemma}[Stage 2: the rising phase is a fixed fraction]\label{lem:stage2}
+Let $k\ge K_0$ and $T_-\ge22$. Then $r_\ell\ge0.3\,T_-$, hence
+\begin{equation}\label{eq:pkT}
+p_k\ \ge\ k\varphi_\ell\Psi_\mu(0.3T_-)-\mu\ell\ \ge\ 0.95\,\varphi_\ell\,k\,\frac{1-e^{-\mu z}}{\mu}-\ell,
+\qquad z:=0.3T_--3 .
+\end{equation}
+\end{lemma}
+\begin{proof}
+As in Lemma~\ref{lem:stage1}, $\tau_b<0.36$. Put $a_1:=2\log T_-\ge2\log22>3$.
+\emph{Case $s_w\ge a_1$.} $c_{\rm i}(a)e^{-a}=(1-e^{-a/2})(1-(1+\frac a2)e^{-a/2})$ is increasing and
+$\ge0.34$ at $a=3$, so by Lemma~\ref{lem:i} $D\ge0.34\varphi_2kT_-^2$ and by Lemma~\ref{lem:rise}(b)
+$r_\ell\ge\sqrt{0.68\varphi_2T_-^2-2\ell/k}\ge0.73T_-$.
+\emph{Case $s_w<a_1$.} Then $u+r_\ell>T':=T_--2\log T_--0.36\ (\ge15.4)$. If $u\ge2$, then
+$\kappa_{\rm ii}(2)\ge2$ and Lemmas~\ref{lem:ii}, \ref{lem:rise}(b) give
+$r_\ell^2\ge2\varphi_2(u^2/2-1)-2\ell/k\ge(0.89u-1)^2$ (the difference
+$(\varphi_2-0.89^2)u^2+1.78u-1-2\varphi_2-2\ell/k$ is increasing and positive at $u=2$). So
+$r_\ell\ge\max(T'-u,\,0.89u-1)\ge(0.89T'-1)/1.89\ge0.4708T'-0.5292$. If $u<2$,
+$r_\ell>T'-2\ge0.4708T'-0.5292$ because $T'\ge2.79$. Hence in this case
+$r_\ell\ge0.4708T_--0.9416\log T_--0.6987\ge0.3T_-$, since $0.1708T-0.9416\log T-0.6987$ is increasing
+for $T\ge22$ and positive at $T=22$.
+Now \eqref{eq:pkT}: Lemma~\ref{lem:rise}(c), monotonicity of $\Psi_\mu$, and for $s\ge3$
+$\Psi_\mu(s)\ge(1-e^{-3})\int_3^se^{-\mu(s-r)}\dd r\ge0.95(1-e^{-\mu(s-3)})/\mu$.
+\end{proof}
+
+\begin{lemma}[Every cycle is a relaxation cycle]\label{lem:boot}
+Let $k\ge K_0=1000$. Then
+\[
+T_-\ >\ c_T\,\frac{\lambda}{\mu},\quad c_T=\frac{0.055}{0.3}=0.1833\ldots,\qquad\text{and}\qquad
+p_k\ \ge\ c_p\lambda,\quad c_p=0.819 .
+\]
+\end{lemma}
+\begin{proof}
+\emph{Step 1.} By Lemma~\ref{lem:stage1}, $p_k\ge c_1k\ge374$. In \eqref{eq:massfinal},
+$\delta_Q(p)$ is decreasing in $p$ and, at $p=c_1k$, equals
+$\delta_1(k):=4\tilde H(k)(1+\bar\varepsilon_1(k))/(c_1k)+4\sqrt2/(c_1^3k^2)$,
+$\bar\varepsilon_1(k):=1.1\sqrt2\,c_1^{-3/2}k^{-1/2}$, which is decreasing in $k$ ($\tilde H(k)/k$ is
+decreasing for $k\ge1$); $\delta_1(K_0)=0.19402$. Hence, for every admissible value of $p_k$,
+\begin{equation}\label{eq:Tm}
+T_->\frac{p_k^2\sqrt{1-\delta_1(K_0)}}{\sqrt8\,k}-\frac12 ,
+\end{equation}
+and in particular $T_->T_1(k):=c_1^2k\sqrt{1-\delta_1(K_0)}/\sqrt8-\tfrac12\ge T_1(K_0)=43.89>22$.
+
+\emph{Step 2.} So Lemma~\ref{lem:stage2} applies; $z=0.3T_--3\ge z_1(k):=0.3T_1(k)-3\ge z_{10}:=10.169$.
+Since $(1-e^{-\mu z})/\mu\ge z/(1+\mu z)\ge z_{10}/(1+z_{10})$ and
+$0.01\varphi_\ell k\,z_{10}/(1+z_{10})\ge\ell$, \eqref{eq:pkT} gives
+$p_k\ge0.94\varphi_\ell kz/(1+\mu z)$. Insert this in \eqref{eq:Tm} and use $T_-=(z+3)/0.3$:
+\begin{equation}\label{eq:hz}
+h(z):=\frac{(z+3.15)(1+\mu z)^2}{z^2}\ >\ 0.3\,\kappa_0\,k,\qquad
+\kappa_0:=\frac{(0.94\varphi_\ell)^2\sqrt{1-\delta_1(K_0)}}{\sqrt8}=0.20968\ldots
+\end{equation}
+\emph{Step 3.} $h'(z)$ has the sign of $\mu z^2-z-6.3$, so $h$ is quasi-convex and its maximum on any
+interval is attained at an endpoint. Let $z^\sharp:=c_\sharp k/\mu^2$, $c_\sharp=0.055$. Then
+\begin{align*}
+h(z_1(k))&\le\bigl(z_1(k)+3.15\bigr)\Bigl(1+\frac1{z_{10}}\Bigr)^2
+\le\frac{0.3c_1^2(1+1/z_{10})^2}{\sqrt8}\,k\le0.3\kappa_0k,\\
+h(z^\sharp)&\le c_\sharp k\Bigl(1+\frac{3.15}{c_\sharp k}\Bigr)\Bigl(1+\frac1{c_\sharp k}\Bigr)^2\le0.3\kappa_0k
+\end{align*}
+(we used $\mu\le1$, $z_1(k)+3.15\le0.3c_1^2k/\sqrt8$, and that the last bracket is decreasing in $k$;
+numerically $0.01790\le0.06290$ and $0.06029\le0.06290$). Note that
+$z_1(k)<0.3c_1^2k/\sqrt8<0.015k<c_\sharp k\le z^\sharp$, so $[z_1(k),z^\sharp]$ is a nonempty interval.
+If $z\le z^\sharp$ we would have $z\in[z_1(k),z^\sharp]$ and $h(z)\le\max\{h(z_1(k)),h(z^\sharp)\}\le0.3\kappa_0k$,
+contradicting \eqref{eq:hz}. Hence $z>z^\sharp$:
+$T_->(z^\sharp+3)/0.3>c_T\lambda/\mu$. Finally $\mu z>c_\sharp k/\mu\ge55$, and \eqref{eq:pkT} gives
+$p_k\ge\lambda\bigl(0.95\varphi_\ell(1-e^{-55})-\ell/\lambda\bigr)\ge0.8194\lambda$.
+\end{proof}
+
+\section{The crest is short}
+Let $\nu:=\mu/2$, $c_0:=(\mu-\nu)(1-\nu)(A-\nu)=\tfrac\mu2(1-\tfrac{\mu^2}4)$ and
+$L_0:=\log(k/c_0)\le\hat L(\lambda):=\log(8\lambda/3)$. For $k\ge K_0$ (so $K_0\le k\le\lambda$):
+$H\le\hat H(\lambda):=3\log\lambda-\log K_0+2\log(1+1/K_0)$ and
+$\mu H\le\tilde H(k)\le\tilde H_\lambda:=2\log(\lambda+1)+3/e$. (Indeed
+$M_0=(k+\mu^2)(k+\mu)\lambda^3/k^3\le(k+1)^2\lambda^3/k^3$ and $-\log k+2\log(1+1/k)$ is decreasing in
+$k$; and $k/c_0=2\lambda/(1-\mu^2/4)\le8\lambda/3$.)
+
+\begin{lemma}[Crest duration]\label{lem:crest}
+Let $k\ge K_0$. Then $D>L_0$, the set $\{t:U(t)>-L_0\}=\{x>c_0\}$ is one interval per period, and
+its length satisfies
+\[
+\tau_c\ \le\ \frac{\bar C_\tau(\lambda)}{c_p\lambda},\qquad \bar C_\tau(\lambda):=71.79+12.28\log(\lambda/K_0).
+\]
+\end{lemma}
+\begin{proof}
+Throughout $p_k\ge c_p\lambda$ (Lemma~\ref{lem:boot}) and $K_0\le k\le\lambda$. The numerical values
+quoted in parentheses are those at $\lambda=K_0$ (\texttt{constants.py}); the last paragraph of the proof
+shows that every side condition holds for all $\lambda\ge K_0$ once it holds at $\lambda=K_0$.
+
+\emph{Rise.} $p_k^2\ge c_p^2\lambda^2\ge2\lambda\hat L\ge2kL_0$. By Lemma~\ref{lem:rise}(a), $D\ge L_0$
+(strictly, as $p'<k$) and the last passage through $U=-L_0$ before $T_-$ occurs at most
+$2L_0/p_k\le2\hat L/(c_p\lambda)$ earlier. By (F3) the set is an interval.
+
+\emph{From the up-crossing to the crest.} By Lemma~\ref{lem:P1},
+$\varepsilon_1\le\hat\varepsilon_1(\lambda):=1.1\sqrt2c_p^{-3/2}\lambda^{-1/2}\ (=0.0664)$. By \eqref{eq:Etheta},
+$X_\theta:=k(e^{U_\theta}-1)\ge\tfrac14\theta p_k^3(1-\delta')$ with
+$\delta':=4(1+\varepsilon_1)\tilde H_\lambda/p_k+4k/(\theta p_k^3)\le
+\hat\delta'(\lambda):=4(1+\hat\varepsilon_1)\tilde H_\lambda/(c_p\lambda)+4/(\theta c_p^3\lambda^2)\ (=0.0778)$. First,
+$s_\theta\le U_\theta/(\theta p_k)\le\hat H/(\theta p_k)$. Second, for $s=s_\theta+v$, $0\le v\le1$, by
+\eqref{eq:wm}, $w(s)\ge-k+X_\theta(1-e^{-v})$, so while $p\ge0$,
+$p(s_\theta+v)\le\theta p_k+kv-X_\theta(v-1+e^{-v})\le\theta p_k+kv-X_\theta v^2/3$. The right side
+vanishes at $v_c=\frac{3}{2X_\theta}\bigl(k+\sqrt{k^2+\tfrac43X_\theta\theta p_k}\bigr)
+\le\frac{3k}{X_\theta}+\sqrt{\frac{3\theta p_k}{X_\theta}}\le\frac{a_c}{p_k}$,
+$a_c:=\sqrt{12/(1-\hat\delta')}+12/(\theta c_p^2\lambda(1-\hat\delta'))\ (=3.6346)$; in particular
+$v_c\le a_c/(c_p\lambda)\le1$, so the estimate applies up to $v=v_c$ and the crest occurs at or before
+$s_\theta+v_c$. Hence
+\[
+p_k\tau_1\le A_1:=\sqrt2\,\hat H+a_c\ (=23.176),\qquad \tau_1\le\bar\tau_1:=A_1/(c_p\lambda)\ (=0.0283).
+\]
+\emph{From the crest to $U=-L_0$.} Let $W_c:=w(T_-+\tau_1)>0$. From $(e^{\mu s}p)'=-e^{\mu s}w$ on
+$[0,\tau_1]$ and Lemma~\ref{lem:signs}(d), $p_k=\int_0^{\tau_1}e^{\mu s}w\dd s\le W_c\tau_1e^{\tau_1}$,
+so $W_c\ge p_k^2e^{-\bar\tau_1}/A_1\ge\hat W:=c_p^2\lambda^2e^{-\bar\tau_1}/A_1\ (=28135)$. Let $v$
+denote time after the crest. By Lemma~\ref{lem:signs}(e), $w\ge e^{-v}(W_c+k)-k$, which is $\ge0$ for
+$v\le v_+:=\log(1+W_c/k)$. Until the trough, $p<0$ and $|p|'=w-\mu|p|$ with $|p|=0$ at the crest, so
+$|p|(v)=\int_0^ve^{-\mu(v-r)}w\dd r$; for $v\le v_+$ the integrand is nonnegative and, as $\mu\le1$,
+$e^{-\mu(v-r)}w\ge e^{-(v-r)}[e^{-r}(W_c+k)-k]$. Hence, for $v\le v_+$ and before the trough,
+\begin{align*}
+|p|(v)&\ge\int_0^ve^{-(v-r)}\bigl[e^{-r}(W_c+k)-k\bigr]\dd r=(W_c+k)ve^{-v}-k(1-e^{-v}),\\
+h-U&\ge(W_c+k)\bigl(1-(1+v)e^{-v}\bigr)-k(v-1+e^{-v})\ \ge\ \tfrac12W_cv^2\Bigl[1-\tfrac23\Bigl(1+\frac k{W_c}\Bigr)v\Bigr],
+\end{align*}
+using $1-(1+v)e^{-v}\ge v^2/2-v^3/3$ and $v-1+e^{-v}\le v^2/2$. The last expression is increasing in
+$W_c$. Take $v_f:=b\sqrt{2(\hat H+\hat L)/\hat W}$, $b=1.02$ $(v_f=0.0401)$; then
+$b^2[1-\tfrac23(1+\lambda/\hat W)v_f]\ge1$ and $v_f\le\log(1+\hat W/\lambda)$, so the drop at $v_f$ is at
+least $\hat H+\hat L\ge h+L_0$. Since the trough lies below $-L_0$, the level $-L_0$ is reached at most
+$v_f$ after the crest. Altogether
+\[
+\tau_c\le\frac{2\hat L+A_1}{c_p\lambda}+v_f,\qquad
+c_p\lambda v_f=b\sqrt{2(\hat H+\hat L)A_1e^{\bar\tau_1}}\le\frac{b\,e^{\bar\tau_1/2}}{\sqrt2}\,(\hat H+\hat L+A_1),
+\]
+so $\tau_c\le C_\tau(\lambda)/(c_p\lambda)$ with
+$C_\tau:=2\hat L+A_1+\tfrac{b}{\sqrt2}e^{\bar\tau_1(K_0)/2}(\hat H+\hat L+A_1)$
+($\bar\tau_1(\lambda)\le\bar\tau_1(K_0)$). $C_\tau$ equals $71.785$ at $\lambda=K_0$ and, since
+$\hat L'=1$, $\hat H'=3$, $A_1'\le3\sqrt2$ with respect to $\log\lambda$ ($a_c$ is decreasing),
+$\dd C_\tau/\dd\log\lambda\le c_b:=2+3\sqrt2+\tfrac{b}{\sqrt2}e^{\bar\tau_1(K_0)/2}(4+3\sqrt2)=12.273$.
+Hence $C_\tau(\lambda)\le\bar C_\tau(\lambda)$ for $\lambda\ge K_0$.
+
+\emph{Monotonicity in $\lambda$.} A function $(c+d\log\lambda)/\lambda$ with $d>0$ is decreasing where
+$c+d\log\lambda\ge d$. Thus $\hat H/\lambda$ and $(\hat H+\hat L)/\lambda$ are decreasing on $[K_0,\infty)$
+($\hat H(K_0)\ge3$, $\hat H+\hat L\ge4$), and $\tilde H_\lambda/\lambda$ is decreasing for $\lambda\ge1$
+($2\lambda/(\lambda+1)<2\log(\lambda+1)+3/e$). Hence $\hat\varepsilon_1$, $\hat\delta'$ and $a_c$ are
+positive and decreasing, and so are $A_1/\lambda$, $\bar\tau_1=A_1/(c_p\lambda)$,
+$\lambda/\hat W=A_1e^{\bar\tau_1}/(c_p^2\lambda)$ and
+$v_f=(b/c_p)\bigl[2e^{\bar\tau_1}\cdot\tfrac{\hat H+\hat L}{\lambda}\cdot\tfrac{A_1}{\lambda}\bigr]^{1/2}$
+(products of positive decreasing functions). Therefore each side condition used above, namely
+$c_p\lambda\ge10$, $c_p^2\lambda\ge2\hat L(\lambda)$ (the difference has derivative $c_p^2-2/\lambda>0$),
+$\hat\delta'<1$, $a_c/(c_p\lambda)\le1$, $v_f\le1$, $v_f\le\log(1+\hat W/\lambda)$ and
+$b^2[1-\tfrac23(1+\lambda/\hat W)v_f]\ge1$, holds for all $\lambda\ge K_0$ because it holds at
+$\lambda=K_0$ (\texttt{constants.py}).
+\end{proof}
+
+\section{The linear estimate and the proof of Theorem~\ref{thm:main}}
+\begin{lemma}[Weak exponent]\label{lem:lyap}
+Let $0<\nu<\mu\le1$, $c_0=(\mu-\nu)(1-\nu)(A-\nu)$, and suppose that on a cycle $x\le c_0$ outside a time
+interval of length $\tau_c$ per period. Then for every $s\ge\sqrt2$, with
+$\alpha=1/(1-\nu)$, $\beta=\alpha/(A-\nu)$,
+\[
+(\avg\eta-\mu)\,T\ \le\ -\nu(T-\tau_c)+(s-\mu)\tau_c+\frac{kT}{s^2}+\log\bigl(1+\alpha s+\beta s^2\bigr).
+\]
+\end{lemma}
+\begin{proof}
+With $\mathbf H$ from (F1) put $(a,b,c):=e^{-At}(H_3,H_2,H_1)>0$. Then
+\[
+a'=-\mu a+b,\qquad b'=-b+c,\qquad c'=-Ac+xa,\qquad (a,b,c)(t+T)=m_t\,(a,b,c)(t).
+\]
+\emph{Trough.} $\mathcal L:=a+\alpha b+\beta c$ satisfies
+$\mathcal L'=-\nu\mathcal L+(\beta x-\mu+\nu)a\le-\nu\mathcal L$ when $x\le c_0=(\mu-\nu)/\beta$
+(because $1-\alpha=-\nu\alpha$ and $\alpha-\beta A=-\nu\beta$).
+\emph{Crest.} $\mathcal N:=\max(s^2a,\,sb,\,c)$ is locally Lipschitz and its upper Dini derivative is
+at most the largest derivative of an active term: $(s^2a)'\le(s-\mu)\mathcal N$,
+$(sb)'\le(s-1)\mathcal N$, $c'\le(x/s^2-A)\mathcal N$. Hence
+$D^+\mathcal N\le(s-\mu+x/s^2)\mathcal N$ and $\mathcal N$ grows over the crest interval by at most
+$\exp\{(s-\mu)\tau_c+s^{-2}\!\int x\}$, $\int_{\rm crest}x\le\int_0^Tx=kT$.
+\emph{Matching.} $a\le\mathcal L$, $b\le\mathcal L/\alpha$, $c\le\mathcal L/\beta$ and $s\ge\sqrt2$
+give $\mathcal N\le s^2\mathcal L$ ($1/\alpha<1$, $1/\beta<2$); and
+$\mathcal L\le(s^{-2}+\alpha s^{-1}+\beta)\mathcal N$. Following one period from the end of a crest
+interval: $m_t\mathcal L=\mathcal L(t+T)\le(1+\alpha s+\beta s^2)e^{(s-\mu)\tau_c+kT/s^2}e^{-\nu(T-\tau_c)}\mathcal L$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+(i) and (ii) are Lemma~\ref{lem:boot} ($T>T_-$); (iii) is Lemma~\ref{lem:crest}. For (iv) apply Lemma~\ref{lem:lyap} with $\nu=\mu/2$ and $s=2\sqrt\lambda$
+($kT/s^2=\mu T/4$, $\alpha\le2$, $\beta\le4/3$):
+\[
+(\avg\eta-\mu)T\le-\frac\mu4T+2\sqrt\lambda\,\tau_c+\log\bigl(1+4\sqrt\lambda+\tfrac{16}3\lambda\bigr)
+\le-\frac\mu4T+\frac{2\bar C_\tau(\lambda)}{c_p\sqrt\lambda}+\log\bigl(1+4\sqrt\lambda+\tfrac{16}3\lambda\bigr).
+\]
+Divide by $T\ge c_T\lambda/\mu$:
+\[
+\avg\eta-\mu\le-\frac\mu4+\mu\,q(\lambda),\qquad
+q(\lambda):=\frac{1}{c_T\lambda}\Bigl[\frac{2\bar C_\tau(\lambda)}{c_p\sqrt\lambda}+\log\bigl(1+4\sqrt\lambda+\tfrac{16}3\lambda\bigr)\Bigr].
+\]
+$\bar C_\tau(\lambda)/\sqrt\lambda$ is decreasing on $[K_0,\infty)$ because $12.28\le\bar C_\tau(K_0)/2$, and
+$\lambda^{-1}\log g(\lambda)$ is decreasing for $g=1+4\sqrt\lambda+\frac{16}3\lambda$ because
+$\lambda g'\le g$ and $\log g>1$. Hence $q(\lambda)\le q(K_0)\le(5.544+8.606)/183.33<0.0772$ and
+$\avg\eta\le(0.75+0.0772)\mu<0.83\mu$. The multiplier statement is (F1).
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:unique}]
+By (iv) every cycle is hyperbolic and attracting, so its basin is open, and basins of distinct cycles
+are disjoint. By (F7), $\mathcal D\setminus W^s(E)$ is the union of the basins; in particular there is at
+least one cycle. It remains to see that $\mathcal D\setminus W^s(E)$ is connected. In the coordinates
+$(U,p,y)$, $\mathcal D=\mathbb R\times(-\infty,\lambda)\times(0,\infty)$ is open and convex. $E$ has one
+negative and two unstable eigenvalues, so by the stable manifold theorem its local stable manifold is a
+$C^1$ arc and $W^s(E)\cap\mathcal D$ is contained in a countable union of compact $C^1$ arcs $\Gamma_n$
+(backward images of the local arc). Fix $a,b\in\mathcal D\setminus W^s(E)$. The set of $c\in\mathbb R^3$
+for which the segment $[a,c]$ meets $\Gamma_n$ is contained in the image of the $C^1$ map
+$(s,t)\mapsto a+t(\gamma_n(s)-a)$, $(s,t)\in[0,1]\times[1,\infty)$, which has Lebesgue measure zero in
+$\mathbb R^3$; likewise for $b$. Hence some $c\in\mathcal D$ has
+$[a,c]\cup[c,b]\subset\mathcal D\setminus W^s(E)$. So $\mathcal D\setminus W^s(E)$ is path-connected and
+cannot be a union of two or more disjoint nonempty open sets: there is exactly one cycle, and its basin
+is $\mathcal D\setminus W^s(E)$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:recip}]
+In the time $\tau=\sqrt\mu\,t$ the scalar equation $U'''+AU''+\mu U'+k(e^U-1)=0$ becomes
+$U_{\tau\tau\tau}+\sigma U_{\tau\tau}+U_\tau+\sigma\rho(e^U-1)=0$, $\sigma=(1+\mu)/\sqrt\mu$, which is
+invariant under $(\mu,k)\mapsto(\mu',k')=(1/\mu,\ k/\mu^3)$ (then $\sigma'=\sigma$, $\rho'=\rho$).
+At any parameter, cycles are in bijection with nonconstant periodic solutions of the scalar equation
+(given $U$, set $p=U'$, $y=k-\mu p-p'$; along a periodic solution $y'+y=x>0$ and
+$(\lambda-p)'+\mu(\lambda-p)=y>0$ force $y>0$, $p<\lambda$), and the variational equation of
+\eqref{eq:sys} is equivalent to $V'''+AV''+\mu V'+xV=0$ via
+$(\delta U,\delta p,\delta w)=(V,V',-\mu V'-V'')$. Hence $\tilde U(\tilde t):=U(\tilde t/\mu)$ maps the
+cycles of $(\mu,k)$ bijectively onto the cycles of $(\mu',k')$, with $\tilde T=\mu T$, and corresponding
+cycles have the same multipliers (the scalar variational equations coincide in the time $\tau$). Let
+$\mu\ge1$ and $k\ge1000\mu^3$, and apply Theorem~\ref{thm:main} at $(\mu',k')$, $\mu'\le1$, $k'\ge1000$:
+$\log m_t=(\avg{\eta}'-\mu')\tilde T\le-0.17\mu'\tilde T=-0.17\,T$, while also
+$\log m_t=(\avg\eta-\mu)T$. So every cycle at $(\mu,k)$ is hyperbolic and attracting with
+$\avg\eta\le\mu-0.17$, and the proof of Corollary~\ref{cor:unique} applies verbatim at $(\mu,k)$ itself
+((F7) holds for every $\mu>0$). Note that only periodic orbits and their multipliers are transported:
+the positive domains at $(\mu,k)$ and $(\mu',k')$ do \emph{not} correspond under the time change.
+\end{proof}
+
+\section{Constants}
+\begin{center}\small
+\begin{tabular}{@{}lll@{}}\toprule
+symbol & value & where\\\midrule
+$\ell,\ \varphi_\ell,\ \theta,\ \varphi_2$ & $2,\ 0.86466,\ 2^{-1/2},\ 0.7968$ & \S2\\
+$\omega_0(K_0),\ T_0(K_0)$ & $8.0467,\ 5.89277$ & Lemma~\ref{lem:short}\\
+$(a_1,a_2,a_3,a_4)$ & $(2.06,1.99,1.48,0.36)$, sum $5.89$ & Lemma~\ref{lem:stage1}\\
+$K_0c_{\rm i}(a_1),\ \kappa_{\rm ii}(a_2),\ K_0c_{\rm b}(a_4)$ & $1388.7,\ 102.4,\ 2.3690\ (\ge2.3131)$ & Lemma~\ref{lem:stage1}\\
+$c_1$ & $0.374\ (\le0.37452)$ & Lemma~\ref{lem:stage1}\\
+$\tilde H(K_0),\ \bar\varepsilon_1,\ \delta_1(K_0),\ T_1(K_0)$ & $14.921,\ 0.2151,\ 0.19402,\ 43.898$ & Lemma~\ref{lem:boot}\\
+$z_{10},\ \kappa_0,\ 0.3\kappa_0$ & $10.169,\ 0.20969,\ 0.062906$ & Lemma~\ref{lem:boot}\\
+$c_\sharp,\ c_T,\ c_p$ & $0.055,\ 0.18333,\ 0.819\ (\le0.81943)$ & Lemma~\ref{lem:boot}\\
+$\hat H,\ \hat L,\ \delta',\ a_c,\ A_1$ at $\lambda=K_0$ & $13.8175,\ 7.8886,\ 0.07772,\ 3.6345,\ 23.1755$ & Lemma~\ref{lem:crest}\\
+$\bar\tau_1,\ \hat W,\ v_f,\ C_\tau,\ c_b$ & $0.028297,\ 28135,\ 0.040066,\ 71.785,\ 12.272$ & Lemma~\ref{lem:crest}\\
+final margin $\tfrac{c_T}{4}K_0-\tfrac{2C_\tau}{c_p\sqrt{K_0}}-\log(\cdot)$ & $45.83-5.54-8.61=31.68>0$ & Theorem~\ref{thm:main}\\\bottomrule
+\end{tabular}\end{center}
+
+\begin{remark}[Where $\mu$-uniformity is lost]\label{rem:mu}
+The argument needs the fast time scale $k^{-1/3}$ to be short compared with the window
+$T_0\approx2\pi$ supplied by (F4): Lemma~\ref{lem:rise}(d) needs $kc_{\rm b}(a_4)\ge\ell/\varphi_\ell$ and
+Lemma~\ref{lem:ii} needs $k(a-1+e^{-a})\ge2(\gamma_E-\mu)$. For small $\mu$ the window is
+$2\pi/\sqrt\mu$, and repeating the estimates with windows $\propto\mu^{-1/2}$ suggests a threshold
+$\rho_0(\mu)=O(\mu^{-1/2})$; the step that resists a $\mu$-uniform threshold is Lemma~\ref{lem:ii}, where
+$\Lambda_E>0$ gives $P_w<(\gamma_E-\mu)v_w$ with $\gamma_E-\mu\approx1$ instead of $\approx k^{1/3}$.
+This refinement is not carried out here and is \emph{not} claimed.
+\end{remark}
+\end{document}

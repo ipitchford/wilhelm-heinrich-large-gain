@@ -1,0 +1,68 @@
+% s03_support.tex -- strict supporting planes for cycles.
+% Exported labels: sec:support thm:support eq:delta eq:supportidentity cor:cones eq:positiveK
+% eq:equilibriumreverse eq:LambdaE eq:cones lem:curvature eq:curvature.  Internal labels carry the prefix sup:.
+\section{Strict supporting planes for entire solutions}\label{sec:support}
+Local symbols of this section: $z_1,z_2$ denote solutions $z_j=(U_j,p_j,y_j)$ of \eqref{eq:logsystem}, with $x_j=ke^{U_j}$ and $J_1$ the Jacobian \eqref{eq:adjointmatrices} along $z_1$; $\Delta$ is the gap function \eqref{eq:delta}; $r=(U,p,y-k)$ is a cycle point measured from $E$.
+
+\begin{theorem}[Exact two-solution comparison]\label{thm:support}
+Let $z_1=(U_1,p_1,y_1)$ be a cycle or the equilibrium of \eqref{eq:logsystem}, with its positive adjoint ratios $\eta,\zeta$. Let $z_2$ be a distinct entire solution at the same parameters, bounded in logarithmic coordinates for all real times. Then
+\begin{equation}\label{eq:delta}
+\Delta=\zeta(U_2-U_1)-\eta(p_2-p_1)-(y_2-y_1)
+\end{equation}
+satisfies
+\begin{equation}\label{eq:supportidentity}
+\Delta'+(1+\eta)\Delta=-x_1\,\Rem(U_2-U_1),\qquad \Rem(d):=e^d-1-d,
+\end{equation}
+and $\Delta(t)<0$ for every $t$. Distinct phases of the same cycle are allowed.
+\end{theorem}
+\begin{proof}
+The difference of the vector fields equals $J_1(z_2-z_1)$ plus
+$(0,0,x_2-x_1-x_1(U_2-U_1))^{\mathsf T}=(0,0,x_1\Rem(U_2-U_1))^{\mathsf T}$. Pair with the normal $n$ from Proposition~\ref{prop:factor}. This proves the identity without truncating the exponential. Its bounded entire solution is
+\[
+\Delta(t)=-\int_{-\infty}^t
+ e^{-\int_s^t(1+\eta(v))\,\mathrm dv}\,
+ x_1(s)\,\Rem\bigl(U_2(s)-U_1(s)\bigr)\,\mathrm ds.
+\]
+The exponential kernel decays at least as $e^{-(t-s)}$ and all remaining factors are bounded. Strict convexity makes $\Rem$ nonnegative, with $\Rem(d)=0$ only at $d=0$. If the integrand vanished throughout a past half-line, the two $U$ components would coincide there; differentiating the equations would identify $p,y$ and then both solutions. Thus the integral is strictly negative.
+\end{proof}
+The hypothesis of an entire solution bounded in log coordinates is satisfied by every positive cycle and by the positive equilibrium. It is not assumed for arbitrary forward trajectories. Section~\ref{sec:attractor} (Theorem~\ref{thm:twoorbit}) extends the comparison to arbitrary pairs of distinct log-bounded entire orbits.
+
+\begin{corollary}[Two different equilibrium comparisons]\label{cor:cones}
+Along every cycle in $\cP$,
+\begin{equation}\label{eq:positiveK}
+K:=\zeta U-\eta p-y+k>0,\qquad
+K'+(1+\eta)K=xU-x+k=k\,\psiU(U),
+\end{equation}
+where $\psiU(U):=Ue^U-e^U+1$. Let $\gamma_E>A$ be the unique root of
+\[
+k=\gamma_E(\gamma_E-1)(\gamma_E-\mu),
+\]
+and set $\eta_E=\gamma_E-1$, $\zeta_E=(\gamma_E-1)(\gamma_E-\mu)$. Then the linear gauge
+\begin{equation}\label{eq:LambdaE}
+\LamE:=(y-k)-\zeta_EU+\eta_Ep
+\qquad\text{satisfies}\qquad
+\LamE>0,\qquad \LamE'=-\gamma_E\LamE+k\,\Rem(U)
+\end{equation}
+along every cycle; that is,
+\begin{equation}\label{eq:equilibriumreverse}
+\zeta_EU-\eta_Ep-y+k<0.
+\end{equation}
+Consequently no cycle point $r=(U,p,y-k)$ belongs to either closed cone
+\begin{equation}\label{eq:cones}
+C_+=\{U\ge0,\ p\le0,\ y-k\le0\},\qquad C_-=-C_+.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Use the cycle as the base and the equilibrium as the second solution to obtain $K>0$. Differentiation gives its primitive; equivalently, in this case $\Delta=-K$ and $x\,\Rem(-U)=k\,\psiU(U)$ in \eqref{eq:supportidentity}. Reversing the roles gives \eqref{eq:equilibriumreverse}; the constant ratios follow by solving the positive equilibrium adjoint eigenvector equation $B(\zeta_E,\eta_E,1)^{\mathsf T}=\gamma_E(\zeta_E,\eta_E,1)^{\mathsf T}$ at $x=k$. With the equilibrium as base, $\Delta=-\LamE$, $x_1=k$ and $1+\eta_E=\gamma_E$, so \eqref{eq:supportidentity} is the differential relation in \eqref{eq:LambdaE}. The left side of \eqref{eq:equilibriumreverse}, namely $-\LamE$, is nonnegative on $C_+$, whereas $K$ is nonpositive on $C_-$. These contradictions exclude both cones, including their boundaries. The two signs require two distinct choices of base; one does not follow by reversing \eqref{eq:positiveK} alone.
+\end{proof}
+
+\begin{lemma}[Strict supporting curvature]\label{lem:curvature}
+The function
+\begin{equation}\label{eq:curvature}
+W=\zeta'p-\eta'p'
+\end{equation}
+satisfies $W'+(1+\eta)W=xp^2$, and $W>0$ at every phase of a nonconstant cycle.
+\end{lemma}
+\begin{proof}
+Differentiate using \eqref{eq:projective} and \eqref{eq:orthogonality}. The positive periodic convolution of $xp^2$ gives $W$. Its source is nonnegative and not identically zero, proving strict positivity. Off the constraint $O=0$, the polynomial residual of the differential identity is $-\eta'O$; the identity therefore holds along cycles and not for arbitrary independent values of $(U,p,y,\eta,\zeta)$.
+\end{proof}

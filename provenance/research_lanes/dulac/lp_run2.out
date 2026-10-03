@@ -1,0 +1,66 @@
+=== a: Vrad,U,p,H ===
+  mu=0.05  rho=1.02  t*/sigma=-2.689 [0.0s]  logVrad=-0.031 U=+0.057 p=+0.790 H=+0.338
+  mu=0.05  rho=1.5   t*/sigma=-2.150 [0.0s]  logVrad=-0.143 U=+0.047 p=+0.658 H=+0.225
+  mu=0.05  rho=5.0   t*/sigma=-1.507 [0.0s]  logVrad=-0.721 U=+0.027 p=+0.236 H=+0.043
+  mu=0.2   rho=1.05  t*/sigma=-1.915 [0.0s]  logVrad=-0.082 U=+0.179 p=+0.488 H=-0.028
+  mu=0.2   rho=2.0   t*/sigma=-1.321 [0.0s]  logVrad=-0.638 U=+0.096 p=+0.209 H=+0.022
+  mu=0.5   rho=1.2   t*/sigma=-1.439 [0.0s]  logVrad=-0.502 U=+0.232 p=+0.167 H=-0.074
+  mu=0.5   rho=3.0   t*/sigma=-0.777 [0.0s]  logVrad=-0.847 U=+0.094 p=+0.085 H=+0.023
+  mu=1.0   rho=1.02  t*/sigma=-1.904 [0.0s]  logVrad=-0.093 U=+0.286 p=+0.186 H=-0.045
+  mu=1.0   rho=1.5   t*/sigma=-0.955 [0.0s]  logVrad=-0.830 U=+0.219 p=+0.042 H=-0.038
+  mu=1.0   rho=5.0   t*/sigma=-0.722 [0.0s]  logVrad=-0.955 U=+0.053 p=+0.041 H=+0.004
+=== b: Vrad,Qtan,U,p,H ===
+  mu=0.05  rho=1.02  t*/sigma=-1.405 [0.1s]  logVrad=-0.319 logQtan=-0.148 U=+0.161 p=+0.461 H=+0.563
+  mu=0.05  rho=1.5   t*/sigma=-2.054 [0.0s]  logVrad=-0.173 logQtan=-0.014 U=+0.054 p=+0.626 H=+0.276
+  mu=0.05  rho=5.0   t*/sigma=-1.462 [0.0s]  logVrad=-0.730 logQtan=-0.010 U=+0.029 p=+0.224 H=+0.070
+  mu=0.2   rho=1.05  t*/sigma=-0.456 [0.0s]  logVrad=-0.530 logQtan=-0.261 U=+0.264 p=+0.139 H=+0.138
+  mu=0.2   rho=2.0   t*/sigma=-1.009 [0.1s]  logVrad=-0.668 logQtan=-0.069 U=+0.115 p=+0.171 H=+0.109
+  mu=0.5   rho=1.2   t*/sigma=-0.438 [0.0s]  logVrad=-0.556 logQtan=-0.260 U=+0.264 p=+0.080 H=+0.030
+  mu=0.5   rho=3.0   t*/sigma=-0.772 [0.0s]  logVrad=-0.769 logQtan=-0.061 U=+0.095 p=+0.085 H=+0.027
+  mu=1.0   rho=1.02  t*/sigma=-0.245 [0.1s]  logVrad=-0.590 logQtan=-0.297 U=+0.332 p=+0.016 H=-0.012
+  mu=1.0   rho=1.5   t*/sigma=-0.560 [0.0s]  logVrad=-0.567 logQtan=-0.220 U=+0.211 p=+0.074 H=+0.020
+  mu=1.0   rho=5.0   t*/sigma=-0.722 [0.1s]  logVrad=-0.967 logQtan=+0.002 U=+0.052 p=+0.040 H=+0.004
+=== c: b+zeta,eta ===
+  mu=0.05  rho=1.02  t*/sigma=-1.188 [0.9s]  logVrad=-0.304 logQtan=-0.146 logzeta=-0.668 logeta=+0.186 U=+0.645 p=+0.200 H=+0.227
+  mu=0.05  rho=1.5   t*/sigma=-2.004 [0.1s]  logVrad=-0.150 logQtan=-0.013 logzeta=-0.003 logeta=-0.008 U=+0.063 p=+0.628 H=+0.274
+  mu=0.05  rho=5.0   t*/sigma=-1.462 [1.0s]  logVrad=-0.730 logQtan=-0.010 U=+0.029 p=+0.224 H=+0.070
+  mu=0.2   rho=1.05  t*/sigma=+0.317 [0.1s]  logVrad=-0.886 logQtan=-0.428 logzeta=-0.374 logeta=+0.333 U=+0.497 p=-0.060 H=+0.012
+  mu=0.2   rho=2.0   t*/sigma=-0.987 [0.1s]  logVrad=-0.738 logQtan=-0.073 logzeta=+0.022 U=+0.096 p=+0.159 H=+0.110
+  mu=0.5   rho=1.2   t*/sigma=+0.759 [0.1s]  logVrad=-1.166 logQtan=-0.559 logzeta=+0.048 logeta=+0.361 U=+0.208 p=-0.047 H=+0.010
+  mu=0.5   rho=3.0   t*/sigma=-0.158 [0.1s]  logVrad=-1.050 logQtan=-0.364 logzeta=+0.054 logeta=+0.315 U=+0.062 p=+0.025 H=+0.009
+  mu=1.0   rho=1.02  t*/sigma=+1.116 [0.8s]  logVrad=-1.070 logQtan=-0.522 logzeta=+0.384 logeta=+0.198 U=+0.007 p=+0.034 H=+0.033
+  mu=1.0   rho=1.5   t*/sigma=+0.489 [0.1s]  logVrad=-1.139 logQtan=-0.445 logzeta=+0.129 logeta=+0.398 U=+0.107 p=+0.006 H=+0.003
+  mu=1.0   rho=5.0   t*/sigma=-0.350 [0.0s]  logVrad=-0.955 logQtan=-0.241 logzeta=+0.068 logeta=+0.293 U=+0.025 p=+0.025
+=== d: c+y,lamp,1eta,Q0 ===
+  mu=0.05  rho=1.02  t*/sigma=-0.299 [1.3s]  logVrad=-0.591 logQtan=-0.124 logQ0=-0.169 logzeta=-3.959 logeta=+0.779 logy=+2.587 loglamp=+0.575 log1eta=+1.061 U=+0.698 p=+1.281 H=-0.583
+  mu=0.05  rho=1.5   t*/sigma=-0.859 [0.1s]  logVrad=-0.561 logQtan=-0.016 logQ0=-0.247 logzeta=+0.016 logeta=-0.010 loglamp=+0.146 log1eta=+1.013 U=-0.002 p=+0.418 H=-0.212
+  mu=0.05  rho=5.0   t*/sigma=-0.311 [1.4s]  logVrad=-0.916 logQtan=-0.015 logQ0=-0.331 logeta=-0.019 loglamp=+0.028 log1eta=+0.546 U=+0.002 p=+0.036 H=-0.032
+  mu=0.2   rho=1.05  t*/sigma=+1.168 [0.1s]  logVrad=-1.082 logQtan=-0.228 logQ0=-0.306 logzeta=-1.965 logeta=+0.137 logy=+1.272 loglamp=+0.324 log1eta=-0.303 U=+0.715 p=+0.146 H=-0.147
+  mu=0.2   rho=2.0   t*/sigma=+0.224 [0.1s]  logVrad=-0.872 logQtan=-0.035 logQ0=-0.397 logzeta=+0.036 logeta=-0.028 logy=-0.009 loglamp=+0.075 log1eta=+0.245 U=-0.003 p=+0.053 H=-0.027
+  mu=0.5   rho=1.2   t*/sigma=+1.431 [0.1s]  logVrad=-1.220 logQtan=-0.324 logQ0=-0.304 logzeta=+0.197 logeta=+0.362 logy=-0.146 loglamp=-0.285 log1eta=+0.622 U=-0.069 p=-0.120 H=+0.007
+  mu=0.5   rho=3.0   t*/sigma=+0.406 [0.1s]  logVrad=-0.925 logQtan=-0.252 logQ0=-0.366 logzeta=+0.024 logeta=+0.241 logy=-0.012 loglamp=-0.043 log1eta=+0.287 p=-0.006 H=-0.007
+  mu=1.0   rho=1.02  t*/sigma=+1.615 [0.1s]  logVrad=-1.217 logQtan=-0.304 logQ0=-0.303 logzeta=+0.097 logeta=-0.616 logy=+0.235 loglamp=+0.207 log1eta=+0.230 U=+0.129 p=-0.031 H=-0.019
+  mu=1.0   rho=1.5   t*/sigma=+1.272 [0.1s]  logVrad=-1.174 logQtan=-0.221 logQ0=-0.358 logzeta=+0.114 logeta=+0.400 logy=-0.003 loglamp=-0.083 log1eta=-0.372 U=-0.029 p=-0.034 H=+0.016
+  mu=1.0   rho=5.0   t*/sigma=+0.337 [0.1s]  logVrad=-0.857 logQtan=-0.217 logQ0=-0.490 logzeta=-0.014 logeta=+0.023 logy=+0.209 loglamp=-0.008 log1eta=+0.165 U=+0.002 H=-0.003
+=== e: d+K,W,L ===
+  mu=0.05  rho=1.02  t*/sigma=-0.278 [1.7s]  logVrad=-0.615 logQtan=-0.130 logQ0=-0.175 logzeta=-3.960 logeta=+0.809 logy=+2.562 loglamp=+0.563 log1eta=+1.538 U=+0.694 p=+1.292 H=-0.770
+  mu=0.05  rho=1.5   t*/sigma=-0.797 [0.1s]  logVrad=-0.617 logQtan=-0.014 logQ0=-0.276 logzeta=+0.003 logeta=-0.018 logy=+0.014 loglamp=+0.135 log1eta=+1.137 U=-0.004 p=+0.371 H=-0.281 logK=-0.011 logW=+0.005 logL=+0.017
+  mu=0.05  rho=5.0   t*/sigma=-0.273 [1.9s]  logVrad=-0.855 logQtan=+0.003 logQ0=-0.367 logeta=-0.018 logy=+0.003 loglamp=+0.042 log1eta=+0.252 U=+0.002 p=+0.046 H=-0.030 logK=-0.033 logW=-0.003 logL=+0.067
+  mu=0.2   rho=1.05  t*/sigma=+1.178 [1.7s]  logVrad=-1.124 logQtan=-0.262 logQ0=-0.300 logzeta=-1.486 logeta=+0.166 logy=+0.905 loglamp=+0.292 log1eta=+0.201 U=+0.611 p=+0.105 H=-0.247 logK=-0.025 logL=+0.024
+  mu=0.2   rho=2.0   t*/sigma=+0.274 [0.2s]  logVrad=-0.865 logQtan=-0.028 logQ0=-0.387 logzeta=+0.042 logeta=-0.025 logy=-0.005 loglamp=+0.092 log1eta=+0.346 U=+0.004 p=+0.068 H=-0.048 logK=-0.055 logW=-0.007 logL=+0.062
+  mu=0.5   rho=1.2   t*/sigma=+1.560 [0.1s]  logVrad=-1.872 logQtan=-0.344 logQ0=-0.510 logzeta=+0.696 logeta=+0.400 logy=-0.418 loglamp=-0.500 log1eta=+1.308 U=-0.562 p=-0.248 H=+0.145 logK=+0.167 logW=+0.015 logL=-0.170
+  mu=0.5   rho=3.0   t*/sigma=+0.414 [0.1s]  logVrad=-0.888 logQtan=-0.212 logQ0=-0.367 logzeta=+0.035 logeta=+0.200 logy=-0.011 loglamp=-0.029 log1eta=+0.326 U=+0.005 p=+0.003 H=-0.010 logK=-0.037 logW=-0.012 logL=+0.028
+  mu=1.0   rho=1.02  t*/sigma=+1.642 [1.6s]  logVrad=-1.422 logQtan=-0.349 logQ0=-0.345 logzeta=+0.711 logeta=+2.215 logy=-0.584 loglamp=-0.168 log1eta=-2.792 U=-0.463 p=-0.008 H=+0.171 logK=+0.023 logL=-0.024
+  mu=1.0   rho=1.5   t*/sigma=+1.292 [0.1s]  logVrad=-1.216 logQtan=-0.269 logQ0=-0.317 logzeta=+0.112 logeta=+0.500 logy=+0.020 loglamp=-0.126 log1eta=-0.433 U=-0.038 p=-0.050 H=+0.015 logK=+0.092 logW=-0.005 logL=-0.084
+  mu=1.0   rho=5.0   t*/sigma=+0.349 [1.8s]  logVrad=-0.810 logQtan=-0.189 logQ0=-0.528 logeta=-0.040 logy=+0.180 loglamp=+0.006 log1eta=+0.506 U=+0.006 p=+0.005 H=-0.007 logK=-0.129 logW=-0.013 logL=+0.092
+=== f: e+ratios ===
+  mu=0.05  rho=1.02  t*/sigma=+1.692 [3.7s]  logVrad=-2.675 logQtan=-0.114 logQ0=-0.200 logzeta=+23.610 logeta=-5.595 logy=-11.931 loglamp=+22.978 log1eta=-50.332 U=-5.106 p=+19.046 H=-71.183 p/lamp=+0.815 K/L=+0.002 K/Vrad=+2.064 W/Qtan=+0.016 W/Vrad=+1.357 Qtan/Vrad=-4.741 L/Vrad=-1.901 eta=+29.844 zeta=+130.455 x=-44.873
+  mu=0.05  rho=1.5   t*/sigma=+0.255 [4.9s]  logVrad=-1.294 logQtan=-0.007 logQ0=-0.097 logzeta=-0.108 logeta=-0.034 logy=+0.110 loglamp=+0.277 log1eta=+2.752 U=+0.031 p=+0.147 H=-0.422 logK=-0.045 logL=+0.033 p/lamp=-0.015 K/L=+0.038 W/K=-0.002 K/Vrad=+0.995 W/Qtan=+0.014 W/Vrad=-0.475 Qtan/Vrad=-0.055 L/Vrad=-0.953 eta=-2.950 zeta=+1.912 x=-0.541
+  mu=0.05  rho=5.0   t*/sigma=+0.046 [0.3s]  logVrad=-1.202 logQtan=-0.015 logQ0=-0.097 logzeta=+0.016 logeta=-0.005 logy=+0.003 loglamp=+0.037 log1eta=-0.058 p=-0.002 H=-0.028 logK=-0.089 logW=-0.019 logL=+0.026 K/L=+0.102 K/Vrad=+1.133 W/Qtan=+0.011 W/Vrad=+0.062 Qtan/Vrad=-0.124 L/Vrad=-0.714 eta=+0.501 zeta=+0.022 x=-0.006
+  mu=0.2   rho=1.05  t*/sigma=+1.876 [3.9s]  logVrad=-1.964 logQtan=-0.122 logQ0=-0.124 logzeta=+1.592 logeta=-0.561 logy=-1.044 loglamp=+2.383 log1eta=+5.802 U=+0.144 p=-0.125 H=-6.039 logK=+0.007 logL=-0.008 p/lamp=+0.523 K/L=-0.002 K/Vrad=+1.273 W/Qtan=+0.014 W/Vrad=-0.343 Qtan/Vrad=-0.196 L/Vrad=-1.399 eta=-12.102 zeta=+16.638 x=-3.852
+  mu=0.2   rho=2.0   t*/sigma=+0.639 [0.2s]  logVrad=-1.318 logQtan=-0.014 logQ0=-0.256 logzeta=-0.019 logeta=-0.015 logy=-0.003 loglamp=+0.061 log1eta=-1.055 U=+0.004 p=-0.052 H=-0.256 logK=-0.097 logW=+0.012 logL=+0.072 K/L=+0.156 W/K=+0.001 K/Vrad=+0.993 W/Qtan=-0.020 W/Vrad=+0.222 Qtan/Vrad=-0.324 L/Vrad=-0.726 eta=+1.328 zeta=+0.408 x=-0.085
+  mu=0.5   rho=1.2   t*/sigma=+1.825 [4.6s]  logVrad=-2.461 logQtan=-0.108 logQ0=-0.167 logzeta=-0.334 logeta=+0.002 logy=-0.021 loglamp=+1.279 log1eta=-2.789 U=+0.478 p=-0.624 H=-2.059 logK=+0.078 logW=+0.001 logL=-0.082 p/lamp=+0.259 K/L=-0.081 K/Vrad=+1.587 W/Qtan=-0.043 W/Vrad=-0.029 Qtan/Vrad=-0.256 L/Vrad=-1.664 eta=+0.215 zeta=+4.482 x=-0.717
+  mu=0.5   rho=3.0   t*/sigma=+0.855 [0.3s]  logVrad=-1.427 logQtan=-0.551 logQ0=-0.063 logzeta=-0.019 logeta=+0.548 logy=-0.006 loglamp=-0.011 log1eta=-1.016 U=+0.020 p=-0.063 H=-0.093 logK=+0.049 logW=+0.017 logL=-0.095 K/L=-0.091 K/Vrad=+1.074 W/Qtan=+0.059 W/Vrad=+0.163 Qtan/Vrad=-0.189 L/Vrad=-0.690 eta=+1.379 zeta=+0.050 x=-0.006
+  mu=1.0   rho=1.02  t*/sigma=+1.992 [3.8s]  logVrad=-2.383 logQtan=+0.048 logQ0=-0.341 logzeta=+8.840 logeta=-11.078 logy=-3.505 loglamp=+7.388 log1eta=-32.263 U=-2.446 p=+0.149 H=-10.671 p/lamp=-0.416 K/L=+0.003 K/Vrad=+0.643 W/Qtan=+0.021 W/Vrad=-0.074 Qtan/Vrad=-0.285 L/Vrad=-0.760 eta=+39.728 zeta=+14.832 x=-2.953
+  mu=1.0   rho=1.5   t*/sigma=+1.661 [3.8s]  logVrad=-2.361 logQtan=-0.058 logQ0=-0.330 logzeta=-0.017 logeta=+0.721 logy=-0.118 loglamp=+0.188 log1eta=-6.086 U=-0.016 p=-0.449 H=-0.849 logK=+0.139 logL=-0.171 p/lamp=+0.020 K/L=-0.148 K/Vrad=+1.901 W/Qtan=+0.068 W/Vrad=+0.272 Qtan/Vrad=-0.498 L/Vrad=-1.159 eta=+4.939 zeta=+1.150 x=-0.164
+  mu=1.0   rho=5.0   t*/sigma=+0.782 [3.9s]  logVrad=-1.643 logQtan=-1.119 logQ0=+0.020 logzeta=-0.063 logeta=-0.087 logy=+1.101 loglamp=+0.010 log1eta=+0.112 U=+0.031 p=-0.015 H=-0.033 logK=-0.225 logW=+0.062 logL=-0.122 K/L=-0.346 W/K=-0.004 K/Vrad=+1.533 W/Qtan=-0.360 W/Vrad=+0.129 Qtan/Vrad=-0.129 L/Vrad=-0.996 eta=+1.085 zeta=-0.001 x=-0.001

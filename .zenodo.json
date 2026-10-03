@@ -1,0 +1,62 @@
+{
+  "title": "Convex attractor geometry, exact stability formulas and large-gain uniqueness for the Wilhelm–Heinrich oscillator",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "creators": [
+    {
+      "name": "Anonymous"
+    }
+  ],
+  "version": "3.1.0-candidate",
+  "publication_date": "2026-10-03",
+  "access_right": "open",
+  "license": "cc-zero",
+  "keywords": [
+    "Wilhelm–Heinrich oscillator",
+    "limit cycles",
+    "competitive dynamics",
+    "convex attractor",
+    "Floquet multipliers",
+    "large-gain uniqueness",
+    "rational interval certificates"
+  ],
+  "description": "<p>Unrefereed mathematical candidate. A written proof establishes a unique attracting positive periodic orbit of the Wilhelm–Heinrich system when r0 is at least 1000 max(a0,b0)^2/min(a0,b0). The positive-interior attractor is a graph of a convex function; its domain is a closed Jordan disk only above Hopf. Exact multiplier formulas reduce the remaining uniqueness question to an all-cycle sign condition.</p><p>Version 3.1 corrects a derivative and a Hessian interpretation, adds outward rational bounds for 56 selected scalar comparisons, and derives the formerly assumed local slow-graph property from Eldering Theorem 3.2. The small-rate-ratio result remains local in a fixed energy ball. All-parameter uniqueness, global wedge uniqueness, formal verification, external specialist review and historical priority are not established. Floating-point experiments are finite diagnostics, not orbit enclosures. Original prose/data CC0-1.0, original code MIT; historical third-party material retains its rights.</p>",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/ipitchford/wilhelm-heinrich-large-gain",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.1007/s10910-011-9946-9",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1016/j.nonrwa.2023.103839",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.3934/dcdsb.2018288",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1017/etds.2018.85",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.2991/978-94-6239-003-4",
+      "relation": "cites",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.1007/BF01165179",
+      "relation": "cites",
+      "scheme": "doi"
+    }
+  ],
+  "doi": "10.5281/zenodo.23126164"
+}

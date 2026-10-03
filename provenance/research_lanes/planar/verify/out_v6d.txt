@@ -1,0 +1,8 @@
+trial 0: start (U,q,y)=(-4.46,0.573,0.0204); crest gap at t=5e4..2.5e5: +4.61e-05 +5.06e-09 -1.18e-10 -1.19e-10 -1.18e-10;  decay rate -2.073e-08 (lambda_c = -1.819e-04)
+trial 1: start (U,q,y)=(-5.66,10.8,0.000301); crest gap at t=5e4..2.5e5: +5.72e-05 +6.31e-09 -1.18e-10 -1.19e-10 -1.18e-10;  decay rate -3.282e-08 (lambda_c = -1.819e-04)
+trial 2: start (U,q,y)=(-5.15,13,0.000242); crest gap at t=5e4..2.5e5: +5.82e-05 +6.42e-09 -1.18e-10 -1.18e-10 -1.19e-10;  decay rate 6.077e-08 (lambda_c = -1.819e-04)
+trial 3: start (U,q,y)=(+1.46,0.255,0.00428); crest gap at t=5e4..2.5e5: +5.09e-05 +5.60e-09 -1.18e-10 -1.18e-10 -1.19e-10;  decay rate 4.878e-08 (lambda_c = -1.819e-04)
+trial 4: start (U,q,y)=(+1.95,0.00884,0.00139); crest gap at t=5e4..2.5e5: +5.27e-05 +5.76e-09 -1.18e-10 -1.18e-10 -1.19e-10;  decay rate 5.357e-08 (lambda_c = -1.819e-04)
+trial 5: start (U,q,y)=(+3.46,0.257,0.159); crest gap at t=5e4..2.5e5: +5.28e-05 +5.81e-09 -1.18e-10 -1.18e-10 -1.19e-10;  decay rate 5.114e-08 (lambda_c = -1.819e-04)
+trial 6: start (U,q,y)=(+3.80,17.4,0.0371); crest gap at t=5e4..2.5e5: +6.07e-05 +6.70e-09 -1.18e-10 -1.18e-10 -1.18e-10;  decay rate -1.131e-08 (lambda_c = -1.819e-04)
+trial 7: start (U,q,y)=(-3.55,0.198,0.0393); crest gap at t=5e4..2.5e5: +5.03e-05 +5.54e-09 -1.18e-10 -1.19e-10 -1.19e-10;  decay rate -3.095e-08 (lambda_c = -1.819e-04)

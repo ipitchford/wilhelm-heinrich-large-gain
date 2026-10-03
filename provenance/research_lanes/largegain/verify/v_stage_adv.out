@@ -1,0 +1,10 @@
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/verify/v_stage.py:27: RuntimeWarning: overflow encountered in exp
+  return [p, k - mu * p - y, k * np.exp(U) - y]
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/verify/v_stage.py:27: RuntimeWarning: invalid value encountered in scalar subtract
+  return [p, k - mu * p - y, k * np.exp(U) - y]
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/verify/v_stage.py:27: RuntimeWarning: overflow encountered in scalar multiply
+  return [p, k - mu * p - y, k * np.exp(U) - y]
+require Lambda_E(s_w)>0: True -> min p_k/k = 0.91595 at mu=1 k=29670 P_d=0.08826 w_d/k=3.984 T_-=5.89003 deep=True LambdaE_ok=True
+   claim p_k >= 0.374 k: consistent
+require Lambda_E(s_w)>0: False -> min p_k/k = 0.91595 at mu=1 k=10494 P_d=0.0005328 w_d/k=3.982 T_-=5.89001 deep=True LambdaE_ok=True
+   claim p_k >= 0.374 k: consistent

@@ -1,0 +1,92 @@
+=== mu=1 rho=20 ===
+   polish 0: residual 6.40e-14  T=55.3083586854 steps=2600  [17s]
+   polish 1: residual 4.21e-22  T=55.3083586854 steps=2598  [33s]
+   polish 2: residual 4.39e-30  T=55.3083586854 steps=2598  [49s]
+   riccati relaxation defects: ['2.1e-30', '2.0e-41']  [82s]
+   recorded: T=55.3083586854 steps=2598 samples=62352 [105s]
+   orderings done [107s]
+  T=55.30835869 (double 55.30835869) steps=2598 Umin=-1927.508 closure=4.1e-38
+  lambda_c: <eta>-mu=-7.706368484748e-01  -<pK/V>=-7.706368484748e-01  -<pW/Q>=-7.706368484748e-01  monodromy(double)=-3.346773e-01 (m_t double 9.14e-09)
+  <eta0>-mu=+5.1e-33 <eta1>-mu=-3.5e-28  quad discrepancy GL/series (pK/V, pW/Q, eta0, eta1): 8e-33 3e-15 6e-33 2e-15
+  signs (exact arb tests): {'V>0': True, 'Q>0': True, 'K>0': True, 'W>0': True, 'eta>max(0,mu-1)': True, 'zeta>0': True, 'y>zeta': True, 'eta<lam-p': False, 'kappa>0': True, 'sign pattern': True}
+  log10|.| of extremes (sign, log10): V/(U^2+p^2): (+1, -3.22) | Q/(p^2+pd^2): (+1, -19.93) | K/(|zU|+|ep|+|H|): (+1, -2.27) | W/(|zd p|+|ed pd|): (+1, -0.38) | eta-max(0,mu-1): (+1, -1.73) | zeta: (+1, -24.98) | (y-zeta)/y: (+1, -3.34) | (lam-p-eta)/lam: (-1, -2.80) | eta0: (+1, -0.70) | kappa: (+1, -4.63) | eta-mu: (-1, -0.01) | sign: (eta0-eta)/(1+eta) on p<0: (-1, -7.38) | sign: (eta1-eta)/(1+eta) on p<0: (-1, -6.96) | sign: (eta-eta0)/(1+eta) on p>0: (-1, -4.64) | sign: (eta-eta1)/(1+eta) on p>0: (-1, -4.22)
+  identity residual max=1.8e-33  kappa in [2.338e-05,5.636e-01] varpi_max=1.025e+00  eta-mu in [-0.981,+27.234]  eta(crest)-mu=+21.3552 eta(trough)-mu=-0.7901
+  <eta p>=-6.029117e+01 <zeta pd>=-2.599173e+03 <zeta p>=-1.600492e+02 <eta pd>=-1.600492e+02 det=+1.3109e+05
+  orderings min: equalU:(eta_low-eta_up)/(sum)=2.66e-05 | equalU:(y_low-y_up)/(sum)=3.86e-05 | equalU:p_up-p_low=4.33e-03 | equalU:[(y_low-y_up) - eta_up dp]/(y_low+y_up)=1.03e-09 | equalU:[eta_low dp - (y_low-y_up)]/(y_low+y_up)=1.03e-09 | equalp:U_right-U_left=6.92e-02 | equalp:(y_r-y_l)/(sum)=4.47e-05 | equalp:(zeta_r-zeta_l)/(sum)=1.23e-04 | equalp:[(y_r-y_l) - zeta_l dU]/(y_r+y_l)=5.51e-09 | equalp:[zeta_r dU - (y_r-y_l)]/(y_r+y_l)=5.51e-09
+  pairs: {'n': 300, 'all_Delta_negative': True, 'max_Delta_rel': -0.0002473648453276555, 'all_convex_negative': True, 'max_FwedgeDq_rel': -0.002516206734447233, 'all_gradient_monotone': True, 'min_monotone_rel': 0.42507299227478546, 'max_O2_identity_residual': 1.1665349539247917e-33}
+  CHECKS: closure<1e-15=ok O=0 (<1e-20)=ok V>0=ok Q>0=ok K>0=ok W>0=ok identities<1e-20=ok lam_c(V) agrees=ok lam_c(Q) agrees=ok <eta0>=mu=ok <eta1>=mu=ok sign pattern=ok <eta p><0=ok <zeta pd><0=ok det>0=ok <eta pd>=<zeta p>=ok orderings=ok pairs: Thm3.1=ok pairs: convex=ok pairs: monotone grad=ok y>zeta=ok lam_c<0=ok
+  RESULT: ALL OK  [107s]
+=== mu=0.7 rho=20 ===
+   polish 0: residual 5.11e-14  T=67.1585056735 steps=2678  [17s]
+   polish 1: residual 7.43e-23  T=67.1585056735 steps=2676  [34s]
+   polish 2: residual 4.39e-31  T=67.1585056735 steps=2676  [52s]
+   riccati relaxation defects: ['2.2e-41']  [70s]
+   recorded: T=67.1585056735 steps=2676 samples=64224 [95s]
+   orderings done [97s]
+  T=67.15850567 (double 67.15850567) steps=2676 Umin=-1986.253 closure=2.5e-39
+  lambda_c: <eta>-mu=-5.576431279070e-01  -<pK/V>=-5.576431279070e-01  -<pW/Q>=-5.576431279070e-01  monodromy(double)=-2.824877e-01 (m_t double 5.77e-09)
+  <eta0>-mu=+5.0e-34 <eta1>-mu=-7.1e-30  quad discrepancy GL/series (pK/V, pW/Q, eta0, eta1): 3e-33 1e-15 2e-33 1e-15
+  signs (exact arb tests): {'V>0': True, 'Q>0': True, 'K>0': True, 'W>0': True, 'eta>max(0,mu-1)': True, 'zeta>0': True, 'y>zeta': True, 'eta<lam-p': False, 'kappa>0': True, 'sign pattern': True}
+  log10|.| of extremes (sign, log10): V/(U^2+p^2): (+1, -3.38) | Q/(p^2+pd^2): (+1, -18.05) | K/(|zU|+|ep|+|H|): (+1, -2.24) | W/(|zd p|+|ed pd|): (+1, -0.38) | eta-max(0,mu-1): (+1, -9.00) | zeta: (+1, -28.69) | (y-zeta)/y: (+1, -10.54) | (lam-p-eta)/lam: (-1, -4.35) | eta0: (+1, -1.23) | kappa: (+1, -4.65) | eta-mu: (-1, -0.15) | sign: (eta0-eta)/(1+eta) on p<0: (-1, -4.57) | sign: (eta1-eta)/(1+eta) on p<0: (-1, -4.25) | sign: (eta-eta0)/(1+eta) on p>0: (-1, -4.76) | sign: (eta-eta1)/(1+eta) on p>0: (-1, -9.19)
+  identity residual max=1.9e-33  kappa in [2.257e-05,5.633e-01] varpi_max=1.021e+00  eta-mu in [-0.700,+23.143]  eta(crest)-mu=+18.1522 eta(trough)-mu=-0.6372
+  <eta p>=-3.955042e+01 <zeta pd>=-1.314165e+03 <zeta p>=-9.528539e+01 <eta pd>=-9.528539e+01 det=+4.2896e+04
+  orderings min: equalU:(eta_low-eta_up)/(sum)=2.72e-05 | equalU:(y_low-y_up)/(sum)=3.91e-05 | equalU:p_up-p_low=3.74e-03 | equalU:[(y_low-y_up) - eta_up dp]/(y_low+y_up)=1.06e-09 | equalU:[eta_low dp - (y_low-y_up)]/(y_low+y_up)=1.06e-09 | equalp:U_right-U_left=7.07e-02 | equalp:(y_r-y_l)/(sum)=5.35e-05 | equalp:(zeta_r-zeta_l)/(sum)=1.24e-04 | equalp:[(y_r-y_l) - zeta_l dU]/(y_r+y_l)=6.65e-09 | equalp:[zeta_r dU - (y_r-y_l)]/(y_r+y_l)=6.65e-09
+  pairs: {'n': 300, 'all_Delta_negative': True, 'max_Delta_rel': -0.00023326742716633857, 'all_convex_negative': True, 'max_FwedgeDq_rel': -0.0024169580131769256, 'all_gradient_monotone': True, 'min_monotone_rel': 0.399435241281882, 'max_O2_identity_residual': 1.2126569306773127e-33}
+  CHECKS: closure<1e-15=ok O=0 (<1e-20)=ok V>0=ok Q>0=ok K>0=ok W>0=ok identities<1e-20=ok lam_c(V) agrees=ok lam_c(Q) agrees=ok <eta0>=mu=ok <eta1>=mu=ok sign pattern=ok <eta p><0=ok <zeta pd><0=ok det>0=ok <eta pd>=<zeta p>=ok orderings=ok pairs: Thm3.1=ok pairs: convex=ok pairs: monotone grad=ok y>zeta=ok lam_c<0=ok
+  RESULT: ALL OK  [97s]
+=== mu=0.005 rho=1.01 ===
+   polish 0: residual 5.81e-13  T=104.7412541536 steps=87  [1s]
+   polish 1: residual 9.53e-21  T=104.7412541536 steps=80  [2s]
+   polish 2: residual 5.06e-28  T=104.7412541536 steps=80  [2s]
+   riccati relaxation defects: ['3.4e-27', '9.7e-73']  [3s]
+   recorded: T=104.7412541536 steps=80 samples=1920 [4s]
+   orderings done [5s]
+  T=104.74125415 (double 104.74125415) steps=80 Umin=-3.114 closure=4.3e-35
+  lambda_c: <eta>-mu=-4.318508131051e-05  -<pK/V>=-4.318508131051e-05  -<pW/Q>=-4.318508131051e-05  monodromy(double)=-4.318509e-05 (m_t double 9.95e-01)
+  <eta0>-mu=+5.1e-37 <eta1>-mu=+1.0e-36  quad discrepancy GL/series (pK/V, pW/Q, eta0, eta1): 7e-34 4e-29 6e-36 4e-31
+  signs (exact arb tests): {'V>0': True, 'Q>0': True, 'K>0': True, 'W>0': True, 'eta>max(0,mu-1)': True, 'zeta>0': True, 'y>zeta': True, 'eta<lam-p': True, 'kappa>0': True, 'sign pattern': True}
+  log10|.| of extremes (sign, log10): V/(U^2+p^2): (+1, -2.81) | Q/(p^2+pd^2): (+1, -2.69) | K/(|zU|+|ep|+|H|): (+1, -1.57) | W/(|zd p|+|ed pd|): (+1, -0.15) | eta-max(0,mu-1): (+1, -3.64) | zeta: (+1, -3.65) | (y-zeta)/y: (+1, -3.64) | (lam-p-eta)/lam: (+1, -0.07) | eta0: (-1, -1.67) | kappa: (+1, -2.68) | eta-mu: (-1, -2.32) | sign: (eta0-eta)/(1+eta) on p<0: (-1, -4.07) | sign: (eta1-eta)/(1+eta) on p<0: (-1, -6.81) | sign: (eta-eta0)/(1+eta) on p>0: (-1, -4.66) | sign: (eta-eta1)/(1+eta) on p>0: (-1, -7.44)
+  identity residual max=2.8e-33  kappa in [2.085e-03,6.073e-01] varpi_max=9.976e-01  eta-mu in [-0.005,+0.017]  eta(crest)-mu=+0.0168 eta(trough)-mu=-0.0048
+  <eta p>=-9.407815e-05 <zeta pd>=-4.910111e-05 <zeta p>=-4.771734e-05 <eta pd>=-4.771734e-05 det=+2.3424e-09
+  orderings min: equalU:(eta_low-eta_up)/(sum)=6.89e-07 | equalU:(y_low-y_up)/(sum)=3.85e-07 | equalU:p_up-p_low=8.24e-07 | equalU:[(y_low-y_up) - eta_up dp]/(y_low+y_up)=2.65e-13 | equalU:[eta_low dp - (y_low-y_up)]/(y_low+y_up)=2.65e-13 | equalp:U_right-U_left=8.72e-06 | equalp:(y_r-y_l)/(sum)=4.34e-06 | equalp:(zeta_r-zeta_l)/(sum)=4.33e-06 | equalp:[(y_r-y_l) - zeta_l dU]/(y_r+y_l)=1.88e-11 | equalp:[zeta_r dU - (y_r-y_l)]/(y_r+y_l)=1.88e-11
+  pairs: {'n': 300, 'all_Delta_negative': True, 'max_Delta_rel': -0.00013202862503370116, 'all_convex_negative': True, 'max_FwedgeDq_rel': -0.004135145166435662, 'all_gradient_monotone': True, 'min_monotone_rel': 0.7105217064314335, 'max_O2_identity_residual': 1.337086349837709e-33}
+  CHECKS: closure<1e-15=ok O=0 (<1e-20)=ok V>0=ok Q>0=ok K>0=ok W>0=ok identities<1e-20=ok lam_c(V) agrees=ok lam_c(Q) agrees=ok <eta0>=mu=ok <eta1>=mu=ok sign pattern=ok <eta p><0=ok <zeta pd><0=ok det>0=ok <eta pd>=<zeta p>=ok orderings=ok pairs: Thm3.1=ok pairs: convex=ok pairs: monotone grad=ok y>zeta=ok eta<lam-p (mu<=1/2)=ok lam_c<0=ok lam_c vs monodromy (double)=ok
+  RESULT: ALL OK  [6s]
+=== mu=0.005 rho=3 ===
+   polish 0: residual 1.74e-13  T=1059.2924729657 steps=2201  [17s]
+   polish 1: residual 2.52e-21  T=1059.2924729658 steps=2199  [34s]
+   polish 2: residual 8.46e-29  T=1059.2924729658 steps=2199  [51s]
+   riccati relaxation defects: ['3.4e-30', '0.0e+00']  [84s]
+   recorded: T=1059.2924729658 steps=2199 samples=52776 [107s]
+   orderings done [109s]
+  T=1059.29247297 (double 1059.29247297) steps=2199 Umin=-1587.990 closure=2.6e-36
+  lambda_c: <eta>-mu=-1.599131177606e-03  -<pK/V>=-1.599131177606e-03  -<pW/Q>=-1.599131177606e-03  monodromy(double)=-1.599131e-03 (m_t double 1.84e-01)
+  <eta0>-mu=+1.8e-35 <eta1>-mu=+3.6e-28  quad discrepancy GL/series (pK/V, pW/Q, eta0, eta1): 7e-32 7e-18 2e-32 2e-18
+  signs (exact arb tests): {'V>0': True, 'Q>0': True, 'K>0': True, 'W>0': True, 'eta>max(0,mu-1)': True, 'zeta>0': True, 'y>zeta': True, 'eta<lam-p': True, 'kappa>0': True, 'sign pattern': False}
+  log10|.| of extremes (sign, log10): V/(U^2+p^2): (+1, -5.22) | Q/(p^2+pd^2): (+1, -6.13) | K/(|zU|+|ep|+|H|): (+1, -1.24) | W/(|zd p|+|ed pd|): (+1, -0.21) | eta-max(0,mu-1): (+1, -336.90) | zeta: (+1, -339.67) | (y-zeta)/y: (+1, -120.19) | (lam-p-eta)/lam: (+1, -1.56) | eta0: (-1, -2.94) | kappa: (+1, -4.02) | eta-mu: (-1, -2.30) | sign: (eta0-eta)/(1+eta) on p<0: (-1, -7.30) | sign: (eta1-eta)/(1+eta) on p<0: (+0, -inf) | sign: (eta-eta0)/(1+eta) on p>0: (-1, -6.11) | sign: (eta-eta1)/(1+eta) on p>0: (+0, -inf)
+  identity residual max=2.2e-33  kappa in [9.546e-05,6.272e-01] varpi_max=1.001e+00  eta-mu in [-0.005,+1.686]  eta(crest)-mu=+1.3402 eta(trough)-mu=-0.0050
+  <eta p>=-1.772031e-02 <zeta pd>=-3.781900e-02 <zeta p>=-1.623875e-02 <eta pd>=-1.623875e-02 det=+4.0647e-04
+  orderings min: equalU:(eta_low-eta_up)/(sum)=2.60e-05 | equalU:(y_low-y_up)/(sum)=3.04e-05 | equalU:p_up-p_low=2.82e-04 | equalU:[(y_low-y_up) - eta_up dp]/(y_low+y_up)=7.89e-10 | equalU:[eta_low dp - (y_low-y_up)]/(y_low+y_up)=7.89e-10 | equalp:U_right-U_left=9.41e-04 | equalp:(y_r-y_l)/(sum)=4.71e-04 | equalp:(zeta_r-zeta_l)/(sum)=4.71e-04 | equalp:[(y_r-y_l) - zeta_l dU]/(y_r+y_l)=2.21e-07 | equalp:[zeta_r dU - (y_r-y_l)]/(y_r+y_l)=2.21e-07
+  pairs: {'n': 300, 'all_Delta_negative': True, 'max_Delta_rel': -0.00024062398765593198, 'all_convex_negative': True, 'max_FwedgeDq_rel': -0.0003020283601504799, 'all_gradient_monotone': True, 'min_monotone_rel': 0.17954313281899997, 'max_O2_identity_residual': 1.6561034813317435e-33}
+  CHECKS: closure<1e-15=ok O=0 (<1e-20)=ok V>0=ok Q>0=ok K>0=ok W>0=ok identities<1e-20=ok lam_c(V) agrees=ok lam_c(Q) agrees=ok <eta0>=mu=ok <eta1>=mu=ok sign pattern=FAIL <eta p><0=ok <zeta pd><0=ok det>0=ok <eta pd>=<zeta p>=ok orderings=ok pairs: Thm3.1=ok pairs: convex=ok pairs: monotone grad=ok y>zeta=ok eta<lam-p (mu<=1/2)=ok lam_c<0=ok lam_c vs monodromy (double)=ok
+  RESULT: FLAGGED: sign pattern  [110s]
+=== mu=50 rho=2 ===
+   polish 0: residual 1.58e-12  T=3.7011589729 steps=261  [1s]
+   polish 1: residual 9.50e-20  T=3.7011589729 steps=258  [3s]
+   polish 2: residual 5.14e-27  T=3.7011589729 steps=258  [4s]
+   riccati relaxation defects: ['1.6e-27', '6.0e-107']  [7s]
+   recorded: T=3.7011589729 steps=258 samples=6192 [9s]
+   orderings done [10s]
+  T=3.70115897 (double 3.70115897) steps=258 Umin=-141.689 closure=1.6e-34
+  lambda_c: <eta>-mu=-2.327512245082e-01  -<pK/V>=-2.327512245082e-01  -<pW/Q>=-2.327512245082e-01  monodromy(double)=-2.327512e-01 (m_t double 4.23e-01)
+  <eta0>-mu=+1.4e-32 <eta1>-mu=+9.5e-27  quad discrepancy GL/series (pK/V, pW/Q, eta0, eta1): 1e-30 3e-21 5e-33 2e-23
+  signs (exact arb tests): {'V>0': True, 'Q>0': True, 'K>0': True, 'W>0': True, 'eta>max(0,mu-1)': True, 'zeta>0': True, 'y>zeta': True, 'eta<lam-p': False, 'kappa>0': True, 'sign pattern': True}
+  log10|.| of extremes (sign, log10): V/(U^2+p^2): (+1, -0.30) | Q/(p^2+pd^2): (+1, -0.84) | K/(|zU|+|ep|+|H|): (+1, -2.44) | W/(|zd p|+|ed pd|): (+1, -0.18) | eta-max(0,mu-1): (+1, -45.83) | zeta: (+1, -45.45) | (y-zeta)/y: (+1, -0.32) | (lam-p-eta)/lam: (-1, -0.42) | eta0: (+1, 1.69) | kappa: (+1, -2.79) | eta-mu: (-1, -0.00) | sign: (eta0-eta)/(1+eta) on p<0: (-1, -4.60) | sign: (eta1-eta)/(1+eta) on p<0: (-1, -28.05) | sign: (eta-eta0)/(1+eta) on p>0: (-1, -5.80) | sign: (eta-eta1)/(1+eta) on p>0: (-1, -45.08)
+  identity residual max=5.8e-34  kappa in [1.614e-03,5.895e-01] varpi_max=1.005e+00  eta-mu in [-1.000,+46.801]  eta(crest)-mu=+37.6140 eta(trough)-mu=-1.0000
+  <eta p>=-8.315664e+01 <zeta pd>=-2.935052e+05 <zeta p>=-3.192937e+03 <eta pd>=-3.192937e+03 det=+1.4212e+07
+  orderings min: equalU:(eta_low-eta_up)/(sum)=2.58e-30 | equalU:(y_low-y_up)/(sum)=1.05e-05 | equalU:p_up-p_low=2.64e-03 | equalU:[(y_low-y_up) - eta_up dp]/(y_low+y_up)=1.38e-34 | equalU:[eta_low dp - (y_low-y_up)]/(y_low+y_up)=1.38e-34 | equalp:U_right-U_left=1.54e-04 | equalp:(y_r-y_l)/(sum)=1.54e-06 | equalp:(zeta_r-zeta_l)/(sum)=7.71e-05 | equalp:[(y_r-y_l) - zeta_l dU]/(y_r+y_l)=1.19e-10 | equalp:[zeta_r dU - (y_r-y_l)]/(y_r+y_l)=1.19e-10
+  pairs: {'n': 300, 'all_Delta_negative': True, 'max_Delta_rel': -7.043691414182054e-48, 'all_convex_negative': True, 'max_FwedgeDq_rel': -0.0006566503569894622, 'all_gradient_monotone': True, 'min_monotone_rel': 0.35381538851199307, 'max_O2_identity_residual': 1.828831576754087e-34}
+  CHECKS: closure<1e-15=ok O=0 (<1e-20)=ok V>0=ok Q>0=ok K>0=ok W>0=ok identities<1e-20=ok lam_c(V) agrees=ok lam_c(Q) agrees=ok <eta0>=mu=ok <eta1>=mu=ok sign pattern=ok <eta p><0=ok <zeta pd><0=ok det>0=ok <eta pd>=<zeta p>=ok orderings=ok pairs: Thm3.1=ok pairs: convex=ok pairs: monotone grad=ok y>zeta=ok lam_c<0=ok lam_c vs monodromy (double)=ok
+  RESULT: ALL OK  [11s]
+=== mu=0.02 rho=12 ===
+(referee note: this first pass was stopped by the referee during the mu=0.02 rho=12 case in order to replace the direct sign-pattern test, which is unresolvable at 400 bits in deep troughs, by a precision-aware one; the mu=0.005 rho=3 flag above is that artifact. Reruns of both cases: ref_extra2.out)

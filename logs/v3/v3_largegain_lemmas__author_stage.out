@@ -1,0 +1,5 @@
+outcomes: {'y<0': 135, 'no upcross': 74, 'ok': 168, 'D<=ell': 23}
+Stage 1 (T_- >= 5.89 => p_k >= 0.374 k): tested 52, failures 0, min p_k/k = 0.9174
+Stage 2 (T_- >= 22 => r_l >= 0.3 T_-):   tested 9, failures 0, min r_l/T_- = 0.6886
+max strip time tau_b over all segments = 0.0982  (lemma: < 0.36)
+ALL STAGE CHECKS PASSED

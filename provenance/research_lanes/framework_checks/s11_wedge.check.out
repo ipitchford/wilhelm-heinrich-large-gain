@@ -1,0 +1,62 @@
+=== Part A: exact symbolic identities (sympy) ===
+PASS A1 slow-manifold coefficients w0..w3 from the recursion
+PASS A1b invariance equation (wed:eq:invariance) holds through order eps^3
+PASS A2a d Upsilon/dU = 2(xi - Rem(U)),  d Upsilon/dxi = 2(U - U_-(xi))
+PASS A2b Theta' = g^2 and Theta(0) = 0
+PASS A2c cohomological identity (wed:eq:cohomological)
+PASS A2d modified-energy identity (wed:eq:drift) with phi_3, phi_4 of (wed:eq:auxiliary), (wed:eq:phi4)
+PASS A2e d_P E_2 = 2P(U - U_-(E_0))
+PASS A3a m_2, m_4 closed forms
+PASS A3b (6/5)Pm^2 m_2 - Pm^4/5 - m_4 = (Pm^4/5) omega (1+omega)(1-omega^2)  (wed:eq:polyidentity)
+PASS A3c (9/5)g^2 - (6/5)g + 1/5 = (3g-1)^2/5
+PASS A4 eps*varpi' + (1 + eps w_P)(Q - w) = -(invariance residual)
+PASS A5 d/dtau(P^2/2 + rho Rem(U)) = -eps P (Qdot + P) along (wed:eq:S1)
+PASS A6 identity (f) in original variables is (f) times mu^2 A^2
+PASS A7 f_mu(mu + mu*etahat) = kH + (A^2+mu) mu etahat + 2A mu^2 etahat^2 + mu^3 etahat^3
+PASS A8a (1+eta)p' - eta'p - (eta-mu)(1+eta)p + x - k = -(orthogonality residual)
+PASS A8b energy identity (wed:eq:energyidentity) on {orthogonality = 0}
+PASS A8c zeta = mu(1 + A L etahat)
+PASS A8d spike identity (wed:eq:spike): rho e^U - s = A L^2 etahat
+PASS A9 explicit pulse solves the pulse system, p(-inf)=1, p(+inf)=-2
+PASS A10a dV/dt~ = p, dp/dt~ = lambda - p, V(0)=0, p(0)=-q_-
+PASS A10b at the return V=0: p = lambda*vartheta - q_-
+PASS A10c min V = lambda log(1+q_-/lambda) - q_-
+PASS A10d vartheta = 2b - (2/3)b^2 + (4/9)b^3 + O(b^4) solves vartheta = (1+b)(1-e^{-vartheta}), b = q_-/lambda   so lambda*vartheta - q_- = q_- - (2/3) q_-^2/lambda + ...
+PASS A11 -transversality*(rho-1)/l_1 = (r/2)(1+4 eps^2) with rho-1 = r eps^2
+PASS A12 d_P w_3 = r e^U + 3 e^U P^2 - 4 g e^U - g^2
+   [Part A: 0.7 s]
+
+=== Part B: floating-point spot checks (double precision, not interval-certified) ===
+PASS B1a Prop. wed:prop:melnikov on the centre (rho=1): oint e^U P^2 = oint Q^2 = oint g^2 = oint P^2   max rel. defect 1.2e-12
+PASS B1b averages (wed:eq:todaaverages)   max rel. defect 9.5e-13
+PASS B1c oint phi_3 = r I0 - (2/3) I1 (wed:eq:thirdaverage), r = 0.7   max rel. defect 2.3e-12
+PASS B1d Theorem thm:kurtosis (i),(ii): <P^2> >= Pm^2/3, first inequality of (ii), kurtosis < 9/5   min slacks 1.656e-02, 2.479e-04, 7.716e-03
+PASS B1e I0' = T0, I1' = 3 I0, Rsel' = (2/3)(3 - kurtosis) by central differences   max rel. defect 3.9e-07
+PASS B1f Remark wed:rem:exactselection: bracket of (f) on the centre equals (2/3)<P^4>   max rel. defect 6.2e-13
+PASS B1g Remark wed:rem:scope(c): oint d_P w_3 = r T0 - 2 I0   max rel. defect 3.3e-12
+PASS B1h Prop. wed:prop:melnikov for rho = 2.5 and 0.4: oint Q^2 = rho oint P^2, M_1 = (1-rho) oint P^2, ratio = rho   max rel. defect 1.0e-14
+PASS B1i root xi*(r) in [3r/4, 5r/4]; r T0 - 2 I0 = -I0 Rsel' <= -(4/5) I0 at the root   xi*(0.3)=0.301252, xi*(1.0)=1.013914, xi*(3.0)=3.121936, xi*(12.0)=13.402232
+PASS B1j Rsel(xi)/xi -> 1 and T0 -> 2 pi as xi -> 0   Rsel/xi = 0.999999, T0 = 6.283238 at xi = 1e-4
+PASS B1k |g| <= Rem + sqrt(2 Rem) on [-60,12];  |s^3-1|/s^2 <= 7 mu |etahat|/A for 0<mu<=1, etahat>-1 (grid)
+   [B1: 0.3 s]
+PASS B2 Lemma lem:tauidentities (a)-(f), original-variable forms, moment identity, energy identity on 3 computed cycles   worst defects: (a) 7.9e-13, (b) 5.2e-13, (c) 3.1e-13, (d) 3.5e-13, (e) 1.6e-12, (f) 1.7e-12, orig(b) 5.2e-13, orig(c) 2.5e-13, orig(f) 1.7e-12, moment 1.3e-12, energy 9.2e-12, mprod 0.0e+00
+   [B2: 0.8 s]
+PASS B3 Table wed:tab:selection row alpha=1, mu=1e-3 reproduced (0.99599, 0.99261)   ratios 0.99599, 0.99261
+   [B3: 0.3 s]
+PASS B4a pulse map: G(1) = 2 (exact pulse wed:eq:exactpulse)   G(1) = 2.000000000
+PASS B4b (G(q)-q)/q^2 = 0.671, 0.680, 0.711 at q = 0.01, 0.03, 0.1   0.67112, 0.68005, 0.71142
+PASS B4c limit map at rho = 1.5: q* = 1.1502, m_0 = 0.67983, S = 2.4387, lim mu U_min = -1.0336 (Table wed:tab:limitmap)   q* = 1.150216, m_0 = 0.679827, S = 2.43869, lim mu U_min = -1.03364
+PASS B4d matching constant (16 sqrt2/15)(5/4)^{3/2} = 2.108   2.10819
+   [B4: 0.8 s]
+
+=== Audit additions: exact (A13-A16) and floating point (B5-B6) ===
+PASS A13 V-shaped potential: <P^2> = Pm^2/3, <P^4> = Pm^4/5; equality in (i) and in both inequalities of (ii); Rsel = (4/5) xi
+PASS A14 polar form (wed:eq:polar); r_theta at eps=0; w(alpha,0) = alpha*r_theta(alpha,0) (wed:eq:crestsign)
+PASS A15 d E_0/d tau = P (w + g) along the planar field; it is eps*P*(w_1 + eps w_2 + eps^2 w_3) for the truncated w
+PASS A16 d/dt(p p' + p^2/2 + x) = y^2 along the pulse system; explicit pulse: 2 int y^2 dt = 3 = G(1)^2 - 1
+PASS B5 density f for Phi = Rem: (wed:eq:momentsdensity) for j = 0, 2, 4; slack of (ii) = (2/T0)(Pm^4/5) int (Pm-s) omega(1+omega)(1-omega^2) f'(s) ds > 0; f strictly increasing   max rel. defects 6.0e-14 (moments), 5.5e-13 (slack); min relative increment of f on the grid 6.93e-08
+PASS B6 computed wedge cycles: polar angle strictly decreasing, winding number -1, P vanishes twice, crest is the maximum of U with Q < 0, energy excursion O(eps)   (mu=0.01, alpha=1): max dtheta/dtau -0.522, winding -1.000000, Q(crest) -1.704, max|E0-Rem(alpha)|/eps 0.7051 vs (2Rem)^1.5/3 = 0.5739; (mu=0.001, alpha=1): max dtheta/dtau -0.519, winding -1.000000, Q(crest) -1.717, max|E0-Rem(alpha)|/eps 0.6189 vs (2Rem)^1.5/3 = 0.5739; (mu=0.0001, alpha=1): max dtheta/dtau -0.519, winding -1.000000, Q(crest) -1.718, max|E0-Rem(alpha)|/eps 0.5883 vs (2Rem)^1.5/3 = 0.5739; (mu=0.001, alpha=2): max dtheta/dtau -0.185, winding -1.000000, Q(crest) -6.376, max|E0-Rem(alpha)|/eps 9.9905 vs (2Rem)^1.5/3 = 8.6692
+   [audit additions: 1.8 s]
+
+TOTAL TIME 4.7 s
+FAILURES: none

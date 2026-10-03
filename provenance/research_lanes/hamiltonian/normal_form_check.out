@@ -1,0 +1,5 @@
+(1) invariance residual coefficients eps^0..eps^3: [0, 0, 0, 0]
+(2) eps^0, eps^1, eps^2 coefficients of X(H~): 0 0 0
+    eps^3 coefficient minus F3: 0
+(3) U''*eq - d/dtau[...] - (U''^2 - rho e^U U'^2) = 0
+ALL EXACT CHECKS PASSED

@@ -1,0 +1,118 @@
+PART A  exact identities (sympy)
+  [OK] J^T n = (-x, zeta+mu*eta, eta+1)
+  [OK] normal equation: components are zeta'-x+(1+eta)zeta, -eta'+zeta+(mu-1)eta-eta^2, 0
+  [OK] x' = (lambda-ell) x
+  [OK] ell' = y - mu*ell
+  [OK] ratios of H'=BH solve the eta-equation
+  [OK] ratios of H'=BH solve the zeta-equation
+  [OK] converse: H=(zeta,eta,1)*H3 with H3'=(1+eta)H3 solves H'=BH
+  [OK] adjoint: (e^{int(1+eta)} n)' = -J^T (e^{...} n) given the normal equation
+  [OK] nu_0 = tanh(d_0/4) = (M-m)/(M+m)
+  [OK] Delta' + (1+eta) Delta = -x1*Rem(U2-U1)
+  [OK] O' = -(1+eta) O
+  [OK] K' + (1+eta)K = k*psi(U)   (no constraint needed)
+  [OK] x*Rem(-U) = k*psi(U)
+  [OK] W' + (1+eta)W - x p^2 = -eta' * O
+  [OK] zeta'' = x p - eta' zeta - (1+eta) zeta'
+  [OK] eta'' = zeta' + (mu-1) eta' - 2 eta eta'
+  [OK] p'' = (eta-mu) p' - zeta p + O
+  [OK] h(u,0)-k = k(e^u-1)/(1+eta)
+  [OK] K = k - [h - u h_u - v h_v]
+  [OK] F(theta q) ^ F(q) = -v * b_theta(q)
+  [OK] (i) lower bound algebra gives (1-theta) K(theta q)
+  [OK] (ii) upper bound algebra gives (1-theta) K(q)
+  [OK] char. polynomial of J_E is z^3 + A z^2 + mu z + k
+  [OK] -gamma_E is a root
+  [OK] cubic at gamma=A equals k_H
+  [OK] J_E e_E = -gamma_E e_E
+  [OK] J_E^T n_E = -gamma_E n_E
+  [OK] constant Riccati solution at E
+  [OK] eta_E - mu = gamma_E - A
+  [OK] m_t exponent: -A + (1+<eta>) = <eta> - mu
+  [OK] w=F^j satisfies w' = (div F) w
+  [OK] w(0) = (0,-g(u)) ^ (1,0) = g(u)
+  [OK] w(T_1) = F ^ ((R_1',0) - T_1' F) = g(R_1 u) R_1'
+  [OK] w_1' = k - y
+  [OK] w_2' = -k(e^U-1)
+  [OK] Jacobian (U,p)->(U,y)
+  [OK] Jacobian (U,p)->(p,y)
+  [OK] Jacobian (U,p)->(y,w1)
+  [OK] Jacobian (U,p)->(U,w2)
+  [OK] div in (U,y) plane = zeta/eta - 1
+  [OK] div in (p,y) plane = x/zeta - A
+  [OK] div in (y,w1) plane = x/(zeta+mu eta) - 1
+  [OK] div in (U,w2) plane = (zeta-mu)/(1+eta)
+  [OK] D log(eta) formula
+  [OK] divergence = (eta-mu) + D log(eta)
+  [OK] D log(zeta) formula
+  [OK] divergence = (eta-mu) + D log(zeta)
+  [OK] D log(zeta+mu*eta) formula
+  [OK] divergence = (eta-mu) + D log(zeta+mu*eta)
+  [OK] D log(1+eta) formula
+  [OK] divergence = (eta-mu) + D log(1+eta)
+  [OK] beta(t): change of variables r1=t-s, r2=s-r (mu=7/10, lambda=13/10, t=7/5)
+  [OK] int_0^s e^{-mu0(s-r)} e^{-mu0 r} dr = s e^{-mu0 s}
+
+PART B  floating-point spot checks (whlib; DOP853)
+
+ mu=1.0 rho=1.5 k=3
+  [OK] O = 0 on the cycle max|O|/k=5.5e-11
+  [OK] K>0, W>0, Lambda_E>0 on the cycle min K=6.831e-01 min W=8.779e-02 min Lambda_E=5.253e-01
+  [OK] no cycle point in E+C_+ or E+C_- 
+  [OK] bounds eta_-<=eta<=eta_+, zeta_-<=zeta<=zeta_+, eta_->max(0,mu-1) eta in [0.2715,2.241] within [0.03694,4.296]; zeta in [0.01643,5.508] within [0.001364,17.8]
+  [OK] lambda_c: five cycle averages agree with log(m_t)/T <eta>-mu=-0.146389341 monodromy=-0.146389341 max dev of other averages=5.1e-13
+  [OK] M^T n(a_0) = m_s n(a_0), m_s = exp(-(1+<eta>)T) m_s=9.331e-07; residual/(|M||n|)=1.2e-14; residual/(m_s|n|)=3.3e-07
+  [OK] n.f = 0 and n.e_s != 0 at the crest n.f=1.4e-11  |n.e_s|/|n|=0.407
+  [OK] multipliers {1, m_s, m_t} with m_s m_t = e^{-AT} eig=[9.33077054e-07 3.34020258e-01 1.00000000e+00]  det=3.116666e-07  e^(-AT)=3.116666e-07
+  [OK] crest: y-k = k(e^U-1)/(1+eta) 
+  [OK] cycle inside the absorbing box (upper bounds; lower bound for x in logarithmic form) x_max=18.46 <= lambda/beta_1=52.84; log x_min=-4.930 >= -3.36e+03
+  [OK] underline m > 0 and nu_0 = (M-m)/(M+m) < 1 m=0.007226 M=60.52 d_0=18.07 nu_0=0.999761
+  [OK] pull-back estimate (att:eq:pullback) from data (0,0),(50,0),(0,50),(50,50) max gap/bound=0.0102
+  [OK] W^u(E) crests: y-k = k(e^u-1)/(1+eta)  (Lemma att:lem:axis) 34 crests, max rel. err 1.3e-12
+  [OK] R_1(u) > u inside the cycle (att:eq:outward): crests increase first crest 0.002527, last 1.81693245, cycle crest 1.81693246
+  [OK] supporting planes between crest points of different turns 586 ordered pairs
+  [OK] scaling: b_theta >= (1-theta)K(theta q) > 0 for theta<1; b_theta <= (1-theta)K(q), so b_theta<0 for theta>1 586 ordered pairs on the crest half-axis
+  [OK] R_1'(u) = g(u) e^{iota(u)} / g(R_1 u) against central differences 15 crests, max rel. err 2.9e-08
+  [OK] eta_E - mu = gamma_E - A > 0 eta_E-mu=0.174559 = 2 Re(lambda_u)=0.174559
+
+ mu=0.3 rho=1.5 k=0.585
+  [OK] O = 0 on the cycle max|O|/k=9.1e-11
+  [OK] K>0, W>0, Lambda_E>0 on the cycle min K=1.500e-01 min W=1.748e-03 min Lambda_E=1.552e-01
+  [OK] no cycle point in E+C_+ or E+C_- 
+  [OK] bounds eta_-<=eta<=eta_+, zeta_-<=zeta<=zeta_+, eta_->max(0,mu-1) eta in [0.005035,1.059] within [0.0001733,1.77]; zeta in [0.001004,2.03] within [0.0001214,4.37]
+  [OK] lambda_c: five cycle averages agree with log(m_t)/T <eta>-mu=-0.056359795 monodromy=-0.056359795 max dev of other averages=1.7e-13
+  [OK] M^T n(a_0) = m_s n(a_0), m_s = exp(-(1+<eta>)T) m_s=1.144e-08; residual/(|M||n|)=1.3e-13; residual/(m_s|n|)=1.4e-04
+  [OK] n.f = 0 and n.e_s != 0 at the crest n.f=-2.0e-12  |n.e_s|/|n|=0.743
+  [OK] multipliers {1, m_s, m_t} with m_s m_t = e^{-AT} eig=[1.14443967e-08 4.36624465e-01 1.00000000e+00]  det=4.996904e-09  e^(-AT)=4.996904e-09
+  [OK] crest: y-k = k(e^U-1)/(1+eta) 
+  [OK] cycle inside the absorbing box (upper bounds; lower bound for x in logarithmic form) x_max=4.371 <= lambda/beta_1=17.88; log x_min=-7.998 >= -1.36e+04
+  [OK] underline m > 0 and nu_0 = (M-m)/(M+m) < 1 m=0.0002651 M=8.819 d_0=20.82 nu_0=0.999940
+  [OK] pull-back estimate (att:eq:pullback) from data (0,0),(50,0),(0,50),(50,50) max gap/bound=0.0206
+  [OK] W^u(E) crests: y-k = k(e^u-1)/(1+eta)  (Lemma att:lem:axis) 37 crests, max rel. err 1.3e-12
+  [OK] R_1(u) > u inside the cycle (att:eq:outward): crests increase first crest 0.002378, last 2.01102385, cycle crest 2.01102394
+  [OK] supporting planes between crest points of different turns 840 ordered pairs
+  [OK] scaling: b_theta >= (1-theta)K(theta q) > 0 for theta<1; b_theta <= (1-theta)K(q), so b_theta<0 for theta>1 840 ordered pairs on the crest half-axis
+  [OK] R_1'(u) = g(u) e^{iota(u)} / g(R_1 u) against central differences 17 crests, max rel. err 2.2e-07
+  [OK] eta_E - mu = gamma_E - A > 0 eta_E-mu=0.087621 = 2 Re(lambda_u)=0.087621
+
+ mu=3.0 rho=1.3 k=15.6
+  [OK] O = 0 on the cycle max|O|/k=5.8e-11
+  [OK] K>0, W>0, Lambda_E>0 on the cycle min K=9.617e-01 min W=5.435e-01 min Lambda_E=8.989e-01
+  [OK] no cycle point in E+C_+ or E+C_- 
+  [OK] bounds eta_-<=eta<=eta_+, zeta_-<=zeta<=zeta_+, eta_->max(0,mu-1) eta in [2.086,4.678] within [2.009,9.995]; zeta in [0.0951,13.55] within [0.01791,26.56]
+  [OK] lambda_c: five cycle averages agree with log(m_t)/T <eta>-mu=-0.139218416 monodromy=-0.139218416 max dev of other averages=7.1e-13
+  [OK] M^T n(a_0) = m_s n(a_0), m_s = exp(-(1+<eta>)T) m_s=9.788e-08; residual/(|M||n|)=2.2e-14; residual/(m_s|n|)=1.3e-05
+  [OK] n.f = 0 and n.e_s != 0 at the crest n.f=9.3e-11  |n.e_s|/|n|=0.230
+  [OK] multipliers {1, m_s, m_t} with m_s m_t = e^{-AT} eig=[9.78777463e-08 5.58787326e-01 1.00000000e+00]  det=5.469284e-08  e^(-AT)=5.469284e-08
+  [OK] crest: y-k = k(e^U-1)/(1+eta) 
+  [OK] cycle inside the absorbing box (upper bounds; lower bound for x in logarithmic form) x_max=79.91 <= lambda/beta_1=266.4; log x_min=-1.625 >= -6.37e+03
+  [OK] underline m > 0 and nu_0 = (M-m)/(M+m) < 1 m=0.3434 M=1323 d_0=16.51 nu_0=0.999481
+  [OK] pull-back estimate (att:eq:pullback) from data (0,0),(50,0),(0,50),(50,50) max gap/bound=0.00669
+  [OK] W^u(E) crests: y-k = k(e^u-1)/(1+eta)  (Lemma att:lem:axis) 56 crests, max rel. err 1.1e-12
+  [OK] R_1(u) > u inside the cycle (att:eq:outward): crests increase first crest 0.00199, last 1.63365607, cycle crest 1.63365608
+  [OK] supporting planes between crest points of different turns 1748 ordered pairs
+  [OK] scaling: b_theta >= (1-theta)K(theta q) > 0 for theta<1; b_theta <= (1-theta)K(q), so b_theta<0 for theta>1 1748 ordered pairs on the crest half-axis
+  [OK] R_1'(u) = g(u) e^{iota(u)} / g(R_1 u) against central differences 25 crests, max rel. err 1.4e-08
+  [OK] eta_E - mu = gamma_E - A > 0 eta_E-mu=0.176125 = 2 Re(lambda_u)=0.176125
+
+SUMMARY: ALL CHECKS PASSED

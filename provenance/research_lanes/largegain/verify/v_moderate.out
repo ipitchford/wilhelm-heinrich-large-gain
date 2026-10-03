@@ -1,0 +1,632 @@
+== mu=1.0 k=2.02 rho=1.01: T=6.304213 periodicity defect (U,p,w)=5.53e-13  m_t=9.752e-01
+   [ok  ] F3: p has exactly one zero strictly inside (crest,crest+T) [trough]  zeros=1
+   [ok  ] F3: U crosses 0 exactly twice per period  n=2
+   T_-=3.385991 T_+=2.918222 s0=1.656185 D=0.435822 h=0.368908 p_k=0.387538 P_d=0.41423 w_d=0.436754 w_k=-0.36984
+   [ok  ] F2: Lambda_E > 0  min=1.129e-02
+   [ok  ] F2: no point in C_+ or C_-  
+   [ok  ] F4: T > 2pi/sqrt(mu)  6.30421 vs 6.28319
+   [ok  ] F5: x<=k*M0, y>0 (to integrator noise 1e-9k; exact by y=int e^-(t-s)x ds), p<lambda  max x/k=1.446 M0=9.12 min y/k at nodes=7.386e-01 (dense interp: 7.385e-01, max step 0.206) lam-max p=1.632e+00 (strict margin ~lam e^(-mu T_-) may be below double precision)
+   [ok  ] F6: <x>=k, <p'^2>=mu<p^2>  int(x-k)=-7.36e-13 rel=1.0e-14
+   <eta>=0.99601600  <eta>-mu=-3.983998e-03  log(m_t)/T=-3.983998e-03
+   [ok  ] L5a: M_+ = int_{neg}(k-x) = w_d+P_d+|w_k|+p_k  M_+=1.6083615 sum=1.6083615
+   [ok  ] L5a: M_+ < k T_-  1.60836 < 6.8397
+   [ok  ] L5b: <(x-kH)p^2>=0 and D>log rho  rel=8.1e-13 D=0.43582 log rho=0.0099503
+   [ok  ] L6: T_+ < pi/omega  T_+=2.918222 pi/omega=3.129122 ratio=0.93260
+   [ok  ] L6: gamma_E - mu < k^(1/3)+1  
+   [ok  ] L7a: w_d>0, w_k<0, w(trough)<0, w(crest)>0  
+   [ok  ] L7b: unique zero s_w of w on the negative lobe, s_w<s_0  n=1
+   [ok  ] L7e: e^t(w+k) nondecreasing (solver nodes, y>1e-6k)  min increment=1.31e-02
+   [ok  ] L7d: e^t w nondecreasing on positive lobe  
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=1.0*s_w  a=0.8325 v=0.16898 rhs=0.016213
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.7*s_w  a=0.5827 v=0.11978 rhs=0.0036162
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.4*s_w  a=0.3330 v=0.068927 rhs=0.00035734
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=0.29031 rhs=0.14194
+   [ok  ] L9: D-v_w >= k phi(s_w) c_ii(u)  D-v_w=0.12431 rhs=0.075428
+   [ok  ] L9: P_w < (gamma_E-mu) v_w  P_w=0.29031 rhs=0.31276 ratio=0.9282
+   [ok  ] L10a: T_- - s0 >= p_k/k, D >= p_k^2/2k  1.7298>=0.19185; 0.43582>=0.037175
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=1.0*p_k^2/2k)  0.095848 <= 0.19185
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.5*p_k^2/2k)  0.047927 <= 0.095925
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.1*p_k^2/2k)  0.0095905 <= 0.019185
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=0.2179)  1.1462 >= 0.46449
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=0.2179)  0.340776 >= 0.125717
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=0.2179)  0.387538 >= 0.122865
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=0.2179)  tau_b=0.5836 k c_b=0.01796 < 1.1129
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=0.04358)  1.6174 >= 0.62318
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=0.04358)  0.387318 >= 0.0414081
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=0.04358)  0.387538 >= 0.343736
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=0.04358)  tau_b=0.11238 k c_b=0.00016787 < 1.0219
+   [ok  ] L12: p_k(s^2/2-s^3/6) < 1 on [0,s_+]  s_+=0.74045 max=0.0800
+   [ok  ] L12: P_1 < lambda  
+   [ok  ] L13: e^{U_theta} >= E_theta (with H=log M0)  e^U_th=1.2981 E_th=-0.11112
+   [ok  ] L13: e^{U_theta} >= E_theta (sharper, H:=h)  E_th(h)=-0.014301
+   [ok  ] L13: e^{U_theta} >= E_theta (sharpest, H:=U_theta)  E_th(U_th)=-0.0086217
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  0.73831 >= 0.1373
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs=3.2101 Q=-0.61505
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q (sharper, H:=h)  Q(h)=-0.56146
+   [ok  ] L17: (<eta>-mu)T <= bound for 4 nu x 6 s  min slack=8.3498
+== mu=1.0 k=3 rho=1.5: T=7.490666 periodicity defect (U,p,w)=8.49e-12  m_t=3.340e-01
+   [ok  ] F3: p has exactly one zero strictly inside (crest,crest+T) [trough]  zeros=1
+   [ok  ] F3: U crosses 0 exactly twice per period  n=2
+   T_-=5.607365 T_+=1.883301 s0=2.316284 D=6.02874 h=1.81693 p_k=2.52278 P_d=3.97584 w_d=6.2857 w_k=-2.11668
+   [ok  ] F2: Lambda_E > 0  min=5.253e-01
+   [ok  ] F2: no point in C_+ or C_-  
+   [ok  ] F4: T > 2pi/sqrt(mu)  7.49067 vs 6.28319
+   [ok  ] F5: x<=k*M0, y>0 (to integrator noise 1e-9k; exact by y=int e^-(t-s)x ds), p<lambda  max x/k=6.153 M0=16 min y/k at nodes=5.703e-02 (dense interp: 5.703e-02, max step 0.124) lam-max p=4.178e-01 (strict margin ~lam e^(-mu T_-) may be below double precision)
+   [ok  ] F6: <x>=k, <p'^2>=mu<p^2>  int(x-k)=-1.16e-11 rel=3.0e-13
+   <eta>=0.85361066  <eta>-mu=-1.463893e-01  log(m_t)/T=-1.463893e-01
+   [ok  ] L5a: M_+ = int_{neg}(k-x) = w_d+P_d+|w_k|+p_k  M_+=14.901007 sum=14.901007
+   [ok  ] L5a: M_+ < k T_-  14.901 < 16.8221
+   [ok  ] L5b: <(x-kH)p^2>=0 and D>log rho  rel=3.1e-13 D=6.0287 log rho=0.40547
+   [ok  ] L6: T_+ < pi/omega  T_+=1.883301 pi/omega=2.682114 ratio=0.70217
+   [ok  ] L6: gamma_E - mu < k^(1/3)+1  
+   [ok  ] L7a: w_d>0, w_k<0, w(trough)<0, w(crest)>0  
+   [ok  ] L7b: unique zero s_w of w on the negative lobe, s_w<s_0  n=1
+   [ok  ] L7e: e^t(w+k) nondecreasing (solver nodes, y>1e-6k)  min increment=5.74e-04
+   [ok  ] L7d: e^t w nondecreasing on positive lobe  
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=1.0*s_w  a=1.2258 v=2.5781 rhs=0.546
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.7*s_w  a=0.8580 v=1.8132 rhs=0.14357
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.4*s_w  a=0.4903 v=1.0237 rhs=0.017444
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=2.6436 rhs=1.2675
+   [ok  ] L9: D-v_w >= k phi(s_w) c_ii(u)  D-v_w=1.3702 rhs=0.88287
+   [ok  ] L9: P_w < (gamma_E-mu) v_w  P_w=2.6436 rhs=5.4718 ratio=0.4831
+   [ok  ] L10a: T_- - s0 >= p_k/k, D >= p_k^2/2k  3.2911>=0.84093; 6.0287>=1.0607
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=1.0*p_k^2/2k)  0.4132 <= 0.84093
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.5*p_k^2/2k)  0.20767 <= 0.42046
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.1*p_k^2/2k)  0.041913 <= 0.084093
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=2)  2.5098 >= 1.6388
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=2)  2.51137 >= 1.85396
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=2)  2.52278 >= 0.511366
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=2)  tau_b=0.78126 k c_b=0.057291 < 2.313
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=3.014)  2.0938 >= 1.4176
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=3.014)  2.35246 >= 1.76529
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=3.014)  2.52278 >= -0.66191
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=3.014)  tau_b=1.1972 k c_b=0.16411 < 3.1699
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=0.6029)  3.0553 >= 1.9019
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=0.6029)  2.57812 >= 1.0988
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=0.6029)  2.52278 >= 1.97525
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=0.6029)  tau_b=0.23581 k c_b=0.0021446 < 1.3315
+   [ok  ] L12: p_k(s^2/2-s^3/6) < 1 on [0,s_+]  s_+=0.51127 max=0.2735
+   [ok  ] L12: P_1 < lambda  
+   [ok  ] L13: e^{U_theta} >= E_theta (with H=log M0)  e^U_th=3.8721 E_th=-3.2131
+   [ok  ] L13: e^{U_theta} >= E_theta (sharper, H:=h)  E_th(h)=-1.7795
+   [ok  ] L13: e^{U_theta} >= E_theta (sharpest, H:=U_theta)  E_th(U_th)=-1.0847
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  0.46151 >= 0.10238
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs=259.63 Q=-22.547
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q (sharper, H:=h)  Q(h)=-14.875
+   [ok  ] L17: (<eta>-mu)T <= bound for 4 nu x 6 s  min slack=9.9734
+== mu=1.0 k=8 rho=4: T=13.841594 periodicity defect (U,p,w)=1.99e-10  m_t=4.167e-03
+   [ok  ] F3: p has exactly one zero strictly inside (crest,crest+T) [trough]  zeros=1
+   [ok  ] F3: U crosses 0 exactly twice per period  n=2
+   T_-=12.901500 T_+=0.940094 s0=3.627129 D=64.1846 h=3.54709 p_k=7.89779 P_d=19.9897 w_d=66.8457 w_k=-7.1054
+   [ok  ] F2: Lambda_E > 0  min=4.582e+00
+   [ok  ] F2: no point in C_+ or C_-  
+   [ok  ] F4: T > 2pi/sqrt(mu)  13.84159 vs 6.28319
+   [ok  ] F5: x<=k*M0, y>0 (to integrator noise 1e-9k; exact by y=int e^-(t-s)x ds), p<lambda  max x/k=34.71 M0=81 min y/k at nodes=8.541e-05 (dense interp: 8.532e-05, max step 0.243) lam-max p=5.090e-03 (strict margin ~lam e^(-mu T_-) may be below double precision)
+   [ok  ] F6: <x>=k, <p'^2>=mu<p^2>  int(x-k)=2.50e-10 rel=9.9e-13
+   <eta>=0.60405966  <eta>-mu=-3.959403e-01  log(m_t)/T=-3.959403e-01
+   [ok  ] L5a: M_+ = int_{neg}(k-x) = w_d+P_d+|w_k|+p_k  M_+=101.83855 sum=101.83855/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/whlib.py:25: RuntimeWarning: overflow encountered in exp
+  return [p, k - mu * p - y, k * np.exp(U) - y]
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/whlib.py:25: RuntimeWarning: invalid value encountered in scalar subtract
+  return [p, k - mu * p - y, k * np.exp(U) - y]
+
+   [ok  ] L5a: M_+ < k T_-  101.839 < 103.212
+   [ok  ] L5b: <(x-kH)p^2>=0 and D>log rho  rel=6.7e-13 D=64.185 log rho=1.3863
+   [ok  ] L6: T_+ < pi/omega  T_+=0.940094 pi/omega=1.871763 ratio=0.50225
+   [ok  ] L6: omega>=omega0(k), T_->2pi-pi/omega0  omega=1.6784 om0=0.8660 T_-=12.9015
+   [ok  ] L6: gamma_E - mu < k^(1/3)+1  
+   [ok  ] L7a: w_d>0, w_k<0, w(trough)<0, w(crest)>0  
+   [ok  ] L7b: unique zero s_w of w on the negative lobe, s_w<s_0  n=1
+   [ok  ] L7e: e^t(w+k) nondecreasing (solver nodes, y>1e-6k)  min increment=0.00e+00
+   [ok  ] L7d: e^t w nondecreasing on positive lobe  
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=1.0*s_w  a=2.2411 v=33.094 rhs=15.639
+   [ok  ] L8: D >= phi2 k c_i(a), a=1.0*s_w  D=64.185 rhs=12.461
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.7*s_w  a=1.5688 v=22.894 rhs=3.8749
+   [ok  ] L8: D >= phi2 k c_i(a), a=0.7*s_w  D=64.185 rhs=3.0876
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.4*s_w  a=0.8964 v=12.156 rhs=0.53069
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=12.903 rhs=5.0888
+   [ok  ] L9: D-v_w >= k phi(s_w) c_ii(u)  D-v_w=7.8146 rhs=4.4577
+   [ok  ] L9: P_w < (gamma_E-mu) v_w  P_w=12.903 rhs=96.742 ratio=0.1334
+   [ok  ] L10a: T_- - s0 >= p_k/k, D >= p_k^2/2k  9.2744>=0.98722; 64.185>=3.8984
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=1.0*p_k^2/2k)  0.48903 <= 0.98722
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.5*p_k^2/2k)  0.24508 <= 0.49361
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.1*p_k^2/2k)  0.049254 <= 0.098722
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=2)  9.0229 >= 3.9429
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=2)  7.98346 >= 6.90896
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=2)  7.89779 >= 5.98346
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=2)  tau_b=0.25144 k c_b=0.0068715 < 2.313
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=32.09)  5.2481 >= 2.8325
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=32.09)  7.90274 >= 7.73721
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=32.09)  7.89779 >= -24.1896
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=32.09)  tau_b=4.0262 k c_b=4.1418 < 32.092
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=6.418)  8.4701 >= 3.8002
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=6.418)  7.99461 >= 7.97109
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=6.418)  7.89779 >= 1.57615
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=6.418)  tau_b=0.80424 k c_b=0.16455 < 6.429
+   [ok  ] L12: p_k(s^2/2-s^3/6) < 1 on [0,s_+]  s_+=0.28081 max=0.2822
+   [ok  ] L12: P_1 < lambda  
+   [ok  ] L13: e^{U_theta} >= E_theta (with H=log M0)  e^U_th=19.461 E_th=-13.342
+   [ok  ] L13: e^{U_theta} >= E_theta (sharper, H:=h)  E_th(h)=-8.6704
+   [ok  ] L13: e^{U_theta} >= E_theta (sharpest, H:=U_theta)  E_th(U_th)=-5.4799
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  0.17899 >= 0.050891
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs=11175 Q=-640.75
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q (sharper, H:=h)  Q(h)=-432.04
+   [ok  ] L17: (<eta>-mu)T <= bound for 4 nu x 6 s  min slack=13.548
+== mu=1.0 k=24 rho=12: T=34.488334 periodicity defect (U,p,w)=1.43e-08  m_t=1.744e-13
+   [ok  ] F3: p has exactly one zero strictly inside (crest,crest+T) [trough]  zeros=1
+   [ok  ] F3: U crosses 0 exactly twice per period  n=2
+   T_-=34.070244 T_+=0.418090 s0=5.032463 D=668.276 h=5.57801 p_k=23.9616 P_d=84.0068 w_d=685.411 w_k=-23.0392
+   [ok  ] F2: Lambda_E > 0  min=3.109e+01
+   [ok  ] F2: no point in C_+ or C_-  
+   [ok  ] F4: T > 2pi/sqrt(mu)  34.48833 vs 6.28319
+   [ok  ] F5: x<=k*M0, y>0 (to integrator noise 1e-9k; exact by y=int e^-(t-s)x ds), p<lambda  max x/k=264.5 M0=625 min y/k at nodes=1.677e-13 (dense interp: 1.677e-13, max step 2.06) lam-max p=1.023e-10 (strict margin ~lam e^(-mu T_-) may be below double precision)
+   [ok  ] F6: <x>=k, <p'^2>=mu<p^2>  int(x-k)=1.53e-08 rel=3.0e-12
+   <eta>=0.32587380  <eta>-mu=-6.741262e-01  log(m_t)/T=-8.518100e-01
+   [ok  ] L5a: M_+ = int_{neg}(k-x) = w_d+P_d+|w_k|+p_k  M_+=816.41886 sum=816.41886
+   [ok  ] L5a: M_+ < k T_-  816.419 < 817.686
+   [ok  ] L5b: <(x-kH)p^2>=0 and D>log rho  rel=4.5e-13 D=668.28 log rho=2.4849
+   [ok  ] L6: T_+ < pi/omega  T_+=0.418090 pi/omega=1.275991 ratio=0.32766
+   [ok  ] L6: omega>=omega0(k), T_->2pi-pi/omega0  omega=2.4621 om0=1.7623 T_-=34.0702
+   [ok  ] L6: gamma_E - mu < k^(1/3)+1  
+   [ok  ] L7a: w_d>0, w_k<0, w(trough)<0, w(crest)>0  
+   [ok  ] L7b: unique zero s_w of w on the negative lobe, s_w<s_0  n=1
+   [ok  ] L7e: e^t(w+k) nondecreasing (solver nodes, y>1e-6k)  min increment=-8.88e-16
+   [ok  ] L7d: e^t w nondecreasing on positive lobe  
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=1.0*s_w  a=3.3868 v=405.67 rhs=292.31
+   [ok  ] L8: D >= phi2 k c_i(a), a=1.0*s_w  D=668.28 rhs=232.91
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.7*s_w  a=2.3707 v=282.21 rhs=59.243
+   [ok  ] L8: D >= phi2 k c_i(a), a=0.7*s_w  D=668.28 rhs=47.205
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.4*s_w  a=1.3547 v=141.9 rhs=6.7722
+   [ok  ] L8: D >= phi2 k c_i(a), a=0.4*s_w  D=668.28 rhs=5.3961
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=60.935 rhs=20.126
+   [ok  ] L9: D-v_w >= k phi(s_w) c_ii(u)  D-v_w=40.809 rhs=20.747
+   [ok  ] L9: P_w < (gamma_E-mu) v_w  P_w=60.935 rhs=1623.1 ratio=0.0375
+   [ok  ] L9: kappa_ii(u)>=2 => D >= phi2 k c_ii(u)  D=668.28 rhs=16.531
+   [ok  ] L10a: T_- - s0 >= p_k/k, D >= p_k^2/2k  29.038>=0.9984; 668.28>=11.962
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=1.0*p_k^2/2k)  0.49847 <= 0.9984
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.5*p_k^2/2k)  0.24927 <= 0.4992
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.1*p_k^2/2k)  0.049887 <= 0.09984
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=2)  28.954 >= 7.4514
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=2)  23.9948 >= 20.752
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=2)  23.9616 >= 21.9948
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=2)  tau_b=0.083391 k c_b=0.00082866 < 2.313
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=334.1)  15.115 >= 5.2768
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=334.1)  24 >= 23.9999
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=334.1)  23.9616 >= -310.138
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=334.1)  tau_b=13.922 k c_b=23.796 < 334.14
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=66.83)  26.253 >= 7.0796
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=66.83)  24 >= 24
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=66.83)  23.9616 >= -42.8276
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=66.83)  tau_b=2.7846 k c_b=7.3135 < 66.828
+   [ok  ] L12: p_k(s^2/2-s^3/6) < 1 on [0,s_+]  s_+=0.13492 max=0.2083
+   [ok  ] L12: P_1 <= p_k(1+eps_1)  P1/p_k=1.00000 1+eps1=1.31831
+   [ok  ] L12: s_+ < 1.1 sqrt(2/p_k)  
+   [ok  ] L12: P_1 < lambda  
+   [ok  ] L13: e^{U_theta} >= E_theta (with H=log M0)  e^U_th=146.48 E_th=-7.5677
+   [ok  ] L13: e^{U_theta} >= E_theta (sharper, H:=h)  E_th(h)=6.9759
+   [ok  ] L13: e^{U_theta} >= E_theta (sharpest, H:=U_theta)  E_th(U_th)=16.975
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  0.059859 >= 0.020162
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs=6.861e+05 Q=-3484
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q (sharper, H:=h)  Q(h)=2430
+   [ok  ] L17: (<eta>-mu)T <= bound for 4 nu x 6 s  min slack=15.441
+== mu=0.3 k=0.3939 rho=1.01: T=11.525642 periodicity defect (U,p,w)=1.15e-13  m_t=9.779e-01
+   [ok  ] F3: p has exactly one zero strictly inside (crest,crest+T) [trough]  zeros=1
+   [ok  ] F3: U crosses 0 exactly twice per period  n=2
+   T_-=6.243632 T_+=5.282011 s0=3.048268 D=0.481286 h=0.403273 p_k=0.232542 P_d=0.249911 w_d=0.0818826 w_k=-0.0645616
+   [ok  ] F2: Lambda_E > 0  min=3.225e-03
+   [ok  ] F2: no point in C_+ or C_-  
+   [ok  ] F4: T > 2pi/sqrt(mu)  11.52564 vs 11.47147
+   [ok  ] F5: x<=k*M0, y>0 (to integrator noise 1e-9k; exact by y=int e^-(t-s)x ds), p<lambda  max x/k=1.497 M0=12.44 min y/k at nodes=6.554e-01 (dense interp: 6.553e-01, max step 0.34) lam-max p=1.080e+00 (strict margin ~lam e^(-mu T_-) may be below double precision)
+   [ok  ] F6: <x>=k, <p'^2>=mu<p^2>  int(x-k)=7.96e-14 rel=3.2e-13
+   <eta>=0.29805772  <eta>-mu=-1.942281e-03  log(m_t)/T=-1.942281e-03
+   [ok  ] L5a: M_+ = int_{neg}(k-x) = w_d+P_d+|w_k|+p_k  M_+=0.62889764 sum=0.62889764
+   [ok  ] L5a: M_+ < k T_-  0.628898 < 2.45937
+   [ok  ] L5b: <(x-kH)p^2>=0 and D>log rho  rel=1.5e-14 D=0.48129 log rho=0.0099503
+   [ok  ] L6: T_+ < pi/omega  T_+=5.282011 pi/omega=5.711570 ratio=0.92479
+   [ok  ] L6: gamma_E - mu < k^(1/3)+1  
+   [ok  ] L7a: w_d>0, w_k<0, w(trough)<0, w(crest)>0  
+   [ok  ] L7b: unique zero s_w of w on the negative lobe, s_w<s_0  n=1
+   [ok  ] L7e: e^t(w+k) nondecreasing (solver nodes, y>1e-6k)  min increment=1.40e-02
+   [ok  ] L7d: e^t w nondecreasing on positive lobe  
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=1.0*s_w  a=0.9702 v=0.12047 rhs=0.0038864
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.7*s_w  a=0.6791 v=0.084719 rhs=0.00083799
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.4*s_w  a=0.3881 v=0.048521 rhs=8.032e-05
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=0.21958 rhs=0.098693
+   [ok  ] L9: D-v_w >= k phi(s_w) c_ii(u)  D-v_w=0.2478 rhs=0.12668
+   [ok  ] L9: P_w < (gamma_E-mu) v_w  P_w=0.21958 rhs=0.23394 ratio=0.9386
+   [ok  ] L10a: T_- - s0 >= p_k/k, D >= p_k^2/2k  3.1954>=0.59036; 0.48129>=0.068642
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=1.0*p_k^2/2k)  0.29536 <= 0.59036
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.5*p_k^2/2k)  0.14749 <= 0.29518
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.1*p_k^2/2k)  0.029509 <= 0.059036
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=0.2406)  2.1197 >= 1.1054
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=0.2406)  0.20384 >= 0.0828672
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=0.2406)  0.232542 >= 0.131647
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=0.2406)  tau_b=1.0757 k c_b=0.016696 < 1.1251
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=0.04813)  2.9885 >= 1.483
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=0.04813)  0.232283 >= 0.0270698
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=0.04813)  0.232542 >= 0.217844
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=0.04813)  tau_b=0.20689 k c_b=0.00019336 < 1.0243
+   [ok  ] L12: p_k(s^2/2-s^3/6) < 1 on [0,s_+]  s_+=0.86265 max=0.0616
+   [ok  ] L12: P_1 < lambda  
+   [ok  ] L13: e^{U_theta} >= E_theta (with H=log M0)  e^U_th=1.332 E_th=-0.067762
+   [ok  ] L13: e^{U_theta} >= E_theta (sharper, H:=h)  E_th(h)=-0.0061007
+   [ok  ] L13: e^{U_theta} >= E_theta (sharpest, H:=U_theta)  E_th(U_th)=-0.0027053
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  1.3261 >= 0.23535
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs=0.43939 Q=-0.069159
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q (sharper, H:=h)  Q(h)=-0.065165
+   [ok  ] L17: (<eta>-mu)T <= bound for 4 nu x 6 s  min slack=10.301
+== mu=0.3 k=0.585 rho=1.5: T=14.703421 periodicity defect (U,p,w)=2.39e-12  m_t=4.366e-01
+   [ok  ] F3: p has exactly one zero strictly inside (crest,crest+T) [trough]  zeros=1
+   [ok  ] F3: U crosses 0 exactly twice per period  n=2
+   T_-=11.455033 T_+=3.248388 s0=4.651056 D=7.46177 h=2.01102 p_k=1.57009 P_d=2.56545 w_d=1.61413 w_k=-0.358367
+   [ok  ] F2: Lambda_E > 0  min=1.552e-01
+   [ok  ] F2: no point in C_+ or C_-  
+   [ok  ] F4: T > 2pi/sqrt(mu)  14.70342 vs 11.47147
+   [ok  ] F5: x<=k*M0, y>0 (to integrator noise 1e-9k; exact by y=int e^-(t-s)x ds), p<lambda  max x/k=7.471 M0=22.12 min y/k at nodes=4.128e-03 (dense interp: 4.127e-03, max step 0.224) lam-max p=3.560e-01 (strict margin ~lam e^(-mu T_-) may be below double precision)
+   [ok  ] F6: <x>=k, <p'^2>=mu<p^2>  int(x-k)=-4.32e-12 rel=2.1e-13
+   <eta>=0.24364020  <eta>-mu=-5.635980e-02  log(m_t)/T=-5.635980e-02
+   [ok  ] L5a: M_+ = int_{neg}(k-x) = w_d+P_d+|w_k|+p_k  M_+=6.1080403 sum=6.1080403
+   [ok  ] L5a: M_+ < k T_-  6.10804 < 6.70119
+   [ok  ] L5b: <(x-kH)p^2>=0 and D>log rho  rel=1.5e-13 D=7.4618 log rho=0.40547
+   [ok  ] L6: T_+ < pi/omega  T_+=3.248388 pi/omega=4.849514 ratio=0.66984
+   [ok  ] L6: gamma_E - mu < k^(1/3)+1  
+   [ok  ] L7a: w_d>0, w_k<0, w(trough)<0, w(crest)>0  
+   [ok  ] L7b: unique zero s_w of w on the negative lobe, s_w<s_0  n=1
+   [ok  ] L7e: e^t(w+k) nondecreasing (solver nodes, y>1e-6k)  min increment=1.03e-03
+   [ok  ] L7d: e^t w nondecreasing on positive lobe  
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=1.0*s_w  a=1.4584 v=1.9861 rhs=0.1865
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.7*s_w  a=1.0209 v=1.3807 rhs=0.045381
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.4*s_w  a=0.5834 v=0.77675 rhs=0.0050289
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=2.3766 rhs=1.2796
+   [ok  ] L9: D-v_w >= k phi(s_w) c_ii(u)  D-v_w=3.5852 rhs=2.4454
+   [ok  ] L9: P_w < (gamma_E-mu) v_w  P_w=2.3766 rhs=4.2163 ratio=0.5637
+   [ok  ] L10a: T_- - s0 >= p_k/k, D >= p_k^2/2k  6.804>=2.6839; 7.4618>=2.107
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=1.0*p_k^2/2k)  1.3328 <= 2.6839
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.5*p_k^2/2k)  0.66328 <= 1.342
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.1*p_k^2/2k)  0.13363 <= 0.26839
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=2)  5.5401 >= 4.3212
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=2)  1.55498 >= 1.23188
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=2)  1.57009 >= 0.954985
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=2)  tau_b=1.2638 k c_b=0.036315 < 2.313
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=3.731)  4.3787 >= 3.5714
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=3.731)  1.41262 >= 1.1825
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=3.731)  1.57009 >= 0.293357
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=3.731)  tau_b=2.4253 k c_b=0.14054 < 3.8225
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=0.7462)  6.3336 >= 4.7916
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=0.7462)  1.59396 >= 0.807068
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=0.7462)  1.57009 >= 1.37011
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=0.7462)  tau_b=0.47037 k c_b=0.0029031 < 1.4191
+   [ok  ] L12: p_k(s^2/2-s^3/6) < 1 on [0,s_+]  s_+=0.60944 max=0.2323
+   [ok  ] L12: P_1 < lambda  
+   [ok  ] L13: e^{U_theta} >= E_theta (with H=log M0)  e^U_th=4.638 E_th=-1.5986
+   [ok  ] L13: e^{U_theta} >= E_theta (sharper, H:=h)  E_th(h)=-0.62808
+   [ok  ] L13: e^{U_theta} >= E_theta (sharpest, H:=U_theta)  E_th(U_th)=-0.20191
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  0.7609 >= 0.16875
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs=40.185 Q=-1.6877
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q (sharper, H:=h)  Q(h)=-1.0574
+   [ok  ] L17: (<eta>-mu)T <= bound for 4 nu x 6 s  min slack=10.328
+== mu=0.3 k=1.56 rho=4: T=29.759329 periodicity defect (U,p,w)=2.46e-11  m_t=2.313e-02
+   [ok  ] F3: p has exactly one zero strictly inside (crest,crest+T) [trough]  zeros=1
+   [ok  ] F3: U crosses 0 exactly twice per period  n=2
+   T_-=28.222049 T_+=1.537280 s0=7.845404 D=88.6218 h=3.88094 p_k=5.14222 P_d=13.5574 w_d=23.6118 w_k=-1.30687
+   [ok  ] F2: Lambda_E > 0  min=1.557e+00
+   [ok  ] F2: no point in C_+ or C_-  
+   [ok  ] F4: T > 2pi/sqrt(mu)  29.75933 vs 11.47147
+   [ok  ] F5: x<=k*M0, y>0 (to integrator noise 1e-9k; exact by y=int e^-(t-s)x ds), p<lambda  max x/k=48.47 M0=113.7 min y/k at nodes=6.424e-10 (dense interp: 6.405e-10, max step 1.11) lam-max p=1.540e-02 (strict margin ~lam e^(-mu T_-) may be below double precision)
+   [ok  ] F6: <x>=k, <p'^2>=mu<p^2>  int(x-k)=-2.90e-11 rel=2.1e-13
+   <eta>=0.17342966  <eta>-mu=-1.265703e-01  log(m_t)/T=-1.265703e-01
+   [ok  ] L5a: M_+ = int_{neg}(k-x) = w_d+P_d+|w_k|+p_k  M_+=43.618198 sum=43.618198
+   [ok  ] L5a: M_+ < k T_-  43.6182 < 44.0264
+   [ok  ] L5b: <(x-kH)p^2>=0 and D>log rho  rel=4.4e-13 D=88.622 log rho=1.3863
+   [ok  ] L6: T_+ < pi/omega  T_+=1.537280 pi/omega=3.320267 ratio=0.46300
+   [ok  ] L6: gamma_E - mu < k^(1/3)+1  
+   [ok  ] L7a: w_d>0, w_k<0, w(trough)<0, w(crest)>0  
+   [ok  ] L7b: unique zero s_w of w on the negative lobe, s_w<s_0  n=1
+   [ok  ] L7e: e^t(w+k) nondecreasing (solver nodes, y>1e-6k)  min increment=0.00e+00
+   [ok  ] L7d: e^t w nondecreasing on positive lobe  
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=1.0*s_w  a=2.7855 v=28.075 rhs=7.7095
+   [ok  ] L8: D >= phi2 k c_i(a), a=1.0*s_w  D=88.622 rhs=6.143
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.7*s_w  a=1.9499 v=18.818 rhs=1.7412
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.4*s_w  a=1.1142 v=9.826 rhs=0.21925
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=16.363 rhs=6.3433
+   [ok  ] L9: D-v_w >= k phi(s_w) c_ii(u)  D-v_w=33.399 rhs=18.47
+   [ok  ] L9: P_w < (gamma_E-mu) v_w  P_w=16.363 rhs=75.999 ratio=0.2153
+   [ok  ] L9: kappa_ii(u)>=2 => D >= phi2 k c_ii(u)  D=88.622 rhs=14.717
+   [ok  ] L10a: T_- - s0 >= p_k/k, D >= p_k^2/2k  20.377>=3.2963; 88.622>=8.4751
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=1.0*p_k^2/2k)  1.6362 <= 3.2963
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.5*p_k^2/2k)  0.81867 <= 1.6481
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.1*p_k^2/2k)  0.16434 <= 0.32963
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=2)  19.99 >= 10.538
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=2)  5.18081 >= 4.48029
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=2)  5.14222 >= 4.58081
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=2)  tau_b=0.38701 k c_b=0.0045213 < 2.313
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=44.31)  11.763 >= 7.5372
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=44.31)  5.04703 >= 4.98208
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=44.31)  5.14222 >= -8.24624
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=44.31)  tau_b=8.6137 k c_b=1.4289 < 44.311
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=8.862)  18.666 >= 10.112
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=8.862)  5.18071 >= 5.17179
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=8.862)  5.14222 >= 2.52205
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=8.862)  tau_b=1.7109 k c_b=0.18948 < 8.8634
+   [ok  ] L12: p_k(s^2/2-s^3/6) < 1 on [0,s_+]  s_+=0.35542 max=0.2863
+   [ok  ] L12: P_1 < lambda  
+   [ok  ] L13: e^{U_theta} >= E_theta (with H=log M0)  e^U_th=27.019 E_th=-1.6112
+   [ok  ] L13: e^{U_theta} >= E_theta (sharper, H:=h)  E_th(h)=1.4535
+   [ok  ] L13: e^{U_theta} >= E_theta (sharpest, H:=U_theta)  E_th(U_th)=3.5548
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  0.27731 >= 0.080514
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs=1969.8 Q=-14.812
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q (sharper, H:=h)  Q(h)=2.5725
+   [ok  ] L17: (<eta>-mu)T <= bound for 4 nu x 6 s  min slack=11.519
+== mu=0.3 k=4.68 rho=12: T=74.678587 periodicity defect (U,p,w)=4.78e-09  m_t=2.426e-07
+   [ok  ] F3: p has exactly one zero strictly inside (crest,crest+T) [trough]  zeros=1
+   [ok  ] F3: U crosses 0 exactly twice per period  n=2
+   T_-=74.007348 T_+=0.671239 s0=11.307758 D=926.101 h=5.9199 p_k=15.5823 P_d=56.2238 w_d=269.772 w_k=-4.39792
+   [ok  ] F2: Lambda_E > 0  min=1.105e+01
+   [ok  ] F2: no point in C_+ or C_-  
+   [ok  ] F4: T > 2pi/sqrt(mu)  74.67859 vs 11.47147
+   [ok  ] F5: x<=k*M0, y>0 (to integrator noise 1e-9k; exact by y=int e^-(t-s)x ds), p<lambda  max x/k=372.4 M0=879.8 min y/k at nodes=2.616e-28 (dense interp: -6.767e-17, max step 4.5) lam-max p=1.457e-07 (strict margin ~lam e^(-mu T_-) may be below double precision)
+   [ok  ] F6: <x>=k, <p'^2>=mu<p^2>  int(x-k)=5.35e-09 rel=2.5e-12
+   <eta>=0.09603963  <eta>-mu=-2.039604e-01  log(m_t)/T=-2.039634e-01
+   [ok  ] L5a: M_+ = int_{neg}(k-x) = w_d+P_d+|w_k|+p_k  M_+=345.97638 sum=345.97638
+   [ok  ] L5a: M_+ < k T_-  345.976 < 346.354
+   [ok  ] L5b: <(x-kH)p^2>=0 and D>log rho  rel=2.5e-13 D=926.1 log rho=2.4849
+   [ok  ] L6: T_+ < pi/omega  T_+=0.671239 pi/omega=2.233457 ratio=0.30054
+   [ok  ] L6: omega>=omega0(k), T_->2pi-pi/omega0  omega=1.4066 om0=0.4192 T_-=74.0073
+   [ok  ] L6: gamma_E - mu < k^(1/3)+1  
+   [ok  ] L7a: w_d>0, w_k<0, w(trough)<0, w(crest)>0  
+   [ok  ] L7b: unique zero s_w of w on the negative lobe, s_w<s_0  n=1
+   [ok  ] L7e: e^t(w+k) nondecreasing (solver nodes, y>1e-6k)  min increment=-8.88e-16
+   [ok  ] L7d: e^t w nondecreasing on positive lobe  
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=1.0*s_w  a=4.0718 v=334.2 rhs=144.08
+   [ok  ] L8: D >= phi2 k c_i(a), a=1.0*s_w  D=926.1 rhs=114.8
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.7*s_w  a=2.8502 v=217.97 rhs=25.619
+   [ok  ] L8: D >= phi2 k c_i(a), a=0.7*s_w  D=926.1 rhs=20.413
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.4*s_w  a=1.6287 v=104.07 rhs=2.6097
+   [ok  ] L8: D >= phi2 k c_i(a), a=0.4*s_w  D=926.1 rhs=2.0794
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=114.49 rhs=29.188
+   [ok  ] L9: D-v_w >= k phi(s_w) c_ii(u)  D-v_w=284.36 rhs=117.87
+   [ok  ] L9: P_w < (gamma_E-mu) v_w  P_w=114.49 rhs=1195.1 ratio=0.0958
+   [ok  ] L9: kappa_ii(u)>=2 => D >= phi2 k c_ii(u)  D=926.1 rhs=93.918
+   [ok  ] L10a: T_- - s0 >= p_k/k, D >= p_k^2/2k  62.7>=3.3295; 926.1>=25.941
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=1.0*p_k^2/2k)  1.6629 <= 3.3295
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.5*p_k^2/2k)  0.83151 <= 1.6648
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.1*p_k^2/2k)  0.16636 <= 0.33295
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=2)  62.571 >= 19.872
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=2)  15.5976 >= 13.4888
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=2)  15.5823 >= 14.9976
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=2)  tau_b=0.12827 k c_b=0.00057294 < 2.313
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=463.1)  33.017 >= 14.067
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=463.1)  15.5992 >= 15.5989
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=463.1)  15.5823 >= -123.316
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=463.1)  tau_b=29.683 k c_b=4.68 < 463.05
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=92.61)  56.763 >= 18.873
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=92.61)  15.6 >= 15.6
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=92.61)  15.5823 >= -12.183
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=92.61)  tau_b=5.9366 k c_b=3.5341 < 92.61
+   [ok  ] L12: p_k(s^2/2-s^3/6) < 1 on [0,s_+]  s_+=0.18065 max=0.2389
+   [ok  ] L12: P_1 <= p_k(1+eps_1)  P1/p_k=1.00000 1+eps1=1.11836
+   [ok  ] L12: s_+ < 1.1 sqrt(2/p_k)  
+   [ok  ] L12: P_1 < lambda  
+   [ok  ] L13: e^{U_theta} >= E_theta (with H=log M0)  e^U_th=206.02 E_th=68.297
+   [ok  ] L13: e^{U_theta} >= E_theta (sharper, H:=h)  E_th(h)=77.759
+   [ok  ] L13: e^{U_theta} >= E_theta (sharpest, H:=U_theta)  E_th(U_th)=84.274
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  0.092162 >= 0.031422
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs=1.2132e+05 Q=3470.2
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q (sharper, H:=h)  Q(h)=3958.2
+   [ok  ] L17: (<eta>-mu)T <= bound for 4 nu x 6 s  min slack=13.83
+   (direct find_cycle landed on E for mu=0.02 rho=1.01; continuing down from rho=1.5)
+     rho=1.5: U0=3.8351 T=130.06668 res=4.4e-16 m_t=0.654421
+     rho=1.35: U0=3.4452 T=109.61755 res=1.4e-12 m_t=0.746277
+     rho=1.2: U0=2.8762 T=85.54100 res=1.8e-13 m_t=0.849478
+     rho=1.12: U0=2.409 T=70.28791 res=3.0e-15 m_t=0.907990
+     rho=1.07: U0=1.9767 T=59.56339 res=5.8e-13 m_t=0.945048
+     rho=1.04: U0=1.5946 T=52.84832 res=6.1e-15 m_t=0.967722
+     rho=1.02: U0=1.2072 T=48.48759 res=1.0e-13 m_t=0.983437
+     rho=1.01: U0=0.9018 T=46.40955 res=3.5e-15 m_t=0.991592
+== mu=0.02 k=0.020604 rho=1.01: T=46.409550 periodicity defect (U,p,w)=1.50e-15  m_t=9.916e-01
+   [ok  ] F3: p has exactly one zero strictly inside (crest,crest+T) [trough]  zeros=1
+   [ok  ] F3: U crosses 0 exactly twice per period  n=2
+   T_-=28.301622 T_+=18.107928 s0=13.747585 D=1.30565 h=0.901803 p_k=0.144929 P_d=0.15878 w_d=0.00371199 w_k=-0.00258462
+   [ok  ] F2: Lambda_E > 0  min=1.802e-04
+   [ok  ] F2: no point in C_+ or C_-  
+   [ok  ] F4: T > 2pi/sqrt(mu)  46.40955 vs 44.42883
+   [ok  ] F5: x<=k*M0, y>0 (to integrator noise 1e-9k; exact by y=int e^-(t-s)x ds), p<lambda  max x/k=2.464 M0=106.6 min y/k at nodes=2.731e-01 (dense interp: 2.731e-01, max step 0.603) lam-max p=8.853e-01 (strict margin ~lam e^(-mu T_-) may be below double precision)
+   [ok  ] F6: <x>=k, <p'^2>=mu<p^2>  int(x-k)=-1.11e-15 rel=8.3e-16
+   <eta>=0.01981807  <eta>-mu=-1.819322e-04  log(m_t)/T=-1.819322e-04
+   [ok  ] L5a: M_+ = int_{neg}(k-x) = w_d+P_d+|w_k|+p_k  M_+=0.31000506 sum=0.31000506
+   [ok  ] L5a: M_+ < k T_-  0.310005 < 0.583127
+   [ok  ] L5b: <(x-kH)p^2>=0 and D>log rho  rel=3.3e-15 D=1.3056 log rho=0.0099503
+   [ok  ] L6: T_+ < pi/omega  T_+=18.107928 pi/omega=22.106257 ratio=0.81913
+   [ok  ] L6: gamma_E - mu < k^(1/3)+1  
+   [ok  ] L7a: w_d>0, w_k<0, w(trough)<0, w(crest)>0  
+   [ok  ] L7b: unique zero s_w of w on the negative lobe, s_w<s_0  n=1
+   [ok  ] L7e: e^t(w+k) nondecreasing (solver nodes, y>1e-6k)  min increment=1.68e-02
+   [ok  ] L7d: e^t w nondecreasing on positive lobe  
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=1.0*s_w  a=1.0708 v=0.084997 rhs=0.00020539
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.7*s_w  a=0.7496 v=0.059515 rhs=4.3248e-05
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.4*s_w  a=0.4283 v=0.034012 rhs=4.0583e-06
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=0.15733 rhs=0.037532
+   [ok  ] L9: D-v_w >= k phi(s_w) c_ii(u)  D-v_w=1.136 rhs=0.25505
+   [ok  ] L9: P_w < (gamma_E-mu) v_w  P_w=0.15733 rhs=0.16963 ratio=0.9275
+   [ok  ] L10a: T_- - s0 >= p_k/k, D >= p_k^2/2k  14.554>=7.034; 1.3056>=0.50971
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=1.0*p_k^2/2k)  3.6278 <= 7.034
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.5*p_k^2/2k)  1.7706 <= 3.517
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.1*p_k^2/2k)  0.35169 <= 0.7034
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=0.6528)  9.8036 >= 7.9604
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=0.6528)  0.122975 >= 0.0796537
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=0.6528)  0.144929 >= 0.109919
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=0.6528)  tau_b=4.7504 k c_b=0.012822 < 1.3617
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=0.1306)  13.652 >= 10.68
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=0.1306)  0.144205 >= 0.0281706
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=0.1306)  0.144929 >= 0.141594
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=0.1306)  tau_b=0.90212 k c_b=0.00056658 < 1.0667
+   [ok  ] L12: p_k(s^2/2-s^3/6) < 1 on [0,s_+]  s_+=0.93157 max=0.0434
+   [ok  ] L12: P_1 < lambda  
+   [ok  ] L13: e^{U_theta} >= E_theta (with H=log M0)  e^U_th=1.9503 E_th=-0.041197
+   [ok  ] L13: e^{U_theta} >= E_theta (sharper, H:=h)  E_th(h)=0.013117
+   [ok  ] L13: e^{U_theta} >= E_theta (sharpest, H:=U_theta)  E_th(U_th)=0.016488
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  4.2217 >= 0.32751
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs=0.097002 Q=-0.0021985
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q (sharper, H:=h)  Q(h)=-0.0020838
+   [ok  ] L17: (<eta>-mu)T <= bound for 4 nu x 6 s  min slack=28.346
+== mu=0.02 k=0.0306 rho=1.5: T=130.066679 periodicity defect (U,p,w)=1.21e-11  m_t=6.544e-01
+   [ok  ] F3: p has exactly one zero strictly inside (crest,crest+T) [trough]  zeros=1
+   [ok  ] F3: U crosses 0 exactly twice per period  n=2
+   T_-=122.972275 T_+=7.094404 s0=49.555361 D=53.4361 h=3.8351 p_k=1.1657 P_d=2.24616 w_d=0.295125 w_k=-0.0164764
+   [ok  ] F2: Lambda_E > 0  min=1.113e-02
+   [ok  ] F2: no point in C_+ or C_-  
+   [ok  ] F4: T > 2pi/sqrt(mu)  130.06668 vs 44.42883
+   [ok  ] F5: x<=k*M0, y>0 (to integrator noise 1e-9k; exact by y=int e^-(t-s)x ds), p<lambda  max x/k=46.3 M0=196.1 min y/k at nodes=-4.937e-11 (dense interp: -1.664e-09, max step 8.21) lam-max p=3.626e-01 (strict margin ~lam e^(-mu T_-) may be below double precision)
+   [ok  ] F6: <x>=k, <p'^2>=mu<p^2>  int(x-k)=-1.74e-11 rel=3.9e-12
+   <eta>=0.01674010  <eta>-mu=-3.259900e-03  log(m_t)/T=-3.259900e-03
+   [ok  ] L5a: M_+ = int_{neg}(k-x) = w_d+P_d+|w_k|+p_k  M_+=3.7234661 sum=3.7234661
+   [ok  ] L5a: M_+ < k T_-  3.72347 < 3.76295
+   [ok  ] L5b: <(x-kH)p^2>=0 and D>log rho  rel=2.2e-13 D=53.436 log rho=0.40547
+   [ok  ] L6: T_+ < pi/omega  T_+=7.094404 pi/omega=18.228633 ratio=0.38919
+   [ok  ] L6: gamma_E - mu < k^(1/3)+1  
+   [ok  ] L7a: w_d>0, w_k<0, w(trough)<0, w(crest)>0  
+   [ok  ] L7b: unique zero s_w of w on the negative lobe, s_w<s_0  n=1
+   [ok  ] L7e: e^t(w+k) nondecreasing (solver nodes, y>1e-6k)  min increment=1.40e-08
+   [ok  ] L7d: e^t w nondecreasing on positive lobe  
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=1.0*s_w  a=2.4308 v=2.8438 rhs=0.07903
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.7*s_w  a=1.7016 v=1.9754 rhs=0.017349
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.4*s_w  a=0.9723 v=1.1163 rhs=0.0018025
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=2.3653 rhs=1.4069
+   [ok  ] L9: D-v_w >= k phi(s_w) c_ii(u)  D-v_w=47.695 rhs=33.837
+   [ok  ] L9: P_w < (gamma_E-mu) v_w  P_w=2.3653 rhs=5.7952 ratio=0.4081
+   [ok  ] L10a: T_- - s0 >= p_k/k, D >= p_k^2/2k  73.417>=38.095; 53.436>=22.204
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=1.0*p_k^2/2k)  20.278 <= 38.095
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.5*p_k^2/2k)  9.7392 <= 19.047
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.1*p_k^2/2k)  1.9042 <= 3.8095
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=2)  71.702 >= 57.981
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=2)  1.1637 >= 1.00119
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=2)  1.1657 >= 1.1237
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=2)  tau_b=1.7148 k c_b=0.0037342 < 2.313
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=26.72)  48.514 >= 41.789
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=26.72)  0.950164 >= 0.938331
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=26.72)  1.1657 >= 0.415803
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=26.72)  tau_b=24.903 k c_b=0.030598 < 26.718
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=5.344)  68.805 >= 56.065
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=5.344)  1.14352 >= 1.13027
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=5.344)  1.1657 >= 1.03665
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=5.344)  tau_b=4.6119 k c_b=0.018473 < 5.3693
+   [ok  ] L12: p_k(s^2/2-s^3/6) < 1 on [0,s_+]  s_+=0.66366 max=0.1999
+   [ok  ] L12: P_1 < lambda  
+   [ok  ] L13: e^{U_theta} >= E_theta (with H=log M0)  e^U_th=25.936 E_th=5.836
+   [ok  ] L13: e^{U_theta} >= E_theta (sharper, H:=h)  E_th(h)=6.7425
+   [ok  ] L13: e^{U_theta} >= E_theta (sharpest, H:=U_theta)  E_th(U_th)=7.1064
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  1.227 >= 0.22
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs=13.951 Q=0.12198
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q (sharper, H:=h)  Q(h)=0.14484
+   [ok  ] L17: (<eta>-mu)T <= bound for 4 nu x 6 s  min slack=14.447
+== mu=0.02 k=0.0816 rho=4: T=343.057784 periodicity defect (U,p,w)=3.22e-10  m_t=7.068e-02
+   [ok  ] F3: p has exactly one zero strictly inside (crest,crest+T) [trough]  zeros=1
+   [ok  ] F3: U crosses 0 exactly twice per period  n=2
+   T_-=340.362036 T_+=2.695749 s0=96.351278 D=793.112 h=6.07937 p_k=4.04504 P_d=12.8859 w_d=10.751 w_k=-0.065431
+   [ok  ] F2: Lambda_E > 0  min=1.682e-01
+   [ok  ] F2: no point in C_+ or C_-  
+   [ok  ] F4: T > 2pi/sqrt(mu)  343.05778 vs 44.42883
+   [ok  ] F5: x<=k*M0, y>0 (to integrator noise 1e-9k; exact by y=int e^-(t-s)x ds), p<lambda  max x/k=436.8 M0=1041 min y/k at nodes=-5.789e-11 (dense interp: -3.015e-09, max step 14.9) lam-max p=3.164e-02 (strict margin ~lam e^(-mu T_-) may be below double precision)
+   [ok  ] F6: <x>=k, <p'^2>=mu<p^2>  int(x-k)=-4.83e-10 rel=7.2e-12
+   <eta>=0.01227635  <eta>-mu=-7.723653e-03  log(m_t)/T=-7.723653e-03
+   [ok  ] L5a: M_+ = int_{neg}(k-x) = w_d+P_d+|w_k|+p_k  M_+=27.747368 sum=27.747368
+   [ok  ] L5a: M_+ < k T_-  27.7474 < 27.7735
+   [ok  ] L5b: <(x-kH)p^2>=0 and D>log rho  rel=2.3e-13 D=793.11 log rho=1.3863
+   [ok  ] L6: T_+ < pi/omega  T_+=2.695749 pi/omega=11.440026 ratio=0.23564
+   [ok  ] L6: gamma_E - mu < k^(1/3)+1  
+   [ok  ] L7a: w_d>0, w_k<0, w(trough)<0, w(crest)>0  
+   [ok  ] L7b: unique zero s_w of w on the negative lobe, s_w<s_0  n=1
+   [ok  ] L7e: e^t(w+k) nondecreasing (solver nodes, y>1e-6k)  min increment=0.00e+00
+   [ok  ] L7d: e^t w nondecreasing on positive lobe  
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=1.0*s_w  a=4.8891 v=46.788 rhs=6.9402
+   [ok  ] L8: D >= phi2 k c_i(a), a=1.0*s_w  D=793.11 rhs=5.53
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.7*s_w  a=3.4224 v=31.102 rhs=1.0453
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.4*s_w  a=1.9556 v=16.248 rhs=0.092147
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=21.252 rhs=7.3817
+   [ok  ] L9: D-v_w >= k phi(s_w) c_ii(u)  D-v_w=693.5 rhs=341.22
+   [ok  ] L9: P_w < (gamma_E-mu) v_w  P_w=21.252 rhs=104.82 ratio=0.2027
+   [ok  ] L9: kappa_ii(u)>=2 => D >= phi2 k c_ii(u)  D=793.11 rhs=271.89
+   [ok  ] L10a: T_- - s0 >= p_k/k, D >= p_k^2/2k  244.01>=49.572; 793.11>=100.26
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=1.0*p_k^2/2k)  24.818 <= 49.572
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.5*p_k^2/2k)  12.394 <= 24.786
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.1*p_k^2/2k)  2.4769 <= 4.9572/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/whlib.py:45: RuntimeWarning: overflow encountered in exp
+  x = k * np.exp(U)
+
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=2)  243.52 >= 139.25
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=2)  4.04817 >= 3.50022
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=2)  4.04504 >= 4.00817
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=2)  tau_b=0.49418 k c_b=0.00046331 < 2.313
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=396.6)  144.41 >= 98.588
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=396.6)  3.85285 >= 3.84821
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=396.6)  4.04504 >= -4.07828
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=396.6)  tau_b=99.599 k c_b=0.0816 < 396.56
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=79.31)  224.39 >= 132.27
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=79.31)  4.03412 >= 4.03318
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=79.31)  4.04504 >= 2.44789
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=79.31)  tau_b=19.622 k c_b=0.081547 < 79.311
+   [ok  ] L12: p_k(s^2/2-s^3/6) < 1 on [0,s_+]  s_+=0.40033 max=0.2809
+   [ok  ] L12: P_1 < lambda  
+   [ok  ] L13: e^{U_theta} >= E_theta (with H=log M0)  e^U_th=240.05 E_th=123.68
+   [ok  ] L13: e^{U_theta} >= E_theta (sharper, H:=h)  E_th(h)=126.14
+   [ok  ] L13: e^{U_theta} >= E_theta (sharpest, H:=U_theta)  E_th(U_th)=127.84
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  0.36011 >= 0.10278
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs=772.16 Q=28.633
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q (sharper, H:=h)  Q(h)=29.209
+   [ok  ] L17: (<eta>-mu)T <= bound for 4 nu x 6 s  min slack=13.184
+== mu=0.02 k=0.2448 rho=12: T=877.723749 periodicity defect (U,p,w)=1.31e-08  m_t=1.307e-05
+   [ok  ] F3: p has exactly one zero strictly inside (crest,crest+T) [trough]  zeros=1
+   [ok  ] F3: U crosses 0 exactly twice per period  n=2
+   T_-=876.640435 T_+=1.083314 s0=143.916678 D=8356.54 h=8.14168 p_k=12.2385 P_d=51.3406 w_d=150.772 w_k=-0.226309
+   [ok  ] F2: Lambda_E > 0  min=1.650e+00
+   [ok  ] F2: no point in C_+ or C_-  
+   [ok  ] F4: T > 2pi/sqrt(mu)  877.72375 vs 44.42883
+   [ok  ] F5: x<=k*M0, y>0 (to integrator noise 1e-9k; exact by y=int e^-(t-s)x ds), p<lambda  max x/k=3435 M0=8116 min y/k at nodes=-4.848e-11 (dense interp: -3.117e-09, max step 15.3) lam-max p=5.404e-06 (strict margin ~lam e^(-mu T_-) may be below double precision)
+   [ok  ] F6: <x>=k, <p'^2>=mu<p^2>  int(x-k)=1.52e-08 rel=1.1e-11
+   <eta>=0.00718871  <eta>-mu=-1.281129e-02  log(m_t)/T=-1.281137e-02
+   [ok  ] L5a: M_+ = int_{neg}(k-x) = w_d+P_d+|w_k|+p_k  M_+=214.57704 sum=214.57704
+   [ok  ] L5a: M_+ < k T_-  214.577 < 214.602
+   [ok  ] L5b: <(x-kH)p^2>=0 and D>log rho  rel=4.0e-13 D=8356.5 log rho=2.4849
+   [ok  ] L6: T_+ < pi/omega  T_+=1.083314 pi/omega=7.002370 ratio=0.15471
+   [ok  ] L6: gamma_E - mu < k^(1/3)+1  
+   [ok  ] L7a: w_d>0, w_k<0, w(trough)<0, w(crest)>0  
+   [ok  ] L7b: unique zero s_w of w on the negative lobe, s_w<s_0  n=1
+   [ok  ] L7e: e^t(w+k) nondecreasing (solver nodes, y>1e-6k)  min increment=-8.88e-16
+   [ok  ] L7d: e^t w nondecreasing on positive lobe  
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=1.0*s_w  a=6.4247 v=490.07 rhs=120.36
+   [ok  ] L8: D >= phi2 k c_i(a), a=1.0*s_w  D=8356.5 rhs=95.902
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.7*s_w  a=4.4973 v=313.29 rhs=12.918
+   [ok  ] L8: D >= phi2 k c_i(a), a=0.7*s_w  D=8356.5 rhs=10.293
+   [ok  ] L8: v=|U(a/2)| >= k c_i(a)(1-e^-v), a=0.4*s_w  a=2.5699 v=148.95 rhs=0.85093
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=178.95 rhs=33.413
+   [ok  ] L9: D-v_w >= k phi(s_w) c_ii(u)  D-v_w=7276.6 rhs=2313.6
+   [ok  ] L9: P_w < (gamma_E-mu) v_w  P_w=178.95 rhs=1251.8 ratio=0.1430
+   [ok  ] L9: kappa_ii(u)>=2 => D >= phi2 k c_ii(u)  D=8356.5 rhs=1843.5
+   [ok  ] L10a: T_- - s0 >= p_k/k, D >= p_k^2/2k  732.72>=49.994; 8356.5>=305.92
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=1.0*p_k^2/2k)  24.994 <= 49.994
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.5*p_k^2/2k)  12.497 <= 24.997
+   [ok  ] L10a: T_- - t_L <= 2L/p_k (L=0.1*p_k^2/2k)  2.4994 <= 4.9994
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=2)  732.56 >= 261.26
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=2)  12.2398 >= 10.5835
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=2)  12.2385 >= 12.1998
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=2)  tau_b=0.16341 k c_b=6.0717e-05 < 2.313
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=4178)  391.34 >= 184.76
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=4178)  12.2351 >= 12.235
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=4178)  12.2385 >= -71.3303
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=4178)  tau_b=341.38 k c_b=0.2448 < 4178.3
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k) (l=835.7)  664.45 >= 247.88
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l) (l=835.7)  12.24 >= 12.24
+   [ok  ] L10c: p_k >= p(s_l) - mu l (l=835.7)  12.2385 >= -4.4731
+   [ok  ] L10d: k c_b(tau_b) < l/phi_l (contrapositive, l=835.7)  tau_b=68.272 k c_b=0.2448 < 835.65
+   [ok  ] L12: p_k(s^2/2-s^3/6) < 1 on [0,s_+]  s_+=0.21111 max=0.2535
+   [ok  ] L12: P_1 <= p_k(1+eps_1)  P1/p_k=1.00000 1+eps1=1.00889
+   [ok  ] L12: s_+ < 1.1 sqrt(2/p_k)  
+   [ok  ] L12: P_1 < lambda  
+   [ok  ] L13: e^{U_theta} >= E_theta (with H=log M0)  e^U_th=1896.9 E_th=1245.8
+   [ok  ] L13: e^{U_theta} >= E_theta (sharper, H:=h)  E_th(h)=1253.3
+   [ok  ] L13: e^{U_theta} >= E_theta (sharpest, H:=U_theta)  E_th(U_th)=1258.4
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  0.11766 >= 0.040284
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs=46096 Q=2637.2
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q (sharper, H:=h)  Q(h)=2652.9
+   [ok  ] L13: M_+/k >= p_k^2 sqrt(1-dQ)/(sqrt8 k) - 1/2  M_+/k=876.54 rhs=151.07  M_+/p_k^2=1.4326
+   [ok  ] L17: (<eta>-mu)T <= bound for 4 nu x 6 s  min slack=14.822
+
+FAILS: none

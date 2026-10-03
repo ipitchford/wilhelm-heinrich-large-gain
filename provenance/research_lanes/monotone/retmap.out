@@ -1,0 +1,55 @@
+=== mu=1.0 rho=1.3 k=2.6000 crest U*=1.5094 y*=6.0264 (x*=11.7628) m_t=0.49327
+  DP entrywise>0 fails at 0/49 grid points; worst: None
+  radial sublinearity (rel. E) violated at 19/98
+  D2P[e1,e1]_1: neg 0.65 pos 0.35  range [-1.33,3.46]
+  D2P[e1,e1]_2: neg 0.57 pos 0.43  range [-3.64,7.47]
+  D2P[e2,e2]_1: neg 0.45 pos 0.55  range [-0.677,2.47]
+  D2P[e2,e2]_2: neg 0.41 pos 0.59  range [-0.834,4.92]
+  D2P[rad,rad]_1: neg 1.00 pos 0.00  range [-1.81,-0.0487]
+  D2P[rad,rad]_2: neg 0.94 pos 0.06  range [-7.22,0.264]
+  D2P[e1+e2,e1+e2]_1: neg 1.00 pos 0.00  range [-2.17,-0.0539]
+  D2P[e1+e2,e1+e2]_2: neg 0.80 pos 0.20  range [-4.15,2.91]
+=== mu=1.0 rho=2.5 k=5.0000 crest U*=2.7329 y*=22.4925 (x*=76.8898) m_t=0.06349
+  DP entrywise>0 fails at 0/49 grid points; worst: None
+  radial sublinearity (rel. E) violated at 5/98
+  D2P[e1,e1]_1: neg 0.69 pos 0.31  range [-3.73,6.58]
+  D2P[e1,e1]_2: neg 0.67 pos 0.33  range [-32.6,54.6]
+  D2P[e2,e2]_1: neg 0.73 pos 0.27  range [-5.52,2.97]
+  D2P[e2,e2]_2: neg 0.69 pos 0.31  range [-24.7,31.2]
+  D2P[rad,rad]_1: neg 1.00 pos 0.00  range [-2.27,-1.47e-05]
+  D2P[rad,rad]_2: neg 1.00 pos 0.00  range [-30.3,-0.000203]
+  D2P[e1+e2,e1+e2]_1: neg 1.00 pos 0.00  range [-26.8,-5.3e-06]
+  D2P[e1+e2,e1+e2]_2: neg 1.00 pos 0.00  range [-48.9,-6.15e-05]
+=== mu=0.2 rho=1.5 k=0.3600 crest U*=2.1704 y*=1.9727 (x*=3.1544) m_t=0.49133
+  DP entrywise>0 fails at 0/49 grid points; worst: None
+  radial sublinearity (rel. E) violated at 28/98
+  D2P[e1,e1]_1: neg 0.63 pos 0.37  range [-1.79,5.37]
+  D2P[e1,e1]_2: neg 0.49 pos 0.51  range [-2.2,3.63]
+  D2P[e2,e2]_1: neg 0.41 pos 0.59  range [-1.45,3]
+  D2P[e2,e2]_2: neg 0.31 pos 0.69  range [-0.357,2.18]
+  D2P[rad,rad]_1: neg 1.00 pos 0.00  range [-2.85,-0.124]
+  D2P[rad,rad]_2: neg 0.92 pos 0.08  range [-4.86,0.188]
+  D2P[e1+e2,e1+e2]_1: neg 1.00 pos 0.00  range [-5.5,-0.00978]
+  D2P[e1+e2,e1+e2]_2: neg 0.69 pos 0.31  range [-2.27,1.61]
+=== mu=0.2 rho=1.1 k=0.2640 crest U*=1.1676 y*=0.6851 (x*=0.8486) m_t=0.82654
+  DP entrywise>0 fails at 0/49 grid points; worst: None
+  radial sublinearity (rel. E) violated at 95/98
+  D2P[e1,e1]_1: neg 0.57 pos 0.43  range [-0.473,2.89]
+  D2P[e1,e1]_2: neg 0.24 pos 0.76  range [-0.171,0.897]
+  D2P[e2,e2]_1: neg 0.20 pos 0.80  range [-0.157,1.56]
+  D2P[e2,e2]_2: neg 0.08 pos 0.92  range [-0.0151,0.428]
+  D2P[rad,rad]_1: neg 1.00 pos 0.00  range [-1.42,-0.0109]
+  D2P[rad,rad]_2: neg 0.59 pos 0.41  range [-0.595,0.123]
+  D2P[e1+e2,e1+e2]_1: neg 0.82 pos 0.18  range [-0.573,0.97]
+  D2P[e1+e2,e1+e2]_2: neg 0.39 pos 0.61  range [-0.202,0.505]
+=== mu=3.0 rho=1.5 k=18.0000 crest U*=1.9777 y*=37.2528 (x*=130.0658) m_t=0.42239
+  DP entrywise>0 fails at 0/49 grid points; worst: None
+  radial sublinearity (rel. E) violated at 17/98
+  D2P[e1,e1]_1: neg 0.65 pos 0.35  range [-1.93,4.92]
+  D2P[e1,e1]_2: neg 0.55 pos 0.45  range [-21.9,45.7]
+  D2P[e2,e2]_1: neg 0.43 pos 0.57  range [-1.38,2.81]
+  D2P[e2,e2]_2: neg 0.41 pos 0.59  range [-5.83,28]
+  D2P[rad,rad]_1: neg 1.00 pos 0.00  range [-2.19,-0.114]
+  D2P[rad,rad]_2: neg 0.96 pos 0.04  range [-44.6,1.58]
+  D2P[e1+e2,e1+e2]_1: neg 1.00 pos 0.00  range [-5.06,-0.0788]
+  D2P[e1+e2,e1+e2]_2: neg 0.84 pos 0.16  range [-24.4,17]

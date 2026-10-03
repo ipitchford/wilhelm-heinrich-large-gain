@@ -1,0 +1,25 @@
+segment outcomes: {'ok': 277, 'y<0': 23}
+(i) |U(a/2)| >= k phi c_i(a)                                   tests=  554 fails=  0 min rel slack=1.513e-03
+(ii) P_w >= k phi_w (u-1+e^-u)                                 tests=  277 fails=  0 min rel slack=6.266e-03
+(ii) D - v_w >= k phi_w c_ii(u)                                tests=  277 fails=  0 min rel slack=3.414e-03
+G1 s_r >= pk/k                                                 tests=  277 fails=  0 min rel slack=4.928e-02
+G1 D >= pk^2/2k                                                tests=  277 fails=  0 min rel slack=2.436e-02
+G1 p(T- - u) >= pk - k u                                       tests= 1662 fails=  0 min rel slack=1.284e-02
+G1 U(T- - u) <= -(pk u - k u^2/2)                              tests= 1662 fails=  0 min rel slack=6.180e-06
+C: M+ = w_d - w_k + p_k - p_d (segment)                        tests=  277 fails=  0 min rel slack=1.000e-06
+F: w(s) <= m(s)                                                tests= 2216 fails=  0 min rel slack=3.116e-04
+F: M+(M+ + mu P1) >= Q (H:=h)                                  tests=  277 fails=  0 min rel slack=1.845e-01
+F: e^{U_th} >= th pk((1-th^2)pk^2 - 2 mu P1 U_th)/(2k)         tests=  277 fails=  0 min rel slack=3.239e-01
+F: tau1 - s_th >= th pk/(mu P1 + M+)                           tests=  277 fails=  0 min rel slack=1.462e-04
+G2: s_th <= U_th/(th pk)                                       tests=  277 fails=  0 min rel slack=1.101e-03
+G2: tau1 - s_th <= v_c                                         tests=  216 fails=  0 min rel slack=2.616e-04
+G3: W_c >= pk e^{-tau1}/tau1                                   tests=  277 fails=  0 min rel slack=9.837e-02
+G3: drop(v) >= (Wc+k)(1-(1+v)e^-v) - k(v-1+e^-v)               tests= 1662 fails=  0 min rel slack=1.802e-07
+G3: w(crest+v)+k >= e^-v (Wc+k)                                tests= 1662 fails=  0 min rel slack=3.781e-03
+(iii) r_l >= sqrt(2(D-l)/k)                                    tests=  166 fails=  0 min rel slack=1.966e-02
+(iii) p(s_l) >= k phi_l Psi(r_l)                               tests=  166 fails=  0 min rel slack=1.317e-01
+(iii) pk >= p(s_l) - mu l                                      tests=  166 fails=  0 min rel slack=1.201e-04
+(iv) p(s) >= k phi(s) Psi(s-s_l)                               tests=  498 fails=  0 min rel slack=1.892e+00
+(iv) |U(s)| >= p(s)(1-e^{-mu(T- - s)})/mu                      tests=  498 fails=  0 min rel slack=5.004e-06
+F: P1 <= pk + 1.1 k sqrt(2/pk)                                 tests=  156 fails=  0 min rel slack=5.254e-03
+ALL SEGMENT CHECKS PASSED

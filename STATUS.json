@@ -1,0 +1,36 @@
+{
+  "version": "3.1.0-candidate",
+  "date": "2026-10-03",
+  "status": "research_candidate",
+  "title": "Convex attractor geometry, exact stability formulas and large-gain uniqueness for the Wilhelm–Heinrich oscillator",
+  "original_all_parameter_conjecture_solved": false,
+  "uniqueness_proved_regions": [
+    "k >= 1000 for 0 < mu <= 1",
+    "k >= 1000 mu^3 for mu >= 1",
+    "non-explicit right-hand neighbourhood of each Hopf point"
+  ],
+  "open_region": "k_H < k < 1000 max(1, mu^3) outside the Hopf collars",
+  "certified_multicycle_counterexample": false,
+  "neutral_cycle_excluded_in_open_region": false,
+  "conditional_results": {},
+  "self_contained_for_stated_claims": true,
+  "independent_specialist_review": false,
+  "internal_adversarial_review": true,
+  "cross_model_review_of_all_new_sections": true,
+  "priority_established": false,
+  "interval_certified_computations": {
+    "scope": "56 selected scalar comparisons only",
+    "orbit_enclosures": false,
+    "formal_proof": false
+  },
+  "default_driver_passed": true,
+  "default_driver_minutes": 7.3,
+  "pdf_pages": 133,
+  "claims_file": "CLAIMS.json",
+  "local_slowgraph": {
+    "state": "written-proof-internal-check",
+    "source": "Eldering Theorem 3.2",
+    "label": "wed:lem:slowgraph",
+    "not_global_uniqueness": true
+  }
+}

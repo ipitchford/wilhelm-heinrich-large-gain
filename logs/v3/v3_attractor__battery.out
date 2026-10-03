@@ -1,0 +1,329 @@
+== mu=0.02 rho=1.5 k=0.0306 gamE=1.029447 lam_u=0.004723+0.172344j
+   spiral: 106 crests, t_conv=8749.7, r0=8.52e-04, t_skip=34.00  [1s]
+   spiral samples: 2434  [9s]
+   cycle: T=130.066679 crest U=3.835101 Umin=-53.436 res=5.1e-14; Riccati periodic after 2 periods (defect 1.1e-12)
+   A8(a): lambda_c: Riccati -0.0032599002 | QR, no Riccati -0.0032599002 (prev period -0.0032599002) | log max eig(M)/T -0.0032599002
+   M3^T n(a0) = m_s n(a0): rel.err 3.19e-13   (m_s = 3.691e-58)
+   A5: max |O|/maxterm = 3.37e-11;  min K/maxterm = 9.157e-09;  min W/maxterm = 8.092e-10
+   A6: min Lambda_E/scale = 4.136e-05;  points in E+C_+: 0, in E+C_-: 0
+   A2 bounds (logs): log eta in [-55.6,-0.6292] vs [-57.49,-0.2267]; log zeta in [-56.28,-0.1385] vs [-57.51,0.3483]  ok=True; min(eta - max(0,mu-1)) = 7.164e-25
+   A3: 10455522 ordered pairs; worst Delta/maxterm = -1.437e-06; #(>=0) = 0; #(>1e-9) = 0; SIGNIFICANT (beyond rounding amplification) = 0; worst among pairs with rel. separation >1e-6 = -1.437e-06 (0 closer pairs)
+       histogram of Delta/maxterm over [-3.1, -0.001, -1e-06, -1e-09, -1e-12, 0.0, 1e-12, 1e-09, 1e-06, 3.1]: [10457285, 1471, 0, 0, 0, 0, 0, 0, 0]
+   Prop 8.1(ii): R1'(u) predicted g(u)e^iota/g(R1 u)  vs  U-component of M(1,zeta(u)) [variational, 3D]; parallel defect of M(1,zeta) vs (1,zeta(R1 u))
+      u=0.000996873 R1=0.00118416 iota=+0.34439 pred=1.187836e+00 var=1.187836e+00 rel=7.0e-11 par=4.7e-13 (abs noise ~1e-12)
+      u=0.0110884 R1=0.0131674 iota=+0.34431 pred=1.187063e+00 var=1.187063e+00 rel=9.5e-13 par=-3.9e-13 (abs noise ~1e-12)
+      u=0.143413 R1=0.16957 iota=+0.34303 pred=1.176821e+00 var=1.176821e+00 rel=1.5e-11 par=4.5e-14 (abs noise ~1e-12)
+      u=1.44038 R1=1.62864 iota=+0.29838 pred=1.073737e+00 var=1.073737e+00 rel=1.9e-13 par=-6.7e-13 (abs noise ~2e-12)
+      u=3.73736 R1=3.76955 iota=-0.34819 pred=6.866600e-01 var=6.866600e-01 rel=6.2e-12 par=-4.9e-12 (abs noise ~8e-11)
+      u=3.83492 R1=3.83498 iota=-0.42386 pred=6.544821e-01 var=6.544821e-01 rel=1.3e-11 par=-1.2e-11 (abs noise ~9e-11)
+      u=3.8351 R1=3.8351 iota=-0.42400 pred=6.544211e-01 var=6.544211e-01 rel=1.3e-11 par=-1.2e-11 (abs noise ~9e-11)
+      u=3.8351 R1=3.8351 iota=-0.42400 pred=6.544210e-01 var=6.544210e-01 rel=1.3e-11 par=-1.2e-11 (abs noise ~9e-11)
+   Remark 5.1: h(u,0)-k = k(e^u-1)/(1+eta): rel.err 6.79e-11; crests increasing: True (0.0009969 -> 3.8351)
+      FD: u=0.000996873 du0=-1.10e-07 du1=-1.30e-07 fd=1.187837e+00 pred=1.187836e+00 rel=3.3e-07
+      FD: u=0.0110884 du0=-1.22e-06 du1=-1.44e-06 fd=1.187063e+00 pred=1.187063e+00 rel=3.1e-09
+      FD: u=0.143413 du0=-1.54e-05 du1=-1.81e-05 fd=1.176821e+00 pred=1.176821e+00 rel=3.7e-09
+      FD: u=1.44038 du0=-1.16e-04 du1=-1.24e-04 fd=1.073737e+00 pred=1.073737e+00 rel=1.8e-11
+      FD: u=3.73736 du0=-2.46e-05 du1=-1.69e-05 fd=6.866600e-01 pred=6.866600e-01 rel=5.5e-10
+      FD: u=3.83492 du0=-4.92e-08 du1=-3.22e-08 fd=6.544821e-01 pred=6.544821e-01 rel=1.1e-07
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 1e-08): periodic after 2 periods, log-gap to reference 8.2e-15; per-period log-changes ['4.1e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 100000000.0): periodic after 2 periods, log-gap to reference 1.4e-14; per-period log-changes ['1.5e-12']
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 100000000.0): periodic after 2 periods, log-gap to reference 5.3e-14; per-period log-changes ['1.6e-12']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 1e-08): periodic after 2 periods, log-gap to reference 1.9e-15; per-period log-changes ['1.5e-12']
+== mu=0.02 rho=4.0 k=0.0816 gamE=1.072314 lam_u=0.026157+0.274614j
+   spiral: 31 crests, t_conv=4576.0, r0=4.26e-04, t_skip=32.64  [0s]
+   spiral samples: 2093  [3s]
+   cycle: T=343.057784 crest U=6.079370 Umin=-793.112 res=8.7e-13; Riccati periodic after 2 periods (defect 3.2e-11)
+   A8(a): lambda_c: Riccati -0.0077236526 | QR, no Riccati -0.0077236526 (prev period -0.0077236526) | log max eig(M)/T -0.0077236526
+   M3^T n(a0) = m_s n(a0): rel.err 1.68e-12   (m_s = 1.524e-151)
+   A5: max |O|/maxterm = 3.19e-09;  min K/maxterm = 8.505e-09;  min W/maxterm = 1.711e-09
+   A6: min Lambda_E/scale = 6.547e-05;  points in E+C_+: 0, in E+C_-: 0
+   A2 bounds (logs): log eta in [-266.2,0.9039] vs [-797.5,1.705]; log zeta in [-273.5,2.254] vs [-797.5,3.573]  ok=True; min(eta - max(0,mu-1)) = 2.419e-116
+   A3: 8366556 ordered pairs; worst Delta/maxterm = -1.999e-07; #(>=0) = 0; #(>1e-9) = 0; SIGNIFICANT (beyond rounding amplification) = 0; worst among pairs with rel. separation >1e-6 = -1.999e-07 (0 closer pairs)
+       histogram of Delta/maxterm over [-3.1, -0.001, -1e-06, -1e-09, -1e-12, 0.0, 1e-12, 1e-09, 1e-06, 3.1]: [8368822, 619, 8, 0, 0, 0, 0, 0, 0]
+   Prop 8.1(ii): R1'(u) predicted g(u)e^iota/g(R1 u)  vs  U-component of M(1,zeta(u)) [variational, 3D]; parallel defect of M(1,zeta) vs (1,zeta(R1 u))
+      u=0.0013609 R1=0.00247548 iota=+1.19688 pred=1.818656e+00 var=1.818656e+00 rel=1.2e-11 par=-3.7e-13 (abs noise ~2e-12)
+      u=0.00818593 R1=0.0148761 iota=+1.19656 pred=1.815224e+00 var=1.815224e+00 rel=1.9e-13 par=6.6e-13 (abs noise ~2e-12)
+      u=0.0884669 R1=0.158999 iota=+1.19245 pred=1.775419e+00 var=1.775419e+00 rel=3.0e-12 par=-2.3e-13 (abs noise ~2e-12)
+      u=0.842894 R1=1.37286 iota=+1.13367 pred=1.463656e+00 var=1.463656e+00 rel=1.1e-13 par=1.3e-13 (abs noise ~2e-12)
+      u=4.24008 R1=5.36951 iota=+0.60666 pred=7.652387e-01 var=7.652387e-01 rel=8.4e-12 par=-5.1e-12 (abs noise ~2e-09)
+      u=6.07868 R1=6.07932 iota=-2.64733 pred=7.080689e-02 var=7.080689e-02 rel=7.7e-10 par=-2.3e-10 (abs noise ~3e-08)
+      u=6.07937 R1=6.07937 iota=-2.64966 pred=7.067530e-02 var=7.067530e-02 rel=5.8e-10 par=-2.7e-10 (abs noise ~3e-08)
+      u=6.07937 R1=6.07937 iota=-2.64966 pred=7.067530e-02 var=7.067530e-02 rel=4.2e-10 par=-2.0e-10 (abs noise ~3e-08)
+   Remark 5.1: h(u,0)-k = k(e^u-1)/(1+eta): rel.err 3.26e-12; crests increasing: True (0.001361 -> 6.07937)
+      FD: u=0.0013609 du0=-5.19e-07 du1=-9.43e-07 fd=1.818656e+00 pred=1.818656e+00 rel=2.3e-08
+      FD: u=0.00818593 du0=-3.12e-06 du1=-5.66e-06 fd=1.815224e+00 pred=1.815224e+00 rel=4.5e-09
+      FD: u=0.0884669 du0=-3.32e-05 du1=-5.90e-05 fd=1.775419e+00 pred=1.775419e+00 rel=6.2e-10
+      FD: u=0.842894 du0=-2.75e-04 du1=-4.03e-04 fd=1.463656e+00 pred=1.463656e+00 rel=1.3e-09
+      FD: u=4.24008 du0=-7.78e-04 du1=-5.95e-04 fd=7.652387e-01 pred=7.652387e-01 rel=3.2e-09
+      FD: u=6.07868 du0=-1.17e-06 du1=-8.28e-08 fd=7.080689e-02 pred=7.080689e-02 rel=7.8e-09
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 1e-08): periodic after 2 periods, log-gap to reference 3.5e-13; per-period log-changes ['4.6e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 100000000.0): periodic after 3 periods, log-gap to reference 3.1e-13; per-period log-changes ['1.5e-11', '1.5e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 100000000.0): periodic after 3 periods, log-gap to reference 2.8e-13; per-period log-changes ['1.7e-11', '7.7e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 1e-08): periodic after 3 periods, log-gap to reference 2.9e-13; per-period log-changes ['1.5e-11', '1.0e-12']
+== mu=0.3 rho=1.01 k=0.3939 gamE=1.301955 lam_u=0.000977+0.550040j
+   spiral: 1314 crests, t_conv=15078.5, r0=9.74e-04, t_skip=26.88  [3s]
+   spiral samples: 1749  [9s]
+   cycle: T=11.525642 crest U=0.403273 Umin=-0.481 res=4.8e-16; Riccati periodic after 3 periods (defect 1.9e-14)
+   A8(a): lambda_c: Riccati -0.0019422805 | QR, no Riccati -0.0019422805 (prev period -0.0019422868) | log max eig(M)/T -0.0019422805
+   M3^T n(a0) = m_s n(a0): rel.err 1.25e-13   (m_s = 3.181e-07)
+   A5: max |O|/maxterm = 1.63e-12;  min K/maxterm = 3.840e-08;  min W/maxterm = 1.945e-08
+   A6: min Lambda_E/scale = 5.270e-05;  points in E+C_+: 0, in E+C_-: 0
+   A2 bounds (logs): log eta in [-1.487,-0.9655] vs [-1.691,-0.7056]; log zeta in [-1.598,-0.8636] vs [-1.814,-0.6975]  ok=True; min(eta - max(0,mu-1)) = 2.261e-01
+   A3: 6494852 ordered pairs; worst Delta/maxterm = 1.841e-07; #(>=0) = 1; #(>1e-9) = 1; SIGNIFICANT (beyond rounding amplification) = 0; worst among pairs with rel. separation >1e-6 = -6.671e-07 (6 closer pairs)
+       histogram of Delta/maxterm over [-3.1, -0.001, -1e-06, -1e-09, -1e-12, 0.0, 1e-12, 1e-09, 1e-06, 3.1]: [6478064, 19329, 7, 0, 0, 0, 0, 1, 0]
+   Prop 8.1(ii): R1'(u) predicted g(u)e^iota/g(R1 u)  vs  U-component of M(1,zeta(u)) [variational, 3D]; parallel defect of M(1,zeta) vs (1,zeta(R1 u))
+      u=0.000844776 R1=0.000854259 iota=+0.02233 pred=1.011224e+00 var=1.011224e+00 rel=7.9e-13 par=6.9e-15 (abs noise ~1e-12)
+      u=0.00680633 R1=0.00688263 iota=+0.02230 pred=1.011188e+00 var=1.011188e+00 rel=2.9e-13 par=8.8e-14 (abs noise ~1e-12)
+      u=0.0539753 R1=0.0545653 iota=+0.02151 pred=1.010457e+00 var=1.010457e+00 rel=8.5e-13 par=4.6e-14 (abs noise ~1e-12)
+      u=0.293717 R1=0.295238 iota=-0.00073 pred=9.935023e-01 var=9.935023e-01 rel=1.2e-12 par=-2.2e-15 (abs noise ~1e-12)
+      u=0.400546 R1=0.400605 iota=-0.02175 pred=9.783146e-01 var=9.783146e-01 rel=1.6e-12 par=1.0e-13 (abs noise ~1e-12)
+      u=0.403231 R1=0.403232 iota=-0.02238 pred=9.778696e-01 var=9.778696e-01 rel=3.0e-12 par=1.6e-14 (abs noise ~1e-12)
+      u=0.403272 R1=0.403272 iota=-0.02239 pred=9.778628e-01 var=9.778628e-01 rel=1.4e-12 par=7.3e-14 (abs noise ~1e-12)
+      u=0.403273 R1=0.403273 iota=-0.02239 pred=9.778627e-01 var=9.778627e-01 rel=8.9e-13 par=2.3e-14 (abs noise ~1e-12)
+   Remark 5.1: h(u,0)-k = k(e^u-1)/(1+eta): rel.err 4.37e-12; crests increasing: True (0.0008448 -> 0.403273)
+      FD: u=0.000844776 du0=-6.50e-09 du1=-6.57e-09 fd=1.011224e+00 pred=1.011224e+00 rel=2.0e-07
+      FD: u=0.00680633 du0=-5.23e-08 du1=-5.28e-08 fd=1.011188e+00 pred=1.011188e+00 rel=6.1e-09
+      FD: u=0.0539753 du0=-4.04e-07 du1=-4.09e-07 fd=1.010457e+00 pred=1.010457e+00 rel=5.2e-08
+      FD: u=0.293717 du0=-1.05e-06 du1=-1.04e-06 fd=9.935024e-01 pred=9.935023e-01 rel=2.5e-08
+      FD: u=0.400546 du0=-4.16e-08 du1=-4.07e-08 fd=9.783146e-01 pred=9.783146e-01 rel=1.4e-08
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 1e-08): periodic after 3 periods, log-gap to reference 8.9e-16; per-period log-changes ['5.6e-07', '1.9e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 100000000.0): periodic after 3 periods, log-gap to reference 2.2e-16; per-period log-changes ['8.9e-07', '3.0e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 100000000.0): periodic after 3 periods, log-gap to reference 8.9e-16; per-period log-changes ['1.9e-06', '6.1e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 1e-08): periodic after 3 periods, log-gap to reference 3.3e-16; per-period log-changes ['1.5e-06', '4.9e-13']
+== mu=0.3 rho=1.5 k=0.585 gamE=1.387621 lam_u=0.043811+0.647816j
+   spiral: 61 crests, t_conv=775.9, r0=3.31e-04, t_skip=25.22  [0s]
+   spiral samples: 1741  [2s]
+   cycle: T=14.703421 crest U=2.011024 Umin=-7.462 res=3.2e-13; Riccati periodic after 3 periods (defect 8.6e-14)
+   A8(a): lambda_c: Riccati -0.0563597953 | QR, no Riccati -0.0563597953 (prev period -0.0563597811) | log max eig(M)/T -0.0563597953
+   M3^T n(a0) = m_s n(a0): rel.err 1.80e-14   (m_s = 1.144e-08)
+   A5: max |O|/maxterm = 4.23e-12;  min K/maxterm = 2.719e-08;  min W/maxterm = 1.379e-08
+   A6: min Lambda_E/scale = 5.249e-05;  points in E+C_+: 0, in E+C_-: 0
+   A2 bounds (logs): log eta in [-5.291,0.05703] vs [-8.66,0.5708]; log zeta in [-6.904,0.708] vs [-9.017,1.475]  ok=True; min(eta - max(0,mu-1)) = 5.035e-03
+   A3: 6454140 ordered pairs; worst Delta/maxterm = -1.211e-05; #(>=0) = 0; #(>1e-9) = 0; SIGNIFICANT (beyond rounding amplification) = 0; worst among pairs with rel. separation >1e-6 = -1.211e-05 (0 closer pairs)
+       histogram of Delta/maxterm over [-3.1, -0.001, -1e-06, -1e-09, -1e-12, 0.0, 1e-12, 1e-09, 1e-06, 3.1]: [6453127, 3554, 0, 0, 0, 0, 0, 0, 0]
+   Prop 8.1(ii): R1'(u) predicted g(u)e^iota/g(R1 u)  vs  U-component of M(1,zeta(u)) [variational, 3D]; parallel defect of M(1,zeta) vs (1,zeta(R1 u))
+      u=0.000924953 R1=0.00141456 iota=+0.84976 pred=1.529191e+00 var=1.529191e+00 rel=3.9e-11 par=2.7e-14 (abs noise ~2e-12)
+      u=0.0275607 R1=0.0420382 iota=+0.84718 pred=1.521054e+00 var=1.521054e+00 rel=1.7e-12 par=9.0e-14 (abs noise ~2e-12)
+      u=0.699311 R1=0.968099 iota=+0.62245 pred=1.201838e+00 var=1.201838e+00 rel=1.4e-13 par=-2.9e-13 (abs noise ~2e-12)
+      u=1.99935 R1=2.00589 iota=-0.81032 pred=4.419130e-01 var=4.419130e-01 rel=9.8e-13 par=-8.4e-13 (abs noise ~3e-11)
+      u=2.01101 R1=2.01102 iota=-0.82866 pred=4.366315e-01 var=4.366315e-01 rel=2.5e-14 par=-2.0e-13 (abs noise ~3e-11)
+      u=2.01102 R1=2.01102 iota=-0.82868 pred=4.366245e-01 var=4.366245e-01 rel=8.5e-15 par=-1.8e-13 (abs noise ~3e-11)
+      u=2.01102 R1=2.01102 iota=-0.82868 pred=4.366245e-01 var=4.366245e-01 rel=7.6e-15 par=-1.8e-13 (abs noise ~3e-11)
+      u=2.01102 R1=2.01102 iota=-0.82868 pred=4.366245e-01 var=4.366245e-01 rel=7.0e-14 par=-1.9e-13 (abs noise ~3e-11)
+   Remark 5.1: h(u,0)-k = k(e^u-1)/(1+eta): rel.err 4.25e-13; crests increasing: True (0.000925 -> 2.01102)
+      FD: u=0.000924953 du0=-2.50e-07 du1=-3.83e-07 fd=1.529191e+00 pred=1.529191e+00 rel=2.4e-07
+      FD: u=0.0275607 du0=-7.42e-06 du1=-1.13e-05 fd=1.521054e+00 pred=1.521054e+00 rel=2.0e-10
+      FD: u=0.699311 du0=-1.54e-04 du1=-1.86e-04 fd=1.201838e+00 pred=1.201838e+00 rel=1.7e-09
+      FD: u=1.99935 du0=-6.10e-06 du1=-2.70e-06 fd=4.419130e-01 pred=4.419130e-01 rel=6.8e-10
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 1e-08): periodic after 3 periods, log-gap to reference 1.1e-16; per-period log-changes ['3.6e-07', '1.0e-14']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 100000000.0): periodic after 3 periods, log-gap to reference 2.0e-15; per-period log-changes ['4.6e-07', '1.5e-14']
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 100000000.0): periodic after 3 periods, log-gap to reference 4.4e-16; per-period log-changes ['9.4e-08', '3.6e-15']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 1e-08): periodic after 3 periods, log-gap to reference 3.4e-15; per-period log-changes ['6.6e-07', '2.7e-14']
+== mu=0.3 rho=4.0 k=1.56 gamE=1.676235 lam_u=0.188117+0.946187j
+   spiral: 27 crests, t_conv=531.2, r0=1.97e-05, t_skip=20.88  [0s]
+   spiral samples: 2409  [2s]
+   cycle: T=29.759329 crest U=3.880938 Umin=-88.622 res=1.1e-13; Riccati periodic after 2 periods (defect 9.9e-13)
+   A8(a): lambda_c: Riccati -0.1265703397 | QR, no Riccati -0.1265703397 (prev period -0.1265703397) | log max eig(M)/T -0.1265703397
+   M3^T n(a0) = m_s n(a0): rel.err 3.30e-14   (m_s = 6.827e-16)
+   A5: max |O|/maxterm = 1.35e-11;  min K/maxterm = 4.795e-09;  min W/maxterm = 6.230e-09
+   A6: min Lambda_E/scale = 2.273e-05;  points in E+C_+: 0, in E+C_-: 0
+   A2 bounds (logs): log eta in [-16.96,1.236] vs [-90.06,2.123]; log zeta in [-24.11,2.769] vs [-90.41,4.326]  ok=True; min(eta - max(0,mu-1)) = 4.318e-08
+   A3: 10294472 ordered pairs; worst Delta/maxterm = 8.078e-07; #(>=0) = 1; #(>1e-9) = 1; SIGNIFICANT (beyond rounding amplification) = 0; worst among pairs with rel. separation >1e-6 = -1.215e-05 (2 closer pairs)
+       histogram of Delta/maxterm over [-3.1, -0.001, -1e-06, -1e-09, -1e-12, 0.0, 1e-12, 1e-09, 1e-06, 3.1]: [10295897, 1782, 1, 0, 0, 0, 0, 1, 0]
+   Prop 8.1(ii): R1'(u) predicted g(u)e^iota/g(R1 u)  vs  U-component of M(1,zeta(u)) [variational, 3D]; parallel defect of M(1,zeta) vs (1,zeta(R1 u))
+      u=0.00171832 R1=0.00598865 iota=+2.49788 pred=3.482794e+00 var=3.482794e+00 rel=9.6e-12 par=3.1e-14 (abs noise ~5e-12)
+      u=0.0720677 R1=0.244222 iota=+2.47468 pred=3.291046e+00 var=3.291046e+00 rel=3.2e-13 par=1.5e-13 (abs noise ~5e-12)
+      u=1.97093 R1=3.32158 iota=+0.80766 pred=7.098458e-01 var=7.098458e-01 rel=3.8e-13 par=-1.1e-12 (abs noise ~5e-10)
+      u=3.88006 R1=3.88092 iota=-3.76269 pred=2.320611e-02 var=2.320611e-02 rel=1.8e-10 par=-9.9e-11 (abs noise ~9e-09)
+      u=3.88094 R1=3.88094 iota=-3.76665 pred=2.312946e-02 var=2.312946e-02 rel=1.6e-10 par=-1.1e-10 (abs noise ~9e-09)
+      u=3.88094 R1=3.88094 iota=-3.76665 pred=2.312946e-02 var=2.312946e-02 rel=1.7e-10 par=-1.1e-10 (abs noise ~9e-09)
+      u=3.88094 R1=3.88094 iota=-3.76665 pred=2.312946e-02 var=2.312946e-02 rel=1.7e-10 par=-1.1e-10 (abs noise ~9e-09)
+      u=3.88094 R1=3.88094 iota=-3.76665 pred=2.312946e-02 var=2.312946e-02 rel=1.7e-10 par=-1.1e-10 (abs noise ~9e-09)
+   Remark 5.1: h(u,0)-k = k(e^u-1)/(1+eta): rel.err 6.61e-12; crests increasing: True (0.001718 -> 3.88094)
+      FD: u=0.00171832 du0=-1.37e-06 du1=-4.76e-06 fd=3.482794e+00 pred=3.482794e+00 rel=8.1e-10
+      FD: u=0.0720677 du0=-5.66e-05 du1=-1.86e-04 fd=3.291046e+00 pred=3.291046e+00 rel=4.1e-09
+      FD: u=1.97093 du0=-9.37e-04 du1=-6.65e-04 fd=7.098458e-01 pred=7.098458e-01 rel=1.2e-09
+      FD: u=3.88006 du0=-2.12e-06 du1=-4.93e-08 fd=2.320613e-02 pred=2.320611e-02 rel=1.1e-06
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 1e-08): periodic after 2 periods, log-gap to reference 2.0e-14; per-period log-changes ['4.6e-12']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 100000000.0): periodic after 2 periods, log-gap to reference 3.5e-14; per-period log-changes ['6.1e-12']
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 100000000.0): periodic after 2 periods, log-gap to reference 1.9e-14; per-period log-changes ['1.1e-12']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 1e-08): periodic after 2 periods, log-gap to reference 2.4e-14; per-period log-changes ['8.3e-12']
+== mu=0.3 rho=12.0 k=4.68 gamE=2.162253 lam_u=0.431126+1.406606j
+   spiral: 17 crests, t_conv=536.0, r0=9.32e-07, t_skip=16.19  [0s]
+   spiral samples: 2139  [1s]
+   cycle: T=74.678587 crest U=5.919896 Umin=-926.101 res=2.7e-13; Riccati periodic after 2 periods (defect 8.4e-12)
+   A8(a): lambda_c: Riccati -0.2039603703 | QR, no Riccati -0.2039603703 (prev period -0.2039603703) | log max eig(M)/T -0.2039619136
+   M3^T n(a0) = m_s n(a0): rel.err 4.55e-14   (m_s = 2.836e-36)
+   A5: max |O|/maxterm = 2.18e-11;  min K/maxterm = 7.168e-10;  min W/maxterm = 7.570e-10
+   A6: min Lambda_E/scale = 1.116e-05;  points in E+C_+: 0, in E+C_-: 0
+   A2 bounds (logs): log eta in [-48.9,2.372] vs [-927.9,3.723]; log zeta in [-69.91,4.927] vs [-928.3,7.463]  ok=True; min(eta - max(0,mu-1)) = 5.814e-22
+   A3: 8634782 ordered pairs; worst Delta/maxterm = -3.284e-06; #(>=0) = 0; #(>1e-9) = 0; SIGNIFICANT (beyond rounding amplification) = 0; worst among pairs with rel. separation >1e-6 = -3.284e-06 (2 closer pairs)
+       histogram of Delta/maxterm over [-3.1, -0.001, -1e-06, -1e-09, -1e-12, 0.0, 1e-12, 1e-09, 1e-06, 3.1]: [8636210, 1511, 0, 0, 0, 0, 0, 0, 0]
+   Prop 8.1(ii): R1'(u) predicted g(u)e^iota/g(R1 u)  vs  U-component of M(1,zeta(u)) [variational, 3D]; parallel defect of M(1,zeta) vs (1,zeta(R1 u))
+      u=0.000736907 R1=0.00505246 iota=+3.85116 pred=6.851943e+00 var=6.851943e+00 rel=6.2e-11 par=-4.1e-14 (abs noise ~2e-11)
+      u=0.00505246 R1=0.0345125 iota=+3.84848 pred=6.801093e+00 var=6.801093e+00 rel=6.9e-13 par=9.4e-14 (abs noise ~2e-11)
+      u=0.229877 R1=1.30683 iota=+3.68126 pred=4.678221e+00 var=4.678221e+00 rel=1.8e-12 par=-1.1e-13 (abs noise ~3e-11)
+      u=1.30683 R1=4.02061 iota=+2.73655 pred=1.490070e+00 var=1.490070e+00 rel=1.7e-13 par=-1.7e-13 (abs noise ~2e-09)
+      u=5.89643 R1=5.9199 iota=-14.91568 pred=3.274248e-07 var=3.274114e-07 rel=4.1e-05 par=-2.9e-05 (abs noise ~5e-06)
+      u=5.9199 R1=5.9199 iota=-15.23147 pred=2.426921e-07 var=2.426770e-07 rel=6.2e-05 par=-4.2e-05 (abs noise ~6e-06)
+      u=5.9199 R1=5.9199 iota=-15.23147 pred=2.426921e-07 var=2.426781e-07 rel=5.8e-05 par=-5.6e-05 (abs noise ~6e-06)
+      u=5.9199 R1=5.9199 iota=-15.23147 pred=2.426921e-07 var=2.426778e-07 rel=5.9e-05 par=-3.0e-05 (abs noise ~6e-06)
+   Remark 5.1: h(u,0)-k = k(e^u-1)/(1+eta): rel.err 1.34e-12; crests increasing: True (0.0007369 -> 5.9199)
+      FD: u=0.000736907 du0=-9.03e-07 du1=-6.19e-06 fd=6.851943e+00 pred=6.851943e+00 rel=8.4e-09
+      FD: u=0.00505246 du0=-6.19e-06 du1=-4.21e-05 fd=6.801093e+00 pred=6.801093e+00 rel=2.3e-09
+      FD: u=0.229877 du0=-2.72e-04 du1=-1.27e-03 fd=4.678220e+00 pred=4.678221e+00 rel=4.6e-08
+      FD: u=1.30683 du0=-1.27e-03 du1=-1.90e-03 fd=1.490070e+00 pred=1.490070e+00 rel=7.2e-09
+      FD: u=5.89643 du0=-1.52e-04 du1=-4.98e-11 fd=3.274703e-07 pred=3.274248e-07 rel=1.4e-04
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 1e-08): periodic after 2 periods, log-gap to reference 1.1e-12; per-period log-changes ['4.5e-12']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 100000000.0): periodic after 2 periods, log-gap to reference 2.9e-12; per-period log-changes ['9.7e-12']
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 100000000.0): periodic after 3 periods, log-gap to reference 9.8e-13; per-period log-changes ['1.2e-11', '7.9e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 1e-08): periodic after 2 periods, log-gap to reference 1.0e-12; per-period log-changes ['8.3e-12']
+== mu=1.0 rho=1.1 k=2.2 gamE=2.038785 lam_u=0.019392+1.038604j
+   spiral: 154 crests, t_conv=967.9, r0=7.17e-04, t_skip=17.17  [1s]
+   spiral samples: 1738  [4s]
+   cycle: T=6.500820 crest U=0.997057 Umin=-1.691 res=1.6e-15; Riccati periodic after 4 periods (defect 3.1e-14)
+   A8(a): lambda_c: Riccati -0.0382116358 | QR, no Riccati -0.0382116358 (prev period -0.0382107918) | log max eig(M)/T -0.0382116358
+   M3^T n(a0) = m_s n(a0): rel.err 2.77e-14   (m_s = 2.893e-06)
+   A5: max |O|/maxterm = 6.32e-13;  min K/maxterm = 8.705e-09;  min W/maxterm = 1.045e-08
+   A6: min Lambda_E/scale = 2.235e-05;  points in E+C_+: 0, in E+C_-: 0
+   A2 bounds (logs): log eta in [-0.525,0.3946] vs [-1.069,0.8928]; log zeta in [-1.27,0.8528] vs [-2.138,1.49]  ok=True; min(eta - max(0,mu-1)) = 5.916e-01
+   A3: 6438906 ordered pairs; worst Delta/maxterm = -1.304e-06; #(>=0) = 0; #(>1e-9) = 0; SIGNIFICANT (beyond rounding amplification) = 0; worst among pairs with rel. separation >1e-6 = -1.304e-06 (0 closer pairs)
+       histogram of Delta/maxterm over [-3.1, -0.001, -1e-06, -1e-09, -1e-12, 0.0, 1e-12, 1e-09, 1e-06, 3.1]: [6423308, 18136, 0, 0, 0, 0, 0, 0, 0]
+   Prop 8.1(ii): R1'(u) predicted g(u)e^iota/g(R1 u)  vs  U-component of M(1,zeta(u)) [variational, 3D]; parallel defect of M(1,zeta) vs (1,zeta(R1 u))
+      u=0.000487932 R1=0.000548661 iota=+0.23462 pred=1.124449e+00 var=1.124449e+00 rel=2.7e-11 par=5.5e-15 (abs noise ~2e-12)
+      u=0.00572601 R1=0.00643782 iota=+0.23446 pred=1.124144e+00 var=1.124144e+00 rel=2.0e-12 par=-1.8e-16 (abs noise ~2e-12)
+      u=0.0663535 R1=0.0744622 iota=+0.23126 pred=1.119537e+00 var=1.119537e+00 rel=4.2e-13 par=1.1e-13 (abs noise ~2e-12)
+      u=0.592605 R1=0.636584 iota=+0.07812 pred=9.888915e-01 var=9.888915e-01 rel=2.3e-13 par=5.5e-14 (abs noise ~2e-12)
+      u=0.992683 R1=0.993639 iota=-0.24364 pred=7.826967e-01 var=7.826967e-01 rel=5.0e-13 par=-6.1e-13 (abs noise ~6e-12)
+      u=0.997033 R1=0.997039 iota=-0.24838 pred=7.800570e-01 var=7.800570e-01 rel=8.7e-14 par=-8.3e-14 (abs noise ~6e-12)
+      u=0.997057 R1=0.997057 iota=-0.24841 pred=7.800425e-01 var=7.800425e-01 rel=1.7e-13 par=-8.0e-14 (abs noise ~6e-12)
+      u=0.997057 R1=0.997057 iota=-0.24841 pred=7.800424e-01 var=7.800424e-01 rel=1.2e-13 par=-8.2e-14 (abs noise ~6e-12)
+   Remark 5.1: h(u,0)-k = k(e^u-1)/(1+eta): rel.err 2.11e-12; crests increasing: True (0.0004879 -> 0.997057)
+      FD: u=0.000487932 du0=-3.66e-08 du1=-4.11e-08 fd=1.124449e+00 pred=1.124449e+00 rel=5.5e-08
+      FD: u=0.00572601 du0=-4.29e-07 du1=-4.82e-07 fd=1.124144e+00 pred=1.124144e+00 rel=4.5e-09
+      FD: u=0.0663535 du0=-4.89e-06 du1=-5.48e-06 fd=1.119537e+00 pred=1.119537e+00 rel=3.8e-09
+      FD: u=0.592605 du0=-2.82e-05 du1=-2.79e-05 fd=9.888915e-01 pred=9.888915e-01 rel=3.1e-10
+      FD: u=0.992683 du0=-6.89e-07 du1=-5.39e-07 fd=7.826967e-01 pred=7.826967e-01 rel=5.2e-10
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 1e-08): periodic after 4 periods, log-gap to reference 3.3e-16; per-period log-changes ['1.9e-05', '9.8e-11', '6.7e-16']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 100000000.0): periodic after 4 periods, log-gap to reference 5.6e-16; per-period log-changes ['1.2e-05', '6.7e-11', '8.9e-16']
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 100000000.0): periodic after 4 periods, log-gap to reference 2.2e-16; per-period log-changes ['1.5e-05', '5.4e-11', '3.3e-16']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 1e-08): periodic after 4 periods, log-gap to reference 3.3e-16; per-period log-changes ['1.1e-05', '7.3e-11', '2.2e-16']
+== mu=1.0 rho=1.5 k=3 gamE=2.174559 lam_u=0.087280+1.171312j
+   spiral: 64 crests, t_conv=429.1, r0=2.45e-04, t_skip=16.10  [0s]
+   spiral samples: 1748  [3s]
+   cycle: T=7.490666 crest U=1.816932 Umin=-6.029 res=8.6e-14; Riccati periodic after 4 periods (defect 1.4e-14)
+   A8(a): lambda_c: Riccati -0.1463893409 | QR, no Riccati -0.1463893408 (prev period -0.1463845857) | log max eig(M)/T -0.1463893409
+   M3^T n(a0) = m_s n(a0): rel.err 9.92e-15   (m_s = 9.331e-07)
+   A5: max |O|/maxterm = 3.98e-12;  min K/maxterm = 4.871e-09;  min W/maxterm = 9.531e-09
+   A6: min Lambda_E/scale = 1.680e-05;  points in E+C_+: 0, in E+C_-: 0
+   A2 bounds (logs): log eta in [-1.304,0.8069] vs [-3.299,1.458]; log zeta in [-4.108,1.706] vs [-6.597,2.879]  ok=True; min(eta - max(0,mu-1)) = 2.715e-01
+   A3: 6489756 ordered pairs; worst Delta/maxterm = -3.324e-06; #(>=0) = 0; #(>1e-9) = 0; SIGNIFICANT (beyond rounding amplification) = 0; worst among pairs with rel. separation >1e-6 = -3.324e-06 (0 closer pairs)
+       histogram of Delta/maxterm over [-3.1, -0.001, -1e-06, -1e-09, -1e-12, 0.0, 1e-12, 1e-09, 1e-06, 3.1]: [6484460, 7844, 0, 0, 0, 0, 0, 0, 0]
+   Prop 8.1(ii): R1'(u) predicted g(u)e^iota/g(R1 u)  vs  U-component of M(1,zeta(u)) [variational, 3D]; parallel defect of M(1,zeta) vs (1,zeta(R1 u))
+      u=0.000412605 R1=0.000658941 iota=+0.93633 pred=1.596952e+00 var=1.596952e+00 rel=7.6e-11 par=1.8e-14 (abs noise ~3e-12)
+      u=0.0174104 R1=0.0277519 iota=+0.93429 pred=1.590837e+00 var=1.590837e+00 rel=4.5e-13 par=2.9e-14 (abs noise ~3e-12)
+      u=0.633579 R1=0.912187 iota=+0.69148 pred=1.239867e+00 var=1.239867e+00 rel=1.5e-13 par=-5.8e-14 (abs noise ~6e-12)
+      u=1.81627 R1=1.81671 iota=-1.09500 pred=3.343926e-01 var=3.343926e-01 rel=8.7e-13 par=-8.5e-13 (abs noise ~1e-10)
+      u=1.81693 R1=1.81693 iota=-1.09655 pred=3.340203e-01 var=3.340203e-01 rel=7.9e-13 par=-8.6e-13 (abs noise ~1e-10)
+      u=1.81693 R1=1.81693 iota=-1.09655 pred=3.340203e-01 var=3.340203e-01 rel=8.6e-13 par=-8.5e-13 (abs noise ~1e-10)
+      u=1.81693 R1=1.81693 iota=-1.09655 pred=3.340203e-01 var=3.340203e-01 rel=7.4e-13 par=-8.6e-13 (abs noise ~1e-10)
+      u=1.81693 R1=1.81693 iota=-1.09655 pred=3.340203e-01 var=3.340203e-01 rel=7.7e-13 par=-8.6e-13 (abs noise ~1e-10)
+   Remark 5.1: h(u,0)-k = k(e^u-1)/(1+eta): rel.err 2.97e-12; crests increasing: True (0.0004126 -> 1.81693)
+      FD: u=0.000412605 du0=-1.23e-07 du1=-1.96e-07 fd=1.596952e+00 pred=1.596952e+00 rel=1.6e-07
+      FD: u=0.0174104 du0=-5.17e-06 du1=-8.23e-06 fd=1.590837e+00 pred=1.590837e+00 rel=2.6e-10
+      FD: u=0.633579 du0=-1.57e-04 du1=-1.95e-04 fd=1.239867e+00 pred=1.239867e+00 rel=2.3e-09
+      FD: u=1.81627 du0=-4.63e-07 du1=-1.55e-07 fd=3.343926e-01 pred=3.343926e-01 rel=3.0e-08
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 1e-08): periodic after 4 periods, log-gap to reference 1.6e-15; per-period log-changes ['4.7e-05', '1.7e-10', '8.9e-16']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 100000000.0): periodic after 4 periods, log-gap to reference 8.9e-16; per-period log-changes ['4.1e-05', '1.5e-10', '2.3e-15']
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 100000000.0): periodic after 4 periods, log-gap to reference 5.1e-15; per-period log-changes ['9.3e-06', '2.6e-11', '2.9e-15']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 1e-08): periodic after 4 periods, log-gap to reference 2.2e-15; per-period log-changes ['5.3e-05', '2.0e-10', '1.6e-15']
+== mu=1.0 rho=4.0 k=8 gamE=2.716189 lam_u=0.358094+1.678414j
+   spiral: 20 crests, t_conv=149.7, r0=9.91e-06, t_skip=12.89  [0s]
+   spiral samples: 2447  [1s]
+   cycle: T=13.841594 crest U=3.547094 Umin=-64.185 res=7.2e-13; Riccati periodic after 3 periods (defect 2.3e-12)
+   A8(a): lambda_c: Riccati -0.3959403430 | QR, no Riccati -0.3959403430 (prev period -0.3959399735) | log max eig(M)/T -0.3959403431
+   M3^T n(a0) = m_s n(a0): rel.err 3.06e-14   (m_s = 2.278e-10)
+   A5: max |O|/maxterm = 3.80e-12;  min K/maxterm = 8.585e-10;  min W/maxterm = 8.971e-10
+   A6: min Lambda_E/scale = 8.423e-06;  points in E+C_+: 0, in E+C_-: 0
+   A2 bounds (logs): log eta in [-2.44,1.766] vs [-32.49,2.813]; log zeta in [-13.44,3.647] vs [-64.98,5.627]  ok=True; min(eta - max(0,mu-1)) = 8.716e-02
+   A3: 10539762 ordered pairs; worst Delta/maxterm = -6.040e-07; #(>=0) = 0; #(>1e-9) = 0; SIGNIFICANT (beyond rounding amplification) = 0; worst among pairs with rel. separation >1e-6 = -6.040e-07 (0 closer pairs)
+       histogram of Delta/maxterm over [-3.1, -0.001, -1e-06, -1e-09, -1e-12, 0.0, 1e-12, 1e-09, 1e-06, 3.1]: [10533441, 9564, 4, 0, 0, 0, 0, 0, 0]
+   Prop 8.1(ii): R1'(u) predicted g(u)e^iota/g(R1 u)  vs  U-component of M(1,zeta(u)) [variational, 3D]; parallel defect of M(1,zeta) vs (1,zeta(R1 u))
+      u=0.000513906 R1=0.00196323 iota=+2.68089 pred=3.819353e+00 var=3.819353e+00 rel=6.0e-10 par=1.2e-13 (abs noise ~2e-11)
+      u=0.00749518 R1=0.028545 iota=+2.67841 pred=3.795812e+00 var=3.795812e+00 rel=2.6e-11 par=2.4e-14 (abs noise ~2e-11)
+      u=0.107703 R1=0.392282 iota=+2.63748 pred=3.466709e+00 var=3.466709e+00 rel=4.9e-13 par=1.9e-13 (abs noise ~2e-11)
+      u=1.25659 R1=2.75336 iota=+1.49547 pred=1.063547e+00 var=1.063547e+00 rel=1.9e-13 par=-1.1e-13 (abs noise ~9e-10)
+      u=3.5158 R1=3.54695 iota=-5.27378 pred=5.002754e-03 var=5.002754e-03 rel=5.1e-10 par=-4.0e-10 (abs noise ~4e-08)
+      u=3.54709 R1=3.54709 iota=-5.48044 pred=4.167487e-03 var=4.167487e-03 rel=9.7e-10 par=-2.9e-10 (abs noise ~4e-08)
+      u=3.54709 R1=3.54709 iota=-5.48045 pred=4.167473e-03 var=4.167473e-03 rel=9.5e-10 par=-2.9e-10 (abs noise ~4e-08)
+      u=3.54709 R1=3.54709 iota=-5.48045 pred=4.167473e-03 var=4.167473e-03 rel=9.6e-10 par=-3.0e-10 (abs noise ~4e-08)
+   Remark 5.1: h(u,0)-k = k(e^u-1)/(1+eta): rel.err 4.98e-12; crests increasing: True (0.0005139 -> 3.54709)
+      FD: u=0.000513906 du0=-4.39e-07 du1=-1.67e-06 fd=3.819354e+00 pred=3.819353e+00 rel=1.2e-08
+      FD: u=0.00749518 du0=-6.39e-06 du1=-2.43e-05 fd=3.795812e+00 pred=3.795812e+00 rel=9.3e-10
+      FD: u=0.107703 du0=-9.03e-05 du1=-3.13e-04 fd=3.466709e+00 pred=3.466709e+00 rel=8.6e-09
+      FD: u=1.25659 du0=-8.25e-04 du1=-8.77e-04 fd=1.063547e+00 pred=1.063547e+00 rel=8.5e-09
+      FD: u=3.5158 du0=-9.90e-05 du1=-4.95e-07 fd=5.002755e-03 pred=5.002754e-03 rel=2.2e-07
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 1e-08): periodic after 3 periods, log-gap to reference 9.6e-14; per-period log-changes ['6.9e-06', '4.1e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 100000000.0): periodic after 3 periods, log-gap to reference 1.2e-13; per-period log-changes ['9.8e-06', '5.7e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 100000000.0): periodic after 3 periods, log-gap to reference 7.2e-14; per-period log-changes ['1.5e-07', '6.7e-15']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 1e-08): periodic after 3 periods, log-gap to reference 7.3e-14; per-period log-changes ['1.2e-05', '6.5e-13']
+== mu=1.0 rho=12.0 k=24 gamE=3.586753 lam_u=0.793376+2.462081j
+   spiral: 16 crests, t_conv=204.2, r0=4.34e-07, t_skip=9.76  [0s]
+   spiral samples: 2220  [1s]
+   cycle: T=34.488334 crest U=5.578012 Umin=-668.276 res=7.9e-13; Riccati periodic after 3 periods (defect 1.6e-11)
+   A8(a): lambda_c: Riccati -0.6741262022 | QR, no Riccati -0.6741262022 (prev period -0.6741261988) | log max eig(M)/T -0.6738127033
+   M3^T n(a0) = m_s n(a0): rel.err 2.46e-14   (m_s = 1.383e-20)
+   A5: max |O|/maxterm = 8.81e-12;  min K/maxterm = 7.647e-11;  min W/maxterm = 1.537e-10
+   A6: min Lambda_E/scale = 2.997e-06;  points in E+C_+: 0, in E+C_-: 0
+   A2 bounds (logs): log eta in [-3.492,2.836] vs [-334.7,4.378]; log zeta in [-35.97,5.793] vs [-669.5,8.756]  ok=True; min(eta - max(0,mu-1)) = 3.043e-02
+   A3: 9117380 ordered pairs; worst Delta/maxterm = -4.703e-07; #(>=0) = 0; #(>1e-9) = 0; SIGNIFICANT (beyond rounding amplification) = 0; worst among pairs with rel. separation >1e-6 = -4.703e-07 (2 closer pairs)
+       histogram of Delta/maxterm over [-3.1, -0.001, -1e-06, -1e-09, -1e-12, 0.0, 1e-12, 1e-09, 1e-06, 3.1]: [9111060, 9335, 5, 0, 0, 0, 0, 0, 0]
+   Prop 8.1(ii): R1'(u) predicted g(u)e^iota/g(R1 u)  vs  U-component of M(1,zeta(u)) [variational, 3D]; parallel defect of M(1,zeta) vs (1,zeta(R1 u))
+      u=0.000180011 R1=0.00136311 iota=+4.04924 pred=7.571102e+00 var=7.571102e+00 rel=1.5e-11 par=1.7e-14 (abs noise ~1e-10)
+      u=0.00136311 R1=0.0103104 iota=+4.04841 pred=7.554052e+00 var=7.554052e+00 rel=2.6e-12 par=-2.5e-14 (abs noise ~1e-10)
+      u=0.0103104 R1=0.0773263 iota=+4.04209 pred=7.426502e+00 var=7.426502e+00 rel=1.8e-12 par=-7.4e-14 (abs noise ~2e-10)
+      u=0.544805 R1=2.64099 iota=+3.52317 pred=3.022992e+00 var=3.022992e+00 rel=1.3e-13 par=2.2e-14 (abs noise ~9e-10)
+      u=2.64099 R1=5.38701 iota=+1.17727 pred=4.206215e-01 var=4.206215e-01 rel=2.9e-12 par=-1.9e-12 (abs noise ~4e-07)
+      u=5.57801 R1=5.57801 iota=-23.24951 pred=7.995902e-11 var=8.269845e-11 rel=3.4e-02 par=-8.1e-02 (abs noise ~2e-05)
+      u=5.57801 R1=5.57801 iota=-23.24949 pred=7.996041e-11 var=8.527415e-11 rel=6.6e-02 par=-7.4e-02 (abs noise ~2e-05)
+      u=5.57801 R1=5.57801 iota=-23.24949 pred=7.996041e-11 var=9.641278e-11 rel=2.1e-01 par=-3.0e-02 (abs noise ~2e-05)
+   Remark 5.1: h(u,0)-k = k(e^u-1)/(1+eta): rel.err 8.47e-12; crests increasing: True (0.00018 -> 5.57801)
+      FD: u=0.000180011 du0=-2.32e-07 du1=-1.76e-06 fd=7.571102e+00 pred=7.571102e+00 rel=1.0e-09
+      FD: u=0.00136311 du0=-1.76e-06 du1=-1.33e-05 fd=7.554052e+00 pred=7.554052e+00 rel=9.6e-11
+      FD: u=0.0103104 du0=-1.33e-05 du1=-9.85e-05 fd=7.426502e+00 pred=7.426502e+00 rel=7.4e-09
+      FD: u=0.544805 du0=-6.45e-04 du1=-1.95e-03 fd=3.022992e+00 pred=3.022992e+00 rel=1.4e-07
+      FD: u=2.64099 du0=-1.95e-03 du1=-8.20e-04 fd=4.206215e-01 pred=4.206215e-01 rel=1.6e-07
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 1e-08): periodic after 3 periods, log-gap to reference 2.6e-13; per-period log-changes ['1.9e-07', '3.0e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 100000000.0): periodic after 3 periods, log-gap to reference 6.2e-13; per-period log-changes ['3.6e-07', '8.1e-14']
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 100000000.0): periodic after 3 periods, log-gap to reference 7.7e-13; per-period log-changes ['4.1e-10', '4.5e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 1e-08): periodic after 3 periods, log-gap to reference 5.2e-13; per-period log-changes ['3.9e-07', '3.5e-13']
+== mu=3.0 rho=1.5 k=18 gamE=4.281300 lam_u=0.140650+2.045617j
+   spiral: 63 crests, t_conv=245.7, r0=3.17e-04, t_skip=8.18  [0s]
+   spiral samples: 1747  [2s]
+   cycle: T=4.590258 crest U=1.977669 Umin=-7.194 res=2.1e-13; Riccati periodic after 3 periods (defect 5.3e-14)
+   A8(a): lambda_c: Riccati -0.1877519962 | QR, no Riccati -0.1877519962 (prev period -0.1877516315) | log max eig(M)/T -0.1877519962
+   M3^T n(a0) = m_s n(a0): rel.err 1.98e-15   (m_s = 2.513e-08)
+   A5: max |O|/maxterm = 1.96e-12;  min K/maxterm = 2.175e-10;  min W/maxterm = 3.704e-10
+   A6: min Lambda_E/scale = 2.797e-06;  points in E+C_+: 0, in E+C_-: 0
+   A2 bounds (logs): log eta in [0.7052,1.678] vs [0.6934,2.522]; log zeta in [-4.307,2.975] vs [-6.902,3.769]  ok=True; min(eta - max(0,mu-1)) = 2.428e-02
+   A3: 6484662 ordered pairs; worst Delta/maxterm = -3.218e-07; #(>=0) = 0; #(>1e-9) = 0; SIGNIFICANT (beyond rounding amplification) = 0; worst among pairs with rel. separation >1e-6 = -3.218e-07 (0 closer pairs)
+       histogram of Delta/maxterm over [-3.1, -0.001, -1e-06, -1e-09, -1e-12, 0.0, 1e-12, 1e-09, 1e-06, 3.1]: [6457258, 29943, 8, 0, 0, 0, 0, 0, 0]
+   Prop 8.1(ii): R1'(u) predicted g(u)e^iota/g(R1 u)  vs  U-component of M(1,zeta(u)) [variational, 3D]; parallel defect of M(1,zeta) vs (1,zeta(R1 u))
+      u=0.000144716 R1=0.000222911 iota=+0.86401 pred=1.540309e+00 var=1.540309e+00 rel=1.0e-10 par=7.1e-15 (abs noise ~8e-12)
+      u=0.00458273 R1=0.00705579 iota=+0.86359 pred=1.538941e+00 var=1.538941e+00 rel=7.5e-12 par=3.6e-14 (abs noise ~8e-12)
+      u=0.141424 R1=0.214517 iota=+0.84488 pred=1.491504e+00 var=1.491504e+00 rel=5.1e-13 par=1.1e-13 (abs noise ~9e-12)
+      u=1.74759 R1=1.86777 iota=-0.50406 pred=5.349570e-01 var=5.349570e-01 rel=1.7e-12 par=-1.6e-12 (abs noise ~2e-09)
+      u=1.97755 R1=1.97762 iota=-0.86162 pred=4.224458e-01 var=4.224458e-01 rel=1.5e-13 par=-5.5e-14 (abs noise ~3e-09)
+      u=1.97767 R1=1.97767 iota=-0.86183 pred=4.223884e-01 var=4.223884e-01 rel=2.6e-13 par=-6.4e-14 (abs noise ~3e-09)
+      u=1.97767 R1=1.97767 iota=-0.86183 pred=4.223884e-01 var=4.223884e-01 rel=5.6e-13 par=-1.5e-14 (abs noise ~3e-09)
+      u=1.97767 R1=1.97767 iota=-0.86183 pred=4.223884e-01 var=4.223884e-01 rel=3.3e-13 par=-4.0e-15 (abs noise ~3e-09)
+   Remark 5.1: h(u,0)-k = k(e^u-1)/(1+eta): rel.err 1.59e-11; crests increasing: True (0.0001447 -> 1.97767)
+      FD: u=0.000144716 du0=-3.98e-08 du1=-6.13e-08 fd=1.540309e+00 pred=1.540309e+00 rel=3.0e-07
+      FD: u=0.00458273 du0=-1.26e-06 du1=-1.94e-06 fd=1.538941e+00 pred=1.538941e+00 rel=7.3e-10
+      FD: u=0.141424 du0=-3.78e-05 du1=-5.64e-05 fd=1.491504e+00 pred=1.491504e+00 rel=3.0e-10
+      FD: u=1.74759 du0=-1.02e-04 du1=-5.44e-05 fd=5.349570e-01 pred=5.349570e-01 rel=1.4e-09
+      FD: u=1.97755 du0=-6.80e-08 du1=-2.87e-08 fd=4.224448e-01 pred=4.224458e-01 rel=2.3e-06
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 1e-08): periodic after 3 periods, log-gap to reference 8.9e-16; per-period log-changes ['2.0e-06', '1.7e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 100000000.0): periodic after 3 periods, log-gap to reference 1.8e-15; per-period log-changes ['1.2e-06', '1.0e-13']
+   A2 pull-back on the cycle from (eta,zeta)=(1e-08, 100000000.0): periodic after 3 periods, log-gap to reference 3.6e-15; per-period log-changes ['2.1e-07', '1.6e-14']
+   A2 pull-back on the cycle from (eta,zeta)=(100000000.0, 1e-08): periodic after 3 periods, log-gap to reference 1.8e-15; per-period log-changes ['1.4e-06', '1.2e-13']

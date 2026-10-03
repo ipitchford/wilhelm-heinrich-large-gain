@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "started_utc": "2026-10-02T18:04:17.985097+00:00",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "regenerated_cycles": true,
+  "code_sha256": {
+    "code/additional_checks.py": "e886ef29899d1199ff44b2a21685c072512e41fb6cb86e232a3679ca92a98c25",
+    "code/cycles.py": "5a0cca12b3057afb666f7961f3b27f117024746abd806945e971414e67c1bc12",
+    "code/exact_checks.py": "20ab5b35055ed68b34b0450220830697fa20b4d92b9ec5f1d7ca4838d8c231ce",
+    "code/make_tables.py": "b62a28c0689a0163c813f36d3a7535456ff9d4209cf766af556ed4b84f770662",
+    "code/numerical_audit.py": "24b3aab612b006b3f56cf0a8daaf2da67d3ac4c6e727476f830fdb9da71cbbea",
+    "code/run_all.py": "78349d90fc69e9927d6fde81a38fa8d16bbefa84af03090b013547d65e5ad872"
+  },
+  "steps": [
+    {
+      "name": "exact_checks",
+      "script": "exact_checks.py",
+      "exit_status": 0,
+      "elapsed_seconds": 2.8179748380000547,
+      "log": "logs/exact_checks_rerun.log"
+    },
+    {
+      "name": "cycle_regeneration",
+      "script": "cycles.py",
+      "exit_status": 0,
+      "elapsed_seconds": 2.8475330349999695,
+      "log": "logs/cycle_regeneration_rerun.log"
+    },
+    {
+      "name": "numerical_audit",
+      "script": "numerical_audit.py",
+      "exit_status": 0,
+      "elapsed_seconds": 6.302144293999845,
+      "log": "logs/numerical_audit_rerun.log"
+    },
+    {
+      "name": "additional_checks",
+      "script": "additional_checks.py",
+      "exit_status": 0,
+      "elapsed_seconds": 17.349903091999977,
+      "log": "logs/additional_checks_rerun.log"
+    },
+    {
+      "name": "manuscript_tables",
+      "script": "make_tables.py",
+      "exit_status": 0,
+      "elapsed_seconds": 1.08557285400002,
+      "log": "logs/manuscript_tables_rerun.log"
+    }
+  ],
+  "passed": true,
+  "scope": "All specified finite checks reproduced. This is not a proof assistant or an interval certificate.",
+  "completed_utc": "2026-10-02T18:04:48.394118+00:00"
+}

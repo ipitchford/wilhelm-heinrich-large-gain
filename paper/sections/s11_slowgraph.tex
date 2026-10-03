@@ -1,0 +1,65 @@
+\begin{lemma}[A source-mapped local slow graph]\label{wed:lem:slowgraph}
+Property \textup{(F)} holds for system \eqref{wed:eq:fastslow}.
+\end{lemma}
+\begin{proof}
+We apply the invariant-graph persistence theorem of Eldering
+\cite[Theorem~3.2 and Remark~3.3(iii)]{Eldering13}, on a boundaryless
+Euclidean base. The construction below checks its hypotheses and obtains
+joint parameter regularity by adjoining a frozen, scaled parameter.
+
+Fix $\mathsf K$ and $N$. Choose a bounded open $\mathsf O$ with
+$\mathsf K\subset\mathsf O$ and a smooth compactly supported function
+$\chi(U,P,r)$ equal to one on a neighbourhood of $\overline{\mathsf O}$.
+Put $z=Q+g(U)$. In fast time $s=\tau/\varepsilon$, the transformed system is
+\[
+ U_s=\varepsilon P,\quad P_s=\varepsilon(z-g),\quad r_s=0,
+ \qquad z_s=-z+\varepsilon gP-r\varepsilon^2g.
+\]
+Here $g'=g+1$ explains the cancellation in the last equation.
+Choose a smooth compactly supported function $b(a)$ with $b(a)=a$ for
+$|a|\le1$, and set $e(a)=\delta_*b(a)$, where $\delta_*>0$ will be small.
+On $X\times Y=\R^4\times\R$, with base coordinates $(U,P,r,a)$ and
+normal coordinate $z$, consider
+\begin{align*}
+ U_s&=\chi e(a)P,&P_s&=\chi e(a)(z-g),&r_s&=a_s=0,\\
+ z_s&=-z+\chi\bigl(e(a)gP-r e(a)^2g\bigr).
+\end{align*}
+The unperturbed field is $(0,0,0,0,-z)$. Its zero section has identity
+tangent flow and normal flow $e^{-s}$, with constant splitting and bounded
+projections. It is therefore normally attracting with every finite
+regularity gap. The base $X$ is connected, complete, and of bounded geometry.
+The initial graph is zero, so the auxiliary graph family in Theorem~3.2
+may be taken constant, by Remark~3.3(iii).
+
+On any fixed tube $|z|<d$, both fields have bounded, uniformly continuous
+derivatives of every prescribed finite order. Indeed, $\chi$ bounds all
+occurrences of $e^U,P,r$, and $b$ bounds the frozen parameter. Their
+difference tends to zero in every fixed finite $C^j$ norm as
+$\delta_*\to0$. Apply Theorem~3.2 with $j=\max(N,2)$ and H\"older index
+zero. For sufficiently small $\delta_*$ it supplies a $C^j$ invariant
+graph $z=h(U,P,r,a)$ over $X$. This application uses neither the book's
+boundary extension nor an overflowing-boundary hypothesis.
+
+At $a=0$, the base velocity is zero and $z_s=-z$. Tangency forces
+$h(U,P,r,0)=0$. For $0\le\varepsilon\le\varepsilon_0:=\delta_*/2$ put
+\[
+ w(U,P,r,\varepsilon)
+   =h(U,P,r,\varepsilon/\delta_*)-g(U).
+\]
+This function is jointly $C^N$ on a neighbourhood of
+$\overline{\mathsf O}\times[0,\varepsilon_0]$, and $w(U,P,r,0)=-g(U)$.
+Over $\mathsf O$, $\chi=1$ and $e(\varepsilon/\delta_*)=\varepsilon$,
+so graph tangency gives exactly
+\[
+ \varepsilon(w_UP+w_Pw)=-w-\varepsilon P-(1+r\varepsilon^2)g(U).
+\]
+This is \eqref{wed:eq:invariance}, including at $\varepsilon=0$.
+\end{proof}
+
+The graph and the smallness threshold may depend on the compact set and on
+$N$. The lemma does not give one $C^\infty$ graph on a fixed parameter
+interval, an explicit threshold, or uniform control on growing energy
+balls. It establishes local invariance for the original system, not global
+invariance of the cutoff graph under that system. Theorem~3.2, its relevant
+remarks and the author's errata were inspected for this application; the
+historical Fenichel/Jones numbering is not needed.

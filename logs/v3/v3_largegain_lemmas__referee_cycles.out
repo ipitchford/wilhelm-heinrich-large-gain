@@ -1,0 +1,285 @@
+self-test closed-form trough vs DOP853: max abs err = 2.42e-13
+== mu=1.0 k=1000.0  lambda=1000 rho=500  section-map increments: 2.0e-01 0.0e+00 0.0e+00
+   T=1306.99  T*mu/lambda=1.30699  T_-=1306.97 T_+=0.018852  p_k/lambda=0.999999  D=1.296e+06 h=12.951
+   s_w=7.1703 s_0=9.4129 tau_1=0.014095  M_+/p_k^2=1.3070  W_c=7.6545e+05  int eta=22.218 (spike 5.272 + trough 16.95)
+   <eta>=1.699919e-02  <eta>/mu=1.700e-02  log m_t=(<eta>-mu)T=-1284.77
+   [ok  ] sanity L5a: M_+ = w_d+P_d+|w_k|+p_k (cycle closure)  rel=5.3e-16
+   [ok  ] sanity F6: <x> = k  <x>/k=1.000000000
+   [ok  ] L6: T_+ < pi/omega  T_+=0.018852 pi/omega=0.36317
+   [ok  ] L6: T_- > T_0(k)  
+   [ok  ] F4: T > 2pi/sqrt(mu)  
+   [ok  ] F2: Lambda_E > 0 (spike + trough samples)  min=8.345e+03
+   [ok  ] F5: h <= H = log M0, p<=lambda, y>=-1e-10 (strict margins ~e^{-mu T} are below double precision; y starts at underflowed 0)  h=12.951 H=13.818 lam-max p=0.000e+00 min y=-3.892e-15
+   [ok  ] L7: w_d>0, w_k<0, W_c>0, w(trough)<0, s_w<s_0  
+   [ok  ] L8: |U(s_w/2)| >= k c_i(s_w)(1-e^-v)  v=1.1379e+06 rhs=1.1034e+06
+   [ok  ] L8: D >= phi2 k c_i(s_w)  D=1.2964e+06 rhs=8.7919e+05
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=6175.5 rhs=1348.8
+   [ok  ] L9: D - v_w >= k phi(s_w) c_ii(u)  4826.7 >= 1859
+   [ok  ] L9: P_w < (gamma_E - mu) v_w  ratio=0.000494
+   [ok  ] L9: D >= phi2 k c_ii(u)  D=1.2964e+06 rhs=1481.3
+   [ok  ] L10a: T_- - s_0 >= p_k/k ; D >= p_k^2/(2k)  1297.6>=1; 1.2964e+06>=500
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k)  1297.55 >= 50.9204
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l); p_k >= p(s_l) - mu l  p(s_l)/lam=1.000000 rhs/lam=0.864665
+   [ok  ] L10d: tau_b < 0.36 (and k c_b(tau_b) < l/phi_l)  tau_b=0.002
+   [ok  ] L11: p_k >= 0.374 k  p_k/k=1
+   Stage-1 pigeonhole: s_w=7.17 (a1=2.06)  u=2.243 (a2=1.99)  r_l=1297.55 (a3=1.48)  tau_b=0.002 (a4=0.36)
+   [ok  ] L11: at least one of s_w>=a1, u>=a2, r_l>=a3  
+   [ok  ] L12: P_1 <= p_k(1+eps_1), P_1 < lambda  P1/p_k=1.000000 1+eps1=1.04919
+   [ok  ] L13: e^{U_theta} >= E_theta  U_th=12.361 log E_th=12.026
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  0.00143 >= 0.0005406
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs/Q=14.48
+   [ok  ] L13: T_- > M_+/k >= p_k^2 sqrt(1-dQ)/(sqrt8 k) - 1/2  T_-=1306.97 M_+/k=1306.97 rhs=341.803
+   [ok  ] L14: T_- >= 22 and r_l >= 0.3 T_-  r_l/T_-=0.99280
+   [ok  ] L14: p_k >= 0.95 phi_l k (1-e^{-mu z})/mu - l  p_k/lam=1.00000 rhs/lam=0.81943
+   [ok  ] L15 (Tm): T_- > p_k^2 sqrt(1-delta1(K0))/(sqrt8 k) - 1/2  
+   [ok  ] L15: h(z) > 0.3 kappa0 k and z > z#  h(z)/(0.3 kappa0 k)=6.267  z/z#=7.074
+   [ok  ] Thm(i): T >= 0.1833 lambda/mu  T mu/lambda=1.30699
+   [ok  ] Thm(ii): p_k >= 0.819 lambda  p_k/lambda=0.999999
+   [ok  ] L16: D > L0, L0 <= Lhat, H <= Hhat  
+   [ok  ] L16 rise: T_- - t_{L0} <= 2 L0/p_k <= 2Lhat/(c_p lambda)  0.007889 <= 0.01578
+   [ok  ] L16: X_theta >= theta p_k^3 (1-delta')/4 ; s_theta <= Hhat/(theta p_k)  X_th/(theta p_k^3/4)=1.321  p_k s_th=12.66 (<= 19.54)
+   [ok  ] L16: crest at most a_c/p_k after s_theta ; p_k tau_1 <= A_1  p_k(tau1-s_th)=1.43 (a_c=3.635);  p_k tau_1=14.09 (A_1=23.18)
+   [ok  ] L16: W_c >= p_k^2 e^{-tau1bar}/A_1 >= What  W_c=7.6545e+05 What=28135
+   [ok  ] L16: time crest -> U=-L0 <= v_f  0.005964 <= 0.04007
+   [ok  ] L16: post-crest drop >= (W_c+k)(1-(1+v)e^-v) - k(v-1+e^-v)  min(drop-lowb)=0.000e+00 at v=0.000e+00 (drop=0.000000e+00, lowb=0.000000e+00); relative min=5.016e-04
+   [ok  ] Thm(iii): tau_c <= Cbar_tau(lambda)/(0.819 lambda)  lambda*tau_c=27.948  bound=87.656
+   [ok  ] L17: (<eta>-mu)T <= -nu(T-tau_c)+(s-mu)tau_c+kT/s^2+log(1+alpha s+beta s^2)  lhs=-1284.77 rhs=-316.388
+   [ok  ] L17: holds for 3 nu x 6 s  min slack=157.75
+   [ok  ] Thm(iv): <eta> <= 0.83 mu  <eta>/mu=1.6999e-02
+== mu=1.0 k=3000.0  lambda=3000 rho=1500  section-map increments: 2.0e-01 0.0e+00 0.0e+00
+   T=3914.77  T*mu/lambda=1.30492  T_-=3914.76 T_+=0.0071365  p_k/lambda=1.000000  D=1.171e+07 h=15.147
+   s_w=8.2707 s_0=10.635 tau_1=0.0054301  M_+/p_k^2=1.3049  W_c=6.8908e+06  int eta=25.51 (spike 5.297 + trough 20.21)
+   <eta>=6.516361e-03  <eta>/mu=6.516e-03  log m_t=(<eta>-mu)T=-3889.26
+   [ok  ] sanity L5a: M_+ = w_d+P_d+|w_k|+p_k (cycle closure)  rel=3.2e-16
+   [ok  ] sanity F6: <x> = k  <x>/k=1.000000000
+   [ok  ] L6: T_+ < pi/omega  T_+=0.0071365 pi/omega=0.25166
+   [ok  ] L6: T_- > T_0(k)  
+   [ok  ] F4: T > 2pi/sqrt(mu)  
+   [ok  ] F2: Lambda_E > 0 (spike + trough samples)  min=3.844e+04
+   [ok  ] F5: h <= H = log M0, p<=lambda, y>=-1e-10 (strict margins ~e^{-mu T} are below double precision; y starts at underflowed 0)  h=15.147 H=16.013 lam-max p=0.000e+00 min y=-1.744e-14
+   [ok  ] L7: w_d>0, w_k<0, W_c>0, w(trough)<0, s_w<s_0  
+   [ok  ] L8: |U(s_w/2)| >= k c_i(s_w)(1-e^-v)  v=1.0769e+07 rhs=1.0587e+07
+   [ok  ] L8: D >= phi2 k c_i(s_w)  D=1.1709e+07 rhs=8.4361e+06
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=21818 rhs=4375
+   [ok  ] L9: D - v_w >= k phi(s_w) c_ii(u)  17443 >= 6333.9
+   [ok  ] L9: P_w < (gamma_E - mu) v_w  ratio=0.0001324
+   [ok  ] L9: D >= phi2 k c_ii(u)  D=1.1709e+07 rhs=5046.9
+   [ok  ] L10a: T_- - s_0 >= p_k/k ; D >= p_k^2/(2k)  3904.1>=1; 1.1709e+07>=1500
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k)  3904.13 >= 88.3519
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l); p_k >= p(s_l) - mu l  p(s_l)/lam=1.000000 rhs/lam=0.864665
+   [ok  ] L10d: tau_b < 0.36 (and k c_b(tau_b) < l/phi_l)  tau_b=0.0006667
+   [ok  ] L11: p_k >= 0.374 k  p_k/k=1
+   Stage-1 pigeonhole: s_w=8.271 (a1=2.06)  u=2.364 (a2=1.99)  r_l=3904.13 (a3=1.48)  tau_b=0.0006667 (a4=0.36)
+   [ok  ] L11: at least one of s_w>=a1, u>=a2, r_l>=a3  
+   [ok  ] L12: P_1 <= p_k(1+eps_1), P_1 < lambda  P1/p_k=1.000000 1+eps1=1.02840
+   [ok  ] L13: e^{U_theta} >= E_theta  U_th=14.557 log E_th=14.258
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  0.0004765 >= 0.0001806
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs/Q=13.92
+   [ok  ] L13: T_- > M_+/k >= p_k^2 sqrt(1-dQ)/(sqrt8 k) - 1/2  T_-=3914.76 M_+/k=3914.76 rhs=1047.64
+   [ok  ] L14: T_- >= 22 and r_l >= 0.3 T_-  r_l/T_-=0.99728
+   [ok  ] L14: p_k >= 0.95 phi_l k (1-e^{-mu z})/mu - l  p_k/lam=1.00000 rhs/lam=0.82076
+   [ok  ] L15 (Tm): T_- > p_k^2 sqrt(1-delta1(K0))/(sqrt8 k) - 1/2  
+   [ok  ] L15: h(z) > 0.3 kappa0 k and z > z#  h(z)/(0.3 kappa0 k)=6.235  z/z#=7.1
+   [ok  ] Thm(i): T >= 0.1833 lambda/mu  T mu/lambda=1.30492
+   [ok  ] Thm(ii): p_k >= 0.819 lambda  p_k/lambda=1.000000
+   [ok  ] L16: D > L0, L0 <= Lhat, H <= Hhat  
+   [ok  ] L16 rise: T_- - t_{L0} <= 2 L0/p_k <= 2Lhat/(c_p lambda)  0.002996 <= 0.005991
+   [ok  ] L16: X_theta >= theta p_k^3 (1-delta')/4 ; s_theta <= Hhat/(theta p_k)  X_th/(theta p_k^3/4)=1.319  p_k s_th=14.86 (<= 24.2)
+   [ok  ] L16: crest at most a_c/p_k after s_theta ; p_k tau_1 <= A_1  p_k(tau1-s_th)=1.429 (a_c=3.524);  p_k tau_1=16.29 (A_1=27.73)
+   [ok  ] L16: W_c >= p_k^2 e^{-tau1bar}/A_1 >= What  W_c=6.8908e+06 What=2.1529e+05
+   [ok  ] L16: time crest -> U=-L0 <= v_f  0.00213 <= 0.01588
+   [ok  ] L16: post-crest drop >= (W_c+k)(1-(1+v)e^-v) - k(v-1+e^-v)  min(drop-lowb)=0.000e+00 at v=0.000e+00 (drop=0.000000e+00, lowb=0.000000e+00); relative min=5.069e-04
+   [ok  ] Thm(iii): tau_c <= Cbar_tau(lambda)/(0.819 lambda)  lambda*tau_c=31.669  bound=104.13
+   [ok  ] L17: (<eta>-mu)T <= -nu(T-tau_c)+(s-mu)tau_c+kT/s^2+log(1+alpha s+beta s^2)  lhs=-3889.26 rhs=-967.847
+   [ok  ] L17: holds for 3 nu x 6 s  min slack=421.12
+   [ok  ] Thm(iv): <eta> <= 0.83 mu  <eta>/mu=6.5164e-03
+== mu=0.3 k=1000.0  lambda=3333.33 rho=2564.1  section-map increments: 2.0e-01 0.0e+00 0.0e+00
+   T=14494.4  T*mu/lambda=1.30450  T_-=14494.4 T_+=0.0069133  p_k/lambda=1.000000  D=4.821e+07 h=16.562
+   s_w=9.5798 s_0=29.112 tau_1=0.0053114  M_+/p_k^2=1.3045  W_c=8.5076e+06  int eta=17.804 (spike 5.313 + trough 12.49)
+   <eta>=1.228367e-03  <eta>/mu=4.095e-03  log m_t=(<eta>-mu)T=-4330.51
+   [ok  ] sanity L5a: M_+ = w_d+P_d+|w_k|+p_k (cycle closure)  rel=0.0e+00
+   [ok  ] sanity F6: <x> = k  <x>/k=1.000000000
+   [ok  ] L6: T_+ < pi/omega  T_+=0.0069133 pi/omega=0.36307
+   [ok  ] L6: T_- > T_0(k)  
+   [ok  ] F4: T > 2pi/sqrt(mu)  
+   [ok  ] F2: Lambda_E > 0 (spike + trough samples)  min=3.002e+04
+   [ok  ] F5: h <= H = log M0, p<=lambda, y>=-1e-10 (strict margins ~e^{-mu T} are below double precision; y starts at underflowed 0)  h=16.562 H=17.428 lam-max p=0.000e+00 min y=-2.531e-13
+   [ok  ] L7: w_d>0, w_k<0, W_c>0, w(trough)<0, s_w<s_0  
+   [ok  ] L8: |U(s_w/2)| >= k c_i(s_w)(1-e^-v)  v=3.2076e+07 rhs=1.3658e+07
+   [ok  ] L8: D >= phi2 k c_i(s_w)  D=4.8206e+07 rhs=1.0883e+07
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=1.164e+06 rhs=18533
+   [ok  ] L9: D - v_w >= k phi(s_w) c_ii(u)  3.8184e+06 >= 1.8976e+05
+   [ok  ] L9: P_w < (gamma_E - mu) v_w  ratio=0.002586
+   [ok  ] L9: D >= phi2 k c_ii(u)  D=4.8206e+07 rhs=1.512e+05
+   [ok  ] L10a: T_- - s_0 >= p_k/k ; D >= p_k^2/(2k)  14465>=3.3333; 4.8206e+07>=5555.6
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k)  14465.3 >= 310.504
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l); p_k >= p(s_l) - mu l  p(s_l)/lam=1.000000 rhs/lam=0.864665
+   [ok  ] L10d: tau_b < 0.36 (and k c_b(tau_b) < l/phi_l)  tau_b=0.0006
+   [ok  ] L11: p_k >= 0.374 k  p_k/k=3.3333
+   Stage-1 pigeonhole: s_w=9.58 (a1=2.06)  u=19.53 (a2=1.99)  r_l=14465.3 (a3=1.48)  tau_b=0.0006 (a4=0.36)
+   [ok  ] L11: at least one of s_w>=a1, u>=a2, r_l>=a3  
+   [ok  ] L12: P_1 <= p_k(1+eps_1), P_1 < lambda  P1/p_k=1.000000 1+eps1=1.00808
+   [ok  ] L13: e^{U_theta} >= E_theta  U_th=15.971 log E_th=15.688
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  0.0004288 >= 0.0001626
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs/Q=13.7
+   [ok  ] L13: T_- > M_+/k >= p_k^2 sqrt(1-dQ)/(sqrt8 k) - 1/2  T_-=14494.4 M_+/k=14494.4 rhs=3892.26
+   [ok  ] L14: T_- >= 22 and r_l >= 0.3 T_-  r_l/T_-=0.99799
+   [ok  ] L14: p_k >= 0.95 phi_l k (1-e^{-mu z})/mu - l  p_k/lam=1.00000 rhs/lam=0.82083
+   [ok  ] L15 (Tm): T_- > p_k^2 sqrt(1-delta1(K0))/(sqrt8 k) - 1/2  
+   [ok  ] L15: h(z) > 0.3 kappa0 k and z > z#  h(z)/(0.3 kappa0 k)=6.231  z/z#=7.111
+   [ok  ] Thm(i): T >= 0.1833 lambda/mu  T mu/lambda=1.30450
+   [ok  ] Thm(ii): p_k >= 0.819 lambda  p_k/lambda=1.000000
+   [ok  ] L16: D > L0, L0 <= Lhat, H <= Hhat  
+   [ok  ] L16 rise: T_- - t_{L0} <= 2 L0/p_k <= 2Lhat/(c_p lambda)  0.002648 <= 0.005297
+   [ok  ] L16: X_theta >= theta p_k^3 (1-delta')/4 ; s_theta <= Hhat/(theta p_k)  X_th/(theta p_k^3/4)=1.319  p_k s_th=16.28 (<= 24.65)
+   [ok  ] L16: crest at most a_c/p_k after s_theta ; p_k tau_1 <= A_1  p_k(tau1-s_th)=1.429 (a_c=3.518);  p_k tau_1=17.7 (A_1=28.17)
+   [ok  ] L16: W_c >= p_k^2 e^{-tau1bar}/A_1 >= What  W_c=8.5076e+06 What=2.6188e+05
+   [ok  ] L16: time crest -> U=-L0 <= v_f  0.001964 <= 0.01452
+   [ok  ] L16: post-crest drop >= (W_c+k)(1-(1+v)e^-v) - k(v-1+e^-v)  min(drop-lowb)=0.000e+00 at v=0.000e+00 (drop=0.000000e+00, lowb=0.000000e+00); relative min=5.111e-04
+   [ok  ] Thm(iii): tau_c <= Cbar_tau(lambda)/(0.819 lambda)  lambda*tau_c=33.079  bound=105.71
+   [ok  ] L17: (<eta>-mu)T <= -nu(T-tau_c)+(s-mu)tau_c+kT/s^2+log(1+alpha s+beta s^2)  lhs=-4330.51 rhs=-1076.4
+   [ok  ] L17: holds for 3 nu x 6 s  min slack=470.02
+   [ok  ] Thm(iv): <eta> <= 0.83 mu  <eta>/mu=4.0946e-03
+== mu=0.3 k=3000.0  lambda=10000 rho=7692.31  section-map increments: 2.0e-01 0.0e+00 0.0e+00
+   T=43469.8  T*mu/lambda=1.30409  T_-=43469.8 T_+=0.0025566  p_k/lambda=1.000000  D=4.343e+08 h=18.758
+   s_w=10.679 s_0=32.774 tau_1=0.0019902  M_+/p_k^2=1.3041  W_c=7.6572e+07  int eta=20.001 (spike 5.341 + trough 14.66)
+   <eta>=4.601210e-04  <eta>/mu=1.534e-03  log m_t=(<eta>-mu)T=-13020.9
+   [ok  ] sanity L5a: M_+ = w_d+P_d+|w_k|+p_k (cycle closure)  rel=3.4e-16
+   [ok  ] sanity F6: <x> = k  <x>/k=1.000000000
+   [ok  ] L6: T_+ < pi/omega  T_+=0.0025566 pi/omega=0.25163
+   [ok  ] L6: T_- > T_0(k)  
+   [ok  ] F4: T > 2pi/sqrt(mu)  
+   [ok  ] F2: Lambda_E > 0 (spike + trough samples)  min=1.345e+05
+   [ok  ] F5: h <= H = log M0, p<=lambda, y>=-1e-10 (strict margins ~e^{-mu T} are below double precision; y starts at underflowed 0)  h=18.758 H=19.625 lam-max p=0.000e+00 min y=-2.694e-13
+   [ok  ] L7: w_d>0, w_k<0, W_c>0, w(trough)<0, s_w<s_0  
+   [ok  ] L8: |U(s_w/2)| >= k c_i(s_w)(1-e^-v)  v=3.1042e+08 rhs=1.2576e+08
+   [ok  ] L8: D >= phi2 k c_i(s_w)  D=4.3434e+08 rhs=1.0021e+08
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=7.5498e+06 rhs=63286
+   [ok  ] L9: D - v_w >= k phi(s_w) c_ii(u)  2.4955e+07 >= 7.293e+05
+   [ok  ] L9: P_w < (gamma_E - mu) v_w  ratio=0.001266
+   [ok  ] L9: D >= phi2 k c_ii(u)  D=4.3434e+08 rhs=5.8111e+05
+   [ok  ] L10a: T_- - s_0 >= p_k/k ; D >= p_k^2/(2k)  43437>=3.3333; 4.3434e+08>=16667
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k)  43437 >= 538.106
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l); p_k >= p(s_l) - mu l  p(s_l)/lam=1.000000 rhs/lam=0.864665
+   [ok  ] L10d: tau_b < 0.36 (and k c_b(tau_b) < l/phi_l)  tau_b=0.0002
+   [ok  ] L11: p_k >= 0.374 k  p_k/k=3.3333
+   Stage-1 pigeonhole: s_w=10.68 (a1=2.06)  u=22.1 (a2=1.99)  r_l=43437 (a3=1.48)  tau_b=0.0002 (a4=0.36)
+   [ok  ] L11: at least one of s_w>=a1, u>=a2, r_l>=a3  
+   [ok  ] L12: P_1 <= p_k(1+eps_1), P_1 < lambda  P1/p_k=1.000000 1+eps1=1.00467
+   [ok  ] L13: e^{U_theta} >= E_theta  U_th=18.168 log E_th=17.889
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  0.0001429 >= 5.422e-05
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs/Q=13.64
+   [ok  ] L13: T_- > M_+/k >= p_k^2 sqrt(1-dQ)/(sqrt8 k) - 1/2  T_-=43469.8 M_+/k=43469.8 rhs=11744
+   [ok  ] L14: T_- >= 22 and r_l >= 0.3 T_-  r_l/T_-=0.99925
+   [ok  ] L14: p_k >= 0.95 phi_l k (1-e^{-mu z})/mu - l  p_k/lam=1.00000 rhs/lam=0.82123
+   [ok  ] L15 (Tm): T_- > p_k^2 sqrt(1-delta1(K0))/(sqrt8 k) - 1/2  
+   [ok  ] L15: h(z) > 0.3 kappa0 k and z > z#  h(z)/(0.3 kappa0 k)=6.223  z/z#=7.112
+   [ok  ] Thm(i): T >= 0.1833 lambda/mu  T mu/lambda=1.30409
+   [ok  ] Thm(ii): p_k >= 0.819 lambda  p_k/lambda=1.000000
+   [ok  ] L16: D > L0, L0 <= Lhat, H <= Hhat  
+   [ok  ] L16 rise: T_- - t_{L0} <= 2 L0/p_k <= 2Lhat/(c_p lambda)  0.0009926 <= 0.001985
+   [ok  ] L16: X_theta >= theta p_k^3 (1-delta')/4 ; s_theta <= Hhat/(theta p_k)  X_th/(theta p_k^3/4)=1.318  p_k s_th=18.47 (<= 29.31)
+   [ok  ] L16: crest at most a_c/p_k after s_theta ; p_k tau_1 <= A_1  p_k(tau1-s_th)=1.429 (a_c=3.484);  p_k tau_1=19.9 (A_1=32.79)
+   [ok  ] L16: W_c >= p_k^2 e^{-tau1bar}/A_1 >= What  W_c=7.6572e+07 What=2.0372e+06
+   [ok  ] L16: time crest -> U=-L0 <= v_f  0.0006939 <= 0.005619
+   [ok  ] L16: post-crest drop >= (W_c+k)(1-(1+v)e^-v) - k(v-1+e^-v)  min(drop-lowb)=0.000e+00 at v=0.000e+00 (drop=0.000000e+00, lowb=0.000000e+00); relative min=5.171e-04
+   [ok  ] Thm(iii): tau_c <= Cbar_tau(lambda)/(0.819 lambda)  lambda*tau_c=36.767  bound=122.18
+   [ok  ] L17: (<eta>-mu)T <= -nu(T-tau_c)+(s-mu)tau_c+kT/s^2+log(1+alpha s+beta s^2)  lhs=-13020.9 rhs=-3248.87
+   [ok  ] L17: holds for 3 nu x 6 s  min slack=1343
+   [ok  ] Thm(iv): <eta> <= 0.83 mu  <eta>/mu=1.5337e-03
+== mu=0.02 k=1000.0  lambda=50000 rho=49019.6  section-map increments: 2.0e-01 0.0e+00 0.0e+00
+   T=3.25981e+06  T*mu/lambda=1.30392  T_-=3.25981e+06 T_+=0.00064571  p_k/lambda=1.000000  D=1.63e+11 h=24.685
+   s_w=14.997 s_0=555.27 tau_1=0.00051657  M_+/p_k^2=1.3039  W_c=1.9143e+09  int eta=22.884 (spike 5.413 + trough 17.47)
+   <eta>=7.019924e-06  <eta>/mu=3.510e-04  log m_t=(<eta>-mu)T=-65173.3
+   [ok  ] sanity L5a: M_+ = w_d+P_d+|w_k|+p_k (cycle closure)  rel=1.5e-16
+   [ok  ] sanity F6: <x> = k  <x>/k=1.000000000
+   [ok  ] L6: T_+ < pi/omega  T_+=0.00064571 pi/omega=0.36315
+   [ok  ] L6: T_- > T_0(k)  
+   [ok  ] F4: T > 2pi/sqrt(mu)  
+   [ok  ] F2: Lambda_E > 0 (spike + trough samples)  min=4.658e+05
+   [ok  ] F5: h <= H = log M0, p<=lambda, y>=-1e-10 (strict margins ~e^{-mu T} are below double precision; y starts at underflowed 0)  h=24.685 H=25.552 lam-max p=0.000e+00 min y=-3.030e-16
+   [ok  ] L7: w_d>0, w_k<0, W_c>0, w(trough)<0, s_w<s_0  
+   [ok  ] L8: |U(s_w/2)| >= k c_i(s_w)(1-e^-v)  v=1.9838e+10 rhs=3.2422e+09
+   [ok  ] L8: D >= phi2 k c_i(s_w)  D=1.6296e+11 rhs=2.5834e+09
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=2.4643e+09 rhs=5.3927e+05
+   [ok  ] L9: D - v_w >= k phi(s_w) c_ii(u)  1.2319e+11 >= 1.4595e+08
+   [ok  ] L9: P_w < (gamma_E - mu) v_w  ratio=0.005997
+   [ok  ] L9: D >= phi2 k c_ii(u)  D=1.6296e+11 rhs=1.1629e+08
+   [ok  ] L10a: T_- - s_0 >= p_k/k ; D >= p_k^2/(2k)  3.2593e+06>=50; 1.6296e+11>=1.25e+06
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k)  3.25926e+06 >= 18053.3
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l); p_k >= p(s_l) - mu l  p(s_l)/lam=1.000000 rhs/lam=0.864665
+   [ok  ] L10d: tau_b < 0.36 (and k c_b(tau_b) < l/phi_l)  tau_b=4e-05
+   [ok  ] L11: p_k >= 0.374 k  p_k/k=50
+   Stage-1 pigeonhole: s_w=15 (a1=2.06)  u=540.3 (a2=1.99)  r_l=3.25926e+06 (a3=1.48)  tau_b=4e-05 (a4=0.36)
+   [ok  ] L11: at least one of s_w>=a1, u>=a2, r_l>=a3  
+   [ok  ] L12: P_1 <= p_k(1+eps_1), P_1 < lambda  P1/p_k=1.000000 1+eps1=1.00014
+   [ok  ] L13: e^{U_theta} >= E_theta  U_th=24.095 log E_th=23.819
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  2.859e-05 >= 1.085e-05
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs/Q=13.6
+   [ok  ] L13: T_- > M_+/k >= p_k^2 sqrt(1-dQ)/(sqrt8 k) - 1/2  T_-=3.25981e+06 M_+/k=3.25981e+06 rhs=883355
+   [ok  ] L14: T_- >= 22 and r_l >= 0.3 T_-  r_l/T_-=0.99983
+   [ok  ] L14: p_k >= 0.95 phi_l k (1-e^{-mu z})/mu - l  p_k/lam=1.00000 rhs/lam=0.82139
+   [ok  ] L15 (Tm): T_- > p_k^2 sqrt(1-delta1(K0))/(sqrt8 k) - 1/2  
+   [ok  ] L15: h(z) > 0.3 kappa0 k and z > z#  h(z)/(0.3 kappa0 k)=6.219  z/z#=7.112
+   [ok  ] Thm(i): T >= 0.1833 lambda/mu  T mu/lambda=1.30392
+   [ok  ] Thm(ii): p_k >= 0.819 lambda  p_k/lambda=1.000000
+   [ok  ] L16: D > L0, L0 <= Lhat, H <= Hhat  
+   [ok  ] L16 rise: T_- - t_{L0} <= 2 L0/p_k <= 2Lhat/(c_p lambda)  0.0002303 <= 0.0004605
+   [ok  ] L16: X_theta >= theta p_k^3 (1-delta')/4 ; s_theta <= Hhat/(theta p_k)  X_th/(theta p_k^3/4)=1.318  p_k s_th=24.4 (<= 36.14)
+   [ok  ] L16: crest at most a_c/p_k after s_theta ; p_k tau_1 <= A_1  p_k(tau1-s_th)=1.429 (a_c=3.468);  p_k tau_1=25.83 (A_1=39.61)
+   [ok  ] L16: W_c >= p_k^2 e^{-tau1bar}/A_1 >= What  W_c=1.9143e+09 What=4.2298e+07
+   [ok  ] L16: time crest -> U=-L0 <= v_f  0.0001552 <= 0.001356
+   [ok  ] L16: post-crest drop >= (W_c+k)(1-(1+v)e^-v) - k(v-1+e^-v)  min(drop-lowb)=0.000e+00 at v=0.000e+00 (drop=0.000000e+00, lowb=0.000000e+00); relative min=5.356e-04
+   [ok  ] Thm(iii): tau_c <= Cbar_tau(lambda)/(0.819 lambda)  lambda*tau_c=45.101  bound=146.31
+   [ok  ] L17: (<eta>-mu)T <= -nu(T-tau_c)+(s-mu)tau_c+kT/s^2+log(1+alpha s+beta s^2)  lhs=-65173.3 rhs=-16286.4
+   [ok  ] L17: holds for 3 nu x 6 s  min slack=6566.6
+   [ok  ] Thm(iv): <eta> <= 0.83 mu  <eta>/mu=3.5100e-04
+== mu=0.02 k=3000.0  lambda=150000 rho=147059  section-map increments: 2.0e-01 0.0e+00 0.0e+00
+   T=9.77928e+06  T*mu/lambda=1.30390  T_-=9.77928e+06 T_+=0.00023168  p_k/lambda=1.000000  D=1.467e+12 h=26.883
+   s_w=16.096 s_0=610.2 tau_1=0.00018684  M_+/p_k^2=1.3039  W_c=1.7229e+10  int eta=25.081 (spike 5.438 + trough 19.64)
+   <eta>=2.564693e-06  <eta>/mu=1.282e-04  log m_t=(<eta>-mu)T=-195560
+   [ok  ] sanity L5a: M_+ = w_d+P_d+|w_k|+p_k (cycle closure)  rel=0.0e+00
+   [ok  ] sanity F6: <x> = k  <x>/k=1.000000000
+   [ok  ] L6: T_+ < pi/omega  T_+=0.00023168 pi/omega=0.25165
+   [ok  ] L6: T_- > T_0(k)  
+   [ok  ] F4: T > 2pi/sqrt(mu)  
+   [ok  ] F2: Lambda_E > 0 (spike + trough samples)  min=2.061e+06
+   [ok  ] F5: h <= H = log M0, p<=lambda, y>=-1e-10 (strict margins ~e^{-mu T} are below double precision; y starts at underflowed 0)  h=26.883 H=27.749 lam-max p=0.000e+00 min y=-4.513e-17
+   [ok  ] L7: w_d>0, w_k<0, W_c>0, w(trough)<0, s_w<s_0  
+   [ok  ] L8: |U(s_w/2)| >= k c_i(s_w)(1-e^-v)  v=1.9261e+11 rhs=2.9242e+10
+   [ok  ] L8: D >= phi2 k c_i(s_w)  D=1.4668e+12 rhs=2.33e+10
+   [ok  ] L9: P_w >= k phi(s_w)(u-1+e^-u)  P_w=2.1697e+10 rhs=1.7793e+06
+   [ok  ] L9: D - v_w >= k phi(s_w) c_ii(u)  1.0847e+12 >= 5.2943e+08
+   [ok  ] L9: P_w < (gamma_E - mu) v_w  ratio=0.00385
+   [ok  ] L9: D >= phi2 k c_ii(u)  D=1.4668e+12 rhs=4.2185e+08
+   [ok  ] L10a: T_- - s_0 >= p_k/k ; D >= p_k^2/(2k)  9.7787e+06>=50; 1.4668e+12>=3.75e+06
+   [ok  ] L10b: r_l >= sqrt(2(D-l)/k)  9.77867e+06 >= 31270.8
+   [ok  ] L10c: p(s_l) >= k phi_l Psi_mu(r_l); p_k >= p(s_l) - mu l  p(s_l)/lam=1.000000 rhs/lam=0.864665
+   [ok  ] L10d: tau_b < 0.36 (and k c_b(tau_b) < l/phi_l)  tau_b=1.333e-05
+   [ok  ] L11: p_k >= 0.374 k  p_k/k=50
+   Stage-1 pigeonhole: s_w=16.1 (a1=2.06)  u=594.1 (a2=1.99)  r_l=9.77867e+06 (a3=1.48)  tau_b=1.333e-05 (a4=0.36)
+   [ok  ] L11: at least one of s_w>=a1, u>=a2, r_l>=a3  
+   [ok  ] L12: P_1 <= p_k(1+eps_1), P_1 < lambda  P1/p_k=1.000000 1+eps1=1.00008
+   [ok  ] L13: e^{U_theta} >= E_theta  U_th=26.292 log E_th=26.016
+   [ok  ] L13: tau_1 - s_theta >= theta p_k/(mu P_1 + M_+)  9.529e-06 >= 3.615e-06
+   [ok  ] L13: M_+(M_+ + mu P_1) >= Q  lhs/Q=13.6
+   [ok  ] L13: T_- > M_+/k >= p_k^2 sqrt(1-dQ)/(sqrt8 k) - 1/2  T_-=9.77928e+06 M_+/k=9.77928e+06 rhs=2.65104e+06
+   [ok  ] L14: T_- >= 22 and r_l >= 0.3 T_-  r_l/T_-=0.99994
+   [ok  ] L14: p_k >= 0.95 phi_l k (1-e^{-mu z})/mu - l  p_k/lam=1.00000 rhs/lam=0.82142
+   [ok  ] L15 (Tm): T_- > p_k^2 sqrt(1-delta1(K0))/(sqrt8 k) - 1/2  
+   [ok  ] L15: h(z) > 0.3 kappa0 k and z > z#  h(z)/(0.3 kappa0 k)=6.219  z/z#=7.112
+   [ok  ] Thm(i): T >= 0.1833 lambda/mu  T mu/lambda=1.30390
+   [ok  ] Thm(ii): p_k >= 0.819 lambda  p_k/lambda=1.000000
+   [ok  ] L16: D > L0, L0 <= Lhat, H <= Hhat  
+   [ok  ] L16 rise: T_- - t_{L0} <= 2 L0/p_k <= 2Lhat/(c_p lambda)  8.408e-05 <= 0.0001682
+   [ok  ] L16: X_theta >= theta p_k^3 (1-delta')/4 ; s_theta <= Hhat/(theta p_k)  X_th/(theta p_k^3/4)=1.318  p_k s_th=26.6 (<= 40.8)
+   [ok  ] L16: crest at most a_c/p_k after s_theta ; p_k tau_1 <= A_1  p_k(tau1-s_th)=1.429 (a_c=3.466);  p_k tau_1=28.03 (A_1=44.26)
+   [ok  ] L16: W_c >= p_k^2 e^{-tau1bar}/A_1 >= What  W_c=1.7229e+10 What=3.4083e+08
+   [ok  ] L16: time crest -> U=-L0 <= v_f  5.395e-05 <= 0.0005049
+   [ok  ] L16: post-crest drop >= (W_c+k)(1-(1+v)e^-v) - k(v-1+e^-v)  min(drop-lowb)=0.000e+00 at v=0.000e+00 (drop=0.000000e+00, lowb=0.000000e+00); relative min=5.422e-04
+   [ok  ] Thm(iii): tau_c <= Cbar_tau(lambda)/(0.819 lambda)  lambda*tau_c=48.729  bound=162.78
+   [ok  ] L17: (<eta>-mu)T <= -nu(T-tau_c)+(s-mu)tau_c+kT/s^2+log(1+alpha s+beta s^2)  lhs=-195560 rhs=-48882.8
+   [ok  ] L17: holds for 3 nu x 6 s  min slack=19609
+   [ok  ] Thm(iv): <eta> <= 0.83 mu  <eta>/mu=1.2823e-04
+
+FAILS: none

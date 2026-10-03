@@ -1,0 +1,4 @@
+Started: wh-evidence-lgsupp (pid 46479)
+mu_0.02_k_1000 FAIL 420.1s
+v3_largegain_lemmas_small_mu_supplement: 36/37 passed -> FAIL  [420.5s]
+   FAILED: {"group": "B author cycles", "id": "mu_0.02_k_1000", "mu": 0.02, "k": 1000.0, "attempted": 37, "n_passed": 36, "failed_comparisons": [{"name": "C: M+ < k T-", "lhs": 3259811286.0827665, "op": "<=", "rhs": 3259811286.081722, "passed": false}], "passed": false, "T": 3259811.2867276818, "T_mu_over_lambda": 1.3039245146910727, "pk_over_lambda": 0.9999999999920013, "log_mt": -65173.34039958629, "mean_eta_over_mu": 0.00035102238986228773, "lambda_tau_c": 45.113205181754175, "seconds": 420.07488107681274}

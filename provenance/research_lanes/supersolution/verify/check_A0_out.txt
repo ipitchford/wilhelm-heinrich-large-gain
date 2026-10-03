@@ -1,0 +1,9 @@
+   mu   rho       -lam_c S(true)+lam_c max_rand(S+lam_c) max_opt(S-Strue) max_abs_opt S/(-lam) concav viol rel concav viol abs  nrand ncvab     s
+ 0.30  1.01  1.94228e-03     -2.28e-08        -5.264e-04       +0.000e+00              -0.1052       -1.53e-01       -2.04e-03   2000   300  10.8
+ 0.30  1.50  5.63598e-02     -1.31e-06        -2.554e-04       +0.000e+00               0.7082       -7.24e-01       -6.76e-01   2000   300   9.2
+ 1.00  1.01  3.98400e-03     -2.88e-08        -1.114e-03       +0.000e+00               0.2823       -5.24e-01       -3.10e-02   2000   300   5.3
+ 1.00  4.00  3.95940e-01     -3.42e-06        -5.332e-04       +0.000e+00               0.6662       -2.54e-01       -4.09e+01   2000   300  13.4
+ 0.02  1.50  3.25990e-03     -8.51e-08        -4.725e-05       +0.000e+00               0.2586       -3.00e-01       -4.41e+00   2000   300  26.2
+ 0.02  1.01  1.81932e-04     +1.78e-09        -2.491e-04       +0.000e+00              -2.8008       -2.07e-01       -5.53e-03   2000   300  23.8
+ 0.30 12.00  2.03960e-01     -8.84e-07        -1.356e-04       +0.000e+00                 -inf       -2.66e-01       -1.13e+07   2000    77  24.4
+S(true)+lam_c is the quadrature error of the grid. Lemma A0 is falsified iff max_rand(S+lam_c) or max_opt(S-Strue) is positive beyond that error, or 'max_abs_opt' > 1, or a concavity violation is positive.

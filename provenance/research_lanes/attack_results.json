@@ -1,0 +1,673 @@
+[
+ {
+  "lane": "literature",
+  "result": {
+   "lane": "literature",
+   "status": "obstruction",
+   "headline": "No published result resolves or partially resolves Wilhelm\u2013Heinrich uniqueness (open in Boros\u2013Hofbauer 2023; nothing later found), and no existing uniqueness theorem applies: Massera-, Zhang-, concave-return-map and curvature-Dulac hypotheses were checked and fail. The only precedent, Jones' conjecture, needed asymptotics plus computer-assisted proof. By-product proved here: every projected cycle is strictly star-shaped and convex, giving exact formulas lambda_c = -<pK/S*> = -<pW/V>.",
+   "claims": [
+    {
+     "statement": "The cycle count above Hopf is still open. It is stated open in Smith 2012 (after Thm 1.1) and Boros\u2013Hofbauer 2023 (after Thm 13). Citation graphs of both papers and of Wilhelm\u2013Heinrich 1995/96 (OpenAlex, Semantic Scholar), arXiv listings and web searches to 2026-10-03 show no later result. A 2025 MATCH paper citing Smith concerns the Willamowski\u2013R\u00f6ssler system, not this one.",
+     "proof_status": "published",
+     "where": "https://arxiv.org/abs/2202.11034 ; https://arxiv.org/abs/1109.5204 ; NOTES.md section 1"
+    },
+    {
+     "statement": "For mu=1 the system is exactly the linear-chain form of the strong-kernel delayed logistic equation (Ruan survey eq. 9.11). The distributed-delay literature (Ruan Thms 7\u20139; Cushing, MacDonald) gives global stability for the weak kernel and only local Hopf existence/stability for the strong kernel. No uniqueness or global orbital-stability theorem for gamma/Erlang-kernel periodic solutions was found.",
+     "proof_status": "published",
+     "where": "https://www.math.miami.edu/~ruan/MyPapers/Ruan-nato.pdf (section 9)"
+    },
+    {
+     "statement": "Jones' conjecture was proved in three regimes: Xie (alpha>=5.67: every slowly oscillating periodic solution is stable, and stable-for-all implies unique); Jaquette\u2013Lessard\u2013Mischaikow ([1.9,6.0]: interval bounding functions for all periodic solutions plus Floquet bounds); Jaquette ((pi/2,1.9]: Fourier-space branch-and-bound) with van den Berg\u2013Jaquette's explicit Hopf neighbourhood. Stability arguments are stated to be infeasible near Hopf.",
+     "proof_status": "published",
+     "where": "arXiv:1801.09806 ; arXiv:1705.02432 ; arXiv:1704.00029 ; arXiv:0909.4107"
+    },
+    {
+     "statement": "No general uniqueness theorem exists for periodic orbits of 3-D competitive or negative cyclic feedback systems with smooth nonlinearity; Katz\u2013Giordano\u2013Margaliot (JDE 2025) list it as open. Known results need step or piecewise-linear nonlinearities (Glass\u2013Pasternack, Farcot\u2013Gouz\u00e9), steep-Hill regimes (Hastings 1977) or relaxation asymptotics. The 1981 neuron-model paper is Bingxi Li, Nonlinear Anal. 5:13\u201319; its hypotheses were not obtainable.",
+     "proof_status": "published",
+     "where": "arXiv:2503.09155 (conclusion) ; doi:10.1216/RMJ-1977-7-3-513 ; doi:10.1016/0362-546X(81)90065-1 ; NOTES.md section 2.5"
+    },
+    {
+     "statement": "On every nonconstant cycle S*=p^2-Up'>0 and V=p'^2-pp''>0: the (U,p) projection is strictly star-shaped about E and strictly convex. Identities S*'=(eta-mu)S*+pK and V'=(eta-mu)V+pW give lambda_c=-<pK/S*>=-<pW/V>, and the rising-arc integral of eta-mu is below 2log r, the falling-arc integral above -2log r, r=(y_crest-k)/(k-y_trough). Uses v2.0 Prop 2.2, Cor 3.2, Lemma 3.3, Thm 4.1.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/literature/NOTES.md section 3.1 ; wronskian_gauge_test.py, curvature_dulac_test.py"
+    },
+    {
+     "statement": "Planar uniqueness theorems do not apply to the reduced flow. Sabatini\u2013Villari radial angular monotonicity equals -vK; the Gasull\u2013Giacomini curvature Dulac defect equals pW; Sabatini's star-shapedness function takes both signs on computed cycles (about -0.36 to 1.1). Zhang-type theorems need a separable Li\u00e9nard form; the formal mu->0 Li\u00e9nard truncation satisfies Zhang's condition but has no cycle (first-order Melnikov function is strictly positive).",
+     "proof_status": "refuted",
+     "where": "NOTES.md sections 3.2, 3.4 ; starshaped_test.py ; toda_ratio.py ; arXiv:1101.2761 ; arXiv:1006.2020 ; arXiv:2101.03874"
+    },
+    {
+     "statement": "H. L. Smith's 1986 monotone-concave fixed-point theorem does not apply to the crest return map in power charts: monotonicity held at all 243 tested section points, but the concavity hypothesis failed in 12\u201334% of ordered comparisons for every chart tried. Its necessary consequence Mv<=v held on 24 cycles (rho>=1.02) but fails near Hopf unless a=(mu^2+4mu+1)/(mu^2+6mu+1)-(1-b)/(1+mu).",
+     "proof_status": "refuted",
+     "where": "NOTES.md section 3.3 ; concavity_grid_test.py ; sublinear_chart_test.py ; arXiv:0903.1969 (Theorem 1)"
+    },
+    {
+     "statement": "Smith 2012 proved below-Hopf global stability with the Li\u2013Muldowney second-compound criterion, weights diag((1-2e)/x,(1-e)/x,-1/k5), Lozinskii measure max{...,x/(1-2e)-(k3+k5)} and <x>=k. This is brief item (e) with phi=1; above Hopf a state-dependent weight is required. Gasull\u2013Giacomini's extended Bendixson\u2013Dulac theorem is the published form of brief item (d). No brief item was contradicted.",
+     "proof_status": "published",
+     "where": "arXiv:1109.5204 (proof of Thm 1.1(b)) ; arXiv:1305.3402 ; NOTES.md section 4"
+    }
+   ],
+   "obstruction": "The nonlinearity e^U-1 is sublinear on one side of the equilibrium and superlinear on the other, and the effective damping mu-eta is monotone through the equilibrium instead of extremal there. Every structural uniqueness theorem located needs two-sided sublinearity or concavity (Cao, Krasnosel'skii, H. L. Smith), a separable Li\u00e9nard form (Zhang), a damping critical point at the equilibrium (Massera, Sabatini), a step-like nonlinearity, or a small parameter. Concretely, every Dulac defect computed is a positive convexity gauge times the sign-changing factor p (-vK, pW), and the crest map is monotone but not concave. For the same nonlinearity with a pure delay (Wright's equation) uniqueness took 57 years and was closed only by large-parameter asymptotics plus computer-assisted proof. Several potentially relevant papers (Li 1981, Dai 1979, R. A. Smith 1987) were paywalled, so their hypotheses are unverified.",
+   "best_next_step": "Exploit the new gauge family: for periodic phi, S=p*phi'-p'*phi obeys S'=(eta-mu)S+p*L2[phi]; seek phi, or a non-diagonal Li\u2013Muldowney weight using the two new zero-mean log-derivatives of S* and V, that removes the factor p. In parallel plan a Jones-type programme: explicit Hopf collar (van den Berg\u2013Lessard\u2013Queirolo), validated crest map on compact parameter boxes, large-rho asymptotics, separate mu->0 analysis.",
+   "notes_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/literature/NOTES.md",
+   "confidence": 0.92
+  },
+  "verdict": null
+ },
+ {
+  "lane": "cartography",
+  "result": {
+   "lane": "cartography",
+   "status": "partial",
+   "headline": "No second cycle and no lambda_c >= 0 anywhere: 300 grid cycles (mu 0.002..1, rho-1 from 1e-3 to 199), 827 branch points, 240 random points (mu 1e-3..1e3, rho <= 285). log m_t is strictly decreasing in rho. Survivors: S1, S4. Refuted: S2 (all six coordinates), S3b, S5 one-signedness; S3a fails on the crest side for mu in about [0.7,1.5], rho >= 4.5. All floating point, no proofs.",
+   "claims": [
+    {
+     "statement": "Grid of 12 mu x 25 rho: all 300 cycles found, every lambda_c < 0 (max -1.93e-6 at mu=0.002, rho-1=1e-3; stable to 10 digits at rtol 1e-10..1e-13). log m_t is strictly decreasing in rho at each mu; rho(h) is strictly increasing along every amplitude branch (no fold). |log m_t| >= 0.548 x the Hopf-linear value everywhere; m_t > 0.999 only for rho-1 < 0.0035.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/cartography/grid_table.csv"
+    },
+    {
+     "statement": "Hunt at 240 random points: 239,103 return-map pairs on the attractor with zero wrong-sign displacements (exactly one diagonal crossing); 1673 long runs from W^u(E), far-outside and random 3-D starts, none converging elsewhere (25 not finished: slow near Hopf or too expensive); 2868 Newton starts, zero new fixed points. One point failed in direct coordinates and was redone at the reciprocal rate.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/cartography/hunt_summary.txt"
+    },
+    {
+     "statement": "S1 survives: at 62/62 parameter points (mu 0.002..500, rho-1 0.003..33) the one-turn mean of eta-mu decreases turn by turn along W^u(E), and is strictly decreasing in crest amplitude inside (62/62) and outside (31/31) the cycle. Near Hopf at small mu the turn-by-turn differences are at round-off level. The one-turn integral is not monotone.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/cartography/stests_summary.csv"
+    },
+    {
+     "statement": "S2 refuted in all six coordinates. y-k, e^U-1, sqrt(K), sqrt(W): the return map is convex near E at all 62 points. U and Lambda_E: concave at 49 and 43 of 62, failing for extreme rate ratios with larger rho. Even phi(U)/U is not decreasing: at mu=0.0027, rho=5.02, log(phi(U)/U) is 0.287 at E, 0.220 at 0.25U*, 0.245 at 0.54U*.",
+     "proof_status": "refuted",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/cartography/NOTES.md"
+    },
+    {
+     "statement": "S3a refuted on the crest side: at mu=1, rho=5 the ratio (mu-zeta)/(k(e^U-1)) on the attractor section has slope -0.135 at the cycle (finite differences, three tolerances). It fails for mu in about [0.7,1.5] with rho >= 4.5 to 8; passes on the trough side (62/62) and for mu <= 0.5 or >= 2 up to rho=10. S3b (fixed Lienard s) fails at 62/62.",
+     "proof_status": "refuted",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/cartography/s3a_cycle_scan.json"
+    },
+    {
+     "statement": "S4 survives: D^2h is strictly positive definite at all reliably computed attractor points (62/62; eigenvalue ratio 2.5e-12 to 0.10), and all 300 projected cycles are convex in (U,p). Caveat (standard node argument, not proved here): h is expected to be C^2 at the cycle only if |lambda_c| <= (1+mu)/3; the pull-back variation fails to converge at mu=1, rho=21.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/cartography/cycle_tests.csv"
+    },
+    {
+     "statement": "S5/S6: K-(zeta-mu)chi(U) is positive on the disc only at smaller rho (174/300 cycles); a negative patch on the downstroke appears from rho-1 of about 0.7 to 2. zeta/eta <= 1 on part of every cycle and > 1 on another; x/zeta, zeta/eta+mu, k(Ue^U-e^U+1)/K, xp^2/W minus A all change sign on every cycle; their means equal lambda_c to 6 digits.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/cartography/cycle_tests.csv"
+    },
+    {
+     "statement": "mu->0 at fixed rho is a relaxation limit, not near-neutral: m_t -> m_0(rho) in (0,1), T ~ S*(rho)/mu. A formal limit return map built from the pulse x'=px, p'=-y, y'=x-y matches the full system with O(mu) error for rho 1.03..200 (rho=1.5: -0.38688 at mu=5e-4 vs -0.38593) and has a unique fixed point for rho in (1.0002,320). The Hamiltonian window is rho-1=O(mu).",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/cartography/limit_map_stdout.txt"
+    }
+   ],
+   "obstruction": "No obstruction to the conjecture was found; this lane produces evidence, not proof. The obstructions are to proof strategies. Return-map concavity or star-shapedness fails structurally at small min(mu,1/mu): the map has a quasi-harmonic regime near E and a pulse-relaxation regime further out, and log(phi(U)/U) rises between them. Zhang-type f/g monotonicity is false over the disc at every tested parameter and false on the section near mu=1 at larger rho. Every pointwise candidate in S5/S6 changes sign. Limits of the evidence: floating point only; mu in [1e-3,1e3], rho <= 300; outside the cycle the return map is only defined post-transient; Hessian tests for mu > 1 cover only the crest half of the disc; isolas beyond U*+6 or thinner than the scan spacing would be missed.",
+   "best_next_step": "Attack S1 in amplitude form: the one-turn mean of eta-mu strictly decreasing in crest amplitude on the attractor disc. Given brief item (b), it implies uniqueness, and it passed every test including the parameter sets that break S2. In parallel, treat mu->0 as a model problem: prove the limit function Lambda(p) is increasing, a parameter-free property of the pulse scattering map G.",
+   "notes_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/cartography/NOTES.md",
+   "confidence": 0.97
+  },
+  "verdict": null
+ },
+ {
+  "lane": "dulac",
+  "result": {
+   "lane": "dulac",
+   "status": "theorem",
+   "headline": "No provable Dulac function found; conjecture NOT proved. Numerically a Dulac function (R<=0) exists per parameter set only in a 26-feature family, with no closed-form or shared coefficients. By-product, fully proved: every cycle's (U,p)-projection is strictly convex and star-shaped about E (V=p^2-Up'>0, Q=p'^2-pp''>0), giving lambda_c = -<pK/V> = -<pW/Q> and an explicit state function eta0 with mean mu bracketing eta by the sign of p.",
+   "claims": [
+    {
+     "statement": "On every cycle V := p^2 - U p' > 0 and Q := p'^2 - p p'' > 0, with V' = (eta-mu)V + pK and Q' = (eta-mu)Q + pW. Hence the (U,p)-projection is strictly convex and strictly star-shaped about the equilibrium.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/dulac/NOTES.md (Sec. 1, Theorem D(a),(b)); tests: sym_check.out, verify_theorem.out (20 fresh cycles, rho 1.001 to 20)"
+    },
+    {
+     "statement": "lambda_c = -<pK/V> = -<pW/Q>. The state function eta0 = [U(x-y) - p(y-k)]/V has cycle mean exactly mu and eta - eta0 = -pK/V, so eta < eta0 where p>0 and eta > eta0 where p<0. (eta,zeta) are affine in the single unknown kappa = K/V > 0. Also (V, V3, Q) = r^z' solves the compound system with source k psi(U)(0,p,p').",
+     "proof_status": "proved",
+     "where": "NOTES.md Sec. 1, Theorem D(c),(e); verify_theorem.out (three lambda_c values agree to >= 6 digits on 20 cycles)"
+    },
+    {
+     "statement": "Monotone integrals on every cycle: <(alpha p + beta p')(alpha eta + beta zeta)> < 0 for all (alpha,beta) != 0; in particular <eta p> < 0, <zeta p'> < 0, <eta p><zeta p'> > <zeta p>^2. A 'convex-Dulac' sufficient criterion (Prop. CD) follows, but no certificate satisfying it was found.",
+     "proof_status": "proved",
+     "where": "NOTES.md Sec. 1, Theorem D(d) and Prop. CD; verify_theorem.out; cdkit.out (ansatz feasible on 2 of 10 cycles only)"
+    },
+    {
+     "statement": "Only the sign R = D Lambda + eta - mu <= 0 is possible. No Dulac function regular at E exists (R(E) = 2 sigma > 0), so B = exp(beta(U)) and polynomial B(U,p) fail; B must blow up at E at least like r^-2. The statement at E relies on brief item 3(b).",
+     "proof_status": "proved",
+     "where": "NOTES.md Sec. 1, Prop. B1; byproduct.out (LP margin exactly -2 sigma)"
+    },
+    {
+     "statement": "LP on dense W^u(E) samples, 10 parameter sets: the pure gauge-log ansatz of brief 3(d) has margin exactly -2 sigma on every set; families of up to 14 log/linear features fail for mu = 0.05; a 26-feature family is feasible for all 10 sets but not with one coefficient vector (feasible jointly only for mu=1, rho in {1.02,1.5,5}).",
+     "proof_status": "numerical",
+     "where": "lp_G.out, lp_run2.out, lp_greedy.out, lp_shared.out, farkas.out in the lane directory; NOTES.md Sec. 3"
+    },
+    {
+     "statement": "For any state-function Lambda, R = E_Lambda(z) - p*kappa exactly, so a certificate is equivalent to an upper bound on kappa = K/V where p<0 and a lower bound where p>0. Supporting-plane inequalities within one (convex) cycle give only lower bounds on kappa.",
+     "proof_status": "proved",
+     "where": "NOTES.md Sec. 4, O1-O2"
+    },
+    {
+     "statement": "Refuted: B = exp(G(U))/V (needs kappa_up >= kappa_low at equal U; fails near the crest and in the linear regime); half-plane monotonicity of K/V; '<eta(lambda-p)> <= k' (false near Hopf); 'lambda_c <= c_Hopf(mu) <eta p>' (ratio drops from 0.200 to 0.013 for mu=1); cycle-only LP feasibility is uninformative.",
+     "proof_status": "refuted",
+     "where": "explore2.out, explore4.out, verify_theorem.out, cd_run2.out; NOTES.md Sec. 2, Sec. 4 O4"
+    },
+    {
+     "statement": "On all 30 computed cycles eta < mu on the quadrant p>0,p'>0, eta > mu on p<0,p'<0, and eta(crest) > mu > eta(trough). Near Hopf lambda_c ~ -A mu^2 eps^2 / (2(A^2+mu)D), <eta p> ~ -mu^2 eps^2/D with D = mu^2+6mu+1. Neither is proved here.",
+     "proof_status": "numerical",
+     "where": "quadrant_facts.out, explore3.out, verify_theorem.out; NOTES.md Sec. 2 and Sec. 4 O3"
+    }
+   ],
+   "obstruction": "Every Dulac candidate reduces to one missing inequality. For state-function Lambda the residual is R = E(z) - p*K/V, and richer Lambda (using eta, zeta, K, W) are functions of (z, K/V) as well. R <= 0 therefore needs an upper bound on K/V (equivalently on eta) on the descending half p<0, above all just after the crest (p<0, p'<0), where eta > mu on all computed cycles. Convexity (supporting planes, K>0, W>0) bounds K/V only from below there, because the projected cycle is convex. The available dynamic upper bounds (zeta < y; eta < lambda-p for mu <= 1/2) are O(1/r) at E instead of O(1), so they cannot reproduce the first Lyapunov coefficient near Hopf. Numerically a Dulac function exists, but only with about 26 parameter-specific coefficients and no visible closed form.",
+   "best_next_step": "Attack the sign of the integral of (kappa_up - kappa_low) dU directly through the linear filter kappa' = k psi(U)/V - (1+eta+eta0-mu) kappa, whose source is explicit and nonnegative. In parallel, hand omega = r^z' = (V, V3, Q), with source k psi(U)(0,p,p'), to the supersolution lane: correct the field n = r so that the source becomes nonnegative outside the quadrant p,p' >= 0.",
+   "notes_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/dulac/NOTES.md",
+   "confidence": 0.88
+  },
+  "verdict": {
+   "refuted": true,
+   "verdicts": [
+    {
+     "statement": "Claim 1 (Theorem D(a),(b)): on every cycle V = p^2 - U p' > 0 and Q = p'^2 - p p'' > 0, with V' = (eta-mu)V + pK and Q' = (eta-mu)Q + pW; the (U,p)-projection is strictly convex and strictly star-shaped about E.",
+     "verdict": "holds",
+     "reason": "Every step re-derived (verify/ref_sym.py; cofactors -U*O and (eta p+k-mu p+p-y)*O). Sign propagation uses only K>0, W>0 and the two zeros of p from v2.0; no stability or uniqueness. 400-bit Taylor integration of 21 cycles (mu 0.005-50, rho 1.01-20): V, Q > 0 at every sample, min Q/(p^2+p'^2) = 1.2e-20 at mu=1, rho=20; F^dq < 0 on 1.9 million pairs."
+    },
+    {
+     "statement": "Claim 2 (Theorem D(c),(e)): lambda_c = -<pK/V> = -<pW/Q>; eta0 = [U(x-y) - p(y-k)]/V has mean mu and eta - eta0 = -pK/V; (eta,zeta) affine in kappa = K/V > 0; (V,V3,Q) = r^z' solves the compound system with source k psi(U)(0,p,p').",
+     "verdict": "holds",
+     "reason": "State identities are exact (ref_sym.py). The three exponent formulas agree to 16 digits on 21 cycles and with a Riccati-free 400-bit monodromy at mu=1, rho=12 and 20 (ref_monodromy.py). <eta0>-mu <= 1e-25; identity residuals <= 1e-32; sign pattern has zero violations. Compound rows checked against the flow's Taylor coefficients."
+    },
+    {
+     "statement": "Claim 3 (Theorem D(d), Prop. CD): <(alpha p + beta p')(alpha eta + beta zeta)> < 0 for all (alpha,beta) != 0, hence <eta p> < 0, <zeta p'> < 0, <eta p><zeta p'> > <zeta p>^2; the convex-Dulac sufficient criterion follows.",
+     "verdict": "holds",
+     "reason": "D(d) proof checked: two points per level by strict convexity, s<0 by connectedness, Thm 3.1 added with both bases. Quadratic form negative definite on 21 cycles; orderings hold at 334 exactly matched levels per cycle; pointwise step confirmed for 200 random directions (ref_directions.py). Prop. CD orientation correct; only a harmless domain caveat in its parenthetical remark."
+    },
+    {
+     "statement": "Claim 4 (Prop. B1): only the sign R <= 0 is possible; no Dulac function regular at E exists (R(E) = 2 sigma > 0), so exp(beta(U)) and polynomial B fail; B must blow up at E at least like r^-2 (statement at E relies on brief 3(b)).",
+     "verdict": "gap",
+     "reason": "B1(i): the averaging step <R> = lambda_c needs a hyperbolic attracting cycle; Smith gives only orbital asymptotic stability (lambda_c <= 0), so R >= 0, R not identically 0 is not excluded when that cycle is neutral. B1(ii) rests on unproved brief 3(b) (disclosed); the r^-2 clause is argued only for power-law B. Repairs in VERIFY.md 3.4. R(E) = 2 sigma algebra correct; no counterexample."
+    },
+    {
+     "statement": "Claim 5 (O1-O2): for any state-function Lambda, R = E_Lambda(z) - p*kappa exactly, so a certificate is an upper bound on kappa where p<0 and a lower bound where p>0; supporting-plane inequalities within one convex cycle give only lower bounds on kappa.",
+     "verdict": "holds",
+     "reason": "R = E_Lambda - p kappa is claim 2; W = W0 + kappa Q exact (ref_sym.py). Delta = [zeta0 dU - eta0 dp - dy] + kappa F^dq verified exactly and on 1.9 million pairs, with F^dq < 0 and Delta < 0, so each supporting-plane inequality bounds kappa below at its base point. Holds on cycles; the disc version needs brief 3(b), as the lane's table item 4 states."
+    }
+   ],
+   "summary": "Theorem D (V, Q > 0; convex, star-shaped projection; lambda_c = -<pK/V> = -<pW/Q>; neutral-mean eta0; monotone integrals), Prop. CD and O1-O2 survived: proofs checked line by line, algebra re-derived, and 21 cycles (mu 0.005-50, rho 1.01-20) integrated at 400 bits with independent code show no violation. Refuted is set only because by-product Prop. B1 has gaps: (i) needs a hyperbolic attracting cycle, which Smith's theorem does not supply; (ii) depends on unproved brief 3(b) and under-argues the r^-2 clause. Both look repairable; no counterexample. Side remark K/V < 0.6 (not claimed proved) is false at small mu (0.627). The lane's undisclosed monodromy mismatch at rho=20 is a double-precision artifact.",
+   "report_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/dulac/VERIFY.md"
+  }
+ },
+ {
+  "lane": "supersolution",
+  "result": {
+   "lane": "supersolution",
+   "status": "theorem",
+   "headline": "No proof of the conjecture and no counter-evidence (55 cycles, all attracting). New proved theorem: every cycle's (U,p)-projection is strictly convex and strictly star-shaped about E (S1 = p^2 - U p' > 0, S4 = p'^2 - p p'' > 0), with exact formulas lambda_c = -<pK/S1> = -<pW/S4>. Stability therefore reduces to one explicit upper bound for eta on the falling arc. Explicit state-function certificates are tightly constrained and none tested gives a provable inequality.",
+   "claims": [
+    {
+     "statement": "Theorem R. On every cycle S1 = p^2 - U p' > 0 and S4 = p'^2 - p p'' > 0; S1' = (eta-mu)S1 + pK, S4' = (eta-mu)S4 + pW. Hence the (U,p)-projection is strictly star-shaped about E and strictly convex, and lambda_c = -<pK/S1> = -<pW/S4> = -<p(K+c zeta)/(p^2 - p'(U+c))> for 0 <= c < |U_min|. Formulas agree with <eta>-mu to 6 digits on 55 cycles.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/supersolution/NOTES.md (section 1, Theorem R; radial_check.py)"
+    },
+    {
+     "statement": "Proposition T. For two nested cycles with polar radii R_1 < R_2 about E: d/dtheta log(R_2/R_1) = sin(theta)(m_2-m_1)/(sigma_1 sigma_2), m_i = (y_i-k)/R_i, m_2 > m_1, sigma_i = S1/R_i^2 > 0. So R_2/R_1 increases on (0,pi), decreases on (pi,2pi): trough-depth ratio > every radial ratio > crest-height ratio > 1. No contradiction derived from it.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/supersolution/NOTES.md (section 1, Proposition T; polar_check.py)"
+    },
+    {
+     "statement": "Lemma A0. A supersolution omega = phi(1,eta~,zeta~) gives lambda_c <= -<min(mu-eta~, Dlog eta~ + 1 - zeta~/eta~, Dlog zeta~ + A - x/zeta~)>; the scalar factor phi drops out; equality at the true (eta,zeta). For log-linear families (log eta~, log zeta~ linear in fixed state features) the objective is concave in the exponents, so family existence is a convex programme.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/supersolution/NOTES.md (section 1, Lemma A0; cvx.py)"
+    },
+    {
+     "statement": "Lemma A1 (first-order rigidity). Under C^1 expansions in the Hopf amplitude, any certificate direction with nonnegative score must equal (mu,mu) at order 0 and the true first-order pair at order eps: eta~ = mu + (mu A/D)U - (2mu/D)p, zeta~ = mu + (mu(mu^2+4mu+1)/D)U - (mu A/D)p, D = mu^2+6mu+1. Hence omega^Y, omega^c, radial and constant directions are dead near Hopf.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/supersolution/NOTES.md (section 1, Lemma A1)"
+    },
+    {
+     "statement": "Target B. Brief identity 3(f) holds in quantitative form: lambda_c = <a^ x(lambda-A-2p)>/<c^ P + b^ y + a^ x>, chi(gamma) = <x a^>/<a^>, lambda_c = <beta>-A with beta = b/a. For mu <= 1: beta > 1 and c/a > (1-mu)beta pointwise. Ratio check 1.000000 on 54 of 55 cycles (0.9989 on the stiffest). The sign itself is not proved.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/supersolution/NOTES.md (section 1, Proposition B; targetB_identity.py, targetB_out.txt)"
+    },
+    {
+     "statement": "Target A family verdicts (averaged criterion, per-cycle concave optimum over 55 cycles): omega^Y, omega^c, radial, K<-Lambda_E, exp-linear: negative on all cycles. Monomials x^a Z^b Y^c: negative near Hopf for mu <= 0.2 (ratio -0.41 at mu=0.05). Adding Lambda_E: still negative at mu <= 0.1 near Hopf. Monomials in X,Z,Y,Z*: positive on all 55 (0.27 to 0.985 of -lambda_c).",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/supersolution/table_A_out.txt; explicit_trials_out.txt; NOTES.md section 2"
+    },
+    {
+     "statement": "The X,Z,Y,Z* monomial family needs k-dependent exponents: no common-exponent certificate found over rho in [1.001,10] (best min-ratio -0.46 to -15), though one exists on [2,10] for mu <= 0.5. Pointwise on-cycle certificates in the family were found only near Hopf (rho <= 1.03 to 1.1) and not for rho >= 1.3; these pointwise negatives are solver lower bounds, not refutations.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/supersolution/NOTES.md section 2 (famA_joint.py, famA_joint2.py, famA_pointwise.py, pw_a.txt)"
+    },
+    {
+     "statement": "Scalar reduction: the true (eta,zeta) lies on the explicit line zeta p - eta p' = y'; with eta = (S2 - pK)/S1, K solves the scalar Riccati K' = kG1(U) - (1+S2/S1)K + (p/S1)K^2, S2/S1 = mu + (log S1)'. Target C becomes <pK/S1> > 0. Also S1 = Q_E + U Lambda_E and <(p - alpha U)Lambda_E/Q_E> = alpha exactly.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/supersolution/NOTES.md (section 1, Reductions and corollaries; riccK.py, attractor_check.py)"
+    }
+   ],
+   "obstruction": "Three linked obstructions. (1) First-order rigidity: any explicit certificate must reproduce the 2-jet of W^u(E) at Hopf exactly, leaving only O(eps^2) slack; the one parameter-free first-order-exact trial (K replaced by Lambda_E) has the wrong second-order balance (score -2 to -100 times |lambda_c|). (2) The supersolution bound is an average of a minimum along an unknown cycle; only total derivatives have known averages, so an averaged certificate is not a proof, and pointwise on-cycle monomial certificates were not found beyond rho about 1.3. (3) Sign of p: every radial identity reads (log s)' = eta - mu + pN/s with N > 0, an upper bound for eta on the rising arc but a lower bound on the falling arc, where every known pointwise constraint also bounds eta from below. Targets B and C yield identities only; the sign sits in a phase lag.",
+   "best_next_step": "Attack the scalar Riccati equation for K on the falling arc only: find an explicit supersolution that is first-order exact at E (Lambda_E times a correction from the 3-jet of W^u(E)) and make the scalar comparison rigorous. In parallel, give Theorem R to the Dulac lane: test by linear programme along W^u(E) spirals whether S1^-a S4^-(1-a) times powers of K, W, zeta, eta gives a one-signed divergence.",
+   "notes_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/supersolution/NOTES.md",
+   "confidence": 0.8
+  },
+  "verdict": {
+   "refuted": false,
+   "verdicts": [
+    {
+     "statement": "1. Theorem R (S1 > 0, S4 > 0, their ODEs, star-shape, strict convexity, lambda_c = -<pK/S1> = -<pW/S4> = shifted-centre form)",
+     "verdict": "holds",
+     "reason": "Both ODEs and the p=0 values re-derived by hand and sympy (sym_identities.py, 0 failures). Two-arc variation-of-constants argument is complete given paper Cor 3.2, Lemma 3.3, Thm 4.1; no stability input. Independent integrator on 65 cycles (mu 0.02..20, rho 1.0001..12, c up to 0.999|U_min|): all signs positive, four formulas match <eta>-mu to 4e-9 (check_R, check_R2, check_sweep)."
+    },
+    {
+     "statement": "2. Proposition T (radial-ratio monotonicity for two nested cycles)",
+     "verdict": "holds",
+     "reason": "Polar equation and linear-fractional difference verified symbolically; m_2 > m_1 follows correctly from paper Thm 3.1 with the inner cycle as base plus R_2 > R_1 from Theorem R; shifted-centre step checked. Not directly testable (no second cycle); mechanism confirmed on 38 nested spiral/cycle pairs and Thm 3.1 two-phase inequality on 7 cycles (check_T.py). Conditional statement, no contradiction claimed."
+    },
+    {
+     "statement": "3. Lemma A0 (lambda_c <= -<min g_i>, phi drops out, equality at true pair, concavity for log-linear families)",
+     "verdict": "holds",
+     "reason": "Defect rows, C = S J^[2] S and equality g_1=g_2=g_3=mu-eta at the true pair verified by sympy; Metzler comparison and Collatz-Wielandt used in the correct direction; spectral radius m_t confirmed from the 3x3 monodromy (check_floquet.py). 14,000 random trials plus Powell optimisation on 7 cycles never exceed -lambda_c; no midpoint-concavity violation (check_A0.py)."
+    },
+    {
+     "statement": "4. Lemma A1 (first-order rigidity at Hopf under C^1 expansions; stated coefficients; omega^Y, omega^c, radial, constants dead)",
+     "verdict": "holds",
+     "reason": "Order-0 and order-eps averaging steps correct; linearised Riccati system has unique periodic solution; coefficients solve it (hand and sympy). check_A1.py: regressed coefficients converge to claimed values for mu=1, 0.3, 0.02; S/eps of inexact jets converges to the lemma's predicted <m_1> < 0 down to rho-1=1e-6. Hypothesis is stated; the four directions are also dead by direct arguments."
+    },
+    {
+     "statement": "5. Target B / Proposition B (quantitative identity, chi(gamma)=<x a^>/<a^>, lambda_c=<beta>-A, beta>1 and c/a>(1-mu)beta for mu<=1)",
+     "verdict": "holds",
+     "reason": "Adjoint relation nu'=-C^T nu, defects and the beta/kappa primitive verified by sympy; monotonicity argument for v and b-a correct. Positivity of (a,b,c) was asserted without proof; it follows in one line from the paper's positive adjoint period matrix (transpose), and check_floquet.py confirms the (+,-,-) eigenvector. check_B.py: all ratios 1.0000000 at 12 extremes; lane's '54 of 55' line slightly misreports its own receipt."
+    },
+    {
+     "statement": "6. Scalar reduction (constraint line, Riccati (R_K) for K, S2/S1 = mu + (log S1)', S1 = Q_E + U Lambda_E, <(p - alpha U)Lambda_E/Q_E> = alpha)",
+     "verdict": "holds",
+     "reason": "All identities verified symbolically (S2, S3 decompositions, (R_K), N equation, Q_E derivative with k = chi(gamma_E)); Q_E positive definite because the unstable pair is complex. Numerically on 55 independent cycles: (R_K) residual <= 4e-11, <S2/S1>-mu <= 5e-12 relative, alpha identity <= 2e-9 (check_R.py, check_sweep.py). The scalar comparison is labelled sketch by the lane, not claimed."
+    }
+   ],
+   "summary": "Not refuted. All six statements hold. Every identity was verified symbolically and every proof step re-derived; no step uses stability or uniqueness. An independent integrator on 65 cycles (mu 0.02\u201320, rho 1.0001\u201312, troughs to U = -8357) found no sign violation and exponent agreement to 4e-9. The only anomalies were traced to underflow and rounding in the referee's own scripts. One omitted justification (positivity of the strong-stable vector) is supplied from the paper's Perron argument. Reporting defects only: the Proposition B ratio line misreports its receipt, the lane's beta > 1 receipt shows round-off negatives, two equation citations are misnumbered, and Obstruction 1 is worded wider than Lemma A1.",
+   "report_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/supersolution/VERIFY.md"
+  }
+ },
+ {
+  "lane": "planar",
+  "result": {
+   "lane": "planar",
+   "status": "theorem",
+   "headline": "Job 1 proved in full: the global attractor is a convex C^1 graph y=h(U,p) over the closed Jordan domain bounded by the outermost projected cycle, with grad h=(zeta,-eta), planar divergence eta-mu, and uniqueness equivalent (up to lambda_c=0) to lambda_c<0 on every cycle. Proof is self-contained on classical theorems only. Job 2 (uniqueness) not proved: natural pointwise Zhang/Massera/Dulac/rotation candidates are numerically refuted; crest return-map concavity is supported but unproved.",
+   "claims": [
+    {
+     "statement": "Theorem A (A1-A5), all mu,k>0: compact connected global attractor A = all log-bounded entire orbits; along each a unique nonnegative entire Riccati solution (eta,zeta), uniformly bounded, continuous on A; strict supporting planes between any two points of A; pi|A injective; A = graph of h=H|_D, H convex; h is C^1 on int D with grad h=(zeta,-eta); reduced field (v,k-mu v-h) has divergence eta-mu.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/attractor_theorem.tex"
+    },
+    {
+     "statement": "Theorem A (A6-A7), k>k_H: A meets E+C_+ and E+C_- only at E; no log-bounded entire orbit other than E converges to E forwards; W^u(E) lies in A; every other orbit in A has a cycle as omega-limit; the crest set is compact; D is exactly the closed Jordan domain bounded by the outermost projected cycle.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/attractor_theorem.tex"
+    },
+    {
+     "statement": "Theorem A (A8): planar multiplier of each cycle equals m_t; innermost and outermost cycles have lambda_c<=0; if every cycle has lambda_c<0 the cycle is unique; if all cycles are hyperbolic their number is odd with alternating stability; Dulac form: D Lambda+eta-mu<=0 (not a.e. zero) on all cycles implies a unique attracting cycle.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/attractor_theorem.tex"
+    },
+    {
+     "statement": "Conditional criterion (Prop 8.1): on the crest half-axis R_1'(u)=g(u)exp(iota(u))/g(R_1 u), g(u)=h(u,0)-k; in the energy coordinate the return map has derivative exp(iota), iota the turn integral of eta-mu. If iota is strictly decreasing, or R_1(u)/u is strictly decreasing, the cycle is unique.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/attractor_theorem.tex"
+    },
+    {
+     "statement": "The crest turn integral iota is strictly decreasing and R_1 is concave and sublinear in U at all 14 tested (mu,rho) pairs. The trough-section analogue is false, and R_1 is not concave in x-k or y-k. The exact derivative formula for iota has a sign-changing integrand.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/NOTES.md (2(a); job2_a.py, job2_a2.py, job2_a3.py)"
+    },
+    {
+     "statement": "Pointwise candidates fail on the attractor disc: generalised Zhang condition d/dU(P_U/g)<=0 violated on 2-18% of points (34-60% in the (y,m) plane); Massera weights 1/(X^xi) in 12 charts have wrong sign on 21-53%; 11 explicit Dulac candidates and a 14-function LP span fail; the Lienard-plane family is not rotated in k.",
+     "proof_status": "refuted",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/NOTES.md (2(b)-(d); job2_b.py, job2_b2.py, job2_massera.py, job2_c.py, job2_d.py)"
+    },
+    {
+     "statement": "Exact identity: F(theta q)^F(q) = -v[theta(H(q)-k)+k-H(theta q)], bracket >=0 by convexity. So radial scaling in (U,p) is crossed outward where p>0 and inward where p<0. In 3D, for nu=(U,p,y-k): D omega - C omega = k(Ue^U-e^U+1)(0,p,p').",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/NOTES.md (2(b))"
+    },
+    {
+     "statement": "LP lead: a state-explicit compound supersolution omega=conj(f^nu), nu = radial plus degree-2 correction in (U,p,y-k,e^U-1), exists on sampled attractor points and validates out of sample at (mu,rho)=(1,1.02),(1,1.1),(1,1.5),(0.3,1.1),(0.3,1.5); it overfits or is infeasible at larger rho and at mu=0.1, 3, 10. Degree 1 is infeasible.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/NOTES.md (3.5; job2_c3.py, job2_c5.py, job2_c6.py)"
+    }
+   ],
+   "obstruction": "Uniqueness on the reduced planar system was not proved. The only structure h keeps beyond its first-order PDE is convexity, and every comparison convexity yields reverses with the sign of p after projection: scaled orbit arcs are crossed outward in the upper half-plane and inward in the lower (exact identity). Zhang, Massera and Dulac criteria need a one-signed quantity on an annulus; every natural pointwise candidate tested changes sign on 20-60% of the disc. What holds numerically is an integrated, section-specific statement (crest return map concave in U; false on the trough section and in x or y coordinates) whose derivative has a sign-changing integrand. Rotation in k, even if true, only makes the amplitude curve single-valued and allows fold pairs. A proof must exploit crest/trough asymmetry of the exponential, not convexity of h alone.",
+   "best_next_step": "Pursue state-explicit compound supersolutions with nu = radial plus quadratic correction in scaled variables (U, p/sqrt(mu), (y-k)/k): fit the correction as a function of (mu,rho), then verify the three explicit inequalities on a region containing the attractor minus a neighbourhood of E. In parallel, attempt sublinearity of the crest return map via the exact subsolution property of scaled orbits. Have the Job 1 proof independently refereed.",
+   "notes_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/NOTES.md",
+   "confidence": 0.8
+  },
+  "verdict": {
+   "refuted": true,
+   "verdicts": [
+    {
+     "statement": "1. Theorem A (A1)-(A5), all mu,k>0: attractor, unique nonnegative entire Riccati pair, strict supporting planes, pi|A injective, A = graph of h = H|_D with H convex, h C^1 on int D with grad h = (zeta,-eta), div of reduced field = eta-mu",
+     "verdict": "holds",
+     "reason": "Lemma 2.1, (A1)(a)-(d), Lemma 3.1, Prop 3.3, Thm 4.1, Lemma 4.2, (A4), (A5) re-derived step by step; 19 identities checked in sympy (v3). v1b: 1.2e8 ordered attractor pairs over 15 (mu,rho) incl. the 12 requested, no supporting-plane violation beyond rounding; O=0 to 1e-9; K,W>0; bounds (1.4) hold; pull-back from extreme data converges."
+    },
+    {
+     "statement": "2. Theorem A (A6)-(A7), k>k_H: cone exclusion at E, no forward convergence to E, W^u(E) in A, cycles as omega-limits, compact crest set, D = closed Jordan domain of the outermost projected cycle",
+     "verdict": "holds",
+     "reason": "Eigen-structure at E, cone exclusion, stable-manifold step, Poincare-Bendixson alternatives, Lemmas 6.1-6.2 and the degree argument for closure(G) in D all checked. v1b/v6: no sample in E+C_+-, Lambda_E>0, W^s(E) leaves D_chem backward (24/24), spiral inside the cycle (chord artefact excluded by exact comparison), crests monotone, random orbits reach the same cycle."
+    },
+    {
+     "statement": "3. Theorem A (A8): planar multiplier = m_t; innermost/outermost cycles have lambda_c<=0; all lambda_c<0 implies uniqueness; hyperbolic case odd and alternating; Dulac form",
+     "verdict": "holds",
+     "reason": "M^T n = m_s n, (7.1), the stable-manifold versus Whitney-inequality contradiction in (b), the W^u_loc argument in (c), and isolation of crests in (d) (return-time detail filled by referee) checked; no circular use of stability. v1b: lambda_c from Riccati mean equals a Riccati-free QR value to 2e-11 in 15 cases; M^T n relation to 2e-12."
+    },
+    {
+     "statement": "4. Proposition 8.1: R_1'(u) = g(u)exp(iota(u))/g(R_1 u); energy-coordinate derivative exp(iota); iota strictly decreasing or R_1(u)/u strictly decreasing implies a unique cycle (conditional)",
+     "verdict": "holds",
+     "reason": "Wedge transport and both boundary evaluations re-derived (sympy); monotonicity of R_1 follows from (ii); both criteria in (iii) correct. v1b: M(1,zeta(u)) is parallel to (1,zeta(R_1 u)) and its U-component equals g(u)e^iota/g(R_1 u) to 1e-9 (8 crests per case); finite differences between neighbouring W^u(E) orbits agree to 1e-6 or better where resolvable."
+    },
+    {
+     "statement": "5. F(theta q)^F(q) = -v[theta(H(q)-k)+k-H(theta q)] with bracket >= 0 by convexity (outward where p>0, inward where p<0); 3D: D omega - C omega = k(Ue^U-e^U+1)(0,p,p') for nu=(U,p,y-k)",
+     "verdict": "gap",
+     "reason": "Both identities are exact (v3, sympy). The step 'bracket >= 0 by convexity' carries no range for theta: true for 0<=theta<=1, false for theta>1, where the supporting plane at q gives bracket <= -(theta-1)K(q) < 0. v4: bracket negative at 100% of 3000 points for theta in {1.01,1.1,1.5,3} at five parameter pairs; positive for theta<1."
+    }
+   ],
+   "summary": "Claims 1-4 (Theorem A (A1)-(A8), Prop 8.1) withstood a line-by-line audit and independent numerics on 15 parameter pairs (mu 0.02-3, rho 1.01-12): no gap, no counterexample, no circularity. refuted=true only because of claim 5: both identities are exact, but 'bracket >= 0 by convexity' omits the hypothesis 0<=theta<=1 and is false for theta>1; corrected statement in VERIFY.md section 3, with no effect on Theorem A. Four numerical alarms (deep-trough underflow, near-coincident pairs, mu>1 cancellation, polygon chords) were traced to numerics. Side finding: whlib Riccati values go slightly negative in deep troughs (rho>=4, mu<1).",
+   "report_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/VERIFY.md"
+  }
+ },
+ {
+  "lane": "monotone",
+  "result": {
+   "lane": "monotone",
+   "status": "theorem",
+   "headline": "The sign of lambda_c was not obtained. Proved instead a new structural theorem for every cycle: the weak adjoint is Psi = e^{At} z' x e_s; its three components each have exactly two zeros, interlacing the six extrema; and the strong-stable plane span{z'(t), e_s(t)} strictly supports the whole cycle, E and all nested inner cycles. No counter-evidence: all 23 computed cycles are attracting.",
+   "claims": [
+    {
+     "statement": "Dual supporting planes: for every cycle, all t and all s not 0 mod T, det(z(t+s)-z(t), z'(t), e_s(t)) < 0, det(E-z(t), z'(t), e_s(t)) < 0 and det(z''(t), z'(t), e_s(t)) < 0, where e_s=(a,-b,-c), a,b,c>0, is the strong-stable Floquet vector. The first inequality also holds for points of any cycle nested inside.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/monotone/ds_theorem.tex (Thm 6; numerics ds_check.py, ds_independent.py)"
+    },
+    {
+     "statement": "Twelve-event order: each component of the weak adjoint Psi has exactly two simple zeros per period, ordered trough < Psi2 up < Zmin < Psi1 up < p-max < Psi3 up (t2) < crest < Psi2 down < Zmax < Psi1 down < p-min < Psi3 down (t1). Psi3 is proportional to -(p' + r p), r=b/a; Psi>0 at crest, Psi<0 at trough.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/monotone/ds_theorem.tex (Thm 4; numerics twelve.py)"
+    },
+    {
+     "statement": "Rank-one window identity: for every T-periodic phi, the integral over [t1,t1+T] of Psi3*L3[phi] equals (e^{-lambda_c T}-1)|Psi2(t1)|(phi'+r phi)(t1). Hence lambda_c<0 iff window-integral of Psi3*x >0 iff that of Psi3*x*p^2 <0 iff that of Psi3*(1-e^U+Ue^U) <0. All periodic test functions carry the same single unknown sign.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/monotone/ds_theorem.tex (Prop 8; numerics identities.py)"
+    },
+    {
+     "statement": "Strong-stable ratios r=b/a, s=c/a satisfy r'=r^2-mu r-s, s'=sr-s-x, r>max(1,mu), s>0, equivalently r''+(A-3r)r'+r(r-1)(r-mu)=x with <r>=1+<eta>. The conjecture is equivalent to <r><A for this positive periodic solution (time-reversed mirror of the eta equation).",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/monotone/ds_theorem.tex (Lemma 1); sym_checks.py"
+    },
+    {
+     "statement": "The crest return map P is entrywise monotone (DP>0) at every point of R={p=0, x>=y>k}, not only at cycles, and maps R into its interior. At a cycle crest the Perron eigenvector of DP is exactly (1, zeta(crest)).",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/monotone/NOTES.md (R7); retmap.py, ds_independent.py, identities.py"
+    },
+    {
+     "statement": "P is not radially sublinear about E (violated at 5 to 95 of 98 test pairs; near Hopf the second component of Mv<=v fails at O(h) for the radial vector) and not order-concave in (U,y). The wedges (z-E)^z' and z'^z'' are not componentwise positive. (eta-mu)^2<4 zeta fails for rho>=1.3.",
+     "proof_status": "refuted",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/monotone/retmap.out, wedges.out, twelve.out; NOTES.md section 3"
+    },
+    {
+     "statement": "On 15 cycles (mu 0.05 to 4, rho 1.01 to 5): J0=<a^(p'+rp)> = -<Psi3> > 0 (k would be a regular parameter at a neutral cycle) and <Psi3 x nu^2> > 0; the (U,p) projection is strictly convex and star-shaped; the weak Floquet vector e_t shows the analogous zero interlacing.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/monotone/ds_check.out, twelve.out"
+    },
+    {
+     "statement": "Fold-direction reduction: the conjecture follows if, at every neutral cycle, the weak components of dP/dk and of D^2P along the Perron direction have the same sign (the first neutral event on a fixed-mu path must be a birth fold or degenerate, which needs opposite signs). Jordan-block corrections at the unit multiplier are not worked out.",
+     "proof_status": "sketch",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/monotone/NOTES.md (section 7, item 1)"
+    }
+   ],
+   "obstruction": "Pairing the weak adjoint with any periodic test function gives one and the same rank-one identity: the sign of lambda_c equals the sign of a crest-arc minus trough-arc integral of |Psi3| against a nonnegative weight, and the dominant arc differs between weights (x versus x p^2, g(U), chord weights). A sign proof needs a test function whose L3-image changes sign exactly at the two phases t1, t2 where the projected strong-stable direction is tangent to the projected cycle; these are defined through the non-explicit ratio r=-a'/a. Convexity and monotonicity of the backward flow live in the cone whose Perron direction is e_s, so their first-order consequences are dominated by the factor e^{gamma T}-1 and only bound |1/m_t - 1|. Near Hopf the relevant integrals are O(h^4) with cancellation at O(h^3), and any Krasnoselskii scaling must match zeta(crest) to O(h^2).",
+   "best_next_step": "Attack the dual certificate that the lane exposes: a positive periodic r-bar with r-bar''+(A-3 r-bar) r-bar'+chi(r-bar) >= x, r-bar^2-mu r-bar-r-bar' > 0 and mean <= A (time-reversed analogue of brief (f)), or equivalently spectral radius of phi -> g3*(x phi) below 1. In parallel, try to prove J0>0, which makes k a regular parameter along the cycle family and reduces the conjecture to one second-order sign at neutral cycles.",
+   "notes_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/monotone/NOTES.md",
+   "confidence": 0.85
+  },
+  "verdict": {
+   "refuted": false,
+   "verdicts": [
+    {
+     "statement": "1. Dual supporting planes (ds_theorem.tex Thm 6, with Lemma 5)",
+     "verdict": "holds",
+     "reason": "Lemma 5 (two critical points of l, strict minimum at t1) and Thm 6 (B maximal at t1+jT, kappa<0) checked line by line; imports F1-F4 match v2.0, no circularity. v1_floquet.py: 5.77M chord determinants on 20 cycles (mu 0.02-50, rho to 12) in signed-log arithmetic, 0 violations; E and z'' negative on all. v1b_inner.py: about 13k interior points per cycle, 0 violations."
+    },
+    {
+     "statement": "2. Twelve-event order of the weak adjoint (Thm 4)",
+     "verdict": "holds",
+     "reason": "All three crossing derivatives re-derived exactly with their cofactors (v4_sym.py); the interval cover gives exactly two simple zeros per component. v1_floquet.py: two sign changes each and the claimed cyclic order on 20/20 cycles. Four deep-trough ties (trough versus Psi2 up-crossing, below double-precision time resolution) decided exactly from Psi2 = varpi*y' at p=0."
+    },
+    {
+     "statement": "3. Rank-one window identity (Prop 8)",
+     "verdict": "holds",
+     "reason": "omega_phi identity and boundary term at t1 verified; the third special case needs U(t1)<0, which follows from F4 and is confirmed. v1_floquet.py: identity reproduced to 6e-6 or better for phi = 1, p', -U, cos, sin3 on 20 cycles, lambda_c taken from an independent Riccati system. phi = y is ill-conditioned on five deep-trough cycles (roundoff, not a counterexample)."
+    },
+    {
+     "statement": "4. Strong-stable ratios r, s (Lemma 1) and the <r> < A reformulation",
+     "verdict": "holds",
+     "reason": "Perron-Frobenius step and conjugate (a,b,c~) system checked; scalar ODE exact (sympy); <r> = 1+<eta> to 9 digits on 20 cycles; e_s matches the monodromy eigenvector (v3_monodromy.py). Wording defect: only <r><A iff lambda_c<0 is proved; that implies uniqueness, but uniqueness implying the strict inequality is not shown. r - max(1,mu) is below double precision in deep troughs (down to 1e-369)."
+    },
+    {
+     "statement": "5. Crest return map P monotone on R, P(R) in int R, Perron eigenvector (1, zeta(crest)) (NOTES R7)",
+     "verdict": "gap",
+     "reason": "R7 gives DP>0 and P(z) in int R only if the return exists; existence and transversality of the first return on all of R are not argued (v2.0 Prop 4.4 is local). Repaired in VERIFY.md section 4 (no zero of p on W^s(E); wedge positivity excludes tangency). v2_retmap.py: 468 points, all return, 1373 resolved entries positive; v5_mp_spot.py: 16 entries positive at 80-160 digits."
+    }
+   ],
+   "summary": "No statement is false and no numerical counterexample was found on 20 independently computed cycles (mu 0.02-50, rho 1.01-12; all attracting). Statements 1-4 (ds_theorem.tex) survive a line-by-line audit; 31 identities were re-derived exactly. Statement 5 had a real gap: R7 never shows the return map is defined and C^1 on all of R. The referee closed it in VERIFY.md section 4, so no gap remains unrepaired. Statement 4 has a wording defect: \"equivalent to the conjecture\" should read \"equivalent to lambda_c<0\", which implies uniqueness but is not implied by it. The lane's NOTES should absorb both corrections. The sign of lambda_c remains unproved, as the lane says.",
+   "report_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/monotone/VERIFY.md"
+  }
+ },
+ {
+  "lane": "largegain",
+  "result": {
+   "lane": "largegain",
+   "status": "theorem",
+   "headline": "Explicit large-gain theorem, full proof written: for 0<mu<=1 and k>=1000 (rho>=1000/(mu(1+mu))) EVERY positive cycle has T>=0.1833*lambda/mu, up-crossing slope p>=0.819*lambda, crest time O(log(lambda)/lambda), and <eta> <= 0.83*mu < mu; hence (Smith + basin partition) the cycle is unique and globally attracting off W^s(E). By reciprocal symmetry mu>=1 needs k>=1000*mu^3. rho_0(1)=500. Not uniform as mu->0.",
+   "claims": [
+    {
+     "statement": "Theorem 1: for 0<mu<=1, k>=1000, every positive cycle satisfies <eta> <= 0.83 mu (so 0<m_s<m_t<1), with T >= 0.1833 lambda/mu, p >= 0.819 lambda at the up-crossing of U=0, and |{x>c0}| <= (71.79+12.28 log(lambda/1000))/(0.819 lambda). Imports v2.0 facts: positive adjoint, Lambda_E>0 and cone exclusion, one crest/trough, T>2pi/sqrt(mu), state box.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/theorem.tex"
+    },
+    {
+     "statement": "Key foothold (new): on every cycle the positive lobe {U>0} lasts T_+ < pi/omega (omega = imaginary part of the unstable eigenvalue of E), by a Sturm argument from Lambda_E>0. With T>2pi/sqrt(mu) the negative lobe lasts > 2pi - pi/omega_0(k), which for k>=1000 forces p_k >= 0.374 k via a four-duration pigeonhole.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/theorem.tex (Lemmas 6, 8-11)"
+    },
+    {
+     "statement": "Spike mass lemma: M_+ = integral over {U>0} of (x-k) satisfies M_+(M_+ + mu P_1) >= (1/4)p_k^2[(1/2)p_k^2 - 2 mu P_1 H] - p_k k/sqrt2, hence T_- > M_+/k >= p_k^2 sqrt(1-delta)/(sqrt8 k) - 1/2; a quasi-convexity bootstrap then gives T_- > 0.1833 lambda/mu and p_k >= 0.819 lambda.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/theorem.tex (Lemmas 12-15)"
+    },
+    {
+     "statement": "Linear estimate: if x<=c0=(mu-nu)(1-nu)(A-nu) outside an interval of length tau_c per period, then (<eta>-mu)T <= -nu(T-tau_c)+(s-mu)tau_c+kT/s^2+log(1+alpha s+beta s^2) for all s>=sqrt2 (Lyapunov a+alpha b+beta c on the trough, max(s^2 a, s b, c) on the crest, for the cooperative system a'=-mu a+b, b'=-b+c, c'=-Ac+xa).",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/theorem.tex (Lemma 17)"
+    },
+    {
+     "statement": "Corollaries: uniqueness and attraction of all positive orbits off W^s(E) for mu<=1, k>=1000 (depends on Smith 2012 convergence theorem as quoted in v2.0); for mu>=1 the same when k>=1000 mu^3, i.e. rho >= 1000/(m(1+m)), m=min(mu,1/mu). Only cycles and multipliers are transported by the symmetry; positive domains do NOT correspond.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/theorem.tex (Corollaries 2, 3)"
+    },
+    {
+     "statement": "All numerical constants and scalar side conditions of the proof hold at K0=1000 (mpmath 40 digits, 60+ checks); all lemma inequalities hold on 11 computed cycles; derivation steps hold on 365 random non-periodic segments; Stage-1/2 lemmas hold on random non-periodic lobes.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/constants.py, check_lemmas.py, test_segments.py, test_stage.py"
+    },
+    {
+     "statement": "Empirical asymptotics of the computed cycle: T ~ 1.305 lambda/mu, spike mass M_+ ~ 1.305 p_k^2, p_k/lambda -> 1, integral of x^(1/3) over the crest ~ 4.6, integral of eta over a period grows only like log(lambda).",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/NOTES.md (section 2), check_lemmas.out"
+    },
+    {
+     "statement": "Extra exact identities on every cycle found en route: <(y-k)^2> = k_H <p^2>, <(x-k)^2> = <w^2>+<w'^2>, and the area form of <x p^2>=k_H<p^2>: the double integral of (rho e^U - 1) over the interior of the projected cycle in the (U,p) plane vanishes.",
+     "proof_status": "sketch",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/NOTES.md (section 5)"
+    }
+   ],
+   "obstruction": "Not a full proof of the conjecture: the theorem covers only k>=1000 (mu<=1), i.e. rho>=1000/(mu(1+mu)); threshold is far from the truth and NOT uniform as mu->0 (rho_0 ~ 1000/mu). The method needs the fast scale k^(-1/3) short against the window 2pi from T>2pi/sqrt(mu); the binding steps are Stage 1 (window sum 5.89 <= 5.8928) and phase (ii), where the only information keeping a cycle away from E is Lambda_E>0 (P_w<(gamma_E-mu)v_w), which degenerates for small k. Losses: r_l>=0.3T_- (truth 0.99), M_+>=0.354 p_k^2 (truth 1.305). Moderate rho (near Hopf) is untouched. Proof depends on unrefereed v2.0 facts and Smith's theorem; a cross-model review found no error in the main lemmas, one false sentence in the mu>=1 corollary (repaired).",
+   "best_next_step": "Human/independent referee pass of theorem.tex (9 pages, 17 statements). Then: (1) mu-uniform version by rescaling Stage-1 windows with mu^(-1/2) and replacing the Lambda_E step in phase (ii) (use K>0); (2) lower K0 via logarithmic bounds on s_w,u and a sharp scale-invariant spike constant; (3) for moderate rho, a computer-assisted version of the bootstrap in scaled variables (U, p k^(-1/3), w k^(-2/3)).",
+   "notes_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/NOTES.md",
+   "confidence": 0.8
+  },
+  "verdict": {
+   "refuted": false,
+   "verdicts": [
+    {
+     "statement": "1. Theorem 1: for 0<mu<=1, k>=1000 every positive cycle has <eta> <= 0.83 mu, T >= 0.1833 lambda/mu, p >= 0.819 lambda at the up-crossing, and |{x>c0}| <= (71.79+12.28 log(lambda/1000))/(0.819 lambda)",
+     "verdict": "holds",
+     "reason": "Every lemma (5-17) re-derived by hand; imports F1-F6 re-derived from v2.0, not just trusted. All constants recomputed in mpmath (v_consts.py, 86 checks; crest side conditions on lambda in [1e3,1e15]). Independent hybrid integrator (v_largegain.py) on 6 cycles, k in {1000,3000}, mu in {1,0.3,0.02}: 252 checks pass; <eta>/mu <= 0.017, T mu/lambda about 1.305. Cosmetic only: the set in (iii) is an interval modulo T."
+    },
+    {
+     "statement": "2. Key foothold: T_+ < pi/omega on every cycle (Sturm argument from Lambda_E>0); negative lobe > 2pi - pi/omega_0(k); for k>=1000 p_k >= 0.374 k by the four-duration pigeonhole (Lemmas 6, 8-11)",
+     "verdict": "holds",
+     "reason": "Sturm identity and boundary term checked; Lambda_E>0 re-derived independently. T_+ omega/pi <= 0.984 on 82 cycles (rho from 1.0005 to 40), tight only at Hopf. Pigeonhole margins recomputed (5.89277 vs 5.89; 2.3690 vs 2.3130; 0.37453). On 937 non-periodic lobes meeting the hypotheses min p_k/k = 1.013; differential-evolution search (v_stage_adv.py) gives minimum 0.916, against the claimed 0.374."
+    },
+    {
+     "statement": "3. Spike mass lemma M_+(M_+ + mu P_1) >= (1/4)p_k^2[(1/2)p_k^2 - 2 mu P_1 H] - p_k k/sqrt2, hence T_- > M_+/k >= p_k^2 sqrt(1-delta)/(sqrt8 k) - 1/2; bootstrap to T_- > 0.1833 lambda/mu, p_k >= 0.819 lambda (Lemmas 12-15)",
+     "verdict": "holds",
+     "reason": "Energy identity, w<=m, and quadratic step verified by hand and on 400 non-periodic spikes (v_segments.py, 0 failures). Bootstrap is a direct exclusion, not a continuation: quasi-convexity sign(h')=sign(mu z^2-z-6.3) re-derived, both endpoints below 0.3 kappa_0 k uniformly in k>=1000, mu<=1; brute-force grid (6x5x2001) finds no admissible z in [z_1,z#]. Not circular."
+    },
+    {
+     "statement": "4. Linear estimate: (<eta>-mu)T <= -nu(T-tau_c)+(s-mu)tau_c+kT/s^2+log(1+alpha s+beta s^2) for all s>=sqrt2 (Lemma 17)",
+     "verdict": "holds",
+     "reason": "Lyapunov identity L' = -nu L + (beta x - mu + nu)a, Dini bound for max(s^2 a, s b, c), and matching constants checked. (a,b,c) is the second-compound system, so its Perron root bounds both transverse multipliers. Tested as a statement about arbitrary periodic x(t): 133 random linear systems, 5 values of s each, spectral radius below the bound (min relative slack 0.25); on 88 cycles min slack 8.0."
+    },
+    {
+     "statement": "5. Corollaries: uniqueness and attraction off W^s(E) for mu<=1, k>=1000 (via Smith 2012); for mu>=1 when k>=1000 mu^3, i.e. rho >= 1000/(m(1+m)); only cycles and multipliers are transported",
+     "verdict": "holds",
+     "reason": "Conditional on Smith 2012 Thm 1.1(c), which I read in arXiv:1109.5204 (pp. 2-3): the quotation is accurate and covers all mu>0. Basin partition and measure-zero connectedness argument valid. Reciprocal map re-derived; v_recip.py confirms T'=mu T and equal log m_t to 8 digits at 4 large-gain and 3 moderate pairs. The earlier false domain-conjugacy sentence is removed."
+    }
+   ],
+   "summary": "Not refuted. I re-derived every lemma and the imported v2.0 facts by hand, read Smith's Theorem 1.1(c) in the source, and wrote seven independent scripts (own hybrid integrator, mpmath constants, non-periodic segment tests, adversarial optimisation). About 20,000 inequality checks on 88 cycles and 2,300 non-periodic segments gave no counterexample; every apparent failure was traced to my own checkers (rounding, cancellation, an equality case) and is documented. Tightest genuine margins: T_+ omega/pi = 0.984 near Hopf; Stage-1 window 5.8928 vs 5.89. Caveats: numerics cannot test \"every cycle\"; v2.0 itself is unrefereed; Corollaries depend on Smith 2012. Two cosmetic remarks only.",
+   "report_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/VERIFY.md"
+  }
+ },
+ {
+  "lane": "hamiltonian",
+  "result": {
+   "lane": "hamiltonian",
+   "status": "theorem",
+   "headline": "The first-order Melnikov premise is false: M(h) = (1\u2212rho)\u00b7oint U'^2 has no zero. The Hamiltonian regime is the thin wedge rho\u22121 = r\u00b7eps^2 (eps = sqrt(mu)/(1+mu)), selected at third order by r = (2/3)<p^4>/<p^2>. Monotonicity of that selection function is proved (derivative \u2265 4/5), and a local uniqueness theorem for small mu follows. Global uniqueness is not proved, even for small mu. At fixed rho the limit is a relaxation oscillation. PROGRAM.md written.",
+   "claims": [
+    {
+     "statement": "Lane-prompt claim that M(h) = oint(U'^2 \u2212 U''^2) dtau has exactly one positive zero for rho>1 (monotone ratio oint U'^2 / oint (e^U\u22121)^2) is false. On every Toda level oint e^U U'^2 = oint U'^2, so M(h) = (1\u2212rho)\u00b7oint U'^2 < 0 and the ratio is the constant rho. On true cycles at fixed rho the crest energy diverges like c(rho)/mu.",
+     "proof_status": "refuted",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/NOTES.md \u00a72 (Prop. 2); toda.out, fixed_rho.out"
+    },
+    {
+     "statement": "Theorem A: for any strictly convex potential (in particular e^U\u2212U\u22121), on the level H0=h, <P^4> \u2264 (9/5)<P^2>^2. Hence Rsel(h) = (2/3)<P^4>/<P^2> has Rsel' \u2265 4/5 and is a bijection of (0,\u221e). The third-order selection equation r = Rsel(h), with rho = 1 + r\u00b7eps^2, has exactly one root h*(r) \u2264 5r/4, simple, with the attracting sign.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/NOTES.md \u00a73.2; toda.out"
+    },
+    {
+     "statement": "Exact identities on every cycle at all parameters (tau-time, P=U', Q=U''): <Q^2> = <P^2> = rho<e^U P^2>, and (rho\u22121)<P^2> = eps^2[(<P^4> \u2212 3<Q^2 P^2>)/rho \u2212 <Q^3> + 2(1\u22121/rho)(<Q'^2> \u2212 <Q^2>)]. Checked to 1e-11 on 8 computed cycles.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/NOTES.md \u00a71 (Lemma 1); exact_identity.out"
+    },
+    {
+     "statement": "Theorem C (uses Fenichel's theorem as a cited input; mu0 not explicit): for r in a compact subset of (0,\u221e), rho = 1 + r\u00b7eps^2 and mu < mu0, exactly one cycle has projection (U, U_tau) inside a fixed energy ball {H0 \u2264 h_b}, h_b > h*(r). It is hyperbolic attracting with log m_t = \u2212eps^3\u00b7J0(h*)\u00b7Rsel'(h*) + O(eps^4). Local in phase space, not global uniqueness.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/NOTES.md \u00a74.1; normal_form_check.out"
+    },
+    {
+     "statement": "Third-order prediction against true cycles (amplitude-fixed shooting, mu from 3e-2 to 1e-4, amplitudes 0.3 to 3): (rho\u22121)/eps^2 matches Rsel(h) within 4e-4 and log m_t/eps^3 matches \u2212J0\u00b7Rsel' within 8e-4 at mu = 1e-4 for amplitudes up to 1; errors scale like eps^2 and grow with amplitude.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/ampcycle.out"
+    },
+    {
+     "statement": "Fixed rho>1, mu\u21920 is a relaxation regime: a universal pulse map S of v'''+v''+e^v=0 (S(1)=2 exactly) composed with an explicit slow return. The singular 1-D map has one fixed point for each rho in {1.02, 1.1, 1.5, 3, 8}, reproduces m_t, mu\u00b7T and mu\u00b7U_min of true cycles to 3 digits, and its branch rho = Lambda(q) is increasing on a 33-point grid.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/NOTES.md \u00a75; relax_map.out, lambda_of_q.out"
+    },
+    {
+     "statement": "Global uniqueness in the wedge rho\u22121 \u2264 r2\u00b7eps^2, small mu, would follow from Theorem C plus: no non-attracting cycle leaves {H0 \u2264 h_b}. Non-attracting cycles satisfy <(eta\u2212mu)^2> \u2264 r\u00b7mu^2/2 and three exact formulas (proved, checked to 1e-8) that forbid spikes; closing the argument needs a-priori bounds T \u2264 C/mu and p \u2265 \u2212C for arbitrary cycles, which are unproved.",
+     "proof_status": "sketch",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/NOTES.md \u00a74.2b; variance_route.out"
+    },
+    {
+     "statement": "Computer-assisted core (mu in [0.05,1], rho \u2264 20, outside the collar (rho\u22121)/eps^2 \u2264 0.2): idealised count 7e3 return-map box evaluations, realistic bracket 1e5\u20131e8. A Taylor-model enclosure over a full period works for boxes of half-width 1e-3 (30\u2013190 steps, 1\u201310 s each in TaylorModels.jl; 10 ms assumed for CAPD, unmeasured). Small-mu wedge and large gain still need analytic theorems.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/PROGRAM.md \u00a74; core_cost.out, core_total.out, tm_probe.out, tm_probe2.out"
+    }
+   ],
+   "obstruction": "The Hamiltonian picture holds only in the thin wedge rho\u22121 = O(mu) and only at bounded energy. Theorem C is local: nothing proved excludes an extra large non-attracting cycle (crest energy between h_b and about 2/mu) for small mu. Closing this needs either third-order averaging uniform on an unbounded energy range plus the relaxation regime, or two a-priori estimates for arbitrary cycles (period \u2264 C/mu, p \u2265 \u2212C) to run the variance-window argument; neither is proved. The Hopf end r\u21920 is only outlined. At fixed rho>1 the small-mu limit is a relaxation oscillation with no theorem; monotonicity of Lambda is numerical only. For the full program the compact core is cheap, but the non-compact end mu\u21920 (two singular regimes, their matching zone, and the corner rho\u2192\u221e), an explicit large-gain threshold and an explicit Hopf collar are all missing analytic pieces.",
+   "best_next_step": "Prove the two a-priori estimates (period \u2264 C/mu, p \u2265 \u2212C) for arbitrary cycles with rho\u22121 \u2264 r2\u00b7eps^2, then make the spike inequality of NOTES \u00a74.2b rigorous; with Theorem C and the Hopf-end outline this gives global uniqueness in the small-mu Hopf wedge. In parallel, prototype the crest-section branch-and-bound at mu=1, rho in [1.05,20] with a CAPD-class integrator to calibrate the box-count overhead.",
+   "notes_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/NOTES.md",
+   "confidence": 0.85
+  },
+  "verdict": {
+   "refuted": false,
+   "verdicts": [
+    {
+     "statement": "Theorem A: for any strictly convex potential, <P^4> <= (9/5)<P^2>^2 on each level; Rsel' >= 4/5; Rsel is a bijection of (0,inf); r = Rsel(h) has one simple root h*(r) <= 5r/4 with attracting sign",
+     "verdict": "holds",
+     "reason": "NOTES 3.2 re-derived line by line: increasing velocity density, Chebyshev, mixture identity t(1+t)(1-t^2)/5 >= 0, J0'=T0, J1'=3J0. v1_theoremA.py (30-digit quadrature): Toda kurtosis < 9/5 for h in [1e-6,1e6], min Rsel' 0.8000008; ten other convex potentials never exceed 9/5; non-convex ones do."
+    },
+    {
+     "statement": "Lemma 1: on every cycle, <Q^2> = <P^2> = rho<e^U P^2> and (rho-1)<P^2> = eps^2[(<P^4> - 3<Q^2P^2>)/rho - <Q^3> + 2(1-1/rho)(<Q'^2> - <Q^2>)]",
+     "verdict": "holds",
+     "reason": "Each multiplier/integration-by-parts step in NOTES 1 re-derived by hand; uses only periodicity. v2_identities.py (own integrator, running integrals) on mu in {0.02,0.3,1} x rho in {1.01,1.5,4,12} plus two more: worst normalised defect 3.2e-11 over (a)-(f), troughs to U=-8357."
+    },
+    {
+     "statement": "Theorem C: for r in a compact subset of (0,inf), rho = 1 + r eps^2, mu < mu0, exactly one cycle has projection in {H0 <= h_b}; hyperbolic attracting, log m_t = -eps^3 J0(h*) Rsel'(h*) + O(eps^4) (Fenichel cited)",
+     "verdict": "holds",
+     "reason": "Steps 0-4 of NOTES 4.1 checked; Fenichel hypotheses hold; algebra re-derived (v3). Step 2 writes C^1 where the O(eps^4) remainder needs C^2; available from k_s >= 6, repaired in VERIFY.md. v4: fixed-r errors O(eps^2); rho(a) monotone at mu=0.02, 1e-3; planar squeeze finds one cycle."
+    }
+   ],
+   "summary": "No claimed-proved statement was broken. Theorem A and Lemma 1 hold outright: proofs re-derived by hand and tested with independent code (30-digit quadrature; own integrator on the extreme grid, defects at most 3.2e-11). Theorem C holds as stated, conditional on Fenichel's theorem and with mu0 not explicit. One slip in Step 2 (C^1 written where C^2 is needed for the O(eps^4) remainder) is repaired from the lane's own hypothesis k_s >= 6. Numerics at fixed r confirm both asymptotic formulas with O(eps^2) relative error and find a single cycle in the ball. No circularity or silent weakening: Theorem C is local, not global uniqueness, as the lane says.",
+   "report_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/VERIFY.md"
+  }
+ },
+ {
+  "lane": "freeform",
+  "result": {
+   "lane": "freeform",
+   "status": "partial",
+   "headline": "No proof and no counterevidence. New: (i) a rigorous H\u00f6lder sandwich <x^{1/3}>^3 < gamma(gamma-1)(gamma-mu) < k, sharpening brief 3(g); (ii) exact Lotka-Volterra and second-order-Riccati (forced Li\u00e9nard) forms; (iii) numerical evidence that the 1-D crest return map on the attractor is concave with P1(u)/u strictly decreasing in u=U_crest, which would give uniqueness if proved. Nine first-principles routes were tried; each collapses to the supersolution/Dulac problem or dies for a stated reason.",
+   "claims": [
+    {
+     "statement": "On every nonconstant cycle, <x^{1/3}>^3 < gamma(gamma-1)(gamma-mu) < k with gamma = 1+<eta>. Hence every attracting or neutral cycle has <e^{U/3}> < rho^{-1/3}; this implies and strengthens brief 3(g). Proof: H\u00f6lder on eta, zeta/eta, x/zeta, whose means are gamma-1, gamma-mu, gamma.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/freeform/NOTES.md (L1); numeric check in verify_identities.py"
+    },
+    {
+     "statement": "With r1=x/y, r2=y/q, q=lambda-p the system is the 3-D Lotka-Volterra cyclic chain r1'=r1(lambda+1-r1-q), r2'=r2(mu-1+r1-r2), q'=q(r2-mu). The adjoint ratio solves eta''+(3eta+2-mu)eta'+f(eta)=x; the chemical ratio y/q solves the same equation with forcing x(A+p)/(lambda-p).",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/freeform/NOTES.md (L2, L3); sympy in verify_identities.py"
+    },
+    {
+     "statement": "No vector supersolution of the form G = M(t)(c1 x, c2 y, c3 q), with M any positive periodic scalar and c_i constants, exists on any cycle with k > k_H (kills all monomial ans\u00e4tze x^a y^b q^c). Proof: average the three inequalities using the LV means <x/y>=1, <y/q>=mu, <q>=lambda.",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/freeform/NOTES.md (L5)"
+    },
+    {
+     "statement": "Gauss map injectivity: distinct points of cycles (or E) at the same parameters have distinct (eta,zeta); each cycle is a simple closed curve in the (eta,zeta) plane, clockwise in the Li\u00e9nard plane (eta, sigma=zeta+eta+eta^2/2) where eta'=sigma-G(eta), sigma'=x-f(eta).",
+     "proof_status": "proved",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/freeform/NOTES.md (L4)"
+    },
+    {
+     "statement": "Massera identity: (p^2-Up')' = (eta-mu)(p^2-Up') + pK on every cycle; where p^2-Up'>0 this gives lambda_c = -<pK/(p^2-Up')>. Identity is exact (sympy); positivity of p^2-Up' is observed on nine cycles, not proved.",
+     "proof_status": "sketch",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/freeform/NOTES.md (L6); verify_identities.py, e3_starshape.py"
+    },
+    {
+     "statement": "On W^u(E) the crest return map P1 (coordinate u=U_crest) has P1(u)/u strictly decreasing and P1' decreasing, for mu in {0.02,...,1}, rho in {1.05,...,10} (sampled on crest sequences only). If true on the whole attractor, uniqueness follows. Not monotone in coordinates e^u-1 or y-k.",
+     "proof_status": "numerical",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/freeform/NOTES.md (N1); e1_return1d.py, e1b_concavity.py, e1c_ratio.py"
+    },
+    {
+     "statement": "Pointwise equal-U mirror comparison K_+/omega1_+ >= K_-/omega1_- (upper vs lower arc) is false: the bracket is negative on essentially all of 0<U<U_max. Componentwise concavity of the 2-D crest map in (U, y-k) also fails near Hopf at O(h), by the paper's Theorem 7.1 formulas.",
+     "proof_status": "refuted",
+     "where": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/freeform/NOTES.md (sections 3.3, 3.9); e4_mirror.py"
+    }
+   ],
+   "obstruction": "The weak transverse direction is the second direction of the backward cooperative structure, so its adjoint Psi = z' x v_s has sign-changing components. Every sign-definite object available (supporting planes, K, W, H\u00f6lder/Kingman log-convexity, LV averaging) controls only the Perron direction or gives lower bounds on gamma. An upper bound gamma < A needs a positive test function, and every commutator, scaling, fold-type, spectral or duality route I tried reduces to brief 3(e)/3(d). Near Hopf the required sign is an O(h^2) effect under O(h) sign-changing terms (integrand pK/(p^2-Up') is cubic to leading order); at large amplitude stability comes from a different mechanism (x near 0 most of the period). Fold-type exclusion also fails as a strategy: concavity of P1 means any fold would be of birth type, so no 'death-only' argument can close without large-k uniqueness.",
+   "best_next_step": "Try to prove N1 directly: the integral of pK/(p^2-Up') over each crest-to-crest turn on the attractor is positive (equivalently P1(u)/u decreasing). It must be a non-pointwise argument; the balance comes from the long U<0 excursion. In parallel, pass L5, the (C-) operator values and the H\u00f6lder bound to the supersolution lane: the crest is the binding point for every explicit candidate (1, q, x, 1/x, x^{-a}).",
+   "notes_path": "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/freeform/NOTES.md",
+   "confidence": 0.85
+  },
+  "verdict": null
+ }
+]

@@ -1,0 +1,1237 @@
+{
+ "schema_version": "3.0",
+ "name": "v3_negative",
+ "kind": "floating_point_diagnostic",
+ "passed": true,
+ "counts": {
+  "attempted": 123,
+  "passed": 123,
+  "failed": 0
+ },
+ "worst_residuals": {
+  "return_ratio_rise": 0.025004987774581017,
+  "return_ratio_at_E": 0.28708765186872964,
+  "section_ratio_slope_near_cycle": -0.13242360225683764,
+  "section_ratio_slope_mid": 0.05243880127822926,
+  "max_lotka_volterra_mean_defect": 1.3138328022065054e-12,
+  "max_candidate_mean_gap": 7.425319933135942e-14,
+  "candidate_sign_changes": 72,
+  "max_melnikov_identity_defect": 6.699085730588195e-13
+ },
+ "parameters": {
+  "N1": {
+   "mu": 0.0027,
+   "rho": 5.02
+  },
+  "N2": {
+   "mu": 1.0,
+   "rho": 5.0
+  },
+  "N4_mu": [
+   0.02,
+   0.1,
+   0.5,
+   1.0,
+   3.0,
+   10.0
+  ],
+  "N4_rho": [
+   1.1,
+   2.0,
+   6.0
+  ]
+ },
+ "seconds": 21.714570749987615,
+ "scope": "Counterexamples to candidate certificates on computed orbits; the sign changes are far above rounding, but nothing is an enclosure.",
+ "not_interval_certified": true,
+ "groups": {
+  "N1 return map": {
+   "attempted": 1,
+   "passed": 1
+  },
+  "N2 section ratio": {
+   "attempted": 1,
+   "passed": 1
+  },
+  "N3 monomial certificate": {
+   "attempted": 22,
+   "passed": 22
+  },
+  "N4 pointwise candidates": {
+   "attempted": 94,
+   "passed": 94
+  },
+  "N5 first-order Melnikov function": {
+   "attempted": 5,
+   "passed": 5
+  }
+ },
+ "meaning_of_passed": "the refutation stated in the paper is reproduced (the candidate property fails)",
+ "counting_rule": "one count per refutation, identity, or (cycle, candidate) pair",
+ "records": [
+  {
+   "group": "N1 return map",
+   "id": "r(U) = log(phi(U)/U) is not monotone at mu=0.0027, rho=5.02",
+   "mu": 0.0027,
+   "rho": 5.02,
+   "r_at_E": 0.28708765186872964,
+   "U_star": 8.469840730265133,
+   "r_interior_minimum": 0.22019692915685282,
+   "minimum_at_U_over_Ustar": 0.2518832573238794,
+   "r_later_maximum": 0.24520191693143384,
+   "maximum_at_U_over_Ustar": 0.5425136067983437,
+   "rise": 0.025004987774581017,
+   "crest_pairs": 442,
+   "stated": {
+    "r_at_E": 0.2871,
+    "r_interior_minimum": 0.2202,
+    "r_later_maximum": 0.2452
+   },
+   "passed": true,
+   "seconds": 4.786651134490967
+  },
+  {
+   "group": "N2 section ratio",
+   "id": "(mu - zeta)/(k(e^U - 1)) decreases next to the cycle at mu=1, rho=5",
+   "mu": 1.0,
+   "rho": 5.0,
+   "U_star": 3.945103532117164,
+   "slope_just_inside_cycle": -0.13242360225683764,
+   "points_just_inside": 18,
+   "slope_mid_amplitude": 0.05243880127822926,
+   "points_mid": 22,
+   "stated": {
+    "slope_just_inside_cycle": -0.135
+   },
+   "passed": true,
+   "seconds": 2.3462259769439697
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "quotient identity 3: (G3' + mu G3 - G2)/G3 = M'/M + (1 - c2/c3) y/q",
+   "sub_kind": "exact symbolic equality",
+   "residual": "0",
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "quotient identity 2: (G2' + G2 - G1)/G2 = M'/M + (1 - c1/c2) x/y",
+   "sub_kind": "exact symbolic equality",
+   "residual": "0",
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "quotient identity 1: (G1' + A G1 - x G3)/G1 = M'/M + p + A - (c3/c1)(lambda - p)",
+   "sub_kind": "exact symbolic equality",
+   "residual": "0",
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "averaged inequalities sum to 0 <= -log rho (Farkas multipliers 1, 1, 1)",
+   "sub_kind": "exact symbolic equality",
+   "residual": "0",
+   "passed": true,
+   "note": "u_i = log c_i; the inequalities are u2 - u3 <= 0, u1 - u2 <= 0, u3 - u1 <= -log rho"
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=0.02 rho=1.1: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": -6.93127257948459e-16,
+   "mean_y_over_q_minus_mu": -3.928767474548e-16,
+   "mean_q_minus_lambda": -3.8061618193977076e-16,
+   "relative_defect": 1.3308374539103245e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=1.1: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -0.5734313019964985,
+   "maximum": 0.4527344212144879,
+   "mean": -0.001215713995164061,
+   "lambda_c": -0.0012157139951648054,
+   "mean_gap_relative": 5.686810536346772e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=1.1: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.5510911514324933,
+   "maximum": 0.4515270175088022,
+   "mean": -0.0012157139951655465,
+   "lambda_c": -0.0012157139951648054,
+   "mean_gap_relative": 5.661962835197573e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=1.1: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -1.01997783695307,
+   "maximum": 1.5951112778073995,
+   "mean": -0.0012157139951639992,
+   "lambda_c": -0.0012157139951648054,
+   "mean_gap_relative": 6.158916858181562e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=1.1: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -1.02,
+   "maximum": 1.394223680182669,
+   "mean": -0.001215713995151388,
+   "lambda_c": -0.0012157139951648054,
+   "mean_gap_relative": 1.0250008026726747e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=1.1: zeta/eta on both sides of 1",
+   "minimum": 0.4489088485675067,
+   "maximum": 1.4515270175088022,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=0.02 rho=2: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": -1.4085180871317685e-14,
+   "mean_y_over_q_minus_mu": -2.1711786977702525e-14,
+   "mean_q_minus_lambda": 7.72296091167829e-17,
+   "relative_defect": 5.720056764650541e-13,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=2: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -1.02,
+   "maximum": 1.8099389119593914,
+   "mean": -0.0046550244901925235,
+   "lambda_c": -0.0046550244901850234,
+   "mean_gap_relative": 2.0129086939465457e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=2: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.9975254260720551,
+   "maximum": 1.80959134374036,
+   "mean": -0.004655024490177959,
+   "lambda_c": -0.0046550244901850234,
+   "mean_gap_relative": 1.8960496486867834e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=2: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -1.0198201686320354,
+   "maximum": 3.3540892871713077,
+   "mean": -0.004655024490169059,
+   "lambda_c": -0.0046550244901850234,
+   "mean_gap_relative": 4.2846764682294576e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=2: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -1.02,
+   "maximum": 3.2913630847142117,
+   "mean": -0.004655024490198324,
+   "lambda_c": -0.0046550244901850234,
+   "mean_gap_relative": 3.569554980105971e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=2: zeta/eta on both sides of 1",
+   "minimum": 0.002474573927944927,
+   "maximum": 2.80959134374036,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=0.02 rho=6: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": -3.565328426561895e-14,
+   "mean_y_over_q_minus_mu": -5.175297164130794e-14,
+   "mean_q_minus_lambda": 7.378326088936954e-16,
+   "relative_defect": 1.3138328022065054e-12,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=6: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -1.02,
+   "maximum": 6.095703142897024,
+   "mean": -0.009607876494365009,
+   "lambda_c": -0.009607876494425419,
+   "mean_gap_relative": 1.1586809042175861e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=6: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.9999945126024101,
+   "maximum": 6.095699808237624,
+   "mean": -0.009607876494385078,
+   "lambda_c": -0.009607876494425419,
+   "mean_gap_relative": 7.737515629330337e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=6: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -1.0199998485840849,
+   "maximum": 8.725223622855546,
+   "mean": -0.009607876494401488,
+   "lambda_c": -0.009607876494425419,
+   "mean_gap_relative": 4.5899388564442915e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=6: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -1.02,
+   "maximum": 10.046598827990515,
+   "mean": -0.009607876494812552,
+   "lambda_c": -0.009607876494425419,
+   "mean_gap_relative": 7.425319933135942e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=6: zeta/eta on both sides of 1",
+   "minimum": 5.487397589868868e-06,
+   "maximum": 7.095699808237625,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.02 rho=6: K - (zeta - mu) chi(U) takes both signs",
+   "minimum_over_k": -91.08241962927815,
+   "maximum_over_k": 314.5222422625823,
+   "fraction_of_samples_negative": 0.017998244073748903,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=0.1 rho=1.1: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": 1.1115947766570924e-14,
+   "mean_y_over_q_minus_mu": -1.0205311994476021e-16,
+   "mean_q_minus_lambda": -1.3058456765742262e-14,
+   "relative_defect": 3.101375391412892e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=1.1: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -0.5532516457842221,
+   "maximum": 0.48146014183115193,
+   "mean": -0.006715773918142637,
+   "lambda_c": -0.006715773918143139,
+   "mean_gap_relative": 2.8417610564960617e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=1.1: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.4969958935208024,
+   "maximum": 0.47439663424693146,
+   "mean": -0.006715773918143512,
+   "lambda_c": -0.006715773918143139,
+   "mean_gap_relative": 2.1104615790903394e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=1.1: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -1.099995330811876,
+   "maximum": 1.6133936445036214,
+   "mean": -0.006715773918140351,
+   "lambda_c": -0.006715773918143139,
+   "mean_gap_relative": 1.5779381341338235e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=1.1: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -1.1,
+   "maximum": 1.5695203342035637,
+   "mean": -0.006715773918115256,
+   "lambda_c": -0.006715773918143139,
+   "mean_gap_relative": 1.5777908926283057e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=1.1: zeta/eta on both sides of 1",
+   "minimum": 0.5030041064791977,
+   "maximum": 1.4743966342469315,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=0.1 rho=2: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": -8.12526209380939e-15,
+   "mean_y_over_q_minus_mu": -1.2180462054792832e-14,
+   "mean_q_minus_lambda": 4.4134036065166564e-16,
+   "relative_defect": 7.296039197526418e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=2: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -1.0999999998069827,
+   "maximum": 1.901279485571834,
+   "mean": -0.024411013839629743,
+   "lambda_c": -0.024411013839638306,
+   "mean_gap_relative": 2.1595803314716715e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=2: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.9905455168327643,
+   "maximum": 1.8995486032874278,
+   "mean": -0.024411013839624084,
+   "lambda_c": -0.024411013839638306,
+   "mean_gap_relative": 3.586758419247318e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=2: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -1.099872177716962,
+   "maximum": 3.4193450372672225,
+   "mean": -0.024411013839624154,
+   "lambda_c": -0.024411013839638306,
+   "mean_gap_relative": 3.5692577682629444e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=2: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -1.1,
+   "maximum": 3.5517709682708323,
+   "mean": -0.024411013839657294,
+   "lambda_c": -0.024411013839638306,
+   "mean_gap_relative": 4.789053141873767e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=2: zeta/eta on both sides of 1",
+   "minimum": 0.009454483167235775,
+   "maximum": 2.899548603287428,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=0.1 rho=6: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": 3.183332083140871e-14,
+   "mean_y_over_q_minus_mu": 4.5990431396440085e-14,
+   "mean_q_minus_lambda": 1.9801989726451006e-15,
+   "relative_defect": 2.4303746643057995e-13,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=6: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -1.1,
+   "maximum": 6.497161488135362,
+   "mean": -0.04940271289887112,
+   "lambda_c": -0.04940271289893066,
+   "mean_gap_relative": 1.0859779743341068e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=6: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.9999858293089505,
+   "maximum": 6.497150578871043,
+   "mean": -0.04940271289882563,
+   "lambda_c": -0.04940271289893066,
+   "mean_gap_relative": 1.915553271124699e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=6: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -1.0996126756022284,
+   "maximum": 9.180184134348151,
+   "mean": -0.0494027128989121,
+   "lambda_c": -0.04940271289893066,
+   "mean_gap_relative": 3.3853759251179767e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=6: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -1.1,
+   "maximum": 10.786203612588555,
+   "mean": -0.04940271289909815,
+   "lambda_c": -0.04940271289893066,
+   "mean_gap_relative": 3.054811367495242e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=6: zeta/eta on both sides of 1",
+   "minimum": 1.4170691049612102e-05,
+   "maximum": 7.497150578871044,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.1 rho=6: K - (zeta - mu) chi(U) takes both signs",
+   "minimum_over_k": -19.950321291369022,
+   "maximum_over_k": 68.93312293093902,
+   "fraction_of_samples_negative": 0.02432308398347866,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=0.5 rho=1.1: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": 9.013316590998173e-17,
+   "mean_y_over_q_minus_mu": 4.798844035572023e-16,
+   "mean_q_minus_lambda": -2.091636054432689e-15,
+   "relative_defect": 1.8083704717154247e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=1.1: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -0.7091236365244244,
+   "maximum": 0.6473339476617825,
+   "mean": -0.02559216055363356,
+   "lambda_c": -0.02559216055363418,
+   "mean_gap_relative": 2.4660626952205384e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=1.1: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.5180670782667374,
+   "maximum": 0.5816965016997226,
+   "mean": -0.025592160553633222,
+   "lambda_c": -0.02559216055363418,
+   "mean_gap_relative": 3.802420692071892e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=1.1: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -1.4999971901458107,
+   "maximum": 1.9157073704969134,
+   "mean": -0.02559216055361923,
+   "lambda_c": -0.02559216055363418,
+   "mean_gap_relative": 5.936460421064414e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=1.1: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -1.5,
+   "maximum": 2.200985832247479,
+   "mean": -0.025592160553640383,
+   "lambda_c": -0.02559216055363418,
+   "mean_gap_relative": 2.463307317907443e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=1.1: zeta/eta on both sides of 1",
+   "minimum": 0.4819329217332627,
+   "maximum": 1.5816965016997229,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=0.5 rho=2: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": -1.61760289758607e-14,
+   "mean_y_over_q_minus_mu": -1.7406009409109615e-14,
+   "mean_q_minus_lambda": 2.7354731510614696e-15,
+   "relative_defect": 2.8140734734229398e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=2: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -1.4999075835259368,
+   "maximum": 2.387858243843183,
+   "mean": -0.13035085972124114,
+   "lambda_c": -0.1303508597212414,
+   "mean_gap_relative": 5.646419658808926e-17,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=2: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.9877621354420509,
+   "maximum": 2.367714168591557,
+   "mean": -0.1303508597212425,
+   "lambda_c": -0.1303508597212414,
+   "mean_gap_relative": 2.202103666935481e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=2: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -1.4999875149992958,
+   "maximum": 3.8643624045491975,
+   "mean": -0.13035085972124033,
+   "lambda_c": -0.1303508597212414,
+   "mean_gap_relative": 2.202103666935481e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=2: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -1.5,
+   "maximum": 4.792502290220319,
+   "mean": -0.1303508597212332,
+   "lambda_c": -0.1303508597212414,
+   "mean_gap_relative": 1.671340219007442e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=2: zeta/eta on both sides of 1",
+   "minimum": 0.012237864557949063,
+   "maximum": 3.367714168591557,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=0.5 rho=6: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": 9.114721031358037e-14,
+   "mean_y_over_q_minus_mu": 1.3392189822920203e-13,
+   "mean_q_minus_lambda": -9.281568751840965e-16,
+   "relative_defect": 1.5803880046461094e-13,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=6: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -1.5,
+   "maximum": 8.499733834259137,
+   "mean": -0.2695554935818078,
+   "lambda_c": -0.2695554935818567,
+   "mean_gap_relative": 7.300095866813434e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=6: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.9999976797074208,
+   "maximum": 8.499576744756803,
+   "mean": -0.2695554935818543,
+   "lambda_c": -0.2695554935818567,
+   "mean_gap_relative": 3.5630433856183616e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=6: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -1.4997468767289197,
+   "maximum": 11.442687883364304,
+   "mean": -0.2695554935818583,
+   "lambda_c": -0.2695554935818567,
+   "mean_gap_relative": 2.4029827484402903e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=6: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -1.5,
+   "maximum": 14.550088818870712,
+   "mean": -0.26955549358184283,
+   "lambda_c": -0.2695554935818567,
+   "mean_gap_relative": 2.0715368521036987e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=6: zeta/eta on both sides of 1",
+   "minimum": 2.320292579170612e-06,
+   "maximum": 9.499576744756803,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=0.5 rho=6: K - (zeta - mu) chi(U) takes both signs",
+   "minimum_over_k": -4.933176616871397,
+   "maximum_over_k": 19.84840781129411,
+   "fraction_of_samples_negative": 0.03285515964831097,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=1 rho=1.1: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": 2.5764066019548817e-16,
+   "mean_y_over_q_minus_mu": -1.7497149755585874e-15,
+   "mean_q_minus_lambda": -5.0259129856332154e-15,
+   "relative_defect": 4.4921792388630894e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=1.1: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -0.9406107214774362,
+   "maximum": 0.8582845171102411,
+   "mean": -0.038211635808443556,
+   "lambda_c": -0.03821163580844391,
+   "mean_gap_relative": 1.0715675931641028e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=1.1: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.5717102107912588,
+   "maximum": 0.685953513299828,
+   "mean": -0.038211635808444014,
+   "lambda_c": -0.03821163580844391,
+   "mean_gap_relative": 3.151669391659126e-17,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=1.1: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -1.9999975804900567,
+   "maximum": 2.4882125433284115,
+   "mean": -0.0382116358084323,
+   "lambda_c": -0.03821163580844391,
+   "mean_gap_relative": 3.515161928163812e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=1.1: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -2.0,
+   "maximum": 2.937899251352741,
+   "mean": -0.03821163580843962,
+   "lambda_c": -0.03821163580844391,
+   "mean_gap_relative": 1.29848778936356e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=1.1: zeta/eta on both sides of 1",
+   "minimum": 0.4282897892087411,
+   "maximum": 1.6859535132998278,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=1 rho=2: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": -2.126075410511464e-14,
+   "mean_y_over_q_minus_mu": -2.6550040393631687e-14,
+   "mean_q_minus_lambda": 3.929482212551902e-15,
+   "relative_defect": 2.7706177426108683e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=2: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -1.9997097268277055,
+   "maximum": 3.070207672298908,
+   "mean": -0.21965377683056014,
+   "lambda_c": -0.219653776830553,
+   "mean_gap_relative": 1.1636525392565028e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=2: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.994372079041177,
+   "maximum": 2.8519581203323394,
+   "mean": -0.21965377683056622,
+   "lambda_c": -0.219653776830553,
+   "mean_gap_relative": 2.155247504615157e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=2: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -1.9999863060186254,
+   "maximum": 4.786469134580699,
+   "mean": -0.2196537768305706,
+   "lambda_c": -0.219653776830553,
+   "mean_gap_relative": 2.8706447855588436e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=2: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -2.0,
+   "maximum": 6.346748557312754,
+   "mean": -0.21965377683052043,
+   "lambda_c": -0.219653776830553,
+   "mean_gap_relative": 5.315673467265114e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=2: zeta/eta on both sides of 1",
+   "minimum": 0.0056279209588230815,
+   "maximum": 3.8519581203323394,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=1 rho=6: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": 1.6381746051507415e-13,
+   "mean_y_over_q_minus_mu": 2.3484746904827995e-13,
+   "mean_q_minus_lambda": -1.2837824227348465e-15,
+   "relative_defect": 1.613849183572262e-13,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=6: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -2.0,
+   "maximum": 11.070276758523155,
+   "mean": -0.5055082292556055,
+   "lambda_c": -0.5055082292555739,
+   "mean_gap_relative": 3.8502685982225706e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=6: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.9999999355906846,
+   "maximum": 10.865868173496906,
+   "mean": -0.505508229255626,
+   "lambda_c": -0.5055082292555739,
+   "mean_gap_relative": 6.358366100585865e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=6: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -1.9991152096032727,
+   "maximum": 14.490822095857975,
+   "mean": -0.5055082292556263,
+   "lambda_c": -0.5055082292555739,
+   "mean_gap_relative": 6.39903795197554e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=6: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -2.0,
+   "maximum": 19.27150214037369,
+   "mean": -0.5055082292555154,
+   "lambda_c": -0.5055082292555739,
+   "mean_gap_relative": 7.14468856078625e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=6: zeta/eta on both sides of 1",
+   "minimum": 6.440931537035181e-08,
+   "maximum": 11.865868173496906,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=1 rho=6: K - (zeta - mu) chi(U) takes both signs",
+   "minimum_over_k": -3.214792538803399,
+   "maximum_over_k": 13.38948968588646,
+   "fraction_of_samples_negative": 0.03920664206642067,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=3 rho=1.1: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": -7.642758809930915e-15,
+   "mean_y_over_q_minus_mu": -1.7369449583934798e-14,
+   "mean_q_minus_lambda": -8.843013024498877e-15,
+   "relative_defect": 2.8073452826201965e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=1.1: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -1.9070556569972368,
+   "maximum": 1.7365128485405474,
+   "mean": -0.05771174966466603,
+   "lambda_c": -0.0577117496646632,
+   "mean_gap_relative": 4.522257896922991e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=1.1: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.7201654940629778,
+   "maximum": 1.039612063607688,
+   "mean": -0.057711749664651736,
+   "lambda_c": -0.0577117496646632,
+   "mean_gap_relative": 1.8310710896364663e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=1.1: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -3.9999913426728293,
+   "maximum": 5.2835731274287845,
+   "mean": -0.05771174966468246,
+   "lambda_c": -0.0577117496646632,
+   "mean_gap_relative": 3.0769088043770156e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=1.1: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -4.0,
+   "maximum": 5.852617437759804,
+   "mean": -0.05771174966481365,
+   "lambda_c": -0.0577117496646632,
+   "mean_gap_relative": 2.4032253853206937e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=1.1: zeta/eta on both sides of 1",
+   "minimum": 0.27983450593702214,
+   "maximum": 2.0396120636076875,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=3 rho=2: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": -4.3326163418042845e-14,
+   "mean_y_over_q_minus_mu": -4.8847169465965634e-14,
+   "mean_q_minus_lambda": 6.164366409897405e-16,
+   "relative_defect": 3.584802116592765e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=2: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -3.9999408270924683,
+   "maximum": 6.556932808021303,
+   "mean": -0.2607927639879693,
+   "lambda_c": -0.2607927639879492,
+   "mean_gap_relative": 1.739186927699297e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=2: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.9998814723053764,
+   "maximum": 4.856345309667148,
+   "mean": -0.26079276398796747,
+   "lambda_c": -0.2607927639879492,
+   "mean_gap_relative": 1.5806422630195268e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=2: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -3.999976802949182,
+   "maximum": 10.986307843408596,
+   "mean": -0.2607927639879634,
+   "lambda_c": -0.2607927639879492,
+   "mean_gap_relative": 1.2299222472127624e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=2: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -4.0,
+   "maximum": 12.843215357493005,
+   "mean": -0.26079276398787665,
+   "lambda_c": -0.2607927639879492,
+   "mean_gap_relative": 6.2793295980745336e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=2: zeta/eta on both sides of 1",
+   "minimum": 0.00011852769462355399,
+   "maximum": 5.856345309667148,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=3 rho=6: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": 4.837529476258609e-13,
+   "mean_y_over_q_minus_mu": 6.814138532245816e-13,
+   "mean_q_minus_lambda": 1.867337101903974e-14,
+   "relative_defect": 3.871301730856208e-13,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=6: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -4.0,
+   "maximum": 22.99765641465014,
+   "mean": -0.525005594419646,
+   "lambda_c": -0.5250055944196013,
+   "mean_gap_relative": 2.910829696834811e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=6: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.9999999999999805,
+   "maximum": 19.957961371705913,
+   "mean": -0.5250055944196678,
+   "lambda_c": -0.5250055944196013,
+   "mean_gap_relative": 4.326518581647771e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=6: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -3.9997713731109235,
+   "maximum": 31.477591820276672,
+   "mean": -0.5250055944196516,
+   "lambda_c": -0.5250055944196013,
+   "mean_gap_relative": 3.2719748205115863e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=6: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -4.0,
+   "maximum": 38.96443275657468,
+   "mean": -0.5250055944195303,
+   "lambda_c": -0.5250055944196013,
+   "mean_gap_relative": 4.615434680589192e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=3 rho=6: zeta/eta on both sides of 1",
+   "minimum": 1.9450963302515266e-14,
+   "maximum": 20.957961371705913,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=10 rho=1.1: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": -4.000804440446136e-15,
+   "mean_y_over_q_minus_mu": -6.749000381445837e-15,
+   "mean_q_minus_lambda": -4.499235086905224e-15,
+   "relative_defect": 7.22495916456918e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=1.1: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -5.532523154364569,
+   "maximum": 4.814600161444359,
+   "mean": -0.06715773918188069,
+   "lambda_c": -0.0671577391818675,
+   "mean_gap_relative": 8.580870479879616e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=1.1: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.9107312916767523,
+   "maximum": 2.0527878170055,
+   "mean": -0.0671577391818558,
+   "lambda_c": -0.0671577391818675,
+   "mean_gap_relative": 7.614393488987911e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=1.1: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -10.999993642500682,
+   "maximum": 16.133684277362043,
+   "mean": -0.0671577391820776,
+   "lambda_c": -0.0671577391818675,
+   "mean_gap_relative": 1.3674294546831316e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=1.1: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -11.0,
+   "maximum": 15.695506117545651,
+   "mean": -0.06715773918217012,
+   "lambda_c": -0.0671577391818675,
+   "mean_gap_relative": 1.969625912465841e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=1.1: zeta/eta on both sides of 1",
+   "minimum": 0.08926870832324853,
+   "maximum": 3.0527878170055005,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=10 rho=2: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": -3.864759165925548e-13,
+   "mean_y_over_q_minus_mu": -4.4138518419319727e-13,
+   "mean_q_minus_lambda": 5.686715374541915e-15,
+   "relative_defect": 2.643876390236979e-13,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=2: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -10.999999998069857,
+   "maximum": 19.012791405942757,
+   "mean": -0.2441101383967168,
+   "lambda_c": -0.24411013839655232,
+   "mean_gap_relative": 5.5337447918964656e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=2: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -0.9999999999330793,
+   "maximum": 12.143180572509031,
+   "mean": -0.24411013839666887,
+   "lambda_c": -0.24411013839655232,
+   "mean_gap_relative": 3.92105878858813e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=2: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -10.99996476871514,
+   "maximum": 34.1943722357546,
+   "mean": -0.2441101383965633,
+   "lambda_c": -0.24411013839655232,
+   "mean_gap_relative": 3.6885406560902865e-16,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=2: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -11.0,
+   "maximum": 35.511496802206224,
+   "mean": -0.24411013839604864,
+   "lambda_c": -0.24411013839655232,
+   "mean_gap_relative": 1.69458094395115e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=2: zeta/eta on both sides of 1",
+   "minimum": 6.692011514504245e-11,
+   "maximum": 13.143180572509031,
+   "passed": true
+  },
+  {
+   "group": "N3 monomial certificate",
+   "id": "cycle mu=10 rho=6: Lotka-Volterra means",
+   "sub_kind": "floating point",
+   "mean_x_over_y_minus_1": 4.276006880538205e-14,
+   "mean_y_over_q_minus_mu": 7.399491277626097e-14,
+   "mean_q_minus_lambda": 1.1963421663737433e-14,
+   "relative_defect": 3.910277765157872e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=6: x/zeta - A changes sign; mean = lambda_c",
+   "minimum": -11.0,
+   "maximum": 64.97161431607341,
+   "mean": -0.494027128989472,
+   "lambda_c": -0.4940271289889252,
+   "mean_gap_relative": 1.3711569564498931e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=6: zeta/eta + mu - A changes sign; mean = lambda_c",
+   "minimum": -1.0,
+   "maximum": 53.15958592880675,
+   "mean": -0.4940271289894612,
+   "lambda_c": -0.4940271289889252,
+   "mean_gap_relative": 1.3441514285766667e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=6: k psi(U)/K - A changes sign; mean = lambda_c",
+   "minimum": -10.984652189005208,
+   "maximum": 91.82131607422681,
+   "mean": -0.4940271289889915,
+   "lambda_c": -0.4940271289889252,
+   "mean_gap_relative": 1.6620927979707333e-15,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=6: x p^2/W - A changes sign; mean = lambda_c",
+   "minimum": -11.0,
+   "maximum": 107.96310692902792,
+   "mean": -0.49402712898806134,
+   "lambda_c": -0.4940271289889252,
+   "mean_gap_relative": 2.1662887874389072e-14,
+   "passed": true
+  },
+  {
+   "group": "N4 pointwise candidates",
+   "id": "cycle mu=10 rho=6: zeta/eta on both sides of 1",
+   "minimum": 2.3308935425807e-38,
+   "maximum": 54.15958592880675,
+   "passed": true
+  },
+  {
+   "group": "N5 first-order Melnikov function",
+   "id": "level h=0.01: loop integrals of e^U p^2 and (e^U-1)^2 equal that of p^2",
+   "defect_exp_weight": 3.552713678800501e-14,
+   "defect_force_square": 4.196643033083092e-14,
+   "loop_integral_p2": 0.06285803663964962,
+   "passed": true
+  },
+  {
+   "group": "N5 first-order Melnikov function",
+   "id": "level h=0.1: loop integrals of e^U p^2 and (e^U-1)^2 equal that of p^2",
+   "defect_exp_weight": 6.661338147750939e-16,
+   "defect_force_square": 6.106226635438361e-15,
+   "loop_integral_p2": 0.6309400903882786,
+   "passed": true
+  },
+  {
+   "group": "N5 first-order Melnikov function",
+   "id": "level h=1: loop integrals of e^U p^2 and (e^U-1)^2 equal that of p^2",
+   "defect_exp_weight": 2.220446049250313e-15,
+   "defect_force_square": 1.021405182655144e-14,
+   "loop_integral_p2": 6.547913649873181,
+   "passed": true
+  },
+  {
+   "group": "N5 first-order Melnikov function",
+   "id": "level h=10: loop integrals of e^U p^2 and (e^U-1)^2 equal that of p^2",
+   "defect_exp_weight": 6.699085730588195e-13,
+   "defect_force_square": 5.10924635932497e-13,
+   "loop_integral_p2": 87.98552704299503,
+   "passed": true
+  },
+  {
+   "group": "N5 first-order Melnikov function",
+   "id": "level h=100: loop integrals of e^U p^2 and (e^U-1)^2 equal that of p^2",
+   "defect_exp_weight": 3.1308289294429414e-14,
+   "defect_force_square": 2.0905499553691698e-13,
+   "loop_integral_p2": 2030.0199239918802,
+   "passed": true
+  }
+ ]
+}

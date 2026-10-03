@@ -1,0 +1,7 @@
+mu=0.05  rho=1.02  annulus r>=0.01:  deg2-2: t=-313.260sig minQ/r2=1.00 | deg2-3: t=-45.522sig minQ/r2=1.00 | deg2-4: t=-0.081sig minQ/r2=1.00 | deg2-6: t=-73.360sig minQ/r2=4731.69
+mu=0.05  rho=1.5   annulus r>=0.01:  deg2-2: t=-59.977sig minQ/r2=1.00 | deg2-3: t=-30.572sig minQ/r2=1.00 | deg2-4: t=-21.851sig minQ/r2=1.00 | deg2-6: t=-10.341sig minQ/r2=1.00
+mu=0.2   rho=1.05  annulus r>=0.01:  deg2-2: t=-59.121sig minQ/r2=1.00 | deg2-3: t=-5.341sig minQ/r2=1.00 | deg2-4: t=-8.754sig minQ/r2=15673.45 | deg2-6: t=-7.194sig minQ/r2=20546.51
+mu=0.2   rho=2.0   annulus r>=0.01:  deg2-2: t=-13.245sig minQ/r2=1.00 | deg2-3: t=-7.155sig minQ/r2=1.00 | deg2-4: t=-4.795sig minQ/r2=1.00 | deg2-6: t=-0.601sig minQ/r2=1.00
+mu=0.5   rho=1.2   annulus r>=0.01:  deg2-2: t=-13.774sig minQ/r2=1.00 | deg2-3: t=-1.844sig minQ/r2=1.00 | deg2-4: t=+6.003sig minQ/r2=35916.46 | deg2-6: t=+10.012sig minQ/r2=51443.03
+mu=1.0   rho=1.02  annulus r>=0.01:  deg2-2: t=-32.801sig minQ/r2=1.00 | deg2-3: t=-0.855sig minQ/r2=1.00 | deg2-4: t=+55.058sig minQ/r2=74514.32 | deg2-6: t=-329.404sig minQ/r2=81005.32
+mu=1.0   rho=1.5   annulus r>=0.01:  deg2-2: t=-7.794sig minQ/r2=1.00 | deg2-3: t=-1.583sig minQ/r2=1.00 | deg2-4: t=-4.252sig minQ/r2=18961.10 | deg2-6: t=-15.820sig minQ/r2=25272.09

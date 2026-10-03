@@ -1,0 +1,79 @@
+part_T done 0s
+grid mu=0.002 rho index 0 (rho-1=0.001) PASS {'T': 0.0, 'U_max': 0.0, 'U_min': 1.2541960341944953e-11, 'log_mt': 1.5963613257117012e-15} 0.5s
+grid mu=0.002 rho index 6 (rho-1=0.02112) PASS {'T': 2.16042663783314e-16, 'U_max': 0.0, 'U_min': 5.212710176224149e-13, 'log_mt': 1.815282314636253e-15} 0.6s
+grid mu=0.002 rho index 12 (rho-1=0.4461) PASS {'T': 1.0829022019538993e-14, 'U_max': 2.3120901820332583e-15, 'U_min': 1.1964239763172602e-10, 'log_mt': 1.3745695782629538e-11} 0.7s
+grid mu=0.002 rho index 18 (rho-1=9.422) PASS {'T': 8.965156379733556e-13, 'U_max': 7.973563556683759e-16, 'U_min': 2.2497059740463688e-10, 'log_mt': 1.021614346703924e-09} 6.3s
+grid mu=0.005 rho index 0 (rho-1=0.001) PASS {'T': 4.717782385926211e-16, 'U_max': 0.0, 'U_min': 1.2607030173332135e-11, 'log_mt': 4.203603841927815e-15} 0.5s
+grid mu=0.005 rho index 6 (rho-1=0.02112) PASS {'T': 1.1558678978478426e-16, 'U_max': 0.0, 'U_min': 9.877403319815486e-11, 'log_mt': 3.655135621069883e-15} 0.5s
+grid mu=0.005 rho index 12 (rho-1=0.4461) PASS {'T': 4.6248759881928114e-15, 'U_max': 0.0, 'U_min': 2.86311204482724e-10, 'log_mt': 1.2704296943683901e-12} 0.6s
+grid mu=0.005 rho index 18 (rho-1=9.422) PASS {'T': 6.671023087760722e-13, 'U_max': 0.0, 'U_min': 3.653045043277328e-12, 'log_mt': 3.5921092030919474e-10} 3.3s
+grid mu=0.01 rho index 0 (rho-1=0.001) PASS {'T': 3.3638594865132806e-16, 'U_max': 0.0, 'U_min': 5.142112082299561e-13, 'log_mt': 1.2397371258921478e-14} 0.5s
+grid mu=0.01 rho index 6 (rho-1=0.02112) PASS {'T': 5.686577238950537e-16, 'U_max': 0.0, 'U_min': 5.3813953106416276e-11, 'log_mt': 4.667964085125594e-15} 0.5s
+grid mu=0.01 rho index 12 (rho-1=0.4461) PASS {'T': 2.6299405223123286e-15, 'U_max': 0.0, 'U_min': 1.0312486976421949e-11, 'log_mt': 8.023012573077879e-13} 0.5s
+grid mu=0.01 rho index 18 (rho-1=9.422) PASS {'T': 3.812034422765349e-13, 'U_max': 8.560234149444901e-15, 'U_min': 4.6016861986111113e-10, 'log_mt': 1.9332317827545486e-10} 2.4s
+grid mu=0.02 rho index 0 (rho-1=0.001) PASS {'T': 9.554158211404412e-16, 'U_max': 0.0, 'U_min': 1.4032792326538085e-12, 'log_mt': 2.8594408154487594e-14} 0.4s
+grid mu=0.02 rho index 6 (rho-1=0.02112) PASS {'T': 2.916501197059098e-16, 'U_max': 0.0, 'U_min': 8.011998022517445e-11, 'log_mt': 6.624430810452473e-15} 0.4s
+grid mu=0.02 rho index 12 (rho-1=0.4461) PASS {'T': 9.633176930139416e-14, 'U_max': 3.518180879506548e-14, 'U_min': 3.6327512826816476e-11, 'log_mt': 9.09957835566411e-13} 0.5s
+grid mu=0.02 rho index 18 (rho-1=9.422) PASS {'T': 6.486549935704776e-14, 'U_max': 4.0043076151460455e-16, 'U_min': 2.4846279691701535e-10, 'log_mt': 4.967419973834437e-11} 1.6s
+grid mu=0.05 rho index 0 (rho-1=0.001) PASS {'T': 1.3882234986580897e-15, 'U_max': 0.0, 'U_min': 5.463114226326944e-12, 'log_mt': 1.6418123058716957e-14} 0.4s
+grid mu=0.05 rho index 6 (rho-1=0.02112) PASS {'T': 4.862118620982959e-16, 'U_max': 0.0, 'U_min': 5.241597030162751e-12, 'log_mt': 9.05390748973862e-15} 0.4s
+grid mu=0.05 rho index 12 (rho-1=0.4461) PASS {'T': 4.211766259562043e-15, 'U_max': 0.0, 'U_min': 2.4292650371194764e-10, 'log_mt': 3.6642502023669593e-13} 0.5s
+grid mu=0.05 rho index 18 (rho-1=9.422) PASS {'T': 2.5533136641834833e-14, 'U_max': 9.97434704143477e-16, 'U_min': 8.664499623919905e-12, 'log_mt': 1.3261154709070808e-11} 0.6s
+grid mu=0.1 rho index 0 (rho-1=0.001) PASS {'T': 2.8579994254129292e-15, 'U_max': 0.0, 'U_min': 2.7368453461509826e-11, 'log_mt': 5.388828568529891e-15} 0.4s
+grid mu=0.1 rho index 6 (rho-1=0.02112) PASS {'T': 2.274882147288663e-15, 'U_max': 0.0, 'U_min': 2.4336252824927933e-11, 'log_mt': 7.962712365692838e-15} 0.4s
+grid mu=0.1 rho index 12 (rho-1=0.4461) PASS {'T': 3.590543878154379e-15, 'U_max': 0.0, 'U_min': 2.4571004826625884e-10, 'log_mt': 2.0475072546403555e-13} 0.4s
+grid mu=0.1 rho index 18 (rho-1=9.422) PASS {'T': 3.9695242017476294e-14, 'U_max': 1.1979078576805126e-15, 'U_min': 6.215793257409309e-12, 'log_mt': 5.453145334095293e-12} 0.6s
+grid mu=0.2 rho index 0 (rho-1=0.001) PASS {'T': 3.1589638730485656e-15, 'U_max': 0.0, 'U_min': 7.265975539973016e-12, 'log_mt': 3.0758501126557902e-15} 0.4s
+grid mu=0.2 rho index 6 (rho-1=0.02112) PASS {'T': 6.740707252861461e-15, 'U_max': 0.0, 'U_min': 1.1208747881858287e-13, 'log_mt': 1.5870126429792883e-14} 0.4s
+grid mu=0.2 rho index 12 (rho-1=0.4461) PASS {'T': 3.054642519474269e-15, 'U_max': 0.0, 'U_min': 8.614042679659715e-12, 'log_mt': 8.48685113828238e-14} 0.4s
+grid mu=0.2 rho index 18 (rho-1=9.422) PASS {'T': 4.182679738008351e-14, 'U_max': 7.727967740707652e-16, 'U_min': 3.6909298051099296e-11, 'log_mt': 3.2397533878703472e-12} 0.6s
+grid mu=0.2 rho index 24 (rho-1=199) PASS {'T': 7.059473725937924e-12, 'U_max': 4.4724076293654285e-15, 'U_min': 8.11337990852397e-12, 'log_mt': 1.9983542344381074e-10} 2.4s
+grid mu=0.3 rho index 0 (rho-1=0.001) PASS {'T': 1.857326557165385e-15, 'U_max': 0.0, 'U_min': 1.1032870922690221e-12, 'log_mt': 5.9233462482241055e-15} 0.4s
+grid mu=0.3 rho index 6 (rho-1=0.02112) PASS {'T': 1.5331104181098806e-16, 'U_max': 0.0, 'U_min': 1.3828965685867412e-10, 'log_mt': 8.81405103933033e-15} 0.4s
+grid mu=0.3 rho index 12 (rho-1=0.4461) PASS {'T': 2.850803459600594e-15, 'U_max': 0.0, 'U_min': 9.856937833015059e-11, 'log_mt': 6.996196771690977e-14} 0.4s
+grid mu=0.3 rho index 18 (rho-1=9.422) PASS {'T': 1.447224175152009e-14, 'U_max': 2.8044321385100813e-15, 'U_min': 3.2789763256500284e-11, 'log_mt': 1.9951461793948323e-12} 0.5s
+grid mu=0.5 rho index 0 (rho-1=0.001) PASS {'T': 0.0, 'U_max': 0.0, 'U_min': 6.036708678848971e-12, 'log_mt': 4.681517613738092e-15} 0.4s
+grid mu=0.5 rho index 6 (rho-1=0.02112) PASS {'T': 3.9664864494162355e-16, 'U_max': 0.0, 'U_min': 1.1776774741240159e-11, 'log_mt': 8.649092969190914e-16} 0.4s
+grid mu=0.5 rho index 12 (rho-1=0.4461) PASS {'T': 5.1895923876205024e-15, 'U_max': 0.0, 'U_min': 5.674548375210858e-12, 'log_mt': 6.040498153019981e-14} 0.4s
+grid mu=0.5 rho index 18 (rho-1=9.422) PASS {'T': 2.4168303910954106e-14, 'U_max': 5.528130283145794e-16, 'U_min': 1.383985564902435e-11, 'log_mt': 7.966916643554448e-13} 0.5s
+grid mu=0.5 rho index 24 (rho-1=199) PASS {'T': 3.4327948553061697e-12, 'U_max': 7.69186598027155e-15, 'U_min': 2.776828915133274e-12, 'log_mt': 4.061394004676323e-11} 3.5s
+grid mu=0.7 rho index 0 (rho-1=0.001) PASS {'T': 1.4187345982372813e-15, 'U_max': 0.0, 'U_min': 2.591466452119044e-11, 'log_mt': 2.456758535176045e-15} 0.4s
+grid mu=0.7 rho index 6 (rho-1=0.02112) PASS {'T': 5.6355805429232044e-15, 'U_max': 0.0, 'U_min': 5.001030222731712e-12, 'log_mt': 9.599447941683786e-15} 0.4s
+grid mu=0.7 rho index 12 (rho-1=0.4461) PASS {'T': 4.424508249490019e-15, 'U_max': 0.0, 'U_min': 3.2548382614816075e-12, 'log_mt': 5.184296837189672e-14} 0.4s
+grid mu=0.7 rho index 18 (rho-1=9.422) PASS {'T': 3.273682820866929e-14, 'U_max': 0.0, 'U_min': 4.220167232553843e-11, 'log_mt': 7.248015791502541e-13} 0.5s
+grid mu=0.85 rho index 0 (rho-1=0.001) PASS {'T': 9.119732377265876e-16, 'U_max': 0.0, 'U_min': 2.8881684301024952e-12, 'log_mt': 5.632398153317721e-16} 0.4s
+grid mu=0.85 rho index 6 (rho-1=0.02112) PASS {'T': 1.0999064846020258e-14, 'U_max': 0.0, 'U_min': 1.196674577190656e-10, 'log_mt': 1.0755437414146334e-14} 0.4s
+grid mu=0.85 rho index 12 (rho-1=0.4461) PASS {'T': 4.3397538246360666e-15, 'U_max': 0.0, 'U_min': 1.0430332568136406e-10, 'log_mt': 8.467535409783663e-14} 0.4s
+grid mu=0.85 rho index 18 (rho-1=9.422) PASS {'T': 3.3303325758124564e-14, 'U_max': 0.0, 'U_min': 3.2964850983716053e-10, 'log_mt': 9.463902682402842e-13} 0.5s
+grid mu=1 rho index 0 (rho-1=0.001) PASS {'T': 5.652434532141246e-16, 'U_max': 0.0, 'U_min': 7.718624139442011e-12, 'log_mt': 5.208428263008231e-15} 0.4s
+grid mu=1 rho index 6 (rho-1=0.02112) PASS {'T': 1.1650000318136737e-14, 'U_max': 0.0, 'U_min': 1.2644277115364093e-12, 'log_mt': 1.4029335984505037e-14} 0.4s
+grid mu=1 rho index 12 (rho-1=0.4461) PASS {'T': 3.6248232208381724e-15, 'U_max': 0.0, 'U_min': 1.4142350144360669e-10, 'log_mt': 7.203511863697736e-14} 0.4s
+grid mu=1 rho index 18 (rho-1=9.422) PASS {'T': 3.6942630316990835e-14, 'U_max': 0.0, 'U_min': 1.8965150595803663e-10, 'log_mt': 8.352051860566718e-13} 0.5s
+grid mu=1 rho index 24 (rho-1=199) PASS {'T': 8.492053320721292e-13, 'U_max': 6.154666644036763e-15, 'U_min': 3.608445997653935e-11, 'log_mt': 1.3177221441657984e-11} 2.8s
+part_R1 done 43s
+hunt point 0: mu=5.9253 rho=2.0187 PASS {}  direct 0.8s
+hunt point 10: mu=0.0010598 rho=1.0608 PASS {}  direct 2.3s
+hunt point 20: mu=0.062921 rho=72.76 PASS {}  direct 5.9s
+hunt point 30: mu=418.84 rho=2.06958 PASS {}  direct 1.2s
+hunt point 40: mu=0.0035963 rho=2.19286 PASS {}  direct 2.6s
+hunt point 50: mu=0.01699 rho=1.77577 PASS {}  direct 0.8s
+hunt point 60: mu=18.162 rho=5.15118 PASS {}  direct 0.7s
+hunt point 70: mu=119.18 rho=1.00507 PASS {}  direct 4.0s
+hunt point 80: mu=343.01 rho=1.07852 PASS {}  direct 1.0s
+hunt point 90: mu=0.14276 rho=18.5972 PASS {}  direct 1.1s
+hunt point 100: mu=605.79 rho=2.4178 PASS {}  direct 2.1s
+hunt point 110: mu=141.65 rho=195.657 PASS {}  not attempted (rule: rho > 100) 7.6s
+hunt point 120: mu=842.82 rho=1.34834 PASS {}  direct 1.3s
+hunt point 130: mu=0.12794 rho=1.23994 PASS {}  direct 0.5s
+hunt point 140: mu=0.43602 rho=1.29806 PASS {}  direct 0.5s
+hunt point 150: mu=0.0017168 rho=1.00834 PASS {}  direct 3.1s
+hunt point 160: mu=1.1977 rho=77.4611 PASS {}  direct 2.2s
+hunt point 170: mu=0.01523 rho=1.00326 PASS {}  direct 1.7s
+hunt point 180: mu=0.002466 rho=1.37899 PASS {}  direct 1.4s
+hunt point 190: mu=9.9397 rho=1.01136 PASS {}  direct 0.7s
+hunt point 200: mu=74.457 rho=1.14152 PASS {}  direct 0.7s
+hunt point 210: mu=18.291 rho=35.8268 PASS {}  direct 2.3s
+hunt point 220: mu=0.0014042 rho=1.58458 PASS {}  direct 3.3s
+hunt point 230: mu=806.35 rho=10.6592 PASS {}  reciprocal rate 15.2s
+part_R2 done 106s
+v3_cartography: 140/140 passed -> PASS  [106.2s]

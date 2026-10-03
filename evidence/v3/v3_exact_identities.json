@@ -1,0 +1,1120 @@
+{
+ "schema_version": "3.0",
+ "name": "v3_exact_identities",
+ "kind": "exact_symbolic_equality",
+ "passed": true,
+ "counts": {
+  "attempted": 148,
+  "passed": 148,
+  "failed": 0
+ },
+ "worst_residuals": {
+  "nonzero_residuals": 0
+ },
+ "parameters": "symbolic in mu, k and all state variables",
+ "seconds": 0.963778250006726,
+ "scope": "Finite algebra only. Positivity, averaging and topological steps are in the written proofs.",
+ "software": {
+  "sympy": "1.14.0"
+ },
+ "groups": {
+  "framework identities re-derived": {
+   "attempted": 5,
+   "passed": 5
+  },
+  "gauge ODEs and exponent formulas": {
+   "attempted": 17,
+   "passed": 17
+  },
+  "scalar Riccati reduction": {
+   "attempted": 8,
+   "passed": 8
+  },
+  "equilibrium form and Lambda_E": {
+   "attempted": 8,
+   "passed": 8
+  },
+  "polar form and nested radii": {
+   "attempted": 3,
+   "passed": 3
+  },
+  "Lotka-Volterra chain and second-order equations": {
+   "attempted": 16,
+   "passed": 16
+  },
+  "strong-stable ratios and weak adjoint": {
+   "attempted": 39,
+   "passed": 39
+  },
+  "compound-system rows": {
+   "attempted": 24,
+   "passed": 24
+  },
+  "first-order rigidity": {
+   "attempted": 2,
+   "passed": 2
+  },
+  "period identities as exact derivatives": {
+   "attempted": 11,
+   "passed": 11
+  },
+  "large-gain Lyapunov identity": {
+   "attempted": 7,
+   "passed": 7
+  },
+  "planar reduction": {
+   "attempted": 8,
+   "passed": 8
+  }
+ },
+ "counting_rule": "one count per residual tested equal to zero; matrix identities are counted row by row",
+ "records": [
+  {
+   "group": "framework identities re-derived",
+   "id": "O_transport",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "framework identities re-derived",
+   "id": "K_equation",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "framework identities re-derived",
+   "id": "W_equation",
+   "passed": true,
+   "residual": "0",
+   "cofactor_of_O": "eta**2 - eta*mu + eta - zeta",
+   "note": ""
+  },
+  {
+   "group": "framework identities re-derived",
+   "id": "tangent_second_order",
+   "passed": true,
+   "residual": "0",
+   "cofactor_of_O": "1",
+   "note": ""
+  },
+  {
+   "group": "framework identities re-derived",
+   "id": "scalar_equation",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "star_gauge_ode",
+   "passed": true,
+   "residual": "0",
+   "cofactor_of_O": "-U",
+   "note": "Sigma' = (eta-mu) Sigma + p K - U O"
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "convexity_gauge_ode",
+   "passed": true,
+   "residual": "0",
+   "cofactor_of_O": "eta*p + k - mu*p + p - y",
+   "note": "Xi' = (eta-mu) Xi + p W + cofactor * O"
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "star_gauge_ode_state_form",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "log_derivative_star_gauge",
+   "passed": true,
+   "residual": "0",
+   "note": "(log Sigma)' = eta_0 - mu, eta_0 = V3/Sigma"
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "eta_minus_eta0",
+   "passed": true,
+   "residual": "0",
+   "cofactor_of_O": "U",
+   "note": "eta - eta_0 = -p K / Sigma on O = 0"
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "zeta_from_gauges",
+   "passed": true,
+   "residual": "0",
+   "cofactor_of_O": "p",
+   "note": "zeta Sigma = Xi - p' K on O = 0"
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "convexity_gauge_state_form",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "convexity_gauge_ode_state_form",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "star_gauge_at_p0",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "convexity_gauge_at_p0",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "shifted_centre_gauge_ode",
+   "passed": true,
+   "residual": "0",
+   "cofactor_of_O": "-U - c_shift",
+   "note": ""
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "shifted_centre_gauge_at_p0",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "L2_of_1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "L2_of_U",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "L2_of_p",
+   "passed": true,
+   "residual": "0",
+   "cofactor_of_O": "1",
+   "note": ""
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "L2_of_y",
+   "passed": true,
+   "residual": "0",
+   "cofactor_of_O": "eta - mu + 1",
+   "note": ""
+  },
+  {
+   "group": "gauge ODEs and exponent formulas",
+   "id": "W_state_form",
+   "passed": true,
+   "residual": "0",
+   "cofactor_of_O": "-eta + mu - 1",
+   "note": ""
+  },
+  {
+   "group": "scalar Riccati reduction",
+   "id": "kappa_equation",
+   "passed": true,
+   "residual": "0",
+   "cofactor_of_O": "0",
+   "note": "Sigma^2 {kappa' - [k psi/Sigma - (1+eta+eta_0-mu) kappa]} = cofactor * O"
+  },
+  {
+   "group": "scalar Riccati reduction",
+   "id": "kappa_riccati_closed",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "scalar Riccati reduction",
+   "id": "K_riccati_closed",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "scalar Riccati reduction",
+   "id": "W_affine_in_kappa",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "scalar Riccati reduction",
+   "id": "kappa0_plane_contains_tangent",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "scalar Riccati reduction",
+   "id": "kappa0_plane_contains_E",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "scalar Riccati reduction",
+   "id": "eta0_riccati_defect",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "scalar Riccati reduction",
+   "id": "zeta0_riccati_defect",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "equilibrium form and Lambda_E",
+   "id": "LambdaE_ode",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "equilibrium form and Lambda_E",
+   "id": "star_gauge_decomposition",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "equilibrium form and Lambda_E",
+   "id": "QE_derivative",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "equilibrium form and Lambda_E",
+   "id": "sturm_form",
+   "passed": true,
+   "residual": "0",
+   "note": "U'' - 2 sigma U' + zeta_E U = -Lambda_E"
+  },
+  {
+   "group": "equilibrium form and Lambda_E",
+   "id": "characteristic_factorisation",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "equilibrium form and Lambda_E",
+   "id": "frequency_formula",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "equilibrium form and Lambda_E",
+   "id": "riccati_fixed_point_eta",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "equilibrium form and Lambda_E",
+   "id": "riccati_fixed_point_zeta",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "polar form and nested radii",
+   "id": "polar_angle_rate",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "polar form and nested radii",
+   "id": "polar_radial_rate",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "polar form and nested radii",
+   "id": "polar_linear_fractional_difference",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "LV_r1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "LV_r2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "LV_q",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "eta_second_order",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "gamma_second_order",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "chemical_ratio_second_order",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "lienard_plane_eta",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "lienard_plane_sigma",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "log_eta_derivative",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "log_zeta_derivative",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "moment_polynomial",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "backward_operator_on_x",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "compound_operator_on_q",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "compound_operator_on_inverse_x",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "log_1_plus_eta",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "Lotka-Volterra chain and second-order equations",
+   "id": "log_zeta_plus_mu_eta",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "strong_stable_vector_row1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "strong_stable_vector_row2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "strong_stable_vector_row3",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "ratio_r_equation",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "ratio_s_equation",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "ratio_r_second_order",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "conjugate_c_definition",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "conjugate_c_equation",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "ratio_r_conjugate_form",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "third_order_operator_on_a",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "strong_stable_gain_primitive",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "weak_adjoint_equation_row1",
+   "passed": true,
+   "residual": "0",
+   "note": "Psi = e^{At} z' x e_s solves Psi' = -J^T Psi"
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "weak_adjoint_equation_row2",
+   "passed": true,
+   "residual": "0",
+   "note": "Psi = e^{At} z' x e_s solves Psi' = -J^T Psi"
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "weak_adjoint_equation_row3",
+   "passed": true,
+   "residual": "0",
+   "note": "Psi = e^{At} z' x e_s solves Psi' = -J^T Psi"
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "weak_adjoint_components_row1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "weak_adjoint_components_row2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "weak_adjoint_components_row3",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "weak_adjoint_orthogonal_to_tangent",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "weak_adjoint_orthogonal_to_strong_stable",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "chord_identity",
+   "passed": true,
+   "residual": "0",
+   "note": "(Psi.d)' = Psi_3 x R(dU), with x e^{dU} written as x2"
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "curvature_pairing",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "theta_equation",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "crossing_derivative_Psi3",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "crossing_derivative_Psi2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "crossing_derivative_Psi1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "supporting_line_curvature",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "supporting_line_curvature_at_contact",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "tangency_second_derivative",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "rank_one_carrier_row1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "rank_one_carrier_row2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "rank_one_carrier_row3",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "L3_of_1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "L3_of_p",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "L3_of_pprime",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "L3_of_U",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "L3_of_y",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "cross_product_transport_row1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "cross_product_transport_row2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "strong-stable ratios and weak adjoint",
+   "id": "cross_product_transport_row3",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "compound_matrix_conjugacy",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "radial_wedge_row1",
+   "passed": true,
+   "residual": "0",
+   "note": "(Sigma, V3, Xi)' = C (Sigma, V3, Xi) + k psi (0, p, p')"
+  },
+  {
+   "group": "compound-system rows",
+   "id": "radial_wedge_row2",
+   "passed": true,
+   "residual": "0",
+   "note": "(Sigma, V3, Xi)' = C (Sigma, V3, Xi) + k psi (0, p, p')"
+  },
+  {
+   "group": "compound-system rows",
+   "id": "radial_wedge_row3",
+   "passed": true,
+   "residual": "0",
+   "note": "(Sigma, V3, Xi)' = C (Sigma, V3, Xi) + k psi (0, p, p')"
+  },
+  {
+   "group": "compound-system rows",
+   "id": "compound_transport_row1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "compound_transport_row2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "compound_transport_row3",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "radial_wedge_components_row1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "radial_wedge_components_row2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "radial_wedge_components_row3",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "chemical_direction_defect_row1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "chemical_direction_defect_row2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "chemical_direction_defect_row3",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "constant_direction_defect_row1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "constant_direction_defect_row2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "constant_direction_defect_row3",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "compound_adjoint_row1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "compound_adjoint_row2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "compound_adjoint_row3",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "supersolution_defect_row1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "supersolution_defect_row2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "supersolution_defect_row3",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "supersolution_equality_at_true_pair_2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "compound-system rows",
+   "id": "supersolution_equality_at_true_pair_3",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "first-order rigidity",
+   "id": "rigidity_eta_coefficients",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "first-order rigidity",
+   "id": "rigidity_zeta_coefficients",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "period identities as exact derivatives",
+   "id": "mean_x_primitive",
+   "passed": true,
+   "residual": "0",
+   "note": "<x> = k, i.e. <e^U> = 1"
+  },
+  {
+   "group": "period identities as exact derivatives",
+   "id": "identity_b_primitive",
+   "passed": true,
+   "residual": "0",
+   "note": "<p'^2> = mu <p^2>"
+  },
+  {
+   "group": "period identities as exact derivatives",
+   "id": "identity_c_primitive",
+   "passed": true,
+   "residual": "0",
+   "note": "A <p'^2> = <x p^2>"
+  },
+  {
+   "group": "period identities as exact derivatives",
+   "id": "identity_d_primitive",
+   "passed": true,
+   "residual": "0",
+   "note": "(k - k_H)<p^2> = mu <p^3> - 2 <p'^2 p>"
+  },
+  {
+   "group": "period identities as exact derivatives",
+   "id": "identity_e_primitive",
+   "passed": true,
+   "residual": "0",
+   "note": "<x p^3> = -2 (<p''^2> - mu <p'^2>)"
+  },
+  {
+   "group": "period identities as exact derivatives",
+   "id": "identity_f_step1_primitive",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "period identities as exact derivatives",
+   "id": "identity_f_step2_primitive",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "period identities as exact derivatives",
+   "id": "identity_f_primitive",
+   "passed": true,
+   "residual": "0",
+   "note": "(k-k_H) A <p^2> = (mu<p^4> - 3<p'^2 p^2>)/rho - <p'^3> + 2(1 - 1/rho)(<p''^2> - mu <p'^2>)"
+  },
+  {
+   "group": "period identities as exact derivatives",
+   "id": "identity_f_time_rescaling",
+   "passed": true,
+   "residual": "0",
+   "note": "the t-time and tau-time forms of identity (f) differ by the factor mu^2 A^2"
+  },
+  {
+   "group": "period identities as exact derivatives",
+   "id": "kurtosis_mixture_identity",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "period identities as exact derivatives",
+   "id": "kurtosis_square_identity",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "large-gain Lyapunov identity",
+   "id": "trough_lyapunov_identity",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "large-gain Lyapunov identity",
+   "id": "trough_threshold",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "large-gain Lyapunov identity",
+   "id": "cooperative_system_a",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "large-gain Lyapunov identity",
+   "id": "cooperative_system_b",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "large-gain Lyapunov identity",
+   "id": "cooperative_system_c",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "large-gain Lyapunov identity",
+   "id": "mass_identity_primitive",
+   "passed": true,
+   "residual": "0",
+   "note": "integrated over the positive lobe"
+  },
+  {
+   "group": "large-gain Lyapunov identity",
+   "id": "sturm_substitution",
+   "passed": true,
+   "residual": "0",
+   "note": "z = e^{-sigma s} U:  z'' + omega^2 z = e^{-sigma s}(U'' - 2 sigma U' + zeta_E U)"
+  },
+  {
+   "group": "planar reduction",
+   "id": "radial_scaling_wedge",
+   "note": "F(theta q)^F(q) = -v[theta(H(q)-k)+k-H(theta q)]",
+   "passed": true,
+   "residual": "0"
+  },
+  {
+   "group": "planar reduction",
+   "id": "planar_wedge_transport",
+   "passed": true,
+   "residual": "0",
+   "note": "(F^J)' = (div F)(F^J)"
+  },
+  {
+   "group": "planar reduction",
+   "id": "crest_axis_graph_value",
+   "passed": true,
+   "residual": "0",
+   "note": "h(u,0) - k = k(e^u - 1)/(1+eta)"
+  },
+  {
+   "group": "planar reduction",
+   "id": "two_orbit_identity",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "planar reduction",
+   "id": "normal_equation_row1",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "planar reduction",
+   "id": "normal_equation_row2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "planar reduction",
+   "id": "normal_equation_row3",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "group": "planar reduction",
+   "id": "planar_divergence",
+   "passed": true,
+   "residual": "0",
+   "note": "div F = -mu - H_v = eta - mu when H_v = -eta"
+  }
+ ]
+}

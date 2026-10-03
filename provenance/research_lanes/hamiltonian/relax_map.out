@@ -1,0 +1,13 @@
+# small-q check of pulse map: S(q) ~ q + (2/3) q^2
+  q=0.01  S=0.01006711  (S-q)/q^2=0.67112
+  q=0.03  S=0.03061204  (S-q)/q^2=0.68005
+  q=0.1   S=0.10711417  (S-q)/q^2=0.71142
+  q=0.3   S=0.37179683  (S-q)/q^2=0.79774
+  q=1     S=2.00000000  (S-q)/q^2=1.00000
+  q=3     S=13.54710787  (S-q)/q^2=1.17190
+# singular fixed points: rho, #roots, q*, S(q*), multiplier (-> m_t), T*mu, mu*U_min
+  rho=1.02  nroots=1 q*=0.212695 S=0.247127 mult=0.994358 T*mu=0.45081 muUmin=-0.02584
+  rho=1.1   nroots=1 q*=0.471748 S=0.663707 mult=0.947640 T*mu=1.03223 muUmin=-0.14439
+  rho=1.5   nroots=1 q*=1.150216 S=2.507813 mult=0.679827 T*mu=2.43869 muUmin=-1.03364
+  rho=3     nroots=1 q*=2.917689 S=12.866737 mult=0.186646 T*mu=5.26148 muUmin=-7.86990
+  rho=8     nroots=1 q*=7.999409 S=87.983041 mult=0.001450 T*mu=11.99781 muUmin=-68.10520

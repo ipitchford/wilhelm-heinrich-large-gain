@@ -1,0 +1,33 @@
+{
+  "kind": "deliberate_error_regression",
+  "controls": [
+    {
+      "id": "wrong_identity_rejected_by_predicate_and_exit",
+      "passed": true,
+      "observed_exit_status": 1,
+      "observed_scientific_pass": false
+    },
+    {
+      "id": "reversed_extrema_order_rejected",
+      "passed": true,
+      "correct_order_pass": true,
+      "reversed_order_pass": false
+    },
+    {
+      "id": "wrong_winding_rejected",
+      "passed": true,
+      "observed_winding": -1.0
+    },
+    {
+      "id": "false_radial_certificate_detected",
+      "passed": true,
+      "radial_ratio_1": 1.0000581422963886,
+      "actual_weak_multiplier_approximation": 0.9999882842317797,
+      "certificate_pass": false
+    }
+  ],
+  "number_checked": 4,
+  "number_passed": 4,
+  "passed": true,
+  "interpretation": "A control passes only when the deliberately wrong scientific assertion is rejected."
+}

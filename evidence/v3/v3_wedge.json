@@ -1,0 +1,1752 @@
+{
+ "schema_version": "3.0",
+ "name": "v3_wedge",
+ "kind": "floating_point_diagnostic",
+ "passed": true,
+ "counts": {
+  "attempted": 211,
+  "passed": 211,
+  "failed": 0
+ },
+ "worst_residuals": {
+  "max_kurtosis_toda": 1.79999880001712,
+  "max_kurtosis_other_convex": 1.79999998519927,
+  "min_Rsel_prime": 0.8000007999885865,
+  "script_failures": [],
+  "exit_status": 0,
+  "max_identity_defect": 3.152700289437491e-11,
+  "cycles": 14,
+  "min_U": -8356.538925489649,
+  "max_selection_error_smallest_mu_amplitude_le_1": 0.0004034669606253205,
+  "max_exponent_error_smallest_mu_amplitude_le_1": 0.000749485299121555,
+  "max_selection_error_smallest_mu": 0.0017894555259112543,
+  "max_exponent_error_smallest_mu": 0.006709147002910476,
+  "max_fixed_rho_identity_defect": 1.9405581810928835e-13
+ },
+ "parameters": {
+  "toda_levels": "14 values of h in [1e-6, 1e6]",
+  "identity_cycles": 14,
+  "amplitudes": [
+   0.3,
+   1.0,
+   2.0,
+   3.0
+  ],
+  "mu": [
+   0.03,
+   0.01,
+   0.003,
+   0.001,
+   0.0003,
+   0.0001
+  ]
+ },
+ "seconds": 88.17103358299937,
+ "scope": "Quadratures on level curves and computed cycles. The asymptotic comparison is evidence, not a proof.",
+ "not_interval_certified": true,
+ "groups": {
+  "A kurtosis bound": {
+   "attempted": 44,
+   "passed": 44
+  },
+  "B period identities": {
+   "attempted": 98,
+   "passed": 98
+  },
+  "C third-order formula": {
+   "attempted": 57,
+   "passed": 57
+  },
+  "D fixed rho": {
+   "attempted": 12,
+   "passed": 12
+  }
+ },
+ "precision": {
+  "A": "mpmath, 30 significant digits",
+  "B": "double precision",
+  "C": "double precision",
+  "D": "double precision"
+ },
+ "counting_rule": "A: one count per level, potential or structural test; B: one per (cycle, identity); C: one per cycle, per convergence predicate and per printed table row; D: two per cycle",
+ "records": [
+  {
+   "group": "A kurtosis bound",
+   "id": "polynomial identities of the mixture argument",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e-6: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.50000004166668",
+   "Rsel_over_h": "0.999999986111"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e-6: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e-4: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.50000416665365",
+   "Rsel_over_h": "0.999998611114"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e-4: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e-2: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.50041653608048",
+   "Rsel_over_h": "0.999861140109"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e-2: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=0.1: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.50415327011013",
+   "Rsel_over_h": "0.99861406733"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=0.1: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=0.5: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.52046217429357",
+   "Rsel_over_h": "0.993135557918"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=0.5: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.54001509538935",
+   "Rsel_over_h": "0.986459778225"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=3: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.60593610106041",
+   "Rsel_over_h": "0.962270500004"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=3: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=10: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.70954727065853",
+   "Rsel_over_h": "0.909659284133"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=10: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=30: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.76476212166936",
+   "Rsel_over_h": "0.860688586707"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=30: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=100: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.78858553229518",
+   "Rsel_over_h": "0.82707379629"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=100: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e3: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.79880877805537",
+   "Rsel_over_h": "0.804508573134"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e3: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e4: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.79988011584449",
+   "Rsel_over_h": "0.800634482704"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e4: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e5: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.79998800143558",
+   "Rsel_over_h": "0.800081861462"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e5: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e6: kurtosis <= 9/5 and companions",
+   "passed": true,
+   "kurtosis": "1.79999880001712",
+   "Rsel_over_h": "0.800010028123"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Toda level h=1e6: derivative formulas",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Rsel' >= 4/5 on the level grid",
+   "passed": true,
+   "min_Rsel_prime": "0.800000799988586550349924110318"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "Rsel strictly increasing on 121 levels",
+   "passed": true
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "convex potential U^2/2: kurtosis <= 9/5",
+   "passed": true,
+   "max_kurtosis": "1.5"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "convex potential U^4/4: kurtosis <= 9/5",
+   "passed": true,
+   "max_kurtosis": "1.28571428571429"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "convex potential cosh U - 1: kurtosis <= 9/5",
+   "passed": true,
+   "max_kurtosis": "1.4999375205"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "convex potential sqrt(1+U^2)-1: kurtosis <= 9/5",
+   "passed": true,
+   "max_kurtosis": "1.79999985081194"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "convex potential log cosh U: kurtosis <= 9/5",
+   "passed": true,
+   "max_kurtosis": "1.79999998519927"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "convex potential (e^{3U}-3U-1)/9: kurtosis <= 9/5",
+   "passed": true,
+   "max_kurtosis": "1.79998666842336"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "convex potential U^2/2 for U<0, 50U^2 for U>0 (C^1 only): kurtosis <= 9/5",
+   "passed": true,
+   "max_kurtosis": "1.5"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "convex potential e^U-U-1 + U^6: kurtosis <= 9/5",
+   "passed": true,
+   "max_kurtosis": "1.50003602532165"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "convex potential |U|^{2.5}: kurtosis <= 9/5",
+   "passed": true,
+   "max_kurtosis": "1.42105263157895"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "convex potential |U|^{1.2} (convex, C^1 only): kurtosis <= 9/5",
+   "passed": true,
+   "max_kurtosis": "1.71428571428571"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "non-convex potential 1-cos U (h near separatrix 2): bound violated (power check)",
+   "passed": true,
+   "max_kurtosis": "3.50620685761906"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "non-convex potential U^2/(1+U^2)*... log(1+U^2) (concave tails): bound violated (power check)",
+   "passed": true,
+   "max_kurtosis": "2.93472226121085"
+  },
+  {
+   "group": "A kurtosis bound",
+   "id": "velocity density increasing (three levels, 199 grid points each)",
+   "passed": true
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.01: identity (a)",
+   "passed": true,
+   "defect": 2.220446049250313e-16
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.01: identity (b)",
+   "passed": true,
+   "defect": 1.1831004403808782e-15
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.01: identity (c)",
+   "passed": true,
+   "defect": 5.915502201904391e-16
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.01: identity (d)",
+   "passed": true,
+   "defect": 3.594681957171613e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.01: identity (e)",
+   "passed": true,
+   "defect": 8.618490637043062e-16
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.01: identity (f)",
+   "passed": true,
+   "defect": 3.709702179542604e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.01: identity (g)",
+   "passed": true,
+   "defect": 3.332289778053421e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.5: identity (a)",
+   "passed": true,
+   "defect": 5.576650252692161e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.5: identity (b)",
+   "passed": true,
+   "defect": 5.038723882795751e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.5: identity (c)",
+   "passed": true,
+   "defect": 5.398072707424598e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.5: identity (d)",
+   "passed": true,
+   "defect": 3.8465863240402186e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.5: identity (e)",
+   "passed": true,
+   "defect": 1.6377389320779875e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.5: identity (f)",
+   "passed": true,
+   "defect": 2.336077487856727e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.5: identity (g)",
+   "passed": true,
+   "defect": 2.3249002134620694e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=4: identity (a)",
+   "passed": true,
+   "defect": 1.141309269314661e-12
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=4: identity (b)",
+   "passed": true,
+   "defect": 4.751642531163524e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=4: identity (c)",
+   "passed": true,
+   "defect": 4.4038204489942093e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=4: identity (d)",
+   "passed": true,
+   "defect": 1.2044932572317003e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=4: identity (e)",
+   "passed": true,
+   "defect": 1.3538926502309897e-12
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=4: identity (f)",
+   "passed": true,
+   "defect": 1.0094735046560791e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=4: identity (g)",
+   "passed": true,
+   "defect": 1.0120845494445537e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=12: identity (a)",
+   "passed": true,
+   "defect": 2.403854892918389e-11
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=12: identity (b)",
+   "passed": true,
+   "defect": 3.916635079256302e-12
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=12: identity (c)",
+   "passed": true,
+   "defect": 3.8886572893692535e-12
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=12: identity (d)",
+   "passed": true,
+   "defect": 1.664584461283065e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=12: identity (e)",
+   "passed": true,
+   "defect": 3.152700289437491e-11
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=12: identity (f)",
+   "passed": true,
+   "defect": 4.805190690768491e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=12: identity (g)",
+   "passed": true,
+   "defect": 4.792012739131512e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.01: identity (a)",
+   "passed": true,
+   "defect": 4.440892098500626e-16
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.01: identity (b)",
+   "passed": true,
+   "defect": 1.1875529914935668e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.01: identity (c)",
+   "passed": true,
+   "defect": 1.2590923283305287e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.01: identity (d)",
+   "passed": true,
+   "defect": 5.6379062147046526e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.01: identity (e)",
+   "passed": true,
+   "defect": 1.3890105883649742e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.01: identity (f)",
+   "passed": true,
+   "defect": 3.5188346906144195e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.01: identity (g)",
+   "passed": true,
+   "defect": 3.730306851847616e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.5: identity (a)",
+   "passed": true,
+   "defect": 8.992806499463768e-15
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.5: identity (b)",
+   "passed": true,
+   "defect": 7.903366434862278e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.5: identity (c)",
+   "passed": true,
+   "defect": 1.0484559205190548e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.5: identity (d)",
+   "passed": true,
+   "defect": 1.7192341038191283e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.5: identity (e)",
+   "passed": true,
+   "defect": 3.719350067292111e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.5: identity (f)",
+   "passed": true,
+   "defect": 4.938246735096292e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=1.5: identity (g)",
+   "passed": true,
+   "defect": 4.790311419159935e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=4: identity (a)",
+   "passed": true,
+   "defect": 3.68594044175552e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=4: identity (b)",
+   "passed": true,
+   "defect": 1.9912841625337376e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=4: identity (c)",
+   "passed": true,
+   "defect": 5.044586545085469e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=4: identity (d)",
+   "passed": true,
+   "defect": 7.230980940300314e-15
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=4: identity (e)",
+   "passed": true,
+   "defect": 4.153074873125398e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=4: identity (f)",
+   "passed": true,
+   "defect": 3.520828248016569e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=4: identity (g)",
+   "passed": true,
+   "defect": 3.5411981677072083e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=12: identity (a)",
+   "passed": true,
+   "defect": 7.170930516053886e-12
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=12: identity (b)",
+   "passed": true,
+   "defect": 1.1755478208136645e-12
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=12: identity (c)",
+   "passed": true,
+   "defect": 1.1919281632829486e-12
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=12: identity (d)",
+   "passed": true,
+   "defect": 1.264356470071533e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=12: identity (e)",
+   "passed": true,
+   "defect": 9.297842863365468e-12
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=12: identity (f)",
+   "passed": true,
+   "defect": 1.9595214952178522e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.3 rho=12: identity (g)",
+   "passed": true,
+   "defect": 1.9553031190921064e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.01: identity (a)",
+   "passed": true,
+   "defect": 6.661338147750939e-16
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.01: identity (b)",
+   "passed": true,
+   "defect": 3.2767978148666213e-15
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.01: identity (c)",
+   "passed": true,
+   "defect": 8.450689101498129e-15
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.01: identity (d)",
+   "passed": true,
+   "defect": 2.6448106054531254e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.01: identity (e)",
+   "passed": true,
+   "defect": 1.7777172456552315e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.01: identity (f)",
+   "passed": true,
+   "defect": 2.510995795951829e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.01: identity (g)",
+   "passed": true,
+   "defect": 2.510995795951829e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.5: identity (a)",
+   "passed": true,
+   "defect": 9.425793479067579e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.5: identity (b)",
+   "passed": true,
+   "defect": 2.967088648723764e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.5: identity (c)",
+   "passed": true,
+   "defect": 2.84082955728871e-15
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.5: identity (d)",
+   "passed": true,
+   "defect": 2.128276024245723e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.5: identity (e)",
+   "passed": true,
+   "defect": 4.611832768749985e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.5: identity (f)",
+   "passed": true,
+   "defect": 1.4049080605222326e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=1.5: identity (g)",
+   "passed": true,
+   "defect": 1.4049080605222326e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=4: identity (a)",
+   "passed": true,
+   "defect": 6.16839912481737e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=4: identity (b)",
+   "passed": true,
+   "defect": 2.678113625541697e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=4: identity (c)",
+   "passed": true,
+   "defect": 3.064973025742068e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=4: identity (d)",
+   "passed": true,
+   "defect": 3.4257036725802123e-15
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=4: identity (e)",
+   "passed": true,
+   "defect": 5.674841752435241e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=4: identity (f)",
+   "passed": true,
+   "defect": 1.134696587072503e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=4: identity (g)",
+   "passed": true,
+   "defect": 1.134696587072503e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=12: identity (a)",
+   "passed": true,
+   "defect": 6.621814208074284e-12
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=12: identity (b)",
+   "passed": true,
+   "defect": 1.0816935163700649e-12
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=12: identity (c)",
+   "passed": true,
+   "defect": 1.1072649756269394e-12
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=12: identity (d)",
+   "passed": true,
+   "defect": 7.369776266863499e-15
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=12: identity (e)",
+   "passed": true,
+   "defect": 8.52589075831299e-12
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=12: identity (f)",
+   "passed": true,
+   "defect": 1.8109964903659856e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=1 rho=12: identity (g)",
+   "passed": true,
+   "defect": 1.8109964903659856e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=3 rho=2: identity (a)",
+   "passed": true,
+   "defect": 1.226796442210798e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=3 rho=2: identity (b)",
+   "passed": true,
+   "defect": 1.5220338960352779e-15
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=3 rho=2: identity (c)",
+   "passed": true,
+   "defect": 6.9337099708273775e-15
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=3 rho=2: identity (d)",
+   "passed": true,
+   "defect": 6.022899030463578e-15
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=3 rho=2: identity (e)",
+   "passed": true,
+   "defect": 2.0990502178700136e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=3 rho=2: identity (f)",
+   "passed": true,
+   "defect": 5.08254590687992e-15
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=3 rho=2: identity (g)",
+   "passed": true,
+   "defect": 5.615367731392755e-15
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.003: identity (a)",
+   "passed": true,
+   "defect": 0.0
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.003: identity (b)",
+   "passed": true,
+   "defect": 6.596308077530485e-16
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.003: identity (c)",
+   "passed": true,
+   "defect": 3.2981540387652426e-16
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.003: identity (d)",
+   "passed": true,
+   "defect": 7.649338799133309e-14
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.003: identity (e)",
+   "passed": true,
+   "defect": 1.565295142556384e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.003: identity (f)",
+   "passed": true,
+   "defect": 1.0102404248331905e-13
+  },
+  {
+   "group": "B period identities",
+   "id": "cycle mu=0.02 rho=1.003: identity (g)",
+   "passed": true,
+   "defect": 9.620074769883582e-14
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3, mu 0.03: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0012713998927054,
+   "residual": 1.1784319549326032e-12,
+   "selection_numeric": 0.04496093820570586,
+   "selection_predicted": 0.04982431742938507,
+   "exponent_numeric": -0.274205600920872,
+   "exponent_predicted": -0.3134892945142423,
+   "selection_relative_error": 0.09761055393427054,
+   "exponent_relative_error": 0.12531111677749995,
+   "log_mt": -0.0013039067374968464
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3, mu 0.01: printed table row reproduced",
+   "passed": true,
+   "computed": [
+    0.96372893904474,
+    0.9529800544831533
+   ],
+   "printed": [
+    0.96373,
+    0.95298
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3, mu 0.01: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0004707100928816,
+   "residual": 2.2835711813234394e-14,
+   "selection_numeric": 0.04801713657484962,
+   "selection_predicted": 0.04982431742938507,
+   "exponent_numeric": -0.2987490449660679,
+   "exponent_predicted": -0.3134892945142423,
+   "selection_relative_error": 0.036271060955260004,
+   "exponent_relative_error": 0.04701994551684674,
+   "log_mt": -0.00028996287974685837
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3, mu 0.003: cycle located and attracting",
+   "passed": true,
+   "rho": 1.000146895491192,
+   "residual": 6.767915332526668e-16,
+   "selection_numeric": 0.04925939539954678,
+   "selection_predicted": 0.04982431742938507,
+   "exponent_numeric": -0.3088621534431197,
+   "exponent_predicted": -0.3134892945142423,
+   "selection_relative_error": 0.011338279358045211,
+   "exponent_relative_error": 0.01476012467440857,
+   "log_mt": -5.029719642992831e-05
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3, mu 0.001: printed table row reproduced",
+   "passed": true,
+   "computed": [
+    0.9961894714168982,
+    0.9950069046778909
+   ],
+   "printed": [
+    0.99619,
+    0.99501
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3, mu 0.001: cycle located and attracting",
+   "passed": true,
+   "rho": 1.000049535340228,
+   "residual": 4.924923151667523e-11,
+   "selection_numeric": 0.049634460443686856,
+   "selection_predicted": 0.04982431742938507,
+   "exponent_numeric": -0.31192401258427194,
+   "exponent_predicted": -0.3134892945142423,
+   "selection_relative_error": 0.0038105285831018243,
+   "exponent_relative_error": 0.00499309532210912,
+   "log_mt": -9.834370741482195e-06
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3, mu 0.0003: cycle located and attracting",
+   "passed": true,
+   "rho": 1.000014921150898,
+   "residual": 1.3512932383586961e-12,
+   "selection_numeric": 0.04976701643801408,
+   "selection_predicted": 0.04982431742938507,
+   "exponent_numeric": -0.3130177655112137,
+   "exponent_predicted": -0.3134892945142423,
+   "selection_relative_error": 0.0011500607399629326,
+   "exponent_relative_error": 0.0015041311179676553,
+   "log_mt": -1.6250250592573359e-06
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3, mu 0.0001: printed table row reproduced",
+   "passed": true,
+   "computed": [
+    0.9996158336741073,
+    0.9994980981891521
+   ],
+   "printed": [
+    0.99962,
+    0.9995
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3, mu 0.0001: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0000049795217063,
+   "residual": 5.135075671158839e-14,
+   "selection_numeric": 0.04980517660441811,
+   "selection_predicted": 0.04982431742938507,
+   "exponent_numeric": -0.31333195366964417,
+   "exponent_predicted": -0.3134892945142423,
+   "selection_relative_error": 0.0003841663258926653,
+   "exponent_relative_error": 0.0005019018108478601,
+   "log_mt": -3.132379728803277e-07
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3: selection error decreasing in mu",
+   "passed": true,
+   "errors": [
+    0.09761055393427054,
+    0.036271060955260004,
+    0.011338279358045211,
+    0.0038105285831018243,
+    0.0011500607399629326,
+    0.0003841663258926653
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3: selection error ratio mu=1e-3 over mu=1e-4 in [5, 20]",
+   "passed": true,
+   "ratio": 9.918955218804035,
+   "predicted_for_second_order": 9.982026065842248
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3: selection error at mu=1e-4 below 0.0005",
+   "passed": true,
+   "error": 0.0003841663258926653
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3: exponent error decreasing in mu",
+   "passed": true,
+   "errors": [
+    0.12531111677749995,
+    0.04701994551684674,
+    0.01476012467440857,
+    0.00499309532210912,
+    0.0015041311179676553,
+    0.0005019018108478601
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3: exponent error ratio mu=1e-3 over mu=1e-4 in [5, 20]",
+   "passed": true,
+   "ratio": 9.948350880970743,
+   "predicted_for_second_order": 9.982026065842248
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 0.3: exponent error at mu=1e-4 below 0.001",
+   "passed": true,
+   "error": 0.0005019018108478601
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1, mu 0.03: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0181946712417311,
+   "residual": 1.548321394844615e-15,
+   "selection_numeric": 0.6434242240117519,
+   "selection_predicted": 0.7112394773101459,
+   "exponent_numeric": -3.829557150018403,
+   "exponent_predicted": -4.559056403526065,
+   "selection_relative_error": 0.0953479882118835,
+   "exponent_relative_error": 0.1600110173990067,
+   "log_mt": -0.01821036971078927
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1, mu 0.01: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0067145115545568,
+   "residual": 2.7246857845615998e-11,
+   "selection_numeric": 0.6849473236803415,
+   "selection_predicted": 0.7112394773101459,
+   "exponent_numeric": -4.259378788998377,
+   "exponent_predicted": -4.559056403526065,
+   "selection_relative_error": 0.03696666800504289,
+   "exponent_relative_error": 0.0657323770541447,
+   "log_mt": -0.004134111088893806
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1, mu 0.003: cycle located and attracting",
+   "passed": true,
+   "rho": 1.002095930423588,
+   "residual": 1.678474760344607e-13,
+   "selection_numeric": 0.7028416231677499,
+   "selection_predicted": 0.7112394773101459,
+   "exponent_numeric": -4.460717807653835,
+   "exponent_predicted": -4.559056403526065,
+   "selection_relative_error": 0.01180735098416652,
+   "exponent_relative_error": 0.021569944999182855,
+   "log_mt": -0.000726413376611268
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1, mu 0.001: printed table row reproduced",
+   "passed": true,
+   "computed": [
+    0.9959878960217569,
+    0.9926064489584266
+   ],
+   "printed": [
+    0.99599,
+    0.99261
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1, mu 0.001: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0007069712610803,
+   "residual": 2.6422399276870343e-15,
+   "selection_numeric": 0.7083859105737463,
+   "selection_predicted": 0.7112394773101459,
+   "exponent_numeric": -4.525348787305183,
+   "exponent_predicted": -4.559056403526065,
+   "selection_relative_error": 0.004012103978243142,
+   "exponent_relative_error": 0.007393551041573354,
+   "log_mt": -0.00014267563866008062
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1, mu 0.0003: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0002129854392456,
+   "residual": 1.7779285187461888e-15,
+   "selection_numeric": 0.7103774989262522,
+   "selection_predicted": 0.7112394773101459,
+   "exponent_numeric": -4.5488419242552265,
+   "exponent_predicted": -4.559056403526065,
+   "selection_relative_error": 0.0012119383293425212,
+   "exponent_relative_error": 0.002240481004564532,
+   "log_mt": -2.361521591415964e-05
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1, mu 0.0001: printed table row reproduced",
+   "passed": true,
+   "computed": [
+    0.9995965330393747,
+    0.9992505147008784
+   ],
+   "printed": [
+    0.9996,
+    0.99925
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1, mu 0.0001: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0000710810346503,
+   "residual": 9.398227484638182e-12,
+   "selection_numeric": 0.7109525156799589,
+   "selection_predicted": 0.7112394773101459,
+   "exponent_numeric": -4.555639457773756,
+   "exponent_predicted": -4.559056403526065,
+   "selection_relative_error": 0.0004034669606253205,
+   "exponent_relative_error": 0.000749485299121555,
+   "log_mt": -4.554273039229243e-06
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1: selection error decreasing in mu",
+   "passed": true,
+   "errors": [
+    0.0953479882118835,
+    0.03696666800504289,
+    0.01180735098416652,
+    0.004012103978243142,
+    0.0012119383293425212,
+    0.0004034669606253205
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1: selection error ratio mu=1e-3 over mu=1e-4 in [5, 20]",
+   "passed": true,
+   "ratio": 9.944070691748616,
+   "predicted_for_second_order": 9.982026065842248
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1: selection error at mu=1e-4 below 0.0005",
+   "passed": true,
+   "error": 0.0004034669606253205
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1: exponent error decreasing in mu",
+   "passed": true,
+   "errors": [
+    0.1600110173990067,
+    0.0657323770541447,
+    0.021569944999182855,
+    0.007393551041573354,
+    0.002240481004564532,
+    0.000749485299121555
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1: exponent error ratio mu=1e-3 over mu=1e-4 in [5, 20]",
+   "passed": true,
+   "ratio": 9.864837976460741,
+   "predicted_for_second_order": 9.982026065842248
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 1: exponent error at mu=1e-4 below 0.001",
+   "passed": true,
+   "error": 0.000749485299121555
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2, mu 0.03: cycle located and attracting",
+   "passed": true,
+   "rho": 1.1026543934572133,
+   "residual": 2.1711269487166422e-13,
+   "selection_numeric": 3.630201533958586,
+   "selection_predicted": 4.161533923610828,
+   "exponent_numeric": -19.856530281991045,
+   "exponent_predicted": -29.650884506099093,
+   "selection_relative_error": 0.12767705355894887,
+   "exponent_relative_error": 0.33032249753269183,
+   "log_mt": -0.09442208157327067
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2, mu 0.01: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0384596375763182,
+   "residual": 1.4998744795908558e-14,
+   "selection_numeric": 3.9232676291602195,
+   "selection_predicted": 4.161533923610828,
+   "exponent_numeric": -24.783659605279016,
+   "exponent_predicted": -29.650884506099093,
+   "selection_relative_error": 0.0572544400272178,
+   "exponent_relative_error": 0.16415108627936226,
+   "log_mt": -0.02405477584247615
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2, mu 0.003: cycle located and attracting",
+   "passed": true,
+   "rho": 1.012163000956874,
+   "residual": 4.556670206222146e-15,
+   "selection_numeric": 4.078696143207971,
+   "selection_predicted": 4.161533923610828,
+   "exponent_numeric": -27.854791222590702,
+   "exponent_predicted": -29.650884506099093,
+   "selection_relative_error": 0.01990558816134358,
+   "exponent_relative_error": 0.060574694934950046,
+   "log_mt": -0.004536062091192083
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2, mu 0.001: printed table row reproduced",
+   "passed": true,
+   "computed": [
+    0.9930228368320243,
+    0.9782894992275837
+   ],
+   "printed": [
+    0.99302,
+    0.97829
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2, mu 0.001: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0041242456069372,
+   "residual": 9.251999012852146e-13,
+   "selection_numeric": 4.1324982223967295,
+   "selection_predicted": 4.161533923610828,
+   "exponent_numeric": -29.007148955126603,
+   "exponent_predicted": -29.650884506099093,
+   "selection_relative_error": 0.006977163167975697,
+   "exponent_relative_error": 0.02171050077241632,
+   "log_mt": -0.0009145402260463766
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2, mu 0.0003: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0012450502819283,
+   "residual": 3.608430686964841e-14,
+   "selection_numeric": 4.152658080506739,
+   "selection_predicted": 4.161533923610828,
+   "exponent_numeric": -29.452388297772,
+   "exponent_predicted": -29.650884506099093,
+   "selection_relative_error": 0.0021328296890076315,
+   "exponent_relative_error": 0.006694444757162743,
+   "log_mt": -0.00015290144621884862
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2, mu 0.0001: printed table row reproduced",
+   "passed": true,
+   "computed": [
+    0.9992851400983692,
+    0.9977504297730392
+   ],
+   "printed": [
+    0.99929,
+    0.99775
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2, mu 0.0001: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0004157727422818,
+   "residual": 2.347580092619762e-14,
+   "selection_numeric": 4.158559009879562,
+   "selection_predicted": 4.161533923610828,
+   "exponent_numeric": -29.58418275911112,
+   "exponent_predicted": -29.650884506099093,
+   "selection_relative_error": 0.0007148599016307822,
+   "exponent_relative_error": 0.0022495702269608175,
+   "log_mt": -2.957530927903856e-05
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2: selection error decreasing in mu",
+   "passed": true,
+   "errors": [
+    0.12767705355894887,
+    0.0572544400272178,
+    0.01990558816134358,
+    0.006977163167975697,
+    0.0021328296890076315,
+    0.0007148599016307822
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2: selection error ratio mu=1e-3 over mu=1e-4 in [5, 20]",
+   "passed": true,
+   "ratio": 9.760182592503742,
+   "predicted_for_second_order": 9.982026065842248
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2: selection error at mu=1e-4 below 0.01",
+   "passed": true,
+   "error": 0.0007148599016307822
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2: exponent error decreasing in mu",
+   "passed": true,
+   "errors": [
+    0.33032249753269183,
+    0.16415108627936226,
+    0.060574694934950046,
+    0.02171050077241632,
+    0.006694444757162743,
+    0.0022495702269608175
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2: exponent error ratio mu=1e-3 over mu=1e-4 in [5, 20]",
+   "passed": true,
+   "ratio": 9.650954885612677,
+   "predicted_for_second_order": 9.982026065842248
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 2: exponent error at mu=1e-4 below 0.01",
+   "passed": true,
+   "error": 0.0022495702269608175
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3, mu 0.03: cycle located and attracting",
+   "passed": true,
+   "rho": 1.3177070028034406,
+   "residual": 5.391207246579864e-15,
+   "selection_numeric": 11.235178642472338,
+   "selection_predicted": 14.264496194546513,
+   "exponent_numeric": -59.18747886493274,
+   "exponent_predicted": -135.96313910027118,
+   "selection_relative_error": 0.212367651178057,
+   "exponent_relative_error": 0.564679962108828,
+   "log_mt": -0.28144921988558697
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3, mu 0.01: cycle located and attracting",
+   "passed": true,
+   "rho": 1.1240809938944112,
+   "residual": 1.773040810918213e-12,
+   "selection_numeric": 12.657502187168882,
+   "selection_predicted": 14.264496194546513,
+   "exponent_numeric": -88.55705720665651,
+   "exponent_predicted": -135.96313910027118,
+   "selection_relative_error": 0.11265690603163425,
+   "exponent_relative_error": 0.34866863333195963,
+   "log_mt": -0.08595260725424562
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3, mu 0.003: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0406256031476018,
+   "residual": 1.5960651488655822e-14,
+   "selection_numeric": 13.623240798971901,
+   "selection_predicted": 14.264496194546513,
+   "exponent_numeric": -114.81994828387768,
+   "exponent_predicted": -135.96313910027118,
+   "selection_relative_error": 0.04495464731658538,
+   "exponent_relative_error": 0.1555067862974291,
+   "log_mt": -0.018698054871821506
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3, mu 0.001: printed table row reproduced",
+   "passed": true,
+   "computed": [
+    0.9831783728918583,
+    0.9387661406042077
+   ],
+   "printed": [
+    0.98318,
+    0.93877
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3, mu 0.001: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0139965370879633,
+   "residual": 2.3926972045244494e-14,
+   "selection_numeric": 14.024544158676346,
+   "selection_predicted": 14.264496194546513,
+   "exponent_numeric": -127.63759135759463,
+   "exponent_predicted": -135.96313910027118,
+   "selection_relative_error": 0.016821627108141723,
+   "exponent_relative_error": 0.06123385939579229,
+   "log_mt": -0.004024170449593921
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3, mu 0.0003: cycle located and attracting",
+   "passed": true,
+   "rho": 1.004254152000201,
+   "residual": 1.5246887566850563e-12,
+   "selection_numeric": 14.189016247582911,
+   "selection_predicted": 14.264496194546513,
+   "exponent_numeric": -133.28477286810627,
+   "exponent_predicted": -135.96313910027118,
+   "selection_relative_error": 0.005291455508429355,
+   "exponent_relative_error": 0.01969920854938223,
+   "log_mt": -0.000691945058052418
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3, mu 0.0001: printed table row reproduced",
+   "passed": true,
+   "computed": [
+    0.9982105444740887,
+    0.9932908529970895
+   ],
+   "printed": [
+    0.99821,
+    0.99329
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3, mu 0.0001: cycle located and attracting",
+   "passed": true,
+   "rho": 1.0014236123146016,
+   "residual": 1.7898158018516633e-13,
+   "selection_numeric": 14.238970513006842,
+   "selection_predicted": 14.264496194546513,
+   "exponent_numeric": -135.0509424130703,
+   "exponent_predicted": -135.96313910027118,
+   "selection_relative_error": 0.0017894555259112543,
+   "exponent_relative_error": 0.006709147002910476,
+   "log_mt": -0.00013501043523205265
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3: selection error decreasing in mu",
+   "passed": true,
+   "errors": [
+    0.212367651178057,
+    0.11265690603163425,
+    0.04495464731658538,
+    0.016821627108141723,
+    0.005291455508429355,
+    0.0017894555259112543
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3: selection error ratio mu=1e-3 over mu=1e-4 in [5, 20]",
+   "passed": true,
+   "ratio": 9.400416419723845,
+   "predicted_for_second_order": 9.982026065842248
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3: selection error at mu=1e-4 below 0.01",
+   "passed": true,
+   "error": 0.0017894555259112543
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3: exponent error decreasing in mu",
+   "passed": true,
+   "errors": [
+    0.564679962108828,
+    0.34866863333195963,
+    0.1555067862974291,
+    0.06123385939579229,
+    0.01969920854938223,
+    0.006709147002910476
+   ]
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3: exponent error ratio mu=1e-3 over mu=1e-4 in [5, 20]",
+   "passed": true,
+   "ratio": 9.126921703940695,
+   "predicted_for_second_order": 9.982026065842248
+  },
+  {
+   "group": "C third-order formula",
+   "id": "amplitude 3: exponent error at mu=1e-4 below 0.01",
+   "passed": true,
+   "error": 0.006709147002910476
+  },
+  {
+   "group": "D fixed rho",
+   "id": "fixed rho=1.5, mu=0.1: 0 < m_t < 1 and the period identity",
+   "m_t": 0.5691771667896339,
+   "identity_defect": 3.999268358199604e-14,
+   "passed": true
+  },
+  {
+   "group": "D fixed rho",
+   "id": "fixed rho=1.5, mu=0.1: printed table row reproduced",
+   "computed": [
+    2.553001181042791,
+    -13.517120663525242,
+    0.7679832044464768,
+    -1.3517120663525244,
+    3.192817347118346,
+    0.5691771667896339
+   ],
+   "printed": [
+    2.553,
+    -13.5,
+    0.768,
+    -1.352,
+    3.1928,
+    0.5692
+   ],
+   "passed": true
+  },
+  {
+   "group": "D fixed rho",
+   "id": "fixed rho=1.5, mu=0.01: 0 < m_t < 1 and the period identity",
+   "m_t": 0.6668943143109168,
+   "identity_defect": 6.573834737719396e-15,
+   "passed": true
+  },
+  {
+   "group": "D fixed rho",
+   "id": "fixed rho=1.5, mu=0.01: printed table row reproduced",
+   "computed": [
+    4.479730969223831,
+    -104.45453298897472,
+    0.8110107544041902,
+    -1.0445453298897471,
+    2.52088788056985,
+    0.6668943143109168
+   ],
+   "printed": [
+    4.48,
+    -104.5,
+    0.811,
+    -1.045,
+    2.5209,
+    0.6669
+   ],
+   "passed": true
+  },
+  {
+   "group": "D fixed rho",
+   "id": "fixed rho=1.5, mu=0.001: 0 < m_t < 1 and the period identity",
+   "m_t": 0.678512813773461,
+   "identity_defect": 7.488480654566715e-14,
+   "passed": true
+  },
+  {
+   "group": "D fixed rho",
+   "id": "fixed rho=1.5, mu=0.001: printed table row reproduced",
+   "computed": [
+    6.736756347225071,
+    -1032.4579323393707,
+    0.83341804794912,
+    -1.0324579323393708,
+    2.44698857288515,
+    0.678512813773461
+   ],
+   "printed": [
+    6.737,
+    -1032.5,
+    0.833,
+    -1.032,
+    2.447,
+    0.6785
+   ],
+   "passed": true
+  },
+  {
+   "group": "D fixed rho",
+   "id": "fixed rho=3, mu=0.1: 0 < m_t < 1 and the period identity",
+   "m_t": 0.13789733459831635,
+   "identity_defect": 1.3293031695607882e-14,
+   "passed": true
+  },
+  {
+   "group": "D fixed rho",
+   "id": "fixed rho=3, mu=0.1: printed table row reproduced",
+   "computed": [
+    4.093007343929186,
+    -96.39058256255929,
+    4.531141585055808,
+    -9.639058256255929,
+    5.942535147068623,
+    0.13789733459831635
+   ],
+   "printed": [
+    4.093,
+    -96.4,
+    4.531,
+    -9.639,
+    5.9425,
+    0.1379
+   ],
+   "passed": true
+  },
+  {
+   "group": "D fixed rho",
+   "id": "fixed rho=3, mu=0.01: 0 < m_t < 1 and the period identity",
+   "m_t": 0.18098816329003983,
+   "identity_defect": 1.9405581810928835e-13,
+   "passed": true
+  },
+  {
+   "group": "D fixed rho",
+   "id": "fixed rho=3, mu=0.01: printed table row reproduced",
+   "computed": [
+    6.195047909567335,
+    -801.729885383542,
+    4.736005169122114,
+    -8.01729885383542,
+    5.331339445549108,
+    0.18098816329003983
+   ],
+   "printed": [
+    6.195,
+    -801.7,
+    4.736,
+    -8.017,
+    5.3313,
+    0.181
+   ],
+   "passed": true
+  },
+  {
+   "group": "D fixed rho",
+   "id": "fixed rho=3, mu=0.001: 0 < m_t < 1 and the period identity",
+   "m_t": 0.18607121903977414,
+   "identity_defect": 1.2133193283374891e-13,
+   "passed": true
+  },
+  {
+   "group": "D fixed rho",
+   "id": "fixed rho=3, mu=0.001: printed table row reproduced",
+   "computed": [
+    8.475992986525586,
+    -7882.2715472991595,
+    4.779145869610611,
+    -7.88227154729916,
+    5.268481694131404,
+    0.18607121903977414
+   ],
+   "printed": [
+    8.476,
+    -7882.3,
+    4.779,
+    -7.882,
+    5.2685,
+    0.1861
+   ],
+   "passed": true
+  }
+ ]
+}

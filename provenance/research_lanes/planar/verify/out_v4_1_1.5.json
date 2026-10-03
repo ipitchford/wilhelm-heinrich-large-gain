@@ -1,0 +1,105 @@
+{
+ "mu": 1.0,
+ "rho": 1.5,
+ "rows": [
+  {
+   "theta": 0.05,
+   "Bhi_min": 9.393561484216661e-10,
+   "Bhi_max": 0.28918840012040103,
+   "Blo_min": -1.4382006696678218e-10,
+   "frac_pos": 1.0,
+   "frac_neg": 0.0,
+   "plane_bound_excess": -1.6907493494144885e-08,
+   "in_hull": 3000,
+   "wedge_sign_agree": 1.0
+  },
+  {
+   "theta": 0.3,
+   "Bhi_min": 5.6361382227976264e-09,
+   "Bhi_max": 0.8690137688688917,
+   "Blo_min": -8.629195136222734e-10,
+   "frac_pos": 1.0,
+   "frac_neg": 0.0,
+   "plane_bound_excess": -7.51417204014615e-09,
+   "in_hull": 3000,
+   "wedge_sign_agree": 1.0
+  },
+  {
+   "theta": 0.6,
+   "Bhi_min": 6.409937469697979e-09,
+   "Bhi_max": 0.9884548005537424,
+   "Blo_min": -1.7258390272445467e-09,
+   "frac_pos": 1.0,
+   "frac_neg": 0.0,
+   "plane_bound_excess": 2.6645352491742083e-16,
+   "in_hull": 3000,
+   "wedge_sign_agree": 1.0
+  },
+  {
+   "theta": 0.9,
+   "Bhi_min": 1.7207058000678899e-09,
+   "Bhi_max": 0.41817727245352465,
+   "Blo_min": -2.58875898495603e-09,
+   "frac_pos": 1.0,
+   "frac_neg": 0.0,
+   "plane_bound_excess": 5.773159739631343e-16,
+   "in_hull": 3000,
+   "wedge_sign_agree": 1.0
+  },
+  {
+   "theta": 0.99,
+   "Bhi_min": 1.8786172617524244e-10,
+   "Bhi_max": 0.04783265672256043,
+   "Blo_min": -8.361253911459698e-10,
+   "frac_pos": 1.0,
+   "frac_neg": 0.0,
+   "plane_bound_excess": 2.2898349882893854e-15,
+   "in_hull": 3000,
+   "wedge_sign_agree": 1.0
+  },
+  {
+   "theta": 1.01,
+   "Bhi_min": -0.048309469014380824,
+   "Bhi_max": -1.8786172617524244e-10,
+   "Blo_min": -0.04614330743222084,
+   "frac_pos": 0.0,
+   "frac_neg": 1.0,
+   "plane_bound_excess": 1.6583956430338276e-15,
+   "in_hull": 923,
+   "wedge_sign_agree": 0.0
+  },
+  {
+   "theta": 1.1,
+   "Bhi_min": -0.4830948480404036,
+   "Bhi_max": -2.02971328633339e-09,
+   "Blo_min": -0.3037749706849793,
+   "frac_pos": 0.0,
+   "frac_neg": 1.0,
+   "plane_bound_excess": 1.304512053934559e-15,
+   "in_hull": 815,
+   "wedge_sign_agree": 0.0
+  },
+  {
+   "theta": 1.5,
+   "Bhi_min": -2.4154793993150196,
+   "Bhi_max": -1.3045152513768699e-08,
+   "Blo_min": -1.2586987367700573,
+   "frac_pos": 0.0,
+   "frac_neg": 1.0,
+   "plane_bound_excess": 8.881784197001252e-16,
+   "in_hull": 725,
+   "wedge_sign_agree": 0.0
+  },
+  {
+   "theta": 3.0,
+   "Bhi_min": -9.661921771955118,
+   "Bhi_max": -1.1257265875030953e-07,
+   "Blo_min": -2.4499881587286994,
+   "frac_pos": 0.0,
+   "frac_neg": 1.0,
+   "plane_bound_excess": -7.500034371332731e-08,
+   "in_hull": 654,
+   "wedge_sign_agree": 0.0
+  }
+ ]
+}

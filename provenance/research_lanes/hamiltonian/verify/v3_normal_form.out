@@ -1,0 +1,35 @@
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/verify/todaq.py:27: IntegrationWarning: The algorithm does not converge.  Roundoff error is detected
+  in the extrapolation table.  It is assumed that the requested tolerance
+  cannot be achieved, and that the returned result (if full_output = 1) is 
+  the best which can be obtained.
+  a = quad(lambda s: 2 * s * g(um + s * s), 0.0, np.sqrt(-um), epsabs=1e-13, epsrel=1e-13, limit=400)[0]
+(A) derived w_j minus lane's w_j, j=0..3: [0, 0, 0, 0]
+(B) D' + (1/eps + w_P) D = 0
+(C) coefficients eps^0,1,2 of X(H~): [0, 0, 0] ; eps^3 minus F3: 0
+    d sigma/dh from the definition (using Phi(um(h)) = h): 2*U - 2*um(h)  expected 2(U-um(h))
+
+(D) oint F3 dtau (ODE)  vs  r J0 - (2/3) J1 (quadrature);  (E) identities;  (G) oint w3_P = r T0 - 2 J0
+# h      r     ointF3        rJ0-(2/3)J1   rel.diff   ointGP2/J0   3ointGUP2/J1-1  3ointGEP2/J1-1  ointEP4/J1-1  ointw3P        rT0-2J0       -J0Rsel'(r=Rsel)
+0.05    0.3   7.871447e-02  7.871447e-02  7.3e-16    -2.1e-16     -1.5e-14        -1.2e-14        -1.7e-15      1.2631892e+00  1.2631892e+00 nan
+0.05    0.05  2.221861e-16  0.000000e+00  1.4e-14    -2.9e-16     6.7e-15         -4.7e-15        -3.2e-15      -3.1437767e-01 -3.1437767e-01 -3.1437767e-01
+0.05    3     9.287129e-01  9.287129e-01  2.4e-16    -1.4e-16     2.2e-16         -4.7e-15        -4.9e-15      1.8298548e+01  1.8298548e+01 nan
+0.7     0.3   -1.780738e+00 -1.780738e+00 3.1e-15    -1.1e-15     -3.8e-15        -2.2e-15        -5.6e-16      -7.0589540e+00 -7.0589540e+00 nan
+0.7     0.693 -3.101293e-16 -4.440892e-16 4.3e-17    -2.3e-16     -2.4e-15        -1.9e-15        1.6e-15       -4.4418500e+00 -4.4418500e+00 -4.4418500e+00
+0.7     3     1.044375e+01  1.044375e+01  3.9e-16    -3.8e-16     -4.0e-15        -7.8e-16        8.9e-16       1.0907059e+01  1.0907059e+01 nan
+4       0.3   -1.030754e+02 -1.030754e+02 3.6e-15    -6.2e-16     1.8e-15         2.2e-15         8.9e-16       -5.6255703e+01 -5.6255703e+01 nan
+4       3.81  -6.219842e-14 0.000000e+00  5.6e-16    -8.6e-16     2.2e-16         4.4e-16         -2.2e-16      -2.6820588e+01 -2.6820588e+01 -2.6820588e+01
+4       3     -2.373147e+01 -2.373147e+01 1.0e-14    -1.4e-15     -5.6e-16        3.3e-15         -4.1e-15      -3.3597554e+01 -3.3597554e+01 nan
+25      0.3   -6.218862e+03 -6.218862e+03 4.0e-13    6.6e-14      1.8e-13         -3.1e-14        2.9e-13       -5.7667094e+02 -5.7667094e+02 nan
+25      21.7  4.857213e-09  0.000000e+00  7.7e-13    3.1e-13      -3.2e-13        -4.6e-14        3.2e-13       -2.4059892e+02 -2.4059892e+02 -2.4059892e+02
+25      3     -5.433994e+03 -5.433994e+03 5.7e-13    -1.6e-14     4.6e-13         -4.3e-14        3.2e-13       -5.3425608e+02 -5.3425608e+02 nan
+150     0.3   -4.484151e+05 -4.484151e+05 7.1e-15    -1.0e-15     1.1e-14         7.1e-15         6.7e-15       -7.2973992e+03 -7.2973992e+03 nan
+150     123   1.267108e-08  0.000000e+00  2.8e-14    7.8e-17      1.8e-14         4.4e-16         1.5e-14       -2.9420158e+03 -2.9420158e+03 -2.9420158e+03
+150     3     -4.385493e+05 -4.385493e+05 1.4e-14    -4.2e-15     1.5e-14         9.8e-15         8.2e-15       -7.2015737e+03 -7.2015737e+03 nan
+
+(F) g3(a) = M3(Phi(a))/(a G(a)) as a -> 0, r = 1 (claim: -> pi r)
+  a=0.3   g3=2.841931   g3/pi=0.904615
+  a=0.1   g3=3.073931   g3/pi=0.978463
+  a=0.03  g3=3.124523   g3/pi=0.994567
+  a=0.01  g3=3.136206   g3/pi=0.998285
+
+FAILURES: none

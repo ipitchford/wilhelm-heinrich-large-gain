@@ -1,0 +1,55 @@
+=== L: U,p,H ===
+  mu=0.05  rho=1.02  t*/sigma no-cone=-2.742  with-cone=-2.470   U=+0.053 p=+0.865 H=+0.549 p*eta*x=+0.106 pd*zeta*lamp=+0.835
+  mu=0.05  rho=1.5   t*/sigma no-cone=-2.354  with-cone=-2.328   U=+0.050 p=+0.740 H=+0.252 p*eta*x=+0.003 pd*zeta*lamp=+0.227
+  mu=0.05  rho=5.0   t*/sigma no-cone=-2.109  with-cone=-2.108   U=+0.038 p=+0.508 H=+0.072 p*eta*x=+0.003
+  mu=0.2   rho=1.05  t*/sigma no-cone=-2.000  with-cone=-2.000   U=+0.195 p=+0.592 H=-0.091 pd*zeta=+0.410
+  mu=0.2   rho=2.0   t*/sigma no-cone=-2.000  with-cone=-2.000   U=+0.139 p=+0.452 H=+0.116 p*eta=+0.038 p*y=+0.062 pd*y=+0.012 pd*U=+0.010 pd*x=+0.003
+  mu=0.5   rho=1.2   t*/sigma no-cone=-2.000  with-cone=-2.000   U=+0.353 p=+0.203 H=-0.226 p*eta*x=+0.018
+  mu=0.5   rho=3.0   t*/sigma no-cone=-2.000  with-cone=-2.000   U=+0.195 p=+0.183 H=-0.061 pd*y=+0.003 pd*x=+0.002
+  mu=1.0   rho=1.02  t*/sigma no-cone=-2.000  with-cone=-2.000   U=+0.244 p=+0.297 H=+0.003 pd*zeta*lamp=+0.045
+  mu=1.0   rho=1.5   t*/sigma no-cone=-2.000  with-cone=-2.000   U=+0.242 p=+0.173 H=-0.037 (p-pd)(eta-zeta)=+0.019 pd*U=+0.020
+  mu=1.0   rho=5.0   t*/sigma no-cone=-2.000  with-cone=-2.000   U=+0.176 p=+0.099 H=-0.018 p*eta=+0.015
+=== a: Vrad,U,p,H ===
+  mu=0.05  rho=1.02  t*/sigma no-cone=-2.689  with-cone=-2.453   logVrad=+0.020 U=+0.046 p=+0.884 H=+0.885 p*eta*x=+0.273 pd*zeta*lamp=+0.571
+  mu=0.05  rho=1.5   t*/sigma no-cone=-2.150  with-cone=-2.150   logVrad=-0.143 U=+0.047 p=+0.658 H=+0.225
+  mu=0.05  rho=5.0   t*/sigma no-cone=-1.507  with-cone=-1.507   logVrad=-0.721 U=+0.027 p=+0.236 H=+0.043
+  mu=0.2   rho=1.05  t*/sigma no-cone=-1.915  with-cone=-1.915   logVrad=-0.082 U=+0.179 p=+0.488 H=-0.028
+  mu=0.2   rho=2.0   t*/sigma no-cone=-1.321  with-cone=-1.321   logVrad=-0.638 U=+0.096 p=+0.209 H=+0.022
+  mu=0.5   rho=1.2   t*/sigma no-cone=-1.439  with-cone=-1.439   logVrad=-0.502 U=+0.232 p=+0.167 H=-0.074
+  mu=0.5   rho=3.0   t*/sigma no-cone=-0.777  with-cone=-0.765   logVrad=-0.856 U=+0.096 p=+0.082 H=+0.020
+  mu=1.0   rho=1.02  t*/sigma no-cone=-1.904  with-cone=-1.904   logVrad=-0.093 U=+0.286 p=+0.186 H=-0.045
+  mu=1.0   rho=1.5   t*/sigma no-cone=-0.955  with-cone=-0.955   logVrad=-0.830 U=+0.219 p=+0.042 H=-0.038
+  mu=1.0   rho=5.0   t*/sigma no-cone=-0.722  with-cone=-0.719   logVrad=-0.965 U=+0.053 p=+0.040 H=+0.004
+=== b: Vrad,Qtan,U,p,H ===
+  mu=0.05  rho=1.02  t*/sigma no-cone=-1.405  with-cone=-1.405   logVrad=-0.319 logQtan=-0.148 U=+0.161 p=+0.461 H=+0.563
+  mu=0.05  rho=1.5   t*/sigma no-cone=-2.054  with-cone=-2.051   logVrad=-0.160 logQtan=-0.016 U=+0.053 p=+0.635 H=+0.365 p*eta*x=+0.045
+  mu=0.05  rho=5.0   t*/sigma no-cone=-1.462  with-cone=-1.460   logVrad=-0.727 logQtan=-0.011 U=+0.029 p=+0.224 H=+0.074
+  mu=0.2   rho=1.05  t*/sigma no-cone=-0.456  with-cone=-0.330   logVrad=-0.585 logQtan=-0.275 U=+0.308 p=+0.098 H=+0.109 p*eta/x=+0.122
+  mu=0.2   rho=2.0   t*/sigma no-cone=-1.009  with-cone=-1.007   logVrad=-0.686 logQtan=-0.069 U=+0.115 p=+0.166 H=+0.108
+  mu=0.5   rho=1.2   t*/sigma no-cone=-0.438  with-cone=-0.195   logVrad=-0.662 logQtan=-0.271 U=+0.317 p=+0.029 p*eta/x=+0.025
+  mu=0.5   rho=3.0   t*/sigma no-cone=-0.772  with-cone=-0.760   logVrad=-0.777 logQtan=-0.060 U=+0.096 p=+0.084 H=+0.027
+  mu=1.0   rho=1.02  t*/sigma no-cone=-0.245  with-cone=+0.274   logVrad=-0.799 logQtan=-0.390 U=+0.469 p=-0.091 H=-0.045 p*eta/x=+0.073
+  mu=1.0   rho=1.5   t*/sigma no-cone=-0.560  with-cone=-0.386   logVrad=-0.678 logQtan=-0.184 U=+0.269 p=+0.032 H=-0.008
+  mu=1.0   rho=5.0   t*/sigma no-cone=-0.722  with-cone=-0.719   logVrad=-0.966 U=+0.053 p=+0.040 H=+0.004
+=== c: b+zeta,eta ===
+  mu=0.05  rho=1.02  t*/sigma no-cone=-1.188  with-cone=-1.188   logVrad=-0.304 logQtan=-0.146 logzeta=-0.668 logeta=+0.186 U=+0.645 p=+0.200 H=+0.227
+  mu=0.05  rho=1.5   t*/sigma no-cone=-2.004  with-cone=-1.996   logVrad=-0.140 logQtan=-0.017 logzeta=-0.003 logeta=-0.007 U=+0.063 p=+0.633 H=+0.375 p*eta*x=+0.045
+  mu=0.05  rho=5.0   t*/sigma no-cone=-1.462  with-cone=-1.460   logVrad=-0.727 logQtan=-0.011 U=+0.029 p=+0.224 H=+0.074
+  mu=0.2   rho=1.05  t*/sigma no-cone=+0.317  with-cone=+0.317   logVrad=-0.886 logQtan=-0.428 logzeta=-0.374 logeta=+0.333 U=+0.497 p=-0.060 H=+0.012
+  mu=0.2   rho=2.0   t*/sigma no-cone=-0.987  with-cone=-0.987   logVrad=-0.738 logQtan=-0.073 logzeta=+0.022 U=+0.096 p=+0.159 H=+0.110
+  mu=0.5   rho=1.2   t*/sigma no-cone=+0.759  with-cone=+0.759   logVrad=-1.166 logQtan=-0.559 logzeta=+0.048 logeta=+0.361 U=+0.208 p=-0.047 H=+0.010
+  mu=0.5   rho=3.0   t*/sigma no-cone=-0.158  with-cone=-0.147   logVrad=-1.060 logQtan=-0.371 logzeta=+0.052 logeta=+0.322 U=+0.063 p=+0.024 H=+0.009
+  mu=1.0   rho=1.02  t*/sigma no-cone=+1.116  with-cone=+1.116   logVrad=-1.069 logQtan=-0.522 logzeta=+0.379 logeta=+0.203 U=+0.011 p=+0.033 H=+0.032
+  mu=1.0   rho=1.5   t*/sigma no-cone=+0.489  with-cone=+0.492   logVrad=-1.130 logQtan=-0.446 logzeta=+0.124 logeta=+0.404 U=+0.113 p=+0.005 H=+0.001
+  mu=1.0   rho=5.0   t*/sigma no-cone=-0.350  with-cone=-0.348   logVrad=-0.954 logQtan=-0.243 logzeta=+0.067 logeta=+0.295 U=+0.026 p=+0.024
+=== d: c+y,lamp,1eta,Q0 ===
+  mu=0.05  rho=1.02  t*/sigma no-cone=-0.299  with-cone=-0.300   logVrad=-0.591 logQtan=-0.124 logQ0=-0.168 logzeta=-3.973 logeta=+0.781 logy=+2.597 loglamp=+0.576 log1eta=+1.057 U=+0.700 p=+1.284 H=-0.582
+  mu=0.05  rho=1.5   t*/sigma no-cone=-0.859  with-cone=-0.859   logVrad=-0.561 logQtan=-0.016 logQ0=-0.247 logzeta=+0.016 logeta=-0.010 loglamp=+0.146 log1eta=+1.013 U=-0.002 p=+0.418 H=-0.212
+  mu=0.05  rho=5.0   t*/sigma no-cone=-0.311  with-cone=-0.311   logVrad=-0.916 logQtan=-0.015 logQ0=-0.331 logeta=-0.019 loglamp=+0.028 log1eta=+0.546 U=+0.002 p=+0.036 H=-0.032
+  mu=0.2   rho=1.05  t*/sigma no-cone=+1.168  with-cone=+1.168   logVrad=-1.082 logQtan=-0.228 logQ0=-0.306 logzeta=-1.965 logeta=+0.137 logy=+1.272 loglamp=+0.324 log1eta=-0.303 U=+0.715 p=+0.146 H=-0.147
+  mu=0.2   rho=2.0   t*/sigma no-cone=+0.224  with-cone=+0.224   logVrad=-0.872 logQtan=-0.035 logQ0=-0.397 logzeta=+0.036 logeta=-0.028 logy=-0.009 loglamp=+0.075 log1eta=+0.245 U=-0.003 p=+0.053 H=-0.027
+  mu=0.5   rho=1.2   t*/sigma no-cone=+1.431  with-cone=+1.431   logVrad=-1.220 logQtan=-0.324 logQ0=-0.304 logzeta=+0.197 logeta=+0.362 logy=-0.146 loglamp=-0.285 log1eta=+0.622 U=-0.069 p=-0.120 H=+0.007
+  mu=0.5   rho=3.0   t*/sigma no-cone=+0.406  with-cone=+0.420   logVrad=-0.958 logQtan=-0.354 logQ0=-0.448 logzeta=+0.010 logeta=+0.341 logy=-0.011 loglamp=-0.047 log1eta=+0.357 U=-0.004 p=-0.014 H=-0.007 p*eta*x=+0.003
+  mu=1.0   rho=1.02  t*/sigma no-cone=+1.615  with-cone=+1.615   logVrad=-1.218 logQtan=-0.304 logQ0=-0.304 logzeta=+0.097 logeta=-0.615 logy=+0.235 loglamp=+0.207 log1eta=+0.227 U=+0.129 p=-0.031 H=-0.019
+  mu=1.0   rho=1.5   t*/sigma no-cone=+1.272  with-cone=+1.272   logVrad=-1.174 logQtan=-0.221 logQ0=-0.358 logzeta=+0.114 logeta=+0.400 logy=-0.003 loglamp=-0.083 log1eta=-0.372 U=-0.029 p=-0.034 H=+0.016
+  mu=1.0   rho=5.0   t*/sigma no-cone=+0.337  with-cone=+0.353   logVrad=-0.884 logQtan=-0.267 logQ0=-0.518 logzeta=-0.018 logeta=+0.034 logy=+0.255 loglamp=-0.003 log1eta=+0.129 H=-0.002

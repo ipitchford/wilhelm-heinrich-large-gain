@@ -1,0 +1,21 @@
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/verify/v_largegain.py:83: RuntimeWarning: overflow encountered in exp
+  x = k * np.exp(U)
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/verify/v_largegain.py:84: RuntimeWarning: invalid value encountered in scalar subtract
+  return [p, k - mu * p - y, x - y, zeta + (mu - 1) * eta - eta * eta, x - (1 + eta) * zeta,
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/verify/v_largegain.py:84: RuntimeWarning: invalid value encountered in scalar multiply
+  return [p, k - mu * p - y, x - y, zeta + (mu - 1) * eta - eta * eta, x - (1 + eta) * zeta,
+(1a) large gain, mu>1 vs reciprocal (hybrid integrator)
+  mu=2 k=8000: T=2610.1044  mu*T=5220.2087  T'=5220.2087 | log m_t=-2592.9845  log m_t'=-2592.9845 | <eta>=1.00656 <= mu-0.17=1.83 | p_k/mu=1999.9998 p_k'=1999.9998  ok
+  mu=2 k=24000: T=7825.6759  mu*T=15651.352  T'=15651.352 | log m_t=-7806.3595  log m_t'=-7806.3595 | <eta>=1.00247 <= mu-0.17=1.83 | p_k/mu=5999.9999 p_k'=5999.9999  ok
+  mu=5 k=125000: T=6521.3193  mu*T=32606.596  T'=32606.596 | log m_t=-6502.8377  log m_t'=-6502.8377 | <eta>=4.00283 <= mu-0.17=4.83 | p_k/mu=5000 p_k'=5000  ok
+  mu=3.333 k=37037: T=4348.3189  mu*T=14494.396  T'=14494.396 | log m_t=-4330.5145  log m_t'=-4330.5145 | <eta>=2.33743 <= mu-0.17=3.16333 | p_k/mu=3333.3332 p_k'=3333.3332  ok
+(1b) moderate gain, monodromy multipliers (whlib.find_cycle)
+  mu=2.0 rho=1.5: T=5.418697813 mu*T=10.837395626 T'=10.837395626 | m_t=0.3729749465 m_t'=0.3729749465  ok
+  mu=3.0 rho=4.0: T=9.167208221 mu*T=27.501624664 T'=27.501624664 | m_t=0.0203444345 m_t'=0.0203444344  ok
+  mu=5.0 rho=2.0: T=4.840972609 mu*T=24.204863043 T'=24.204863043 | m_t=0.2926185730 m_t'=0.2926185730  ok
+(2) W^u(E) orbit and widely spread section data all land on the same cycle (floating-point evidence only)
+  mu=1.0 k=1000.0: W^u(E) orbit reaches the trough section at t=4.948; distance to cycle section point: first hit 5.52e-01, after 3 loops 0.00e+00; 16 spread section data after 4 loops: max distance 0.00e+00  ok
+  mu=0.3 k=1000.0: W^u(E) orbit reaches the trough section at t=4.741; distance to cycle section point: first hit 1.14e+00, after 3 loops 0.00e+00; 16 spread section data after 4 loops: max distance 0.00e+00  ok
+  mu=0.02 k=1000.0: W^u(E) orbit reaches the trough section at t=4.926; distance to cycle section point: first hit 7.35e-01, after 3 loops 0.00e+00; 16 spread section data after 4 loops: max distance 0.00e+00  ok
+  mu=1.0 k=3000.0: W^u(E) orbit reaches the trough section at t=3.392; distance to cycle section point: first hit 6.06e-01, after 3 loops 0.00e+00; 16 spread section data after 4 loops: max distance 0.00e+00  ok
+ALL OK

@@ -1,0 +1,2 @@
+v3_exact_identities_with_injected_error: 148/149 passed -> FAIL  [1.0s]
+   FAILED: {"group": "deliberate error", "id": "injected_wrong_sign_star_gauge", "passed": false, "residual": "U*eta*k - U*eta*mu*p - U*eta*y + U*p*zeta + U*x - U*y - 2*eta*p**2 + 2*k*p - 2*p*y", "cofactor_of_O": "0", "note": "wrong sign of p K; must fail"}

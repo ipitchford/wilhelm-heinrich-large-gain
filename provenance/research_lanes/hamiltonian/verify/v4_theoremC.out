@@ -1,0 +1,80 @@
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/verify/todaq.py:27: IntegrationWarning: The occurrence of roundoff error is detected, which prevents 
+  the requested tolerance from being achieved.  The error may be 
+  underestimated.
+  a = quad(lambda s: 2 * s * g(um + s * s), 0.0, np.sqrt(-um), epsabs=1e-13, epsrel=1e-13, limit=400)[0]
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/verify/todaq.py:28: IntegrationWarning: The maximum number of subdivisions (400) has been achieved.
+  If increasing the limit yields no improvement it is advised to analyze 
+  the integrand in order to determine the difficulties.  If the position of a 
+  local difficulty can be determined (singularity, discontinuity) one will 
+  probably gain from splitting up the interval and calling the integrator 
+  on the subranges.  Perhaps a special-purpose integrator should be used.
+  b = quad(lambda s: 2 * s * g(up - s * s), 0.0, np.sqrt(up), epsabs=1e-13, epsrel=1e-13, limit=400)[0]
+(P0) referee finder vs whlib.find_cycle
+  mu=1.0 rho=2.0:  T 8.790068963 / 8.790068963   m_t 1.450362096e-01 / 1.450362096e-01   U0 2.346621157 / 2.346621157
+  mu=0.1 rho=1.5:  T 31.928173471 / 31.928173471   m_t 5.691771668e-01 / 5.691771668e-01   U0 2.553001181 / 2.553001181
+  mu=0.3 rho=4.0:  T 29.759328631 / 29.759328631   m_t 2.312945572e-02 / 2.312945567e-02   U0 3.880937651 / 3.880937651
+
+(P1) fixed r, mu -> 0
+# r     mu         eps       h*(r)     h_crest   (h_crest-h*)/eps^2   logmt/eps^3   pred=-J0Rsel'   ratio     (ratio-1)/eps^2   sup|Q-w_ser|/eps^4   res
+0.3    0.01       0.09901   0.301252  0.312477  1.1451               -1.865926     -1.900800       0.981653  -1.872            8.708                1.7e-14
+0.3    0.0025     0.04988   0.301252  0.304131  1.1572               -1.891511     -1.900800       0.995113  -1.965            8.786                6.1e-16
+0.3    0.000625   0.02498   0.301252  0.301976  1.1605               -1.898438     -1.900800       0.998757  -1.991            8.816                4.1e-16
+0.3    0.0001563  0.01250   0.301252  0.301433  1.1614               -1.900207     -1.900800       0.999688  -1.997            11.602               6.7e-15
+1      0.01       0.09901   1.013914  1.055028  4.1940               -6.219341     -6.463236       0.962264  -3.849            65.079               5.3e-14
+1      0.0025     0.04988   1.013914  1.024662  4.3208               -6.395894     -6.463236       0.989581  -4.189            67.178               1.7e-15
+1      0.000625   0.02498   1.013914  1.016633  4.3565               -6.445932     -6.463236       0.997323  -4.289            67.947               6.3e-15
+1      0.0001563  0.01250   1.013914  1.014596  4.3658               -6.458879     -6.463236       0.999326  -4.316            68.163               4.6e-14
+3      0.01       0.09901   3.121936  3.295805  17.7364              -18.805340    -20.595471      0.913081  -8.867            581.857              5.9e-13
+3      0.0025     0.04988   3.121936  3.169066  18.9466              -20.072180    -20.595471      0.974592  -10.214           618.974              4.8e-16
+3      0.000625   0.02498   3.121936  3.133994  19.3172              -20.458402    -20.595471      0.993345  -10.662           635.014              2.1e-15
+3      0.0001563  0.01250   3.121936  3.124969  19.4155              -20.560778    -20.595471      0.998316  -10.784           639.894              5.4e-13
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/hamiltonian/verify/todaq.py:27: IntegrationWarning: The algorithm does not converge.  Roundoff error is detected
+  in the extrapolation table.  It is assumed that the requested tolerance
+  cannot be achieved, and that the returned result (if full_output = 1) is 
+  the best which can be obtained.
+  a = quad(lambda s: 2 * s * g(um + s * s), 0.0, np.sqrt(-um), epsabs=1e-13, epsrel=1e-13, limit=400)[0]
+   [7s]
+
+(P2) amplitude family: r(a) = (rho(a)-1)/eps^2, compared with Rsel(Phi(a)); monotone?  m_t<1?
+  mu=0.02 eps=0.13865:  a, h=Phi(a), r_num, Rsel(h), r_num/Rsel, m_t, residual
+    0.10  0.0052    0.004807    0.005171    0.92965  0.999921034  6.4e-16
+    0.30  0.0499    0.046406    0.049824    0.93140  0.999238670  1.7e-16
+    0.50  0.1487    0.138405    0.148415    0.93255  0.997736107  5.6e-16
+    0.70  0.3138    0.291452    0.312395    0.93296  0.995255877  4.8e-16
+    0.90  0.5596    0.517786    0.555310    0.93243  0.991630557  2.2e-16
+    1.25  1.2403    1.132539    1.219666    0.92857  0.982015977  6.2e-15
+    1.75  3.0046    2.643717    2.891089    0.91444  0.959457776  2.9e-14
+    2.25  6.2377    5.166667    5.817443    0.88813  0.923278803  2.9e-13
+    2.75  11.8926   9.113216    10.717026   0.85035  0.867461510  1.8e-12
+    3.25  21.5403   15.116669   18.823373   0.80308  0.785871678  5.5e-15
+    3.75  37.7711   24.098157   32.201552   0.74835  0.675854595  4.8e-13
+    4.25  64.8554   37.350637   54.265360   0.68830  0.540612184  1.2e-12
+    4.75  109.8343  56.638777   90.646318   0.62483  0.391043069  8.4e-12
+    r_num strictly increasing over 26 amplitudes a in [0.1,5] (h up to 142.4): True;  all m_t<1: True
+  mu=0.001 eps=0.03159:  a, h=Phi(a), r_num, Rsel(h), r_num/Rsel, m_t, residual
+    0.10  0.0052    0.005150    0.005171    0.99609  0.999998981  9.1e-15
+    0.30  0.0499    0.049634    0.049824    0.99617  0.999990166  5.7e-14
+    0.50  0.1487    0.147853    0.148415    0.99621  0.999970634  3.1e-13
+    0.70  0.3138    0.311203    0.312395    0.99618  0.999937941  3.8e-13
+    0.90  0.5596    0.553132    0.555310    0.99608  0.999889034  4.9e-12
+    1.25  1.2403    1.214346    1.219666    0.99564  0.999752272  1.2e-12
+    1.75  3.0046    2.874373    2.891089    0.99422  0.999386791  3.6e-12
+    2.25  6.2377    5.767476    5.817443    0.99141  0.998661277  3.5e-12
+    2.75  11.8926   10.573400   10.717026   0.98660  0.997201478  2.4e-13
+    3.25  21.5403   18.426134   18.823373   0.97890  0.994261840  9.4e-12
+    3.75  37.7711   31.140767   32.201552   0.96706  0.988462559  2.9e-11
+    4.25  64.8554   51.528464   54.265360   0.94956  0.977400811  6.1e-13
+    4.75  109.8343  83.836605   90.646318   0.92488  0.957254959  6.0e-12
+    r_num strictly increasing over 26 amplitudes a in [0.1,5] (h up to 142.4): True;  all m_t<1: True
+   [25s]
+
+(P3) planar squeeze, mu=0.02: crest sequences from inside (near E) and from the ball boundary
+  rho=1.01 r=0.520 inside  : crest after transient 0.020342 (H0=0.0002) -> limit 0.901802518 after 3256 returns; monotone (|step|>1e-9): True
+  rho=1.01 r=0.520 outside : crest after transient 2.488973 (H0=8.5599) -> limit 0.901802521 after 2319 returns; monotone (|step|>1e-9): True
+     Newton cycle crest 0.901802520, m_t=0.991592;  |inside-limit - outside-limit| = 2.35e-09
+  rho=1.04 r=2.081 inside  : crest after transient 0.021381 (H0=0.0002) -> limit 1.594622270 after 933 returns; monotone (|step|>1e-9): True
+  rho=1.04 r=2.081 outside : crest after transient 2.759506 (H0=12.0325) -> limit 1.594622270 after 650 returns; monotone (|step|>1e-9): True
+     Newton cycle crest 1.594622270, m_t=0.967722;  |inside-limit - outside-limit| = 5.95e-10
+   [81s]
+
+FAILURES: none

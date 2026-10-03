@@ -1,0 +1,90 @@
+% s02_adjoint.tex -- positive adjoint and exact transverse exponent.
+% Exported labels: sec:adjoint eq:adjointmatrices eq:ratios eq:projective eq:etaminbasic prop:multipliers
+% eq:multipliers eq:exponent prop:factor eq:orthogonality eq:tangent eq:factorisation lem:projectivebounds
+% eq:gainprimitive.  Internal labels carry the prefix adj:.
+\section{A positive adjoint and the exact transverse exponent}\label{sec:adjoint}
+Besides the global notation, this section introduces the Jacobian $J$, the adjoint matrix $B$, the signature matrix $S$, the positive adjoint solution $\mathbf H=(H_1,H_2,H_3)^{\mathsf T}$, the normal vector $n$ and the tangent pairing $O$. They keep these meanings in later sections.
+
+\subsection{Projective equations}\label{adj:sec:projective}
+Along any cycle of \eqref{eq:logsystem},
+\begin{equation}\label{eq:adjointmatrices}
+J=\begin{pmatrix}0&1&0\\0&-\mu&-1\\x&0&-1\end{pmatrix},\qquad
+B=-SJ^{\mathsf T}S=\begin{pmatrix}0&0&x\\1&\mu&0\\0&1&1\end{pmatrix},\qquad
+S=\diag(1,-1,-1).
+\end{equation}
+The evolution of $\mathbf H'=B\mathbf H$ is strictly positive over each positive time interval: every pair of coordinates is connected through the positive cyclic links, including $x(t)>0$. Its period matrix therefore has a simple strictly dominant positive Perron eigenvalue and a positive eigenvector. Propagating this vector gives a positive Floquet solution $\mathbf H$ whose component ratios are periodic. Define
+\begin{equation}\label{eq:ratios}
+\eta=H_2/H_3>0,\qquad \zeta=H_1/H_3>0.
+\end{equation}
+Direct differentiation gives
+\begin{equation}\label{eq:projective}
+\eta'=\zeta+(\mu-1)\eta-\eta^2,\qquad
+\zeta'=x-(1+\eta)\zeta.
+\end{equation}
+At a minimum of $\eta$, the first equation implies
+\begin{equation}\label{eq:etaminbasic}
+\eta>\max(0,\mu-1).
+\end{equation}
+Since $H_3'=(1+\eta)H_3$, the principal adjoint exponent is $\gamma=1+\avg\eta>1$.
+
+\begin{proposition}[Positive transverse multipliers]\label{prop:multipliers}
+The two transverse multipliers satisfy
+\begin{equation}\label{eq:multipliers}
+0<m_s<m_t,\qquad m_s<1,\qquad m_sm_t=e^{-AT},
+\end{equation}
+and, exactly,
+\begin{equation}\label{eq:exponent}
+m_s=e^{-(1+\avg\eta)T},\qquad
+m_t=e^{(\avg\eta-\mu)T},\qquad
+\lambda_c:=T^{-1}\log m_t=\avg\eta-\mu.
+\end{equation}
+Thus hyperbolic orbital attraction is equivalent to $\avg\eta<\mu$.
+\end{proposition}
+\begin{proof}
+The adjoint monodromy is sign-conjugate to the inverse transpose of the original monodromy. The reciprocal of its Perron eigenvalue is an original multiplier $m_s$, smaller in modulus than either remaining multiplier. One remaining multiplier is the autonomous tangent multiplier $1$. Since $\tr J=-A$, Liouville's identity makes the product of the transverse multipliers $e^{-AT}>0$. The remaining multiplier is real and positive, and the formulas follow. The argument allows a repeated ambient multiplier $1$; the two transverse multipliers themselves are distinct.
+\end{proof}
+When $\avg\eta=\mu$, nonlinear orbital stability is undecided by this criterion. An ambient Jordan block at the unit multiplier is not excluded.
+
+\subsection{Tangent orthogonality and factorisation}\label{adj:sec:factor}
+\begin{proposition}\label{prop:factor}
+Along every cycle,
+\begin{equation}\label{eq:orthogonality}
+\zeta p-\eta p'-(x-y)=0,
+\end{equation}
+so its scalar tangent satisfies
+\begin{equation}\label{eq:tangent}
+p''=(\eta-\mu)p'-\zeta p.
+\end{equation}
+With the displayed periodic coefficients, the scalar variational operator factors as
+\begin{equation}\label{eq:factorisation}
+D^3+AD^2+\mu D+x=(D+1+\eta)\bigl[D^2+(\mu-\eta)D+\zeta\bigr].
+\end{equation}
+\end{proposition}
+\begin{proof}
+Put $n=(\zeta,-\eta,-1)^{\mathsf T}$. Equations \eqref{eq:projective} give
+\[
+n'+J^{\mathsf T}n+(1+\eta)n=0.
+\]
+Pairing with the tangent gives $O'+(1+\eta)O=0$, where $O$ is the left side of \eqref{eq:orthogonality}. Its only periodic solution is zero because $1+\eta>1$. Also $p''=-\mu p'-x+y$, proving \eqref{eq:tangent}. Expanding \eqref{eq:factorisation}, its $D$ coefficient is $\zeta-\eta'+(1+\eta)(\mu-\eta)=\mu$, and its constant coefficient is $\zeta'+(1+\eta)\zeta=x$. The $D^2$ coefficient is $A$.
+\end{proof}
+
+\begin{lemma}[Explicit bounds independent of the period]\label{lem:projectivebounds}
+Suppose $0<x_-\le x(t)\le x_+$. Set
+\begin{align*}
+\eta_+&=\frac{\mu-1+\sqrt{(\mu-1)^2+4x_+}}2,&
+\zeta_-&=\frac{x_-}{1+\eta_+},\\
+\eta_-&=\frac{\mu-1+\sqrt{(\mu-1)^2+4\zeta_-}}2,&
+\zeta_+&=\frac{x_+}{1+\eta_-}.
+\end{align*}
+Then $\eta_-\le\eta\le\eta_+$ and $\zeta_-\le\zeta\le\zeta_+$.
+\end{lemma}
+\begin{proof}
+At a maximum of $\zeta$, its equation gives $\zeta\le x_+$. At a maximum of $\eta$, the first equation gives $\eta(\eta+1-\mu)=\zeta\le x_+$, yielding $\eta_+$. At a minimum of $\zeta$ it gives $\zeta\ge x_-/(1+\eta_+)$. The corresponding minimum equation for $\eta$ gives $\eta_-$, and using that bound at a maximum of $\zeta$ gives $\zeta_+$. The relevant quadratic has a unique positive root in the range \eqref{eq:etaminbasic}.
+\end{proof}
+
+An exact primitive is
+\begin{equation}\label{eq:gainprimitive}
+(\zeta+\eta+\eta^2/2)'=x-f_\mu(\eta),\qquad
+f_\mu(s)=s(s+1)(s+1-\mu).
+\end{equation}
+Since $\avg x=k$, it follows that $k=\avg{f_\mu(\eta)}$. A constant $\eta$ would force $\zeta$ and then $x$ constant, so $\eta$ is nonconstant on a nonconstant cycle. This identity constrains moments of $\eta$; by itself it does not determine the sign of $\avg\eta-\mu$.

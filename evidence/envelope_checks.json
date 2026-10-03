@@ -1,0 +1,125 @@
+{
+  "kind": "floating_point_convex_envelope_diagnostic",
+  "base_cycle": "mu_1_h_1",
+  "periodic_spline_endpoint_adjustment": 3.787903324337094e-11,
+  "finite_difference_step": 2e-05,
+  "comparison_phase_grid": 4096,
+  "records": [
+    {
+      "phase": 0.08,
+      "curvature_W": 0.6826809675890024,
+      "predicted_Hessian": [
+        [
+          0.84847468645174,
+          0.03435072292611829
+        ],
+        [
+          0.03435072292611829,
+          0.001390698136772362
+        ]
+      ],
+      "finite_difference_Hessian": [
+        [
+          0.8484746846448842,
+          0.034350722899478825
+        ],
+        [
+          0.0343507237710039,
+          0.0013906981954914242
+        ]
+      ],
+      "relative_scaled_error": 1.8068557761097281e-09,
+      "defect_identity_max_residual": 8.046438595675949e-12,
+      "maximiser_beats_grid_and_equilibrium": true,
+      "passed": true
+    },
+    {
+      "phase": 0.35,
+      "curvature_W": 0.7277749794815462,
+      "predicted_Hessian": [
+        [
+          0.277432882692339,
+          -0.20726321902170905
+        ],
+        [
+          -0.20726321902170905,
+          0.15484120534795995
+        ]
+      ],
+      "finite_difference_Hessian": [
+        [
+          0.2774328827032102,
+          -0.20726321901254338
+        ],
+        [
+          -0.20726321902087005,
+          0.15484120534647872
+        ]
+      ],
+      "relative_scaled_error": 1.087119283482707e-11,
+      "defect_identity_max_residual": 1.0398071587669648e-12,
+      "maximiser_beats_grid_and_equilibrium": true,
+      "passed": true
+    },
+    {
+      "phase": 0.55,
+      "curvature_W": 0.10506012898637268,
+      "predicted_Hessian": [
+        [
+          0.0011470827414042854,
+          0.012448050654640238
+        ],
+        [
+          0.012448050654640238,
+          0.1350852554112975
+        ]
+      ],
+      "finite_difference_Hessian": [
+        [
+          0.0011470827274151496,
+          0.012448050282221066
+        ],
+        [
+          0.012448050534796804,
+          0.13508525380234726
+        ]
+      ],
+      "relative_scaled_error": 1.6089502508087605e-09,
+      "defect_identity_max_residual": 6.3394071370267605e-12,
+      "maximiser_beats_grid_and_equilibrium": true,
+      "passed": true
+    },
+    {
+      "phase": 0.8,
+      "curvature_W": 1.0342731154570166,
+      "predicted_Hessian": [
+        [
+          0.6991375744293287,
+          -0.2485894156624757
+        ],
+        [
+          -0.2485894156624757,
+          0.08838989612288069
+        ]
+      ],
+      "finite_difference_Hessian": [
+        [
+          0.6991375742698701,
+          -0.24858941560512712
+        ],
+        [
+          -0.24858941571892498,
+          0.08838989614123881
+        ]
+      ],
+      "relative_scaled_error": 1.5945855746934967e-10,
+      "defect_identity_max_residual": 6.1488035601223015e-12,
+      "maximiser_beats_grid_and_equilibrium": true,
+      "passed": true
+    }
+  ],
+  "number_checked": 4,
+  "number_passed": 4,
+  "passed": true,
+  "scope": "The finite phase grid does not certify a global maximum or a continuum inequality."
+}

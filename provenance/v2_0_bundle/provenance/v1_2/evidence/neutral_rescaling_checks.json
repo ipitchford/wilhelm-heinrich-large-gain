@@ -1,0 +1,37 @@
+{
+  "kind": "exact algebra, not a neutral-cycle exclusion",
+  "checks": [
+    {
+      "name": "log_state",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "velocity",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "filter",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "projective_a",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "projective_b",
+      "residual": "0",
+      "passed": true
+    },
+    {
+      "name": "neutral_moment",
+      "residual": "0",
+      "passed": true
+    }
+  ],
+  "count": 6,
+  "passed": true
+}

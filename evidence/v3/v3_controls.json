@@ -1,0 +1,119 @@
+{
+ "schema_version": "3.0",
+ "name": "v3_controls",
+ "kind": "deliberate_error_regression",
+ "passed": true,
+ "counts": {
+  "attempted": 6,
+  "passed": 6,
+  "failed": 0
+ },
+ "worst_residuals": {},
+ "parameters": {
+  "cycle_for_C2_C4": {
+   "mu": 1.0,
+   "rho": 2.0
+  },
+  "cycle_for_C5": {
+   "mu": 1.0,
+   "rho": 1.5
+  }
+ },
+ "seconds": 3.1350222080072854,
+ "scope": "Regression tests of the failure semantics of the suite.",
+ "not_interval_certified": true,
+ "interpretation": "A control passes only when the deliberately wrong assertion is rejected.",
+ "failing_receipts_by_construction": [
+  "v3_control_exact_wrong_sign.json",
+  "v3_control_largegain_wrong_c1.json",
+  "v3_control_largegain_wrong_cp.json"
+ ],
+ "records": [
+  {
+   "id": "C1 wrong sign in the star-gauge identity is rejected",
+   "observed_exit_status": 1,
+   "receipt_passed": false,
+   "failed_tests": [
+    "injected_wrong_sign_star_gauge"
+   ],
+   "tests_in_receipt": 149,
+   "passed": true
+  },
+  {
+   "id": "C2 \"Sigma > 0\" is rejected on a non-periodic orbit where it is false",
+   "mu": 1.0,
+   "rho": 2.0,
+   "initial_state": {
+    "U": 0.5,
+    "p": 0.0,
+    "y_over_k": 0.5
+   },
+   "samples": 1002,
+   "predicate_on_cycle": {
+    "min_ratio": 0.4220852576284564,
+    "unresolved": 0,
+    "negative_resolved": 0,
+    "passed": true
+   },
+   "predicate_on_nonperiodic_orbit": {
+    "min_ratio": -0.3333333333333333,
+    "unresolved": 0,
+    "negative_resolved": 21,
+    "passed": false
+   },
+   "passed": true
+  },
+  {
+   "id": "C3 wrong large-gain constant c_1 = 0.38 is rejected",
+   "observed_exit_status": 1,
+   "receipt_passed": false,
+   "failed_comparisons": [
+    "c1: phi Psi_1(a3) - ell/K0 >= C1",
+    "interval placement: 0.3 C1^2/sqrt8 <= 0.015 <= c#  (z_1(k) < z^sharp)"
+   ],
+   "passed": true
+  },
+  {
+   "id": "C3 wrong large-gain constant c_p = 0.83 is rejected",
+   "observed_exit_status": 1,
+   "receipt_passed": false,
+   "failed_comparisons": [
+    "c_p: 0.95 phi (1-exp(-c# K0)) - ell/K0 >= CP"
+   ],
+   "passed": true
+  },
+  {
+   "id": "C4 exponent formula with the wrong sign is rejected",
+   "mu": 1.0,
+   "rho": 2.0,
+   "lambda_c_from_eta": -0.21965377683055376,
+   "minus_mean_pK_over_Sigma": -0.21965377683053233,
+   "plus_mean_pK_over_Sigma": 0.21965377683053233,
+   "correct_formula_accepted": true,
+   "wrong_formula_accepted": false,
+   "passed": true
+  },
+  {
+   "id": "C5 reversed twelve-event order is rejected",
+   "mu": 1.0,
+   "rho": 1.5,
+   "computed_sequence": [
+    "q2-",
+    "yp-",
+    "q1-",
+    "pp+",
+    "q3-",
+    "p+",
+    "q2+",
+    "yp+",
+    "q1+",
+    "pp-",
+    "q3+",
+    "p-"
+   ],
+   "computed_order_accepted": true,
+   "reversed_order_accepted": false,
+   "passed": true
+  }
+ ]
+}

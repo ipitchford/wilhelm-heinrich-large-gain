@@ -1,0 +1,95 @@
+{
+ "framework_counts": {
+  "exact_equalities": [
+   50,
+   50
+  ],
+  "cycle_approximations": [
+   31,
+   31
+  ],
+  "cycle_geometry_and_adjoint_audits": [
+   31,
+   31
+  ],
+  "cross_method": [
+   4,
+   4
+  ],
+  "reciprocal_rates": [
+   12,
+   12
+  ],
+  "envelope": [
+   4,
+   4
+  ],
+  "negative_controls": [
+   4,
+   4
+  ]
+ },
+ "v3_receipts": {
+  "v3_exact_identities": {
+   "kind": "exact_symbolic_equality",
+   "passed": true,
+   "attempted": 148,
+   "n_passed": 148
+  },
+  "v3_gauges": {
+   "kind": "floating_point_diagnostic",
+   "passed": true,
+   "attempted": 66,
+   "n_passed": 66
+  },
+  "v3_largegain_constants": {
+   "kind": "high_precision_constant_check",
+   "passed": true,
+   "attempted": 141,
+   "n_passed": 141
+  },
+  "v3_largegain_lemmas": {
+   "kind": "floating_point_diagnostic",
+   "passed": true,
+   "attempted": 29561,
+   "n_passed": 29561
+  },
+  "v3_attractor": {
+   "kind": "floating_point_diagnostic",
+   "passed": true,
+   "attempted": 156,
+   "n_passed": 156
+  },
+  "v3_weak_adjoint": {
+   "kind": "floating_point_diagnostic",
+   "passed": true,
+   "attempted": 180,
+   "n_passed": 180
+  },
+  "v3_wedge": {
+   "kind": "floating_point_diagnostic",
+   "passed": true,
+   "attempted": 211,
+   "n_passed": 211
+  },
+  "v3_cartography": {
+   "kind": "floating_point_table_recomputation",
+   "passed": true,
+   "attempted": 140,
+   "n_passed": 140
+  },
+  "v3_negative": {
+   "kind": "floating_point_diagnostic",
+   "passed": true,
+   "attempted": 123,
+   "n_passed": 123
+  },
+  "v3_controls": {
+   "kind": "deliberate_error_regression",
+   "passed": true,
+   "attempted": 6,
+   "n_passed": 6
+  }
+ },
+ "macros": 115
+}

@@ -1,0 +1,5006 @@
+{
+ "schema_version": "3.0",
+ "name": "v3_gauges",
+ "kind": "floating_point_diagnostic",
+ "passed": false,
+ "counts": {
+  "attempted": 66,
+  "passed": 65,
+  "failed": 1
+ },
+ "worst_residuals": {
+  "max_exponent_gap_relative": 2.925528358526255e-11,
+  "max_exponent_gap_absolute": 1.0845657705260692e-10,
+  "max_eta0_mean_relative": 6.866313604486147e-11,
+  "max_polar_angle_error": 8.911655058341239e-08,
+  "min_star_gauge_ratio": 0.0022702846611560162,
+  "min_convexity_gauge_ratio": 3.287115215866032e-06,
+  "min_K_ratio": 1.132982068134824e-06,
+  "min_W_ratio": -1.7662639028127491e-15,
+  "max_monotone_form_eigenvalue": -1.3084553440403046e-06,
+  "max_lambda_c": -1.0212992476724321e-06,
+  "unresolved_sign_samples": 11236,
+  "total_samples": 137303
+ },
+ "parameters": {
+  "saved_cycles": 31,
+  "extended_mu": [
+   0.02,
+   0.1,
+   0.5,
+   1.0,
+   3.0,
+   10.0,
+   50.0
+  ],
+  "extended_rho": [
+   1.001,
+   1.1,
+   2.0,
+   6.0,
+   20.0
+  ]
+ },
+ "seconds": 38.66676091699628,
+ "scope": "Sampled diagnostics on computed approximations of cycles; not an enclosure and not a statement about all cycles.",
+ "not_interval_certified": true,
+ "tolerances": {
+  "TOL_SIGN": 1e-09,
+  "TOL_AVG": 1e-07
+ },
+ "number_attracting": 66,
+ "number_saved_cycles": 31,
+ "number_extended_cycles": 35,
+ "records": [
+  {
+   "id": "saved_mu_0.1_h_0.05",
+   "source": "saved v2.0 mesh",
+   "mu": 0.1,
+   "k": 0.11000870237747179,
+   "rho": 1.0000791125224706,
+   "T": 19.870761672614318,
+   "U_max": 0.05,
+   "U_min": -0.050954724352097865,
+   "newton_residual": 5.2991403675829226e-15,
+   "samples": 2065,
+   "lambda_c_from_eta": -6.6418998490520575e-06,
+   "lambda_c_from_K": -6.6418998518096384e-06,
+   "lambda_c_from_W": -6.641899850592232e-06,
+   "exponent_gap_K": 2.7575809813233133e-15,
+   "exponent_gap_W": 1.5401744075525976e-15,
+   "exponent_scale": 0.010788694724306776,
+   "exponent_gap_relative": 2.555991296250623e-13,
+   "eta0_mean_minus_mu": -3.40982443507284e-15,
+   "eta0_relative": 3.3541902305107505e-14,
+   "polar_angle_error": 8.881784197001252e-15,
+   "monotone_form_eigenvalues": [
+    -2.2498068508848344e-05,
+    -4.4788645962073565e-06
+   ],
+   "cross_term_gap": 7.486077187833506e-18,
+   "holder_lower": 0.10996200267321249,
+   "holder_middle": 0.10999129920825026,
+   "holder_upper": 0.11000870237747179,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.022704082157336505,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.000482560017773003,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 1.91957640837509e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 3.197835354804296e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 2.9311434866073813e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.3838489055633545
+  },
+  {
+   "id": "saved_mu_0.1_h_0.2",
+   "source": "saved v2.0 mesh",
+   "mu": 0.1,
+   "k": 0.11014740607889391,
+   "rho": 1.0013400552626717,
+   "T": 19.896064688680553,
+   "U_max": 0.2,
+   "U_min": -0.21619870806522365,
+   "newton_residual": 1.003782389363646e-13,
+   "samples": 2065,
+   "lambda_c_from_eta": -0.00011219785825351596,
+   "lambda_c_from_K": -0.00011219785828803542,
+   "lambda_c_from_W": -0.00011219785828996933,
+   "exponent_gap_K": 3.4519465736369825e-14,
+   "exponent_gap_W": 3.6453370703959376e-14,
+   "exponent_scale": 0.0443605942168943,
+   "exponent_gap_relative": 8.217511813689021e-13,
+   "eta0_mean_minus_mu": 3.6593747507350886e-14,
+   "eta0_relative": 3.425544117370737e-13,
+   "polar_angle_error": 3.552713678800501e-15,
+   "monotone_form_eigenvalues": [
+    -0.0003809497156708226,
+    -7.588397876836226e-05
+   ],
+   "cross_term_gap": 3.8825279796705914e-16,
+   "holder_lower": 0.10935720576566857,
+   "holder_middle": 0.10985304849866609,
+   "holder_upper": 0.11014740607889391,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.09033429125260217,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.006512083996941831,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.00032112059319839664,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 5.3470857545447014e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 7.764601141366162e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.3858668804168701
+  },
+  {
+   "id": "saved_mu_0.1_h_0.5",
+   "source": "saved v2.0 mesh",
+   "mu": 0.1,
+   "k": 0.11103509843721909,
+   "rho": 1.0094099857929006,
+   "T": 20.059690995132588,
+   "U_max": 0.5,
+   "U_min": -0.6149754942777579,
+   "newton_residual": 8.45246677683824e-14,
+   "samples": 2068,
+   "lambda_c_from_eta": -0.0007741445518524437,
+   "lambda_c_from_K": -0.0007741445518673601,
+   "lambda_c_from_W": -0.0007741445518690127,
+   "exponent_gap_K": 1.491645348905557e-14,
+   "exponent_gap_W": 1.6568994440357976e-14,
+   "exponent_scale": 0.11683084151449868,
+   "exponent_gap_relative": 1.4182038086494282e-13,
+   "eta0_mean_minus_mu": 1.104902808065474e-14,
+   "eta0_relative": 9.356731059784729e-14,
+   "polar_angle_error": 1.4210854715202004e-14,
+   "monotone_form_eigenvalues": [
+    -0.002669034567378408,
+    -0.0005336824511564737
+   ],
+   "cross_term_gap": 5.533767888366015e-16,
+   "holder_lower": 0.1055241948650791,
+   "holder_middle": 0.10898718863266038,
+   "holder_upper": 0.11103509843721909,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.22120684852682237,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.03181763358653389,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.0021762892452734856,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.00036370402468948994,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.5703313225607563e-14,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.39089298248291016
+  },
+  {
+   "id": "saved_mu_0.1_h_1",
+   "source": "saved v2.0 mesh",
+   "mu": 0.1,
+   "k": 0.11504462156862097,
+   "rho": 1.0458601960783722,
+   "T": 20.833979069916467,
+   "U_max": 1.0000000000093276,
+   "U_min": -1.5886326756989262,
+   "newton_residual": 1.980504968975333e-15,
+   "samples": 2047,
+   "lambda_c_from_eta": -0.0034792906186297897,
+   "lambda_c_from_K": -0.003479290618630488,
+   "lambda_c_from_W": -0.0034792906186307303,
+   "exponent_gap_K": 6.982261990806649e-16,
+   "exponent_gap_W": 9.406538048484236e-16,
+   "exponent_scale": 0.25028033973655306,
+   "exponent_gap_relative": 3.758400703141776e-15,
+   "eta0_mean_minus_mu": 2.1472522262733563e-15,
+   "eta0_relative": 1.5369920388318857e-14,
+   "polar_angle_error": 7.993605777301127e-15,
+   "monotone_form_eigenvalues": [
+    -0.012886283435904207,
+    -0.0026188729617740085
+   ],
+   "cross_term_gap": 1.1015494072452725e-16,
+   "holder_lower": 0.08909999046399875,
+   "holder_middle": 0.10546871919023,
+   "holder_upper": 0.11504462156862097,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.41561653898362944,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.09448187508652937,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.009648426549620304,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.001650117718728701,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.0815905148923723e-14,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.3953080177307129
+  },
+  {
+   "id": "saved_mu_0.1_h_2",
+   "source": "saved v2.0 mesh",
+   "mu": 0.1,
+   "k": 0.1387785874311108,
+   "rho": 1.261623522101007,
+   "T": 26.1381563389361,
+   "U_max": 2.0000000000013447,
+   "U_min": -6.476361113272844,
+   "newton_residual": 1.6604785623429928e-15,
+   "samples": 2047,
+   "lambda_c_from_eta": -0.012695522270848166,
+   "lambda_c_from_K": -0.012695522270848917,
+   "lambda_c_from_W": -0.012695522270849758,
+   "exponent_gap_K": 7.511352650979575e-16,
+   "exponent_gap_W": 1.592476150946709e-15,
+   "exponent_scale": 0.47865417525901477,
+   "exponent_gap_relative": 3.326986858695989e-15,
+   "eta0_mean_minus_mu": -1.6458677889898228e-15,
+   "eta0_relative": 9.150062412824058e-15,
+   "polar_angle_error": 2.4868995751603507e-14,
+   "monotone_form_eigenvalues": [
+    -0.07301463780063643,
+    -0.015796492848675153
+   ],
+   "cross_term_gap": 2.706168622523819e-16,
+   "holder_lower": 0.028049234029388612,
+   "holder_middle": 0.09372140743666903,
+   "holder_upper": 0.1387785874311108,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.6838879024736213,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.23940979095496046,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.040484114194609885,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.007752319327575522,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 3.26792689691546e-14,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.4037191867828369
+  },
+  {
+   "id": "saved_mu_0.1_h_3",
+   "source": "saved v2.0 mesh",
+   "mu": 0.1,
+   "k": 0.19605277644993646,
+   "rho": 1.7822979677266948,
+   "T": 38.02888892599747,
+   "U_max": 3.0000000000007483,
+   "U_min": -24.20705174259236,
+   "newton_residual": 4.75702511295676e-14,
+   "samples": 2045,
+   "lambda_c_from_eta": -0.021802838360161288,
+   "lambda_c_from_K": -0.0218028383601526,
+   "lambda_c_from_W": -0.021802838360147226,
+   "exponent_gap_K": 8.68749516769185e-15,
+   "exponent_gap_W": 1.4061668496267998e-14,
+   "exponent_scale": 0.536341527873213,
+   "exponent_gap_relative": 2.6217750753009132e-14,
+   "eta0_mean_minus_mu": -6.101907306904131e-15,
+   "eta0_relative": 3.172130663427845e-14,
+   "polar_angle_error": 1.9539925233402755e-13,
+   "monotone_form_eigenvalues": [
+    -0.26459940693155415,
+    -0.05755051775605771
+   ],
+   "cross_term_gap": 2.2426505097428162e-14,
+   "holder_lower": 0.004144179533199138,
+   "holder_middle": 0.08247371774218545,
+   "holder_upper": 0.19605277644993646,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.7626708201757522,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.31947045653218487,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.06294639603458045,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.017471782931255023,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 7.376604924621007e-14,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.42321300506591797
+  },
+  {
+   "id": "saved_mu_0.3_h_0.05",
+   "source": "saved v2.0 mesh",
+   "mu": 0.3,
+   "k": 0.3900516399752458,
+   "rho": 1.0001324101929379,
+   "T": 11.47218753254261,
+   "U_max": 0.05,
+   "U_min": -0.05102699413659475,
+   "newton_residual": 1.8993489426469023e-15,
+   "samples": 2049,
+   "lambda_c_from_eta": -2.594668824607542e-05,
+   "lambda_c_from_K": -2.594668824763685e-05,
+   "lambda_c_from_W": -2.5946688249743013e-05,
+   "exponent_gap_K": 1.5614273112321553e-15,
+   "exponent_gap_W": 3.667591675238918e-15,
+   "exponent_scale": 0.019740846891963915,
+   "exponent_gap_relative": 1.8578694699931631e-13,
+   "eta0_mean_minus_mu": 9.533778837780234e-16,
+   "eta0_relative": 3.1410904379530186e-15,
+   "polar_angle_error": 2.6645352591003757e-14,
+   "monotone_form_eigenvalues": [
+    -0.00013716849833595165,
+    -3.324699518623108e-05
+   ],
+   "cross_term_gap": 2.7945310995813877e-17,
+   "holder_lower": 0.3898858256214137,
+   "holder_middle": 0.38994836784077236,
+   "holder_upper": 0.3900516399752458,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.01923814906027359,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.00035302229598277077,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 2.8497735690128858e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 1.0605157468867489e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 5.096379563805772e-16,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.37183308601379395
+  },
+  {
+   "id": "saved_mu_0.3_h_0.2",
+   "source": "saved v2.0 mesh",
+   "mu": 0.3,
+   "k": 0.39087910622694616,
+   "rho": 1.002254118530631,
+   "T": 11.483629404683834,
+   "U_max": 0.2,
+   "U_min": -0.21750503839243582,
+   "newton_residual": 1.1202481851267685e-13,
+   "samples": 2037,
+   "lambda_c_from_eta": -0.0004408770935700124,
+   "lambda_c_from_K": -0.0004408770936252215,
+   "lambda_c_from_W": -0.00044087709363121037,
+   "exponent_gap_K": 5.5209092506003365e-14,
+   "exponent_gap_W": 6.119795425627017e-14,
+   "exponent_scale": 0.08140823356493189,
+   "exponent_gap_relative": 7.517415816111299e-13,
+   "eta0_mean_minus_mu": 7.337636358432736e-14,
+   "eta0_relative": 2.33310201017343e-13,
+   "polar_angle_error": 6.217248937900877e-15,
+   "monotone_form_eigenvalues": [
+    -0.0023357608313258433,
+    -0.0005663263433254426
+   ],
+   "cross_term_gap": 1.7883914835148396e-15,
+   "holder_lower": 0.3880583326460618,
+   "holder_middle": 0.3891231598668916,
+   "holder_upper": 0.39087910622694616,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.07685701602294787,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.004990062657991176,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.00046554907461430724,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.00016953754379320902,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.797719172951759e-14,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.37288570404052734
+  },
+  {
+   "id": "saved_mu_0.3_h_0.5",
+   "source": "saved v2.0 mesh",
+   "mu": 0.3,
+   "k": 0.39625730766108674,
+   "rho": 1.0160443786181712,
+   "T": 11.558688569187405,
+   "U_max": 0.5,
+   "U_min": -0.6256190826625991,
+   "newton_residual": 2.3865943849945187e-13,
+   "samples": 2037,
+   "lambda_c_from_eta": -0.0030990761206298413,
+   "lambda_c_from_K": -0.003099076120692436,
+   "lambda_c_from_W": -0.0030990761206996682,
+   "exponent_gap_K": 6.259489454540912e-14,
+   "exponent_gap_W": 6.982695671675643e-14,
+   "exponent_scale": 0.2164334723570934,
+   "exponent_gap_relative": 3.2262549760117045e-13,
+   "eta0_mean_minus_mu": 6.283938661186142e-14,
+   "eta0_relative": 1.8567445644914836e-13,
+   "polar_angle_error": 3.552713678800501e-15,
+   "monotone_form_eigenvalues": [
+    -0.0166554165081734,
+    -0.0040463985777649415
+   ],
+   "cross_term_gap": 6.379445582904708e-15,
+   "holder_lower": 0.3762744032077333,
+   "holder_middle": 0.3838577798648577,
+   "holder_upper": 0.39625730766108674,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.18955510844330092,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.02555695253077503,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.002999788335015035,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.0010531275262059862,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 7.47739585322234e-16,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.3749401569366455
+  },
+  {
+   "id": "saved_mu_0.3_h_1",
+   "source": "saved v2.0 mesh",
+   "mu": 0.3,
+   "k": 0.4215539783185706,
+   "rho": 1.0809076367142836,
+   "T": 11.927445955938628,
+   "U_max": 1.0000000000040516,
+   "U_min": -1.6595230520504431,
+   "newton_residual": 5.716178748231627e-16,
+   "samples": 2030,
+   "lambda_c_from_eta": -0.014658264443236159,
+   "lambda_c_from_K": -0.014658264443239232,
+   "lambda_c_from_W": -0.014658264443239671,
+   "exponent_gap_K": 3.073929999430902e-15,
+   "exponent_gap_W": 3.5128150388530344e-15,
+   "exponent_scale": 0.47674591301722025,
+   "exponent_gap_relative": 7.368317048847254e-15,
+   "eta0_mean_minus_mu": 2.603842279898868e-15,
+   "eta0_relative": 6.786149734430079e-15,
+   "polar_angle_error": 1.509903313490213e-14,
+   "monotone_form_eigenvalues": [
+    -0.08475833123413329,
+    -0.020743801643762487
+   ],
+   "cross_term_gap": 2.983724378680108e-16,
+   "holder_lower": 0.32325017248947674,
+   "holder_middle": 0.3613855524769945,
+   "holder_upper": 0.4215539783185706,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.35951578096573694,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.07915954937156995,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.01208215281952871,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.004096532869184443,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.8267764546825394e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.386310338973999
+  },
+  {
+   "id": "saved_mu_0.3_h_2",
+   "source": "saved v2.0 mesh",
+   "mu": 0.3,
+   "k": 0.5821745840960537,
+   "rho": 1.492755343836035,
+   "T": 14.653489704490173,
+   "U_max": 2.0000000000008393,
+   "U_min": -7.345651917747717,
+   "newton_residual": 1.7653282244154097e-15,
+   "samples": 2046,
+   "lambda_c_from_eta": -0.055944488651702685,
+   "lambda_c_from_K": -0.055944488651696204,
+   "lambda_c_from_W": -0.05594448865169459,
+   "exponent_gap_K": 6.480926906249351e-15,
+   "exponent_gap_W": 8.097689185859736e-15,
+   "exponent_scale": 0.9729633585375219,
+   "exponent_gap_relative": 8.322707237435449e-15,
+   "eta0_mean_minus_mu": -6.827973946250873e-15,
+   "eta0_relative": 1.448852781782141e-14,
+   "polar_angle_error": 1.412203687323199e-13,
+   "monotone_form_eigenvalues": [
+    -0.5749904261370096,
+    -0.13665243339939429
+   ],
+   "cross_term_gap": 1.815214645262131e-14,
+   "holder_lower": 0.10657920197233668,
+   "holder_middle": 0.28663281642365523,
+   "holder_upper": 0.5821745840960537,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.6087551427230137,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.21388948156119328,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.03855757100859341,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.014078522472960424,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 3.0743959023121454e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.4057941436767578
+  },
+  {
+   "id": "saved_mu_0.3_h_3",
+   "source": "saved v2.0 mesh",
+   "mu": 0.3,
+   "k": 0.9582423055192749,
+   "rho": 2.4570315526135253,
+   "T": 20.86170390968461,
+   "U_max": 3.0000000000006093,
+   "U_min": -28.929819557324,
+   "newton_residual": 8.341946218883922e-15,
+   "samples": 2039,
+   "lambda_c_from_eta": -0.09212357683693308,
+   "lambda_c_from_K": -0.09212357683691441,
+   "lambda_c_from_W": -0.092123576836902,
+   "exponent_gap_K": 1.8665624601510444e-14,
+   "exponent_gap_W": 3.107236690169657e-14,
+   "exponent_scale": 1.1520966567996083,
+   "exponent_gap_relative": 2.6970277813332107e-14,
+   "eta0_mean_minus_mu": -1.2981000289013861e-14,
+   "eta0_relative": 2.5496910071682102e-14,
+   "polar_angle_error": 3.348432642269472e-13,
+   "monotone_form_eigenvalues": [
+    -2.5372848421150973,
+    -0.4862883272103499
+   ],
+   "cross_term_gap": 1.6753265441593612e-13,
+   "holder_lower": 0.019330086785744292,
+   "holder_middle": 0.22795781087871073,
+   "holder_upper": 0.9582423055192749,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.6013073370854575,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.21078124488738845,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.04754028844148324,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.024445083094737603,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 9.61452682094464e-14,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.424422025680542
+  },
+  {
+   "id": "saved_mu_1_h_0.05",
+   "source": "saved v2.0 mesh",
+   "mu": 1.0,
+   "k": 2.000319124327822,
+   "rho": 1.000159562163911,
+   "T": 6.283519514814212,
+   "U_max": 0.05,
+   "U_min": -0.05106381009812226,
+   "newton_residual": 2.9135544507188284e-15,
+   "samples": 2047,
+   "lambda_c_from_eta": -6.382084674680683e-05,
+   "lambda_c_from_K": -6.382084674949927e-05,
+   "lambda_c_from_W": -6.382084675549201e-05,
+   "exponent_gap_K": 2.6924399125147214e-15,
+   "exponent_gap_W": 8.685177685548162e-15,
+   "exponent_scale": 0.036837443713087614,
+   "exponent_gap_relative": 2.3577036868230056e-13,
+   "eta0_mean_minus_mu": 3.583489176311953e-15,
+   "eta0_relative": 3.558862970949471e-15,
+   "polar_angle_error": 1.8918200339612667e-13,
+   "monotone_form_eigenvalues": [
+    -0.0010896033935928714,
+    -0.0001869496300607818
+   ],
+   "cross_term_gap": 1.2365325777197178e-15,
+   "holder_lower": 1.9994681603617144,
+   "holder_middle": 1.9996809120584074,
+   "holder_upper": 2.000319124327822,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.012575772203420186,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.00015122520990491967,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 2.2973903026133272e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 1.5178522412413078e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 6.552302983351593e-16,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.35822415351867676
+  },
+  {
+   "id": "saved_mu_1_h_0.2",
+   "source": "saved v2.0 mesh",
+   "mu": 1.0,
+   "k": 2.005447236645145,
+   "rho": 1.0027236183225725,
+   "T": 6.288895877865199,
+   "U_max": 0.2,
+   "U_min": -0.21817566663207305,
+   "newton_residual": 7.266192237211596e-14,
+   "samples": 2039,
+   "lambda_c_from_eta": -0.001088272194045626,
+   "lambda_c_from_K": -0.0010882721941173417,
+   "lambda_c_from_W": -0.0010882721941299878,
+   "exponent_gap_K": 7.171563690122618e-14,
+   "exponent_gap_W": 8.43617710410971e-14,
+   "exponent_scale": 0.15216816416129997,
+   "exponent_gap_relative": 5.543982968189895e-13,
+   "eta0_mean_minus_mu": 1.0930045429637863e-13,
+   "eta0_relative": 1.062653266494577e-13,
+   "polar_angle_error": 4.973799150320701e-14,
+   "monotone_form_eigenvalues": [
+    -0.01861110568513611,
+    -0.0031940965785410306
+   ],
+   "cross_term_gap": 8.981530796869919e-15,
+   "holder_lower": 1.9909312695269514,
+   "holder_middle": 1.9945633750863643,
+   "holder_upper": 2.005447236645145,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.05109065084557506,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.002208997472711997,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.0003712856295166772,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.00023900885687695492,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.3950364429118874e-14,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.37102580070495605
+  },
+  {
+   "id": "saved_mu_1_h_0.5",
+   "source": "saved v2.0 mesh",
+   "mu": 1.0,
+   "k": 2.039074954885472,
+   "rho": 1.019537477442736,
+   "T": 6.32442436065699,
+   "U_max": 0.5,
+   "U_min": -0.6312030803054689,
+   "newton_residual": 2.214005318073195e-13,
+   "samples": 2040,
+   "lambda_c_from_eta": -0.007753112475260548,
+   "lambda_c_from_K": -0.0077531124751293035,
+   "lambda_c_from_W": -0.007753112475117181,
+   "exponent_gap_K": 1.3124484138371528e-13,
+   "exponent_gap_W": 1.433670890338412e-13,
+   "exponent_scale": 0.407055546107316,
+   "exponent_gap_relative": 3.5220522212475633e-13,
+   "eta0_mean_minus_mu": -1.1827932587613398e-13,
+   "eta0_relative": 1.0992231018152583e-13,
+   "polar_angle_error": 2.930988785010413e-14,
+   "monotone_form_eigenvalues": [
+    -0.1340925487267988,
+    -0.023051625478316497
+   ],
+   "cross_term_gap": 4.288930322005058e-14,
+   "holder_lower": 1.9353964593957147,
+   "holder_middle": 1.9614744145904839,
+   "holder_upper": 2.039074954885472,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.13011633779214693,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.011788224849827986,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.002343605128028711,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.001440106886996361,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.1556543051073686e-14,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.3911099433898926
+  },
+  {
+   "id": "saved_mu_1_h_1",
+   "source": "saved v2.0 mesh",
+   "mu": 1.0,
+   "k": 2.2014972020487007,
+   "rho": 1.1007486010243503,
+   "T": 6.502508774976731,
+   "U_max": 1.0000000000029006,
+   "U_min": -1.699038375295485,
+   "newton_residual": 4.03442901891309e-16,
+   "samples": 2040,
+   "lambda_c_from_eta": -0.03848271747119842,
+   "lambda_c_from_K": -0.038482717471208384,
+   "lambda_c_from_W": -0.03848271747120968,
+   "exponent_gap_K": 9.96425164601078e-15,
+   "exponent_gap_W": 1.1261824806041432e-14,
+   "exponent_scale": 0.9164466198565941,
+   "exponent_gap_relative": 1.2288576947126157e-14,
+   "eta0_mean_minus_mu": 4.58729030014722e-15,
+   "eta0_relative": 3.928879028788022e-15,
+   "polar_angle_error": 2.398081733190338e-14,
+   "monotone_form_eigenvalues": [
+    -0.7073749000440824,
+    -0.12212024188517033
+   ],
+   "cross_term_gap": 3.0253577421035516e-15,
+   "holder_lower": 1.678911806440441,
+   "holder_middle": 1.8134531010114714,
+   "holder_upper": 2.2014972020487007,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.25922302959605054,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.037290866459686434,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.009167740676466987,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.005320888661378861,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 7.983857650953645e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.4003310203552246
+  },
+  {
+   "id": "saved_mu_1_h_2",
+   "source": "saved v2.0 mesh",
+   "mu": 1.0,
+   "k": 3.3001338407510774,
+   "rho": 1.6500669203755387,
+   "T": 7.882347481413166,
+   "U_max": 2.0000000000008957,
+   "U_min": -7.906904777269424,
+   "newton_residual": 1.1645366047885222e-15,
+   "samples": 2035,
+   "lambda_c_from_eta": -0.17218574198867662,
+   "lambda_c_from_K": -0.1721857419886595,
+   "lambda_c_from_W": -0.1721857419886544,
+   "exponent_gap_K": 1.712519015484304e-14,
+   "exponent_gap_W": 2.220446049250313e-14,
+   "exponent_scale": 2.0216857966026374,
+   "exponent_gap_relative": 1.0983141163585778e-14,
+   "eta0_mean_minus_mu": -1.8725692663066418e-14,
+   "eta0_relative": 1.3852037913749927e-14,
+   "polar_angle_error": 2.922107000813412e-13,
+   "monotone_form_eigenvalues": [
+    -5.66749922155671,
+    -0.873811531930835
+   ],
+   "cross_term_gap": 1.8762769116165146e-13,
+   "holder_lower": 0.573350970593855,
+   "holder_middle": 1.25255805825195,
+   "holder_upper": 3.3001338407510774,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.4131905889022444,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.07125510667861858,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.0283190461510277,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.01641277839925627,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 2.6601478377616853e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.3950800895690918
+  },
+  {
+   "id": "saved_mu_1_h_3",
+   "source": "saved v2.0 mesh",
+   "mu": 1.0,
+   "k": 5.8412188456134375,
+   "rho": 2.9206094228067188,
+   "T": 11.121220689729657,
+   "U_max": 3.0000000000008127,
+   "U_min": -31.888348200332302,
+   "newton_residual": 9.134018707467435e-15,
+   "samples": 2036,
+   "lambda_c_from_eta": -0.31309540621416926,
+   "lambda_c_from_K": -0.3130954062141807,
+   "lambda_c_from_W": -0.3130954062141931,
+   "exponent_gap_K": 1.1435297153639112e-14,
+   "exponent_gap_W": 2.3814283878209608e-14,
+   "exponent_scale": 2.583624274924145,
+   "exponent_gap_relative": 9.217394382512834e-15,
+   "eta0_mean_minus_mu": 4.998481312308899e-15,
+   "eta0_relative": 3.489809357388609e-15,
+   "polar_angle_error": 3.739231146937527e-13,
+   "monotone_form_eigenvalues": [
+    -29.00126417789646,
+    -3.0559434433995727
+   ],
+   "cross_term_gap": 5.968558980384842e-13,
+   "holder_lower": 0.11601106598986749,
+   "holder_middle": 0.7959455563966573,
+   "holder_upper": 5.8412188456134375,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.42287419942498633,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.06990531312464497,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.033044913613477396,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.02615870653948205,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 6.978141636533061e-14,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.4040031433105469
+  },
+  {
+   "id": "saved_mu_3.3333333_h_0.05",
+   "source": "saved v2.0 mesh",
+   "mu": 3.3333333333333335,
+   "k": 14.446357036120217,
+   "rho": 1.0001324101929379,
+   "T": 3.441656259762729,
+   "U_max": 0.05,
+   "U_min": -0.05102699413579457,
+   "newton_residual": 2.0977966945907848e-14,
+   "samples": 2054,
+   "lambda_c_from_eta": -8.648896082278245e-05,
+   "lambda_c_from_K": -8.648896086089657e-05,
+   "lambda_c_from_W": -8.648896079195046e-05,
+   "exponent_gap_K": 3.811412448671836e-14,
+   "exponent_gap_W": 3.0831985727529376e-14,
+   "exponent_scale": 0.06580282297302031,
+   "exponent_gap_relative": 5.792171637126489e-13,
+   "eta0_mean_minus_mu": 1.9199240203001552e-13,
+   "eta0_relative": 5.739579496215512e-14,
+   "polar_angle_error": 5.915268275202834e-13,
+   "monotone_form_eigenvalues": [
+    -0.011573062707031647,
+    -0.0005405438743195336
+   ],
+   "cross_term_gap": 4.206140644114065e-14,
+   "holder_lower": 14.440215763755921,
+   "holder_middle": 14.442532142250773,
+   "holder_upper": 14.446357036120217,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.005803400608352167,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 3.262521858155595e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 8.58009639362742e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 3.726489103493021e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 2.173436286514958e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.3752460479736328
+  },
+  {
+   "id": "saved_mu_3.3333333_h_0.2",
+   "source": "saved v2.0 mesh",
+   "mu": 3.3333333333333335,
+   "k": 14.477003934329964,
+   "rho": 1.0022541185305358,
+   "T": 3.4450888214052977,
+   "U_max": 0.2,
+   "U_min": -0.21750503839199317,
+   "newton_residual": 6.102029929240656e-14,
+   "samples": 2049,
+   "lambda_c_from_eta": -0.0014695903119585796,
+   "lambda_c_from_K": -0.0014695903120874494,
+   "lambda_c_from_W": -0.001469590312106575,
+   "exponent_gap_K": 1.2886978810466854e-13,
+   "exponent_gap_W": 1.4799533126774733e-13,
+   "exponent_scale": 0.2713607785509205,
+   "exponent_gap_relative": 5.453821737174011e-13,
+   "eta0_mean_minus_mu": 1.6696313271792302e-13,
+   "eta0_relative": 4.937296717038416e-14,
+   "polar_angle_error": 1.2967404927621828e-13,
+   "monotone_form_eigenvalues": [
+    -0.1971593986285485,
+    -0.009203438659339026
+   ],
+   "cross_term_gap": 6.832728827177448e-14,
+   "holder_lower": 14.372530838741591,
+   "holder_middle": 14.411968883957643,
+   "holder_upper": 14.477003934329964,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.023571034628608628,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.0004912296411027051,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.00014182532268080302,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 6.268855870447413e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 3.4173033501212222e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.3749067783355713
+  },
+  {
+   "id": "saved_mu_3.3333333_h_0.5",
+   "source": "saved v2.0 mesh",
+   "mu": 3.3333333333333335,
+   "k": 14.676196580028558,
+   "rho": 1.0160443786173616,
+   "T": 3.4676065707572876,
+   "U_max": 0.5,
+   "U_min": -0.6256191371851719,
+   "newton_residual": 2.9572708148972604e-13,
+   "samples": 2038,
+   "lambda_c_from_eta": -0.010330253735941678,
+   "lambda_c_from_K": -0.010330253735613052,
+   "lambda_c_from_W": -0.010330253735593072,
+   "exponent_gap_K": 3.2862601528904634e-13,
+   "exponent_gap_W": 3.486065602853472e-13,
+   "exponent_scale": 0.7214449082976404,
+   "exponent_gap_relative": 4.832060719756657e-13,
+   "eta0_mean_minus_mu": -3.268936519682711e-13,
+   "eta0_relative": 9.443803800743386e-14,
+   "polar_angle_error": 2.184918912462308e-13,
+   "monotone_form_eigenvalues": [
+    -1.4100389315843604,
+    -0.0655640125793302
+   ],
+   "cross_term_gap": 5.020706073111114e-13,
+   "holder_lower": 13.936089007683094,
+   "holder_middle": 14.216954809798391,
+   "holder_upper": 14.676196580028558,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.05990533893394027,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.002697932277575057,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.0009402611470953916,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.0004290608958250035,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 5.125591983520809e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.3764801025390625
+  },
+  {
+   "id": "saved_mu_3.3333333_h_1",
+   "source": "saved v2.0 mesh",
+   "mu": 3.3333333333333335,
+   "k": 15.613110308104757,
+   "rho": 1.0809076367149446,
+   "T": 3.578233786782632,
+   "U_max": 1.0000000000072289,
+   "U_min": -1.659523052021856,
+   "newton_residual": 9.979835346687532e-16,
+   "samples": 2050,
+   "lambda_c_from_eta": -0.0488608814778019,
+   "lambda_c_from_K": -0.048860881477805464,
+   "lambda_c_from_W": -0.04886088147780724,
+   "exponent_gap_K": 3.566591466608315e-15,
+   "exponent_gap_W": 5.342948306008566e-15,
+   "exponent_scale": 1.5891530433875465,
+   "exponent_gap_relative": 3.3621357793326026e-15,
+   "eta0_mean_minus_mu": 3.186800727018134e-14,
+   "eta0_relative": 8.822004767194581e-15,
+   "polar_angle_error": 3.490541189421492e-13,
+   "monotone_form_eigenvalues": [
+    -7.282541677584842,
+    -0.33117705619641397
+   ],
+   "cross_term_gap": 3.89910326248355e-13,
+   "holder_lower": 11.972228610702995,
+   "holder_middle": 13.384650091733143,
+   "holder_upper": 15.613110308104757,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.11603465680234726,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.008248582749504576,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.004047737430960575,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.0018905109766301595,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.8754199767249528e-14,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.39241600036621094
+  },
+  {
+   "id": "saved_mu_3.3333333_h_2",
+   "source": "saved v2.0 mesh",
+   "mu": 3.3333333333333335,
+   "k": 21.562021633193158,
+   "rho": 1.4927553438364491,
+   "T": 4.396046911347886,
+   "U_max": 2.000000000001453,
+   "U_min": -7.3456519175326,
+   "newton_residual": 5.120018565516973e-15,
+   "samples": 2044,
+   "lambda_c_from_eta": -0.1864816288390692,
+   "lambda_c_from_K": -0.1864816288390632,
+   "lambda_c_from_W": -0.1864816288390497,
+   "exponent_gap_K": 6.022959908591474e-15,
+   "exponent_gap_W": 1.9512169657787126e-14,
+   "exponent_scale": 3.2432111951303635,
+   "exponent_gap_relative": 6.016311761344552e-15,
+   "eta0_mean_minus_mu": -1.4329566661676083e-14,
+   "eta0_relative": 3.670271374540755e-15,
+   "polar_angle_error": 1.6342482922482304e-13,
+   "monotone_form_eigenvalues": [
+    -54.53351539128911,
+    -1.9764551349148276
+   ],
+   "cross_term_gap": 5.089262344881718e-13,
+   "holder_lower": 3.947377850823275,
+   "holder_middle": 10.616030237912016,
+   "holder_upper": 21.562021633193158,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.1664747006242951,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.013060153915192316,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.01578847324949871,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.0011411695131581842,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 6.008246772043584e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.40663909912109375
+  },
+  {
+   "id": "saved_mu_3.3333333_h_3",
+   "source": "saved v2.0 mesh",
+   "mu": 3.3333333333333335,
+   "k": 35.490455759980904,
+   "rho": 2.4570315526140623,
+   "T": 6.258511172906346,
+   "U_max": 3.000000000000975,
+   "U_min": -28.92981956298387,
+   "newton_residual": 1.554432584458719e-15,
+   "samples": 2046,
+   "lambda_c_from_eta": -0.3070785894563892,
+   "lambda_c_from_K": -0.3070785894564164,
+   "lambda_c_from_W": -0.3070785894564247,
+   "exponent_gap_K": 2.7200464103316335e-14,
+   "exponent_gap_W": 3.547162563677375e-14,
+   "exponent_scale": 3.840322189326312,
+   "exponent_gap_relative": 9.23662752447246e-15,
+   "eta0_mean_minus_mu": 1.678397748901734e-14,
+   "eta0_relative": 4.164343533043313e-15,
+   "polar_angle_error": 9.920952948050399e-13,
+   "monotone_form_eigenvalues": [
+    -271.3659169987353,
+    -6.237064587141895
+   ],
+   "cross_term_gap": 4.451550239537028e-12,
+   "holder_lower": 0.7159291402125856,
+   "holder_middle": 8.442881884397613,
+   "holder_upper": 35.490455759980904,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.17298377645277163,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.010982983263822821,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.02167447345240126,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 1.1113534968844941e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 5.2930004667279694e-14,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.4229698181152344
+  },
+  {
+   "id": "saved_mu_10_h_0.05",
+   "source": "saved v2.0 mesh",
+   "mu": 10.0,
+   "k": 110.00870237747174,
+   "rho": 1.0000791125224704,
+   "T": 1.9870761672614803,
+   "U_max": 0.05,
+   "U_min": -0.050954724338332626,
+   "newton_residual": 4.271385676707057e-15,
+   "samples": 2105,
+   "lambda_c_from_eta": -6.641899848098873e-05,
+   "lambda_c_from_K": -6.641899811264188e-05,
+   "lambda_c_from_W": -6.64189995559265e-05,
+   "exponent_gap_K": 3.683468460802253e-13,
+   "exponent_gap_W": 1.074937773341833e-12,
+   "exponent_scale": 0.10788694721396719,
+   "exponent_gap_relative": 9.963557233758396e-12,
+   "eta0_mean_minus_mu": 1.8131033101108067e-13,
+   "eta0_relative": 1.8101009899555125e-14,
+   "polar_angle_error": 1.3855583347321954e-13,
+   "monotone_form_eigenvalues": [
+    -0.11223681614757383,
+    -0.0008977963381883534
+   ],
+   "cross_term_gap": 1.730612181338742e-13,
+   "holder_lower": 109.9620026732109,
+   "holder_middle": 109.99129920825136,
+   "holder_upper": 110.00870237747174,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.0022702846611560162,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 5.082092317317163e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 1.921101157376164e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 3.3627298623368613e-07,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 3.164868645864009e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.3896219730377197
+  },
+  {
+   "id": "saved_mu_10_h_0.2",
+   "source": "saved v2.0 mesh",
+   "mu": 10.0,
+   "k": 110.1474060788771,
+   "rho": 1.0013400552625191,
+   "T": 1.9896064688681792,
+   "U_max": 0.2,
+   "U_min": -0.21619870806362496,
+   "newton_residual": 3.518495118738685e-14,
+   "samples": 2087,
+   "lambda_c_from_eta": -0.0011219785826771678,
+   "lambda_c_from_K": -0.0011219785830578494,
+   "lambda_c_from_W": -0.0011219785828808703,
+   "exponent_gap_K": 3.8068159735615836e-13,
+   "exponent_gap_W": 2.0370250625179054e-13,
+   "exponent_scale": 0.4436059421702814,
+   "exponent_gap_relative": 8.581526106114037e-13,
+   "eta0_mean_minus_mu": 3.8046290193465417e-13,
+   "eta0_relative": 3.778834365907528e-14,
+   "polar_angle_error": 4.440892098500626e-13,
+   "monotone_form_eigenvalues": [
+    -1.9021464428324393,
+    -0.015197557603312959
+   ],
+   "cross_term_gap": 2.5307533846330443e-13,
+   "holder_lower": 109.35720576564937,
+   "holder_middle": 109.85304849864754,
+   "holder_upper": 110.1474060788771,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.00902947639939238,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 7.713548080038707e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 3.224907124993399e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 5.124526856319658e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 2.9819375987575016e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.3985300064086914
+  },
+  {
+   "id": "saved_mu_10_h_0.5",
+   "source": "saved v2.0 mesh",
+   "mu": 10.0,
+   "k": 111.03509843713765,
+   "rho": 1.0094099857921603,
+   "T": 2.005969099513925,
+   "U_max": 0.5,
+   "U_min": -0.6149754943783455,
+   "newton_residual": 2.1563927103637746e-13,
+   "samples": 2071,
+   "lambda_c_from_eta": -0.00774144551912955,
+   "lambda_c_from_K": -0.007741445518685712,
+   "lambda_c_from_W": -0.007741445518663802,
+   "exponent_gap_K": 4.43837674946046e-13,
+   "exponent_gap_W": 4.65748099809371e-13,
+   "exponent_scale": 1.1683084150668797,
+   "exponent_gap_relative": 3.9865166920218525e-13,
+   "eta0_mean_minus_mu": -4.304845637538735e-13,
+   "eta0_relative": 4.2283695988184424e-14,
+   "polar_angle_error": 4.1744385725905886e-14,
+   "monotone_form_eigenvalues": [
+    -13.403107904520578,
+    -0.10627512068779574
+   ],
+   "cross_term_gap": 1.3384848784880887e-12,
+   "holder_lower": 105.5241948650032,
+   "holder_middle": 108.98718863258124,
+   "holder_upper": 111.03509843713765,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.022021494784160642,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.00042435402110730427,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.000221274589765223,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 2.7356968459665202e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 2.9575249316318186e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.38902997970581055
+  },
+  {
+   "id": "saved_mu_10_h_1",
+   "source": "saved v2.0 mesh",
+   "mu": 10.0,
+   "k": 115.04462156871634,
+   "rho": 1.0458601960792395,
+   "T": 2.0833979069936097,
+   "U_max": 1.0000000000173233,
+   "U_min": -1.5886326757259672,
+   "newton_residual": 1.5774928135038467e-14,
+   "samples": 2049,
+   "lambda_c_from_eta": -0.03479290618687411,
+   "lambda_c_from_K": -0.0347929061868967,
+   "lambda_c_from_W": -0.03479290618678338,
+   "exponent_gap_K": 2.2586099657218028e-14,
+   "exponent_gap_W": 9.073297668749092e-14,
+   "exponent_scale": 2.502803397375984,
+   "exponent_gap_relative": 3.6252538566400446e-14,
+   "eta0_mean_minus_mu": -1.1770641209654953e-13,
+   "eta0_relative": 1.1321137295999271e-14,
+   "polar_angle_error": 7.114309141798003e-13,
+   "monotone_form_eigenvalues": [
+    -66.40073456975155,
+    -0.50824045077232
+   ],
+   "cross_term_gap": 3.1938895972416503e-12,
+   "holder_lower": 89.09999046362464,
+   "holder_middle": 105.46871919015531,
+   "holder_upper": 115.04462156871634,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.040038877736603105,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.001250179545070826,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.0010189311733607362,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 6.251373560488899e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 4.741274572239404e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.3941211700439453
+  },
+  {
+   "id": "saved_mu_10_h_2",
+   "source": "saved v2.0 mesh",
+   "mu": 10.0,
+   "k": 138.77858743118108,
+   "rho": 1.261623522101646,
+   "T": 2.6138156338952014,
+   "U_max": 2.0000000000031797,
+   "U_min": -6.47636111329021,
+   "newton_residual": 4.890376647365108e-16,
+   "samples": 2057,
+   "lambda_c_from_eta": -0.1269552227086384,
+   "lambda_c_from_K": -0.12695522270865345,
+   "lambda_c_from_W": -0.12695522270859402,
+   "exponent_gap_K": 1.504352198367087e-14,
+   "exponent_gap_W": 4.438116540939063e-14,
+   "exponent_scale": 4.7865417525664045,
+   "exponent_gap_relative": 9.272073180098082e-15,
+   "eta0_mean_minus_mu": 2.7670882325253407e-15,
+   "eta0_relative": 2.56241522863396e-16,
+   "polar_angle_error": 7.016609515630989e-14,
+   "monotone_form_eigenvalues": [
+    -431.09108442459234,
+    -2.675479140126145
+   ],
+   "cross_term_gap": 1.0658141036401503e-12,
+   "holder_lower": 28.04923402929511,
+   "holder_middle": 93.72140743664941,
+   "holder_upper": 138.77858743118108,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.05248065911810627,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.0016757130512007113,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.004979742204409544,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 6.021642914052159e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 9.73219378507179e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.4136350154876709
+  },
+  {
+   "id": "saved_mu_10_h_3",
+   "source": "saved v2.0 mesh",
+   "mu": 10.0,
+   "k": 196.0527764500253,
+   "rho": 1.7822979677275028,
+   "T": 3.802888892601293,
+   "U_max": 3.000000000001782,
+   "U_min": -24.20705174217478,
+   "newton_residual": 7.744887025356059e-15,
+   "samples": 2056,
+   "lambda_c_from_eta": -0.21802838360170276,
+   "lambda_c_from_K": -0.21802838360161628,
+   "lambda_c_from_W": -0.21802838360153456,
+   "exponent_gap_K": 8.64863736182997e-14,
+   "exponent_gap_W": 1.6819878823071122e-13,
+   "exponent_scale": 5.363415278735691,
+   "exponent_gap_relative": 3.136038876153562e-14,
+   "eta0_mean_minus_mu": -1.1930210211919458e-13,
+   "eta0_relative": 1.0921501452376336e-14,
+   "polar_angle_error": 3.3635316754043743e-12,
+   "monotone_form_eigenvalues": [
+    -1885.6040441074501,
+    -8.075838039531055
+   ],
+   "cross_term_gap": 4.4494186113297474e-11,
+   "holder_lower": 4.144179533191131,
+   "holder_middle": 82.47371774217466,
+   "holder_upper": 196.0527764500253,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.05263034905330547,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.0011654291431028223,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.011788831270694326,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 5.861330747972404e-10,
+     "unresolved": 108,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 5.005300830263032e-15,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.41756510734558105
+  },
+  {
+   "id": "saved_mu_0.3_h_0.01",
+   "source": "saved v2.0 mesh",
+   "mu": 0.3,
+   "k": 0.39000203239489684,
+   "rho": 1.0000052112689661,
+   "T": 11.471502483006507,
+   "U_max": 0.01,
+   "U_min": -0.010040416405260771,
+   "newton_residual": 1.1428622585405398e-14,
+   "samples": 2040,
+   "lambda_c_from_eta": -1.0212992476724321e-06,
+   "lambda_c_from_K": -1.0212992568884358e-06,
+   "lambda_c_from_W": -1.0212992527144974e-06,
+   "exponent_gap_K": 9.216003704471776e-15,
+   "exponent_gap_W": 5.042065262484893e-15,
+   "exponent_scale": 0.003916428849520816,
+   "exponent_gap_relative": 2.3531651048886986e-12,
+   "eta0_mean_minus_mu": 2.747308442114328e-14,
+   "eta0_relative": 9.136437709392085e-14,
+   "polar_angle_error": 1.021405182655144e-13,
+   "monotone_form_eigenvalues": [
+    -5.398453353267871e-06,
+    -1.3084553440403046e-06
+   ],
+   "cross_term_gap": 3.037036632380294e-18,
+   "holder_lower": 0.3899955061604363,
+   "holder_middle": 0.3899979676172088,
+   "holder_upper": 0.39000203239489684,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.003846572963779748,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 1.465247132674362e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 1.132982068134824e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 4.242124301125294e-07,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 5.978846376918175e-16,
+   "located_by": "saved crest",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.366771936416626
+  },
+  {
+   "id": "ext_mu_0.02_rho_1.001",
+   "source": "extended set",
+   "mu": 0.02,
+   "k": 0.0204204,
+   "rho": 1.001,
+   "T": 44.62199934549757,
+   "U_max": 0.31669162482427266,
+   "U_min": -0.3555396352552885,
+   "newton_residual": 2.220446049250313e-16,
+   "samples": 2074,
+   "lambda_c_from_eta": -1.9130395898113014e-05,
+   "lambda_c_from_K": -1.913039589726483e-05,
+   "lambda_c_from_W": -1.9130395896213773e-05,
+   "exponent_gap_K": 8.481849120625662e-16,
+   "exponent_gap_W": 1.8992409912561153e-15,
+   "exponent_scale": 0.028851257171144264,
+   "exponent_gap_relative": 6.582870826009104e-14,
+   "eta0_mean_minus_mu": 8.580495893336345e-16,
+   "eta0_relative": 3.461350445447286e-14,
+   "polar_angle_error": 1.2434497875801753e-14,
+   "monotone_form_eigenvalues": [
+    -5.308591448836521e-05,
+    -8.422860887686864e-06
+   ],
+   "cross_term_gap": 7.081195439045951e-18,
+   "holder_lower": 0.020041630066213848,
+   "holder_middle": 0.020379714874765677,
+   "holder_upper": 0.0204204,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.15358753948829523,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.01223607170893078,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.000238027100370513,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 8.296392854955452e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 5.4454979104160415e-15,
+   "located_by": "amplitude bisection",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.7562141418457031
+  },
+  {
+   "id": "ext_mu_0.02_rho_1.1",
+   "source": "extended set",
+   "mu": 0.02,
+   "k": 0.022440000000000005,
+   "rho": 1.1,
+   "T": 66.108234887406,
+   "U_max": 2.2555940477464587,
+   "U_min": -7.847645166274896,
+   "newton_residual": 1.5227382449303048e-15,
+   "samples": 2066,
+   "lambda_c_from_eta": -0.0012157139951645434,
+   "lambda_c_from_K": -0.0012157139951645957,
+   "lambda_c_from_W": -0.001215713995164938,
+   "exponent_gap_K": 5.2258544713801314e-17,
+   "exponent_gap_W": 3.946495907847236e-16,
+   "exponent_scale": 0.18932237216903997,
+   "exponent_gap_relative": 2.0845375338544432e-15,
+   "eta0_mean_minus_mu": -2.1758752275414303e-16,
+   "eta0_relative": 4.4181000369444614e-15,
+   "polar_angle_error": 2.6645352591003757e-15,
+   "monotone_form_eigenvalues": [
+    -0.004781819209268745,
+    -0.0008379015597285924
+   ],
+   "cross_term_gap": 2.949029909160572e-17,
+   "holder_lower": 0.0029680054008238634,
+   "holder_middle": 0.019113870122207083,
+   "holder_upper": 0.022440000000000005,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.7835914334912445,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.1756965291982884,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.01734068515194845,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.00013045846982203107,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.0070266363111895e-14,
+   "located_by": "amplitude bisection",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 1.251328945159912
+  },
+  {
+   "id": "ext_mu_0.02_rho_2",
+   "source": "extended set",
+   "mu": 0.02,
+   "k": 0.0408,
+   "rho": 2.0,
+   "T": 185.05794864366484,
+   "U_max": 4.645892025296613,
+   "U_min": -141.68884589300546,
+   "newton_residual": 8.708084524900386e-14,
+   "samples": 2060,
+   "lambda_c_from_eta": -0.004655024490182414,
+   "lambda_c_from_K": -0.004655024490165111,
+   "lambda_c_from_W": -0.004655024490154651,
+   "exponent_gap_K": 1.7302999311130662e-14,
+   "exponent_gap_W": 2.776338187127081e-14,
+   "exponent_scale": 0.1560202675233524,
+   "exponent_gap_relative": 1.7794727769656793e-13,
+   "eta0_mean_minus_mu": -1.1478398587589216e-14,
+   "eta0_relative": 2.6551820400465754e-13,
+   "polar_angle_error": 1.4388490399142029e-12,
+   "monotone_form_eigenvalues": [
+    -0.06655753986681659,
+    -0.013665949651668865
+   ],
+   "cross_term_gap": 4.861389069077404e-14,
+   "holder_lower": 3.0454810079234985e-05,
+   "holder_middle": 0.015507916435835744,
+   "holder_upper": 0.0408,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.8449653769076412,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.20318505039605952,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.07478614776058097,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.01982640051741459,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 8.205877167466692e-13,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.8485288619995117
+  },
+  {
+   "id": "ext_mu_0.02_rho_6",
+   "source": "extended set",
+   "mu": 0.02,
+   "k": 0.12240000000000001,
+   "rho": 6.0,
+   "T": 479.05739218930165,
+   "U_max": 6.833881522286276,
+   "U_min": -1920.7561225946176,
+   "newton_residual": 7.839530419848478e-13,
+   "samples": 2137,
+   "lambda_c_from_eta": -0.00960787649450184,
+   "lambda_c_from_K": -0.009607876494362344,
+   "lambda_c_from_W": -0.009607876494306685,
+   "exponent_gap_K": 1.3949605359719897e-13,
+   "exponent_gap_W": 1.9515465632391482e-13,
+   "exponent_scale": 0.10958593897846029,
+   "exponent_gap_relative": 1.7808366487809492e-12,
+   "eta0_mean_minus_mu": -1.1343622463607956e-13,
+   "eta0_relative": 3.033888803632776e-12,
+   "polar_angle_error": 6.998046586659257e-11,
+   "monotone_form_eigenvalues": [
+    -0.9703187158089951,
+    -0.12270915558105004
+   ],
+   "cross_term_gap": 4.4960701828244964e-12,
+   "holder_lower": 1.1040035795960318e-06,
+   "holder_middle": 0.010399235882846448,
+   "holder_upper": 0.12240000000000001,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.6212161157091024,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.07365784973204703,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.019880732757072483,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.036205833215816365,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 7.221547421850854e-11,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.8336656093597412
+  },
+  {
+   "id": "ext_mu_0.02_rho_20",
+   "source": "extended set",
+   "mu": 0.02,
+   "k": 0.40800000000000003,
+   "rho": 20.0,
+   "T": 1409.3398869056707,
+   "U_max": 9.129500973855075,
+   "U_min": -24294.450037664486,
+   "newton_residual": 1.7689727678468175e-09,
+   "samples": 2375,
+   "lambda_c_from_eta": -0.014813993297851876,
+   "lambda_c_from_K": -0.014813993295736533,
+   "lambda_c_from_W": -0.014813993295492349,
+   "exponent_gap_K": 2.1153426232878303e-12,
+   "exponent_gap_W": 2.3595275039367536e-12,
+   "exponent_scale": 0.0806530381789009,
+   "exponent_gap_relative": 2.925528358526255e-11,
+   "eta0_mean_minus_mu": -2.004927121555935e-12,
+   "eta0_relative": 6.866313604486147e-11,
+   "polar_angle_error": 8.981883681258296e-09,
+   "monotone_form_eigenvalues": [
+    -13.780203167890107,
+    -0.65942471804595
+   ],
+   "cross_term_gap": 7.08683112193853e-10,
+   "holder_lower": 3.702853855218744e-08,
+   "holder_middle": 0.0051356774817398875,
+   "holder_upper": 0.40800000000000003,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.47170895171344834,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.024500784133446998,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.0036746960801492773,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.0427856898772845,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.693581392579397e-09,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": false,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": false,
+   "seconds": 2.073646068572998
+  },
+  {
+   "id": "ext_mu_0.1_rho_1.001",
+   "source": "extended set",
+   "mu": 0.1,
+   "k": 0.11011,
+   "rho": 1.001,
+   "T": 19.889233830967637,
+   "U_max": 0.1736433197213661,
+   "U_min": -0.18572596688519136,
+   "newton_residual": 1.2615785910099498e-15,
+   "samples": 2067,
+   "lambda_c_from_eta": -8.378797287872072e-05,
+   "lambda_c_from_K": -8.378797287864283e-05,
+   "lambda_c_from_W": -8.378797287802756e-05,
+   "exponent_gap_K": 7.788637356592742e-17,
+   "exponent_gap_W": 6.931575539242951e-16,
+   "exponent_scale": 0.038330708397361,
+   "exponent_gap_relative": 1.808360927584677e-14,
+   "eta0_mean_minus_mu": -1.72921146457827e-15,
+   "eta0_relative": 1.6329214360767055e-14,
+   "polar_angle_error": 1.4210854715202004e-14,
+   "monotone_form_eigenvalues": [
+    -0.0002843064496573426,
+    -5.6623820624027807e-05
+   ],
+   "cross_term_gap": 1.8295911660692887e-17,
+   "holder_lower": 0.10952015576841051,
+   "holder_middle": 0.10989025319987437,
+   "holder_upper": 0.11011,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.07852240098026848,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.0050424456244097865,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.00024021381353519678,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 3.999951688782242e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 5.223365681870205e-15,
+   "located_by": "amplitude bisection",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.6568419933319092
+  },
+  {
+   "id": "ext_mu_0.1_rho_1.1",
+   "source": "extended set",
+   "mu": 0.1,
+   "k": 0.12100000000000002,
+   "rho": 1.1,
+   "T": 22.078589621551913,
+   "U_max": 1.3743534616883173,
+   "U_min": -2.757176650253757,
+   "newton_residual": 9.030099733532194e-13,
+   "samples": 2050,
+   "lambda_c_from_eta": -0.006715773918143409,
+   "lambda_c_from_K": -0.006715773918169935,
+   "lambda_c_from_W": -0.006715773918177664,
+   "exponent_gap_K": 2.6525656671161357e-14,
+   "exponent_gap_W": 3.425471711837602e-14,
+   "exponent_scale": 0.35132243025595855,
+   "exponent_gap_relative": 9.750222066214074e-14,
+   "eta0_mean_minus_mu": 2.5446298725673906e-14,
+   "eta0_relative": 1.6214714648725272e-13,
+   "polar_angle_error": 7.993605777301127e-15,
+   "monotone_form_eigenvalues": [
+    -0.02780823398560793,
+    -0.005772324607982869
+   ],
+   "cross_term_gap": 4.989064716909297e-15,
+   "holder_lower": 0.06781164323169259,
+   "holder_middle": 0.10130125683745676,
+   "holder_upper": 0.12100000000000002,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.5349391040394653,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.1482188742214476,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.019082810312292652,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.0033663078325868595,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.0167875256036881e-14,
+   "located_by": "amplitude bisection",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.876396894454956
+  },
+  {
+   "id": "ext_mu_0.1_rho_2",
+   "source": "extended set",
+   "mu": 0.1,
+   "k": 0.22000000000000003,
+   "rho": 2.0,
+   "T": 42.31126289651999,
+   "U_max": 3.266066262666299,
+   "U_min": -34.070793057009766,
+   "newton_residual": 8.310569829576803e-14,
+   "samples": 2044,
+   "lambda_c_from_eta": -0.024411013839637025,
+   "lambda_c_from_K": -0.02441101383962397,
+   "lambda_c_from_W": -0.024411013839613454,
+   "exponent_gap_K": 1.305552888020145e-14,
+   "exponent_gap_W": 2.3571422591572855e-14,
+   "exponent_scale": 0.534918920584451,
+   "exponent_gap_relative": 4.406541194283945e-14,
+   "eta0_mean_minus_mu": -7.192399441463088e-15,
+   "eta0_relative": 3.724954870718927e-14,
+   "polar_angle_error": 2.922107000813412e-13,
+   "monotone_form_eigenvalues": [
+    -0.37095133717570716,
+    -0.07886244394201351
+   ],
+   "cross_term_gap": 4.826694599557868e-14,
+   "holder_lower": 0.002648938771222882,
+   "holder_middle": 0.07931800011828957,
+   "holder_upper": 0.22000000000000003,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.7450760620329423,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.29189508231468086,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.06273461984640989,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.02019080793415092,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.8800989907362248e-13,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.5742509365081787
+  },
+  {
+   "id": "ext_mu_0.1_rho_6",
+   "source": "extended set",
+   "mu": 0.1,
+   "k": 0.6600000000000001,
+   "rho": 6.000000000000001,
+   "T": 103.59540159602373,
+   "U_max": 5.378036413029084,
+   "U_min": -450.3586116337597,
+   "newton_residual": 1.5074473712185932e-13,
+   "samples": 2061,
+   "lambda_c_from_eta": -0.049402712898959894,
+   "lambda_c_from_K": -0.04940271289893507,
+   "lambda_c_from_W": -0.04940271289887313,
+   "exponent_gap_K": 2.4827362388180063e-14,
+   "exponent_gap_W": 8.676392937445598e-14,
+   "exponent_scale": 0.4560720400817826,
+   "exponent_gap_relative": 1.9024172005566823e-13,
+   "eta0_mean_minus_mu": 3.736987962037606e-15,
+   "eta0_relative": 2.1080018733370627e-14,
+   "polar_angle_error": 2.9478641749847156e-12,
+   "monotone_form_eigenvalues": [
+    -5.541888438320129,
+    -0.660345332635453
+   ],
+   "cross_term_gap": 1.7001955399109647e-12,
+   "holder_lower": 0.00010951326431333303,
+   "holder_middle": 0.05053125414783095,
+   "holder_upper": 0.6600000000000001,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.5729892172209833,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.12633573214417726,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.023074682846223306,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.035966545878439685,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 3.053088271887165e-12,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.5623319149017334
+  },
+  {
+   "id": "ext_mu_0.1_rho_20",
+   "source": "extended set",
+   "mu": 0.1,
+   "k": 2.2,
+   "rho": 20.0,
+   "T": 304.0359137496751,
+   "U_max": 7.671248088394314,
+   "U_min": -5686.015982468988,
+   "newton_residual": 6.795380703960854e-12,
+   "samples": 2218,
+   "lambda_c_from_eta": -0.07515649965284658,
+   "lambda_c_from_K": -0.07515649965246449,
+   "lambda_c_from_W": -0.07515649965211933,
+   "exponent_gap_K": 3.8209713171255544e-13,
+   "exponent_gap_W": 7.272515922807088e-13,
+   "exponent_scale": 0.37147144735369847,
+   "exponent_gap_relative": 1.9577590618647263e-12,
+   "eta0_mean_minus_mu": -2.2400288231855534e-13,
+   "eta0_relative": 1.5811101391874333e-12,
+   "polar_angle_error": 3.0090419045336603e-10,
+   "monotone_form_eigenvalues": [
+    -79.84436617213908,
+    -3.471608785494213
+   ],
+   "cross_term_gap": 2.1405455186140898e-10,
+   "holder_lower": 3.689221055053464e-06,
+   "holder_middle": 0.023547162776714717,
+   "holder_upper": 2.2,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.45233694494490234,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.04628917693388487,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.004913508668431285,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.04267991931666916,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 5.6076904642119564e-11,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 1.3393969535827637
+  },
+  {
+   "id": "ext_mu_0.5_rho_1.001",
+   "source": "extended set",
+   "mu": 0.5,
+   "k": 0.7507499999999999,
+   "rho": 1.001,
+   "T": 8.88909957706356,
+   "U_max": 0.1269660129823281,
+   "U_min": -0.13396906244011028,
+   "newton_residual": 1.9440562260674849e-13,
+   "samples": 2038,
+   "lambda_c_from_eta": -0.00027257509094504235,
+   "lambda_c_from_K": -0.0002725750909202156,
+   "lambda_c_from_W": -0.00027257509096901113,
+   "exponent_gap_K": 2.4826766076985196e-14,
+   "exponent_gap_W": 2.3968782687788792e-14,
+   "exponent_scale": 0.06673280517862122,
+   "exponent_gap_relative": 3.720324061086944e-13,
+   "eta0_mean_minus_mu": 1.9790409602588965e-13,
+   "eta0_relative": 3.862841100921595e-13,
+   "polar_angle_error": 2.5757174171303632e-14,
+   "monotone_form_eigenvalues": [
+    -0.0021254373150227106,
+    -0.0005001719516005928
+   ],
+   "cross_term_gap": 2.564571818797212e-15,
+   "holder_lower": 0.7486255856271811,
+   "holder_middle": 0.7492506413711905,
+   "holder_upper": 0.7507499999999999,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.042528171416816904,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.001622206060881101,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.0001850801715891079,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 9.05823647963364e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.0008724383975978e-13,
+   "located_by": "amplitude bisection",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.646589994430542
+  },
+  {
+   "id": "ext_mu_0.5_rho_1.1",
+   "source": "extended set",
+   "mu": 0.5,
+   "k": 0.8250000000000001,
+   "rho": 1.1,
+   "T": 9.233979404869949,
+   "U_max": 1.0262362104212421,
+   "U_min": -1.7597068255374115,
+   "newton_residual": 5.822884837285014e-16,
+   "samples": 2033,
+   "lambda_c_from_eta": -0.025592160553634977,
+   "lambda_c_from_K": -0.025592160553641122,
+   "lambda_c_from_W": -0.025592160553641895,
+   "exponent_gap_K": 6.144390551909851e-15,
+   "exponent_gap_W": 6.918077222195507e-15,
+   "exponent_scale": 0.6563943519995448,
+   "exponent_gap_relative": 1.0539513634023933e-14,
+   "eta0_mean_minus_mu": 2.6619253969626495e-15,
+   "eta0_relative": 4.303827818121743e-15,
+   "polar_angle_error": 7.993605777301127e-15,
+   "monotone_form_eigenvalues": [
+    -0.21724152978344208,
+    -0.051598497550317535
+   ],
+   "cross_term_gap": 3.0808688933348094e-15,
+   "holder_lower": 0.6188999689251109,
+   "holder_middle": 0.6815696727151724,
+   "holder_upper": 0.8250000000000001,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.32890979710167734,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.06637284562239852,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.012021584675742913,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.005318457450384895,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.0996701264564622e-14,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.5793027877807617
+  },
+  {
+   "id": "ext_mu_0.5_rho_2",
+   "source": "extended set",
+   "mu": 0.5,
+   "k": 1.5,
+   "rho": 2.0,
+   "T": 12.916138471432584,
+   "U_max": 2.4344158118526864,
+   "U_min": -14.300725251080083,
+   "newton_residual": 2.1768425832054947e-14,
+   "samples": 2037,
+   "lambda_c_from_eta": -0.13035085972124089,
+   "lambda_c_from_K": -0.13035085972122534,
+   "lambda_c_from_W": -0.13035085972122096,
+   "exponent_gap_K": 1.554312234475219e-14,
+   "exponent_gap_W": 1.992850329202156e-14,
+   "exponent_scale": 1.5310997928199352,
+   "exponent_gap_relative": 1.3015809541269561e-14,
+   "eta0_mean_minus_mu": -1.457025849541475e-14,
+   "eta0_relative": 1.889076329411604e-14,
+   "polar_angle_error": 2.7355895326763857e-13,
+   "monotone_form_eigenvalues": [
+    -3.061916711237086,
+    -0.6045161834081841
+   ],
+   "cross_term_gap": 1.2079226507921703e-13,
+   "holder_lower": 0.09999264026378774,
+   "holder_middle": 0.4402943390157368,
+   "holder_upper": 1.5,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.5415840643675507,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.14575770754815626,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.04094463034993032,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.02071054254889015,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.0135919194526267e-14,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.47426509857177734
+  },
+  {
+   "id": "ext_mu_0.5_rho_6",
+   "source": "extended set",
+   "mu": 0.5,
+   "k": 4.5,
+   "rho": 6.0,
+   "T": 28.39849228127684,
+   "U_max": 4.393658920594424,
+   "U_min": -172.4890778371188,
+   "newton_residual": 9.159828969878484e-14,
+   "samples": 2040,
+   "lambda_c_from_eta": -0.26955549358185665,
+   "lambda_c_from_K": -0.26955549358196773,
+   "lambda_c_from_W": -0.26955549358201675,
+   "exponent_gap_K": 1.1107781361374691e-13,
+   "exponent_gap_W": 1.6009416015094757e-13,
+   "exponent_scale": 1.7428103495591114,
+   "exponent_gap_relative": 9.185977131214966e-14,
+   "eta0_mean_minus_mu": 8.690253197978903e-14,
+   "eta0_relative": 1.1336925195518427e-13,
+   "polar_angle_error": 7.085887432367599e-12,
+   "monotone_form_eigenvalues": [
+    -49.253177526370635,
+    -4.31947289212769
+   ],
+   "cross_term_gap": 8.897771408555855e-12,
+   "holder_lower": 0.00535302790584227,
+   "holder_middle": 0.20711693860722125,
+   "holder_upper": 4.5,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.4728826196706786,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.12574300431872187,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.022442965963045635,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.03519797124457912,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 6.978405151501176e-13,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.48790407180786133
+  },
+  {
+   "id": "ext_mu_0.5_rho_20",
+   "source": "extended set",
+   "mu": 0.5,
+   "k": 15.0,
+   "rho": 20.0,
+   "T": 82.9552916765259,
+   "U_max": 6.682493915226086,
+   "U_min": -2156.5122002120506,
+   "newton_residual": 4.710533087161482e-13,
+   "samples": 2158,
+   "lambda_c_from_eta": -0.394039682516991,
+   "lambda_c_from_K": -0.39403968251699645,
+   "lambda_c_from_W": -0.3940396825169522,
+   "exponent_gap_K": 5.440092820663267e-15,
+   "exponent_gap_W": 3.880229471064922e-14,
+   "exponent_scale": 1.6536770951858062,
+   "exponent_gap_relative": 2.3464251167057143e-14,
+   "eta0_mean_minus_mu": 1.069173936666785e-14,
+   "eta0_relative": 1.6500245597052774e-14,
+   "polar_angle_error": 9.620748642191757e-12,
+   "monotone_form_eigenvalues": [
+    -735.956595343813,
+    -21.37246642156469
+   ],
+   "cross_term_gap": 4.284572696633404e-12,
+   "holder_lower": 0.00018174120236720345,
+   "holder_middle": 0.0710112209455647,
+   "holder_upper": 15.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.4075072388707755,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.08756650648368845,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.005555882664113069,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.04227086840306044,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 4.720628947997941e-12,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.6512420177459717
+  },
+  {
+   "id": "ext_mu_1_rho_1.001",
+   "source": "extended set",
+   "mu": 1.0,
+   "k": 2.002,
+   "rho": 1.001,
+   "T": 6.285280543461356,
+   "U_max": 0.12323092005566448,
+   "U_min": -0.1299000373376468,
+   "newton_residual": 4.759925494531572e-13,
+   "samples": 2039,
+   "lambda_c_from_eta": -0.00039984196681477815,
+   "lambda_c_from_K": -0.0003998419664554243,
+   "lambda_c_from_W": -0.0003998419667053236,
+   "exponent_gap_K": 3.59353822740327e-13,
+   "exponent_gap_W": 1.0945454612110161e-13,
+   "exponent_scale": 0.09221477874607104,
+   "exponent_gap_relative": 3.896922246377323e-12,
+   "eta0_mean_minus_mu": 6.904520411049343e-13,
+   "eta0_relative": 6.786986234288266e-13,
+   "polar_angle_error": 6.039613253960852e-14,
+   "monotone_form_eigenvalues": [
+    -0.006830187397176643,
+    -0.0011720018576357816
+   ],
+   "cross_term_gap": 4.169494610684055e-14,
+   "holder_lower": 1.9966680124806315,
+   "holder_middle": 1.9980014295963957,
+   "holder_upper": 2.002,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.03124602704082316,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.0008775710394165136,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.0001402894964140447,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 9.149946418180371e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 2.541398370085655e-13,
+   "located_by": "amplitude bisection",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.6177899837493896
+  },
+  {
+   "id": "ext_mu_1_rho_1.1",
+   "source": "extended set",
+   "mu": 1.0,
+   "k": 2.2,
+   "rho": 1.1,
+   "T": 6.500819842585304,
+   "U_max": 0.9970572970157224,
+   "U_min": -1.690681478838904,
+   "newton_residual": 2.303755612642284e-16,
+   "samples": 2039,
+   "lambda_c_from_eta": -0.03821163580844349,
+   "lambda_c_from_K": -0.038211635808455324,
+   "lambda_c_from_W": -0.03821163580845694,
+   "exponent_gap_K": 1.1830814106161824e-14,
+   "exponent_gap_W": 1.3447576385772209e-14,
+   "exponent_scale": 0.9131264672477845,
+   "exponent_gap_relative": 1.472695937322239e-14,
+   "eta0_mean_minus_mu": 8.438198603437808e-15,
+   "eta0_relative": 7.230648406814297e-15,
+   "polar_angle_error": 2.042810365310288e-14,
+   "monotone_form_eigenvalues": [
+    -0.701963528798011,
+    -0.12118489008285789
+   ],
+   "cross_term_gap": 7.188694084447889e-15,
+   "holder_lower": 1.6811811374550316,
+   "holder_middle": 1.8147265434805824,
+   "holder_upper": 2.2,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.2584924465515672,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.03712525966907365,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.009116658229614548,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.005292493075869593,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 6.3667212977342834e-15,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.5484309196472168
+  },
+  {
+   "id": "ext_mu_1_rho_2",
+   "source": "extended set",
+   "mu": 1.0,
+   "k": 4.0,
+   "rho": 2.0,
+   "T": 8.790068963052414,
+   "U_max": 2.3466211571139697,
+   "U_min": -13.049155737076147,
+   "newton_residual": 5.617333549722722e-15,
+   "samples": 2036,
+   "lambda_c_from_eta": -0.21965377683055376,
+   "lambda_c_from_K": -0.21965377683053233,
+   "lambda_c_from_W": -0.2196537768305311,
+   "exponent_gap_K": 2.142730437526552e-14,
+   "exponent_gap_W": 2.2648549702353193e-14,
+   "exponent_scale": 2.2707913826527193,
+   "exponent_gap_relative": 9.973857517415514e-15,
+   "eta0_mean_minus_mu": -2.346821681355288e-14,
+   "eta0_relative": 1.6846618650912034e-14,
+   "polar_angle_error": 3.934630399271555e-13,
+   "monotone_form_eigenvalues": [
+    -10.268392622113161,
+    -1.411537497582307
+   ],
+   "cross_term_gap": 3.0953017926549364e-13,
+   "holder_lower": 0.3194868405060057,
+   "holder_middle": 1.0841244350821249,
+   "holder_upper": 4.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.4220852576284564,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.07169199862825962,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.03279205055592042,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.020112533727408337,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 7.996983567263872e-15,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.4526810646057129
+  },
+  {
+   "id": "ext_mu_1_rho_6",
+   "source": "extended set",
+   "mu": 1.0,
+   "k": 12.0,
+   "rho": 6.0,
+   "T": 18.94985516683635,
+   "U_max": 4.276673872092532,
+   "U_min": -154.44001900512276,
+   "newton_residual": 9.595250531406733e-14,
+   "samples": 2048,
+   "lambda_c_from_eta": -0.5055082292555326,
+   "lambda_c_from_K": -0.5055082292557845,
+   "lambda_c_from_W": -0.5055082292559272,
+   "exponent_gap_K": 2.51909604287448e-13,
+   "exponent_gap_W": 3.9457326295178063e-13,
+   "exponent_scale": 2.8766495582894724,
+   "exponent_gap_relative": 1.3716417483483937e-13,
+   "eta0_mean_minus_mu": 1.8928000869137388e-13,
+   "eta0_relative": 1.3559927147130598e-13,
+   "polar_angle_error": 1.4191314789968601e-11,
+   "monotone_form_eigenvalues": [
+    -172.18378016726427,
+    -10.055642945474055
+   ],
+   "cross_term_gap": 3.83124643121846e-11,
+   "holder_lower": 0.018041422528196682,
+   "holder_middle": 0.3654362831537238,
+   "holder_upper": 12.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.4069401158952603,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.06260613103455166,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.019447704992424077,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.03461190987667924,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.2252552775174005e-12,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.4602069854736328
+  },
+  {
+   "id": "ext_mu_1_rho_20",
+   "source": "extended set",
+   "mu": 1.0,
+   "k": 40.0,
+   "rho": 20.0,
+   "T": 55.30835868545217,
+   "U_max": 6.564785273725857,
+   "U_min": -1927.5076801989512,
+   "newton_residual": 7.805760677726494e-13,
+   "samples": 2157,
+   "lambda_c_from_eta": -0.7706368484745715,
+   "lambda_c_from_K": -0.7706368484748352,
+   "lambda_c_from_W": -0.770636848474899,
+   "exponent_gap_K": 2.636779683484747e-13,
+   "exponent_gap_W": 3.275157922644212e-13,
+   "exponent_scale": 3.0044779793806287,
+   "exponent_gap_relative": 1.0900921707934713e-13,
+   "eta0_mean_minus_mu": 2.0995282478952208e-13,
+   "eta0_relative": 1.719750424668917e-13,
+   "polar_angle_error": 8.276135332607737e-11,
+   "monotone_form_eigenvalues": [
+    -2609.2224987892596,
+    -50.24157518653505
+   ],
+   "cross_term_gap": 4.257003638485912e-10,
+   "holder_lower": 0.0006132935178976921,
+   "holder_middle": 0.06467366701389758,
+   "holder_upper": 40.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.3759591984372664,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.046598441435533496,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.005046760391990785,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.04204556229328746,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 3.3822475558905776e-12,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.5225310325622559
+  },
+  {
+   "id": "ext_mu_3_rho_1.001",
+   "source": "extended set",
+   "mu": 3.0,
+   "k": 12.011999999999999,
+   "rho": 1.001,
+   "T": 3.6292118897827743,
+   "U_max": 0.13294532077908738,
+   "U_min": -0.14050500458718074,
+   "newton_residual": 2.6094529757878103e-13,
+   "samples": 2051,
+   "lambda_c_from_eta": -0.0006310703891574665,
+   "lambda_c_from_K": -0.0006310703883284388,
+   "lambda_c_from_W": -0.0006310703884935431,
+   "exponent_gap_K": 8.290277101960508e-13,
+   "exponent_gap_W": 6.639234518060477e-13,
+   "exponent_scale": 0.1694387514712856,
+   "exponent_gap_relative": 4.892786939217646e-12,
+   "eta0_mean_minus_mu": 1.8602417734787902e-13,
+   "eta0_relative": 6.138448821731249e-14,
+   "polar_angle_error": 1.0835776720341528e-13,
+   "monotone_form_eigenvalues": [
+    -0.06833360663561207,
+    -0.0036894277652751166
+   ],
+   "cross_term_gap": 2.202352883395875e-13,
+   "holder_lower": 11.974678548636435,
+   "holder_middle": 11.988012848353373,
+   "holder_upper": 12.011999999999999,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.01690080020287903,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.0002612861989655781,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 6.924399356533695e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 3.231325303399994e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 7.490765303058482e-14,
+   "located_by": "amplitude bisection",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.6769931316375732
+  },
+  {
+   "id": "ext_mu_3_rho_1.1",
+   "source": "extended set",
+   "mu": 3.0,
+   "k": 13.200000000000001,
+   "rho": 1.1,
+   "T": 3.7975368840444035,
+   "U_max": 1.0725934287617012,
+   "U_min": -1.873407493399061,
+   "newton_residual": 1.2338359842841167e-15,
+   "samples": 2041,
+   "lambda_c_from_eta": -0.057711749664658384,
+   "lambda_c_from_K": -0.05771174966466437,
+   "lambda_c_from_W": -0.05771174966465278,
+   "exponent_gap_K": 5.988265439071938e-15,
+   "exponent_gap_W": 5.6066262743570405e-15,
+   "exponent_scale": 1.6503002918406802,
+   "exponent_gap_relative": 3.628591395565265e-15,
+   "eta0_mean_minus_mu": 1.7023193461890233e-14,
+   "eta0_relative": 5.172117081048386e-15,
+   "polar_angle_error": 2.3092638912203256e-13,
+   "monotone_form_eigenvalues": [
+    -7.080737818193638,
+    -0.37145702336794073
+   ],
+   "cross_term_gap": 2.5157653738006047e-13,
+   "holder_lower": 9.599212145981703,
+   "holder_middle": 10.929929707355313,
+   "holder_upper": 13.200000000000001,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.13506037897439388,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.01060516366740507,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.005146805786096996,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.0025672189491441942,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.4415591865754168e-14,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.5862090587615967
+  },
+  {
+   "id": "ext_mu_3_rho_2",
+   "source": "extended set",
+   "mu": 3.0,
+   "k": 24.0,
+   "rho": 2.0,
+   "T": 5.590714485911026,
+   "U_max": 2.5664994261809393,
+   "U_min": -16.411719345525263,
+   "newton_residual": 1.2314970930892997e-14,
+   "samples": 2051,
+   "lambda_c_from_eta": -0.26079276398796314,
+   "lambda_c_from_K": -0.26079276398791157,
+   "lambda_c_from_W": -0.2607927639879129,
+   "exponent_gap_K": 5.156985949383852e-14,
+   "exponent_gap_W": 5.0237591864288333e-14,
+   "exponent_scale": 3.563267035721905,
+   "exponent_gap_relative": 1.4472633955538123e-14,
+   "eta0_mean_minus_mu": -4.9577739133667386e-14,
+   "eta0_relative": 1.3615427565066001e-14,
+   "polar_angle_error": 1.177724584522366e-12,
+   "monotone_form_eigenvalues": [
+    -114.13461931341399,
+    -3.7711718654172075
+   ],
+   "cross_term_gap": 3.431921413721284e-12,
+   "holder_lower": 1.2167609795928562,
+   "holder_middle": 7.571303146971266,
+   "holder_upper": 24.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.19112333712553795,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.014443478786998136,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.02245743098254142,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 0.00024176626282475106,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 7.370933867483341e-15,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.48766589164733887
+  },
+  {
+   "id": "ext_mu_3_rho_6",
+   "source": "extended set",
+   "mu": 3.0,
+   "k": 72.0,
+   "rho": 6.0,
+   "T": 12.60643032424029,
+   "U_max": 4.562494430560301,
+   "U_min": -202.67703709717549,
+   "newton_residual": 1.9484022604642255e-14,
+   "samples": 2071,
+   "lambda_c_from_eta": -0.5250055944195754,
+   "lambda_c_from_K": -0.5250055944201979,
+   "lambda_c_from_W": -0.5250055944205458,
+   "exponent_gap_K": 6.225020499073253e-13,
+   "exponent_gap_W": 9.704459458248493e-13,
+   "exponent_scale": 3.7605209952620955,
+   "exponent_gap_relative": 2.580615683431951e-13,
+   "eta0_mean_minus_mu": 4.732729939983157e-13,
+   "eta0_relative": 1.311849825719748e-13,
+   "polar_angle_error": 3.455724595369247e-11,
+   "monotone_form_eigenvalues": [
+    -2040.171748740595,
+    -24.563009793624808
+   ],
+   "cross_term_gap": 3.9102587834349833e-10,
+   "holder_lower": 0.06108845695092881,
+   "holder_middle": 4.0852329484679,
+   "holder_upper": 72.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.19851601767319213,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.009304125007567086,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.012339459604140134,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 9.602199039191902e-11,
+     "unresolved": 223,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.8052216339833513e-12,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.4775090217590332
+  },
+  {
+   "id": "ext_mu_3_rho_20",
+   "source": "extended set",
+   "mu": 3.0,
+   "k": 240.0,
+   "rho": 20.0,
+   "T": 36.86499299135207,
+   "U_max": 6.85229995306686,
+   "U_min": -2540.6095463361607,
+   "newton_residual": 3.27567399226194e-13,
+   "samples": 2185,
+   "lambda_c_from_eta": -0.7760247975593523,
+   "lambda_c_from_K": -0.7760247975595406,
+   "lambda_c_from_W": -0.7760247975597839,
+   "exponent_gap_K": 1.8829382497642655e-13,
+   "exponent_gap_W": 4.3165471197426086e-13,
+   "exponent_scale": 3.4173942193154945,
+   "exponent_gap_relative": 1.263110675187838e-13,
+   "eta0_mean_minus_mu": 7.80785821042403e-14,
+   "eta0_relative": 2.3410306463280494e-14,
+   "polar_angle_error": 4.8267168040183606e-11,
+   "monotone_form_eigenvalues": [
+    -31227.09410235282,
+    -119.50857169995948
+   ],
+   "cross_term_gap": 1.615717337699607e-09,
+   "holder_lower": 0.0020704963138937042,
+   "holder_middle": 1.6059113628717272,
+   "holder_upper": 240.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.19983755888020513,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.00477150894627957,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.0033692509581131746,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": -6.994405055138459e-16,
+     "unresolved": 1443,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 4.450037181563165e-12,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.599315881729126
+  },
+  {
+   "id": "ext_mu_10_rho_1.001",
+   "source": "extended set",
+   "mu": 10.0,
+   "k": 110.10999999999999,
+   "rho": 1.001,
+   "T": 1.9889233830967987,
+   "U_max": 0.1736433197223394,
+   "U_min": -0.18572596688260987,
+   "newton_residual": 1.8224840425502935e-15,
+   "samples": 2076,
+   "lambda_c_from_eta": -0.0008378797287958803,
+   "lambda_c_from_K": -0.0008378797286926634,
+   "lambda_c_from_W": -0.0008378797284419064,
+   "exponent_gap_K": 1.0321691418235801e-13,
+   "exponent_gap_W": 3.539739031402367e-13,
+   "exponent_scale": 0.38330708397672925,
+   "exponent_gap_relative": 9.234734184086372e-13,
+   "eta0_mean_minus_mu": -1.6304804054512558e-13,
+   "eta0_relative": 1.6209221598763848e-14,
+   "polar_angle_error": 5.861977570020827e-14,
+   "monotone_form_eigenvalues": [
+    -1.4192498001740206,
+    -0.011342976695295973
+   ],
+   "cross_term_gap": 3.558542349679783e-13,
+   "holder_lower": 109.52015576840392,
+   "holder_middle": 109.89025319987327,
+   "holder_upper": 110.10999999999999,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.007849651276786888,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 5.871364101952176e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 2.410605458312121e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 3.9009172669887195e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 3.2030649912642465e-15,
+   "located_by": "amplitude bisection",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.7379190921783447
+  },
+  {
+   "id": "ext_mu_10_rho_1.1",
+   "source": "extended set",
+   "mu": 10.0,
+   "k": 121.00000000000001,
+   "rho": 1.1,
+   "T": 2.2078589621563447,
+   "U_max": 1.3743534616903377,
+   "U_min": -2.7571766502814885,
+   "newton_residual": 4.432957770959889e-15,
+   "samples": 2056,
+   "lambda_c_from_eta": -0.06715773918185484,
+   "lambda_c_from_K": -0.06715773918186853,
+   "lambda_c_from_W": -0.06715773918181035,
+   "exponent_gap_K": 1.3683498778505054e-14,
+   "exponent_gap_W": 4.449218771185315e-14,
+   "exponent_scale": 3.5132243025590477,
+   "exponent_gap_relative": 1.2664203557810086e-14,
+   "eta0_mean_minus_mu": -3.0352212615909877e-14,
+   "eta0_relative": 2.871724308511375e-15,
+   "polar_angle_error": 1.2523315717771766e-13,
+   "monotone_form_eigenvalues": [
+    -148.77828079664465,
+    -1.0789085105773966
+   ],
+   "cross_term_gap": 1.0160761121369433e-12,
+   "holder_lower": 67.81164323154745,
+   "holder_middle": 101.30125683740268,
+   "holder_upper": 121.00000000000001,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.04839518048413169,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.001687666884499003,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.00210103793489685,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 5.0257329066509396e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 4.246787245328497e-15,
+   "located_by": "amplitude bisection",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.8993122577667236
+  },
+  {
+   "id": "ext_mu_10_rho_2",
+   "source": "extended set",
+   "mu": 10.0,
+   "k": 220.0,
+   "rho": 2.0,
+   "T": 4.231126289652117,
+   "U_max": 3.2660662626663415,
+   "U_min": -34.07079305321864,
+   "newton_residual": 8.406714668431314e-14,
+   "samples": 2068,
+   "lambda_c_from_eta": -0.244110138396537,
+   "lambda_c_from_K": -0.2441101383962288,
+   "lambda_c_from_W": -0.2441101383962288,
+   "exponent_gap_K": 3.0819791163594346e-13,
+   "exponent_gap_W": 3.0819791163594346e-13,
+   "exponent_scale": 5.349189205811683,
+   "exponent_gap_relative": 5.761581798248949e-14,
+   "eta0_mean_minus_mu": -2.2037628408069537e-14,
+   "eta0_relative": 2.0160911862420238e-15,
+   "polar_angle_error": 1.361488699558322e-11,
+   "monotone_form_eigenvalues": [
+    -2768.4572459528636,
+    -10.566942681154654
+   ],
+   "cross_term_gap": 1.7536194718559273e-10,
+   "holder_lower": 2.6489387712200814,
+   "holder_middle": 79.31800011826968,
+   "holder_upper": 220.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.05263110700080947,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.0010529034014935804,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.011590815818484779,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 1.184491101856227e-11,
+     "unresolved": 403,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.017935735703172e-14,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.5199730396270752
+  },
+  {
+   "id": "ext_mu_10_rho_6",
+   "source": "extended set",
+   "mu": 10.0,
+   "k": 660.0,
+   "rho": 6.0,
+   "T": 10.35954015960311,
+   "U_max": 5.37803641302916,
+   "U_min": -450.35861169087957,
+   "newton_residual": 1.2778427785685018e-13,
+   "samples": 2109,
+   "lambda_c_from_eta": -0.49402712898918444,
+   "lambda_c_from_K": -0.4940271289891989,
+   "lambda_c_from_W": -0.49402712899076345,
+   "exponent_gap_K": 1.4488410471358293e-14,
+   "exponent_gap_W": 1.5790146967731289e-12,
+   "exponent_scale": 4.560720400823719,
+   "exponent_gap_relative": 3.462204559805816e-13,
+   "eta0_mean_minus_mu": -1.9710431277525786e-13,
+   "eta0_relative": 1.8296542002837437e-14,
+   "polar_angle_error": 5.81685810630006e-11,
+   "monotone_form_eigenvalues": [
+    -51635.50098738208,
+    -70.87294776372366
+   ],
+   "cross_term_gap": 8.237748261308298e-10,
+   "holder_lower": 0.1095132643130491,
+   "holder_middle": 50.531254147876574,
+   "holder_upper": 660.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.052631578804285095,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.0004470796913665304,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.005313603538140356,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": -3.213803492335979e-16,
+     "unresolved": 1494,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 2.34303049269016e-12,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.5111002922058105
+  },
+  {
+   "id": "ext_mu_10_rho_20",
+   "source": "extended set",
+   "mu": 10.0,
+   "k": 2200.0,
+   "rho": 20.0,
+   "T": 30.403591374966233,
+   "U_max": 7.671248088394383,
+   "U_min": -5686.01598260037,
+   "newton_residual": 6.859833983889838e-13,
+   "samples": 2246,
+   "lambda_c_from_eta": -0.7515649965220992,
+   "lambda_c_from_K": -0.7515649965242068,
+   "lambda_c_from_W": -0.7515649965255564,
+   "exponent_gap_K": 2.107647389948397e-12,
+   "exponent_gap_W": 3.4572344986827375e-12,
+   "exponent_scale": 3.7147144735207833,
+   "exponent_gap_relative": 9.306864695326077e-13,
+   "eta0_mean_minus_mu": 1.9933636655879185e-12,
+   "eta0_relative": 1.913614851847347e-13,
+   "polar_angle_error": 2.4892754524330485e-09,
+   "monotone_form_eigenvalues": [
+    -788042.6024621852,
+    -351.7429162169302
+   ],
+   "cross_term_gap": 8.98817233974114e-08,
+   "holder_lower": 0.0036892210554907035,
+   "holder_middle": 23.547162777349026,
+   "holder_upper": 2200.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.05263157894753592,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 0.00016453094007063491,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.0015770602374473915,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": -6.427606984671973e-16,
+     "unresolved": 1869,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 3.925649255130035e-12,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.6838541030883789
+  },
+  {
+   "id": "ext_mu_50_rho_1.001",
+   "source": "extended set",
+   "mu": 50.0,
+   "k": 2552.5499999999997,
+   "rho": 1.001,
+   "T": 0.8924399869098616,
+   "U_max": 0.31669162482110064,
+   "U_min": -0.3555396352455056,
+   "newton_residual": 1.4327894246004649e-15,
+   "samples": 2121,
+   "lambda_c_from_eta": -0.0009565197947807804,
+   "lambda_c_from_K": -0.0009565197948669086,
+   "lambda_c_from_W": -0.0009565197962959079,
+   "exponent_gap_K": 8.612815322051048e-14,
+   "exponent_gap_W": 1.515127433238117e-12,
+   "exponent_scale": 1.4425628585186696,
+   "exponent_gap_relative": 1.050302539186377e-12,
+   "eta0_mean_minus_mu": -2.466995146464731e-12,
+   "eta0_relative": 4.910471854596783e-14,
+   "polar_angle_error": 2.5481838861196593e-12,
+   "monotone_form_eigenvalues": [
+    -135.05717133334588,
+    -0.05172986053791632
+   ],
+   "cross_term_gap": 7.532063861503957e-11,
+   "holder_lower": 2505.203758277788,
+   "holder_middle": 2547.4643593460255,
+   "holder_upper": 2552.5499999999997,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.002958205051400164,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 8.511148606680042e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 4.769952977786697e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 1.21412969435981e-07,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 3.4681957401084007e-15,
+   "located_by": "amplitude bisection",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.8779590129852295
+  },
+  {
+   "id": "ext_mu_50_rho_1.1",
+   "source": "extended set",
+   "mu": 50.0,
+   "k": 2805.0,
+   "rho": 1.1,
+   "T": 1.3221646977480366,
+   "U_max": 2.255594047746299,
+   "U_min": -7.847645166974423,
+   "newton_residual": 1.3711560675350527e-15,
+   "samples": 2098,
+   "lambda_c_from_eta": -0.06078569975823312,
+   "lambda_c_from_K": -0.06078569975825089,
+   "lambda_c_from_W": -0.06078569975861698,
+   "exponent_gap_K": 1.7770507287906412e-14,
+   "exponent_gap_W": 3.8385961076414787e-13,
+   "exponent_scale": 9.466118608457737,
+   "exponent_gap_relative": 4.0550898065145627e-14,
+   "eta0_mean_minus_mu": -4.458110395580396e-13,
+   "eta0_relative": 8.662840365405596e-15,
+   "polar_angle_error": 1.1244338793403585e-12,
+   "monotone_form_eigenvalues": [
+    -13772.695675917474,
+    -4.5455582326439306
+   ],
+   "cross_term_gap": 7.105427357601002e-11,
+   "holder_lower": 371.00067510306405,
+   "holder_middle": 2389.2337652758597,
+   "holder_upper": 2805.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.010096925452689117,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 6.995242268269972e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.0003790978306330137,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": 1.2437314207721792e-09,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.2670642951531287e-14,
+   "located_by": "amplitude bisection",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 1.0834028720855713
+  },
+  {
+   "id": "ext_mu_50_rho_2",
+   "source": "extended set",
+   "mu": 50.0,
+   "k": 5100.0,
+   "rho": 2.0,
+   "T": 3.7011589728759984,
+   "U_max": 4.645892025298019,
+   "U_min": -141.68884585932386,
+   "newton_residual": 9.68874413655609e-13,
+   "samples": 2113,
+   "lambda_c_from_eta": -0.23275122449995378,
+   "lambda_c_from_K": -0.2327512245082087,
+   "lambda_c_from_W": -0.23275122449854496,
+   "exponent_gap_K": 8.254924521722273e-12,
+   "exponent_gap_W": 1.4088175070980924e-12,
+   "exponent_scale": 7.801013376300139,
+   "exponent_gap_relative": 1.058186177042221e-12,
+   "eta0_mean_minus_mu": 4.782952491309774e-12,
+   "eta0_relative": 9.348732290097674e-14,
+   "polar_angle_error": 1.041922104150217e-09,
+   "monotone_form_eigenvalues": [
+    -293539.95790234755,
+    -48.416108070943146
+   ],
+   "cross_term_gap": 1.1377278497093357e-07,
+   "holder_lower": 3.8068512600353936,
+   "holder_middle": 1938.4895545033241,
+   "holder_upper": 5100.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.010101010107810794,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 2.5945145668791868e-05,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.002404583516241536,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": -8.691139839237329e-16,
+     "unresolved": 1653,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 1.3687309833646842e-13,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.6262989044189453
+  },
+  {
+   "id": "ext_mu_50_rho_6",
+   "source": "extended set",
+   "mu": 50.0,
+   "k": 15300.0,
+   "rho": 6.0,
+   "T": 9.58114784378634,
+   "U_max": 6.833881522286275,
+   "U_min": -1920.7561225825848,
+   "newton_residual": 2.7129868914493495e-13,
+   "samples": 2225,
+   "lambda_c_from_eta": -0.4803938247172339,
+   "lambda_c_from_K": -0.48039382471760445,
+   "lambda_c_from_W": -0.48039382460877733,
+   "exponent_gap_K": 3.70536934468646e-13,
+   "exponent_gap_W": 1.0845657705260692e-10,
+   "exponent_scale": 5.479296949105565,
+   "exponent_gap_relative": 1.9793885613429155e-11,
+   "eta0_mean_minus_mu": -1.0863037061515266e-12,
+   "eta0_relative": 2.135472169156705e-14,
+   "polar_angle_error": 5.330953456450516e-10,
+   "monotone_form_eigenvalues": [
+    -5576004.65955125,
+    -333.6478063584989
+   ],
+   "cross_term_gap": 8.684946806170046e-08,
+   "holder_lower": 0.13800044745545767,
+   "holder_middle": 1299.9044853758678,
+   "holder_upper": 15300.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.010101010101984716,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 9.742314609278083e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.001085265421924631,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": -8.691139839237329e-16,
+     "unresolved": 1916,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 9.867228304627546e-12,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 0.6109099388122559
+  },
+  {
+   "id": "ext_mu_50_rho_20",
+   "source": "extended set",
+   "mu": 50.0,
+   "k": 51000.0,
+   "rho": 20.0,
+   "T": 28.1867977381319,
+   "U_max": 9.129500973855087,
+   "U_min": -24294.450039459196,
+   "newton_residual": 1.8481009667588305e-13,
+   "samples": 2457,
+   "lambda_c_from_eta": -0.7406996647645104,
+   "lambda_c_from_K": -0.7406996647857024,
+   "lambda_c_from_W": -0.7406996647657939,
+   "exponent_gap_K": 2.1191937094044988e-11,
+   "exponent_gap_W": 1.283417816466681e-12,
+   "exponent_scale": 4.032651909143129,
+   "exponent_gap_relative": 5.255087116742471e-12,
+   "eta0_mean_minus_mu": 1.993309928851723e-11,
+   "eta0_relative": 3.9502793844113277e-13,
+   "polar_angle_error": 8.911655058341239e-08,
+   "monotone_form_eigenvalues": [
+    -84799992.48625547,
+    -1674.3454096308117
+   ],
+   "cross_term_gap": 1.934621832333505e-05,
+   "holder_lower": 0.004628567333307561,
+   "holder_middle": 641.9596855378908,
+   "holder_upper": 51000.0,
+   "sign_tests": {
+    "Sg": {
+     "min_ratio": 0.010101010104996328,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "Xg": {
+     "min_ratio": 3.287115215866032e-06,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "K": {
+     "min_ratio": 0.000378061363854923,
+     "unresolved": 0,
+     "negative_resolved": 0,
+     "passed": true
+    },
+    "W": {
+     "min_ratio": -1.7662639028127491e-15,
+     "unresolved": 2127,
+     "negative_resolved": 0,
+     "passed": true
+    }
+   },
+   "max_orthogonality_defect": 3.814610246762106e-11,
+   "located_by": "forward iteration",
+   "attracting": true,
+   "checks": {
+    "cycle_located": true,
+    "star_gauge_positive": true,
+    "convexity_gauge_positive": true,
+    "K_positive": true,
+    "W_positive": true,
+    "orthogonality": true,
+    "exponents_agree": true,
+    "eta0_mean": true,
+    "polar_winding": true,
+    "monotone_integrals": true,
+    "holder_sandwich": true,
+    "mean_x": true
+   },
+   "passed": true,
+   "seconds": 1.9065120220184326
+  }
+ ]
+}

@@ -1,0 +1,400 @@
+{
+  "kind": "floating_point_solver_sensitivity",
+  "records": [
+    {
+      "id": "mu_0.3_h_1",
+      "passed": true,
+      "exponent_difference": 1.8762769116165146e-14,
+      "return_matrix_max_difference": 1.618072342779442e-10,
+      "Radau_record": {
+        "id": "mu_0.3_h_1",
+        "method": "Radau",
+        "mu": 0.3,
+        "k": 0.4215539783185706,
+        "rho": 1.0809076367142836,
+        "amplitude": 1.0,
+        "period_fast": 11.927445955931889,
+        "lambda_c_projective": -0.014658264442971858,
+        "lambda_c_linear_adjoint": -0.014658264442971358,
+        "exponent_difference": 4.996003610813204e-16,
+        "strong_multiplier": 2.1973488493281298e-07,
+        "weak_multiplier": 0.8395949910321654,
+        "matrix_weak_multiplier": 0.8395949910313554,
+        "return_matrix": [
+          [
+            0.6614014320546922,
+            0.10742022564017724
+          ],
+          [
+            1.0971624313053452,
+            0.17819377871155123
+          ]
+        ],
+        "return_closure_error": 1.3309353619206377e-12,
+        "log_determinant_exact_formula": -15.505679742709797,
+        "determinant_float": 1.844883112609662e-07,
+        "determinant_caution": "Floating determinant can lose relative accuracy when exponentially small; no relative enclosure is claimed.",
+        "phase_fractions": {
+          "X_max": 0.0,
+          "Z_max": 0.06184392742238984,
+          "Y_max": 0.19852620891814804,
+          "X_min": 0.4666919734809204,
+          "Z_min": 0.5707934389265295,
+          "Y_min": 0.7782820923798863
+        },
+        "stationary_counts": [
+          1,
+          2,
+          2
+        ],
+        "winding": -1.0,
+        "moment_relative_residuals": {
+          "mean_x": 3.0681950360122826e-14,
+          "mean_y": 1.316821903867973e-16,
+          "p_energy": 2.754171895351888e-13,
+          "gain_identity": 1.8172142273377695e-14,
+          "curvature_identity": 2.759633670324419e-13,
+          "support_identity": 5.592310179740771e-14
+        },
+        "orthogonality_max_scaled": 3.586683908921615e-12,
+        "minimum_sampled_support_gap": 0.021743611272518962,
+        "minimum_sampled_equilibrium_gap": 0.026167158390550616,
+        "minimum_sampled_reverse_gap": 0.024411640024371573,
+        "minimum_sampled_curvature": 0.006011404656510861,
+        "projective_bounds": [
+          0.05944750146309041,
+          0.7762337763439654,
+          0.04514725645436744,
+          1.0816038712588443
+        ],
+        "observed_extrema": [
+          0.11197063156026767,
+          0.5476369150477773,
+          0.07838486732457203,
+          0.7205934286877225
+        ],
+        "checks": {
+          "ratios_finite_positive": true,
+          "ratios_periodic": true,
+          "adjoint_exponent_agreement": true,
+          "orthogonality": true,
+          "moment_identities": true,
+          "sampled_support_gaps": true,
+          "sampled_curvature": true,
+          "six_extrema_order": true,
+          "winding_minus_one": true,
+          "projective_bounds": true,
+          "first_return_detected": true,
+          "return_closure": true,
+          "positive_return_matrix": true,
+          "return_multiplier_agreement": true
+        },
+        "passed": true,
+        "seconds": 1.016448974609375,
+        "interval_certified": false,
+        "square_root_test_ratios": [
+          0.8486214850407902,
+          0.8077066650448174
+        ],
+        "trace_obstruction": -0.1604049737220653
+      }
+    },
+    {
+      "id": "mu_1_h_3",
+      "passed": true,
+      "exponent_difference": 2.9976021664879227e-15,
+      "return_matrix_max_difference": 2.4430590883639525e-10,
+      "Radau_record": {
+        "id": "mu_1_h_3",
+        "method": "Radau",
+        "mu": 1.0,
+        "k": 5.8412188456134375,
+        "rho": 2.9206094228067188,
+        "amplitude": 3.0,
+        "period_fast": 11.121220689725025,
+        "lambda_c_projective": -0.3130954062140605,
+        "lambda_c_linear_adjoint": -0.3130954062139044,
+        "exponent_difference": 1.56097357262297e-13,
+        "strong_multiplier": 7.1194292944829645e-09,
+        "weak_multiplier": 0.03074576218202587,
+        "matrix_weak_multiplier": 0.03074576218252406,
+        "return_matrix": [
+          [
+            0.01977503525748603,
+            0.00324748040948854
+          ],
+          [
+            0.06680453960672139,
+            0.010970734044452257
+          ]
+        ],
+        "return_closure_error": 3.0269120543380268e-12,
+        "log_determinant_exact_formula": -22.242441379448742,
+        "determinant_float": 2.1889181672328036e-10,
+        "determinant_caution": "Floating determinant can lose relative accuracy when exponentially small; no relative enclosure is claimed.",
+        "phase_fractions": {
+          "X_max": 0.0,
+          "Z_max": 0.023858647920410595,
+          "Y_max": 0.08914871160621098,
+          "X_min": 0.33064359841406876,
+          "Z_min": 0.8315155784664412,
+          "Y_min": 0.8857313549088184
+        },
+        "stationary_counts": [
+          1,
+          2,
+          2
+        ],
+        "winding": -1.0,
+        "moment_relative_residuals": {
+          "mean_x": 4.561608338131953e-16,
+          "mean_y": 1.0643752788974557e-15,
+          "p_energy": 8.388771761362593e-14,
+          "gain_identity": 4.512951182525212e-13,
+          "curvature_identity": 7.717670020453966e-13,
+          "support_identity": 4.595164869381632e-13
+        },
+        "orthogonality_max_scaled": 1.1751049091682434e-11,
+        "minimum_sampled_support_gap": 0.00870136265438845,
+        "minimum_sampled_equilibrium_gap": 2.638863777503331,
+        "minimum_sampled_reverse_gap": 2.5206993292745663,
+        "minimum_sampled_curvature": 0.0019702740202474857,
+        "projective_bounds": [
+          8.361087711292864e-08,
+          10.831621152901736,
+          6.9907787715932535e-15,
+          117.32400699042522
+        ],
+        "observed_extrema": [
+          0.1185727523411571,
+          4.331231321761791,
+          4.282580940597836e-05,
+          20.951645464216945
+        ],
+        "checks": {
+          "ratios_finite_positive": true,
+          "ratios_periodic": true,
+          "adjoint_exponent_agreement": true,
+          "orthogonality": true,
+          "moment_identities": true,
+          "sampled_support_gaps": true,
+          "sampled_curvature": true,
+          "six_extrema_order": true,
+          "winding_minus_one": true,
+          "projective_bounds": true,
+          "first_return_detected": true,
+          "return_closure": true,
+          "positive_return_matrix": true,
+          "return_multiplier_agreement": true
+        },
+        "passed": true,
+        "seconds": 2.7169201374053955,
+        "interval_certified": false,
+        "square_root_test_ratios": [
+          0.03186966404244016,
+          0.028908153827654954
+        ],
+        "trace_obstruction": -0.969254230916954
+      }
+    },
+    {
+      "id": "mu_10_h_2",
+      "passed": true,
+      "exponent_difference": 5.861977570020827e-14,
+      "return_matrix_max_difference": 2.3780644120563466e-11,
+      "Radau_record": {
+        "id": "mu_10_h_2",
+        "method": "Radau",
+        "mu": 10.0,
+        "k": 138.77858743118108,
+        "rho": 1.2616235221016463,
+        "amplitude": 2.0,
+        "period_fast": 2.6138156338918628,
+        "lambda_c_projective": -0.1269552227078048,
+        "lambda_c_linear_adjoint": -0.12695522270794513,
+        "exponent_difference": 1.4033219031261979e-13,
+        "strong_multiplier": 4.5424739294944347e-13,
+        "weak_multiplier": 0.7176038910671425,
+        "matrix_weak_multiplier": 0.7176038910665141,
+        "return_matrix": [
+          [
+            0.5679803894406675,
+            0.32393751578081537
+          ],
+          [
+            0.2623444663950636,
+            0.14962350162627525
+          ]
+        ],
+        "return_closure_error": 9.232614672782802e-13,
+        "log_determinant_exact_formula": -28.751971972809244,
+        "determinant_float": 3.076717470002381e-13,
+        "determinant_caution": "Floating determinant can lose relative accuracy when exponentially small; no relative enclosure is claimed.",
+        "phase_fractions": {
+          "X_max": 0.0,
+          "Z_max": 0.07550346235039393,
+          "Y_max": 0.12109221694921168,
+          "X_min": 0.43094257109079237,
+          "Z_min": 0.8300874908482606,
+          "Y_min": 0.8587358868968162
+        },
+        "stationary_counts": [
+          1,
+          2,
+          2
+        ],
+        "winding": -1.0000000000000002,
+        "moment_relative_residuals": {
+          "mean_x": 4.874215085803641e-14,
+          "mean_y": 2.047989531850369e-16,
+          "p_energy": 2.6848453274423443e-14,
+          "gain_identity": 5.3657325734476794e-14,
+          "curvature_identity": 2.2530170579929906e-13,
+          "support_identity": 1.602789975453729e-15
+        },
+        "orthogonality_max_scaled": 5.561320607990059e-12,
+        "minimum_sampled_support_gap": 0.07426180387261638,
+        "minimum_sampled_equilibrium_gap": 1.9444882792151077,
+        "minimum_sampled_reverse_gap": 2.455394152298055,
+        "minimum_sampled_curvature": 0.2085979506732694,
+        "projective_bounds": [
+          9.000627311294078,
+          36.8371731581372,
+          0.00564619516615546,
+          102.53784447114418
+        ],
+        "observed_extrema": [
+          9.00356166387908,
+          13.610898094980824,
+          0.024844732964824128,
+          67.03866330175501
+        ],
+        "checks": {
+          "ratios_finite_positive": true,
+          "ratios_periodic": true,
+          "adjoint_exponent_agreement": true,
+          "orthogonality": true,
+          "moment_identities": true,
+          "sampled_support_gaps": true,
+          "sampled_curvature": true,
+          "six_extrema_order": true,
+          "winding_minus_one": true,
+          "projective_bounds": true,
+          "first_return_detected": true,
+          "return_closure": true,
+          "positive_return_matrix": true,
+          "return_multiplier_agreement": true
+        },
+        "passed": true,
+        "seconds": 2.1181490421295166,
+        "interval_certified": false,
+        "square_root_test_ratios": [
+          0.6965707504276131,
+          0.8105067441228724
+        ],
+        "trace_obstruction": -0.2823961089333832
+      }
+    },
+    {
+      "id": "mu_0.3_h_0.01",
+      "passed": true,
+      "exponent_difference": 5.551115123125783e-17,
+      "return_matrix_max_difference": 3.4423575101527604e-12,
+      "Radau_record": {
+        "id": "mu_0.3_h_0.01",
+        "method": "Radau",
+        "mu": 0.3,
+        "k": 0.39000203239489706,
+        "rho": 1.0000052112689668,
+        "amplitude": 0.01,
+        "period_fast": 11.471502483007907,
+        "lambda_c_projective": -1.021299247283558e-06,
+        "lambda_c_linear_adjoint": -1.0212992471725357e-06,
+        "exponent_difference": 1.1102230246251565e-16,
+        "strong_multiplier": 3.337273442031589e-07,
+        "weak_multiplier": 0.999988284231779,
+        "matrix_weak_multiplier": 0.9999882842339661,
+        "return_matrix": [
+          [
+            0.8486672543478041,
+            0.19516502398905755
+          ],
+          [
+            0.658013151300071,
+            0.15132136361358542
+          ]
+        ],
+        "return_closure_error": 2.1729146260085486e-14,
+        "log_determinant_exact_formula": -14.912953227908591,
+        "determinant_float": 3.3372351353938014e-07,
+        "determinant_caution": "Floating determinant can lose relative accuracy when exponentially small; no relative enclosure is claimed.",
+        "phase_fractions": {
+          "X_max": 0.0,
+          "Z_max": 0.07959500323611118,
+          "Y_max": 0.24955848764628488,
+          "X_min": 0.49973805468261917,
+          "Z_min": 0.5796462542688284,
+          "Y_min": 0.7501802059441084
+        },
+        "stationary_counts": [
+          1,
+          2,
+          2
+        ],
+        "winding": -1.0,
+        "moment_relative_residuals": {
+          "mean_x": 0.0,
+          "mean_y": 0.0,
+          "p_energy": 1.8747189851141279e-16,
+          "gain_identity": 2.846710869191058e-16,
+          "curvature_identity": 3.317531557877493e-12,
+          "support_identity": 1.0390055375594042e-12
+        },
+        "orthogonality_max_scaled": 1.3162214373974024e-14,
+        "minimum_sampled_support_gap": 3.104352799714223e-06,
+        "minimum_sampled_equilibrium_gap": 1.7709073811267295e-06,
+        "minimum_sampled_reverse_gap": 1.7694652172939307e-06,
+        "minimum_sampled_curvature": 1.0560064829047243e-06,
+        "projective_bounds": [
+          0.2860913949184226,
+          0.3686248103034231,
+          0.28211226268926465,
+          0.3062936425358926
+        ],
+        "observed_extrema": [
+          0.29823350200786947,
+          0.30177002959372007,
+          0.29751175031976257,
+          0.3025006494450536
+        ],
+        "checks": {
+          "ratios_finite_positive": true,
+          "ratios_periodic": true,
+          "adjoint_exponent_agreement": true,
+          "orthogonality": true,
+          "moment_identities": true,
+          "sampled_support_gaps": true,
+          "sampled_curvature": true,
+          "six_extrema_order": true,
+          "winding_minus_one": true,
+          "projective_bounds": true,
+          "first_return_detected": true,
+          "return_closure": true,
+          "positive_return_matrix": true,
+          "return_multiplier_agreement": true
+        },
+        "passed": true,
+        "seconds": 0.4084620475769043,
+        "interval_certified": false,
+        "square_root_test_ratios": [
+          1.000058142300472,
+          0.9995966739396889
+        ],
+        "trace_obstruction": -1.1715762044839414e-05
+      }
+    }
+  ],
+  "number_checked": 4,
+  "number_passed": 4,
+  "passed": true
+}

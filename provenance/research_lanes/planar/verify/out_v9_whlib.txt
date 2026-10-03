@@ -1,0 +1,4 @@
+mu=1 rho=4: whlib lambda_c(M)=-0.395940343 lambda_c(Riccati)=-0.395940343 [referee log-variables: -0.395940343];  min eta=8.716e-02 min zeta=1.451e-06 min K=3.665e+00 min W=1.264e-04; true min eta = e^-2.4, true min zeta = e^-13.4
+mu=0.3 rho=4: whlib lambda_c(M)=-0.126570340 lambda_c(Riccati)=-0.126570340 [referee log-variables: -0.126570340];  min eta=4.318e-08 min zeta=3.366e-11 min K=9.567e-01 min W=1.221e-09; true min eta = e^-17.0, true min zeta = e^-24.1
+mu=0.3 rho=12: whlib lambda_c(M)=-0.204001000 lambda_c(Riccati)=-0.203960370 [referee log-variables: -0.203960370];  min eta=-1.620e-21 min zeta=-1.183e-19 min K=3.247e+00 min W=-2.878e-17; true min eta = e^-48.9, true min zeta = e^-69.9
+mu=0.02 rho=4: whlib lambda_c(M)=-0.007723653 lambda_c(Riccati)=-0.007723653 [referee log-variables: -0.007723653];  min eta=-3.618e-09 min zeta=-1.444e-10 min K=4.588e-02 min W=-3.435e-09; true min eta = e^-266.2, true min zeta = e^-273.5

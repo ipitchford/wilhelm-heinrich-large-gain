@@ -1,0 +1,79 @@
+PASS s02 eq:adjointmatrices  B = -S J^T S
+PASS s02 eq:projective  eta' from H'=BH
+PASS s02 eq:projective  zeta' from H'=BH
+PASS s02 H3' = (1+eta) H3
+PASS s02 n' + J^T n + (1+eta) n = 0
+PASS s02 O' + (1+eta) O = 0 (O = left side of eq:orthogonality)
+PASS s02 p'' = -mu p' - x + y
+PASS s02 eq:tangent modulo O:  p'' - [(eta-mu)p' - zeta p] = O
+PASS s02 eq:factorisation
+PASS s02 eq:gainprimitive
+PASS s02 lem:projectivebounds  eta_+ solves eta(eta+1-mu)=x_+
+PASS s02 lem:projectivebounds  eta_- solves eta(eta+1-mu)=zeta_-
+PASS s03 eq:supportidentity  Delta'+(1+eta)Delta = -x_1 Rem(U_2-U_1)
+PASS s03 x_2 - x_1 - x_1(U_2-U_1) = x_1 Rem(U_2-U_1)
+PASS s03 eq:positiveK  K'+(1+eta)K = xU - x + k
+PASS s03 eq:positiveK  xU - x + k = k psi(U)
+PASS s03 K = -Delta with second solution E
+PASS s03 x Rem(-U) = k psi(U)
+PASS s03 Lambda_E = -Delta with base E (ratios eta_E, zeta_E) and second solution (U,p,y)
+PASS s03 equilibrium adjoint eigenvector  B_E (zeta_E,eta_E,1)^T = gamma_E (...)
+PASS s03 gamma_E at Hopf value: A(A-1)(A-mu) = mu(1+mu)
+PASS s03 eq:LambdaE  Lambda_E' = -gamma_E Lambda_E + k Rem(U)
+PASS s03 Lambda_E = -(zeta_E U - eta_E p - y + k)
+PASS s03 lem:curvature  W'+(1+eta)W - x p^2 = -eta' O
+PASS s04 eq:crestidentities  x-k = (1+eta)(y-k)
+PASS s04 eq:crestidentities  x-y = eta(y-k)
+PASS s04 y'' = x p at y'=0
+PASS s04 Y'' - zeta p/lambda = -[(eta-mu) p' + O]/lambda  (so Y'' = zeta p/lambda where p'=0 on a cycle)
+PASS s04 y' = zeta p - eta p' - O  (so y' = zeta p where p'=0 on a cycle)
+PASS s04 eq:compound  w' = C w
+PASS s04 initial wedge at a crest
+PASS s04 similarity  entries of M_(U,z)
+PASS s04 similarity  det and trace invariant
+PASS s04 AT bound  2 pi (sqrt(mu)+1/sqrt(mu)) = A * 2 pi / sqrt(mu)
+PASS s04 equality case: U'''+mu U' = 0 for the first harmonic
+PASS appA sigma*rho = k / mu^(3/2)
+PASS appA coefficient of U_tautau
+PASS appA characteristic polynomial at rho=1
+PASS appA d Re nu / d rho = sigma / (2 (1+sigma^2))
+PASS appA J0 q = i q
+PASS appA chi J0 = i chi
+PASS appA chi q = 1
+PASS appA J0^{-1} B(q,qbar) = (1,0,0)^T
+PASS appA first component of (2iI-J0)^{-1} B(q,q) = sigma/[3(sigma+2i)]
+PASS appA G21
+PASS appA l1 = Re G21 / 2
+PASS appA sigma >= 2: sigma - 2 = (1-sqrt(mu))^2/sqrt(mu)
+PASS [mu=0.1, rho=1.5] M entrywise positive in (U,y) and in (U,z)   M=[[0.4267635393790328, 0.12649234739841353], [0.480479214287616, 0.1424136274152641]]
+PASS [mu=0.1, rho=1.5] eig M_(U,z) = eig M   eig M=[2.794888621076455e-13, 0.5691771667940175], eig M_(U,z)=[2.794646580859317e-13, 0.5691771667940174]
+PASS [mu=0.1, rho=1.5] m_t = exp((<eta>-mu)T)   m_t=0.569177166794, <eta>-mu=-0.017650979
+SKIP [mu=0.1, rho=1.5] m_s = exp(-(1+<eta>)T): exp(-AT) is below the rounding level of M
+PASS [mu=0.1, rho=1.5] det M = exp(-AT) (absolute tolerance), exp(-AT) < exp(-4 pi), T > 2 pi/sqrt(mu)   T=31.928173, det M=1.591e-13, exp(-AT)=5.587e-16
+PASS [mu=0.1, rho=1.5] orthogonality zeta p - eta p' - (x-y) = 0
+PASS [mu=0.1, rho=1.5] K > 0, W > 0, Lambda_E > 0 on the cycle   min K=3.650e-02, min W=3.439e-07, min Lambda_E=5.262e-02
+PASS [mu=0.1, rho=1.5] <p'^2> = mu <p^2>
+PASS [mu=0.1, rho=1.5] <x> = k = <f_mu(eta)>
+PASS [mu=0.1, rho=1.5] no sample in C_+ or C_-
+PASS [mu=1.0, rho=2.0] M entrywise positive in (U,y) and in (U,z)   M=[[0.09742948574060205, 0.005006799691473346], [0.9263983587242706, 0.047606883662609345]]
+PASS [mu=1.0, rho=2.0] eig M_(U,z) = eig M   eig M=[1.597967753716892e-07, 0.14503620960643604], eig M_(U,z)=[1.597967753716892e-07, 0.14503620960643604]
+PASS [mu=1.0, rho=2.0] m_t = exp((<eta>-mu)T)   m_t=0.145036209606, <eta>-mu=-0.219653777
+PASS [mu=1.0, rho=2.0] m_s = exp(-(1+<eta>)T)   m_s=1.597968e-07
+PASS [mu=1.0, rho=2.0] det M = exp(-AT) (absolute tolerance), exp(-AT) < exp(-4 pi), T > 2 pi/sqrt(mu)   T=8.790069, det M=2.318e-08, exp(-AT)=2.318e-08
+PASS [mu=1.0, rho=2.0] orthogonality zeta p - eta p' - (x-y) = 0
+PASS [mu=1.0, rho=2.0] K > 0, W > 0, Lambda_E > 0 on the cycle   min K=1.508e+00, min W=2.288e-02, min Lambda_E=1.131e+00
+PASS [mu=1.0, rho=2.0] <p'^2> = mu <p^2>
+PASS [mu=1.0, rho=2.0] <x> = k = <f_mu(eta)>
+PASS [mu=1.0, rho=2.0] no sample in C_+ or C_-
+PASS [mu=3.0, rho=1.3] M entrywise positive in (U,y) and in (U,z)   M=[[0.41337889073599043, 0.01121038111323938], [5.3618840264446135, 0.14540853309552926]]
+PASS [mu=3.0, rho=1.3] eig M_(U,z) = eig M   eig M=[9.787828084897532e-08, 0.5587873259532389], eig M_(U,z)=[9.787828085412568e-08, 0.5587873259532388]
+PASS [mu=3.0, rho=1.3] m_t = exp((<eta>-mu)T)   m_t=0.558787325953, <eta>-mu=-0.139218416
+PASS [mu=3.0, rho=1.3] m_s = exp(-(1+<eta>)T)   m_s=9.787828e-08
+PASS [mu=3.0, rho=1.3] det M = exp(-AT) (absolute tolerance), exp(-AT) < exp(-4 pi), T > 2 pi/sqrt(mu)   T=4.180383, det M=5.469e-08, exp(-AT)=5.469e-08
+PASS [mu=3.0, rho=1.3] orthogonality zeta p - eta p' - (x-y) = 0
+PASS [mu=3.0, rho=1.3] K > 0, W > 0, Lambda_E > 0 on the cycle   min K=9.617e-01, min W=5.435e-01, min Lambda_E=8.989e-01
+PASS [mu=3.0, rho=1.3] <p'^2> = mu <p^2>
+PASS [mu=3.0, rho=1.3] <x> = k = <f_mu(eta)>
+PASS [mu=3.0, rho=1.3] no sample in C_+ or C_-
+
+ALL CHECKS PASSED

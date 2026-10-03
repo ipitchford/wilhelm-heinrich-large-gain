@@ -1,0 +1,2 @@
+v3_largegain_constants_with_wrong_constant: 54/55 passed -> FAIL  [0.0s]
+   FAILED: {"source": "author script", "id": "c_p: 0.95 phi (1-exp(-c# K0)) - ell/K0 >= CP", "lhs": "0.8194314809252179427", "op": ">=", "rhs": "0.83", "margin": "-0.0105685190748", "relative_margin": -0.010568519074782057, "passed": false}

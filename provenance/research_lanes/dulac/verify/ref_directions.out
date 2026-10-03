@@ -1,0 +1,6 @@
+mu=0.3  rho=1.5  40 random directions x 49 levels: max s = -8.947e-01 (<0), max [(a eta+b zeta)_A-(..)_B] = -4.815e-03 (<0), max normalised mean = -7.280e-01 (<0), levels/directions with wrong crossing count = 0  OK
+mu=1.0  rho=1.1  40 random directions x 49 levels: max s = -6.372e-01 (<0), max [(a eta+b zeta)_A-(..)_B] = -7.248e-02 (<0), max normalised mean = -2.288e-01 (<0), levels/directions with wrong crossing count = 0  OK
+mu=1.0  rho=2.5  40 random directions x 49 levels: max s = -2.732e+00 (<0), max [(a eta+b zeta)_A-(..)_B] = -1.451e-02 (<0), max normalised mean = -6.878e-01 (<0), levels/directions with wrong crossing count = 0  OK
+mu=0.1  rho=2.0  40 random directions x 49 levels: max s = -1.145e+00 (<0), max [(a eta+b zeta)_A-(..)_B] = -4.533e-09 (<0), max normalised mean = -8.392e-01 (<0), levels/directions with wrong crossing count = 0  OK
+mu=3.0  rho=2.0  40 random directions x 49 levels: max s = -2.868e+00 (<0), max [(a eta+b zeta)_A-(..)_B] = -6.673e-03 (<0), max normalised mean = -2.222e-01 (<0), levels/directions with wrong crossing count = 0  OK
+ALL OK

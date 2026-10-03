@@ -1,0 +1,80 @@
+% s04_geometry.tex -- one crest, six extrema, crest map.
+% Exported labels: sec:geometry thm:geometry eq:crestidentities thm:six eq:six cor:orderedcrests eq:crestorder
+% prop:crestmap eq:compound eq:determinant.  Internal labels carry the prefix geo:.
+\section{Every cycle has one ordered sequence of six extrema}\label{sec:geometry}
+Local symbols of this section: the subscripts $o$ and $i$ mark an outer and an inner projected cycle; $(\xi_U,\xi_y)$ is a variation within the crest section $\{p=0\}$ in the coordinates $(U,y)$; $w$ is the sign-conjugated wedge of the tangent and a variation; $z=y/k$ is the rescaled section coordinate, equal to the concentration $Z$ of \eqref{eq:change}.
+
+\begin{theorem}[Planar embedding and unimodality]\label{thm:geometry}
+Every nonconstant positive cycle has a regular injective projection into $(U,p)$. It is a clockwise Jordan curve enclosing $(0,0)$. In one least period $U$ has one nondegenerate maximum and minimum, and $p$ has one positive nondegenerate maximum and one negative nondegenerate minimum. Projections of distinct cycles at the same parameters are disjoint and nested.
+\end{theorem}
+\begin{proof}
+If two distinct periodic points had equal $(U,p)$, Theorem~\ref{thm:support} with the first as base would require the second to have larger $y$. Reversing the bases requires the opposite inequality. This excludes both a crossing between different cycles and a self-crossing of one projected cycle.
+
+If the projected tangent vanished, $p=p'=0$. Equation~\eqref{eq:orthogonality} gives $x=y$, while $p'=k-y$ gives $x=y=k$. This is the equilibrium and cannot lie on a nonconstant cycle. The projection is therefore a regular embedded circle.
+
+At a zero of $p$, \eqref{eq:orthogonality} gives
+\begin{equation}\label{eq:crestidentities}
+x-k=(1+\eta)(y-k),\qquad x-y=\eta(y-k),\qquad p'=k-y.
+\end{equation}
+No such zero has $U=0$. Every positive-$U$ axis crossing is downward; every negative-$U$ crossing is upward. The identity $\avg x=k$ forces $U$ to have both signs. The global maximum of $U$ is consequently a downward positive-ray crossing. The winding number of a Jordan curve about a point not on it is $0$ or $\pm1$. All crossings of that ray are transverse with the same sign, so there is exactly one and the winding number is $-1$. The negative ray likewise has exactly one crossing. Thus $p$ has exactly two simple zeros.
+
+Between them $p$ has a fixed sign. At $p'=0$, \eqref{eq:tangent} gives $p''=-\zeta p$. On the positive half-cycle every critical point is a strict maximum, and on the negative half-cycle every critical point is a strict minimum. There is exactly one of each: two strict maxima on the same interval would require an intervening critical point that is not a strict maximum. Finally, disjoint Jordan curves that both enclose the origin have nested interiors.
+\end{proof}
+
+\begin{theorem}[Chemical phase order in the original labelling]\label{thm:six}
+All three physical concentrations in \eqref{eq:filters} have exactly one maximum and one minimum in a least period, and all six extrema are nondegenerate. Starting at the minimum of $X$, their strict cyclic order is
+\begin{equation}\label{eq:six}
+X_{\min}\;<\;Z_{\min}\;<\;Y_{\min}\;<\;
+X_{\max}\;<\;Z_{\max}\;<\;Y_{\max}\;<\;X_{\min}+T,
+\end{equation}
+where inequalities refer to event times. At an $X$ crest, $X>Z>1$ and $Y=1$; at its trough, $X<Z<1$ and $Y=1$.
+\end{theorem}
+\begin{proof}
+Extrema of $X$ coincide with zeros of $p$ and are nondegenerate by \eqref{eq:crestidentities}. Since $Y=1-p/\lambda$, its extrema are the two critical points of $p$ identified above, and $Y''=\zeta p/\lambda$ there.
+
+For the intermediate filter, $y'=x-y$ and, at a zero of $y'$,
+\[
+y''=xp.
+\]
+At the $X$ trough, \eqref{eq:crestidentities} gives $y'<0$; at the next $X$ crest it gives $y'>0$. Throughout that interval $p>0$, so every zero of $y'$ is a strict upward crossing. There is exactly one, the $Z$ minimum. At the positive maximum of $p$, \eqref{eq:orthogonality} gives $y'=\zeta p>0$, so the $Z$ minimum precedes the $Y$ minimum. On the negative half-cycle all zeros of $y'$ are strict downward crossings. Its unique zero, the $Z$ maximum, precedes the negative minimum of $p$, since $y'=\zeta p<0$ there. This proves \eqref{eq:six}. Positivity of $x,\zeta$ gives nondegeneracy. The concentration inequalities are exactly \eqref{eq:crestidentities} divided by $k$.
+\end{proof}
+
+\begin{corollary}[Ordered crests of nested cycles]\label{cor:orderedcrests}
+Let an outer projected cycle and an inner projected cycle have positive-axis crests $(U_o,y_o)$ and $(U_i,y_i)$. Then $U_o>U_i$ and $y_o>y_i$. More precisely,
+\begin{equation}\label{eq:crestorder}
+\zeta_i(U_o-U_i)<y_o-y_i<\zeta_o(U_o-U_i).
+\end{equation}
+In particular $\zeta_o>\zeta_i$ at these respective crests. At the negative-axis trough the outer cycle has both smaller $U$ and smaller $y$.
+\end{corollary}
+\begin{proof}
+Nesting and the unique ray crossing give the order of $U$. Apply the strict supporting inequalities in both directions to the two phase-fixed crest points, where $p=0$. They give \eqref{eq:crestorder}. The same two inequalities with negative $U_o-U_i$ give the trough statement.
+\end{proof}
+
+\begin{proposition}[Positive crest derivative and strong area contraction]\label{prop:crestmap}
+The local first downward return on $p=0$ at a cycle crest, expressed in the section coordinates $(U,y)$, has an entrywise positive derivative $M$. Its eigenvalues are $m_s,m_t$ from Proposition~\ref{prop:multipliers}, and
+\begin{equation}\label{eq:determinant}
+\det M=e^{-AT}<e^{-4\pi},\qquad T>\frac{2\pi}{\sqrt\mu}.
+\end{equation}
+In the section coordinates $(U,z)$, $z=y/k$, the same derivative is represented by
+\begin{equation}\label{geo:eq:similarity}
+M_{(U,z)}=\diag(1,1/k)\,M\,\diag(1,k)
+=\begin{pmatrix}M_{11}&kM_{12}\\ M_{21}/k&M_{22}\end{pmatrix}.
+\end{equation}
+The matrices $M$ and $M_{(U,z)}$ have the same eigenvalues, the same determinant and the same sign pattern. Their individual entries depend on the choice of section coordinates, and so does any componentwise inequality tested on a vector: a test vector $\xi$ for $M$ corresponds to $\diag(1,1/k)\,\xi$ for $M_{(U,z)}$.
+\end{proposition}
+\begin{proof}
+At a crest $x>y>k$. For a section variation $(\xi_U,0,\xi_y)$ the sign-conjugated wedge of the tangent and variation is
+\[
+w=\bigl((y-k)\xi_U,\ (x-y)\xi_U,\ (y-k)\xi_y\bigr)^{\mathsf T}.
+\]
+It evolves by
+\begin{equation}\label{eq:compound}
+w'=Cw,\qquad C=\begin{pmatrix}-\mu&1&0\\0&-1&1\\x&0&-A\end{pmatrix}.
+\end{equation}
+Each nonzero nonnegative coordinate variation starts a nonzero nonnegative wedge, which becomes strictly positive. At the return crest its first and third entries recover $\xi_U,\xi_y$ by division by $y-k>0$. The event-time correction adds a multiple of the tangent and does not alter this wedge. This proves entrywise positivity of $M$.
+
+Multiply \eqref{eq:scalar} by $U'$ and integrate to get $\int_0^T(p')^2\dd=\mu\int_0^T p^2\dd$. The periodic Wirtinger inequality for the mean-zero function $p$ gives $T\ge2\pi/\sqrt\mu$. Equality would force $U=c_0+c_1\cos(\sqrt\mu t+\theta)$, $c_1>0$. Substitution cancels $U'''+\mu U'$ and would make its exponential affine in the cosine, which strict convexity excludes. Thus the period inequality is strict. Liouville's identity gives $\det M=e^{-AT}$, and $AT>2\pi(\sqrt\mu+1/\sqrt\mu)\ge4\pi$.
+
+A variation $(\xi_U,\xi_y)$ in the coordinates $(U,y)$ is the variation $(\xi_U,\xi_y/k)=\diag(1,1/k)(\xi_U,\xi_y)^{\mathsf T}$ in the coordinates $(U,z)$. Conjugating $M$ by this positive diagonal matrix gives \eqref{geo:eq:similarity}; a similarity preserves eigenvalues and determinant, and a positive diagonal one preserves the sign of every entry.
+\end{proof}
+Small determinant does not imply contraction of every direction. In particular, it does not exclude $m_t\ge1$.

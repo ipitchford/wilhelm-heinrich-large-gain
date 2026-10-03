@@ -1,0 +1,765 @@
+% s11_wedge.tex -- small rate ratio: exact tau-time identities, kurtosis bound, near-Hamiltonian wedge,
+% relaxation limit (floating point), and what is missing for global uniqueness in the wedge.
+% Exported labels: sec:wedge lem:tauidentities thm:kurtosis thm:wedge.  Internal labels carry the prefix wed:.
+\section{Small rate ratio: the near-Hamiltonian wedge and the relaxation limit}\label{sec:wedge}
+This section concerns the limit $\mu\to0$. Most of it works in the frequency-one time $\tau=\sqrt\mu\,t$, with a dot for $\mathrm d/\mathrm d\tau$; the time convention and the local symbols are stated after the following list. The section contains statements of four kinds, whose status differs.
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item Exact identities that hold on every cycle at every parameter (Lemma~\ref{lem:tauidentities}). They are proved.
+\item Two statements about the unperturbed exponential-potential centre: its first-order Melnikov function has no zero (Proposition~\ref{wed:prop:melnikov}), and a kurtosis bound makes the third-order selection function a monotone bijection (Theorem~\ref{thm:kurtosis}, Corollary~\ref{wed:cor:root}). The kurtosis bound holds for every potential that satisfies the hypotheses of Theorem~\ref{thm:kurtosis}: class $C^2$, strict convexity, minimum value $0$ at the origin, and growth to infinity in both directions. Both statements are proved.
+\item A local uniqueness theorem in the wedge $\rho-1=O(\mu)$ (Theorem~\ref{thm:wedge}). Its slow-graph property \textup{(F)} is established in Lemma~\ref{wed:lem:slowgraph} using the precisely cited persistence theorem of Eldering. The theorem is local in a fixed energy ball, its threshold $\mu_0$ is not explicit, and it is not a global uniqueness statement.
+\item Floating-point observations on the wedge and on the regime of fixed $\rho>1$ (Subsection~\ref{wed:sec:relax}), kept apart from the proofs, and a statement of what is missing for global uniqueness in the wedge (Subsection~\ref{wed:sec:missing}).
+\end{enumerate}
+\emph{Time convention.} Subsections~\ref{wed:sec:identities}--\ref{wed:sec:wedge} work in the frequency-one time $\tau=\sqrt\mu\,t$, and there a dot denotes $\mathrm d/\mathrm d\tau$. A prime on a function of time keeps its global meaning $\mathrm d/\mathrm dt$; it occurs only in the conversion formulas \eqref{wed:eq:conversion}, in \eqref{wed:eq:identitiesoriginal} and in Subsections~\ref{wed:sec:relax} and~\ref{wed:sec:missing}, which return to the original time. A prime on a function of one real variable, as in $\Phi'$, $I_0'$ or $R_{\mathrm{sel}}'$, is the ordinary derivative. Since $\tau$ is a constant multiple of $t$, the average $\avg{\cdot}$ over a period is the same in both times,
+\[
+\frac1T\int_0^T(\,\cdot\,)\dd=\frac1{\sqrt\mu\,T}\int_0^{\sqrt\mu\,T}(\,\cdot\,)\,\mathrm d\tau ,
+\]
+whereas an integral over one period with respect to $\tau$ is $\sqrt\mu$ times the integral with respect to $t$. The symbol $\oint$ denotes an integral over one period of the closed orbit named in the sentence, with respect to $\tau$ unless $\mathrm dU$ is displayed.
+
+\paragraph{Local symbols.}
+$\varepsilon=\sqrt\mu/(1+\mu)=\sqrt\mu/A$ and the wedge parameter $r=(\rho-1)/\varepsilon^2=A\delta/\mu^2$ (in this section $r$ is not the displacement of Corollary~\ref{cor:cones}); $P=\dot U$ and $Q=\ddot U$ (in this section $Q$ is not a set of parameters); $g(U)=e^U-1=\Rem'(U)$; $\Phi$, a general convex potential, equal to $\Rem$ for the model; $U_-(\xi)<0<U_+(\xi)$, the two solutions of $\Phi(U)=\xi$; the energy $\mathcal E_0(U,P)=\tfrac12P^2+\Rem(U)$, an energy level $\xi>0$ and the energy ball $\Omega_\xi=\{(U,P):\mathcal E_0(U,P)\le\xi\}$; $P_m=\sqrt{2\xi}$; the period $T_0(\xi)$, the integrals $I_0(\xi)$, $I_1(\xi)$ and the selection function $R_{\mathrm{sel}}(\xi)$ of \eqref{wed:eq:actions}; the Melnikov functions $\mathcal M_1$ of \eqref{wed:eq:melnikov} and $\mathcal M_3$ of \eqref{wed:eq:M3}, which are unrelated to the crest-return derivative $M$; the root $\xi_*(r)$ of Corollary~\ref{wed:cor:root}. In the proof of Theorem~\ref{thm:kurtosis}: the velocity density $f$, the measures $\nu$, $\nu_1$ and the moments $m_2$, $m_4$. In Subsections~\ref{wed:sec:normalform} and~\ref{wed:sec:wedge}: the slow-manifold function $w$, its coefficients $w_0,\dots,w_3$ and remainder $\tilde w$; the planar field $\mathcal V_\varepsilon$; the functions $\Theta$, $\Upsilon$, $\mathcal E_1$, $\mathcal E_2$, the modified energy $\tilde{\mathcal E}$ and the densities $\phi_3$, $\phi_4$ of \eqref{wed:eq:auxiliary}--\eqref{wed:eq:phi4}; the smoothness index $N$; the sets $\mathsf K$, $\mathsf O$ and the ball $\hat K$ of statement \textup{(F)}; the deviation $\varpi=Q-w$; polar coordinates $(\varsigma,\theta)$ in the $(U,P)$ plane with the functions $\hat w$, $\mathsf r_\varsigma$, $\mathsf r_\theta$; the half-axis $\mathcal L_+=\{(U,0):U>0\}$; the return map $\Pi_\varepsilon$, the return time $\tau_{\rm ret}$, the least period $\tau_p$ of a closed orbit of $\mathcal V_\varepsilon$, the crest abscissa $\alpha$, and the displacement functions $\beta$ and $\chi$, $\chi_3$, $\chi_4$. In Subsection~\ref{wed:sec:relax}: the slow time $\tilde t=\mu t$ and $V=\mu U$; the pre-pulse slope $q$, the pulse map $\mathcal G$, the slow-phase return time $\vartheta$, the limit map $\Pi^{\rm rel}_\lambda$, its fixed point $q_*(\rho)$ and multiplier $m_0(\rho)$, the limiting scaled period $S(\rho)$ (not the signature matrix of \eqref{eq:adjointmatrices}, which does not occur in this section), and the amplitude function $\Lambda(q)$ (unrelated to $\LamE$). In Subsection~\ref{wed:sec:missing}: $\hat\eta=(\eta-\mu)/\mu$, $\mathsf s=(1+\eta)/A$, $\mathsf V=P/\mathsf s$, $\mathsf E=\tfrac12\mathsf V^2+\rho\,\Rem(U)$, the operator $\mathsf L=\varepsilon\,\mathrm d/\mathrm d\tau+\mathsf s$, the number $M_0$ of Lemma~\ref{lem:statebox} and constants $C_1,C_2$. Numbers written $c_j$, $c_w$, $c_\theta$, $c_E$, $\varepsilon_j$, $L$, $d$, $d_b$, $C$ are constants local to a proof.
+
+\subsection{The scalar equation in frequency-one time and exact identities}\label{wed:sec:identities}
+In the time $\tau$, equation \eqref{eq:scalar} divided by $A\mu$ is
+\begin{equation}\label{wed:eq:S}
+\varepsilon\,\dddot U+\ddot U+\varepsilon\,\dot U+\rho\,(e^U-1)=0,
+\qquad \varepsilon=\frac{\sqrt\mu}{1+\mu},\quad \rho=\frac{k}{\kH},
+\end{equation}
+because $k/(A\mu)=\rho$. With $P=\dot U$ and $Q=\ddot U$ it is the first-order system
+\begin{equation}\label{wed:eq:S1}
+\dot U=P,\qquad \dot P=Q,\qquad \varepsilon\,\dot Q=-Q-\varepsilon P-\rho\,g(U),\qquad g(U)=e^U-1 .
+\end{equation}
+The variables are related to those of \eqref{eq:logsystem} by
+\begin{equation}\label{wed:eq:conversion}
+P=\frac{p}{\sqrt\mu},\qquad Q=\frac{p'}{\mu}=\frac{k-\mu p-y}{\mu},\qquad \dot Q=\frac{p''}{\mu^{3/2}} .
+\end{equation}
+For fixed parameters $(U,p,y)\mapsto(U,P,Q)$ is an affine bijection of $\R^3$, so the cycles of \eqref{eq:logsystem} are the nonconstant periodic orbits of \eqref{wed:eq:S1}, traversed in the time $\tau$; a cycle of least period $T$ has $\tau$-period $\sqrt\mu\,T$. Conversely every nonconstant periodic solution of \eqref{wed:eq:S1} is a cycle: $x=ke^U>0$; at a minimum of $y$ the equation $y'=x-y$ gives $y=x>0$; and at a maximum of $p$ the equation $p'=k-\mu p-y$ gives $p=(k-y)/\mu<\lambda$. The map $\mu\mapsto\varepsilon$ is an increasing bijection of $(0,1]$ onto $(0,\tfrac12]$, and \eqref{wed:eq:S} depends on $\mu$ only through $\varepsilon$. Appendix~\ref{app:hopf} uses the same equation multiplied by $1/\varepsilon$.
+
+\begin{lemma}[Exact identities in frequency-one time]\label{lem:tauidentities}
+On every cycle of \eqref{eq:logsystem}, with $P=\dot U$, $Q=\ddot U$ and averages over one period,
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item $\avg{e^U}=1$;
+\item $\avg{Q^2}=\avg{P^2}$;
+\item $\avg{Q^2}=\rho\avg{e^UP^2}$, and hence $\avg{(\rho e^U-1)P^2}=0$;
+\item $(\rho-1)\avg{P^2}=\varepsilon\avg{P^3}-2\varepsilon\avg{Q^2P}$;
+\item $\avg{e^UP^3}=-\dfrac{2\varepsilon}{\rho}\bigl(\avg{\dot Q^2}-\avg{Q^2}\bigr)$;
+\item $(\rho-1)\avg{P^2}=\varepsilon^2\Bigl[\dfrac1\rho\bigl(\avg{P^4}-3\avg{Q^2P^2}\bigr)-\avg{Q^3}+2\Bigl(1-\dfrac1\rho\Bigr)\bigl(\avg{\dot Q^2}-\avg{Q^2}\bigr)\Bigr]$.
+\end{enumerate}
+In the original variables, with $\delta=k-\kH$, identities \textup{(b)}, \textup{(c)} and \textup{(f)} read
+\begin{equation}\label{wed:eq:identitiesoriginal}
+\begin{gathered}
+\avg{p'^2}=\mu\avg{p^2},\qquad \avg{x\,p^2}=\kH\avg{p^2},\\
+\delta A\avg{p^2}=\frac1\rho\bigl(\mu\avg{p^4}-3\avg{p'^2p^2}\bigr)-\avg{p'^3}+2\Bigl(1-\frac1\rho\Bigr)\bigl(\avg{p''^2}-\mu\avg{p'^2}\bigr).
+\end{gathered}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Each identity is obtained by multiplying \eqref{wed:eq:S}, in the form $\varepsilon\dot Q+Q+\varepsilon P+\rho\,g(U)=0$, by a periodic multiplier, averaging over a period and integrating by parts. The average of the $\tau$-derivative of a periodic function is zero, and $\tfrac{\mathrm d}{\mathrm d\tau}g(U)=e^UP$.
+
+\emph{(a)} Multiplier $1$: the averages of $\dot Q$, of $Q=\dot P$ and of $P=\dot U$ vanish, so $\rho\avg{g(U)}=0$.
+
+\emph{(b)} Multiplier $P$: $\avg{P\dot Q}=-\avg{Q^2}$, $\avg{PQ}=\avg{\tfrac{\mathrm d}{\mathrm d\tau}\tfrac12P^2}=0$ and $\avg{g(U)P}=\avg{\tfrac{\mathrm d}{\mathrm d\tau}(e^U-U)}=0$. What remains is $\varepsilon\bigl(\avg{P^2}-\avg{Q^2}\bigr)=0$.
+
+\emph{(c)} Multiplier $Q$: $\avg{Q\dot Q}=0$, $\avg{PQ}=0$ and $\avg{g(U)Q}=\avg{g(U)\dot P}=-\avg{e^UP^2}$. What remains is $\avg{Q^2}-\rho\avg{e^UP^2}=0$. With (b) this gives $\avg{P^2}=\rho\avg{e^UP^2}$.
+
+\emph{(d)} By (b) and (c), $\avg{P^2}=\rho\avg{e^UP^2}=\rho\avg{g(U)P^2}+\rho\avg{P^2}$, that is,
+\[
+(\rho-1)\avg{P^2}=-\rho\avg{g(U)P^2}.
+\]
+Substitute $\rho\,g(U)=-(\varepsilon\dot Q+Q+\varepsilon P)$ and use $\avg{QP^2}=\avg{\tfrac{\mathrm d}{\mathrm d\tau}\tfrac13P^3}=0$ and $\avg{\dot QP^2}=-2\avg{Q^2P}$.
+
+\emph{(e)} Multiplier $\dot Q$: $\avg{Q\dot Q}=0$, $\avg{P\dot Q}=-\avg{Q^2}$, and
+\[
+\avg{g(U)\dot Q}=-\avg{e^UPQ}=-\avg{e^U\tfrac{\mathrm d}{\mathrm d\tau}\tfrac12P^2}=\tfrac12\avg{e^UP^3}.
+\]
+What remains is $\varepsilon\bigl(\avg{\dot Q^2}-\avg{Q^2}\bigr)+\tfrac12\rho\avg{e^UP^3}=0$.
+
+\emph{(f)} Since $e^U-g(U)=1$, $\avg{P^3}=\avg{e^UP^3}-\avg{g(U)P^3}$, and
+\[
+-\rho\avg{g(U)P^3}=\avg{(\varepsilon\dot Q+Q+\varepsilon P)P^3}=\varepsilon\bigl(\avg{P^4}-3\avg{Q^2P^2}\bigr),
+\]
+because $\avg{QP^3}=0$ and $\avg{\dot QP^3}=-3\avg{Q^2P^2}$. Replacing one factor $Q$ by $-(\varepsilon\dot Q+\varepsilon P+\rho\,g(U))$,
+\[
+\avg{Q^2P}=-\varepsilon\avg{\dot QQP}-\varepsilon\avg{P^2Q}-\rho\avg{g(U)QP}
+=\tfrac12\varepsilon\avg{Q^3}+\tfrac12\rho\avg{e^UP^3},
+\]
+because $\avg{\dot QQP}=-\tfrac12\avg{Q^3}$, $\avg{P^2Q}=0$ and $\avg{g(U)QP}=\avg{g(U)\tfrac{\mathrm d}{\mathrm d\tau}\tfrac12P^2}=-\tfrac12\avg{e^UP^3}$. Inserting both expressions into (d),
+\[
+(\rho-1)\avg{P^2}=\frac{\varepsilon^2}{\rho}\bigl(\avg{P^4}-3\avg{Q^2P^2}\bigr)-\varepsilon^2\avg{Q^3}+\varepsilon(1-\rho)\avg{e^UP^3},
+\]
+and (e) turns the last term into $2\varepsilon^2(1-1/\rho)\bigl(\avg{\dot Q^2}-\avg{Q^2}\bigr)$.
+
+\emph{Original variables.} Insert \eqref{wed:eq:conversion} and $\varepsilon^2=\mu/A^2$. Identity (b) becomes $\avg{p'^2}=\mu\avg{p^2}$. Identity (c) with (b) becomes $\avg{p^2}=\rho\avg{e^Up^2}=\avg{x\,p^2}/\kH$. Identity (f) multiplied by $\mu^2A^2$ becomes the last line of \eqref{wed:eq:identitiesoriginal}, since $(\rho-1)\mu A^2=\delta A$.
+\end{proof}
+Identity (a) is $\avg x=k$, and the first identity in \eqref{wed:eq:identitiesoriginal} was used in the proof of Proposition~\ref{prop:crestmap}. Identities (b) and (c) together are the exact form, on a cycle of the full system, of the first-order balance studied in Subsection~\ref{wed:sec:melnikov}; identity (f) is an exact identity on a cycle of the full system whose formal leading-order limit in the wedge is the third-order selection rule of Subsection~\ref{wed:sec:normalform} (Remark~\ref{wed:rem:exactselection}). The identities hold for cycles of every amplitude. They relate averages; none of them bounds the amplitude of a cycle.
+
+\subsection{The first-order Melnikov function has no zero}\label{wed:sec:melnikov}
+Write \eqref{wed:eq:S} as a perturbation of a Hamiltonian equation,
+\begin{equation}\label{wed:eq:perturbed}
+\ddot U+\rho\,(e^U-1)=-\varepsilon\,(\dddot U+\dot U).
+\end{equation}
+For $\rho>0$ the unperturbed equation $\ddot U+\rho(e^U-1)=0$ has the first integral $\tfrac12P^2+\rho\,\Rem(U)$. Since $\Rem$ is strictly convex with $\Rem(0)=0$ and $\Rem(U)\to\infty$ as $U\to\pm\infty$, every level set $\{\tfrac12P^2+\rho\,\Rem(U)=\xi\}$ with $\xi>0$ is a closed orbit around the origin. Along solutions of \eqref{wed:eq:perturbed},
+\begin{equation}\label{wed:eq:energybalance}
+\frac{\mathrm d}{\mathrm d\tau}\Bigl(\tfrac12P^2+\rho\,\Rem(U)\Bigr)=P\bigl(Q+\rho\,g(U)\bigr)=-\varepsilon P\,(\dot Q+P).
+\end{equation}
+Integrating the right-hand side over an unperturbed closed orbit, on which $\oint P\dot Q\,\mathrm d\tau=-\oint Q^2\,\mathrm d\tau$, gives $-\varepsilon\,\mathcal M_1$, where
+\begin{equation}\label{wed:eq:melnikov}
+\mathcal M_1(\xi):=\oint\bigl(\dot U^2-\ddot U^2\bigr)\,\mathrm d\tau
+\qquad\text{over the orbit }\tfrac12P^2+\rho\,\Rem(U)=\xi
+\end{equation}
+is the first-order Melnikov function of the perturbation.
+
+\begin{proposition}[No zero at first order]\label{wed:prop:melnikov}
+Let $\rho>0$ and $\xi>0$. On the closed orbit $\tfrac12P^2+\rho\,\Rem(U)=\xi$ of $\ddot U+\rho(e^U-1)=0$,
+\begin{equation}\label{wed:eq:todaidentities}
+\oint e^UP^2\,\mathrm d\tau=\oint P^2\,\mathrm d\tau,\qquad
+\oint Q^2\,\mathrm d\tau=\rho\oint P^2\,\mathrm d\tau .
+\end{equation}
+Consequently
+\begin{equation}\label{wed:eq:melnikovvalue}
+\mathcal M_1(\xi)=\oint\bigl(\dot U^2-\rho^2(e^U-1)^2\bigr)\,\mathrm d\tau=(1-\rho)\oint\dot U^2\,\mathrm d\tau .
+\end{equation}
+For $\rho>1$ the function $\mathcal M_1$ is negative on $(0,\infty)$; it has no zero for any $\rho\neq1$. The ratio $\oint\dot U^2\,\mathrm d\tau\big/\oint(e^U-1)^2\,\mathrm d\tau$ equals $\rho$ on every orbit.
+\end{proposition}
+\begin{proof}
+On the orbit $g(U)=-Q/\rho$, so $\oint g(U)P^2\,\mathrm d\tau=-\rho^{-1}\oint P^2\dot P\,\mathrm d\tau=0$, which is the first identity because $e^U=1+g(U)$. Integrating by parts and using $\dot Q=-\rho e^UP$,
+\[
+\oint Q^2\,\mathrm d\tau=-\oint P\dot Q\,\mathrm d\tau=\rho\oint e^UP^2\,\mathrm d\tau=\rho\oint P^2\,\mathrm d\tau .
+\]
+This is the second identity. Since $Q^2=\rho^2(e^U-1)^2$ on the orbit, \eqref{wed:eq:melnikovvalue} and the statement about the ratio follow.
+\end{proof}
+
+By \eqref{wed:eq:energybalance} and Proposition~\ref{wed:prop:melnikov}, the first-order change of the energy over one turn of an unperturbed orbit is $-\varepsilon\mathcal M_1(\xi)=\varepsilon(\rho-1)\oint P^2\,\mathrm d\tau$. For fixed $\rho>1$ it is positive at every energy. First-order averaging therefore selects no amplitude, and the ratio that would have to be monotone for a first-order selection argument is constant. On a cycle of the full system the corresponding exact statement is Lemma~\ref{lem:tauidentities}(b),(c).
+
+The first-order term can be balanced by terms of higher order only if $\rho-1$ is itself small. At $\rho=1$ the first-order term vanishes identically, and so does the second-order term; the first term that does not vanish is of third order in $\varepsilon$. The scaling in which the first-order term has that same order is
+\begin{equation}\label{wed:eq:wedge}
+\rho=1+r\,\varepsilon^2,\qquad\text{equivalently}\qquad \delta=k-\kH=\frac{r\mu^2}{1+\mu},\qquad r>0\ \text{fixed}.
+\end{equation}
+This is a wedge above the Hopf curve of width $\rho-1\approx r\mu$ as $\mu\to0$. In the wedge the energy changes by $O(\varepsilon^3)$ per turn, the term of order $\varepsilon^2$ vanishes identically, and the amplitude is selected at third order; Lemma~\ref{wed:lem:normalform} and Theorem~\ref{thm:wedge} make this precise. For fixed $\rho>1$ and $\mu\to0$ Proposition~\ref{wed:prop:melnikov} does not, by itself, describe the cycles of the full system. The floating-point observations of Subsection~\ref{wed:sec:relax} indicate that their energy is then of order $1/\mu$ and that the regime is a relaxation oscillation and not a Hamiltonian one.
+
+\subsection{A kurtosis bound for convex potentials}\label{wed:sec:kurtosis}
+The next theorem concerns a one-degree-of-freedom Hamiltonian system with a convex potential. It does not involve the Wilhelm--Heinrich system; the case used later is $\Phi=\Rem$.
+
+\begin{theorem}[Kurtosis bound and monotone selection function]\label{thm:kurtosis}
+Let $\Phi\in C^2(\R)$ be strictly convex with $\Phi(0)=\Phi'(0)=0$ and $\Phi(U)\to\infty$ as $U\to\pm\infty$. For $\xi>0$ the level set $\{\tfrac12P^2+\Phi(U)=\xi\}$ is a periodic orbit of $\ddot U+\Phi'(U)=0$, $P=\dot U$. Let $T_0(\xi)$ be its period, $\avg{\cdot}_\xi$ the time average over it, $P_m=\sqrt{2\xi}$ the maximum of $P$ on it, and
+\begin{equation}\label{wed:eq:actions}
+\begin{gathered}
+I_0(\xi)=\oint P\,\mathrm dU=\oint P^2\,\mathrm d\tau,\qquad
+I_1(\xi)=\oint P^3\,\mathrm dU=\oint P^4\,\mathrm d\tau,\\
+R_{\mathrm{sel}}(\xi)=\frac23\,\frac{I_1(\xi)}{I_0(\xi)}=\frac23\,\frac{\avg{P^4}_\xi}{\avg{P^2}_\xi}.
+\end{gathered}
+\end{equation}
+Then, for every $\xi>0$:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $\tfrac13P_m^2\le\avg{P^2}_\xi<P_m^2$;
+\item $\avg{P^4}_\xi\le\tfrac65P_m^2\avg{P^2}_\xi-\tfrac15P_m^4\le\tfrac95\avg{P^2}_\xi^2$;
+\item $I_0$ and $I_1$ are continuously differentiable on $(0,\infty)$ with $I_0'=T_0$ and $I_1'=3I_0$, and
+\[
+R_{\mathrm{sel}}'(\xi)=\frac23\Bigl(3-\frac{\avg{P^4}_\xi}{\avg{P^2}_\xi^2}\Bigr)\ \ge\ \frac45;
+\]
+\item $\tfrac45\xi\le R_{\mathrm{sel}}(\xi)\le\tfrac43\xi$, and $R_{\mathrm{sel}}$ is a strictly increasing bijection of $(0,\infty)$ onto itself.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+Since $\Phi$ is strictly convex, $\Phi'$ is strictly increasing, and $\Phi'(0)=0$. Hence $\Phi$ is strictly decreasing on $(-\infty,0]$ and strictly increasing on $[0,\infty)$, and for every $\xi'>0$ the equation $\Phi(U)=\xi'$ has exactly two solutions $U_-(\xi')<0<U_+(\xi')$. They are continuous and monotone in $\xi'$ and tend to $0$ as $\xi'\to0$; put $U_\pm(0)=0$. Fix $\xi>0$. The level set is the closed curve $P=\pm\sqrt{2(\xi-\Phi(U))}$, $U_-(\xi)\le U\le U_+(\xi)$. It contains no equilibrium, because the only equilibrium is the origin, so it is a periodic orbit. Its period is finite because the turning points are simple: $\Phi'(U_\pm(\xi))\neq0$.
+
+\emph{Time density of the velocity.} The reversibility $(U,P,\tau)\mapsto(U,-P,-\tau)$ maps the orbit to itself. For an even function of $P$ the average over the period therefore equals the average over the half-orbit $\{P\ge0\}$, whose duration is $T_0/2$. The half-orbit consists of the arc from $(U_-(\xi),0)$ to $(0,P_m)$, on which $\dot P=-\Phi'(U)>0$, and the arc from $(0,P_m)$ to $(U_+(\xi),0)$, on which $\dot P<0$. On each arc $P$ is a strictly monotone function of $\tau$, with $\mathrm d\tau=\mathrm dP/|\Phi'(U)|$ and $U=U_\mp(\xi-\tfrac12P^2)$. Hence, for every continuous $F\ge0$ on $[0,P_m]$,
+\begin{equation}\label{wed:eq:density}
+\int_0^{T_0/2}F(P(\tau))\,\mathrm d\tau=\int_0^{P_m}F(P)\,f(P)\,\mathrm dP,\qquad
+f(P):=\frac1{\bigl|\Phi'\bigl(U_-(\xi-\tfrac12P^2)\bigr)\bigr|}+\frac1{\Phi'\bigl(U_+(\xi-\tfrac12P^2)\bigr)} .
+\end{equation}
+As $P$ increases from $0$ to $P_m$, the level $\xi-\tfrac12P^2$ decreases from $\xi$ to $0$, $U_+$ decreases to $0$ and $U_-$ increases to $0$, and both $|\Phi'(U_-)|$ and $\Phi'(U_+)$ decrease strictly to $0$, because $\Phi'$ is strictly increasing and vanishes at $0$. So $f$ is positive, continuous and strictly increasing on $[0,P_m)$, and $\int_0^{P_m}f\,\mathrm dP=T_0/2<\infty$ (take $F=1$). For $j=2,4$,
+\begin{equation}\label{wed:eq:momentsdensity}
+\avg{P^j}_\xi=\frac2{T_0}\int_0^{P_m}P^jf(P)\,\mathrm dP .
+\end{equation}
+
+\emph{(i)} The functions $P^2$ and $f$ are both nondecreasing on $(0,P_m)$, so
+\[
+0\le\int_0^{P_m}\!\!\int_0^{P_m}\bigl(P^2-s^2\bigr)\bigl(f(P)-f(s)\bigr)\,\mathrm dP\,\mathrm ds
+=2P_m\int_0^{P_m}P^2f\,\mathrm dP-2\int_0^{P_m}P^2\,\mathrm dP\int_0^{P_m}f\,\mathrm dP ,
+\]
+all integrals being finite because $f$ is integrable. This is Chebyshev's integral inequality. With $\int_0^{P_m}P^2\,\mathrm dP=\tfrac13P_m^3$ and \eqref{wed:eq:momentsdensity} it gives $\avg{P^2}_\xi\ge\tfrac13P_m^2$. The upper bound holds because $P^2<P_m^2$ except at two instants of the period.
+
+\emph{(ii)} Define a nonnegative measure $\nu$ on $[0,P_m)$ by $\nu(\{0\})=f(0)$ and $\nu((s_1,s_2])=f(s_2)-f(s_1)$ for $0\le s_1<s_2<P_m$. It is finite on $[0,s]$ for every $s<P_m$, and $f(P)=\nu([0,P])$. By Tonelli's theorem, for $j=0,2,4$,
+\[
+\int_0^{P_m}P^jf(P)\,\mathrm dP=\int_0^{P_m}P^j\!\int_{[0,P]}\mathrm d\nu(s)\,\mathrm dP
+=\int_{[0,P_m)}\Bigl(\int_s^{P_m}P^j\,\mathrm dP\Bigr)\mathrm d\nu(s).
+\]
+For $j=0$ this reads $\int_{[0,P_m)}(P_m-s)\,\mathrm d\nu(s)=T_0/2$, so $\mathrm d\nu_1(s)=(2/T_0)(P_m-s)\,\mathrm d\nu(s)$ is a probability measure on $[0,P_m)$. With
+\[
+m_j(s):=\frac1{P_m-s}\int_s^{P_m}P^j\,\mathrm dP,\qquad\text{we obtain}\qquad \avg{P^j}_\xi=\int_{[0,P_m)}m_j\,\mathrm d\nu_1\quad(j=2,4).
+\]
+Put $\omega=s/P_m\in[0,1)$. Then $m_2=\tfrac13P_m^2(1+\omega+\omega^2)$, $m_4=\tfrac15P_m^4(1+\omega+\omega^2+\omega^3+\omega^4)$, and
+\begin{equation}\label{wed:eq:polyidentity}
+\tfrac65P_m^2\,m_2-\tfrac15P_m^4-m_4=\tfrac15P_m^4\,\omega\,(1+\omega)(1-\omega^2)\ \ge0 .
+\end{equation}
+Integrating \eqref{wed:eq:polyidentity} against $\nu_1$ gives the first inequality of (ii). The second is
+\[
+\tfrac95\,\mathsf g^2-\tfrac65\,\mathsf g+\tfrac15=\tfrac15(3\mathsf g-1)^2\ge0\qquad\text{with }\mathsf g=\avg{P^2}_\xi/P_m^2 ,
+\]
+multiplied by $P_m^4$.
+
+\emph{(iii)} The upper half of the orbit is the graph $P=\sqrt{2(\xi-\Phi(U))}$, so, writing $(\cdot)_+$ for the positive part,
+\begin{gather*}
+I_0(\xi)=2\int_\R\sqrt{2(\xi-\Phi(U))_+}\,\mathrm dU,\qquad
+I_1(\xi)=2\int_\R\bigl(2(\xi-\Phi(U))_+\bigr)^{3/2}\,\mathrm dU,\\
+T_0(\xi)=2\int_{\{\Phi<\xi\}}\frac{\mathrm dU}{\sqrt{2(\xi-\Phi(U))}} .
+\end{gather*}
+Let $0<\xi_1<\xi_2$. By Tonelli's theorem and $\tfrac{\partial}{\partial\xi}\sqrt{2(\xi-\Phi)}=1/\sqrt{2(\xi-\Phi)}$,
+\[
+\int_{\xi_1}^{\xi_2}T_0(\xi)\,\mathrm d\xi
+=2\int_\R\Bigl[\sqrt{2(\xi_2-\Phi(U))_+}-\sqrt{2(\xi_1-\Phi(U))_+}\Bigr]\mathrm dU=I_0(\xi_2)-I_0(\xi_1),
+\]
+and in the same way, by $\tfrac{\partial}{\partial\xi}\bigl(2(\xi-\Phi)\bigr)^{3/2}=3\sqrt{2(\xi-\Phi)}$,
+\[
+\int_{\xi_1}^{\xi_2}3I_0(\xi)\,\mathrm d\xi=I_1(\xi_2)-I_1(\xi_1).
+\]
+The period $T_0$ is continuous in $\xi$: the orbit through $(U_+(\xi),0)$ returns to the positive $U$-axis transversally, so its return time depends continuously on the initial point. Hence $I_0\in C^1$ with $I_0'=T_0$, and then $I_1\in C^1$ with $I_1'=3I_0$. Since $I_0=T_0\avg{P^2}_\xi$ and $I_1=T_0\avg{P^4}_\xi$,
+\[
+\Bigl(\frac{I_1}{I_0}\Bigr)'=\frac{3I_0^2-I_1T_0}{I_0^2}=3-\frac{\avg{P^4}_\xi}{\avg{P^2}_\xi^2}\ \ge\ 3-\frac95
+\]
+by (ii), and $R_{\mathrm{sel}}'\ge\tfrac23\cdot\tfrac65=\tfrac45$.
+
+\emph{(iv)} Since $P^4\le P_m^2P^2$, $R_{\mathrm{sel}}(\xi)\le\tfrac23P_m^2=\tfrac43\xi$; in particular $R_{\mathrm{sel}}(\xi)\to0$ as $\xi\to0$. Integrating (iii) from $0$ gives $R_{\mathrm{sel}}(\xi)\ge\tfrac45\xi$. A continuous function on $(0,\infty)$ with derivative at least $\tfrac45$, limit $0$ at $0$ and limit $\infty$ at $\infty$ is a strictly increasing bijection of $(0,\infty)$ onto itself.
+\end{proof}
+
+\begin{corollary}[The selection equation has one simple root]\label{wed:cor:root}
+In the setting of Theorem~\ref{thm:kurtosis} put, for $r>0$ and $\xi>0$,
+\begin{equation}\label{wed:eq:M3}
+\mathcal M_3(\xi;r):=r\,I_0(\xi)-\tfrac23I_1(\xi)=I_0(\xi)\bigl(r-R_{\mathrm{sel}}(\xi)\bigr).
+\end{equation}
+For every $r>0$ the equation $\mathcal M_3(\xi;r)=0$ has exactly one root $\xi_*(r)\in(0,\infty)$. It satisfies $\tfrac34r\le\xi_*(r)\le\tfrac54r$, the function $\xi_*=R_{\mathrm{sel}}^{-1}$ is continuously differentiable and strictly increasing, $\mathcal M_3(\xi;r)>0$ for $\xi<\xi_*(r)$, $\mathcal M_3(\xi;r)<0$ for $\xi>\xi_*(r)$, and the root is simple:
+\begin{equation}\label{wed:eq:M3slope}
+\partial_\xi\mathcal M_3\bigl(\xi_*(r);r\bigr)=r\,T_0(\xi_*)-2I_0(\xi_*)=-I_0(\xi_*)\,R_{\mathrm{sel}}'(\xi_*)\ \le\ -\tfrac45I_0(\xi_*)<0,\qquad \xi_*=\xi_*(r).
+\end{equation}
+\end{corollary}
+\begin{proof}
+$I_0>0$, so the zeros of $\mathcal M_3(\cdot;r)$ are the solutions of $R_{\mathrm{sel}}(\xi)=r$. By Theorem~\ref{thm:kurtosis}(iv) there is exactly one, and the bounds on $\xi_*(r)$ are those of (iv). $R_{\mathrm{sel}}$ is $C^1$ with derivative at least $\tfrac45$, so its inverse is $C^1$ and increasing. The signs of $\mathcal M_3$ follow from the monotonicity of $R_{\mathrm{sel}}$. Differentiating \eqref{wed:eq:M3} with $I_0'=T_0$ and $I_1'=3I_0$ gives $\partial_\xi\mathcal M_3=rT_0-2I_0$; differentiating the product form at the root, where $r-R_{\mathrm{sel}}=0$, gives $-I_0R_{\mathrm{sel}}'$.
+\end{proof}
+For $\Phi=\Rem$ the equation $r=R_{\mathrm{sel}}(\xi)$ is the third-order selection equation of the wedge (Lemma~\ref{wed:lem:normalform}), and $\varepsilon^3\mathcal M_3$ is the averaged change of energy per turn. Corollary~\ref{wed:cor:root} says that this change is positive below the level $\xi_*(r)$ and negative above it, so that the energy is restored from both sides: the root is unique, simple and has the attracting sign.
+
+\begin{remark}[Sharpness and scope]\label{wed:rem:sharp}
+For a potential as in Theorem~\ref{thm:kurtosis} the inequalities $\avg{P^4}_\xi\le\tfrac95\avg{P^2}_\xi^2$ and $R_{\mathrm{sel}}'\ge\tfrac45$ are strict at every $\xi>0$. Indeed, the right-hand side of \eqref{wed:eq:polyidentity} vanishes at $\omega=0$ and is positive for $0<\omega<1$, and $\nu_1$ is a probability measure, so that
+\[
+\tfrac65P_m^2\avg{P^2}_\xi-\tfrac15P_m^4-\avg{P^4}_\xi=\tfrac15P_m^4\int_{(0,P_m)}\omega\,(1+\omega)(1-\omega^2)\,\mathrm d\nu_1(s),\qquad \omega=s/P_m ,
+\]
+and the right-hand side is positive as soon as $\nu_1((0,P_m))>0$. Since $f$ is strictly increasing on $[0,P_m)$, we have $\nu((s_1,s_2])=f(s_2)-f(s_1)>0$ whenever $0\le s_1<s_2<P_m$, and $\mathrm d\nu_1=(2/T_0)(P_m-s)\,\mathrm d\nu$ with $P_m-s>0$ on $[0,P_m)$; hence $\nu_1((0,P_m))>0$. The first inequality of (ii) is therefore strict, and with it $\avg{P^4}_\xi<\tfrac95\avg{P^2}_\xi^2$ and, by the formula in (iii), $R_{\mathrm{sel}}'(\xi)>\tfrac45$. Equality in the first inequality of (ii) would require $\nu_1$ to be concentrated at $s=0$, that is, $f$ constant on $[0,P_m)$; this does not occur in the class of the theorem. A constant density does occur for the V-shaped potentials $\Phi(U)=a_+U$ for $U\ge0$, $\Phi(U)=a_-|U|$ for $U\le0$, with constants $a_\pm>0$, of which the multiples of $|U|$ are the symmetric ones. On their orbits the acceleration is constant on each side of the origin, the velocity is uniformly distributed over $[-P_m,P_m]$ in time, $\avg{P^2}_\xi=\tfrac13P_m^2$ and $\avg{P^4}_\xi=\tfrac15P_m^4$, and the lower bound in (i) and both inequalities of (ii) are equalities. These potentials are convex, but they are neither strictly convex nor differentiable at the origin, and they lie outside the class of the theorem. Apart from the regularity and the normalisation in its hypotheses, the proof uses only the convexity of the potential, through the monotonicity of $f$. For $\Phi=\Rem$ the kurtosis $\avg{P^4}_\xi/\avg{P^2}_\xi^2$ computed in floating point increases from $1.5000$ at $\xi=10^{-3}$ to $1.7988$ at $\xi=10^{3}$, and $R_{\mathrm{sel}}(\xi)/\xi$ decreases from $1.0000$ to $0.8045$ (output \path{provenance/research_lanes/hamiltonian/toda.out} in the accompanying bundle; Section~\ref{sec:evidence}). Theorem~\ref{thm:kurtosis} is a statement about the unperturbed centre; by itself it says nothing about the full system.
+\end{remark}
+
+\subsection{Third-order selection in the wedge}\label{wed:sec:normalform}
+From here on $\rho=1+r\varepsilon^2$ as in \eqref{wed:eq:wedge}, $\Phi=\Rem$, and $T_0$, $I_0$, $I_1$, $R_{\mathrm{sel}}$, $\mathcal M_3$, $\xi_*$ are those of Theorem~\ref{thm:kurtosis} and Corollary~\ref{wed:cor:root} for the potential $\Rem$; the corresponding centre $\ddot U+g(U)=0$ has the energy $\mathcal E_0(U,P)=\tfrac12P^2+\Rem(U)$. System \eqref{wed:eq:S1} becomes
+\begin{equation}\label{wed:eq:fastslow}
+\dot U=P,\qquad \dot P=Q,\qquad \varepsilon\,\dot Q=-Q-\varepsilon P-(1+r\varepsilon^2)\,g(U).
+\end{equation}
+A $C^1$ graph $Q=w(U,P)$ is invariant under \eqref{wed:eq:fastslow} exactly when
+\begin{equation}\label{wed:eq:invariance}
+\varepsilon\,\bigl(w_UP+w_Pw\bigr)=-w-\varepsilon P-(1+r\varepsilon^2)\,g(U),
+\end{equation}
+and the flow on such a graph is that of the planar field $\dot U=P$, $\dot P=w(U,P)$. Define
+\begin{equation}\label{wed:eq:wcoefficients}
+\begin{aligned}
+w_0&=-g,& w_1&=g\,P,\\
+w_2&=-r\,g-e^UP^2+g^2,& w_3&=r\,e^UP+e^UP^3-4\,g\,e^UP-g^2P,
+\end{aligned}
+\end{equation}
+with $g=g(U)$, and
+\begin{equation}\label{wed:eq:auxiliary}
+\begin{gathered}
+\Theta(U)=\int_0^Ug(u)^2\,\mathrm du=\tfrac12e^{2U}-2e^U+U+\tfrac32,\qquad
+\Upsilon(U,\xi)=\int_{U_-(\xi)}^{U}2\bigl(\xi-\Rem(u)\bigr)\,\mathrm du\quad(\xi>0),\\
+\mathcal E_1=\tfrac13P^3,\qquad
+\mathcal E_2=r\,\Rem(U)-\Theta(U)+\Upsilon\bigl(U,\mathcal E_0(U,P)\bigr),\qquad
+\tilde{\mathcal E}=\mathcal E_0+\varepsilon\,\mathcal E_1+\varepsilon^2\mathcal E_2,\\
+\phi_3=r\,P^2-4\,g\,e^UP^2+2\,g\,P^2\bigl(U-U_-(\mathcal E_0(U,P))\bigr).
+\end{gathered}
+\end{equation}
+The function $U_-$ is real-analytic on $(0,\infty)$ by the implicit function theorem, because $\Rem'(U_-(\xi))\neq0$. Hence $\mathcal E_2$, $\tilde{\mathcal E}$ and $\phi_3$ are real-analytic on $\R^2\setminus\{(0,0)\}=\{\mathcal E_0>0\}$.
+
+\begin{lemma}[Slow-manifold coefficients, modified energy, third-order average]\label{wed:lem:normalform}
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item The functions \eqref{wed:eq:wcoefficients} are the unique solution of the recursion obtained by inserting $w=w_0+\varepsilon w_1+\varepsilon^2w_2+\varepsilon^3w_3+O(\varepsilon^4)$ into \eqref{wed:eq:invariance} and equating the coefficients of $\varepsilon^0,\dots,\varepsilon^3$:
+\begin{equation}\label{wed:eq:recursion}
+\begin{aligned}
+w_0&=-g,\\
+w_1&=-P-\bigl(\partial_Uw_0\,P+\partial_Pw_0\,w_0\bigr),\\
+w_2&=-r\,g-\bigl(\partial_Uw_1\,P+\partial_Pw_1\,w_0+\partial_Pw_0\,w_1\bigr),\\
+w_3&=-\bigl(\partial_Uw_2\,P+\partial_Pw_2\,w_0+\partial_Pw_1\,w_1+\partial_Pw_0\,w_2\bigr).
+\end{aligned}
+\end{equation}
+\item Let $w=w_0+\varepsilon w_1+\varepsilon^2w_2+\varepsilon^3w_3+\varepsilon^4\tilde w$ with an arbitrary function $\tilde w$. Then on $\{\mathcal E_0>0\}$
+\begin{equation}\label{wed:eq:drift}
+P\,\partial_U\tilde{\mathcal E}+w\,\partial_P\tilde{\mathcal E}=\varepsilon^3\phi_3+\varepsilon^4\phi_4,
+\end{equation}
+\begin{equation}\label{wed:eq:phi4}
+\phi_4=w_3P^2+w_2\,\partial_P\mathcal E_2+\varepsilon\,w_3\,\partial_P\mathcal E_2+\tilde w\,\bigl(P+\varepsilon P^2+\varepsilon^2\partial_P\mathcal E_2\bigr),
+\qquad \partial_P\mathcal E_2=2P\bigl(U-U_-(\mathcal E_0)\bigr).
+\end{equation}
+\item For every $\xi>0$, on the orbit $\mathcal E_0=\xi$ of the centre $\ddot U+g(U)=0$,
+\begin{equation}\label{wed:eq:todaaverages}
+\oint g\,P^2\,\mathrm d\tau=0,\qquad
+\oint g\,U\,P^2\,\mathrm d\tau=\tfrac13I_1(\xi),\qquad
+\oint g\,e^UP^2\,\mathrm d\tau=\tfrac13I_1(\xi),
+\end{equation}
+and therefore
+\begin{equation}\label{wed:eq:thirdaverage}
+\oint\phi_3\,\mathrm d\tau=r\,I_0(\xi)-\tfrac23I_1(\xi)=\mathcal M_3(\xi;r).
+\end{equation}
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+\emph{(i)} The coefficient of $\varepsilon^j$ on the left of \eqref{wed:eq:invariance} is the coefficient of $\varepsilon^{j-1}$ in $w_UP+w_Pw$, and on the right it is $-w_j$, minus $P$ if $j=1$, minus $r\,g$ if $j=2$; the term $-g$ belongs to $j=0$. This is \eqref{wed:eq:recursion}, which determines $w_0,\dots,w_3$ successively. Evaluation: $\partial_Uw_0=-e^U$ and $\partial_Pw_0=0$ give $w_1=-P+e^UP=g\,P$. Next $\partial_Uw_1\,P+\partial_Pw_1\,w_0=e^UP^2-g^2$, so $w_2=-r\,g-e^UP^2+g^2$. Finally $\partial_Uw_2=-r\,e^U-e^UP^2+2g\,e^U$ and $\partial_Pw_2=-2e^UP$, so
+\[
+\partial_Uw_2\,P+\partial_Pw_2\,w_0+\partial_Pw_1\,w_1=-r\,e^UP-e^UP^3+2g\,e^UP+2g\,e^UP+g^2P,
+\]
+and $w_3$ is the negative of this expression.
+
+\emph{(ii)} We have $\partial_U\Upsilon(U,\xi)=2(\xi-\Rem(U))$ and $\partial_\xi\Upsilon(U,\xi)=2(U-U_-(\xi))$; the lower limit contributes nothing to the second derivative because $\xi-\Rem(U_-(\xi))=0$. At $\xi=\mathcal E_0(U,P)$ the first equals $P^2$. Hence
+\[
+\partial_U\mathcal E_2=r\,g-g^2+P^2+2(U-U_-)\,g,\qquad \partial_P\mathcal E_2=2(U-U_-)\,P,\qquad U_-=U_-(\mathcal E_0(U,P)),
+\]
+and
+\begin{equation}\label{wed:eq:cohomological}
+P\,\partial_U\mathcal E_2-g\,\partial_P\mathcal E_2=r\,g\,P-g^2P+P^3 .
+\end{equation}
+Since $\partial_U\tilde{\mathcal E}=g+\varepsilon^2\partial_U\mathcal E_2$ and $\partial_P\tilde{\mathcal E}=P+\varepsilon P^2+\varepsilon^2\partial_P\mathcal E_2$, the left side of \eqref{wed:eq:drift} is
+\[
+P\,g+\varepsilon^2P\,\partial_U\mathcal E_2+\bigl(w_0+\varepsilon w_1+\varepsilon^2w_2+\varepsilon^3w_3+\varepsilon^4\tilde w\bigr)\bigl(P+\varepsilon P^2+\varepsilon^2\partial_P\mathcal E_2\bigr).
+\]
+Its coefficients are as follows. Order $\varepsilon^0$: $Pg+w_0P=0$. Order $\varepsilon^1$: $w_1P+w_0P^2=g\,P^2-g\,P^2=0$. Order $\varepsilon^2$: by \eqref{wed:eq:cohomological},
+\[
+P\,\partial_U\mathcal E_2+w_0\,\partial_P\mathcal E_2+w_2P+w_1P^2
+=\bigl(r\,g\,P-g^2P+P^3\bigr)+\bigl(-r\,g\,P-e^UP^3+g^2P\bigr)+g\,P^3=0,
+\]
+because $g-e^U=-1$. Order $\varepsilon^3$:
+\[
+w_3P+w_2P^2+w_1\,\partial_P\mathcal E_2
+=\bigl(r\,e^U-r\,g\bigr)P^2-4g\,e^UP^2+2g\,P^2(U-U_-)=\phi_3 ,
+\]
+the terms $\pm e^UP^4$ and $\pm g^2P^2$ cancelling. The remaining terms are $\varepsilon^4\phi_4$ with $\phi_4$ as in \eqref{wed:eq:phi4}.
+
+\emph{(iii)} On the orbit $g=-\dot P$. Thus $\oint g\,P^2\,\mathrm d\tau=-\oint\tfrac{\mathrm d}{\mathrm d\tau}\tfrac13P^3\,\mathrm d\tau=0$, and, integrating by parts,
+\begin{align*}
+\oint g\,U\,P^2\,\mathrm d\tau&=-\oint U\,\tfrac{\mathrm d}{\mathrm d\tau}\tfrac13P^3\,\mathrm d\tau=\tfrac13\oint P^4\,\mathrm d\tau,\\
+\oint g\,e^UP^2\,\mathrm d\tau&=-\oint e^U\,\tfrac{\mathrm d}{\mathrm d\tau}\tfrac13P^3\,\mathrm d\tau=\tfrac13\oint e^UP^4\,\mathrm d\tau .
+\end{align*}
+Moreover $\oint e^UP^4\,\mathrm d\tau=\oint P^4\,\mathrm d\tau+\oint g\,P^4\,\mathrm d\tau$ and $\oint g\,P^4\,\mathrm d\tau=-\oint\tfrac{\mathrm d}{\mathrm d\tau}\tfrac15P^5\,\mathrm d\tau=0$. This proves \eqref{wed:eq:todaaverages}. On the orbit $U_-(\mathcal E_0)=U_-(\xi)$ is constant, so
+\[
+\oint\phi_3\,\mathrm d\tau=r\,I_0-\tfrac43I_1+\tfrac23I_1-2U_-(\xi)\oint g\,P^2\,\mathrm d\tau=r\,I_0-\tfrac23I_1 .\qedhere
+\]
+\end{proof}
+By \eqref{wed:eq:drift}, along the planar field $\dot U=P$, $\dot P=w$ the modified energy $\tilde{\mathcal E}$ changes at the rate $\varepsilon^3\phi_3+O(\varepsilon^4)$: the first-order term of Subsection~\ref{wed:sec:melnikov}, which is now of order $\varepsilon^3$, and the second-order term have been absorbed, and the average of the third-order term over the level $\mathcal E_0=\xi$ is $\mathcal M_3(\xi;r)=I_0(\xi)(r-R_{\mathrm{sel}}(\xi))$.
+
+\begin{remark}[Exact counterpart of the selection rule]\label{wed:rem:exactselection}
+On an orbit of the centre $\ddot U+g(U)=0$ one has $Q=-g$, and \eqref{wed:eq:todaaverages} gives $\oint Q^2P^2\,\mathrm d\tau=\oint g\,e^UP^2\,\mathrm d\tau-\oint g\,P^2\,\mathrm d\tau=\tfrac13I_1$ and $\oint Q^3\,\mathrm d\tau=-\oint g^3\,\mathrm d\tau=\oint g^2\dot P\,\mathrm d\tau=-2\oint g\,e^UP^2\,\mathrm d\tau=-\tfrac23I_1$. Evaluated on such an orbit and with $\rho=1$ in its coefficients, the bracket of Lemma~\ref{lem:tauidentities}(f) is therefore $\avg{P^4}-\avg{P^4}+\tfrac23\avg{P^4}=\tfrac23\avg{P^4}$. On a cycle of the full system at a parameter $\rho=1+r\varepsilon^2$ of the wedge, identity (f) divided by $\varepsilon^2$ is the exact relation that $r\avg{P^2}$ equals the bracket. If in this relation the cycle is replaced by an orbit of the centre and $\rho$ by $1$ in the coefficients of the bracket, it becomes $r\avg{P^2}=\tfrac23\avg{P^4}$, that is, $r=R_{\mathrm{sel}}(\xi)$. This replacement is a formal leading-order limit and not an exact reduction of (f), and it is not used in a proof. In this sense (f) is the exact identity behind the third-order selection equation.
+\end{remark}
+
+\begin{remark}[Consistency with the Hopf coefficient]\label{wed:rem:hopf}
+As $\xi\to0$ the orbits of the centre become harmonic, $\avg{P^4}_\xi/\avg{P^2}_\xi\to\tfrac34P_m^2=\tfrac32\xi$, so $R_{\mathrm{sel}}(\xi)/\xi\to1$ and the selection equation gives a crest abscissa $\alpha$ with $\alpha^2\approx2\xi_*(r)\approx2r$. Appendix~\ref{app:hopf} gives, in terms of $\sigma=1/\varepsilon$, the transversality coefficient $\sigma/(2(1+\sigma^2))=\varepsilon/(2(1+\varepsilon^2))$ and the cubic coefficient $l_1=-\sigma/((\sigma^2+1)(\sigma^2+4))=-\varepsilon^3/((1+\varepsilon^2)(1+4\varepsilon^2))$. The squared modulus of the normal-form amplitude is their quotient times $\rho-1=r\varepsilon^2$, namely $\tfrac12r(1+4\varepsilon^2)$, and the amplitude of $U$ is twice that modulus, so its square is $2r(1+4\varepsilon^2)$. The two computations agree at leading order in $\varepsilon$.
+\end{remark}
+
+\subsection{Local uniqueness in the wedge}\label{wed:sec:wedge}
+\paragraph{The local slow-graph property \textup{(F)}.}
+Theorem~\ref{thm:wedge} uses the following property of system \eqref{wed:eq:fastslow}, in which $r$ is adjoined as a slow variable satisfying $\dot r=0$. It was an explicit assumption in version 3.0 and is established below.
+\begin{quote}
+\textbf{(F)}\quad For every compact set $\mathsf K$ in the space $\R^3$ of the variables $(U,P,r)$ and every integer $N\ge1$ there are a bounded open set $\mathsf O\supset\mathsf K$, a number $\varepsilon_0>0$ and a function $w\in C^N(\overline{\mathsf O}\times[0,\varepsilon_0])$ such that $w(U,P,r,0)=-g(U)$ and the invariance equation \eqref{wed:eq:invariance} holds on $\mathsf O\times[0,\varepsilon_0]$.
+\end{quote}
+Property \textup{(F)} supplies a locally invariant graph smooth jointly in the slow variables and in $\varepsilon$ down to zero. It is used only in Theorem~\ref{thm:wedge} and statements citing that theorem.
+\input{sections/s11_slowgraph}
+
+% Historical v3.0 sketch retained in source only; superseded by the checked application above.
+\iffalse
+
+\paragraph{Relation to Fenichel's theorem: a derivation sketch, not checked against the sources.}
+Statement \textup{(F)} is what Fenichel's theorem on the persistence of normally hyperbolic critical manifolds \cite{Fenichel79}, in the graph formulation of \cite{Jones95}, is expected to give for \eqref{wed:eq:fastslow}; the theorem is commonly cited as Theorem~9.1 of the first reference and Theorems~1 and~2 of the second. These two sources were not accessible while this paper was written. The theorem is therefore described here in the form in which it is commonly quoted, and neither that form nor the numbering was checked against the originals. In that form the theorem concerns a smooth fast--slow system whose critical manifold is normally hyperbolic and is, over a compact, simply connected domain with smooth boundary in the space of the slow variables, the graph of a smooth function. For every finite $N$ and all sufficiently small $\varepsilon>0$ it provides a locally invariant manifold which is the graph, over the same domain, of a function of class $C^N$ jointly in the slow variables and $\varepsilon$, down to $\varepsilon=0$, where it is the critical manifold. A set is \emph{locally invariant} if it has a neighbourhood such that every orbit segment that starts on the set and stays in the neighbourhood stays on the set.
+
+The reason for expecting \textup{(F)} is the following; it is a sketch and not a proof. In the fast time $\tau/\varepsilon$ the system is
+\[
+\frac{\mathrm dQ}{\mathrm d(\tau/\varepsilon)}=-Q-\varepsilon P-(1+r\varepsilon^2)\,g(U),\qquad
+\frac{\mathrm d}{\mathrm d(\tau/\varepsilon)}(U,P,r)=\varepsilon\,(P,Q,0),
+\]
+with one fast variable $Q$, three slow variables, and right-hand sides that are real-analytic in $(U,P,r,Q,\varepsilon)$. For $\varepsilon=0$ its equilibria form the critical manifold $\{Q=-g(U)\}$, a graph over the whole space of the slow variables. At each of its points the linearisation of the system with $\varepsilon=0$ has the eigenvalue $-1$ in the fast direction and the eigenvalue $0$ with multiplicity three, the dimension of the manifold; the critical manifold is therefore normally hyperbolic, and attracting. Let $\hat K$ be a closed ball that contains $\mathsf K$ in its interior. The part of the critical manifold over $\hat K$ is a compact manifold with boundary and is the graph of a smooth function over a compact, simply connected domain with smooth boundary. Some formulations of the theorem require in addition that the base domain be overflowing invariant under the reduced slow flow. One expects to arrange this by adding to the slow field $(P,Q,0)$, in a collar of $\partial\hat K$ that does not meet a neighbourhood $\mathsf O$ of $\mathsf K$, a smooth field that points outward and dominates the slow field on $\partial\hat K$; such a modification changes neither the critical manifold nor the system over $\mathsf O$. In the form quoted above, the theorem would then give $\varepsilon_0>0$ and $w\in C^N(\hat K\times[0,\varepsilon_0])$ with $w=-g$ at $\varepsilon=0$ whose graph is locally invariant for each $\varepsilon\in(0,\varepsilon_0]$. Given such a function $w$, let $(U_0,P_0,r)\in\mathsf O$ and $\varepsilon\in(0,\varepsilon_0]$. For $|\tau|$ small the solution of \eqref{wed:eq:fastslow} through $(U_0,P_0,w(U_0,P_0,r,\varepsilon))$ stays over $\mathsf O$ and inside the neighbourhood in the definition of local invariance, hence on the graph: $Q(\tau)=w(U(\tau),P(\tau),r,\varepsilon)$. Differentiating at $\tau=0$ and using \eqref{wed:eq:fastslow} gives \eqref{wed:eq:invariance} at $(U_0,P_0,r,\varepsilon)$. For $\varepsilon=0$, \eqref{wed:eq:invariance} holds because $w=-g$. This would give \textup{(F)}.
+
+The sketch does not establish \textup{(F)}. The following points were not verified against a precisely stated version of the theorem: its exact hypotheses, including a requirement of overflowing invariance and the modification of the slow field near $\partial\hat K$ that is meant to meet it; the persistence of the manifold as a graph over the whole prescribed base $\hat K$; and the joint $C^N$ regularity of $w$ in $(U,P,r,\varepsilon)$ down to $\varepsilon=0$, on which Steps~0 and~2 to~4 of the proof of Theorem~\ref{thm:wedge} rest. For this reason \textup{(F)} enters Theorem~\ref{thm:wedge} as a hypothesis, and every conclusion of that theorem is conditional on it.
+
+\fi
+\begin{theorem}[Local uniqueness in the near-Hamiltonian wedge]\label{thm:wedge}
+Fix $0<r_1\le r_2<\infty$ and $\xi_b>\xi_*(r_2)$. There are $\mu_0\in(0,1]$ and a constant $C$ such that for every $\mu\in(0,\mu_0)$ and every $k$ with
+\[
+\rho=\frac{k}{\kH}=1+r\,\varepsilon^2,\qquad \varepsilon=\frac{\sqrt\mu}{1+\mu},\qquad r\in[r_1,r_2],
+\]
+the following hold.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item System \eqref{eq:logsystem} has exactly one cycle whose projection $(U,P)=(U,p/\sqrt\mu)$ lies in the energy ball $\Omega_{\xi_b}=\{\tfrac12P^2+\Rem(U)\le\xi_b\}$.
+\item The crest value $U_{\max}$ of this cycle satisfies $\bigl|\Rem(U_{\max})-\xi_*(r)\bigr|\le C\varepsilon$.
+\item This cycle is hyperbolic and attracting, and its weak multiplier satisfies
+\begin{equation}\label{wed:eq:logmt}
+\begin{gathered}
+\Bigl|\log m_t+\varepsilon^3\,I_0\bigl(\xi_*(r)\bigr)\,R_{\mathrm{sel}}'\bigl(\xi_*(r)\bigr)\Bigr|\le C\varepsilon^4,\\
+\text{so that}\qquad
+\lambda_cT=\log m_t\le-\tfrac45\,\varepsilon^3I_0\bigl(\xi_*(r)\bigr)+C\varepsilon^4<0 .
+\end{gathered}
+\end{equation}
+\end{enumerate}
+The numbers $\mu_0$ and $C$ depend on $r_1$, $r_2$, $\xi_b$ and on the function $w$ supplied by Lemma~\ref{wed:lem:slowgraph}, and are not explicit. The theorem does not exclude cycles whose projection leaves $\Omega_{\xi_b}$; it is not a statement of global uniqueness.
+\end{theorem}
+\begin{proof}
+Throughout, $N=6$, the parameter $r$ ranges over $[r_1,r_2]$, and the numbers $\varepsilon_j$, $c_j$, $c_E$, $L$, $d$, $d_b$ introduced below depend only on $r_1$, $r_2$, $\xi_b$, on the auxiliary level $\xi_a$ chosen in Step~3, and on the function $w$. Let $\mathsf O$, $\varepsilon_0$ and $w$ be given by \textup{(F)} for the compact set $\mathsf K=\Omega_{\xi_b+1}\times[r_1,r_2]$ and $N=6$. This is the only place where property \textup{(F)}, established in Lemma~\ref{wed:lem:slowgraph}, is used. Besides \textup{(F)}, the proof uses the smooth dependence of solutions of ordinary differential equations on initial values and parameters, and the invariance of Floquet multipliers under smooth changes of coordinates.
+
+\emph{Step 0: the Taylor coefficients of $w$.} By Taylor's formula in $\varepsilon$ with integral remainder,
+\[
+w=W_0+\varepsilon W_1+\varepsilon^2W_2+\varepsilon^3W_3+\varepsilon^4\tilde w,\qquad
+W_j=\frac1{j!}\,\partial_\varepsilon^jw\big|_{\varepsilon=0},\qquad \tilde w\in C^{N-4}\bigl(\overline{\mathsf O}\times[0,\varepsilon_0]\bigr).
+\]
+Both sides of the invariance equation \eqref{wed:eq:invariance} are of class $C^{N-1}$ on $\mathsf O\times[0,\varepsilon_0]$, so the equation may be differentiated up to three times in $\varepsilon$ at $\varepsilon=0$. This yields the recursion \eqref{wed:eq:recursion} for $W_0,\dots,W_3$, and Lemma~\ref{wed:lem:normalform}(i) gives $W_j=w_j$. Hence
+\begin{equation}\label{wed:eq:wexpansion}
+w=w_0+\varepsilon w_1+\varepsilon^2w_2+\varepsilon^3w_3+\varepsilon^4\tilde w\quad\text{on }\mathsf O\times[0,\varepsilon_0],\qquad \tilde w\in C^{2}.
+\end{equation}
+
+\emph{Step 1: every cycle in the ball lies on the graph.} Put $c_w=\max|\partial_Pw|$ over $\Omega_{\xi_b+1}\times[r_1,r_2]\times[0,\varepsilon_0]$ and let $\varepsilon\le\varepsilon_1:=\min\{\varepsilon_0,1/(2c_w+1)\}$. Let $(U,P,Q)(\tau)$ be a solution of \eqref{wed:eq:fastslow} on a time interval on which $(U,P)\in\Omega_{\xi_b+1}$, and put $\varpi=Q-w(U,P,r,\varepsilon)$. By \eqref{wed:eq:fastslow} and \eqref{wed:eq:invariance},
+\[
+\varepsilon\,\dot\varpi=-Q-\varepsilon P-\rho\,g-\varepsilon\bigl(w_UP+w_PQ\bigr)=-(Q-w)-\varepsilon\,w_P\,(Q-w),
+\]
+that is,
+\begin{equation}\label{wed:eq:varpi}
+\dot\varpi=-\bigl(\varepsilon^{-1}+\partial_Pw\bigr)\,\varpi .
+\end{equation}
+This linear equation is exact, because the fast equation is linear in $Q$. Since $\varepsilon^{-1}+\partial_Pw\ge1/(2\varepsilon)$, we get $|\varpi(\tau)|\le|\varpi(\tau_0)|\,e^{-(\tau-\tau_0)/(2\varepsilon)}$ for $\tau\ge\tau_0$ in the interval. If the solution is defined and bounded for all $\tau\in\R$ and its projection stays in $\Omega_{\xi_b+1}$, then $\varpi$ is bounded on $\R$, and letting $\tau_0\to-\infty$ gives $\varpi\equiv0$. This applies to every periodic solution whose projection lies in $\Omega_{\xi_b+1}$, and also to the constant solution at the equilibrium $(U,P,Q)=(0,0,0)$, which is a bounded entire solution but not a cycle. For the equilibrium it gives, for $\varepsilon\in(0,\varepsilon_1]$, and for $\varepsilon=0$ because $w=-g$ there,
+\begin{equation}\label{wed:eq:wzero}
+w(0,0,r,\varepsilon)=0 .
+\end{equation}
+For a periodic solution it shows that every cycle whose projection lies in $\Omega_{\xi_b+1}$ satisfies $Q=w(U,P,r,\varepsilon)$, and its projection is a closed orbit of the planar field
+\begin{equation}\label{wed:eq:planar}
+\mathcal V_\varepsilon:\qquad \dot U=P,\qquad \dot P=w(U,P,r,\varepsilon),
+\end{equation}
+which is of class $C^N$ in $(U,P,r,\varepsilon)$ and is the centre $\ddot U+g(U)=0$ at $\varepsilon=0$. Conversely, if $(U,P)(\tau)$ is a nonconstant periodic solution of \eqref{wed:eq:planar} in $\Omega_{\xi_b+1}$ and $Q:=w(U,P,r,\varepsilon)$, then $\dot P=Q$ and, by \eqref{wed:eq:invariance}, $\varepsilon\dot Q=\varepsilon(w_UP+w_Pw)=-Q-\varepsilon P-\rho\,g$. So $(U,P,Q)$ is a periodic solution of \eqref{wed:eq:fastslow}, that is, a cycle (Subsection~\ref{wed:sec:identities}). The same computation shows that an equilibrium $(U,0)$ of $\mathcal V_\varepsilon$ in $\Omega_{\xi_b+1}$ lifts to the equilibrium $(U,0,0)$ of \eqref{wed:eq:fastslow}, which forces $g(U)=0$; the origin is therefore the only equilibrium of $\mathcal V_\varepsilon$ in $\Omega_{\xi_b+1}$.
+
+In the coordinates $(U,P,\varpi)$ system \eqref{wed:eq:fastslow} over $\Omega_{\xi_b+1}$ reads $\dot U=P$, $\dot P=w+\varpi$, together with \eqref{wed:eq:varpi}. Its variational equation along a cycle in $\{\varpi=0\}$ is block-triangular. The Floquet multipliers of the cycle are therefore those of the planar closed orbit, namely $1$ and the exponential of the integral of the divergence of $\mathcal V_\varepsilon$, which is $\exp\oint\partial_Pw\,\mathrm d\tau$, together with $\exp\bigl(-\oint(\varepsilon^{-1}+\partial_Pw)\,\mathrm d\tau\bigr)$. The cycle has $\tau$-period $\sqrt\mu\,T$, so the last number is at most $e^{-\sqrt\mu T/(2\varepsilon)}$, while the planar multiplier is at least $e^{-c_w\sqrt\mu T}>e^{-\sqrt\mu T/(2\varepsilon)}$. Floquet multipliers are unchanged by the change of coordinates $(U,P,Q)\mapsto(U,P,\varpi)$, which is a diffeomorphism of class $C^N$ over $\Omega_{\xi_b+1}$, by the affine change of variables \eqref{wed:eq:conversion}, and by the constant rescaling of time. By Proposition~\ref{prop:multipliers} the transverse multipliers are $m_s<m_t$; hence
+\begin{equation}\label{wed:eq:mtdivergence}
+m_t=\exp\oint\partial_Pw\,\mathrm d\tau,\qquad m_s=\exp\Bigl(-\oint\bigl(\varepsilon^{-1}+\partial_Pw\bigr)\,\mathrm d\tau\Bigr),
+\end{equation}
+in agreement with $m_sm_t=e^{-\sqrt\mu T/\varepsilon}=e^{-AT}$.
+
+\emph{Step 2: polar coordinates and the return map.} Write $(U,P)=\varsigma(\cos\theta,\sin\theta)$. The function $\mathcal E_0$ is strictly convex, because its Hessian is $\diag(e^U,1)$; it vanishes together with its gradient at the origin, and it tends to infinity as $|(U,P)|\to\infty$. Hence $\Omega_{\xi_b+1}$ is compact and convex and contains the origin in its interior, and along every ray from the origin $\mathcal E_0$ increases strictly from $0$ to $\infty$, so that the ray meets $\partial\Omega_{\xi_b+1}$ in exactly one point. In polar coordinates $\Omega_{\xi_b+1}$ is therefore $\{0\le\varsigma\le\varsigma_{\max}(\theta)\}$ with a positive function $\varsigma_{\max}$, which is continuous by the implicit function theorem; the same holds for every $\Omega_\xi$ with $\xi>0$. By \eqref{wed:eq:wzero} and Hadamard's lemma,
+\begin{gather*}
+w(\varsigma\cos\theta,\varsigma\sin\theta,r,\varepsilon)=\varsigma\,\hat w(\varsigma,\theta,r,\varepsilon),\\
+\hat w=\int_0^1\bigl[\partial_Uw\,\cos\theta+\partial_Pw\,\sin\theta\bigr](\sigma\varsigma\cos\theta,\sigma\varsigma\sin\theta,r,\varepsilon)\,\mathrm d\sigma,
+\end{gather*}
+and $\hat w$ is of class $C^{N-1}$ in all its arguments, including $\varsigma=0$ and $\varepsilon=0$. The field \eqref{wed:eq:planar} becomes
+\begin{equation}\label{wed:eq:polar}
+\dot\varsigma=\varsigma\,\mathsf r_\varsigma,\qquad \dot\theta=\mathsf r_\theta,\qquad
+\mathsf r_\varsigma:=\sin\theta\,(\cos\theta+\hat w),\qquad \mathsf r_\theta:=\hat w\cos\theta-\sin^2\theta .
+\end{equation}
+At $\varepsilon=0$ we have $\hat w=-g(\varsigma\cos\theta)/\varsigma$ for $\varsigma>0$ and $\hat w=-\cos\theta$ for $\varsigma=0$, so that
+\[
+\mathsf r_\theta\big|_{\varepsilon=0}=-\frac{U\,g(U)+P^2}{U^2+P^2}\quad(\varsigma>0),\qquad \mathsf r_\theta\big|_{\varepsilon=0,\ \varsigma=0}=-1 .
+\]
+Since $U\,g(U)>0$ for $U\neq0$, the function $\mathsf r_\theta$ is negative at $\varepsilon=0$ on the compact set $\{0\le\varsigma\le\varsigma_{\max}(\theta)\}$. By continuity there are $c_\theta>0$ and $\varepsilon_2\in(0,\varepsilon_1]$ such that
+\begin{equation}\label{wed:eq:angular}
+\mathsf r_\theta\le-c_\theta\qquad\text{for }0\le\varsigma\le\varsigma_{\max}(\theta),\ r\in[r_1,r_2],\ \varepsilon\in[0,\varepsilon_2].
+\end{equation}
+Thus $\theta$ is strictly decreasing along every orbit of $\mathcal V_\varepsilon$ in $\Omega_{\xi_b+1}\setminus\{(0,0)\}$, and such orbits are graphs over $\theta$ that solve
+\begin{equation}\label{wed:eq:radial}
+\frac{\mathrm d\varsigma}{\mathrm d\theta}=\varsigma\,\frac{\mathsf r_\varsigma}{\mathsf r_\theta},
+\end{equation}
+an equation with right-hand side of class $C^{N-1}$. Put $\alpha_b^+=U_+(\xi_b+\tfrac12)$. At $\varepsilon=0$ the solution of \eqref{wed:eq:radial} with $\varsigma=\alpha$ at $\theta=0$ runs on the level curve $\mathcal E_0=\Rem(\alpha)$, which lies in $\Omega_{\xi_b+1/2}$ when $0\le\alpha\le\alpha_b^+$. By continuous dependence, after decreasing $\varepsilon_2$, for all $(\alpha,r,\varepsilon)\in[0,\alpha_b^+]\times[r_1,r_2]\times[0,\varepsilon_2]$ this solution exists for $\theta\in[-2\pi,0]$ and stays in $\Omega_{\xi_b+1}$. Define
+\begin{gather*}
+\Pi_\varepsilon(\alpha;r):=\varsigma\big|_{\theta=-2\pi}=\alpha\,\bigl(1+\chi(\alpha,r,\varepsilon)\bigr),\qquad
+1+\chi:=\exp\int_0^{-2\pi}\frac{\mathsf r_\varsigma}{\mathsf r_\theta}\,\mathrm d\theta,\\
+\tau_{\rm ret}(\alpha,r,\varepsilon):=\int_{-2\pi}^{0}\frac{\mathrm d\theta}{|\mathsf r_\theta|},
+\end{gather*}
+the integrands being evaluated along the solution. By smooth dependence of solutions on initial values and parameters, $\chi$ and $\tau_{\rm ret}$ are of class $C^{N-1}$ on $[0,\alpha_b^+]\times[r_1,r_2]\times[0,\varepsilon_2]$, including $\alpha=0$, where the solution is $\varsigma\equiv0$. For $\alpha>0$, $\Pi_\varepsilon(\alpha;r)$ is the abscissa of the first return to the half-axis $\mathcal L_+$ of the orbit through $(\alpha,0)$, and $\tau_{\rm ret}$ is the return time, because $\theta$ is strictly decreasing. At $\varepsilon=0$ we have $\chi=0$ and $\tau_{\rm ret}(\alpha,r,0)=T_0(\Rem(\alpha))$ for $\alpha>0$, while $\tau_{\rm ret}(0,r,0)=2\pi$; in particular
+\begin{equation}\label{wed:eq:periodlimit}
+T_0(\xi)\to2\pi\qquad(\xi\to0).
+\end{equation}
+Along an orbit of $\mathcal V_\varepsilon$ the energy of the centre changes at the rate
+\[
+\frac{\mathrm d}{\mathrm d\tau}\mathcal E_0=g(U)\,P+P\,w=P\,\bigl(w(U,P,r,\varepsilon)-w(U,P,r,0)\bigr),
+\]
+and $|w(U,P,r,\varepsilon)-w(U,P,r,0)|\le\varepsilon\max|\partial_\varepsilon w|$, the maximum being taken over $\Omega_{\xi_b+1}\times[r_1,r_2]\times[0,\varepsilon_0]$. On $\Omega_{\xi_b+1}$ we have $|P|\le\sqrt{2(\xi_b+1)}$, and $\tau_{\rm ret}\le2\pi/c_\theta$ by \eqref{wed:eq:angular}. Hence, for all $(\alpha,r,\varepsilon)\in(0,\alpha_b^+]\times[r_1,r_2]\times[0,\varepsilon_2]$, on the orbit segment from $(\alpha,0)$ to its first return to $\mathcal L_+$,
+\begin{equation}\label{wed:eq:energydrift}
+\bigl|\mathcal E_0-\Rem(\alpha)\bigr|\le c_E\,\varepsilon,\qquad
+c_E:=\frac{2\pi}{c_\theta}\,\sqrt{2(\xi_b+1)}\;\max|\partial_\varepsilon w| .
+\end{equation}
+
+A closed orbit of $\mathcal V_\varepsilon$ in $\Omega_{\xi_b}$ does not pass through the origin, which is an equilibrium. Let $\tau_p>0$ be its least period and let $\theta(\tau)$ be a continuous determination of the polar angle along it. By \eqref{wed:eq:angular}, $\theta$ is strictly decreasing, and because the orbit closes up, $\theta(\tau_p)-\theta(0)=-2\pi m$ with an integer $m\ge1$. The winding number of the orbit about the origin is therefore $-m$, which is not zero. Traversed over one least period, the orbit is a Jordan curve, and the winding number of a Jordan curve about a point that is not on it is $0$ or $\pm1$. Hence $m=1$. The same conclusion follows without this fact: distinct solutions of the scalar equation \eqref{wed:eq:radial} do not meet, so $\Pi_\varepsilon(\cdot\,;r)$ is strictly increasing; the abscissas of the successive intersections of the closed orbit with $\mathcal L_+$ form a periodic orbit of this map, and a periodic orbit of a strictly increasing map of an interval is a fixed point. Since $\theta$ decreases strictly, and by exactly $2\pi$ over a period, the closed orbit meets every ray from the origin in exactly one point. In particular it meets $\mathcal L_+$ in exactly one point $(\alpha,0)$, with $\Pi_\varepsilon(\alpha;r)=\alpha$ and $0<\alpha\le\alpha_b:=U_+(\xi_b)$, and it meets the negative $U$-axis in exactly one point. These are the only two points of the orbit at which $\dot U=P$ vanishes. At $(\alpha,0)$, by \eqref{wed:eq:polar} and \eqref{wed:eq:angular},
+\begin{equation}\label{wed:eq:crestsign}
+\dot P=w(\alpha,0,r,\varepsilon)=\alpha\,\mathsf r_\theta\big|_{\varsigma=\alpha,\ \theta=0}\le-c_\theta\,\alpha<0,
+\end{equation}
+so $U$ has a strict local maximum there, with the positive value $\alpha$, while $U<0$ at the other point. The maximum of $U$ over the closed orbit is therefore $\alpha$: the point $(\alpha,0)$ is the crest of the orbit. Conversely, if $\alpha\in(0,\alpha_b^+]$ is a fixed point of $\Pi_\varepsilon(\cdot\,;r)$, then the orbit through $(\alpha,0)$ is closed, it lies in $\Omega_{\xi_b+1}$, and by the same argument its crest is $(\alpha,0)$. The closed orbits of $\mathcal V_\varepsilon$ in $\Omega_{\xi_b}$ thus correspond injectively to fixed points of $\Pi_\varepsilon(\cdot\,;r)$ in $(0,\alpha_b]$. The derivative of $\Pi_\varepsilon(\cdot\,;r)$ at a fixed point is the nontrivial Floquet multiplier of the planar closed orbit, which is $m_t$ by \eqref{wed:eq:mtdivergence}.
+
+\emph{Step 3: the annulus.} Fix $\xi_a$ with $0<\xi_a<\xi_*(r_1)$ and put $\alpha_a=U_+(\xi_a)$. Since $\xi_*$ is increasing,
+\begin{equation}\label{wed:eq:rootwindow}
+\xi_a<\xi_*(r_1)\le\xi_*(r)\le\xi_*(r_2)<\xi_b\qquad(r\in[r_1,r_2]).
+\end{equation}
+On the annulus $\{\tfrac12\xi_a\le\mathcal E_0\le\xi_b+1\}$ the functions $\tilde{\mathcal E}$ and $\phi_3$ are real-analytic, and by \eqref{wed:eq:wexpansion} and Lemma~\ref{wed:lem:normalform}(ii),
+\[
+P\,\partial_U\tilde{\mathcal E}+w\,\partial_P\tilde{\mathcal E}=\varepsilon^3\phi_3+\varepsilon^4\phi_4,
+\]
+where $\phi_4$, given by \eqref{wed:eq:phi4}, is of class $C^{N-4}=C^2$ in $(U,P,r,\varepsilon)$, down to $\varepsilon=0$. For $\alpha\in[\alpha_a,\alpha_b]$ we have $\Rem(\alpha)\in[\xi_a,\xi_b]$, and at $\varepsilon=0$ the orbit through $(\alpha,0)$ is the level curve $\mathcal E_0=\Rem(\alpha)$. Decrease $\varepsilon_2$ so that $c_E\,\varepsilon_2\le\min\{\tfrac12\xi_a,1\}$. Then, by \eqref{wed:eq:energydrift}, for $\varepsilon\le\varepsilon_2$ the orbit segment from $(\alpha,0)$ to its first return stays in the annulus, and integrating along it gives
+\begin{equation}\label{wed:eq:displacement}
+\tilde{\mathcal E}\bigl(\Pi_\varepsilon(\alpha;r),0\bigr)-\tilde{\mathcal E}(\alpha,0)=\varepsilon^3\,\beta(\alpha,r,\varepsilon),\qquad
+\beta:=\int_0^{\tau_{\rm ret}}\bigl(\phi_3+\varepsilon\,\phi_4\bigr)\,\mathrm d\tau .
+\end{equation}
+The function $\beta$ is of class $C^2$ on $[\alpha_a,\alpha_b]\times[r_1,r_2]\times[0,\varepsilon_2]$, because the flow of $\mathcal V_\varepsilon$ and $\tau_{\rm ret}$ are of class $C^{N-1}$ at least and the integrand is $C^2$. By Lemma~\ref{wed:lem:normalform}(iii),
+\begin{equation}\label{wed:eq:betazero}
+\beta(\alpha,r,0)=\mathcal M_3\bigl(\Rem(\alpha);r\bigr).
+\end{equation}
+At the return point $P=0$ and $U=\Pi_\varepsilon(\alpha;r)>0$, and this point lies in the annulus, so that $\tfrac12\xi_a\le\Rem\bigl(\Pi_\varepsilon(\alpha;r)\bigr)\le\xi_b+1$. Since $\Rem$ is increasing on $[0,\infty)$,
+\begin{equation}\label{wed:eq:returnwindow}
+U_+(\tfrac12\xi_a)\le\Pi_\varepsilon(\alpha;r)\le U_+(\xi_b+1)\qquad\bigl(\alpha\in[\alpha_a,\alpha_b],\ r\in[r_1,r_2],\ 0\le\varepsilon\le\varepsilon_2\bigr),
+\end{equation}
+and the same interval contains $\alpha$. On the half-axis, $\tilde{\mathcal E}(U,0)=\Rem(U)+\varepsilon^2\mathcal E_2(U,0)$, and $\partial_U\tilde{\mathcal E}(U,0)=g(U)+\varepsilon^2\partial_U\mathcal E_2(U,0)\ge\tfrac12g\bigl(U_+(\tfrac12\xi_a)\bigr)>0$ for $U_+(\tfrac12\xi_a)\le U\le U_+(\xi_b+1)$ once $\varepsilon_2$ is small. So $U\mapsto\tilde{\mathcal E}(U,0)$ is strictly increasing on that interval. By \eqref{wed:eq:returnwindow} both $\alpha$ and $\Pi_\varepsilon(\alpha;r)$ lie in it, so $\Pi_\varepsilon(\alpha;r)=\alpha$ exactly when the left-hand side of \eqref{wed:eq:displacement} vanishes. Hence, for $\alpha\in[\alpha_a,\alpha_b]$, $r\in[r_1,r_2]$ and $0<\varepsilon\le\varepsilon_2$,
+\begin{equation}\label{wed:eq:fixediffzero}
+\Pi_\varepsilon(\alpha;r)=\alpha\quad\Longleftrightarrow\quad\beta(\alpha,r,\varepsilon)=0 .
+\end{equation}
+By \eqref{wed:eq:betazero}, Corollary~\ref{wed:cor:root} and \eqref{wed:eq:rootwindow}, the function $\beta(\cdot,r,0)$ has exactly one zero in $[\alpha_a,\alpha_b]$, namely $\alpha_*(r):=U_+(\xi_*(r))\in(\alpha_a,\alpha_b)$; it is positive to the left of it and negative to the right. Moreover $\xi_*(r)>\xi_a$ by \eqref{wed:eq:rootwindow}, and the functions $I_0$, $U_+$ and $g$ are increasing, so that $I_0(\xi_*(r))\ge I_0(\xi_a)$ and $g(\alpha_*(r))=g\bigl(U_+(\xi_*(r))\bigr)\ge g(\alpha_a)$. With \eqref{wed:eq:M3slope} this gives
+\[
+\partial_\alpha\beta\bigl(\alpha_*(r),r,0\bigr)=\partial_\xi\mathcal M_3\bigl(\xi_*(r);r\bigr)\,g\bigl(\alpha_*(r)\bigr)\le-c_0,\qquad c_0:=\tfrac45\,I_0(\xi_a)\,g(\alpha_a)>0 .
+\]
+Let $L$ be a bound for the first and second derivatives of $\beta$. Choose $d>0$ with $d\le c_0/(4L)$ and $[\alpha_*(r)-d,\alpha_*(r)+d]\subset[\alpha_a,\alpha_b]$ for all $r\in[r_1,r_2]$; then $\partial_\alpha\beta(\alpha,r,0)\le-\tfrac34c_0$ whenever $|\alpha-\alpha_*(r)|\le d$. By compactness and the uniqueness of the zero,
+\[
+c_1:=\min\bigl\{|\beta(\alpha,r,0)|:\ \alpha\in[\alpha_a,\alpha_b],\ r\in[r_1,r_2],\ |\alpha-\alpha_*(r)|\ge d\bigr\}>0 .
+\]
+Let $\varepsilon\le\varepsilon_3:=\min\{\varepsilon_2,\,c_1/(2L),\,c_0/(4L)\}$. Then $|\beta(\alpha,r,\varepsilon)-\beta(\alpha,r,0)|\le\tfrac12c_1$ and $|\partial_\alpha\beta(\alpha,r,\varepsilon)-\partial_\alpha\beta(\alpha,r,0)|\le\tfrac14c_0$. Hence $\beta(\cdot,r,\varepsilon)$ has no zero with $|\alpha-\alpha_*(r)|\ge d$, and on $|\alpha-\alpha_*(r)|\le d$ it is strictly decreasing with $\partial_\alpha\beta\le-\tfrac12c_0$, positive at the left end and negative at the right end. So $\beta(\cdot,r,\varepsilon)$ has exactly one zero $\alpha_*(r,\varepsilon)$ in $[\alpha_a,\alpha_b]$, and
+\begin{equation}\label{wed:eq:zeroshift}
+\bigl|\alpha_*(r,\varepsilon)-\alpha_*(r)\bigr|\le\frac{2}{c_0}\,\bigl|\beta\bigl(\alpha_*(r),r,\varepsilon\bigr)\bigr|\le\frac{2L}{c_0}\,\varepsilon .
+\end{equation}
+By \eqref{wed:eq:fixediffzero}, $\alpha_*(r,\varepsilon)$ is the only fixed point of $\Pi_\varepsilon(\cdot\,;r)$ in $[\alpha_a,\alpha_b]$. Differentiating \eqref{wed:eq:displacement} with respect to $\alpha$ at this fixed point,
+\[
+\partial_U\tilde{\mathcal E}(\alpha_*,0)\,\bigl(\partial_\alpha\Pi_\varepsilon(\alpha_*;r)-1\bigr)=\varepsilon^3\,\partial_\alpha\beta(\alpha_*,r,\varepsilon),\qquad \alpha_*=\alpha_*(r,\varepsilon).
+\]
+Here $\partial_U\tilde{\mathcal E}(\alpha_*,0)=g(\alpha_*(r))+O(\varepsilon)$ by \eqref{wed:eq:zeroshift}, and $\partial_\alpha\beta(\alpha_*(r,\varepsilon),r,\varepsilon)=\partial_\alpha\beta(\alpha_*(r),r,0)+O(\varepsilon)$ because $\partial_\alpha\beta$ is Lipschitz with constant $L$. The second derivatives of $\beta$ enter the proof only through this constant: here, in the choice of $d$, and in the condition $\varepsilon_3\le c_0/(4L)$. Since $g(\alpha_*(r))\ge g(\alpha_a)>0$, division gives
+\begin{equation}\label{wed:eq:returnslope}
+\partial_\alpha\Pi_\varepsilon(\alpha_*;r)=1+\varepsilon^3\,\partial_\xi\mathcal M_3\bigl(\xi_*(r);r\bigr)+O(\varepsilon^4),
+\end{equation}
+with a remainder bounded by a constant multiple of $\varepsilon^4$, uniformly in $r\in[r_1,r_2]$.
+
+\emph{Step 4: no fixed point with crest energy below $\xi_a$.} Fix $\alpha\in(0,\alpha_a]$ and $r$. By \eqref{wed:eq:energydrift}, for $c_E\,\varepsilon\le\tfrac12\Rem(\alpha)$ the orbit segment from $(\alpha,0)$ to its first return stays in the annulus $\{\tfrac12\Rem(\alpha)\le\mathcal E_0\le\xi_b+1\}$. The argument that gave \eqref{wed:eq:displacement}, applied on this annulus, shows that for $\varepsilon$ small, depending on $\alpha$,
+\[
+\tilde{\mathcal E}\bigl(\alpha(1+\chi),0\bigr)-\tilde{\mathcal E}(\alpha,0)=\varepsilon^3\,\beta(\alpha,r,\varepsilon),
+\]
+with $\beta$ continuous in $\varepsilon$ and $\beta(\alpha,r,0)=\mathcal M_3(\Rem(\alpha);r)$. By the mean value theorem the left side equals $\alpha\,\chi\,\partial_U\tilde{\mathcal E}(\alpha',0)$ for some $\alpha'$ between $\alpha$ and $\alpha(1+\chi)$, and $\partial_U\tilde{\mathcal E}(\alpha',0)\to g(\alpha)>0$ as $\varepsilon\to0$, because $\chi\to0$. Hence
+\[
+\chi(\alpha,r,\varepsilon)=\varepsilon^3\bigl(\chi_3(\alpha,r)+o(1)\bigr)\quad(\varepsilon\to0),\qquad
+\chi_3(\alpha,r):=\frac{\mathcal M_3\bigl(\Rem(\alpha);r\bigr)}{\alpha\,g(\alpha)} .
+\]
+Since $\chi$ is of class $C^{N-1}$ and $N-1\ge4$, this means that
+\begin{equation}\label{wed:eq:chiderivs}
+\partial_\varepsilon^j\chi(\alpha,r,0)=0\quad(j=0,1,2),\qquad \tfrac16\,\partial_\varepsilon^3\chi(\alpha,r,0)=\chi_3(\alpha,r)\qquad(0<\alpha\le\alpha_a).
+\end{equation}
+The left-hand sides are continuous on $[0,\alpha_a]\times[r_1,r_2]$. So \eqref{wed:eq:chiderivs} extends to $\alpha=0$, and $\chi_3$ extends continuously to $\alpha=0$ with
+\[
+\chi_3(0,r)=\lim_{\alpha\to0}\ \frac{I_0(\Rem(\alpha))}{\Rem(\alpha)}\cdot\frac{\Rem(\alpha)}{\alpha\,g(\alpha)}\cdot\bigl(r-R_{\mathrm{sel}}(\Rem(\alpha))\bigr)=2\pi\cdot\tfrac12\cdot r=\pi r .
+\]
+Indeed $I_0(\xi)\le2\xi\,T_0(\xi)\to0$ as $\xi\to0$, $I_0'=T_0$ and \eqref{wed:eq:periodlimit} give $I_0(\xi)/\xi\to2\pi$; $\Rem(\alpha)/(\alpha\,g(\alpha))\to\tfrac12$; and $R_{\mathrm{sel}}(\xi)\le\tfrac43\xi$. For $0<\alpha\le\alpha_a$ we have $\Rem(\alpha)\le\xi_a<\xi_*(r)$ by \eqref{wed:eq:rootwindow}, so $\mathcal M_3(\Rem(\alpha);r)>0$ by Corollary~\ref{wed:cor:root}, and $\chi_3(\alpha,r)>0$. Thus $\chi_3$ is continuous and positive on the compact set $[0,\alpha_a]\times[r_1,r_2]$; let $c_3>0$ be its minimum. Taylor's formula in $\varepsilon$ with integral remainder and \eqref{wed:eq:chiderivs} give
+\[
+\chi(\alpha,r,\varepsilon)=\varepsilon^3\chi_3(\alpha,r)+\varepsilon^4\chi_4(\alpha,r,\varepsilon),\qquad|\chi_4|\le c_4:=\tfrac1{24}\max\bigl|\partial_\varepsilon^4\chi\bigr|,
+\]
+on $[0,\alpha_a]\times[r_1,r_2]\times[0,\varepsilon_2]$. Put $\varepsilon_4:=\min\{\varepsilon_3,\,c_3/(1+c_4)\}$; this is defined also when $c_4=0$. For $0<\varepsilon<\varepsilon_4$ we have $\varepsilon\,c_4<c_3$ and therefore $\chi\ge\varepsilon^3(c_3-\varepsilon\,c_4)>0$, that is, $\Pi_\varepsilon(\alpha;r)>\alpha$ for every $\alpha\in(0,\alpha_a]$. There is no fixed point in $(0,\alpha_a]$.
+
+\emph{Step 5: conclusion.} Let $0<\varepsilon<\varepsilon_4$ and $r\in[r_1,r_2]$. By Step 1 the cycles whose projection lies in $\Omega_{\xi_b}$ are the closed orbits of $\mathcal V_\varepsilon$ in $\Omega_{\xi_b}$, and by Step 2 these correspond injectively to fixed points of $\Pi_\varepsilon(\cdot\,;r)$ in $(0,\alpha_b]$. By Steps 3 and 4 the only fixed point there is $\alpha_*(r,\varepsilon)$. Hence at most one cycle has its projection in $\Omega_{\xi_b}$.
+
+For the existence it has to be shown that the closed orbit through $(\alpha_*(r,\varepsilon),0)$ lies in $\Omega_{\xi_b}$ as a whole, and not only its crest. At $\varepsilon=0$ these orbits are the level curves $\mathcal E_0=\xi_*(r)$, $r\in[r_1,r_2]$. By \eqref{wed:eq:rootwindow} they keep the distance
+\[
+d_b:=\xi_b-\xi_*(r_2)>0
+\]
+in energy from $\partial\Omega_{\xi_b}=\{\mathcal E_0=\xi_b\}$, uniformly in $r$ on the compact interval $[r_1,r_2]$. Since $\Rem'=g$ and $0<g\le g(\alpha_b)$ on $[\alpha_a,\alpha_b]$, \eqref{wed:eq:zeroshift} and $\Rem(\alpha_*(r))=\xi_*(r)$ give
+\begin{equation}\label{wed:eq:crestenergy}
+\bigl|\Rem\bigl(\alpha_*(r,\varepsilon)\bigr)-\xi_*(r)\bigr|\le g(\alpha_b)\,\frac{2L}{c_0}\,\varepsilon ,
+\end{equation}
+and by \eqref{wed:eq:energydrift}, along the closed orbit $\mathcal E_0$ differs from its value $\Rem(\alpha_*(r,\varepsilon))$ at the point $(\alpha_*(r,\varepsilon),0)$ by at most $c_E\,\varepsilon$. Hence on the whole closed orbit
+\[
+\mathcal E_0\le\xi_*(r)+\Bigl(g(\alpha_b)\,\frac{2L}{c_0}+c_E\Bigr)\varepsilon\le\xi_b-d_b+\Bigl(g(\alpha_b)\,\frac{2L}{c_0}+c_E\Bigr)\varepsilon .
+\]
+Decrease $\varepsilon_4$ so that $\bigl(g(\alpha_b)\,2L/c_0+c_E\bigr)\,\varepsilon_4\le\tfrac12d_b$. Then, for every $r\in[r_1,r_2]$ and $0<\varepsilon<\varepsilon_4$, the closed orbit lies in $\Omega_{\xi_b-d_b/2}\subset\Omega_{\xi_b}$. It is not an equilibrium, so by Step 1 it is the projection of a cycle. This proves (i). By Step 2 the crest of the closed orbit is the point $(\alpha_*(r,\varepsilon),0)$, so the crest value of the cycle is $U_{\max}=\alpha_*(r,\varepsilon)$, and (ii) is \eqref{wed:eq:crestenergy}. By Step 2, \eqref{wed:eq:returnslope} and \eqref{wed:eq:M3slope},
+\begin{gather*}
+m_t=\partial_\alpha\Pi_\varepsilon(\alpha_*;r)=1-\varepsilon^3\,I_0\bigl(\xi_*(r)\bigr)\,R_{\mathrm{sel}}'\bigl(\xi_*(r)\bigr)+O(\varepsilon^4),\\
+I_0\bigl(\xi_*(r)\bigr)\,R_{\mathrm{sel}}'\bigl(\xi_*(r)\bigr)\ge\tfrac45\,I_0\bigl(\xi_*(r_1)\bigr)>0 .
+\end{gather*}
+Taking logarithms gives \eqref{wed:eq:logmt}, and after decreasing $\varepsilon_4$ once more, $0<m_t<1$ and the right-hand bound in \eqref{wed:eq:logmt} is negative. By Proposition~\ref{prop:multipliers}, $0<m_s<m_t$. Both transverse multipliers therefore lie in $(0,1)$, so the only Floquet multiplier of modulus one is the multiplier $1$ of the flow direction, and it is simple. The cycle is therefore hyperbolic and attracting. Finally, let $\mu_0\in(0,1]$ be defined by $\sqrt{\mu_0}/(1+\mu_0)=\min\{\varepsilon_4,\tfrac12\}$. Since $\mu\mapsto\varepsilon$ is increasing on $(0,1]$, every $\mu\in(0,\mu_0)$ has $0<\varepsilon<\varepsilon_4$.
+\end{proof}
+
+\begin{remark}[Scope of Theorem~\ref{thm:wedge}]\label{wed:rem:scope}
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item The theorem is local in phase space. For $\mu<\mu_0$ and $r\in[r_1,r_2]$ it leaves open the existence of further cycles whose projection leaves $\Omega_{\xi_b}$; Subsection~\ref{wed:sec:missing} states what would be needed to exclude them.
+\item The theorem is uniform for $r$ in compact subsets of $(0,\infty)$ only. As $r\to0$, the Hopf end, the constants are not controlled; Lemma~\ref{lem:collar} gives uniqueness near each Hopf point for fixed $\mu$, with a width that is not explicit and is not known to be uniform in $r$ as $\mu\to0$. As $r\to\infty$ one has $\xi_*(r)\ge\tfrac34r\to\infty$ and the expansion is no longer uniform. For $\rho$ in a compact subset of $(1,\infty)$ and $\mu\to0$ we have $r=(\rho-1)/\varepsilon^2\to\infty$, and the theorem says nothing.
+\item Formula \eqref{wed:eq:logmt} can be obtained without the modified energy. By \eqref{wed:eq:mtdivergence} and \eqref{wed:eq:wexpansion}, $\log m_t=\oint\partial_Pw\,\mathrm d\tau$ with $\partial_Pw=\varepsilon\,g-2\varepsilon^2e^UP+\varepsilon^3\partial_Pw_3+O(\varepsilon^4)$. On a cycle $\oint g\,\mathrm d\tau=0$ by Lemma~\ref{lem:tauidentities}(a) and $\oint e^UP\,\mathrm d\tau=\oint e^U\,\mathrm dU=0$. To leading order the third term may be integrated over the level $\mathcal E_0=\xi$ of the centre, where $\oint g\,\mathrm d\tau=0$, $\oint e^U\,\mathrm d\tau=T_0$, $\oint e^UP^2\,\mathrm d\tau=I_0$ and $\oint g^2\,\mathrm d\tau=\oint g\,e^U\,\mathrm d\tau=I_0$ by Proposition~\ref{wed:prop:melnikov} with $\rho=1$. Since $\partial_Pw_3=r\,e^U+3e^UP^2-4g\,e^U-g^2$, this gives $\oint\partial_Pw_3\,\mathrm d\tau=r\,T_0-2I_0=\partial_\xi\mathcal M_3(\xi;r)$, in agreement with \eqref{wed:eq:M3slope} and \eqref{wed:eq:returnslope}.
+\item The proof uses the established property \textup{(F)} for the single compact set $\Omega_{\xi_b+1}\times[r_1,r_2]$ and for $N=6$. Persistence on this compact set does not give estimates on growing energy domains.
+\end{enumerate}
+\end{remark}
+
+\subsection{Floating-point observations: the selection rule and the relaxation regime}\label{wed:sec:relax}
+Everything in this subsection is floating-point evidence or formal asymptotics. No statement in it is a theorem, and nothing in it is used in a proof. All computations are in ordinary double precision. The script and the output file are named for each item, by their paths relative to the root of the accompanying bundle; Section~\ref{sec:evidence} and Appendix~\ref{app:reproduce} describe the executed computations and their reproduction. In this subsection primes denote $\mathrm d/\mathrm dt$.
+
+\paragraph{The third-order predictions in the wedge.}
+Cycles were computed by shooting with a prescribed crest abscissa $\alpha=U_{\max}$, the unknowns being the crest value of $y$ and the parameter $k$; this is well conditioned near the Hopf curve. For such a cycle put $r_{\rm num}=(\rho-1)/\varepsilon^2$. Table~\ref{wed:tab:selection} compares $r_{\rm num}$ with $R_{\mathrm{sel}}(\xi)$ and $\log m_t$ with $-\varepsilon^3I_0(\xi)R_{\mathrm{sel}}'(\xi)$, both at $\xi=\Rem(\alpha)$ (script \path{provenance/research_lanes/hamiltonian/ampcycle.py}, output \path{provenance/research_lanes/hamiltonian/ampcycle.out}; the integrals over the centre are computed by \path{provenance/research_lanes/hamiltonian/toda.py}; the copies of the two scripts that the bundle's own check \path{code/v3/v3_wedge.py} uses are \path{code/v3/lib/ampcycle.py} and \path{code/v3/lib/toda.py}). The deviations from $1$ decrease by a factor close to ten per decade of $\mu$, that is, like $\varepsilon^2$, and they grow with $\alpha$. An independent computation at fixed $r\in\{0.3,1,3\}$ with $\mu$ from $10^{-2}$ down to $1.56\times10^{-4}$ (script \path{provenance/research_lanes/hamiltonian/verify/v4_theoremC.py}, output \path{provenance/research_lanes/hamiltonian/verify/v4_theoremC.out}) found $(\Rem(U_{\max})-\xi_*(r))/\varepsilon^2$ converging to about $1.16$, $4.37$ and $19.4$, and the ratio of $\log m_t$ to the prediction equal to $0.9997$, $0.9993$ and $0.9983$ at the smallest $\mu$. These values are consistent with Theorem~\ref{thm:wedge}(ii),(iii); they suggest errors of relative order $\varepsilon^2$, smaller than the bounds proved.
+
+\begin{table}[ht]
+\centering\small
+\caption{Floating-point test of the third-order predictions on computed cycles with crest abscissa $\alpha$ (\protect\path{provenance/research_lanes/hamiltonian/ampcycle.out}). Both ratios are $1$ in the limit $\varepsilon\to0$ according to Theorem~\ref{thm:wedge}.}\label{wed:tab:selection}
+\begin{tabular}{llcc}
+\toprule
+$\alpha$ & $\mu$ & $r_{\rm num}/R_{\mathrm{sel}}(\Rem(\alpha))$ & $\log m_t\big/\bigl(-\varepsilon^3I_0R_{\mathrm{sel}}'\bigr)$\\
+\midrule
+$0.3$ & $10^{-2}$ & $0.96373$ & $0.95298$\\
+$0.3$ & $10^{-3}$ & $0.99619$ & $0.99501$\\
+$0.3$ & $10^{-4}$ & $0.99962$ & $0.99950$\\
+$1$ & $10^{-3}$ & $0.99599$ & $0.99261$\\
+$1$ & $10^{-4}$ & $0.99960$ & $0.99925$\\
+$2$ & $10^{-3}$ & $0.99302$ & $0.97829$\\
+$2$ & $10^{-4}$ & $0.99929$ & $0.99775$\\
+$3$ & $10^{-3}$ & $0.98318$ & $0.93877$\\
+$3$ & $10^{-4}$ & $0.99821$ & $0.99329$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Fixed $\rho>1$: the energy is of order $1/\mu$.}
+For $\rho=1.5$ and $\rho=3$ the cycle was computed for $\mu$ from $0.3$ down to $10^{-3}$ (script \path{provenance/research_lanes/hamiltonian/fixed_rho.py}, output \path{provenance/research_lanes/hamiltonian/fixed_rho.out}); Table~\ref{wed:tab:fixedrho} gives three values of $\mu$ for each. The crest energy $\Rem(U_{\max})$ grows like $1/\varepsilon^2$, the products $\mu U_{\min}$ and $\mu T$ approach limits, and $m_t$ approaches a limit in $(0,1)$, not $1$. On the twelve computed cycles the exact identity of Lemma~\ref{lem:tauidentities}(b),(c) holds with $|\avg{(\rho e^U-1)P^2}|/\avg{P^2}\le6\times10^{-7}$, and with at most $8\times10^{-11}$ on eleven of them. At fixed $\rho>1$ the limit $\mu\to0$ is thus not a Hamiltonian regime, in agreement with Proposition~\ref{wed:prop:melnikov}; it is a relaxation oscillation.
+
+\begin{table}[ht]
+\centering\small
+\caption{Computed cycles at fixed $\rho$ (\protect\path{provenance/research_lanes/hamiltonian/fixed_rho.out}); floating point.}\label{wed:tab:fixedrho}
+\begin{tabular}{llrrrrrr}
+\toprule
+$\rho$ & $\mu$ & $U_{\max}$ & $U_{\min}$ & $\varepsilon^2\Rem(U_{\max})$ & $\mu U_{\min}$ & $\mu T$ & $m_t$\\
+\midrule
+$1.5$ & $10^{-1}$ & $2.553$ & $-13.5$ & $0.768$ & $-1.352$ & $3.1928$ & $0.5692$\\
+$1.5$ & $10^{-2}$ & $4.480$ & $-104.5$ & $0.811$ & $-1.045$ & $2.5209$ & $0.6669$\\
+$1.5$ & $10^{-3}$ & $6.737$ & $-1032.5$ & $0.833$ & $-1.032$ & $2.4470$ & $0.6785$\\
+$3$ & $10^{-1}$ & $4.093$ & $-96.4$ & $4.531$ & $-9.639$ & $5.9425$ & $0.1379$\\
+$3$ & $10^{-2}$ & $6.195$ & $-801.7$ & $4.736$ & $-8.017$ & $5.3313$ & $0.1810$\\
+$3$ & $10^{-3}$ & $8.476$ & $-7882.3$ & $4.779$ & $-7.882$ & $5.2685$ & $0.1861$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{A formal one-dimensional limit map.}
+The computed cycles at small $\mu$ and fixed $\rho$ consist of two phases, and the following formal description reproduces them. With $Z=y/k$, system \eqref{eq:logsystem} is $U'=p$, $p'=\mu(\lambda(1-Z)-p)$, $Z'=e^U-Z$, and $\lambda=\rho(1+\mu)\to\rho$.
+
+\emph{Pulse.} During a time of order one, $x=ke^U$ is of order one, that is, $U=\log(1/\mu)+O(1)$. Putting $\mu=0$ and $k=0$ in \eqref{eq:system} at fixed $(x,p,y)$ gives the parameter-free system
+\begin{equation}\label{wed:eq:pulse}
+x'=px,\qquad p'=-y,\qquad y'=x-y .
+\end{equation}
+A \emph{pulse} is a solution with $(x,p,y)\to(0,q,0)$ as $t\to-\infty$ and $(x,p,y)\to(0,-\mathcal G(q),0)$ as $t\to+\infty$, where $q>0$; this defines the pulse map $\mathcal G$ wherever such a solution was computed. Two facts about \eqref{wed:eq:pulse} are exact. First, $p''+p'=-x$, and multiplying by $p$ and integrating along a pulse gives $\mathcal G(q)^2-q^2=2\int_{\R}y^2\dd>0$, so a pulse increases $|p|$. Second,
+\begin{equation}\label{wed:eq:exactpulse}
+x=\frac{6e^t}{(1+e^t)^3},\qquad p=-2+\frac{3}{1+e^t},\qquad y=\frac{3e^t}{(1+e^t)^2}
+\end{equation}
+is a pulse with $q=1$, so $\mathcal G(1)=2$; this is verified by substitution. Numerically $\mathcal G(1)=2.00000000$, and $(\mathcal G(q)-q)/q^2=0.671$, $0.680$, $0.711$ at $q=0.01$, $0.03$, $0.1$, consistent with a formal expansion $\mathcal G(q)=q+\tfrac23q^2+O(q^3)$.
+
+\emph{Quiescent phase.} During a time of order $1/\mu$, $U$ is large and negative and $x,y\approx0$, so that $p'=\mu(\lambda-p)$. In the slow time $\tilde t=\mu t$, with $V=\mu U$, this is $\mathrm dV/\mathrm d\tilde t=p$, $\mathrm dp/\mathrm d\tilde t=\lambda-p$. From $V=0$, $p=-q_-<0$,
+\[
+p=\lambda-(\lambda+q_-)e^{-\tilde t},\qquad V=\lambda\tilde t-(\lambda+q_-)\bigl(1-e^{-\tilde t}\bigr),
+\]
+and $V$ returns to $0$ at the positive root $\vartheta=\vartheta_\lambda(q_-)$ of
+\begin{equation}\label{wed:eq:slowreturn}
+\lambda\,\vartheta=(\lambda+q_-)\bigl(1-e^{-\vartheta}\bigr),
+\qquad\text{with}\qquad p=\lambda\vartheta-q_-\ \text{ there and }\ \min V=\lambda\log\bigl(1+q_-/\lambda\bigr)-q_- .
+\end{equation}
+
+\emph{Limit map.} Composing the two phases, with $\lambda=\rho$ in the limit, gives the map
+\begin{equation}\label{wed:eq:limitmap}
+\Pi^{\rm rel}_\rho(q)=\rho\,\vartheta_\rho\bigl(\mathcal G(q)\bigr)-\mathcal G(q),\qquad 0<q<\rho,
+\end{equation}
+on the slope $q$ of $U$ before a pulse. A fixed point $q_*(\rho)$ of \eqref{wed:eq:limitmap} gives the formal predictions, as $\mu\to0$ at fixed $\rho$,
+\begin{equation}\label{wed:eq:relaxpredictions}
+\begin{gathered}
+m_t\to m_0(\rho):=\bigl(\Pi^{\rm rel}_\rho\bigr)'(q_*),\qquad
+\mu T\to S(\rho):=\vartheta_\rho\bigl(\mathcal G(q_*)\bigr),\\
+\mu U_{\min}\to\rho\log\bigl(1+\mathcal G(q_*)/\rho\bigr)-\mathcal G(q_*),
+\end{gathered}
+\end{equation}
+together with $U_{\max}=\log(1/\mu)+O(1)$. The derivation is formal: no theorem in this paper asserts that the cycles of the full system converge to fixed points of $\Pi^{\rm rel}_\rho$. Expanding \eqref{wed:eq:slowreturn} for small $q_-$ gives $\lambda\vartheta-q_-=q_--\tfrac23q_-^2/\lambda+O(q_-^3)$, so that formally $\Pi^{\rm rel}_\rho(q)-q=\tfrac23(1-1/\rho)\,q^2+O(q^3)$: for $\rho>1$ small pulses grow, which is the counterpart in this regime of Proposition~\ref{wed:prop:melnikov}.
+
+\paragraph{Fixed points of the limit map and comparison with computed cycles.}
+\begin{sloppypar}For each $\rho\in\{1.02,1.1,1.5,3,8\}$ a scan of $\Pi^{\rm rel}_\rho(q)-q$ on $60$ points of $(10^{-3},\rho)$ found exactly one sign change (script \path{provenance/research_lanes/hamiltonian/relax_map.py}, output \path{provenance/research_lanes/hamiltonian/relax_map.out}); at $\rho=30$ the scan resolved none, the root being within $10^{-6}\rho$ of $\rho$. Table~\ref{wed:tab:limitmap} lists the fixed points and the predictions \eqref{wed:eq:relaxpredictions}, and for $\rho=1.5$ and $\rho=3$ the corresponding quantities of the cycle computed at $\mu=10^{-3}$ (from \path{provenance/research_lanes/hamiltonian/fixed_rho.out}); they agree to within $0.4$ per cent.\end{sloppypar}
+
+\begin{table}[ht]
+\centering\small
+\caption{Fixed points of the formal limit map \eqref{wed:eq:limitmap} (\protect\path{provenance/research_lanes/hamiltonian/relax_map.out}) and cycles of the full system computed at $\mu=10^{-3}$ (\protect\path{provenance/research_lanes/hamiltonian/fixed_rho.out}); floating point.}\label{wed:tab:limitmap}
+\begin{tabular}{lrrrrl}
+\toprule
+$\rho$ & $q_*$ & $m_0$ & $S(\rho)$ & $\lim\mu U_{\min}$ & cycle at $\mu=10^{-3}$: $(m_t,\ \mu T,\ \mu U_{\min})$\\
+\midrule
+$1.02$ & $0.2127$ & $0.99436$ & $0.4508$ & $-0.0258$ & ---\\
+$1.1$ & $0.4717$ & $0.94764$ & $1.0322$ & $-0.1444$ & ---\\
+$1.5$ & $1.1502$ & $0.67983$ & $2.4387$ & $-1.0336$ & $(0.67851,\ 2.4470,\ -1.0325)$\\
+$3$ & $2.9177$ & $0.18665$ & $5.2615$ & $-7.8699$ & $(0.18607,\ 5.2685,\ -7.8823)$\\
+$8$ & $7.9994$ & $0.00145$ & $11.998$ & $-68.105$ & ---\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{sloppypar}A second implementation of the same limit map, written independently and based on a table of $\mathcal G$ at $85$ values of $q\in[0.02,320]$ (script \path{provenance/research_lanes/cartography/limit_map.py}, outputs \path{evidence/v3/cartography/limit_map.csv} and \path{evidence/v3/cartography/limit_map_stdout.txt}), compared $\log m_t$ of cycles computed at $\mu=0.01$, $0.002$, $0.0005$ with $\log m_0(\rho)$ obtained by interpolation in that table; see Table~\ref{wed:tab:logmt}. The differences decrease roughly in proportion to $\mu$. The same output shows $\mu T$ approaching $S(\rho)$ and the extreme values of $p/\lambda$ approaching those of the limit map.\end{sloppypar}
+
+\begin{table}[ht]
+\centering\small
+\caption{$\log m_t$ of computed cycles and the limit value $\log m_0(\rho)$ (\protect\path{evidence/v3/cartography/limit_map_stdout.txt}); floating point.}\label{wed:tab:logmt}
+\begin{tabular}{lrrrr}
+\toprule
+$\rho$ & $\mu=0.01$ & $\mu=0.002$ & $\mu=0.0005$ & $\log m_0(\rho)$\\
+\midrule
+$1.03$ & $-0.01863$ & $-0.01198$ & $-0.01061$ & $-0.01022$\\
+$1.1$ & $-0.06746$ & $-0.05656$ & $-0.05448$ & $-0.05391$\\
+$1.5$ & $-0.40512$ & $-0.38978$ & $-0.38688$ & $-0.38593$\\
+$3$ & $-1.70932$ & $-1.68471$ & $-1.68008$ & $-1.67858$\\
+$10$ & $-8.8261$ & $-8.7336$ & $-8.7163$ & $-8.7127$\\
+$50$ & $-58.321$ & $-57.811$ & $-57.715$ & $-57.683$\\
+$200$ & $-253.09$ & $-251.02$ & $-250.63$ & $-250.50$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Amplitude parametrisation.}
+On the computed ranges the fixed-point equation $\Pi^{\rm rel}_\lambda(q)=q$ has, for each $q$, exactly one solution $\lambda=\Lambda(q)>q$; this rests on the monotonicity of an auxiliary function that was checked on a grid of $500$ points and is not proved. Uniqueness of the fixed point of the limit map for every $\rho>1$ is then the statement that $\Lambda$ is strictly increasing. $\Lambda$ was found strictly increasing on a grid of $33$ values $q\in[0.02,12]$, with $\Lambda(0.02)=1.000162$, $\Lambda(1)=1.395916$ and $\Lambda(12)=12.000007$ (script \path{provenance/research_lanes/hamiltonian/lambda_of_q.py}, output \path{provenance/research_lanes/hamiltonian/lambda_of_q.out}), and on the $85$ values $q\in[0.02,320]$ of the second implementation, where also $0<m_0<1$ throughout (\path{evidence/v3/cartography/limit_map.csv}). For small $q$ the computed values satisfy $\Lambda(q)-1\approx0.405\,q^2$ and $\log m_0\approx-2.106\,(\Lambda-1)^{3/2}$. The monotonicity of $\Lambda$ is a statement about one parameter-free function; it is not proved.
+
+\paragraph{Three regimes as $\mu\to0$.}
+The computations indicate three regimes: the Hopf-linear regime $\rho-1\ll\mu$, where $\log m_t\approx-2\pi\varepsilon^3r=-2\pi\varepsilon(\rho-1)$; the wedge $\rho-1=O(\mu)$ of Theorem~\ref{thm:wedge}, where $\log m_t=O(\varepsilon^3)$; and the relaxation regime of fixed $\rho>1$, where $m_t\to m_0(\rho)\in(0,1)$ and $T\approx S(\rho)/\mu$. The last two match formally. For large $\xi$ the centre has $R_{\mathrm{sel}}(\xi)\approx\tfrac45\xi$ and $I_0(\xi)\approx\tfrac{4\sqrt2}{3}\xi^{3/2}$ (at $\xi=10^3$ the computed ratios to these expressions are $1.006$ and $1.011$), so that \eqref{wed:eq:logmt}, extrapolated to large $r$, reads $\log m_t\approx-\tfrac{16\sqrt2}{15}\bigl(\tfrac54\bigr)^{3/2}(\rho-1)^{3/2}=-2.108\,(\rho-1)^{3/2}$, while the limit map gives $\log m_0\approx-2.106\,(\rho-1)^{3/2}$ as $\rho\to1$; at $\rho=1.02$ the two values are $-0.00596$ and $-0.00566$. At fixed $\rho>1$ small $\mu$ is therefore not a near-neutral regime in these computations.
+
+\subsection{What is missing for global uniqueness in the wedge}\label{wed:sec:missing}
+Theorem~\ref{thm:wedge} concerns the cycles inside a fixed energy ball. By Corollary~\ref{cor:criterion}, if every cycle at a parameter has $\lambda_c<0$ then the cycle is unique. By the established property \textup{(F)}, the cycle of Theorem~\ref{thm:wedge} has $\lambda_c<0$. Therefore, for $r\in[r_1,r_2]$ and small $\mu$, uniqueness of the cycle in the whole domain would follow from Theorem~\ref{thm:wedge}, hence from \textup{(F)}, together with the following statement, which is not proved.
+\begin{quote}
+\textbf{(N)}\quad There are $\xi_b>\xi_*(r_2)$ and $\mu_1>0$ such that, for $\mu<\mu_1$ and $\rho=1+r\varepsilon^2$ with $r\in[r_1,r_2]$, every cycle with $\lambda_c\ge0$ has its projection $(U,p/\sqrt\mu)$ in $\Omega_{\xi_b}$.
+\end{quote}
+Indeed, under \textup{(F)} and \textup{(N)} and for $\mu<\min\{\mu_0,\mu_1\}$, a cycle with $\lambda_c\ge0$ would lie in $\Omega_{\xi_b}$ and would be the cycle of Theorem~\ref{thm:wedge}, which has $\lambda_c<0$. Statement \textup{(N)} is weaker than the exclusion of all cycles outside the ball: only non-attracting cycles have to be excluded.
+
+\paragraph{What is known a priori.}
+By \eqref{eq:statebox}, every cycle satisfies $e^U=X\le M_0$ and $Y\le M_0$ with $M_0=(\lambda+\mu)(\lambda+1)/\mu$. In the wedge $\lambda=\rho A=1+O(\mu)$, so $M_0=2/\mu+O(1)$. Hence the crest energy satisfies $\Rem(U_{\max})<e^{U_{\max}}\le M_0$, and $p=\lambda(1-Y)\ge-\lambda(M_0-1)$, a lower bound of order $1/\mu$; no lower bound of order one for $p$ is available. Statement \textup{(N)} therefore has to exclude non-attracting cycles with crest energy in the window $\xi_b<\Rem(U_{\max})\le M_0\approx2/\varepsilon^2$. This window has two parts. For crest energies up to $d^2/\varepsilon^2$ with a small fixed $d$, the expansion behind Lemma~\ref{wed:lem:normalform} still has the small effective parameter $\varepsilon\max|P|\le d\sqrt2$, and formally the drift $\varepsilon^3I_0(\xi)(r-R_{\mathrm{sel}}(\xi))$ is negative there because $R_{\mathrm{sel}}(\xi)>R_{\mathrm{sel}}(\xi_*(r_2))=r_2\ge r$ for $\xi>\xi_*(r_2)$; a proof would need error bounds for the normal form that are uniform on a non-compact range of energies, on which the orbit has a crest of height about $\log\xi$ and a trough of depth about $\xi$. Property \textup{(F)} on a compact set does not provide them. For crest energies of order $1/\varepsilon^2$ the cycle would be a pulse with $p$ of order one in the original time; the Hamiltonian approximation then fails at leading order, and the description is that of Subsection~\ref{wed:sec:relax}, which is formal.
+
+\paragraph{A constraint on non-attracting cycles.}
+Put $\hat\eta=(\eta-\mu)/\mu$. By \eqref{eq:gainprimitive}, $k=\avg{f_\mu(\eta)}$ with $f_\mu(s)=s(s+1)(s+1-\mu)$, and $f_\mu(\mu+\mu\hat\eta)=\kH+(A^2+\mu)\mu\hat\eta+2A\mu^2\hat\eta^2+\mu^3\hat\eta^3$. Hence on every cycle
+\begin{equation}\label{wed:eq:moment}
+\delta=k-\kH=(A^2+\mu)\,\mu\avg{\hat\eta}+2A\,\mu^2\avg{\hat\eta^2}+\mu^3\avg{\hat\eta^3}.
+\end{equation}
+Since $\eta>0$ we have $\hat\eta>-1$ and $\avg{\hat\eta^3}\ge-\avg{\hat\eta^2}$, and $\lambda_c\ge0$ means $\avg{\hat\eta}\ge0$. With $\delta=r\mu^2/A$ this proves that every cycle with $\lambda_c\ge0$ at a parameter of the wedge satisfies
+\begin{equation}\label{wed:eq:ceiling}
+\avg{\hat\eta^2}\le\frac{r}{A(2+\mu)}\le\frac r2,\qquad 0\le\avg{\hat\eta}\le\frac{r\mu}{A(A^2+\mu)} .
+\end{equation}
+For $\mu\le1$ the first bound is the upper bound of the variance window \eqref{eq:variancewindow}, extended from neutral cycles to all cycles with $\lambda_c\ge0$. The cycles computed in the wedge, which are attracting, violate it: at $(\mu,r)=(10^{-3},0.71)$, $(10^{-3},7.87)$ and $(10^{-2},3.92)$ the computed values of $\avg{\hat\eta^2}$ are $0.69$, $6.84$ and $3.30$, against the ceilings $0.35$, $3.93$ and $1.93$ (script \path{provenance/research_lanes/hamiltonian/variance_route.py}, output \path{provenance/research_lanes/hamiltonian/variance_route.out}; floating point).
+
+\paragraph{The two a-priori estimates.}
+Two exact relations connect $\hat\eta$ with the orbit. Put $\mathsf s=(1+\eta)/A=1+\mu\hat\eta/A$, $\mathsf V=P/\mathsf s$ and $\mathsf E=\tfrac12\mathsf V^2+\rho\,\Rem(U)$. Eliminating $\zeta$ and $y$ from \eqref{eq:orthogonality} by means of \eqref{eq:projective} and $p'=k-\mu p-y$ gives $(1+\eta)p'-\eta'p-(\eta-\mu)(1+\eta)p+x-k=0$ on every cycle, that is, in the time $\tau$, $\dot{\mathsf V}=\sqrt\mu\,\hat\eta\,\mathsf V-\rho\,g(U)/\mathsf s^2$, and therefore
+\begin{equation}\label{wed:eq:energyidentity}
+\dot{\mathsf E}=\sqrt\mu\,\hat\eta\,\mathsf V^2+\rho\,g(U)\,\mathsf V\,\frac{\mathsf s^3-1}{\mathsf s^2}.
+\end{equation}
+Similarly, \eqref{eq:projective} reads $\zeta'+(1+\eta)\zeta=x$ and $\eta'+(1+\eta)\eta=\zeta+\mu\eta$; with the operator $\mathsf L=\varepsilon\,\tfrac{\mathrm d}{\mathrm d\tau}+\mathsf s$, for which $\tfrac{\mathrm d}{\mathrm dt}+1+\eta=A\mathsf L$, these are $\zeta=\mu(1+A\mathsf L\hat\eta)$ and $x=A\mathsf L\zeta$, so that
+\begin{equation}\label{wed:eq:spike}
+\rho\,e^U-\mathsf s=A\,\mathsf L^2\hat\eta .
+\end{equation}
+For $\mu\le1$ we have $\mathsf s>1/A\ge\tfrac12$, hence $|\mathsf s^3-1|/\mathsf s^2=|\mathsf s-1|\,(1+\mathsf s^{-1}+\mathsf s^{-2})\le7\mu|\hat\eta|/A$, and $|g(U)|\le\Rem(U)+\sqrt{2\Rem(U)}$ for all $U$. With $\mathsf V^2\le2\mathsf E$ and $\rho\,\Rem(U)\le\mathsf E$, \eqref{wed:eq:energyidentity} gives
+\begin{equation}\label{wed:eq:logenergy}
+\Bigl|\frac{\mathrm d}{\mathrm d\tau}\log\mathsf E\Bigr|\le|\hat\eta|\,\Bigl[2\sqrt\mu+\frac{7\mu}{A}\bigl(\sqrt{2\mathsf E}+2\sqrt\rho\bigr)\Bigr].
+\end{equation}
+Integrating over a period, of $\tau$-length $\sqrt\mu\,T$, and using the Cauchy--Schwarz inequality and \eqref{wed:eq:ceiling}, the oscillation of $\log\mathsf E$ along a cycle with $\lambda_c\ge0$ is at most $\sqrt\mu\,T\,\sqrt{r/2}\,\bigl[2\sqrt\mu+\tfrac{7\mu}{A}(\sqrt{2\max\mathsf E}+2\sqrt\rho)\bigr]$. Suppose that arbitrary cycles at parameters of the wedge satisfied, with constants independent of $\mu$,
+\begin{equation}\label{wed:eq:apriori}
+\textup{(P-T)}\quad T\le\frac{C_1}{\mu},\qquad\qquad \textup{(P-E)}\quad p\ge-C_2 .
+\end{equation}
+Then $|\mathsf V|\le2|P|\le2\max\{\lambda,C_2\}/\sqrt\mu$, $\Rem(U)<M_0$ for $U>0$ and $\Rem(U)\le|U|\le C_1C_2/\mu$ for $U<0$, so $\max\mathsf E\le C/\mu$, and the oscillation of $\log\mathsf E$ along a non-attracting cycle would be bounded by a constant independent of $\mu$. By Lemma~\ref{lem:projectivebounds}, $\eta$ is bounded above in terms of $\max x\le kM_0$, and $kM_0=\rho A(\lambda+\mu)(\lambda+1)$ is bounded in the wedge; hence $\mathsf s$ is bounded and $\mathsf E$ is bounded below by a constant multiple of $\mathcal E_0$. A non-attracting cycle that leaves a large energy ball would then have large $\mathsf E$ at every phase. Formally such a cycle has a short crest and a long deep trough, so that $\rho e^U$, whose mean is $\rho$ by Lemma~\ref{lem:tauidentities}(a), is a tall narrow spike, and \eqref{wed:eq:spike} would then force $\avg{\hat\eta^2}$ above the ceiling \eqref{wed:eq:ceiling}. This last step has not been made rigorous.
+
+To summarise, the following are missing, and none of them is proved in this paper.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item The two a-priori estimates \eqref{wed:eq:apriori} for arbitrary cycles at parameters of the wedge: a period of at most $C_1/\mu$ and a lower bound $p\ge-C_2$. The cycles computed at parameters of the wedge (Table~\ref{wed:tab:selection}) are close to orbits of the centre: at $\mu\le10^{-3}$ their $\tau$-period $\sqrt\mu\,T$ is within $0.2$ per cent of $T_0(\Rem(\alpha))$, and on an orbit of the centre $|p|=\sqrt\mu\,|P|\le\sqrt{2\mu\xi}$; so both estimates hold for them. For the relaxation cycles of Tables~\ref{wed:tab:fixedrho} and~\ref{wed:tab:limitmap} they hold with constants that depend on $\rho$. This is floating-point evidence about computed cycles, not about arbitrary ones.
+\item A proof of the spike step sketched above, which together with (a) would give \textup{(N)} and hence, with Theorem~\ref{thm:wedge}, uniqueness for $r\in[r_1,r_2]$ and small $\mu$.
+\item A version of Theorem~\ref{thm:wedge} that is uniform as $r\to0$, to connect the wedge with the Hopf curve uniformly in $\mu$.
+\item If one seeks uniformity on a growing energy domain, quantitative persistence and remainder estimates on that domain. Lemma~\ref{wed:lem:slowgraph} establishes \textup{(F)} only on each fixed compact set.
+\end{enumerate}
+For $\rho$ in a compact subset of $(1,\infty)$ the wedge analysis does not apply. There, uniqueness for small $\mu$ would require a proof that the function $\Lambda$ of Subsection~\ref{wed:sec:relax} is increasing, together with a singular-perturbation theorem that relates the cycles of the full system to the limit map; only floating-point evidence is available for either.

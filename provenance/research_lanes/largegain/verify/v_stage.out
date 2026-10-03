@@ -1,0 +1,7 @@
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/verify/v_stage.py:27: RuntimeWarning: overflow encountered in exp
+  return [p, k - mu * p - y, k * np.exp(U) - y]
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/largegain/verify/v_stage.py:27: RuntimeWarning: invalid value encountered in scalar subtract
+  return [p, k - mu * p - y, k * np.exp(U) - y]
+{'lobes': 1500, 'hyp1': 937, 'hyp2': 613, 'noLam': 25, 'fail': 0}
+{'pk_over_k': 1.0128, 'rl': 2.5144, 'rl_over_T': 0.48838, 'taub': 0.0068904, 'pkT_slack': 0.17863}
+ALL STAGE TESTS PASSED

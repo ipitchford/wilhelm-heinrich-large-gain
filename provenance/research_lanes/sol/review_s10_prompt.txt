@@ -1,0 +1,621 @@
+ADVERSARIAL REFEREE REQUEST. You are refereeing one section of a mathematics paper. Your task is to REFUTE it: find every error, unjustified step, circular argument, misuse of an imported theorem, or statement that is stronger than what is proved. Do not summarise or praise. Check proofs line by line, re-derive every displayed identity, and test inequalities on special cases. Report each defect as: location (label or quoted phrase) | severity (FATAL: the statement is false or the proof cannot be repaired locally; GAP: a step is unjustified but the statement is probably true; MINOR: wording, missing hypothesis that is clearly satisfied, typo) | what is wrong | the repair, if you see one. End with a one-line verdict per theorem/proposition/lemma: HOLDS / GAP / FALSE. If you find nothing wrong with a statement after genuinely checking it, say HOLDS and state which steps you re-derived.
+
+CONTEXT (established earlier in the paper; take as given). System, parameters mu>0, k>0, A=1+mu, lambda=k/mu, k_H=mu(1+mu):
+  U' = p,  p' = k - mu p - y,  y' = k e^U - y,  x = k e^U;  equilibrium E=(0,0,k).  Chemical domain: y>0, p<lambda.  P = {k>k_H}.
+  A cycle is a nonconstant periodic orbit with least period T; <f> is the time average. Log-bounded entire solution: (U,p,y) bounded on R.
+  Jacobian J=[[0,1,0],[0,-mu,-1],[x,0,-1]]; B=-S J^T S=[[0,0,x],[1,mu,0],[0,1,1]], S=diag(1,-1,-1).
+  (eq:projective) Along a cycle there are positive T-periodic adjoint ratios eta, zeta: eta' = zeta+(mu-1)eta-eta^2, zeta' = x-(1+eta)zeta, eta>max(0,mu-1) (eq:etaminbasic).
+  (prop:multipliers) Transverse multipliers 0<m_s<m_t, m_s<1, m_s m_t=e^{-AT}; m_s=e^{-(1+<eta>)T}, m_t=e^{(<eta>-mu)T}; lambda_c:=<eta>-mu.
+  (prop:factor) zeta p - eta p' = x - y (eq:orthogonality); p''=(eta-mu)p'-zeta p (eq:tangent); D^3+AD^2+mu D+x=(D+1+eta)(D^2+(mu-eta)D+zeta).
+  (lem:projectivebounds) explicit bounds eta_-<=eta<=eta_+, zeta_-<=zeta<=zeta_+ from 0<x_-<=x<=x_+.
+  (eq:gainprimitive) (zeta+eta+eta^2/2)' = x - f_mu(eta), f_mu(s)=s(s+1)(s+1-mu).
+  (thm:support) base z1 = a cycle or E with its (eta,zeta), z2 a distinct log-bounded entire solution: Delta=zeta(U2-U1)-eta(p2-p1)-(y2-y1) satisfies Delta'+(1+eta)Delta=-x1 Rem(U2-U1), Rem(d)=e^d-1-d, and Delta<0.
+  (cor:cones) K:=zeta U-eta p-y+k>0 with K'+(1+eta)K=k psi(U), psi(U)=Ue^U-e^U+1; Lambda_E:=(y-k)-zeta_E U+eta_E p>0 with Lambda_E'=-gamma_E Lambda_E+k Rem(U), gamma_E>A root of gamma(gamma-1)(gamma-mu)=k, eta_E=gamma_E-1, zeta_E=eta_E(eta_E+1-mu); no cycle point r=(U,p,y-k) in the closed cones C_+={U>=0,p<=0,y-k<=0}, C_-=-C_+.
+  (lem:curvature) W:=zeta' p-eta' p'>0, W'+(1+eta)W=x p^2.
+  (thm:geometry) every cycle projects to a regular clockwise Jordan curve in the (U,p) plane enclosing the origin; U and p each have one nondegenerate max and min per period; distinct cycles are nested. At a zero of p (eq:crestidentities): x-k=(1+eta)(y-k), x-y=eta(y-k), p'=k-y.
+  (thm:six) the six extrema of X=x/k, Z=y/k, Y=1-p/lambda occur in the order X_min<Z_min<Y_min<X_max<Z_max<Y_max.
+  (prop:crestmap) the crest-return derivative M (section p=0, coords (U,y)) is entrywise positive, eigenvalues m_s,m_t, det M=e^{-AT}<e^{-4pi}, T>2pi/sqrt(mu); compound system w'=Cw, C=[[-mu,1,0],[0,-1,1],[x,0,-A]] (eq:compound).
+Macros: \cA attractor, \Dom chemical domain, \Dsc=pi(attractor), \Dt derivative along the flow, \kH=k_H, \LamE=Lambda_E, \Sg=Sigma=p^2-Up', \Xg=Xi=p'^2-pp'', \etaz=eta_0, \psiU=psi, \Rem=R.
+
+THE SECTION UNDER REVIEW (LaTeX source) FOLLOWS.
+=====================================================================
+ADDITIONAL CONTEXT FOR THIS SECTION. (lem:statebox) every positive periodic solution satisfies X,Y,Z <= M_0=(lambda+mu)(lambda+1)/mu in chemical variables. (cor:criterion)(ii): at a parameter (mu,k) with k>k_H, if every cycle has lambda_c<0 then there is exactly one cycle; it is hyperbolic, orbitally asymptotically stable, and is the omega-limit set of every solution in the chemical domain that does not converge to E. This section claims an explicit theorem for ALL cycles when 0<mu<=1 and k>=1000; check with particular care (a) that every estimate is valid for an arbitrary cycle and never uses a property of a specific computed cycle, (b) each numerical constant and each scalar inequality used with it (recompute them), (c) the uniformity in mu on (0,1], (d) the reciprocal-rate corollary.
+=====================================================================
+% s10_largegain.tex -- uniqueness at large gain: every cycle is a relaxation cycle and is attracting for k >= 1000.
+% Exported labels: sec:largegain thm:largegain cor:lgunique cor:lgreciprocal lem:lgshortlobe lem:lglinear.
+% Internal labels carry the prefix lg:.
+\section{Uniqueness at large gain}\label{sec:largegain}
+This section proves that at large gain every cycle is hyperbolic and attracting, with explicit constants. For $0<\mu\le1$ and $k\ge1000$, Theorem~\ref{thm:largegain} bounds the period of an arbitrary cycle from below, its slope at the up-crossing of $U=0$ from below and the duration of its crest from above, and deduces $\avg\eta\le0.83\,\mu$. Corollary~\ref{cor:criterion} then gives uniqueness and attraction (Corollary~\ref{cor:lgunique}), and the reciprocal map of the rate ratio extends the result to $\mu\ge1$, $k\ge1000\mu^3$ (Corollary~\ref{cor:lgreciprocal}). The argument treats an arbitrary cycle at one parameter value. It uses no continuation in the parameters and no assumption on the stability or the number of cycles.
+
+The proof of Theorem~\ref{thm:largegain} has five steps. Since $\LamE>0$, the positive lobe $\{U>0\}$ of a cycle is shorter than half a period of the linearisation at $E$, so that the negative lobe $\{U<0\}$ is long (Lemma~\ref{lem:lgshortlobe}). A long negative lobe forces a steep up-crossing, $p_k\ge0.374\,k$ (Lemmas~\ref{lg:lem:i}--\ref{lg:lem:stage1}). The up-crossing slope bounds the mass $\int(x-k)\dd$ of the positive lobe from below, and this mass bounds the length of the negative lobe from below (Lemmas~\ref{lg:lem:P1} and~\ref{lg:lem:mass}); since a long negative lobe has a long rising phase (Lemma~\ref{lg:lem:stage2}), the two bounds together yield $T>0.1833\,\lambda/\mu$ and $p_k\ge0.819\,\lambda$ (Lemma~\ref{lg:lem:boot}). The crest $\{x>c_0\}$ then lasts $O(\lambda^{-1}\log\lambda)$ (Lemma~\ref{lg:lem:crest}). Finally, a linear estimate for the compound system \eqref{eq:compound} bounds the weak exponent in terms of the period and the crest duration (Lemma~\ref{lem:lglinear}). The numerical constants are collected in Section~\ref{lg:sec:constants}, and Section~\ref{lg:sec:scope} states what the threshold does not give.
+
+\paragraph{Local symbols.}
+Throughout the section $w=y-k$; a cycle is fixed, and $U_{\max}>0$, $U_{\min}<0$ are the extreme values of $U$ on it. Section~\ref{lg:sec:imports} fixes the time origin, the event times $s_0<T_-<T_-+\tau_1$, the lobe lengths $T_\pm$, the values $P_d$, $w_d$, $p_k$, $w_k$, the function $\varphi=1-e^{U}$, the numbers $L_\ast$, $\varphi_\ast$, $\theta$, $v_2$, $\varphi_2$, and the functions $\Phi_\mu$, $c_{\rm i}$, $c_{\rm ii}$, $c_{\rm b}$, whose generic argument is written $\xi>0$. Further times are $s_w$ (Lemma~\ref{lg:lem:signs}); $s_\ast$ and the durations $u$, $r_\ast$, $\tau_b$ (Section~\ref{lg:sec:negativelobe}); $t_L$, $\varsigma$, $\varsigma_L$ (Lemma~\ref{lg:lem:rise}); the shifted time $s=t-T_-$ with $s_+$, $\bar s$, $s_\theta$ (Section~\ref{lg:sec:spike}); the time $v$ elapsed after $s_\theta$ or after the crest, with $v_c$, $v_+$ (Lemma~\ref{lg:lem:crest}); and the crest duration $\tau_c$. All times and durations are measured in the time $t$; the frequency-one time $\tau=\sqrt\mu\,t$ occurs only in the proof of Corollary~\ref{cor:lgreciprocal}.
+Further quantities attached to the cycle are $v_w$, $P_w$, $P_1$, $U_\theta$, $w_c$, the masses $M_+$ and $m(s)$, $E_\theta$, $Q$, $N_\theta$, $\varepsilon_1$, $\vartheta_N$, $z=0.3\,T_--3$ and $T'$.
+The constants are $k_0=1000$; $a_1,\dots,a_4$ (in the proof of Lemma~\ref{lg:lem:stage2}, $a_1$ denotes $2\log T_-$); $c_1$, $c_\sharp$, $c_T$, $c_p$, $c_0$, $c_{\log}$; $\chi_0$, $z_{10}$; $b_f$; $L_0$ and a generic level $L$; $\nu$, $\alpha$, $\beta$; $q_0$, $q_1$; $M_0$ is the number of Lemma~\ref{lem:statebox}, and $R=\log M_0$.
+The explicit functions of $k$, of $\lambda$ or of a slope $p$ are $\omega_0$, $T_0$, $T_1$, $z_1$, $z^\sharp$, $\chi_{\rm ii}$, $\tilde R$, $\bar\varepsilon_1$, $\vartheta_Q$, $\vartheta_1$, $f$; $\hat L$, $\hat R$, $\tilde R_\lambda$, $\hat\varepsilon_1$, $\hat\vartheta_N$, $a_c$, $A_1$, $\bar\tau_1$, $\hat w$, $v_f$, $C_\tau$, $\bar C_\tau$, $q$, $g$; and $\rho_0(\mu)$, with $\underline\mu=\min(\mu,1/\mu)$.
+The roots of the characteristic polynomial at $E$ are $-\gamma_E$ and $\sigma\pm i\omega$ (the pair is written $\alpha_E\pm i\omega_E$ in Section~\ref{sec:compact}). In the proof of Corollary~\ref{cor:lgreciprocal} the letter $\sigma$ denotes $(1+\mu)/\sqrt\mu$ instead, $(\mu',k')$ is the reciprocal parameter, $\tilde U$, $\tilde t$, $\tilde T$ are the transported solution, time and period, and $(V_U,V_p,V_w)$ is a variation of $(U,p,w)$, with $V=V_U$. In Lemma~\ref{lem:lglinear} and in the proof of Theorem~\ref{thm:largegain}, $s\ge\sqrt2$ is a parameter, $(G_1,G_2,G_3)$ is a positive solution of \eqref{eq:compound}, $\mathcal L$ and $\mathcal G$ are a weighted sum and a weighted maximum of its components, and $D^+$ is the upper right Dini derivative with respect to $t$. $W^s(E)$ is the stable manifold of $E$; $\Gamma_j$ are arcs with parametrisations $\mathbf g_j$; and $\mathbf a$, $\mathbf b$, $\mathbf c$ are points of $\R^3$, in bold as in Section~\ref{sec:attractor}. The letters $r$, $v$, $V$ also serve as variables of integration; $z$ is also the variable of the characteristic polynomial and, in the proof of Lemma~\ref{lem:lgshortlobe}, the function $e^{-\sigma s}U$.
+The symbols $M_+$, $C_\tau$, $\bar C_\tau$, $E_\theta$, $A_1$, $T_0$, $T_1$, $T'$ and the letters $a$, $b$, $c$ with subscripts denote numbers or scalar functions. They are unrelated to the matrices $M$ and $C$, the cones $C_\pm$, the equilibrium $E$, the components of $e_s$ and the rates $a_0$, $b_0$ of \eqref{eq:physical}; and $u$, $v$, $z$ are not the coordinates used in Sections~\ref{sec:geometry} and~\ref{sec:attractor}.
+A prime denotes $\mathrm d/\mathrm dt$ on functions of $t$ or of $s=t-T_-$. On $T'$, $s'$, $\mu'$, $k'$, $\lambda'$, $\sigma'$, $\rho'$ and $\avg{\eta}'$ it marks a second quantity; $f'$ and $g'$ are derivatives with respect to the displayed variable; and in the proof of Lemma~\ref{lg:lem:crest} primes on $\hat L$, $\hat R$ and $A_1$ denote derivatives with respect to $\log\lambda$.
+
+\subsection{Statement}\label{lg:sec:statement}
+In terms of $w:=y-k$ the system \eqref{eq:logsystem} reads
+\begin{equation}\label{lg:eq:sys}
+U'=p,\qquad p'=-\mu p-w,\qquad w'=-w+k(e^U-1),
+\end{equation}
+with $\mu>0$, $k>0$, $x=ke^U$, and $A$, $\lambda$, $\kH$, $\rho$ as in \eqref{eq:parameters}. As in Section~\ref{sec:model}, a cycle is a nonconstant periodic solution with $x>0$, $y>0$,
+$p<\lambda$, of least period $T$; $\eta,\zeta$ are its positive adjoint ratios \eqref{eq:ratios} and
+$m_s<m_t$ its transverse multipliers, $m_t=\exp\{(\avg\eta-\mu)T\}$ (Proposition~\ref{prop:multipliers}).
+
+\begin{theorem}[Large gain]\label{thm:largegain}
+Let $0<\mu\le 1$ and $k\ge k_0:=1000$, i.e.\ $\rho\ge 1000/(\mu(1+\mu))$. Then every cycle of
+\eqref{lg:eq:sys} satisfies:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $T\ge c_T\,\lambda/\mu$ with $c_T=0.1833$;
+\item at the unique time per period where $U$ crosses $0$ upwards, $p\ge c_p\lambda$ with $c_p=0.819$;
+\item the set $\{t:x(t)>c_0\}$, $c_0=\tfrac{\mu}{2}\bigl(1-\tfrac{\mu^2}{4}\bigr)$, is one interval per period, that is, a single interval modulo $T$, of
+length $\tau_c\le \bigl(71.79+12.28\log(\lambda/1000)\bigr)/(0.819\,\lambda)$;
+\item $\avg\eta\le 0.83\,\mu<\mu$. Hence $0<m_s<m_t<1$: the cycle is hyperbolic and orbitally
+asymptotically stable.
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}[Uniqueness]\label{cor:lgunique}
+For $0<\mu\le1$ and $k\ge1000$ the system has exactly one cycle, and it attracts every orbit of the
+positive domain $\Dom=\{x>0,\ y>0,\ p<\lambda\}$ that does not lie on the one-dimensional stable
+manifold $W^s(E)$ of the equilibrium: the cycle is the $\omega$-limit set of every such orbit.
+\end{corollary}
+
+\begin{corollary}[Reciprocal rates]\label{cor:lgreciprocal}
+\textup{(a)} The reciprocal map
+\[
+(\mu,k)\ \longmapsto\ (\mu',k'):=\Bigl(\frac1\mu,\ \frac{k}{\mu^3}\Bigr)
+\]
+is an involution of $\{\mu>0,\ k>0\}$; it preserves $\rho$, maps $\cP$ onto itself and has $\lambda'=k'/\mu'=\lambda/\mu$. If $U$ is a nonconstant periodic solution of \eqref{eq:scalar} at $(\mu,k)$ with least period $T$, then
+\[
+\tilde U(\tilde t):=U(\tilde t/\mu)
+\]
+is a nonconstant periodic solution of \eqref{eq:scalar} at $(\mu',k')$ with least period $\tilde T=\mu T$. This correspondence is a bijection from the cycles at $(\mu,k)$ onto the cycles at $(\mu',k')$, and corresponding cycles have the same transverse multipliers $m_s$, $m_t$. The correspondence concerns cycles and their multipliers only: the time change does not map the positive domain at $(\mu,k)$ onto the positive domain at $(\mu',k')$ unless $\mu=1$.
+
+\textup{(b)} Let $\mu\ge1$ and $k\ge1000\,\mu^3$. Then every cycle has $0<m_s<m_t<1$, more precisely
+$\avg\eta\le\mu-0.17$, and the conclusion of Corollary~\ref{cor:lgunique} holds. In terms of $\rho$,
+for every $\mu>0$ the condition
+\[
+\rho\ \ge\ \rho_0(\mu):=\frac{1000}{\underline\mu(1+\underline\mu)},\qquad \underline\mu=\min(\mu,1/\mu),
+\]
+suffices for $\avg\eta<\mu$ on every cycle and for uniqueness; $\rho_0(1)=500$ and
+$\rho_0(\mu)=\rho_0(1/\mu)$.
+\end{corollary}
+
+The sharpness of the threshold and its dependence on $\mu$ are discussed in Section~\ref{lg:sec:scope}.
+
+\subsection{Imported facts and notation}\label{lg:sec:imports}
+We use the following facts about an arbitrary cycle at $(\mu,k)$ with $k>\kH$. Facts (F1)--(F6) enter the proof of Theorem~\ref{thm:largegain}; (F7) and (F8) are used only in the proofs of the two corollaries.
+\begin{enumerate}[label=\textup{(F\arabic*)}]
+\item (Section~\ref{sec:adjoint} and Proposition~\ref{prop:multipliers}.) There is a positive solution $\mathbf H=(H_1,H_2,H_3)$ of $\mathbf H'=B\mathbf H$, with $B$ as in \eqref{eq:adjointmatrices}, that is, of
+$H_1'=xH_3$, $H_2'=H_1+\mu H_2$, $H_3'=H_2+H_3$, with $\mathbf H(t+T)=e^{(1+\avg\eta)T}\mathbf H(t)$, where $\eta=H_2/H_3$ as in \eqref{eq:ratios}; and
+$m_t=\exp\{(\avg\eta-\mu)T\}$, $0<m_s<m_t$, $m_sm_t=e^{-AT}$, by \eqref{eq:multipliers} and \eqref{eq:exponent}.
+\item (Corollary~\ref{cor:cones}.) The gauge $\LamE=w-\zeta_EU+\eta_Ep$ of \eqref{eq:LambdaE} is positive along the cycle, where $\gamma_E>A$ is the
+root of $\gamma_E(\gamma_E-1)(\gamma_E-\mu)=k$, $\eta_E=\gamma_E-1$, $\zeta_E=(\gamma_E-1)(\gamma_E-\mu)$.
+Moreover no cycle point lies in $C_+=\{U\ge0,\ p\le0,\ w\le0\}$ or in $C_-=\{U\le0,\ p\ge0,\ w\ge0\}$; these are the cones \eqref{eq:cones}.
+\item (Theorem~\ref{thm:geometry}.) In one period $p$ has exactly two zeros, both simple: the crest ($U=U_{\max}>0$)
+and the trough ($U=U_{\min}<0$). Hence $U$ is strictly monotone between them, and each level of $U$ in
+$(U_{\min},U_{\max})$ is attained exactly twice per period.
+\item (Proposition~\ref{prop:crestmap}, \eqref{eq:determinant}.) $T>2\pi/\sqrt\mu$.
+\item (Lemma~\ref{lem:statebox}.) $x\le kM_0$, where $M_0=(\lambda+\mu)(\lambda+1)/\mu$ is the bound of \eqref{eq:statebox}; also $y>0$ and
+$p<\lambda$ (definition of the positive domain), i.e.\ $w>-k$.
+\item (Averaging \eqref{lg:eq:sys} over a period.) $\avg x=k$, $\avg p=0$,
+$\avg{p'^2}=\mu\avg{p^2}$. Indeed $p=U'$ has mean zero; the averages of the second and the third equation of \eqref{lg:eq:sys} give $\avg w=0$ and $\avg x=k$; and the last identity is obtained in the proof of Proposition~\ref{prop:crestmap} by multiplying \eqref{eq:scalar} by $U'$ and integrating over a period.
+\item (\cite[Theorem~1.1(c)]{Smith12}.) For $k>\kH$ every orbit in $\Dom\setminus W^s(E)$
+converges to a cycle. Here $W^s(E)$ is the one-dimensional stable manifold of $E$. In the original rates of \eqref{eq:physical} the hypothesis of the cited theorem is $r_0>a_0+b_0$, which is $k>\kH$, and the open positive octant of concentrations is $\Dom$ in the variables \eqref{eq:change}.
+\item (Corollary~\ref{cor:criterion}\textup{(ii)}.) If every cycle at a parameter $(\mu,k)\in\cP$ has $\lambda_c=\avg\eta-\mu<0$, then there is exactly one cycle at that parameter; it is hyperbolic and orbitally asymptotically stable, and it is the $\omega$-limit set of every solution in $\Dom$ that does not converge to $E$, that is, of every positive orbit off the one-dimensional stable manifold of $E$.
+\end{enumerate}
+\paragraph{Events.} Shift time so that $t=0$ is the downward crossing of $U=0$. By (F3) there are
+$0<s_0<T_-<T_-+\tau_1<T$ with:
+$U<0$ on $(0,T_-)$ (the \emph{negative lobe}), $U>0$ on $(T_-,T)$ (the \emph{positive lobe},
+of length $T_+:=T-T_-$); $p<0$ on $[0,s_0)$, $p(s_0)=0$ (trough, $U(s_0)=U_{\min}$), $p>0$ on $(s_0,T_-+\tau_1)$,
+$p(T_-+\tau_1)=0$ (crest, $U=U_{\max}$), $p<0$ on $(T_-+\tau_1,T]$. Write
+\begin{gather*}
+P_d:=-p(0)>0,\qquad w_d:=w(0),\qquad p_k:=p(T_-)>0,\qquad w_k:=w(T_-),\\
+\varphi(t):=1-e^{U(t)}\in(0,1)\quad\text{on }(0,T_-).
+\end{gather*}
+\paragraph{Fixed functions and constants.} Throughout $0<\mu\le1$ and
+\begin{gather*}
+L_\ast:=2,\qquad \varphi_\ast:=1-e^{-2},\qquad \theta:=2^{-1/2},\\
+\Phi_\mu(u):=\int_0^u e^{-\mu(u-r)}(1-e^{-r})\,\mathrm dr,\qquad \Phi_1(u)=1-(1+u)e^{-u},\\
+c_{\rm i}(\xi):=(e^\xi-e^{\xi/2})\bigl(1-(1+\tfrac\xi2)e^{-\xi/2}\bigr),\qquad
+c_{\rm ii}(\xi):=\tfrac{\xi^2}{2}-1+(1+\xi)e^{-\xi},\\
+c_{\rm b}(\xi):=\Phi_1(\tfrac\xi2)(1-e^{-\xi/2}).
+\end{gather*}
+$\Phi_\mu(u)$ is increasing in $u$, because $\tfrac{\mathrm d}{\mathrm du}\Phi_\mu(u)=(1-e^{-u})-\mu\Phi_\mu(u)\ge(1-e^{-u})e^{-\mu u}>0$ for $u>0$, and decreasing in $\mu$, so $\Phi_\mu\ge\Phi_1$; also
+$(1-e^{-\mu t})/\mu\ge1-e^{-t}$. Let $v_2=1.5936\ldots$ be the positive root of $v=2(1-e^{-v})$ and
+$\varphi_2:=0.7968\le 1-e^{-v_2}$. Since $v\mapsto v/(1-e^{-v})$ is increasing on $(0,\infty)$,
+\begin{equation}\label{lg:eq:v2}
+v>0,\ \ \frac{v}{1-e^{-v}}\ge2\quad\Longrightarrow\quad v\ge v_2\ \text{ and }\ 1-e^{-v}\ge\varphi_2 .
+\end{equation}
+
+\subsection{Identities, the short positive lobe, and signs}\label{lg:sec:identities}
+\begin{lemma}[Identities]\label{lg:lem:id}
+\textup{(a)} $M_+:=\int_{T_-}^{T}(x-k)\,\mathrm dt=\int_0^{T_-}(k-x)\,\mathrm dt=w_d+P_d+|w_k|+p_k$, and
+$M_+<kT_-$.
+\textup{(b)} $\avg{(x-\kH)p^2}=0$; hence $\min x<\kH$, i.e.\ $|U_{\min}|>\log\rho$.
+\end{lemma}
+\begin{proof}
+(a) The two integrals agree because $\avg x=k$ (F6). On the positive lobe $\int p\,\mathrm dt=U(T)-U(T_-)=0$,
+so integrating $p'=-\mu p-w$ gives $-P_d-p_k=-\int_{T_-}^Tw$, and integrating $w'=-w+(x-k)$ gives
+$w_d-w_k=-\int_{T_-}^Tw+M_+$. Hence $M_+=w_d-w_k+P_d+p_k$, and $w_k<0$ by Lemma~\ref{lg:lem:signs}(a)
+(whose proof does not use the present lemma). Finally $k-x<k$.
+(b) Multiply the scalar equation \eqref{eq:scalar}, $U'''+AU''+\mu U'+k(e^U-1)=0$, by $U''$ and integrate over a period:
+$A\int p'^2=\int xp^2$. With (F6), $\int xp^2=A\mu\int p^2=\kH\int p^2$. As $p\not\equiv0$ and $x$ is
+nonconstant, $x-\kH$ changes sign.
+\end{proof}
+
+\begin{lemma}[The positive lobe is short]\label{lem:lgshortlobe}
+Let $-\gamma_E$, $\sigma\pm i\omega$ be the roots of $z^3+Az^2+\mu z+k$ $(k>\kH)$. Then
+$T_+<\pi/\omega$. Moreover $\gamma_E-\mu<k^{1/3}+1$, and for $k\ge1$
+\[
+\omega\ \ge\ \omega_0(k):=\tfrac12\sqrt{3k^{2/3}-4k^{1/3}-1}\quad\text{whenever the radicand is positive.}
+\]
+Consequently $T_->T_0(k):=2\pi-\pi/\omega_0(k)$, and $T_0$ is increasing in $k$.
+\end{lemma}
+\begin{proof}
+$z^3+Az^2+\mu z+k=(z+\gamma_E)(z^2-2\sigma z+\zeta_E)$ with $2\sigma=\gamma_E-A=\eta_E-\mu$ and
+$\zeta_E=\sigma^2+\omega^2$. From \eqref{lg:eq:sys},
+$U''-2\sigma U'+\zeta_EU=-\mu p-w-(\eta_E-\mu)p+\zeta_EU=-\LamE<0$ by (F2).
+Put $s=t-T_-$ and $z(s)=e^{-\sigma s}U$; then $z''+\omega^2z=-e^{-\sigma s}\LamE<0$,
+$z(0)=0$, and $z>0$ on $(0,T_+)$. If $T_+\ge\pi/\omega$ then
+\[
+0>\int_0^{\pi/\omega}(z''+\omega^2z)\sin(\omega s)\,\mathrm ds
+=\bigl[z'\sin\omega s-\omega z\cos\omega s\bigr]_0^{\pi/\omega}=\omega z(\pi/\omega)\ge0,
+\]
+a contradiction. Next, since $\gamma_E>A$, each of $\gamma_E,\gamma_E-1,\gamma_E-\mu$ exceeds $\gamma_E-A>0$, so
+$(\gamma_E-A)^3<k$, i.e.\ $\gamma_E-\mu<k^{1/3}+1$; and $\gamma_E^3>k$. Finally
+$4\omega^2=4\zeta_E-(\gamma_E-A)^2=3\gamma_E^2-2A\gamma_E-(1-\mu)^2$, which is increasing in
+$\gamma_E\ge A/3$; with $\gamma_E>k^{1/3}\ge1>A/3$, $A\le2$ and $(1-\mu)^2\le1$ this gives the bound.
+By (F4) and $\mu\le1$, $T_-=T-T_+>2\pi-\pi/\omega_0(k)$.
+\end{proof}
+
+\begin{lemma}[Signs on the two lobes]\label{lg:lem:signs}
+\textup{(a)} $w_d>0$, $w_k<0$, $w(s_0)<0$, and $w>0$ at the crest.
+\textup{(b)} There is a unique $s_w\in(0,s_0)$ with $w>0$ on $[0,s_w)$ and $w<0$ on $(s_w,T_-]$.
+\textup{(c)} $\varphi$ is increasing on $[0,s_0]$ and decreasing on $[s_0,T_-]$.
+\textup{(d)} On the positive lobe $t\mapsto e^tw(t)$ is nondecreasing.
+\textup{(e)} For all $t$ and $v\ge0$: $w(t+v)+k\ge e^{-v}(w(t)+k)$.
+\end{lemma}
+\begin{proof}
+(a) At $t=0$: $U=0$, $p<0$; $w\le0$ would put the point in $C_+$. At $T_-$: $U=0$, $p>0$; $w\ge0$
+would put it in $C_-$. At the trough ($U<0$, $p=0$) $w\ge0$ is excluded by $C_-$; at the crest
+$w\le0$ by $C_+$ (F2).
+(b) On the negative lobe $w'=-w-k\varphi<-w$, so once $w\le0$ it stays negative while $U<0$. With (a)
+this gives a unique zero, located before $s_0$. (c) follows from the sign of $p$.
+(d) $(e^tw)'=e^t(x-k)\ge0$ where $U\ge0$. (e) $w'=-w+k(e^U-1)\ge-w-k$, so $(e^t(w+k))'\ge0$.
+\end{proof}
+
+\subsection{The negative lobe: four durations}\label{lg:sec:negativelobe}
+By Lemma~\ref{lg:lem:id}(b), $|U_{\min}|>\log\rho$; whenever $\rho\ge e^{L_\ast}$ there is a unique
+$s_\ast\in(s_0,T_-)$ with $U(s_\ast)=-L_\ast$. Put
+\[
+u:=s_0-s_w,\qquad r_\ast:=s_\ast-s_0,\qquad \tau_b:=T_--s_\ast,\qquad\text{so}\quad
+T_-=s_w+u+r_\ast+\tau_b .
+\]
+\begin{lemma}[Phase (i): $w>0$]\label{lg:lem:i}
+If $s_w\ge \xi>0$ then $v:=|U(\xi/2)|$ satisfies $v\ge k\,c_{\rm i}(\xi)\,(1-e^{-v})$. If in addition
+$k\,c_{\rm i}(\xi)\ge2$, then $|U_{\min}|\ge\varphi_2\,k\,c_{\rm i}(\xi)$.
+\end{lemma}
+\begin{proof}
+On $[0,s_w]$, $(e^rw)'=-ke^r\varphi$ and $w(s_w)=0$, so $w(r)=ke^{-r}\int_r^{s_w}e^v\varphi(v)\,\mathrm dv$.
+For $r\le \xi/2$, by monotonicity of $\varphi$ (Lemma~\ref{lg:lem:signs}(c), $\xi\le s_w<s_0$),
+$w(r)\ge ke^{-r}\varphi(\xi/2)(e^\xi-e^{\xi/2})$. On $[0,s_0)$, $|p|'=w-\mu|p|$, hence for $s\le \xi/2$
+\[
+|p|(s)\ \ge\int_0^se^{-\mu(s-r)}w(r)\,\mathrm dr\ \ge\int_0^se^{-(s-r)}w(r)\,\mathrm dr
+\ \ge k\varphi(\xi/2)(e^\xi-e^{\xi/2})\,se^{-s}
+\]
+($w\ge0$, $\mu\le1$). Integrating over $[0,\xi/2]$: $|U(\xi/2)|\ge k\varphi(\xi/2)c_{\rm i}(\xi)$ and
+$\varphi(\xi/2)=1-e^{-v}$. If $kc_{\rm i}(\xi)\ge2$, \eqref{lg:eq:v2} gives $1-e^{-v}\ge\varphi_2$, so
+$|U_{\min}|\ge v\ge\varphi_2kc_{\rm i}(\xi)$.
+\end{proof}
+
+\begin{lemma}[Phase (ii): $w<0$, $p<0$]\label{lg:lem:ii}
+Let $v_w:=|U(s_w)|$, $P_w:=|p(s_w)|$. Then
+\[
+P_w\ge k\varphi(s_w)(u-1+e^{-u}),\qquad |U_{\min}|-v_w\ge k\varphi(s_w)\,c_{\rm ii}(u),\qquad
+P_w<(\gamma_E-\mu)\,v_w .
+\]
+If $u\ge \xi$ and $\chi_{\rm ii}(\xi):=k(\xi-1+e^{-\xi})/(k^{1/3}+1)\ge2$, then $|U_{\min}|\ge\varphi_2\,k\,c_{\rm ii}(\xi)$.
+\end{lemma}
+\begin{proof}
+On $[s_w,s_0]$: $|w|'=-|w|+k\varphi$, $|w|(s_w)=0$, so
+$|w|(r)=k\int_{s_w}^re^{-(r-v)}\varphi(v)\,\mathrm dv\ge k\varphi(s_w)(1-e^{-(r-s_w)})$. Also
+$|p|'=-\mu|p|-|w|$ and $|p|(s_0)=0$, so $|p|(s)=\int_s^{s_0}e^{\mu(r-s)}|w(r)|\,\mathrm dr\ge\int_s^{s_0}|w|$.
+Thus $P_w\ge k\varphi(s_w)\int_0^u(1-e^{-r})\,\mathrm dr$ and
+$|U_{\min}|-v_w=\int_{s_w}^{s_0}|p|\ge\int_{s_w}^{s_0}(r-s_w)|w(r)|\,\mathrm dr\ge k\varphi(s_w)\int_0^ur(1-e^{-r})\,\mathrm dr
+=k\varphi(s_w)c_{\rm ii}(u)$. At $s_w$, $w=0$, $U=-v_w$, $p=-P_w$, so (F2) reads
+$\zeta_Ev_w-\eta_EP_w>0$ and $\zeta_E/\eta_E=\gamma_E-\mu$.
+If $u\ge \xi$: both $u-1+e^{-u}$ and $c_{\rm ii}$ are increasing, and by Lemma~\ref{lem:lgshortlobe}
+\[
+\frac{v_w}{1-e^{-v_w}}>\frac{k(\xi-1+e^{-\xi})}{\gamma_E-\mu}>\chi_{\rm ii}(\xi)\ge2 ;
+\]
+by \eqref{lg:eq:v2},
+$\varphi(s_w)\ge\varphi_2$ and $|U_{\min}|\ge\varphi_2kc_{\rm ii}(\xi)$.
+\end{proof}
+
+\begin{lemma}[Rising phase]\label{lg:lem:rise}
+On $[s_0,T_-]$ one has $p'=-\mu p+|w|$, $|w|'=-|w|+k\varphi$, $0<|w|<k$. Moreover:
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item $p(T_--\varsigma)\ge p_k-k\varsigma$ for $0\le\varsigma\le T_--s_0$; hence $T_--s_0\ge p_k/k$,
+$|U_{\min}|\ge p_k^2/(2k)$, and for $0<L\le p_k^2/(2k)$ the time $t_L\in(s_0,T_-)$ with $U(t_L)=-L$ satisfies
+$T_--t_L\le 2L/p_k$.
+\item If $|U_{\min}|>L_\ast$: $r_\ast\ge\sqrt{2(|U_{\min}|-L_\ast)/k}$.
+\item If $|U_{\min}|>L_\ast$: $p(s_\ast)\ge k\varphi_\ast\Phi_\mu(r_\ast)$ and $p_k\ge p(s_\ast)-\mu L_\ast$.
+\item If $|U_{\min}|>L_\ast$, $\xi>0$ and $k\,c_{\rm b}(\xi)\ge L_\ast/\varphi_\ast$, then $\tau_b<\xi$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+The equations are \eqref{lg:eq:sys} with $w<0$ (Lemma~\ref{lg:lem:signs}(b)); $|w|<k$ is (F5).
+(a) $p'\le|w|<k$ gives the first inequality; $p(s_0)=0$ gives $T_--s_0\ge p_k/k$; integrating,
+$U(T_--\varsigma)\le-(p_k\varsigma-k\varsigma^2/2)$ for $\varsigma\le p_k/k$, so $|U_{\min}|\ge p_k^2/(2k)$, and
+$U(T_--\varsigma_L)\le-L$ for $\varsigma_L:=(p_k-\sqrt{p_k^2-2kL})/k\le 2L/p_k$; as $U$ increases on the
+rising phase, $t_L\ge T_--\varsigma_L$.
+(b) $p'<k$ and $p(s_0)=0$ give $U(s)+|U_{\min}|<k(s-s_0)^2/2$.
+(c) For $s_0\le r\le s\le s_\ast$, $U(r)\le-L_\ast$, so $|w|(s)\ge k\varphi_\ast(1-e^{-(s-s_0)})$ and
+$p(s_\ast)=\int_{s_0}^{s_\ast}e^{-\mu(s_\ast-r)}|w(r)|\,\mathrm dr\ge k\varphi_\ast\Phi_\mu(r_\ast)$. After
+$s_\ast$, $p'\ge-\mu p$, so $L_\ast=\int_{s_\ast}^{T_-}p\ge p(s_\ast)(1-e^{-\mu\tau_b})/\mu$ and
+$p_k\ge p(s_\ast)e^{-\mu\tau_b}\ge p(s_\ast)-\mu L_\ast$.
+(d) Suppose $\tau_b\ge \xi$ and let $s:=s_\ast+\xi/2$. For $s_\ast\le r\le s$, since $\varphi$ decreases,
+$|w|(r)\ge k\varphi(s)(1-e^{-(r-s_\ast)})$, whence $p(s)\ge k\varphi(s)\Phi_\mu(\xi/2)$. As
+$p(s')\ge p(s)e^{-\mu(s'-s)}$ for $s'\ge s$ and $T_--s\ge \xi/2$,
+$|U(s)|=\int_s^{T_-}p\ge p(s)(1-e^{-\mu \xi/2})/\mu\ge k\varphi(s)\,c_{\rm b}(\xi)$. With
+$v=|U(s)|\in(0,L_\ast)$ this reads $v/(1-e^{-v})\ge kc_{\rm b}(\xi)\ge L_\ast/\varphi_\ast$, contradicting the
+strict monotonicity of $v/(1-e^{-v})$.
+\end{proof}
+
+\begin{lemma}[Stage 1: a first foothold]\label{lg:lem:stage1}
+Let $k\ge k_0=1000$ and
+\[
+(a_1,a_2,a_3,a_4)=(2.06,\,1.99,\,1.48,\,0.36).
+\]
+Then $p_k\ge c_1k$ with
+$c_1=0.374$.
+\end{lemma}
+\begin{proof}
+$\rho\ge k_0/2>e^{L_\ast}$, so $|U_{\min}|>L_\ast$. By Lemma~\ref{lem:lgshortlobe},
+$T_->T_0(k)\ge T_0(k_0)=5.8927\ldots\ge5.89=a_1+a_2+a_3+a_4$. Since $kc_{\rm b}(a_4)\ge
+k_0c_{\rm b}(0.36)=2.369>L_\ast/\varphi_\ast=2.3131$, Lemma~\ref{lg:lem:rise}(d) gives $\tau_b<a_4$.
+Hence $s_w\ge a_1$, or $u\ge a_2$, or $r_\ast\ge a_3$. In the first case
+($kc_{\rm i}(a_1)\ge2$) Lemma~\ref{lg:lem:i} and Lemma~\ref{lg:lem:rise}(b) give
+$r_\ast\ge\sqrt{2(\varphi_2c_{\rm i}(a_1)-L_\ast/k)}\ge1.4863$; in the second
+($\chi_{\rm ii}(a_2)\ge2$; $\chi_{\rm ii}$ is increasing in $k$) Lemma~\ref{lg:lem:ii} gives
+$r_\ast\ge\sqrt{2(\varphi_2c_{\rm ii}(a_2)-L_\ast/k)}\ge1.4863$. So $r_\ast\ge1.48$ in all cases and,
+by Lemma~\ref{lg:lem:rise}(c) and $\Phi_\mu\ge\Phi_1$, $\mu\le1$,
+$p_k\ge k\bigl(\varphi_\ast\Phi_1(1.48)-L_\ast/k\bigr)\ge0.3745\,k$.
+\end{proof}
+
+\subsection{The spike: mass from slope}\label{lg:sec:spike}
+On the positive lobe put $s=t-T_-$, $m(s):=\int_0^s(x-k)$, so $m$ is nondecreasing, $m\le M_+$, and
+\begin{equation}\label{lg:eq:wm}
+w(s)=w_ke^{-s}+\int_0^se^{-(s-r)}(x-k)\,\mathrm dr,\qquad e^{-s}\bigl(m(s)-|w_k|\bigr)\le w(s)\le m(s).
+\end{equation}
+Let $P_1:=\max_{[0,\tau_1]}p$ and $R:=\log M_0\ge U_{\max}$ (F5).
+
+\begin{lemma}\label{lg:lem:P1}
+If $p_k\ge10$ then $P_1\le p_k(1+\varepsilon_1)$, $\varepsilon_1:=1.1\sqrt2\,k\,p_k^{-3/2}$. Also
+$P_1<\lambda$.
+\end{lemma}
+\begin{proof}
+Let $s_+:=\sup\{s\le\tau_1:\ w\le0\text{ on }[0,s]\}$. On $[0,s_+]$, $p'\ge-\mu p$, so
+$p\ge p_ke^{-\mu r}$, $U(r)\ge p_k(r-r^2/2)$, and, as $x-k\ge kU$, $m(s)\ge kp_k(s^2/2-s^3/6)$.
+By \eqref{lg:eq:wm}, $w(s)\le0$ forces $m(s)\le|w_k|<k$; hence $p_k(s^2/2-s^3/6)<1$ for every
+$s\in[0,s_+]$. At $\bar s:=1.1\sqrt{2/p_k}\le0.492$ the left side equals
+$1.21(1-\bar s/3)\ge1.0115$; hence $s_+<\bar s$. On $[0,s_+]$, $p'\le-w\le|w_k|<k$; after
+$s_+$, $w>0$ (Lemma~\ref{lg:lem:signs}(d)) and $p'<0$ while $p\ge0$. So $P_1\le p_k+k\bar s$.
+\end{proof}
+
+\begin{lemma}[Mass from slope]\label{lg:lem:mass}
+With $\theta=2^{-1/2}$, let $s_\theta\in(0,\tau_1)$ be the first time with $p=\theta p_k$ and
+$U_\theta:=U(s_\theta)$. Then
+\begin{gather}
+e^{U_\theta}\ \ge\ E_\theta:=\frac{\theta p_k\bigl[\tfrac12p_k^2-2\mu P_1R\bigr]}{2k},\qquad
+\tau_1-s_\theta\ \ge\ \frac{\theta p_k}{\mu P_1+M_+},\label{lg:eq:Etheta}\\
+M_+(M_++\mu P_1)\ \ge\ Q:=\tfrac14p_k^2\bigl[\tfrac12p_k^2-2\mu P_1R\bigr]-\tfrac{1}{\sqrt2}\,p_kk .\label{lg:eq:Q}
+\end{gather}
+If $p_k\ge10$, then with $\tilde R(k):=2\log(k+1)+3/e\ \ge\mu R$ and
+$\vartheta_Q(p):=4(1+\varepsilon_1)\tilde R(k)/p+4\sqrt2\,k/p^3$,
+\begin{equation}\label{lg:eq:massfinal}
+T_-\ >\ \frac{M_+}{k}\ \ge\ \frac{p_k^2\sqrt{1-\vartheta_Q(p_k)}}{\sqrt8\,k}-\frac12
+\qquad\text{provided }\vartheta_Q(p_k)<1 .
+\end{equation}
+\end{lemma}
+\begin{proof}
+On $[0,s_\theta]$, $p\ge\theta p_k$, so $m(s)=\int_0^{U(s)}k(e^V-1)\,\mathrm dV/p\le k(e^{U(s)}-1-U(s))/(\theta p_k)$.
+From $(p^2/2)'=-\mu p^2-wp$, $w\le m$ and $p>0$:
+\[
+\tfrac12p_k^2-\tfrac12\theta^2p_k^2=\mu\!\int_0^{U_\theta}\!p\,\mathrm dV+\!\int_0^{s_\theta}\!wp\,\mathrm ds
+\le\mu P_1U_\theta+\!\int_0^{U_\theta}\!m\,\mathrm dV\le\mu P_1R+\frac{ke^{U_\theta}}{\theta p_k},
+\]
+which is the first part of \eqref{lg:eq:Etheta} ($1-\theta^2=\tfrac12$, $U_\theta<U_{\max}\le R$). On $[s_\theta,\tau_1]$,
+$p'=-\mu p-w\ge-\mu P_1-M_+$ and $p$ falls from $\theta p_k$ to $0$: the second part. On the same
+interval $U\ge U_\theta$, so $x-k\ge k(E_\theta-1)$ and
+$M_+\ge k(E_\theta-1)\,\theta p_k/(\mu P_1+M_+)$, which is \eqref{lg:eq:Q}.
+For \eqref{lg:eq:massfinal}: $M_0=(k+\mu^2)(k+\mu)/\mu^3$, so
+$\mu R\le2\mu\log(k+1)+3\mu\log(1/\mu)\le\tilde R(k)$. By Lemma~\ref{lg:lem:P1},
+$Q\ge\tfrac18p_k^4(1-\vartheta_Q(p_k))$. From \eqref{lg:eq:Q},
+$M_+\ge\tfrac12(-\mu P_1+\sqrt{\mu^2P_1^2+4Q})\ge\sqrt Q-\mu P_1/2$, and $\mu P_1<\mu\lambda=k$.
+$T_->M_+/k$ is Lemma~\ref{lg:lem:id}(a).
+\end{proof}
+
+\subsection{Bootstrap to the relaxation scale}\label{lg:sec:bootstrap}
+\begin{lemma}[Stage 2: the rising phase is a fixed fraction]\label{lg:lem:stage2}
+Let $k\ge k_0$ and $T_-\ge22$. Then $r_\ast\ge0.3\,T_-$, hence
+\begin{equation}\label{lg:eq:pkT}
+p_k\ \ge\ k\varphi_\ast\Phi_\mu(0.3T_-)-\mu L_\ast\ \ge\ 0.95\,\varphi_\ast\,k\,\frac{1-e^{-\mu z}}{\mu}-L_\ast,
+\qquad z:=0.3T_--3 .
+\end{equation}
+\end{lemma}
+\begin{proof}
+As in Lemma~\ref{lg:lem:stage1}, $\tau_b<0.36$. Put $a_1:=2\log T_-\ge2\log22>3$.
+\emph{Case $s_w\ge a_1$.} $c_{\rm i}(\xi)e^{-\xi}=(1-e^{-\xi/2})(1-(1+\frac\xi2)e^{-\xi/2})$ is increasing and
+$\ge0.34$ at $\xi=3$, so by Lemma~\ref{lg:lem:i} $|U_{\min}|\ge0.34\varphi_2kT_-^2$ and by Lemma~\ref{lg:lem:rise}(b)
+$r_\ast\ge\sqrt{0.68\varphi_2T_-^2-2L_\ast/k}\ge0.73T_-$.
+\emph{Case $s_w<a_1$.} Then $u+r_\ast>T':=T_--2\log T_--0.36\ (\ge15.4)$. If $u\ge2$, then
+$\chi_{\rm ii}(2)\ge2$ and Lemmas~\ref{lg:lem:ii}, \ref{lg:lem:rise}(b) give
+$r_\ast^2\ge2\varphi_2(u^2/2-1)-2L_\ast/k\ge(0.89u-1)^2$ (the difference
+$(\varphi_2-0.89^2)u^2+1.78u-1-2\varphi_2-2L_\ast/k$ is increasing and positive at $u=2$). So
+$r_\ast\ge\max(T'-u,\,0.89u-1)\ge(0.89T'-1)/1.89\ge0.4708T'-0.5292$. If $u<2$,
+$r_\ast>T'-2\ge0.4708T'-0.5292$ because $T'\ge2.79$. Hence in this case
+$r_\ast\ge0.4708T_--0.9416\log T_--0.6987\ge0.3T_-$, since $0.1708\,T_--0.9416\log T_--0.6987$ is increasing
+in $T_-$ for $T_-\ge22$ and positive at $T_-=22$.
+Now \eqref{lg:eq:pkT}: Lemma~\ref{lg:lem:rise}(c), monotonicity of $\Phi_\mu$, and for $s\ge3$
+$\Phi_\mu(s)\ge(1-e^{-3})\int_3^se^{-\mu(s-r)}\,\mathrm dr\ge0.95(1-e^{-\mu(s-3)})/\mu$.
+\end{proof}
+
+\begin{lemma}[Every cycle is a relaxation cycle]\label{lg:lem:boot}
+Let $k\ge k_0=1000$. Then
+\[
+T_-\ >\ c_T\,\frac{\lambda}{\mu},\quad c_T=\frac{0.055}{0.3}=0.1833\ldots,\qquad\text{and}\qquad
+p_k\ \ge\ c_p\lambda,\quad c_p=0.819 .
+\]
+\end{lemma}
+\begin{proof}
+\emph{Step 1.} By Lemma~\ref{lg:lem:stage1}, $p_k\ge c_1k\ge374$. In \eqref{lg:eq:massfinal},
+$\vartheta_Q(p)$ is decreasing in $p$ and, at $p=c_1k$, equals
+$\vartheta_1(k):=4\tilde R(k)(1+\bar\varepsilon_1(k))/(c_1k)+4\sqrt2/(c_1^3k^2)$,
+$\bar\varepsilon_1(k):=1.1\sqrt2\,c_1^{-3/2}k^{-1/2}$, which is decreasing in $k$ ($\tilde R(k)/k$ is
+decreasing for $k\ge1$); $\vartheta_1(k_0)=0.19402$. Hence, for every admissible value of $p_k$,
+\begin{equation}\label{lg:eq:Tm}
+T_->\frac{p_k^2\sqrt{1-\vartheta_1(k_0)}}{\sqrt8\,k}-\frac12 ,
+\end{equation}
+and in particular $T_->T_1(k):=c_1^2k\sqrt{1-\vartheta_1(k_0)}/\sqrt8-\tfrac12\ge T_1(k_0)=43.89>22$.
+
+\emph{Step 2.} So Lemma~\ref{lg:lem:stage2} applies; $z=0.3T_--3\ge z_1(k):=0.3T_1(k)-3\ge z_{10}:=10.169$.
+Since $(1-e^{-\mu z})/\mu\ge z/(1+\mu z)\ge z_{10}/(1+z_{10})$ and
+$0.01\varphi_\ast k\,z_{10}/(1+z_{10})\ge L_\ast$, \eqref{lg:eq:pkT} gives
+$p_k\ge0.94\varphi_\ast kz/(1+\mu z)$. Insert this in \eqref{lg:eq:Tm} and use $T_-=(z+3)/0.3$:
+\begin{equation}\label{lg:eq:hz}
+f(z):=\frac{(z+3.15)(1+\mu z)^2}{z^2}\ >\ 0.3\,\chi_0\,k,\qquad
+\chi_0:=\frac{(0.94\varphi_\ast)^2\sqrt{1-\vartheta_1(k_0)}}{\sqrt8}=0.20968\ldots
+\end{equation}
+\emph{Step 3.} $f'(z)$ has the sign of $\mu z^2-z-6.3$, so $f$ is quasi-convex and its maximum on any
+interval is attained at an endpoint. Let $z^\sharp:=c_\sharp k/\mu^2$, $c_\sharp=0.055$. Then
+\begin{align*}
+f(z_1(k))&\le\bigl(z_1(k)+3.15\bigr)\Bigl(1+\frac1{z_{10}}\Bigr)^2
+\le\frac{0.3c_1^2(1+1/z_{10})^2}{\sqrt8}\,k\le0.3\chi_0k,\\
+f(z^\sharp)&\le c_\sharp k\Bigl(1+\frac{3.15}{c_\sharp k}\Bigr)\Bigl(1+\frac1{c_\sharp k}\Bigr)^2\le0.3\chi_0k
+\end{align*}
+(we used $\mu\le1$, $z_1(k)+3.15\le0.3c_1^2k/\sqrt8$, and that the last bracket is decreasing in $k$;
+numerically $0.01790\le0.06290$ and $0.06029\le0.06290$). Note that
+$z_1(k)<0.3c_1^2k/\sqrt8<0.015k<c_\sharp k\le z^\sharp$, so $[z_1(k),z^\sharp]$ is a nonempty interval.
+If $z\le z^\sharp$ we would have $z\in[z_1(k),z^\sharp]$ and $f(z)\le\max\{f(z_1(k)),f(z^\sharp)\}\le0.3\chi_0k$,
+contradicting \eqref{lg:eq:hz}. Hence $z>z^\sharp$:
+$T_->(z^\sharp+3)/0.3>c_T\lambda/\mu$. Finally $\mu z>c_\sharp k/\mu\ge55$, and \eqref{lg:eq:pkT} gives
+$p_k\ge\lambda\bigl(0.95\varphi_\ast(1-e^{-55})-L_\ast/\lambda\bigr)\ge0.8194\lambda$.
+\end{proof}
+
+\subsection{The crest is short}\label{lg:sec:crest}
+Let $\nu:=\mu/2$, $c_0:=(\mu-\nu)(1-\nu)(A-\nu)=\tfrac\mu2(1-\tfrac{\mu^2}4)$ and
+$L_0:=\log(k/c_0)\le\hat L(\lambda):=\log(8\lambda/3)$. For $k\ge k_0$ (so $k_0\le k\le\lambda$):
+$R\le\hat R(\lambda):=3\log\lambda-\log k_0+2\log(1+1/k_0)$ and
+$\mu R\le\tilde R(k)\le\tilde R_\lambda:=2\log(\lambda+1)+3/e$. (Indeed
+$M_0=(k+\mu^2)(k+\mu)\lambda^3/k^3\le(k+1)^2\lambda^3/k^3$ and $-\log k+2\log(1+1/k)$ is decreasing in
+$k$; and $k/c_0=2\lambda/(1-\mu^2/4)\le8\lambda/3$.)
+
+\begin{lemma}[Crest duration]\label{lg:lem:crest}
+Let $k\ge k_0$. Then $|U_{\min}|>L_0$, the set $\{t:U(t)>-L_0\}=\{x>c_0\}$ is one interval per period, and
+its length satisfies
+\[
+\tau_c\ \le\ \frac{\bar C_\tau(\lambda)}{c_p\lambda},\qquad \bar C_\tau(\lambda):=71.79+12.28\log(\lambda/k_0).
+\]
+\end{lemma}
+\begin{proof}
+Throughout $p_k\ge c_p\lambda$ (Lemma~\ref{lg:lem:boot}) and $k_0\le k\le\lambda$. The numerical values
+quoted in parentheses are those at $\lambda=k_0$ (Section~\ref{lg:sec:constants}); the last paragraph of the proof
+shows that every side condition holds for all $\lambda\ge k_0$ once it holds at $\lambda=k_0$.
+
+\emph{Rise.} $p_k^2\ge c_p^2\lambda^2\ge2\lambda\hat L\ge2kL_0$. By Lemma~\ref{lg:lem:rise}(a), $|U_{\min}|\ge L_0$
+(strictly, as $p'<k$) and the last passage through $U=-L_0$ before $T_-$ occurs at most
+$2L_0/p_k\le2\hat L/(c_p\lambda)$ earlier. By (F3) the set is an interval.
+
+\emph{From the up-crossing to the crest.} By Lemma~\ref{lg:lem:P1},
+$\varepsilon_1\le\hat\varepsilon_1(\lambda):=1.1\sqrt2c_p^{-3/2}\lambda^{-1/2}\ (=0.0664)$. By \eqref{lg:eq:Etheta},
+$N_\theta:=k(e^{U_\theta}-1)\ge\tfrac14\theta p_k^3(1-\vartheta_N)$ with
+$\vartheta_N:=4(1+\varepsilon_1)\tilde R_\lambda/p_k+4k/(\theta p_k^3)\le
+\hat\vartheta_N(\lambda):=4(1+\hat\varepsilon_1)\tilde R_\lambda/(c_p\lambda)+4/(\theta c_p^3\lambda^2)\ (=0.0778)$. First,
+$s_\theta\le U_\theta/(\theta p_k)\le\hat R/(\theta p_k)$. Second, for $s=s_\theta+v$, $0\le v\le1$, by
+\eqref{lg:eq:wm}, $w(s)\ge-k+N_\theta(1-e^{-v})$, so while $p\ge0$,
+$p(s_\theta+v)\le\theta p_k+kv-N_\theta(v-1+e^{-v})\le\theta p_k+kv-N_\theta v^2/3$. The right side
+vanishes at $v_c=\frac{3}{2N_\theta}\bigl(k+\sqrt{k^2+\tfrac43N_\theta\theta p_k}\bigr)
+\le\frac{3k}{N_\theta}+\sqrt{\frac{3\theta p_k}{N_\theta}}\le\frac{a_c}{p_k}$,
+$a_c:=\sqrt{12/(1-\hat\vartheta_N)}+12/(\theta c_p^2\lambda(1-\hat\vartheta_N))\ (=3.6346)$; in particular
+$v_c\le a_c/(c_p\lambda)\le1$, so the estimate applies up to $v=v_c$ and the crest occurs at or before
+$s_\theta+v_c$. Hence
+\[
+p_k\tau_1\le A_1:=\sqrt2\,\hat R+a_c\ (=23.176),\qquad \tau_1\le\bar\tau_1:=A_1/(c_p\lambda)\ (=0.0283).
+\]
+\emph{From the crest to $U=-L_0$.} Let $w_c:=w(T_-+\tau_1)>0$. From $(e^{\mu s}p)'=-e^{\mu s}w$ on
+$[0,\tau_1]$ and Lemma~\ref{lg:lem:signs}(d), $p_k=\int_0^{\tau_1}e^{\mu s}w\,\mathrm ds\le w_c\tau_1e^{\tau_1}$,
+so $w_c\ge p_k^2e^{-\bar\tau_1}/A_1\ge\hat w:=c_p^2\lambda^2e^{-\bar\tau_1}/A_1\ (=28135)$. Let $v$
+denote time after the crest. By Lemma~\ref{lg:lem:signs}(e), $w\ge e^{-v}(w_c+k)-k$, which is $\ge0$ for
+$v\le v_+:=\log(1+w_c/k)$. Until the trough, $p<0$ and $|p|'=w-\mu|p|$ with $|p|=0$ at the crest, so
+$|p|(v)=\int_0^ve^{-\mu(v-r)}w\,\mathrm dr$; for $v\le v_+$ the integrand is nonnegative and, as $\mu\le1$,
+$e^{-\mu(v-r)}w\ge e^{-(v-r)}[e^{-r}(w_c+k)-k]$. Hence, for $v\le v_+$ and before the trough,
+\begin{align*}
+|p|(v)&\ge\int_0^ve^{-(v-r)}\bigl[e^{-r}(w_c+k)-k\bigr]\,\mathrm dr=(w_c+k)ve^{-v}-k(1-e^{-v}),\\
+U_{\max}-U&\ge(w_c+k)\bigl(1-(1+v)e^{-v}\bigr)-k(v-1+e^{-v})\ \ge\ \tfrac12w_cv^2\Bigl[1-\tfrac23\Bigl(1+\frac k{w_c}\Bigr)v\Bigr],
+\end{align*}
+using $1-(1+v)e^{-v}\ge v^2/2-v^3/3$ and $v-1+e^{-v}\le v^2/2$. The last expression is increasing in
+$w_c$. Take $v_f:=b_f\sqrt{2(\hat R+\hat L)/\hat w}$, $b_f=1.02$ $(v_f=0.0401)$; then
+$b_f^2[1-\tfrac23(1+\lambda/\hat w)v_f]\ge1$ and $v_f\le\log(1+\hat w/\lambda)$, so the drop at $v_f$ is at
+least $\hat R+\hat L\ge U_{\max}+L_0$. Since the trough lies below $-L_0$, the level $-L_0$ is reached at most
+$v_f$ after the crest. Altogether
+\[
+\tau_c\le\frac{2\hat L+A_1}{c_p\lambda}+v_f,\qquad
+c_p\lambda v_f=b_f\sqrt{2(\hat R+\hat L)A_1e^{\bar\tau_1}}\le\frac{b_f\,e^{\bar\tau_1/2}}{\sqrt2}\,(\hat R+\hat L+A_1),
+\]
+so $\tau_c\le C_\tau(\lambda)/(c_p\lambda)$ with
+$C_\tau:=2\hat L+A_1+\tfrac{b_f}{\sqrt2}e^{\bar\tau_1(k_0)/2}(\hat R+\hat L+A_1)$
+($\bar\tau_1(\lambda)\le\bar\tau_1(k_0)$). $C_\tau$ equals $71.785$ at $\lambda=k_0$ and, since
+$\hat L'=1$, $\hat R'=3$, $A_1'\le3\sqrt2$ with respect to $\log\lambda$ ($a_c$ is decreasing),
+$\mathrm dC_\tau/\mathrm d\log\lambda\le c_{\log}:=2+3\sqrt2+\tfrac{b_f}{\sqrt2}e^{\bar\tau_1(k_0)/2}(4+3\sqrt2)=12.273$.
+Hence $C_\tau(\lambda)\le\bar C_\tau(\lambda)$ for $\lambda\ge k_0$.
+
+\emph{Monotonicity in $\lambda$.} A function $(q_0+q_1\log\lambda)/\lambda$ with $q_1>0$ is decreasing where
+$q_0+q_1\log\lambda\ge q_1$. Thus $\hat R/\lambda$ and $(\hat R+\hat L)/\lambda$ are decreasing on $[k_0,\infty)$
+($\hat R(k_0)\ge3$, $\hat R+\hat L\ge4$), and $\tilde R_\lambda/\lambda$ is decreasing for $\lambda\ge1$
+($2\lambda/(\lambda+1)<2\log(\lambda+1)+3/e$). Hence $\hat\varepsilon_1$, $\hat\vartheta_N$ and $a_c$ are
+positive and decreasing, and so are $A_1/\lambda$, $\bar\tau_1=A_1/(c_p\lambda)$,
+$\lambda/\hat w=A_1e^{\bar\tau_1}/(c_p^2\lambda)$ and
+$v_f=(b_f/c_p)\bigl[2e^{\bar\tau_1}\cdot\tfrac{\hat R+\hat L}{\lambda}\cdot\tfrac{A_1}{\lambda}\bigr]^{1/2}$
+(products of positive decreasing functions). Therefore each side condition used above, namely
+$c_p\lambda\ge10$, $c_p^2\lambda\ge2\hat L(\lambda)$ (the difference has derivative $c_p^2-2/\lambda>0$),
+$\hat\vartheta_N<1$, $a_c/(c_p\lambda)\le1$, $v_f\le1$, $v_f\le\log(1+\hat w/\lambda)$ and
+$b_f^2[1-\tfrac23(1+\lambda/\hat w)v_f]\ge1$, holds for all $\lambda\ge k_0$ because it holds at
+$\lambda=k_0$ (Section~\ref{lg:sec:constants}).
+\end{proof}
+
+\subsection{The linear estimate and the proof of the large-gain theorem}\label{lg:sec:linear}
+\begin{lemma}[Weak exponent]\label{lem:lglinear}
+Let $0<\nu<\mu\le1$, $c_0=(\mu-\nu)(1-\nu)(A-\nu)$, and suppose that on a cycle $x\le c_0$ outside a time
+interval of length $\tau_c$ per period. Then for every $s\ge\sqrt2$, with
+$\alpha=1/(1-\nu)$, $\beta=\alpha/(A-\nu)$,
+\[
+(\avg\eta-\mu)\,T\ \le\ -\nu(T-\tau_c)+(s-\mu)\tau_c+\frac{kT}{s^2}+\log\bigl(1+\alpha s+\beta s^2\bigr).
+\]
+\end{lemma}
+\begin{proof}
+With $\mathbf H$ from (F1) put $(G_1,G_2,G_3):=e^{-At}(H_3,H_2,H_1)>0$. Then
+\begin{gather*}
+G_1'=-\mu G_1+G_2,\qquad G_2'=-G_2+G_3,\qquad G_3'=-AG_3+xG_1,\\
+(G_1,G_2,G_3)(t+T)=m_t\,(G_1,G_2,G_3)(t).
+\end{gather*}
+This is the linear system \eqref{eq:compound}.
+\emph{Trough.} $\mathcal L:=G_1+\alpha G_2+\beta G_3$ satisfies
+$\mathcal L'=-\nu\mathcal L+(\beta x-\mu+\nu)G_1\le-\nu\mathcal L$ when $x\le c_0=(\mu-\nu)/\beta$
+(because $1-\alpha=-\nu\alpha$ and $\alpha-\beta A=-\nu\beta$).
+\emph{Crest.} $\mathcal G:=\max(s^2G_1,\,sG_2,\,G_3)$ is locally Lipschitz and its upper Dini derivative is
+at most the largest derivative of an active term: $(s^2G_1)'\le(s-\mu)\mathcal G$,
+$(sG_2)'\le(s-1)\mathcal G$, $G_3'\le(x/s^2-A)\mathcal G$. Hence
+$D^+\mathcal G\le(s-\mu+x/s^2)\mathcal G$ and $\mathcal G$ grows over the crest interval by at most
+$\exp\{(s-\mu)\tau_c+s^{-2}\!\int x\}$, $\int_{\rm crest}x\le\int_0^Tx=kT$.
+\emph{Matching.} $G_1\le\mathcal L$, $G_2\le\mathcal L/\alpha$, $G_3\le\mathcal L/\beta$ and $s\ge\sqrt2$
+give $\mathcal G\le s^2\mathcal L$ ($1/\alpha<1$, $1/\beta<2$); and
+$\mathcal L\le(s^{-2}+\alpha s^{-1}+\beta)\mathcal G$. Following one period from the end of a crest
+interval: $m_t\mathcal L=\mathcal L(t+T)\le(1+\alpha s+\beta s^2)e^{(s-\mu)\tau_c+kT/s^2}e^{-\nu(T-\tau_c)}\mathcal L$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:largegain}]
+(i) and (ii) are Lemma~\ref{lg:lem:boot} ($T>T_-$); (iii) is Lemma~\ref{lg:lem:crest}. For (iv) apply Lemma~\ref{lem:lglinear} with $\nu=\mu/2$ and $s=2\sqrt\lambda$
+($kT/s^2=\mu T/4$, $\alpha\le2$, $\beta\le4/3$):
+\[
+(\avg\eta-\mu)T\le-\frac\mu4T+2\sqrt\lambda\,\tau_c+\log\bigl(1+4\sqrt\lambda+\tfrac{16}3\lambda\bigr)
+\le-\frac\mu4T+\frac{2\bar C_\tau(\lambda)}{c_p\sqrt\lambda}+\log\bigl(1+4\sqrt\lambda+\tfrac{16}3\lambda\bigr).
+\]
+Divide by $T\ge c_T\lambda/\mu$:
+\[
+\avg\eta-\mu\le-\frac\mu4+\mu\,q(\lambda),\qquad
+q(\lambda):=\frac{1}{c_T\lambda}\Bigl[\frac{2\bar C_\tau(\lambda)}{c_p\sqrt\lambda}+\log\bigl(1+4\sqrt\lambda+\tfrac{16}3\lambda\bigr)\Bigr].
+\]
+$\bar C_\tau(\lambda)/\sqrt\lambda$ is decreasing on $[k_0,\infty)$ because $12.28\le\bar C_\tau(k_0)/2$, and
+$\lambda^{-1}\log g(\lambda)$ is decreasing for $g=1+4\sqrt\lambda+\frac{16}3\lambda$ because
+$\lambda g'\le g$ and $\log g>1$. Hence $q(\lambda)\le q(k_0)\le(5.544+8.606)/183.33<0.0772$ and
+$\avg\eta\le(0.75+0.0772)\mu<0.83\mu$. The multiplier statement is (F1).
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:lgunique}]
+For $0<\mu\le1$ we have $\kH=\mu(1+\mu)\le2<1000\le k$, so $(\mu,k)\in\cP$. By Theorem~\ref{thm:largegain}(iv) every cycle at $(\mu,k)$ has $\lambda_c=\avg\eta-\mu\le-0.17\mu<0$. Hence (F8), that is Corollary~\ref{cor:criterion}(ii), applies at $(\mu,k)$ and yields every assertion: there is exactly one cycle; it is hyperbolic and orbitally asymptotically stable; and it is the $\omega$-limit set of every solution in $\Dom$ that does not converge to $E$. The solutions in $\Dom$ that converge to $E$ are those on $W^s(E)$, and $W^s(E)$ is one-dimensional, because the linearisation at $E$ has the eigenvalues $-\gamma_E<0$ and $\sigma\pm i\omega$ with $2\sigma=\gamma_E-A>0$ (proof of Lemma~\ref{lem:lgshortlobe}). Thus uniqueness and attraction both follow from Corollary~\ref{cor:criterion}(ii), which is proved in Section~\ref{sec:attractor} from Theorem~\ref{thm:attractor} and Lemma~\ref{lem:absorbing}. Smith's convergence theorem (F7) is not needed for either conclusion.
+
+\emph{Second proof, from \textup{(F7)} in place of \textup{(F8)}.} This argument does not use Section~\ref{sec:attractor}.
+By (iv) every cycle is hyperbolic and attracting, so its basin is open, and basins of distinct cycles
+are disjoint. By (F7), $\Dom\setminus W^s(E)$ is the union of the basins; in particular there is at
+least one cycle. It remains to see that $\Dom\setminus W^s(E)$ is connected. In the coordinates
+$(U,p,y)$, $\Dom=\R\times(-\infty,\lambda)\times(0,\infty)$ is open and convex. $E$ has one
+negative and two unstable eigenvalues, so by the stable manifold theorem its local stable manifold is a
+$C^1$ arc and $W^s(E)\cap\Dom$ is contained in a countable union of compact $C^1$ arcs $\Gamma_j$
+(backward images of the local arc). Fix $\mathbf a,\mathbf b\in\Dom\setminus W^s(E)$. The set of $\mathbf c\in\R^3$
+for which the segment $[\mathbf a,\mathbf c]$ meets $\Gamma_j$ is contained in the image of the $C^1$ map
+$(r,v)\mapsto\mathbf a+v(\mathbf g_j(r)-\mathbf a)$, $(r,v)\in[0,1]\times[1,\infty)$, where $\mathbf g_j:[0,1]\to\R^3$ is a $C^1$ parametrisation of $\Gamma_j$; this image has Lebesgue measure zero in
+$\R^3$; likewise for $\mathbf b$. Hence some $\mathbf c\in\Dom$ has
+$[\mathbf a,\mathbf c]\cup[\mathbf c,\mathbf b]\subset\Dom\setminus W^s(E)$. So $\Dom\setminus W^s(E)$ is path-connected and
+cannot be a union of two or more disjoint nonempty open sets: there is exactly one cycle, and its basin
+is $\Dom\setminus W^s(E)$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:lgreciprocal}]
+In the time $\tau=\sqrt\mu\,t$ the scalar equation \eqref{eq:scalar}, $U'''+AU''+\mu U'+k(e^U-1)=0$, becomes
+$U_{\tau\tau\tau}+\sigma U_{\tau\tau}+U_\tau+\sigma\rho(e^U-1)=0$, $\sigma=(1+\mu)/\sqrt\mu$, which is
+invariant under $(\mu,k)\mapsto(\mu',k')=(1/\mu,\ k/\mu^3)$ (then $\sigma'=\sigma$, $\rho'=\rho$). Applying the map twice returns $(\mu,k)$, and $\cP=\{\rho>1\}$ is mapped onto itself.
+At any parameter, cycles are in bijection with nonconstant periodic solutions of the scalar equation
+(given $U$, set $p=U'$, $y=k-\mu p-p'$; along a periodic solution $y'+y=x>0$ and
+$(\lambda-p)'+\mu(\lambda-p)=y>0$ force $y>0$, $p<\lambda$), and the variational equation of
+\eqref{lg:eq:sys} is equivalent to $V'''+AV''+\mu V'+xV=0$ via
+$(V_U,V_p,V_w)=(V,V',-\mu V'-V'')$. Hence $\tilde U(\tilde t):=U(\tilde t/\mu)$ maps the
+cycles of $(\mu,k)$ bijectively onto the cycles of $(\mu',k')$, with $\tilde T=\mu T$, and corresponding
+cycles have the same multipliers (the scalar variational equations coincide in the time $\tau$). This proves \textup{(a)}, except for its last sentence. Let
+$\mu\ge1$ and $k\ge1000\mu^3$, and apply Theorem~\ref{thm:largegain} at $(\mu',k')$, $\mu'\le1$, $k'\ge1000$:
+$\log m_t=(\avg{\eta}'-\mu')\tilde T\le-0.17\mu'\tilde T=-0.17\,T$, while also
+$\log m_t=(\avg\eta-\mu)T$. So every cycle at $(\mu,k)$ is hyperbolic and attracting with
+$\avg\eta\le\mu-0.17$, and the proof of Corollary~\ref{cor:lgunique}, in either form, applies verbatim at $(\mu,k)$ itself:
+$(\mu,k)\in\cP$ because $\kH\le2\mu^2<1000\mu^3\le k$, and (F7) and (F8) hold at every parameter of $\cP$. Note that only periodic orbits and their multipliers are transported:
+the positive domains at $(\mu,k)$ and $(\mu',k')$ do \emph{not} correspond under the time change.
+Indeed, in the coordinates $(U,U',U'')$ of the scalar equation the positive domain at $(\mu,k)$ is $\{U'<\lambda,\ U''<\mu(\lambda-U')\}$, because $y=k-\mu p-p'$ and $k=\mu\lambda$. With subscripts for derivatives in $\tilde t$, we have $\tilde U_{\tilde t}=U'/\mu$ and $\tilde U_{\tilde t\tilde t}=U''/\mu^2$, so the time change maps this set onto $\{\tilde U_{\tilde t}<\lambda',\ \tilde U_{\tilde t\tilde t}<\lambda'-\tilde U_{\tilde t}\}$, whereas the positive domain at $(\mu',k')$ is $\{\tilde U_{\tilde t}<\lambda',\ \tilde U_{\tilde t\tilde t}<\mu'(\lambda'-\tilde U_{\tilde t})\}$. The two sets differ unless $\mu=1$. For this reason uniqueness and attraction are derived at $(\mu,k)$ itself and are not transported.
+
+Finally, for $0<\mu\le1$ the condition $k\ge1000$ is $\rho\ge1000/(\mu(1+\mu))$, and for $\mu\ge1$ the condition $k\ge1000\mu^3$ is $\rho\ge1000\mu^2/(1+\mu)=1000/(\mu'(1+\mu'))$. In both cases this is $\rho\ge\rho_0(\mu)$.
+\end{proof}
+
+\subsection{Constants}\label{lg:sec:constants}
+The constants of the proof are fixed numbers or explicit functions of $k$ or of $\lambda$. Table~\ref{lg:tab:constants} lists them with their values at $k=k_0$, respectively $\lambda=k_0$, rounded to the digits shown; a value in parentheses is the bound with which the constant is compared. Every constant in the table and every scalar side condition invoked in the proofs of this section is recomputed in high-precision arithmetic by a script in the accompanying bundle, with receipt \texttt{evidence/v3/v3\_largegain\_constants.json} (Section~\ref{sec:evidence}).
+\begin{table}[ht]
+\centering\small
+\caption{Constants used in the proof of Theorem~\ref{thm:largegain}.}\label{lg:tab:constants}
+\begin{tabular}{@{}lll@{}}\toprule
+symbol & value & where\\\midrule
+$L_\ast,\ \varphi_\ast,\ \theta,\ \varphi_2$ & $2,\ 0.86466,\ 2^{-1/2},\ 0.7968$ & Section~\ref{lg:sec:imports}\\
+$\omega_0(k_0),\ T_0(k_0)$ & $8.0467,\ 5.89277$ & Lemma~\ref{lem:lgshortlobe}\\
+$(a_1,a_2,a_3,a_4)$ & $(2.06,1.99,1.48,0.36)$, sum $5.89$ & Lemma~\ref{lg:lem:stage1}\\
+$k_0c_{\rm i}(a_1),\ \chi_{\rm ii}(a_2),\ k_0c_{\rm b}(a_4)$ & $1388.7,\ 102.4,\ 2.3690\ (\ge2.3131)$ & Lemma~\ref{lg:lem:stage1}\\
+$c_1$ & $0.374\ (\le0.37452)$ & Lemma~\ref{lg:lem:stage1}\\
+$\tilde R(k_0),\ \bar\varepsilon_1,\ \vartheta_1(k_0),\ T_1(k_0)$ & $14.921,\ 0.2151,\ 0.19402,\ 43.898$ & Lemma~\ref{lg:lem:boot}\\
+$z_{10},\ \chi_0,\ 0.3\chi_0$ & $10.169,\ 0.20969,\ 0.062906$ & Lemma~\ref{lg:lem:boot}\\
+$c_\sharp,\ c_T,\ c_p$ & $0.055,\ 0.18333,\ 0.819\ (\le0.81943)$ & Lemma~\ref{lg:lem:boot}\\
+$\hat R,\ \hat L,\ \hat\varepsilon_1$ at $\lambda=k_0$ & $13.8175,\ 7.8886,\ 0.06637$ & Lemma~\ref{lg:lem:crest}\\
+$\hat\vartheta_N,\ a_c,\ A_1$ at $\lambda=k_0$ & $0.07772,\ 3.6345,\ 23.1755$ & Lemma~\ref{lg:lem:crest}\\
+$\bar\tau_1,\ \hat w,\ v_f,\ C_\tau,\ c_{\log}$ & $0.028297,\ 28135,\ 0.040066,\ 71.785,\ 12.272$ & Lemma~\ref{lg:lem:crest}\\
+final margin $\tfrac{c_T}{4}k_0-\tfrac{2C_\tau}{c_p\sqrt{k_0}}-\log(\cdot)$ & $45.83-5.54-8.61=31.68>0$ & Theorem~\ref{thm:largegain}\\\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Scope of the threshold}\label{lg:sec:scope}
+\begin{remark}[The threshold is neither sharp nor uniform]\label{lg:rem:scope}
+\textup{(a)} The threshold $k_0=1000$ is far from sharp. In the floating-point computations reported in Section~\ref{sec:evidence}, every cycle found, at every $\rho>1$ examined, has $\lambda_c<0$, and the attraction is strong far below the threshold: for $\mu=1$ and $k=16$, $60$, $300$ the computed values of $\log m_t$ are $-13.98$, $-67.5$ and $-375.7$. The cycles computed at large gain have $T\mu/\lambda\approx1.305$ and $p_k/\lambda\approx1$, against the proved bounds $c_T=0.1833$ and $c_p=0.819$. These statements are floating-point evidence; they are not used in any proof.
+\textup{(b)} The threshold is not uniform in the variable $\rho$ as $\mu\to0$: for $0<\mu\le1$ it reads $\rho\ge\rho_0(\mu)=1000/(\mu(1+\mu))$, and $\rho_0(\mu)\sim1000/\mu$. The hypothesis actually
+used is that the fast scale is separated, $k\ge k_0$; see Remark~\ref{lg:rem:mu}.
+\textup{(c)} Theorem~\ref{thm:largegain} needs no continuation and no information about other parameter values.
+\end{remark}
+
+\begin{remark}[Where $\mu$-uniformity is lost]\label{lg:rem:mu}
+The argument needs the fast time scale $k^{-1/3}$ to be short compared with the window
+$T_0\approx2\pi$ supplied by (F4): Lemma~\ref{lg:lem:rise}(d) needs $kc_{\rm b}(a_4)\ge L_\ast/\varphi_\ast$ and
+Lemma~\ref{lg:lem:ii} needs $k(\xi-1+e^{-\xi})\ge2(\gamma_E-\mu)$. For small $\mu$ the window is
+$2\pi/\sqrt\mu$, and repeating the estimates with windows $\propto\mu^{-1/2}$ suggests a threshold
+$\rho_0(\mu)=O(\mu^{-1/2})$; the step that resists a $\mu$-uniform threshold is Lemma~\ref{lg:lem:ii}, where
+$\LamE>0$ gives $P_w<(\gamma_E-\mu)v_w$ with $\gamma_E-\mu\approx1$ instead of $\approx k^{1/3}$.
+This refinement is not carried out here and is \emph{not} claimed.
+\end{remark}

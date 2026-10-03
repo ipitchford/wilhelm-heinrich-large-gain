@@ -1,0 +1,35 @@
+OK   D(O) + (1+eta) O == 0 (identically)
+OK   K' + (1+eta)K - k G1 (identically)
+OK   W' + (1+eta)W - x p^2  on O=0
+OK   tangent eq p'' - (eta-mu)p' + zeta p on O=0
+OK   S1' - (eta-mu)S1 - pK  on O=0
+OK   S4' - (eta-mu)S4 - pW  on O=0
+OK   s_c' - (eta-mu)s_c - p(K + c zeta) on O=0
+OK   S1 at p=0 equals U(y-k)
+OK   S4 at p=0 equals (k-y)^2
+OK   s_c at p=0 equals (y-k)(U+c)
+OK   S2 - eta S1 - pK on O=0
+OK   S3 - zeta S1 - p'K on O=0
+OK   S1' - (S2 - mu S1) (identically, no eta)
+OK   (zeta - y)' + (zeta - y) + eta zeta (identically)
+OK   S1 - QE - U LamE (identically)
+OK   D QE - 2 alpha QE + 2(p - alpha U) LamE  (k = chi(gamma_E))
+OK   LamE' + gamma_E LamE - k(e^U-1-U)  (k = chi(gamma_E))
+OK   (R_K): [kG1 - (1+eta)K] - RHS with eta=(S2-pK)/S1
+OK   N' - [kG1/S1 - (1-mu+2 S2/S1) N + p N^2]
+OK   A0 defect rows
+OK   A0 at true pair: g2-g1, g3-g1
+OK   C - S J^[2] S
+OK   omega^Y defect - (0,0,x(2p+A-lambda))
+OK   omega^c defect - (0,0,kH - x)
+OK   omega^R defect - kG1 (0,p,p')
+OK   nu' + C^T nu
+OK   (kappa + beta^2/2 - beta)' - (chi(beta) - x)
+OK   theta' + sigma
+OK   (r'/r)/theta' - Xi
+OK   Xi(m2)-Xi(m1) - sin (m2-m1)/(sig1 sig2)
+OK   A1: a' - (b - A a)
+OK   A1: b' - (mu A u - A b - mu a)
+OK   A1: eigenvalues of [[-A,1],[-mu,-A]]   -> [-mu - sqrt(-mu) - 1, -mu + sqrt(-mu) - 1]
+
+failures: 0

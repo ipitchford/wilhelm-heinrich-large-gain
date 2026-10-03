@@ -1,0 +1,43 @@
+240 points; errors: 1
+mu range 0.001015987038390975 980.1563233845011  rho-1 range 0.0010370902912786306 283.9899827399587  n(mu<1)= 130  n(mu>1)= 109
+max log_mt: -0.0004174843569923481  any lambda_c>=0: False
+amplitude branch rho(h) increasing at all points: True
+scan: total pairs 239103 (of which on W^u(E): 106877 ); min pairs per point 392 ; integration failures 5
+scan: wrong-sign pairs total: 0
+scan: points where r(U)=log(phi(U)/U) is not monotone (beyond noise): 24
+long runs: statuses {'same': 1648, 'slow_newton_to_E': 17, 'newton_failed': 5, 'too_expensive': 3} ; heading_bad 0 ; total ICs 1673
+newton searches: same 2028 ; to equilibrium 681 ; failed 159 ; NEW fixed points 0
+  long-run exception: 16 0.002508106817926384 1.0034573880926023 {'ic': 'Wu', 'nev': 4000, 'gap_after_iter': 0.9952980732690762, 'min_U_seen': 0.0007168590769513803, 'max_U_seen': 0.0062146462870842824, 'heading_ok': True, 'status': 'newton_failed'} RuntimeError('no crest return (status -1) mu=0.002508106817926384 k=0.0025230906654286653 U0=6.059168212323111e-17 y0=0.
+  long-run exception: 55 73.37828105063201 1.0014935308485322 {'ic': 'Wu', 'nev': 4000, 'gap_after_iter': 0.4340438632583089, 'min_U_seen': 0.001928766223924338, 'max_U_seen': 0.016198884020808955, 'heading_ok': True, 'status': 'newton_failed'} RuntimeError('no crest return (status -1) mu=73.37828105063201 k=5465.901729598585 U0=-3.4300040211084444e-15 y0=5465.90
+  long-run exception: 162 0.0012707763650433859 1.0034764649481942 {'ic': 'Wu', 'nev': 4000, 'gap_after_iter': 0.9979360191738558, 'min_U_seen': 0.0007537919979282347, 'max_U_seen': 0.003550867737373091, 'heading_ok': True, 'status': 'newton_failed'} RuntimeError('no crest return (status -1) mu=0.0012707763650433859 k=0.001276814661151291 U0=8.560024833506607e-17 y0=0.
+  long-run exception: 191 561.7580356874732 1.0085152510367341 {'ic': 'Wu', 'nev': 4000, 'gap_after_iter': 0.927761865787288, 'min_U_seen': 0.0017803643060539192, 'max_U_seen': 0.15273304542631527, 'heading_ok': True, 'status': 'newton_failed'} ZeroDivisionError('division by zero')
+  long-run exception: 218 0.0016362719873113396 1.0069793642895677 {'ic': 'Wu', 'nev': 4000, 'gap_after_iter': 0.9842076463392564, 'min_U_seen': 0.0009503741044914392, 'max_U_seen': 0.032034475194329025, 'heading_ok': True, 'status': 'newton_failed'} RuntimeError('no crest return (status -1) mu=0.0016362719873113396 k=0.0016503881980564127 U0=-1.4127947904565806e-17 y0
+m_t > 0.999 at 6 points; their max rho-1 = 0.0034764649481942023 ; max (rho-1)/min(mu,1/mu) = 2.7357016103108838
+m_t > 0.99 at 39 points; their max rho-1 = 0.01751401912985151
+min |log m_t| / Hopf-linear prediction over hunt points: (np.float64(0.5555012096504701), 0.15648930589357352, 3.252744209749756)
+r-nonmonotone points (mu, rho-1, max rise of r):
+   idx= 14 mu=253.2 rho-1=8.523 viol=13 max_rise=1.159e-03 m_t=0.000267
+   idx= 30 mu=418.8 rho-1=1.07 viol=51 max_rise=6.708e-04 m_t=0.414
+   idx= 40 mu=0.003596 rho-1=1.193 viol=31 max_rise=3.152e-04 m_t=0.371
+   idx= 42 mu=0.001528 rho-1=29.94 viol=15 max_rise=6.024e-03 m_t=1.99e-15
+   idx= 43 mu=673.1 rho-1=35.63 viol=17 max_rise=5.218e-03 m_t=1.65e-18
+   idx= 47 mu=0.001344 rho-1=1.713 viol=56 max_rise=5.232e-03 m_t=0.239
+   idx= 57 mu=0.002647 rho-1=10.34 viol=18 max_rise=3.072e-03 m_t=3.53e-05
+   idx= 61 mu=523.2 rho-1=3.921 viol=59 max_rise=2.817e-03 m_t=0.0323
+   idx= 66 mu=696.8 rho-1=2.277 viol=47 max_rise=8.117e-03 m_t=0.146
+   idx= 71 mu=525.8 rho-1=23.41 viol=21 max_rise=5.456e-03 m_t=6.28e-12
+   idx= 75 mu=644 rho-1=1.111 viol=62 max_rise=1.431e-03 m_t=0.4
+   idx= 77 mu=844.5 rho-1=5.132 viol=72 max_rise=4.315e-03 m_t=0.00991
+   idx= 91 mu=0.001377 rho-1=15 viol=18 max_rise=8.910e-03 m_t=1.62e-07
+   idx=100 mu=605.8 rho-1=1.418 viol=55 max_rise=3.051e-03 m_t=0.307
+   idx=116 mu=0.003356 rho-1=1.291 viol=34 max_rise=5.083e-04 m_t=0.341
+   idx=120 mu=842.8 rho-1=0.3483 viol=80 max_rise=1.803e-04 m_t=0.773
+   idx=172 mu=0.002929 rho-1=3.141 viol=43 max_rise=1.955e-03 m_t=0.0666
+   idx=180 mu=0.002466 rho-1=0.379 viol=17 max_rise=1.073e-05 m_t=0.751
+   idx=188 mu=878.6 rho-1=0.9184 viol=74 max_rise=9.439e-04 m_t=0.473
+   idx=207 mu=554.7 rho-1=0.5519 viol=70 max_rise=2.243e-04 m_t=0.648
+   idx=209 mu=701.2 rho-1=6.789 viol=50 max_rise=7.588e-03 m_t=0.00179
+   idx=212 mu=0.002732 rho-1=3.166 viol=47 max_rise=3.426e-03 m_t=0.0651
+   idx=220 mu=0.001404 rho-1=0.5846 viol=79 max_rise=3.466e-04 m_t=0.63
+   idx=230 mu=806.3 rho-1=9.659 viol=44 max_rise=1.004e-02 m_t=7.79e-05
+compute seconds total 290.4350657463074

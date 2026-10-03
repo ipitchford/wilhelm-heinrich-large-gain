@@ -1,0 +1,79 @@
+{
+  "inputs": [
+    {
+      "snapshot": "provenance/v1_2/paper/manuscript.pdf",
+      "conversation_file_id": "file_00000000182c8246a591fd80346c60d8",
+      "original_filename": "manuscript.pdf",
+      "sha256": "d5928d96ae5830a9cc3029b11a8fda5d3d86a06487d821726445f8e6ab8da01d",
+      "bytes": 349102,
+      "unchanged_copy": true,
+      "status": "historical input, not rerun in the active evidence suite"
+    },
+    {
+      "snapshot": "provenance/v1_2/paper/manuscript.tex",
+      "conversation_file_id": "file_000000004e8081f4825329af57ad4805",
+      "original_filename": "manuscript.tex",
+      "sha256": "9c6e4989a59a23e0540fdca7d73ea6f67a876a1b09cf862906e8aa5827be97b3",
+      "bytes": 40479,
+      "unchanged_copy": true,
+      "status": "historical input, not rerun in the active evidence suite"
+    },
+    {
+      "snapshot": "provenance/v1_2/evidence/exact_structural_checks.json",
+      "conversation_file_id": "file_000000004128821086e7257fd46c52e1",
+      "original_filename": "exact_structural_checks.json",
+      "sha256": "884c03b7939b07ff8563066b2c7884bd9a8227baaddba954bedd5f8854dc4926",
+      "bytes": 3814,
+      "unchanged_copy": true,
+      "status": "historical input, not rerun in the active evidence suite"
+    },
+    {
+      "snapshot": "provenance/v1_2/evidence/neutral_rescaling_checks.json",
+      "conversation_file_id": "file_00000000505081f490e952d4dc74b670",
+      "original_filename": "neutral_rescaling_checks.json",
+      "sha256": "7e54e717ec13fb7cb5c0551123e2503b0c3d495e71557be3febf8313c88f8900",
+      "bytes": 621,
+      "unchanged_copy": true,
+      "status": "historical input, not rerun in the active evidence suite"
+    },
+    {
+      "snapshot": "provenance/v1_2/evidence/neutral_cycle_search.json",
+      "conversation_file_id": "file_0000000086688210bac78ca88ae993fc",
+      "original_filename": "neutral_cycle_search.json",
+      "sha256": "c2343f9daa22acf6ffb46974f8d10f1f8d73807e97e329beba954d05bb8985a8",
+      "bytes": 19129,
+      "unchanged_copy": true,
+      "status": "historical input, not rerun in the active evidence suite"
+    },
+    {
+      "snapshot": "provenance/v1_2/evidence/fixed_rate_neutral_search.json",
+      "conversation_file_id": "file_00000000e4e48210afc98f905f0ef0b7",
+      "original_filename": "fixed_rate_neutral_search.json",
+      "sha256": "f3fc44027e2df061c96f6bba5293220315e7bea35dcdb7ce89180c422c505a6a",
+      "bytes": 13775,
+      "unchanged_copy": true,
+      "status": "historical input, not rerun in the active evidence suite"
+    },
+    {
+      "snapshot": "provenance/earlier_review/v0_3_review.txt",
+      "conversation_file_id": "file_0000000066d4821091485e2007c6fac2",
+      "original_filename": "Pasted text(20261002-070632).txt",
+      "sha256": "16d34bec822a4764add4ce35829c8c2acac050cb0f4221bae8acd4b231a057c3",
+      "bytes": 29881,
+      "unchanged_copy": true,
+      "status": "historical input, not rerun in the active evidence suite"
+    },
+    {
+      "snapshot": "provenance/earlier_review/v0_3_referee_checks.zip",
+      "conversation_file_id": "file_00000000eb9c81f48774dfab4549123f",
+      "original_filename": "wilhelm_heinrich_v0_3_referee_checks(1).zip",
+      "sha256": "8a9bd2de466fd7e3c0465a1e65e8e924df9484816d32ab839a7906215faafa63",
+      "bytes": 33808,
+      "unchanged_copy": true,
+      "status": "historical input, not rerun in the active evidence suite"
+    }
+  ],
+  "count": 8,
+  "all_byte_identical": true,
+  "missingness": "The six v1.2 attachments include no v1.2 source code or meshes. Its other described numerical experiments were not rerun. Fresh code, meshes and diagnostics are provided in the active directories. The v0.3 review does not assess v2.0."
+}

@@ -1,0 +1,22 @@
+name: Replay research checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Verify reviewed bytes before regeneration
+        run: sha256sum --check MANIFEST.sha256
+      - run: python code/run_all.py --regenerate
+      - run: python code/rational_interval_audit.py
+      - run: python -O code/rational_interval_audit.py
+      - run: python code/revision_controls.py
+      - run: python -O code/revision_controls.py

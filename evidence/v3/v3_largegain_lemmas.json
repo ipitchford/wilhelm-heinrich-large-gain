@@ -1,0 +1,573 @@
+{
+ "schema_version": "3.0",
+ "name": "v3_largegain_lemmas",
+ "kind": "floating_point_diagnostic",
+ "passed": true,
+ "counts": {
+  "attempted": 29561,
+  "passed": 29561,
+  "failed": 0
+ },
+ "worst_residuals": {
+  "max_mean_eta_over_mu_on_cycles": 0.01699919405062722,
+  "min_T_mu_over_lambda_on_cycles": 1.304062965191519,
+  "min_pk_over_lambda_on_cycles": 0.9999990019876057,
+  "min_relative_slack_author_segments": 1.8017235527729836e-07,
+  "min_relative_slack_referee_segments": -3.288167528739464e-09,
+  "log_mt_below_threshold": {
+   "mu_1_k_16": -13.982348864810012,
+   "mu_1_k_60": -67.50629781671257,
+   "mu_1_k_300": -375.64848315239743
+  },
+  "referee_segment_note": "negative slacks of the referee segment tests are equality cases within the 1e-7 relative tolerance of the wrapped script",
+  "min_pk_over_k_stage1_nonperiodic": 0.9174220853835816
+ },
+ "parameters": {
+  "referee_cycles": "k in {1000, 3000} x mu in {1, 0.3, 0.02}",
+  "author_cycles": [
+   [
+    1.0,
+    1000.0
+   ],
+   [
+    1.0,
+    3000.0
+   ],
+   [
+    0.5,
+    1000.0
+   ],
+   [
+    0.3,
+    1000.0
+   ],
+   [
+    0.3,
+    3000.0
+   ],
+   [
+    0.1,
+    1000.0
+   ]
+  ],
+  "segments": "random non-periodic data; seeds fixed in the wrapped scripts"
+ },
+ "seconds": 33.11467045900645,
+ "scope": "Inequalities evaluated on computed orbits. Not an enclosure; one cycle per parameter pair.",
+ "not_interval_certified": true,
+ "groups": {
+  "A referee cycles": {
+   "attempted": 252,
+   "passed": 252
+  },
+  "B author cycles": {
+   "attempted": 222,
+   "passed": 222
+  },
+  "B2 author cycles below the threshold": {
+   "attempted": 96,
+   "passed": 96
+  },
+  "C author segments": {
+   "attempted": 14054,
+   "passed": 14054
+  },
+  "D author stage test": {
+   "attempted": 62,
+   "passed": 62
+  },
+  "E referee segments": {
+   "attempted": 11825,
+   "passed": 11825
+  },
+  "F referee stage test": {
+   "attempted": 3050,
+   "passed": 3050
+  }
+ },
+ "author_segment_outcomes": {
+  "ok": 277,
+  "y<0": 23
+ },
+ "author_stage_outcomes": {
+  "y<0": 135,
+  "no upcross": 74,
+  "ok": 168,
+  "D<=ell": 23
+ },
+ "counting_rule": "one count per inequality evaluated",
+ "excluded_from_default_run": "author script at (mu, k) = (0.02, 1000): see v3_largegain_lemmas_small_mu_supplement.json",
+ "records": [
+  {
+   "group": "A referee cycles",
+   "id": "mu=1.0 k=1000.0",
+   "attempted": 42,
+   "n_passed": 42,
+   "failed_comparisons": [],
+   "passed": true
+  },
+  {
+   "group": "A referee cycles",
+   "id": "mu=1.0 k=3000.0",
+   "attempted": 42,
+   "n_passed": 42,
+   "failed_comparisons": [],
+   "passed": true
+  },
+  {
+   "group": "A referee cycles",
+   "id": "mu=0.3 k=1000.0",
+   "attempted": 42,
+   "n_passed": 42,
+   "failed_comparisons": [],
+   "passed": true
+  },
+  {
+   "group": "A referee cycles",
+   "id": "mu=0.3 k=3000.0",
+   "attempted": 42,
+   "n_passed": 42,
+   "failed_comparisons": [],
+   "passed": true
+  },
+  {
+   "group": "A referee cycles",
+   "id": "mu=0.02 k=1000.0",
+   "attempted": 42,
+   "n_passed": 42,
+   "failed_comparisons": [],
+   "passed": true
+  },
+  {
+   "group": "A referee cycles",
+   "id": "mu=0.02 k=3000.0",
+   "attempted": 42,
+   "n_passed": 42,
+   "failed_comparisons": [],
+   "passed": true
+  },
+  {
+   "group": "B author cycles",
+   "id": "mu_1_k_1000",
+   "mu": 1.0,
+   "k": 1000.0,
+   "attempted": 37,
+   "n_passed": 37,
+   "failed_comparisons": [],
+   "passed": true,
+   "T": 1306.9857869351963,
+   "T_mu_over_lambda": 1.3069857869351964,
+   "pk_over_lambda": 0.9999990019876057,
+   "log_mt": -1284.7680819216732,
+   "mean_eta_over_mu": 0.01699919405062722,
+   "lambda_tau_c": 27.947593323244412,
+   "seconds": 0.4146840572357178
+  },
+  {
+   "group": "B author cycles",
+   "id": "mu_1_k_3000",
+   "mu": 1.0,
+   "k": 3000.0,
+   "attempted": 37,
+   "n_passed": 37,
+   "failed_comparisons": [],
+   "passed": true,
+   "T": 3914.7701285043877,
+   "T_mu_over_lambda": 1.3049233761681291,
+   "pk_over_lambda": 0.9999998889646907,
+   "log_mt": -3889.260072166673,
+   "mean_eta_over_mu": 0.006516361242252633,
+   "lambda_tau_c": 31.668580139175926,
+   "seconds": 0.7429769039154053
+  },
+  {
+   "group": "B author cycles",
+   "id": "mu_0.5_k_1000",
+   "mu": 0.5,
+   "k": 1000.0,
+   "attempted": 37,
+   "n_passed": 37,
+   "failed_comparisons": [],
+   "passed": true,
+   "T": 5220.208742655028,
+   "T_mu_over_lambda": 1.305052185663757,
+   "pk_over_lambda": 0.9999998750936828,
+   "log_mt": -2592.9844997458817,
+   "mean_eta_over_mu": 0.006559075479776633,
+   "lambda_tau_c": 30.827405467396083,
+   "seconds": 0.8807141780853271
+  },
+  {
+   "group": "B author cycles",
+   "id": "mu_0.3_k_1000",
+   "mu": 0.3,
+   "k": 1000.0,
+   "attempted": 37,
+   "n_passed": 37,
+   "failed_comparisons": [],
+   "passed": true,
+   "T": 14494.396462121193,
+   "T_mu_over_lambda": 1.3044956815909072,
+   "pk_over_lambda": 0.9999999730105261,
+   "log_mt": -4330.514493429282,
+   "mean_eta_over_mu": 0.004094558255346992,
+   "lambda_tau_c": 33.078750074983965,
+   "seconds": 1.071742057800293
+  },
+  {
+   "group": "B author cycles",
+   "id": "mu_0.3_k_3000",
+   "mu": 0.3,
+   "k": 3000.0,
+   "attempted": 37,
+   "n_passed": 37,
+   "failed_comparisons": [],
+   "passed": true,
+   "T": 43469.795760068344,
+   "T_mu_over_lambda": 1.3040938728020504,
+   "pk_over_lambda": 0.9999999970003899,
+   "log_mt": -13020.937363855866,
+   "mean_eta_over_mu": 0.0015337365339859188,
+   "lambda_tau_c": 36.76662464244399,
+   "seconds": 2.699040174484253
+  },
+  {
+   "group": "B author cycles",
+   "id": "mu_0.1_k_1000",
+   "mu": 0.1,
+   "k": 1000.0,
+   "attempted": 37,
+   "n_passed": 37,
+   "failed_comparisons": [],
+   "passed": true,
+   "T": 130406.29651915189,
+   "T_mu_over_lambda": 1.304062965191519,
+   "pk_over_lambda": 0.9999999990001099,
+   "log_mt": -13020.87966228979,
+   "mean_eta_over_mu": 0.0015144966272774285,
+   "lambda_tau_c": 37.969275199661276,
+   "seconds": 6.517737865447998
+  },
+  {
+   "group": "B2 author cycles below the threshold",
+   "id": "mu_1_k_16",
+   "mu": 1.0,
+   "k": 16.0,
+   "attempted": 32,
+   "n_passed": 32,
+   "failed_comparisons": [],
+   "passed": true,
+   "T": 24.110860755408623,
+   "T_mu_over_lambda": 1.506928797213039,
+   "pk_over_lambda": 0.9965309310900439,
+   "log_mt": -13.982348864810012,
+   "mean_eta_over_mu": 0.420080891899579,
+   "lambda_tau_c": 13.882597641964376,
+   "seconds": 0.2160780429840088,
+   "printed_log_mt": -13.98,
+   "printed_value_reproduced": true
+  },
+  {
+   "group": "B2 author cycles below the threshold",
+   "id": "mu_1_k_60",
+   "mu": 1.0,
+   "k": 60.0,
+   "attempted": 32,
+   "n_passed": 32,
+   "failed_comparisons": [],
+   "passed": true,
+   "T": 81.36530543570643,
+   "T_mu_over_lambda": 1.3560884239284405,
+   "pk_over_lambda": 0.9997312011525826,
+   "log_mt": -67.50629781671257,
+   "mean_eta_over_mu": 0.17033067773518074,
+   "lambda_tau_c": 18.332257461864742,
+   "seconds": 0.21762371063232422,
+   "printed_log_mt": -67.5,
+   "printed_value_reproduced": true
+  },
+  {
+   "group": "B2 author cycles below the threshold",
+   "id": "mu_1_k_300",
+   "mu": 1.0,
+   "k": 300.0,
+   "attempted": 32,
+   "n_passed": 32,
+   "failed_comparisons": [],
+   "passed": true,
+   "T": 394.266458625666,
+   "T_mu_over_lambda": 1.31422152875222,
+   "pk_over_lambda": 0.9999889625029641,
+   "log_mt": -375.64848315239743,
+   "mean_eta_over_mu": 0.04722180917485885,
+   "lambda_tau_c": 23.842052691882856,
+   "seconds": 0.2748088836669922,
+   "printed_log_mt": -375.7,
+   "printed_value_reproduced": true
+  },
+  {
+   "group": "C author segments",
+   "id": "(i) |U(a/2)| >= k phi c_i(a)",
+   "attempted": 554,
+   "n_passed": 554,
+   "min_relative_slack": 0.001513122662084929,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "(ii) P_w >= k phi_w (u-1+e^-u)",
+   "attempted": 277,
+   "n_passed": 277,
+   "min_relative_slack": 0.006266070409907722,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "(ii) D - v_w >= k phi_w c_ii(u)",
+   "attempted": 277,
+   "n_passed": 277,
+   "min_relative_slack": 0.0034140063749739033,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "G1 s_r >= pk/k",
+   "attempted": 277,
+   "n_passed": 277,
+   "min_relative_slack": 0.04928475781528319,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "G1 D >= pk^2/2k",
+   "attempted": 277,
+   "n_passed": 277,
+   "min_relative_slack": 0.024359511767479566,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "G1 p(T- - u) >= pk - k u",
+   "attempted": 1662,
+   "n_passed": 1662,
+   "min_relative_slack": 0.012843334641288277,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "G1 U(T- - u) <= -(pk u - k u^2/2)",
+   "attempted": 1662,
+   "n_passed": 1662,
+   "min_relative_slack": 6.18007172934311e-06,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "C: M+ = w_d - w_k + p_k - p_d (segment)",
+   "attempted": 277,
+   "n_passed": 277,
+   "min_relative_slack": 9.999986783497207e-07,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "F: w(s) <= m(s)",
+   "attempted": 2216,
+   "n_passed": 2216,
+   "min_relative_slack": 0.0003116209909189944,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "F: M+(M+ + mu P1) >= Q (H:=h)",
+   "attempted": 277,
+   "n_passed": 277,
+   "min_relative_slack": 0.18446644053909003,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "F: e^{U_th} >= th pk((1-th^2)pk^2 - 2 mu P1 U_th)/(2k)",
+   "attempted": 277,
+   "n_passed": 277,
+   "min_relative_slack": 0.3238729850370465,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "F: tau1 - s_th >= th pk/(mu P1 + M+)",
+   "attempted": 277,
+   "n_passed": 277,
+   "min_relative_slack": 0.00014618271453692143,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "G2: s_th <= U_th/(th pk)",
+   "attempted": 277,
+   "n_passed": 277,
+   "min_relative_slack": 0.001101481135493872,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "G2: tau1 - s_th <= v_c",
+   "attempted": 216,
+   "n_passed": 216,
+   "min_relative_slack": 0.0002616053938595507,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "G3: W_c >= pk e^{-tau1}/tau1",
+   "attempted": 277,
+   "n_passed": 277,
+   "min_relative_slack": 0.098374176600148,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "G3: drop(v) >= (Wc+k)(1-(1+v)e^-v) - k(v-1+e^-v)",
+   "attempted": 1662,
+   "n_passed": 1662,
+   "min_relative_slack": 1.8017235527729836e-07,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "G3: w(crest+v)+k >= e^-v (Wc+k)",
+   "attempted": 1662,
+   "n_passed": 1662,
+   "min_relative_slack": 0.0037814137548612156,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "(iii) r_l >= sqrt(2(D-l)/k)",
+   "attempted": 166,
+   "n_passed": 166,
+   "min_relative_slack": 0.019656875692366495,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "(iii) p(s_l) >= k phi_l Psi(r_l)",
+   "attempted": 166,
+   "n_passed": 166,
+   "min_relative_slack": 0.13169339622615575,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "(iii) pk >= p(s_l) - mu l",
+   "attempted": 166,
+   "n_passed": 166,
+   "min_relative_slack": 0.0001200930955363528,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "(iv) p(s) >= k phi(s) Psi(s-s_l)",
+   "attempted": 498,
+   "n_passed": 498,
+   "min_relative_slack": 1.892164179964166,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "(iv) |U(s)| >= p(s)(1-e^{-mu(T- - s)})/mu",
+   "attempted": 498,
+   "n_passed": 498,
+   "min_relative_slack": 5.003966320551615e-06,
+   "passed": true
+  },
+  {
+   "group": "C author segments",
+   "id": "F: P1 <= pk + 1.1 k sqrt(2/pk)",
+   "attempted": 156,
+   "n_passed": 156,
+   "min_relative_slack": 0.0052542965312040385,
+   "passed": true
+  },
+  {
+   "group": "D author stage test",
+   "id": "Stage 1: T_- >= 5.89 implies p_k >= 0.374 k",
+   "attempted": 52,
+   "n_passed": 52,
+   "min_pk_over_k": 0.9174220853835816,
+   "passed": true
+  },
+  {
+   "group": "D author stage test",
+   "id": "Stage 2: T_- >= 22 implies r_ell >= 0.3 T_-",
+   "attempted": 9,
+   "n_passed": 9,
+   "min_rl_over_Tminus": 0.688554799250379,
+   "passed": true
+  },
+  {
+   "group": "D author stage test",
+   "id": "strip time tau_b < 0.36 on all segments",
+   "attempted": 1,
+   "n_passed": 1,
+   "max_tau_b": 0.09816471656534048,
+   "passed": true
+  },
+  {
+   "group": "E referee segments",
+   "id": "all inequality families",
+   "attempted": 11825,
+   "n_passed": 11825,
+   "tightest_relative_slack_by_family": {
+    "D1 y>0 on rising phase (noise floor 1e-9k)": -3.288167528739464e-09,
+    "L8 v>=k c_i(a)(1-e^-v)": 0.23653622768889415,
+    "L8 D>=phi2 k c_i(a)": 0.7077106257142113,
+    "L9 P_w>=k phi(s_w)(u-1+e^-u)": 0.003988076872890565,
+    "L9 D-v_w>=k phi(s_w)c_ii(u)": 0.002366179282763327,
+    "L9 D>=phi2 k c_ii(u) [given Lambda_E(s_w)>0]": 0.3285596166557175,
+    "L10a T_- - s0 >= p_k/k": 0.03752167149861786,
+    "L10a D>=p_k^2/2k": 0.04415209685346245,
+    "L10a T_- - t_L <= 2L/p_k": 0.17208524293141517,
+    "L10b r_l>=sqrt(2(D-l)/k)": 0.00895574146939981,
+    "L10c p(s_l)>=k phi_l Psi_mu(r_l)": 3.6390420948259385e-08,
+    "L10c p_k>=p(s_l)-mu l": 2.3378846158984337e-06,
+    "L10d k c_b(tau_b) < l/phi_l": 0.8756126436305911,
+    "wm: w<=m": 1.3470870503875523e-07,
+    "wm: w>=e^-s(m-|w_k|)": -2.1237655063529371e-16,
+    "L12 p_k(s^2/2-s^3/6)<1 on [0,s_+]": 0.7109697332257385,
+    "L13 energy: p_k^2/4 <= mu P_1 U_th + k e^{U_th}/(theta p_k)": 0.30463752406376615,
+    "L13 m(s)<=k(e^U-1-U)/(theta p_k) on [0,s_th]": 0.0,
+    "L13 tau1-s_th >= theta p_k/(mu P_1+M_c)": 0.14678469979276773,
+    "L13 e^{U_th} >= E_theta(H:=h)": 0.24141705296362162,
+    "L13 M_c(M_c+mu P_1) >= Q(H:=h)": 0.7868375638749545,
+    "L13 M_c >= sqrt(Q) - mu P_1/2": 0.5383049857388991,
+    "L16 w(s_th+v) >= -k + X_th(1-e^-v) up to crest": 0.3371939586287845,
+    "L16 s_th <= U_th/(theta p_k)": 0.19781144674907494,
+    "L16 p_k <= W_c tau1 e^{tau1}": 3.6341539365247137,
+    "L7e w>=e^-v(W_c+k)-k after crest": 0.0,
+    "L16 |p|(v) >= (W_c+k)v e^-v - k(1-e^-v)": -0.0,
+    "L16 h-U(v) >= (W_c+k)(1-(1+v)e^-v)-k(v-1+e^-v)": 0.0,
+    "L16 h-U(v) >= W_c v^2/2 [1-(2/3)(1+k/W_c)v]": 0.0,
+    "L12 s_+ < 1.1 sqrt(2/p_k)": 0.006816338597531126,
+    "L12 P_1<=p_k(1+eps_1)": 0.00012099590895668913,
+    "L16 crest <= s_th + v_c": 0.5006058659850712,
+    "L17 log(spectral radius) <= bound (arbitrary periodic x)": 0.22662877615802643
+   },
+   "passed": true
+  },
+  {
+   "group": "F referee stage test",
+   "id": "tau_b < 0.36; Stage-1 and Stage-2 conclusions under their hypotheses",
+   "attempted": 3050,
+   "n_passed": 3050,
+   "lobes": 1500,
+   "stage1_hypotheses_met": 937,
+   "stage2_hypotheses_met": 613,
+   "min_pk_over_k": 1.0128489117513841,
+   "min_rl": 2.5143512491438478,
+   "min_rl_over_Tminus": 0.48838362182050143,
+   "max_tau_b": 0.006890425837254799,
+   "passed": true
+  }
+ ]
+}

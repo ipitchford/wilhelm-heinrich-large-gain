@@ -1,0 +1,21 @@
+ADVERSARIAL REFEREE REQUEST. You are refereeing one section of a mathematics paper. Your task is to REFUTE it: find every error, unjustified step, circular argument, misuse of an imported theorem, or statement that is stronger than what is proved. Do not summarise or praise. Check proofs line by line, re-derive every displayed identity, and test inequalities on special cases. Report each defect as: location (label or quoted phrase) | severity (FATAL: the statement is false or the proof cannot be repaired locally; GAP: a step is unjustified but the statement is probably true; MINOR: wording, missing hypothesis that is clearly satisfied, typo) | what is wrong | the repair, if you see one. End with a one-line verdict per theorem/proposition/lemma: HOLDS / GAP / FALSE. If you find nothing wrong with a statement after genuinely checking it, say HOLDS and state which steps you re-derived.
+
+CONTEXT (established earlier in the paper; take as given). System, parameters mu>0, k>0, A=1+mu, lambda=k/mu, k_H=mu(1+mu):
+  U' = p,  p' = k - mu p - y,  y' = k e^U - y,  x = k e^U;  equilibrium E=(0,0,k).  Chemical domain: y>0, p<lambda.  P = {k>k_H}.
+  A cycle is a nonconstant periodic orbit with least period T; <f> is the time average. Log-bounded entire solution: (U,p,y) bounded on R.
+  Jacobian J=[[0,1,0],[0,-mu,-1],[x,0,-1]]; B=-S J^T S=[[0,0,x],[1,mu,0],[0,1,1]], S=diag(1,-1,-1).
+  (eq:projective) Along a cycle there are positive T-periodic adjoint ratios eta, zeta: eta' = zeta+(mu-1)eta-eta^2, zeta' = x-(1+eta)zeta, eta>max(0,mu-1) (eq:etaminbasic).
+  (prop:multipliers) Transverse multipliers 0<m_s<m_t, m_s<1, m_s m_t=e^{-AT}; m_s=e^{-(1+<eta>)T}, m_t=e^{(<eta>-mu)T}; lambda_c:=<eta>-mu.
+  (prop:factor) zeta p - eta p' = x - y (eq:orthogonality); p''=(eta-mu)p'-zeta p (eq:tangent); D^3+AD^2+mu D+x=(D+1+eta)(D^2+(mu-eta)D+zeta).
+  (lem:projectivebounds) explicit bounds eta_-<=eta<=eta_+, zeta_-<=zeta<=zeta_+ from 0<x_-<=x<=x_+.
+  (eq:gainprimitive) (zeta+eta+eta^2/2)' = x - f_mu(eta), f_mu(s)=s(s+1)(s+1-mu).
+  (thm:support) base z1 = a cycle or E with its (eta,zeta), z2 a distinct log-bounded entire solution: Delta=zeta(U2-U1)-eta(p2-p1)-(y2-y1) satisfies Delta'+(1+eta)Delta=-x1 Rem(U2-U1), Rem(d)=e^d-1-d, and Delta<0.
+  (cor:cones) K:=zeta U-eta p-y+k>0 with K'+(1+eta)K=k psi(U), psi(U)=Ue^U-e^U+1; Lambda_E:=(y-k)-zeta_E U+eta_E p>0 with Lambda_E'=-gamma_E Lambda_E+k Rem(U), gamma_E>A root of gamma(gamma-1)(gamma-mu)=k, eta_E=gamma_E-1, zeta_E=eta_E(eta_E+1-mu); no cycle point r=(U,p,y-k) in the closed cones C_+={U>=0,p<=0,y-k<=0}, C_-=-C_+.
+  (lem:curvature) W:=zeta' p-eta' p'>0, W'+(1+eta)W=x p^2.
+  (thm:geometry) every cycle projects to a regular clockwise Jordan curve in the (U,p) plane enclosing the origin; U and p each have one nondegenerate max and min per period; distinct cycles are nested. At a zero of p (eq:crestidentities): x-k=(1+eta)(y-k), x-y=eta(y-k), p'=k-y.
+  (thm:six) the six extrema of X=x/k, Z=y/k, Y=1-p/lambda occur in the order X_min<Z_min<Y_min<X_max<Z_max<Y_max.
+  (prop:crestmap) the crest-return derivative M (section p=0, coords (U,y)) is entrywise positive, eigenvalues m_s,m_t, det M=e^{-AT}<e^{-4pi}, T>2pi/sqrt(mu); compound system w'=Cw, C=[[-mu,1,0],[0,-1,1],[x,0,-A]] (eq:compound).
+Macros: \cA attractor, \Dom chemical domain, \Dsc=pi(attractor), \Dt derivative along the flow, \kH=k_H, \LamE=Lambda_E, \Sg=Sigma=p^2-Up', \Xg=Xi=p'^2-pp'', \etaz=eta_0, \psiU=psi, \Rem=R.
+
+THE SECTION UNDER REVIEW (LaTeX source) FOLLOWS.
+=====================================================================

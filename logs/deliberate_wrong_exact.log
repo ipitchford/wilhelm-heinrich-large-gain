@@ -1,0 +1,2 @@
+50/51 exact equalities passed
+{'id': 'injected_wrong_support_sign', 'passed': False, 'residual': '2*x*(-du + exp(du) - 1)'}

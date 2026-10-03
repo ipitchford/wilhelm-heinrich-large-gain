@@ -1,0 +1,10 @@
+mu=0.05  rho=1.02  (i) exp(beta(U)): t*/sig neg=-108.074 pos=-71.659 | (ii) exp(poly3(U,p)): neg=-2.000 pos=-1.878 | (iii) 1/Q deg2-4: LP fail
+mu=0.05  rho=1.5   (i) exp(beta(U)): t*/sig neg=-40.269 pos=-4.567 | (ii) exp(poly3(U,p)): neg=-2.000 pos=-1.011 | (iii) 1/Q deg2-4: LP fail
+mu=0.05  rho=5.0   (i) exp(beta(U)): t*/sig neg=-36.114 pos=-0.701 | (ii) exp(poly3(U,p)): neg=-2.073 pos=-0.328 | (iii) 1/Q deg2-4: skipped (deep trough)
+mu=0.2   rho=1.05  (i) exp(beta(U)): t*/sig neg=-35.009 pos=-27.482 | (ii) exp(poly3(U,p)): neg=-2.000 pos=-1.891 | (iii) 1/Q deg2-4: LP fail
+mu=0.2   rho=2.0   (i) exp(beta(U)): t*/sig neg=-14.719 pos=-3.196 | (ii) exp(poly3(U,p)): neg=-2.000 pos=-0.843 | (iii) 1/Q deg2-4: LP fail
+mu=0.5   rho=1.2   (i) exp(beta(U)): t*/sig neg=-15.014 pos=-10.234 | (ii) exp(poly3(U,p)): neg=-2.000 pos=-1.839 | (iii) 1/Q deg2-4: LP fail
+mu=0.5   rho=3.0   (i) exp(beta(U)): t*/sig neg=-10.712 pos=-2.275 | (ii) exp(poly3(U,p)): neg=-2.000 pos=-1.007 | (iii) 1/Q deg2-4: skipped (deep trough)
+mu=1.0   rho=1.02  (i) exp(beta(U)): t*/sig neg=-37.408 pos=-33.757 | (ii) exp(poly3(U,p)): neg=-2.000 pos=-1.997 | (iii) 1/Q deg2-4: LP fail
+mu=1.0   rho=1.5   (i) exp(beta(U)): t*/sig neg=-10.743 pos=-5.638 | (ii) exp(poly3(U,p)): neg=-2.000 pos=-1.694 | (iii) 1/Q deg2-4: LP fail
+mu=1.0   rho=5.0   (i) exp(beta(U)): t*/sig neg=-11.241 pos=-1.660 | (ii) exp(poly3(U,p)): neg=-2.000 pos=-1.078 | (iii) 1/Q deg2-4: skipped (deep trough)

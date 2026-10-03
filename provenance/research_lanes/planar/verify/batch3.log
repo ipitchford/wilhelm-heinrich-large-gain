@@ -1,0 +1,91 @@
+Queued: existing host workload leaves insufficient CPU headroom
+Started: wh-planar-referee3 (pid 4171)
+== mu=1.0 rho=1.5 k=3  T=7.49067
+ (i) Lemma 2.1: x_max on cycle = 18.459 <= lam/c_1 = 52.839: True;  y_max = 10.767 <= lam/c_1: True;  q_max = 7.3066 <= lam/(c_1 mu) = 52.839: True
+ (ii) W^s(E), branch +1: backward orbit LEAVES D_chem / |U|>1e3 at t=-6.91: U=0.989 p=-2.23 (lam=3) y=1.33e-15
+ (ii) W^s(E), branch -1: backward orbit LEAVES D_chem / |U|>1e3 at t=-7.12: U=-1.44 p=3 (lam=3) y=6.04
+ (iii) backward Riccati from 12 perturbed positive data: 12/12 leave the closed positive quadrant or blow up (times/T: [-0.02, -0.07, -0.06, -0.03, -0.01, -0.1, -0.04, -0.05, -0.25, -0.2, -0.17, -0.26]); unperturbed solution followed backward for 1.95 periods before rounding ejects it
+ (iv) (A7): 6000/6000 spiral points (up to 1e-6 from the cycle crest) project inside the projected cycle
+ (v) (A1): final crest U of 8 random orbits in D_chem: max deviation from the cycle crest 1.816932 is 2.5008883852706276e-12  (None entries: 0)
+== mu=1.0 rho=4.0 k=8  T=13.84159
+ (i) Lemma 2.1: x_max on cycle = 277.7 <= lam/c_1 = 648.8: True;  y_max = 81.153 <= lam/c_1: True;  q_max = 40.14 <= lam/(c_1 mu) = 648.8: True
+ (ii) W^s(E), branch +1: backward orbit LEAVES D_chem / |U|>1e3 at t=-5.80: U=1.32 p=-3.82 (lam=8) y=1.01e-14
+ (ii) W^s(E), branch -1: backward orbit LEAVES D_chem / |U|>1e3 at t=-6.19: U=-3.25 p=8 (lam=8) y=18.2
+ (iii) backward Riccati from 12 perturbed positive data: 12/12 leave the closed positive quadrant or blow up (times/T: [-0.0, -0.02, -0.01, -0.01, -0.0, -0.02, -0.01, -0.01, -0.05, -0.04, -0.03, -0.06]); unperturbed solution followed backward for 0.99 periods before rounding ejects it
+ (iv) (A7): 6000/6000 spiral points (up to 1e-6 from the cycle crest) project inside the projected cycle
+ (v) (A1): final crest U of 8 random orbits in D_chem: max deviation from the cycle crest 3.547094 is 7.1094241604896524e-12  (None entries: 0)
+== mu=1.0 rho=12.0 k=24  T=34.48833
+ (i) Lemma 2.1: x_max on cycle = 6349.1 <= lam/c_1 = 15000: True;  y_max = 733.93 <= lam/c_1: True;  q_max = 303.99 <= lam/(c_1 mu) = 15000: True
+ (ii) W^s(E), branch +1: backward orbit LEAVES D_chem / |U|>1e3 at t=-4.63: U=1.76 p=-6.97 (lam=24) y=-7.15e-14
+ (ii) W^s(E), branch -1: backward orbit LEAVES D_chem / |U|>1e3 at t=-5.18: U=-8.4 p=24 (lam=24) y=59.5
+ (iii) backward Riccati from 12 perturbed positive data: 12/12 leave the closed positive quadrant or blow up (times/T: [-0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.01, -0.01, -0.0, -0.01]); unperturbed solution followed backward for 0.02 periods before rounding ejects it
+ (iv) (A7): 6000/6000 spiral points (up to 1e-6 from the cycle crest) project inside the projected cycle
+ (v) (A1): final crest U of 8 random orbits in D_chem: max deviation from the cycle crest 5.578012 is 4.982680934517703e-13  (None entries: 0)
+== mu=1.0 rho=1.01 k=2.02  T=6.30421
+ (i) Lemma 2.1: x_max on cycle = 2.9212 <= lam/c_1 = 22.92: True;  y_max = 2.6286 <= lam/c_1: True;  q_max = 2.4348 <= lam/(c_1 mu) = 22.92: True
+ (ii) W^s(E), branch +1: backward orbit LEAVES D_chem / |U|>1e3 at t=-7.36: U=0.87 p=-1.79 (lam=2.02) y=1.67e-15
+ (ii) W^s(E), branch -1: backward orbit LEAVES D_chem / |U|>1e3 at t=-7.48: U=-1.04 p=2.02 (lam=2.02) y=3.84
+ (iii) backward Riccati from 12 perturbed positive data: 12/12 leave the closed positive quadrant or blow up (times/T: [-0.03, -0.14, -0.12, -0.09, -0.02, -0.18, -0.09, -0.09, -0.44, -0.39, -0.39, -0.44]); unperturbed solution followed backward for 2.19 periods before rounding ejects it
+ (iv) (A7): 6000/6000 spiral points (up to 1e-6 from the cycle crest) project inside the projected cycle
+ (v) (A1): final crest U of 8 random orbits in D_chem: max deviation from the cycle crest 0.368908 is 1.4424017535930034e-12  (None entries: 0)
+== mu=0.3 rho=1.5 k=0.585  T=14.70342
+ (i) Lemma 2.1: x_max on cycle = 4.3705 <= lam/c_1 = 17.876: True;  y_max = 3.138 <= lam/c_1: True;  q_max = 4.7246 <= lam/(c_1 mu) = 59.587: True
+ (ii) W^s(E), branch +1: backward orbit LEAVES D_chem / |U|>1e3 at t=-9.84: U=0.374 p=-0.524 (lam=1.95) y=6.11e-16
+ (ii) W^s(E), branch -1: backward orbit LEAVES D_chem / |U|>1e3 at t=-10.84: U=-1.45 p=1.95 (lam=1.95) y=2.55
+ (iii) backward Riccati from 12 perturbed positive data: 12/12 leave the closed positive quadrant or blow up (times/T: [-0.01, -0.06, -0.05, -0.02, -0.0, -0.08, -0.03, -0.04, -0.17, -0.14, -0.09, -0.19]); unperturbed solution followed backward for 1.39 periods before rounding ejects it
+ (iv) (A7): 5998/6000 spiral points (up to 1e-6 from the cycle crest) project inside the projected cycle
+ (v) (A1): final crest U of 8 random orbits in D_chem: max deviation from the cycle crest 2.011024 is 3.934630399271555e-13  (None entries: 0)
+== mu=0.3 rho=4.0 k=1.56  T=29.75933
+ (i) Lemma 2.1: x_max on cycle = 75.613 <= lam/c_1 = 180.99: True;  y_max = 30.011 <= lam/c_1: True;  q_max = 27.427 <= lam/(c_1 mu) = 603.28: True
+ (ii) W^s(E), branch +1: backward orbit LEAVES D_chem / |U|>1e3 at t=-8.61: U=0.624 p=-1.07 (lam=5.2) y=5.55e-17
+ (ii) W^s(E), branch -1: backward orbit LEAVES D_chem / |U|>1e3 at t=-9.69: U=-3.38 p=5.2 (lam=5.2) y=7.49
+ (iii) backward Riccati from 12 perturbed positive data: 12/12 leave the closed positive quadrant or blow up (times/T: [-0.0, -0.01, -0.01, -0.0, -0.0, -0.02, -0.01, -0.01, -0.03, -0.03, -0.02, -0.04]); unperturbed solution followed backward for 0.12 periods before rounding ejects it
+ (iv) (A7): 5978/6000 spiral points (up to 1e-6 from the cycle crest) project inside the projected cycle
+ (v) (A1): final crest U of 8 random orbits in D_chem: max deviation from the cycle crest 3.880938 is 2.1809221095736575e-12  (None entries: 0)
+== mu=0.3 rho=12.0 k=4.68  T=74.67859
+ (i) Lemma 2.1: x_max on cycle = 1742.7 <= lam/c_1 = 4117.5: True;  y_max = 293.49 <= lam/c_1: True;  q_max = 208.37 <= lam/(c_1 mu) = 13725: True
+ (ii) W^s(E), branch +1: backward orbit LEAVES D_chem / |U|>1e3 at t=-7.08: U=0.987 p=-2.24 (lam=15.6) y=-8.58e-15
+ (ii) W^s(E), branch -1: backward orbit LEAVES D_chem / |U|>1e3 at t=-8.25: U=-8.9 p=15.6 (lam=15.6) y=24.1
+ (iii) backward Riccati from 12 perturbed positive data: 12/12 leave the closed positive quadrant or blow up (times/T: [-0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.01]); unperturbed solution followed backward for 0.01 periods before rounding ejects it
+ (iv) (A7): 6000/6000 spiral points (up to 1e-6 from the cycle crest) project inside the projected cycle
+ (v) (A1): final crest U of 8 random orbits in D_chem: max deviation from the cycle crest 5.919896 is 1.3681500377060729e-11  (None entries: 0)
+== mu=0.3 rho=1.01 k=0.3939  T=11.52564
+ (i) Lemma 2.1: x_max on cycle = 0.58956 <= lam/c_1 = 8.6011: True;  y_max = 0.56037 <= lam/c_1: True;  q_max = 1.5632 <= lam/(c_1 mu) = 28.67: True
+ (ii) W^s(E), branch +1: backward orbit LEAVES D_chem / |U|>1e3 at t=-10.24: U=0.295 p=-0.386 (lam=1.31) y=1.08e-16
+ (ii) W^s(E), branch -1: backward orbit LEAVES D_chem / |U|>1e3 at t=-11.22: U=-1.03 p=1.31 (lam=1.31) y=1.65
+ (iii) backward Riccati from 12 perturbed positive data: 12/12 leave the closed positive quadrant or blow up (times/T: [-0.02, -0.11, -0.12, -0.04, -0.01, -0.15, -0.07, -0.09, -0.39, -0.34, -0.22, -0.41]); unperturbed solution followed backward for 1.91 periods before rounding ejects it
+ (iv) (A7): 6000/6000 spiral points (up to 1e-6 from the cycle crest) project inside the projected cycle
+ (v) (A1): final crest U of 8 random orbits in D_chem: max deviation from the cycle crest 0.403273 is 5.448552720110911e-11  (None entries: 0)
+== mu=0.02 rho=1.5 k=0.0306  T=130.06668
+ (i) Lemma 2.1: x_max on cycle = 1.4167 <= lam/c_1 = 10.38: True;  y_max = 1.1425 <= lam/c_1: True;  q_max = 3.9212 <= lam/(c_1 mu) = 518.98: True
+ (ii) W^s(E), branch +1: backward orbit LEAVES D_chem / |U|>1e3 at t=-10.55: U=0.0294 p=-0.0303 (lam=1.53) y=-8.67e-18
+ (ii) W^s(E), branch -1: backward orbit LEAVES D_chem / |U|>1e3 at t=-14.37: U=-1.49 p=1.53 (lam=1.53) y=1.56
+ (iii) backward Riccati from 12 perturbed positive data: 12/12 leave the closed positive quadrant or blow up (times/T: [-0.0, -0.01, -0.01, -0.0, -0.0, -0.01, -0.01, -0.01, -0.03, -0.02, -0.01, -0.04]); unperturbed solution followed backward for 0.08 periods before rounding ejects it
+ (iv) (A7): 5962/6000 spiral points (up to 1e-6 from the cycle crest) project inside the projected cycle
+ (v) (A1): final crest U of 8 random orbits in D_chem: max deviation from the cycle crest 3.835101 is 4.700684286262913e-12  (None entries: 0)
+== mu=0.02 rho=4.0 k=0.0816  T=343.05778
+ (i) Lemma 2.1: x_max on cycle = 35.639 <= lam/c_1 = 90.391: True;  y_max = 16.542 <= lam/c_1: True;  q_max = 25.843 <= lam/(c_1 mu) = 4519.6: True
+ (ii) W^s(E), branch +1: backward orbit LEAVES D_chem / |U|>1e3 at t=-11.01: U=0.0722 p=-0.0775 (lam=4.08) y=-5.81e-17
+ (ii) W^s(E), branch -1: backward orbit LEAVES D_chem / |U|>1e3 at t=-14.75: U=-3.88 p=4.08 (lam=4.08) y=4.23
+ (iii) backward Riccati from 12 perturbed positive data: 12/12 leave the closed positive quadrant or blow up (times/T: [-0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0]); unperturbed solution followed backward for 0.01 periods before rounding ejects it
+ (iv) (A7): 5987/6000 spiral points (up to 1e-6 from the cycle crest) project inside the projected cycle
+ (v) (A1): final crest U of 8 random orbits in D_chem: max deviation from the cycle crest 6.079370 is 2.8990143619012088e-12  (None entries: 0)
+/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/planar/verify/vlog.py:109: RuntimeWarning: overflow encountered in scalar multiply
+  out += [b, -mu * b - c, x * a - c]
+/Users/admin/.venvs/analysis-py313/lib/python3.13/site-packages/scipy/integrate/_ivp/rk.py:63: RuntimeWarning: overflow encountered in multiply
+  dy = np.dot(K[:s].T, a[:s]) * h
+== mu=0.02 rho=12.0 k=0.2448  T=877.72375
+ (i) Lemma 2.1: x_max on cycle = 840.81 <= lam/c_1 = 1986.9: True;  y_max = 167.09 <= lam/c_1: True;  q_max = 198.35 <= lam/(c_1 mu) = 99345: True
+ (ii) W^s(E), branch +1: backward orbit LEAVES D_chem / |U|>1e3 at t=-10.86: U=0.177 p=-0.21 (lam=12.2) y=1.39e-17
+ (ii) W^s(E), branch -1: backward orbit LEAVES D_chem / |U|>1e3 at t=-14.48: U=-11.2 p=12.2 (lam=12.2) y=12.9
+ (iii) backward Riccati from 12 perturbed positive data: 12/12 leave the closed positive quadrant or blow up (times/T: [-0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0, -0.0]); unperturbed solution followed backward for 0.00 periods before rounding ejects it
+ (iv) (A7): 5993/6000 spiral points (up to 1e-6 from the cycle crest) project inside the projected cycle
+ (v) (A1): final crest U of 8 random orbits in D_chem: max deviation from the cycle crest 8.141678 is 2.5561774918969604e-12  (None entries: 0)
+== mu=0.02 rho=1.01 k=0.020604  T=46.40955
+ (i) Lemma 2.1: x_max on cycle = 0.050769 <= lam/c_1 = 5.2811: True;  y_max = 0.050104 <= lam/c_1: True;  q_max = 1.189 <= lam/(c_1 mu) = 264.06: True
+ (ii) W^s(E), branch +1: backward orbit LEAVES D_chem / |U|>1e3 at t=-10.27: U=0.0202 p=-0.0206 (lam=1.03) y=4.77e-18
+ (ii) W^s(E), branch -1: backward orbit LEAVES D_chem / |U|>1e3 at t=-14.11: U=-1.01 p=1.03 (lam=1.03) y=1.05
+ (iii) backward Riccati from 12 perturbed positive data: 12/12 leave the closed positive quadrant or blow up (times/T: [-0.01, -0.03, -0.04, -0.01, -0.0, -0.04, -0.03, -0.03, -0.15, -0.16, -0.06, -0.12]); unperturbed solution followed backward for 0.66 periods before rounding ejects it
+ (iv) (A7): 6000/6000 spiral points (up to 1e-6 from the cycle crest) project inside the projected cycle
+ (v) (A1): final crest U of 8 random orbits in D_chem: max deviation from the cycle crest 0.901803 is 0.0002285673509966335  (None entries: 0)
+ALLDONE

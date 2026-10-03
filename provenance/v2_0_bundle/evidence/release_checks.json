@@ -1,0 +1,536 @@
+{
+  "kind": "release_bookkeeping_and_finite_receipt_consistency",
+  "checks": [
+    {
+      "id": "exact_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "exact_actual_equalities",
+      "passed": true,
+      "detail": "Residual strings are checked as well as pass flags."
+    },
+    {
+      "id": "numerical_audit_actual_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "numerical_audit_all_predicates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "cross_method_actual_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "cross_method_all_predicates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "reciprocal_rates_actual_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "reciprocal_rates_all_predicates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "envelope_checks_actual_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "envelope_checks_all_predicates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "negative_controls_actual_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "negative_controls_all_predicates",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "BVP_count",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "BVP_acceptance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_0.1_h_0.05",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_0.1_h_0.2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_0.1_h_0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_0.1_h_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_0.1_h_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_0.1_h_3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_0.3_h_0.05",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_0.3_h_0.2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_0.3_h_0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_0.3_h_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_0.3_h_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_0.3_h_3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_1_h_0.05",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_1_h_0.2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_1_h_0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_1_h_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_1_h_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_1_h_3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_3.3333333_h_0.05",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_3.3333333_h_0.2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_3.3333333_h_0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_3.3333333_h_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_3.3333333_h_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_3.3333333_h_3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_10_h_0.05",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_10_h_0.2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_10_h_0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_10_h_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_10_h_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_10_h_3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "mesh_finite_mu_0.3_h_0.01",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_0.1_h_0.05",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_0.1_h_0.2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_0.1_h_0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_0.1_h_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_0.1_h_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_0.1_h_3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_0.3_h_0.05",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_0.3_h_0.2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_0.3_h_0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_0.3_h_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_0.3_h_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_0.3_h_3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_1_h_0.05",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_1_h_0.2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_1_h_0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_1_h_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_1_h_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_1_h_3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_3.3333333_h_0.05",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_3.3333333_h_0.2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_3.3333333_h_0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_3.3333333_h_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_3.3333333_h_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_3.3333333_h_3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_10_h_0.05",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_10_h_0.2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_10_h_0.5",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_10_h_1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_10_h_2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_10_h_3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "profile_finite_mu_0.3_h_0.01",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "table_source_exact_checks.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "table_source_cycle_trials.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "table_source_numerical_audit.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "table_source_cross_method.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "table_source_reciprocal_rates.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "table_source_envelope_checks.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "table_source_negative_controls.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "complete_active_run_record",
+      "passed": true,
+      "detail": {
+        "regenerated_cycles": true
+      }
+    },
+    {
+      "id": "executed_code_code/additional_checks.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "executed_code_code/cycles.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "executed_code_code/exact_checks.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "executed_code_code/make_tables.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "executed_code_code/numerical_audit.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "executed_code_code/run_all.py",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "unchanged_input_provenance/v1_2/paper/manuscript.pdf",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "unchanged_input_provenance/v1_2/paper/manuscript.tex",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "unchanged_input_provenance/v1_2/evidence/exact_structural_checks.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "unchanged_input_provenance/v1_2/evidence/neutral_rescaling_checks.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "unchanged_input_provenance/v1_2/evidence/neutral_cycle_search.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "unchanged_input_provenance/v1_2/evidence/fixed_rate_neutral_search.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "unchanged_input_provenance/earlier_review/v0_3_review.txt",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "unchanged_input_provenance/earlier_review/v0_3_referee_checks.zip",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "historical_review_zip_crc",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "real_checker_failure_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "deliberate_wrong_claim_rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "historical_failed_search_neutral_cycle_search.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "historical_failed_search_fixed_rate_neutral_search.json",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "claim_boundary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "id": "no_font_files",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "number_checked": 105,
+  "number_passed": 105,
+  "passed": true,
+  "scope": "Not proof verification and not a numerical enclosure."
+}

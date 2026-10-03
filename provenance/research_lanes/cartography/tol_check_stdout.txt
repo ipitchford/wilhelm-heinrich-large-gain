@@ -1,0 +1,13 @@
+(i) weakest exponents on the grid: lambda_c*T at three tolerances (Newton re-converged at each)
+  mu=0.002 rho-1=0.001: rt=1e-10: U*=0.864613114 logmt(Riccati)=-2.8291459937e-04 logmt(M)=-2.8291459937e-04 | rt=1e-12: U*=0.864613114 logmt(Riccati)=-2.8291459936e-04 logmt(M)=-2.8291459937e-04 | rt=1e-13: U*=0.864613114 logmt(Riccati)=-2.8291459937e-04 logmt(M)=-2.8291459937e-04
+  mu=0.005 rho-1=0.001: rt=1e-10: U*=0.580447136 logmt(Riccati)=-4.4099179829e-04 logmt(M)=-4.4099179830e-04 | rt=1e-12: U*=0.580447136 logmt(Riccati)=-4.4099179829e-04 logmt(M)=-4.4099179830e-04 | rt=1e-13: U*=0.580447136 logmt(Riccati)=-4.4099179830e-04 logmt(M)=-4.4099179830e-04
+  mu=1.0 rho-1=0.001: rt=1e-10: U*=0.123230920 logmt(Riccati)=-2.5131189316e-03 logmt(M)=-2.5131189341e-03 | rt=1e-12: U*=0.123230920 logmt(Riccati)=-2.5131189334e-03 logmt(M)=-2.5131189334e-03 | rt=1e-13: U*=0.123230920 logmt(Riccati)=-2.5131189334e-03 logmt(M)=-2.5131189334e-03
+  mu=0.002 rho-1=0.0127: rt=1e-10: U*=2.335767566 logmt(Riccati)=-4.1703433822e-03 logmt(M)=-4.1703433822e-03 | rt=1e-12: U*=2.335767566 logmt(Riccati)=-4.1703433822e-03 logmt(M)=-4.1703433822e-03 | rt=1e-13: U*=2.335767566 logmt(Riccati)=-4.1703433822e-03 logmt(M)=-4.1703433822e-03
+(ii) non-monotone r(U) = log(phi(U)/U) on W^u(E) at mu=0.0027, rho=5.02 (three tolerances)
+  rt=1e-10: r(0+)=0.287088; local min r=0.22019354 at U/U*=0.2508; later local max r=0.24521213 at U/U*=0.5378; rise=+0.025019
+  rt=1e-12: r(0+)=0.287088; local min r=0.22019355 at U/U*=0.2508; later local max r=0.24521214 at U/U*=0.5378; rise=+0.025019
+  rt=1e-13: r(0+)=0.287088; local min r=0.22019355 at U/U*=0.2508; later local max r=0.24521214 at U/U*=0.5378; rise=+0.025019
+(iii) S3a at the cycle crest for mu=1, rho=5: d/dU[(mu-zeta)/(k(e^U-1))] by finite differences along W^u(E) crests
+  rt=1e-10: U*=3.945103532; slope of R just inside the cycle (n=14) = -0.13466; slope at mid amplitudes = +0.05335
+  rt=1e-12: U*=3.945103532; slope of R just inside the cycle (n=14) = -0.13466; slope at mid amplitudes = +0.05335
+  rt=1e-13: U*=3.945103532; slope of R just inside the cycle (n=14) = -0.13466; slope at mid amplitudes = +0.05335

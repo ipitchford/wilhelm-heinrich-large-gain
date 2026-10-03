@@ -1,0 +1,42 @@
+--- v2.0 inputs re-derived
+D O + (1+eta) O                                                        residual = 0
+K' + (1+eta) K - k psi                                                 residual = 0
+W' + (1+eta) W - x p^2                                                 = (eta**2 - eta*mu + eta - zeta) * O   remainder = 0
+p'' - [(eta-mu)p' - zeta p]                                            = (1) * O   remainder = 0
+--- Theorem D(b)
+V' - [(eta-mu)V + pK]                                                  = (-U) * O   remainder = 0
+V' - [-mu V + V3]                                                      residual = 0
+V3 - [pK + eta V]                                                      = (-U) * O   remainder = 0
+Q - [p'(k-y) + p(x-y)]                                                 residual = 0
+Q' - [(eta-mu)Q + pW]                                                  = (eta*p + k - mu*p + p - y) * O   remainder = 0
+Q' - [xV - AQ + k psi p']                                              residual = 0
+--- Theorem D(c): linear system for (eta,zeta), kappa equation
+eta V - (V3 - pK)                                                      = (U) * O   remainder = 0
+zeta V - (Q - p'K)                                                     = (p) * O   remainder = 0
+V^2 * {kappa' - [k psi/V - (1+eta+eta0-mu) kappa]}                     = (0) * O   remainder = 0
+(log V)' - (eta0 - mu)   [times V]                                     residual = 0
+(log Q)' - (eta1 - mu)   [times Q]                                     residual = 0
+--- Theorem D(e): compound system  omega' = C omega + k psi (0,p,p')
+V3' - [-V3 + Q + k psi p]                                              residual = 0
+   wedge r ^ z' with r=(U,p,H), z'=(p,p',x-y):  -(12), (13), (23) components vs (V, V3, Q): 0 0 0
+Riccati defects of (eta0,zeta0) minus k psi (p,p')/V                   residual = 0, 0
+--- general Wronskian principle
+L2[1] - zeta                                                           residual = 0
+L2[U] - K                                                              residual = 0
+L2[p]                                                                  = (1) * O   remainder = 0
+L2[y-k] - W                                                            = (eta - mu + 1) * O   remainder = 0
+--- O1: W = W0(z) + kappa Q with W0 = x p - (1+eta0-mu)(x-y) + zeta0 (y-k);  on O=0
+W - [x p - (1+eta-mu)(x-y) + zeta (y-k)]                               = (-eta + mu - 1) * O   remainder = 0
+W(eta0 - p kappa, zeta0 - p' kappa) - [W0 + kappa Q]                   residual = 0
+--- O2: the kappa=0 plane through z contains z' and E
+V*(zeta0 p - eta0 p' - (x-y))                                          residual = 0
+V*(zeta0 U - eta0 p - (y-k))                                           residual = 0
+--- O2: crude dynamic upper bounds
+(y-zeta)' + (y-zeta) - eta zeta                                        residual = 0
+(lam-p-eta)' + mu(lam-p-eta) - [(y-zeta) + eta(eta+1-2mu)]             residual = 0
+--- B1(ii): at E, R(E) = eta_E - mu = gamma_E - A = 2 sigma
+   coefficient equations of (lam+gamma)(lam^2-2 sigma lam+|lam_u|^2) = lam^3+A lam^2+mu lam+k : [gamma - mu - 2*sigma - 1, -2*gamma*sigma - mu + w2, gamma*w2 - k]
+   => gamma - 2 sigma = A (lambda^2 coefficient);  eta_E = gamma-1 fixed point of Riccati with x=k: 0 0
+--- brief 3(d)/NOTES sec.3: Q0 = p^2 - 2 sigma U p + zeta_E U^2 has D Q0 = 2 sigma Q0 in the planar linearisation u'=v, v'=-zeta_E u+2 sigma v
+D Q0 - 2 sigma Q0                                                      residual = 0
+ALL EXACT CHECKS PASSED

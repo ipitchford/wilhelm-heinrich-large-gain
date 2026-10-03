@@ -1,0 +1,14 @@
+mu_0.02_rho_1.5 PASS {} n/a: []  16.2s
+mu_0.02_rho_4 PASS {} n/a: []  6.2s
+mu_0.3_rho_1.01 PASS {} n/a: ['gradient_fd']  24.9s
+mu_0.3_rho_1.5 PASS {} n/a: []  4.9s
+mu_0.3_rho_4 PASS {} n/a: []  4.3s
+mu_0.3_rho_12 PASS {} n/a: []  3.5s
+mu_1_rho_1.1 PASS {} n/a: ['gradient_fd']  7.9s
+mu_1_rho_1.5 PASS {} n/a: []  5.3s
+mu_1_rho_4 PASS {} n/a: []  3.1s
+mu_1_rho_12 PASS {} n/a: []  3.0s
+mu_3_rho_1.5 PASS {} n/a: []  4.8s
+mu_3_rho_12_cancellation_free PASS  1.4s
+mu_10_rho_4_cancellation_free PASS  2.1s
+v3_attractor: 156/156 passed -> PASS  [87.9s]

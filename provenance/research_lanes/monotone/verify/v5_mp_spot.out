@@ -1,0 +1,42 @@
+mu=1.0 rho=1.5 point of R: U0=3.633865 (=2.0 x crest), y0=69.345940, x0=113.576566
+  double/log integrator : U1=1.957604379440 y1=9.043785519743 tau=29.9044918581
+  mp Taylor (80 digits, order 57, 212 steps, 3s): U1=1.9576043794401 y1=9.0437855197417 tau=29.9044918581  p at event=-4.56e-68
+  consistency x/(k e^U) - 1 at the event = 2.24e-71
+  in int R:  x1-y1=12.2032 > 0,  y1-k=6.04379 > 0
+  DP[0,0]  mp variational+projection = 1.99710209162e-9   compound(log) = 1.9971020916e-09   (log10 -8.70)
+  DP[0,1]  mp variational+projection = 1.10057618118e-10   compound(log) = 1.1005761812e-10   (log10 -9.96)
+  DP[1,0]  mp variational+projection = 1.17251764989e-8   compound(log) = 1.1725176499e-08   (log10 -7.93)
+  DP[1,1]  mp variational+projection = 6.46158811438e-10   compound(log) = 6.4615881144e-10   (log10 -9.19)
+  all four entries positive in 80-digit arithmetic: True
+mu=1.0 rho=12.0 point of R: U0=5.578012 (=1.0 x crest), y0=3819.050060, x0=6349.083434
+  double/log integrator : U1=5.578011910046 y1=458.185982466580 tau=165.5706103832
+  mp Taylor (120 digits, order 86, 5027 steps, 127s): U1=5.5780119100479 y1=458.1859824653 tau=165.5706103833  p at event=-2.0e-67
+  consistency x/(k e^U) - 1 at the event = 2.28e-112
+  in int R:  x1-y1=5890.9 > 0,  y1-k=434.186 > 0
+  DP[0,0]  mp variational+projection = 5.60211579849e-67   compound(log) = 5.6021157984e-67   (log10 -66.25)
+  DP[0,1]  mp variational+projection = 4.31356588027e-69   compound(log) = 4.3135658802e-69   (log10 -68.37)
+  DP[1,0]  mp variational+projection = 1.70332588332e-64   compound(log) = 1.7033258833e-64   (log10 -63.77)
+  DP[1,1]  mp variational+projection = 1.31154168848e-66   compound(log) = 1.3115416885e-66   (log10 -65.88)
+  all four entries positive in 120-digit arithmetic: True
+mu=0.3 rho=4.0 point of R: U0=3.880938 (=1.0 x crest), y0=75.612641, x0=75.612641
+  double/log integrator : U1=3.886037744778 y1=21.325827756296 tau=59.1875660202
+  mp Taylor (100 digits, order 72, 449 steps, 6s): U1=3.8860377447767 y1=21.325827756329 tau=59.18756602018  p at event=-9.84e-68
+  consistency x/(k e^U) - 1 at the event = 2.49e-92
+  in int R:  x1-y1=54.6734 > 0,  y1-k=19.7658 > 0
+  DP[0,0]  mp variational+projection = 2.84130194218e-6   compound(log) = 2.8413019422e-06   (log10 -5.55)
+  DP[0,1]  mp variational+projection = 2.5031782651e-7   compound(log) = 2.5031782651e-07   (log10 -6.60)
+  DP[1,0]  mp variational+projection = 4.24073755128e-5   compound(log) = 4.2407375513e-05   (log10 -4.37)
+  DP[1,1]  mp variational+projection = 3.73607672904e-6   compound(log) = 3.7360767290e-06   (log10 -5.43)
+  all four entries positive in 100-digit arithmetic: True
+timeout 270 $P v5_mp_spot.py 0.3 4 1.0 1.0 100  7.44s user 0.09s system 98% cpu 7.623 total
+mu=3.0 rho=4.0 point of R: U0=4.593020 (=1.2 x crest), y0=94.940339, x0=4742.033942
+  double/log integrator : U1=3.831385334963 y1=235.028654282156 tau=11.6218497398
+  mp Taylor (160 digits, order 115, 289 steps, 11s): U1=3.831385334962 y1=235.02865428263 tau=11.62184973984  p at event=-4.23e-67
+  consistency x/(k e^U) - 1 at the event = -1.66e-156
+  in int R:  x1-y1=1979.04 > 0,  y1-k=187.029 > 0
+  DP[0,0]  mp variational+projection = 0.00291499940937   compound(log) = 2.9149994094e-03   (log10 -2.54)
+  DP[0,1]  mp variational+projection = 1.65445406757e-6   compound(log) = 1.6544540676e-06   (log10 -5.78)
+  DP[1,0]  mp variational+projection = 0.412519506086   compound(log) = 4.1251950609e-01   (log10 -0.38)
+  DP[1,1]  mp variational+projection = 0.000234131977044   compound(log) = 2.3413197705e-04   (log10 -3.63)
+  all four entries positive in 160-digit arithmetic: True
+timeout 280 $P v5_mp_spot.py 3.0 4 1.2 0.01 160  11.80s user 0.06s system 99% cpu 11.860 total

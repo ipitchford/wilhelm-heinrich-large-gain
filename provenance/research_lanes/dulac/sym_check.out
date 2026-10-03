@@ -1,0 +1,20 @@
+D O + (1+eta) O = 0                                            residual = 0
+K' + (1+eta)K = k psi(U)                                       residual = 0
+W' + (1+eta)W = x p^2  (mod O)                                 residual = 0   [= (eta**2 - eta*mu + eta - zeta)*O off-constraint]
+V' = (eta-mu)V + pK   (mod O)                                  residual = 0   [= (-U)*O off-constraint]
+V' = -mu V + V_UH      (state identity)                        residual = 0
+V_UH = pK + eta V      (mod O)                                 residual = 0   [= (-U)*O off-constraint]
+Q = p'(k-y) + p(x-y)   (state identity)                        residual = 0
+Q' = x V - A Q + k psi p'  (state identity)                    residual = 0
+Q' = (eta-mu)Q + pW    (mod O)                                 residual = 0   [= (eta*p + k - mu*p + p - y)*O off-constraint]
+V_UH' = -V_UH + Q + k psi p (state identity)                   residual = 0
+W = x p - (1+eta-mu)(x-y) + zeta (y-k)  (mod O)                residual = 0   [= (-eta + mu - 1)*O off-constraint]
+eta V - (V_UH - pK) = 0   (mod O)                              residual = 0   [= (U)*O off-constraint]
+zeta V - (Q - p'K) = 0    (mod O)                              residual = 0   [= (p)*O off-constraint]
+L2[1] = zeta                                                   residual = 0
+L2[U] = K                                                      residual = 0
+L2[p] = 0             (mod O)                                  residual = 0   [= (1)*O off-constraint]
+L2[y-k] = W           (mod O)                                  residual = 0   [= (eta - mu + 1)*O off-constraint]
+eta0' - [zeta0+(mu-1)eta0-eta0^2] = k psi p / V                residual = 0
+zeta0' - [x-(1+eta0)zeta0] = k psi p' / V                      residual = 0
+ALL IDENTITIES VERIFIED

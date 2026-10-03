@@ -1,0 +1,20 @@
+(1.3)  n' + J^T n + (1+eta) n = 0                                        residual = 0
+Lemma 4.2(i)  O' + (1+eta) O = 0,  O = n.f                               residual = 0
+Lemma 4.2(ii) K' + (1+eta)K - k(Ue^U-e^U+1) = 0                          residual = 0
+Lemma 4.2(iii) W' + (1+eta)W - x p^2 + eta' O = 0  (so =0 where O=0)     residual = 0
+W = n'.f                                                                 residual = 0
+Thm 4.1  Delta' + (1+eta)Delta + x1[e^{U2-U1}-1-(U2-U1)] = 0             residual = 0
+(3.1) ratios of H' = B H solve Riccati (eta)                             residual = 0
+(3.1) ratios of H' = B H solve Riccati (zeta)                            residual = 0
+char. poly  z^3+Az^2+mu z+k = (z+g)(z^2+(mu-etaE)z+zetaE)  [k=g(g-1)(g-mu)] residual = 0
+J_E v_s = -gamma v_s                                                     residual = 0
+J_E^T n_E = -gamma n_E                                                   residual = 0
+q' = y - mu q                                                            residual = 0
+Remark 5.1  h(u,0)-k = k(e^u-1)/(1+eta)                                  residual = 0
+D log(1+eta) = (zeta-mu)/(1+eta) + mu - eta                              residual = 0
+D log(zeta+mu eta) = x/(zeta+mu eta) - (1+eta-mu)                        residual = 0
+Claim 5  F(theta q)^F(q) = -v[theta(H(q)-k)+k-H(theta q)]                residual = 0
+general: D omega - C omega = conj(f ^ (Dnu f - J nu)), omega = conj(f^nu) residual = 0
+Claim 5 (3D): nu=(U,p,y-k):  D omega - C omega = k(Ue^U-e^U+1)(0,p,p')   residual = 0
+Prop 8.1(ii)  d/dt (F^J) = (div F)(F^J)                                  residual = 0
+ALL IDENTITIES OK

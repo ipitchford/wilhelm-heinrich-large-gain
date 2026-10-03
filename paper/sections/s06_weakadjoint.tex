@@ -1,0 +1,352 @@
+\section{The strong-stable direction and the weak adjoint}\label{sec:weakadjoint}
+
+Sections~\ref{sec:adjoint}--\ref{sec:gauges} use the positive adjoint direction $n=(\zeta,-\eta,-1)^{\mathsf T}$, which annihilates the tangent of a cycle and decays at the strong rate. This section treats the complementary pair: the strong-stable Floquet vector $e_s$, and the adjoint solution $\Psi$ that annihilates the tangent and $e_s$ and carries the weak multiplier. We prove that $e_s$ lies in a fixed open octant, with explicit bounds on its component ratios (Lemma~\ref{lem:strongstable}); that each component of $\Psi$ has exactly two simple zeros per period, in a fixed order relative to the six extrema of Theorem~\ref{thm:six} (Theorem~\ref{thm:twelve}); that the planes spanned by the tangent and $e_s$ strictly support the cycle (Theorem~\ref{thm:dualsupport}); that the crest return map is defined, $C^1$ and monotone on an explicit region of the crest section (Proposition~\ref{prop:crestmonotone}); and that pairing $\Psi$ with periodic test functions produces one scalar identity (Proposition~\ref{prop:rankone}). None of these statements determines the sign of $\lambda_c$. The last paragraph of the section states what the identity gives and what is missing. Floating-point tests of the statements of this section are reported in Section~\ref{sec:evidence}; the proofs do not use them.
+
+\paragraph{Local notation.}
+Throughout the section $(\mu,k)\in\cP$ is fixed and $\Gamma(t)=(U(t),p(t),y(t))$ is a cycle of \eqref{eq:logsystem} with least period $T$. Thus $\Gamma'=(p,p',y')$ and $\Gamma''=(p',p'',y'')$, with $p''=-\mu p'-y'$ and $y''=xp-y'$. A second solution is written $\tilde\Gamma=(\tilde U,\tilde p,\tilde y)$. The following symbols are local: the event times and the arcs $I_\pm$ of \S\ref{wk:sec:signs}; $\theta=-p'/p$; $q=p'+\mathfrak r p$; $\varpi=e^{At}a$; the zeros $t_j^\pm$ of the components $\Psi_j$ and $t_\ast=t_3^-$; the affine function $L$; the operators $\mathcal L_3=D^3+AD^2+\mu D+x$ of \eqref{eq:factorisation} and $\mathcal L_2$ of Remark~\ref{wk:rem:secondorder}; the vector $v_\varphi$; the region $\mathcal Q$ and the return map $P$; and the auxiliary quantities $g_1,g_2,\beta,\sigma,\nu,\tilde c$. The matrix $S=\diag(1,-1,-1)$ is that of \eqref{eq:adjointmatrices}. The cone $C_+$ of \eqref{eq:cones} is used as a cone of vectors, $C_+=\{v\in\R^3:\ v_1\ge0,\ v_2\le0,\ v_3\le0\}$, so that $SC_+$ is the closed positive octant.
+
+\subsection{Sign table and two preliminary relations}\label{wk:sec:signs}
+By Theorems~\ref{thm:geometry} and~\ref{thm:six} and their proofs, each of $p$, $p'$ and $y'$ has exactly two zeros in a period, all of them simple, and the six zeros occur in the order \eqref{eq:six}. We write the event times as
+\begin{equation}\label{wk:eq:events}
+t_{\mathrm{tr}}<t_{Z\min}<t_{Y\min}<t_{\mathrm{cr}}<t_{Z\max}<t_{Y\max}<t_{\mathrm{tr}}+T .
+\end{equation}
+Here $t_{\mathrm{tr}}$ and $t_{\mathrm{cr}}$ are the trough and the crest of $U$, that is, the zeros of $p$; $t_{Z\min}$ and $t_{Z\max}$ are the minimum and the maximum of $y$, the zeros of $y'$; and $t_{Y\min}$ and $t_{Y\max}$ are the \emph{maximum} and the \emph{minimum} of $p$, the zeros of $p'$ (the labels refer to the chemical variable $Y=1-p/\lambda$). Consequently
+\begin{equation}\label{wk:eq:signs}
+\begin{aligned}
+&p>0\ \text{on }(t_{\mathrm{tr}},t_{\mathrm{cr}}),&\qquad&p<0\ \text{on }(t_{\mathrm{cr}},t_{\mathrm{tr}}+T),\\
+&p'>0\ \text{on }(t_{Y\max}-T,t_{Y\min}),&&p'<0\ \text{on }(t_{Y\min},t_{Y\max}),\\
+&y'>0\ \text{on }(t_{Z\min},t_{Z\max}),&&y'<0\ \text{on }(t_{Z\max},t_{Z\min}+T).
+\end{aligned}
+\end{equation}
+The projection of the cycle is regular (Theorem~\ref{thm:geometry}), so $(p,p')\ne(0,0)$ for all $t$. Within one period the set $\{pp'<0\}$ consists of the two arcs
+\begin{align*}
+I_+&:=(t_{Y\min},t_{\mathrm{cr}}),&&\text{where }p>0,\ p'<0,\ y'>0,\\
+I_-&:=(t_{Y\max},t_{\mathrm{tr}}+T),&&\text{where }p<0,\ p'>0,\ y'<0 .
+\end{align*}
+On $I_+\cup I_-$ put $\theta:=-p'/p>0$. Since $p''=-\mu p'-y'$,
+\begin{equation}\label{wk:eq:theta}
+\theta'=\theta^2-\mu\theta+\frac{y'}{p},\qquad \frac{y'}{p}>0\quad\text{on }I_+\cup I_- .
+\end{equation}
+On each of the two arcs $\theta\to0$ at the left end, where $p'=0\ne p$, and $\theta\to+\infty$ at the right end, where $p=0\ne p'$.
+
+With $n=(\zeta,-\eta,-1)^{\mathsf T}$, equations \eqref{eq:projective} give $n'=-J^{\mathsf T}n-(1+\eta)n$. Hence every solution $v$ of the variational equation $v'=Jv$ along the cycle satisfies
+\begin{equation}\label{wk:eq:ndecay}
+(n\cdot v)'=-(1+\eta)\,n\cdot v,\qquad n(t+T)\cdot v(t+T)=m_s\,n(t)\cdot v(t),
+\end{equation}
+the second relation by \eqref{eq:exponent}.
+
+\subsection{The strong-stable vector}
+\begin{lemma}[Strong-stable ratios]\label{lem:strongstable}
+Along every cycle the following hold.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item The Floquet solution $e_s$ of $v'=Jv$ with multiplier $m_s$ can be normalised as $e_s=(a,-b,-c)^{\mathsf T}$ with $a,b,c>0$ for all $t$; that is, $e_s(t)$ lies in the interior of $C_+$.
+\item The ratios $\mathfrak r=b/a$ and $\mathfrak s=c/a$ are $T$-periodic and satisfy
+\begin{equation}\label{wk:eq:ricc}
+\mathfrak r'=\mathfrak r^2-\mu\mathfrak r-\mathfrak s,\qquad \mathfrak s'=(\mathfrak r-1)\mathfrak s-x,
+\end{equation}
+\begin{equation}\label{wk:eq:rbounds}
+\mathfrak r>\max(1,\mu),\qquad \mathfrak s>\max\bigl(0,(1-\mu)\mathfrak r\bigr).
+\end{equation}
+\item The ratio $\mathfrak r$ solves the scalar equation
+\begin{equation}\label{wk:eq:rscalar}
+\mathfrak r''+(A-3\mathfrak r)\mathfrak r'+\mathfrak r(\mathfrak r-1)(\mathfrak r-\mu)=x ,
+\end{equation}
+the scalar variational operator factors as
+\begin{equation}\label{wk:eq:rfactor}
+D^3+AD^2+\mu D+x=\bigl[D^2+(A-\mathfrak r)D+(\mathfrak r-1)(\mathfrak r-\mu)-2\mathfrak r'\bigr](D+\mathfrak r),
+\end{equation}
+and
+\begin{equation}\label{wk:eq:rmean}
+\avg{\mathfrak r}=\gamma=1+\avg\eta,\qquad \lambda_c=\avg{\mathfrak r}-A .
+\end{equation}
+\item With $x=ke^{U(t)}$ taken along the cycle, $\mathfrak r$ is the only $T$-periodic solution of \eqref{wk:eq:rscalar}.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(a) Write a solution of $v'=Jv$ as $v=(a,-b,-c)^{\mathsf T}$, that is, $(a,b,c)^{\mathsf T}=Sv$. Then
+\begin{equation}\label{wk:eq:abc}
+a'=-b,\qquad b'=-\mu b-c,\qquad c'=-xa-c .
+\end{equation}
+In reversed time this is the linear system with coefficient matrix
+$\begin{psmallmatrix}0&1&0\\0&\mu&1\\x&0&1\end{psmallmatrix}$, whose entries are nonnegative and which is irreducible because $x>0$: the three coordinates are linked cyclically by the positive entries $1$, $1$ and $x$. Its evolution over every positive interval of reversed time is therefore an entrywise positive matrix. In particular the backward period map $(a,b,c)(t_0)\mapsto(a,b,c)(t_0-T)$ is a positive matrix. It is conjugate by $S$ to the inverse of the monodromy matrix, so its eigenvalues are $1$, $1/m_t$ and $1/m_s$, and by \eqref{eq:multipliers} the largest is $1/m_s$. By the Perron--Frobenius theorem this eigenvalue is simple and has an eigenvector with positive entries. The solution $e_s$ through this eigenvector satisfies $e_s(t-T)=m_s^{-1}e_s(t)$. It has $a,b,c>0$ on $(-\infty,t_0]$ by backward propagation, and then for all $t$ because $e_s(t+T)=m_se_s(t)$ with $m_s>0$.
+
+(b) The ratios are periodic because $a$, $b$ and $c$ have the same multiplier. Differentiation with \eqref{wk:eq:abc} gives \eqref{wk:eq:ricc}, and $\mathfrak s>0$ by (a). At a minimum of the positive periodic function $\mathfrak r$ the first equation of \eqref{wk:eq:ricc} gives $\mathfrak r(\mathfrak r-\mu)=\mathfrak s>0$, so $\mathfrak r>\mu$ at its minimum and hence everywhere.
+
+For the bound $\mathfrak r>1$ put $\tilde c:=c+(\mu-1)b$. By \eqref{wk:eq:abc},
+\[
+a'=-b,\qquad b'=-b-\tilde c,\qquad \tilde c'=-xa-\mu\tilde c ,
+\]
+which is \eqref{wk:eq:abc} with the rates $1$ and $\mu$ interchanged. Its coefficient matrix in reversed time is again nonnegative and irreducible, so its backward period map is a positive matrix. The two systems are conjugate by the constant matrix $(a,b,c)\mapsto(a,b,c+(\mu-1)b)$. The second backward period map therefore has the same eigenvalues, its Perron eigenvalue is $1/m_s$, and its positive Perron eigenvector is mapped by the conjugacy to an eigenvector of the first map for the simple eigenvalue $1/m_s$, that is, to a multiple of $(a,b,c)(t_0)$. The multiple is positive because both first components are positive. Hence $\tilde c>0$ for all $t$, which is the inequality $\mathfrak s>(1-\mu)\mathfrak r$. Since $\mathfrak r'=\mathfrak r^2-\mathfrak r-\tilde c/a$, at a minimum of $\mathfrak r$ we get $\mathfrak r(\mathfrak r-1)=\tilde c/a>0$, so $\mathfrak r>1$.
+
+(c) Substituting $\mathfrak s=\mathfrak r^2-\mu\mathfrak r-\mathfrak r'$ into the second equation of \eqref{wk:eq:ricc} gives \eqref{wk:eq:rscalar}. Applied to a function $\varphi$, the right-hand side of \eqref{wk:eq:rfactor} equals
+\[
+\varphi'''+A\varphi''+\bigl[(A-\mathfrak r)\mathfrak r+(\mathfrak r-1)(\mathfrak r-\mu)\bigr]\varphi'
++\bigl[\mathfrak r''+(A-3\mathfrak r)\mathfrak r'+\mathfrak r(\mathfrak r-1)(\mathfrak r-\mu)\bigr]\varphi .
+\]
+The coefficient of $\varphi'$ is $\mu$ and the coefficient of $\varphi$ is $x$ by \eqref{wk:eq:rscalar}. Finally $a'=-\mathfrak ra$ and $a(t+T)=m_sa(t)$ give $T\avg{\mathfrak r}=-\log m_s$, and \eqref{eq:exponent} yields \eqref{wk:eq:rmean}.
+
+(d) Let $R$ be a $T$-periodic solution of \eqref{wk:eq:rscalar} and put $\tilde a(t):=\exp\bigl(-\int_0^tR\bigr)>0$. A direct computation gives
+\[
+\tilde a'''+A\tilde a''+\mu\tilde a'+x\tilde a=\bigl[x-R''-(A-3R)R'-R(R-1)(R-\mu)\bigr]\tilde a=0 ,
+\]
+so $v:=(\tilde a,\tilde a',-\tilde a''-\mu\tilde a')^{\mathsf T}$ solves $v'=Jv$, and $v(t+T)=mv(t)$ with $m=e^{-T\avg R}$. Thus $m$ is one of $1,m_t,m_s$. Suppose $m\ne m_s$. Then \eqref{wk:eq:ndecay} and the periodicity of $n$ give $m\,n\cdot v=m_s\,n\cdot v$, hence $n\cdot v\equiv0$, which reads
+\[
+\tilde a''+(\mu-\eta)\tilde a'+\zeta\tilde a=0 .
+\]
+By \eqref{eq:tangent} the function $p$ solves the same second-order linear equation, and $p$ has zeros. The periodic function $p$ has an infinite sequence of consecutive simple zeros. By the Sturm separation theorem a solution linearly independent of $p$ has a zero between each consecutive pair of them, and a multiple of $p$ vanishes where $p$ does; so every nontrivial real solution of this equation vanishes somewhere. This contradicts $\tilde a>0$. Therefore $m=m_s$. This multiplier is simple, so $v$ is a constant multiple of $e_s$ and $R=-\tilde a'/\tilde a=\mathfrak r$.
+\end{proof}
+
+\begin{corollary}[Reformulation of the stability condition]\label{wk:cor:reform}
+For every cycle, equation \eqref{wk:eq:rscalar} with $x=ke^{U(t)}$ has exactly one $T$-periodic solution $\mathfrak r$; it satisfies $\mathfrak r>\max(1,\mu)$, and
+\[
+\lambda_c<0\iff\avg{\mathfrak r}<A,\qquad\lambda_c=0\iff\avg{\mathfrak r}=A .
+\]
+\end{corollary}
+\begin{proof}
+Existence and the bound are parts (a)--(c) of Lemma~\ref{lem:strongstable}, uniqueness is part (d), and the equivalences are \eqref{wk:eq:rmean}.
+\end{proof}
+The inequality $\avg{\mathfrak r}<A$ is equivalent to $\lambda_c<0$ for the cycle under consideration. If it holds for every cycle at a parameter in $\cP$, the cycle at that parameter is unique (Corollary~\ref{cor:criterion}). The converse is not claimed: a unique cycle with $m_t=1$ is not excluded by the results of this paper, so uniqueness at a parameter gives only $\avg{\mathfrak r}\le A$ on its cycle.
+
+Equation \eqref{wk:eq:rscalar} is the mirror image of the equation satisfied by $g=1+\eta$. Indeed \eqref{eq:projective} gives
+\[
+g''+(3g-A)g'+g(g-1)(g-\mu)=x,\qquad \avg g=\gamma=\avg{\mathfrak r} ,
+\]
+which differs from \eqref{wk:eq:rscalar} only in the sign of the first-order term, that is, by a reversal of time with the forcing $x$ kept in place. Likewise \eqref{wk:eq:rfactor} splits the factor $D+\mathfrak r$ off on the right, whereas \eqref{eq:factorisation} splits $D+1+\eta$ off on the left.
+
+\subsection{The weak adjoint}
+\begin{lemma}[Weak adjoint]\label{wk:lem:weakadjoint}
+Put $\varpi:=e^{At}a>0$ and
+\begin{equation}\label{wk:eq:psi}
+\Psi:=e^{At}\,\Gamma'\times e_s=\varpi\,\bigl(\mathfrak r y'-\mathfrak s p',\ \ y'+\mathfrak s p,\ \ -(p'+\mathfrak r p)\bigr)^{\mathsf T}.
+\end{equation}
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item $\Psi'=-J^{\mathsf T}\Psi$; in components,
+\begin{equation}\label{wk:eq:psicomp}
+\Psi_1'=-x\Psi_3,\qquad \Psi_2'=\mu\Psi_2-\Psi_1,\qquad \Psi_3'=\Psi_3+\Psi_2 .
+\end{equation}
+\item $\Psi\cdot\Gamma'=\Psi\cdot e_s=0$; $\Psi(t)\ne0$ for all $t$; $\Psi\cdot v=e^{At}\det\bigl(v,\Gamma',e_s\bigr)$ for every $v\in\R^3$; and
+\begin{equation}\label{wk:eq:quasi}
+\Psi(t+T)=e^{-\lambda_cT}\Psi(t),\qquad \varpi(t+T)=e^{-\lambda_cT}\varpi(t).
+\end{equation}
+\item For every solution $\tilde\Gamma$ of \eqref{eq:logsystem} on an interval, with $d=\tilde\Gamma-\Gamma$,
+\begin{equation}\label{wk:eq:chord}
+\frac{\mathrm d}{\mathrm dt}\bigl(\Psi\cdot d\bigr)=\Psi_3\,x\,\Rem(\tilde U-U),\qquad
+\frac{\mathrm d}{\mathrm dt}\bigl(\Psi\cdot\Gamma''\bigr)=\Psi_3\,x\,p^2 .
+\end{equation}
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+For a $3\times3$ matrix $J$ and vectors $u,v$ one has $(Ju)\times v+u\times(Jv)=(\tr J-J^{\mathsf T})(u\times v)$. Since $\tr J=-A$, every pair of solutions of $v'=Jv$ satisfies $(e^{At}u\times v)'=-J^{\mathsf T}(e^{At}u\times v)$. With $u=\Gamma'$ and $v=e_s$ this is (a), and \eqref{wk:eq:psicomp} is read off from $J^{\mathsf T}$. Formula \eqref{wk:eq:psi} is the cross product of $(p,p',y')$ and $(a,-b,-c)$. The orthogonality relations and the determinant formula are properties of the cross product. The solutions $\Gamma'$ and $e_s$ are nonzero Floquet solutions with the distinct multipliers $1$ and $m_s$, so they are linearly independent at every $t$ and $\Psi\ne0$. Relation \eqref{wk:eq:quasi} follows from the periodicity of $\Gamma'$, from $e_s(t+T)=m_se_s(t)$, and from $e^{AT}m_s=1/m_t=e^{-\lambda_cT}$, which is \eqref{eq:multipliers} with \eqref{eq:exponent}.
+
+(c) The vector field of \eqref{eq:logsystem} is affine except for the term $ke^U$ in its third component. Therefore $d'=Jd+x\,\Rem(\tilde U-U)\,e_3$, with $J$ and $x$ evaluated on $\Gamma$ and $e_3=(0,0,1)^{\mathsf T}$. Differentiating $\Gamma''=J\Gamma'$ gives $\Gamma'''=J\Gamma''+xp^2e_3$. Pairing each relation with $\Psi$ and using (a) gives \eqref{wk:eq:chord}.
+\end{proof}
+The adjoint equation $\Psi'=-J^{\mathsf T}\Psi$ has the Floquet multipliers $1$, $1/m_t$ and $1/m_s$. By \eqref{wk:eq:quasi}, $\Psi$ is its Floquet solution for $1/m_t$; we call it the \emph{weak adjoint}. The solution for $1/m_s$ is the positive adjoint solution of Section~\ref{sec:adjoint}, which is proportional to $n$. The third component is $\Psi_3=e^{At}(pa'-p'a)$, that is, $e^{At}$ times the Wronskian $pa'-p'a$ of the tangent solution $p$ and the strong-stable solution $a$ of the scalar variational equation.
+
+\subsection{The twelve-event order}
+Zero counts of the following type are familiar from the theory of monotone cyclic feedback systems \cite{MPS90}. The proof below is direct; in addition to the counts it locates each zero relative to the six extrema.
+\begin{theorem}[Twelve-event order]\label{thm:twelve}
+On every cycle each component of the weak adjoint $\Psi$ has exactly two zeros per period, and all of them are simple. Let $t_j^+$ denote the zero at which $\Psi_j$ changes from negative to positive and $t_j^-$ the zero at which it changes from positive to negative $(j=1,2,3)$. Then
+\begin{equation}\label{wk:eq:twelve}
+t_{\mathrm{tr}}<t_2^+<t_{Z\min}<t_1^+<t_{Y\min}<t_3^+<t_{\mathrm{cr}}
+<t_2^-<t_{Z\max}<t_1^-<t_{Y\max}<t_3^-<t_{\mathrm{tr}}+T .
+\end{equation}
+In particular all three components of $\Psi$ are positive at the crest and negative at the trough, and
+\begin{equation}\label{wk:eq:qsign}
+q:=p'+\mathfrak r p\ \begin{cases}>0&\text{on }(t_3^--T,\,t_3^+),\\[2pt] <0&\text{on }(t_3^+,\,t_3^-).\end{cases}
+\end{equation}
+\end{theorem}
+We call $(t_3^+,t_3^-)$, which contains the crest, the \emph{crest arc}, and $(t_3^-,t_3^++T)$ the \emph{trough arc}. By \eqref{wk:eq:psi}, $\Psi_3=-\varpi q$ is positive on the crest arc and negative on the trough arc. The phases $t_3^\pm$ are the two phases at which $p'/p=-\mathfrak r$, that is, at which the projection $(a,-b)$ of $e_s$ to the $(U,p)$ plane is tangent to the projected cycle.
+\begin{proof}
+All signs of $p$, $p'$ and $y'$ are taken from \eqref{wk:eq:signs}. We use repeatedly that a continuous function on an interval which is negative near the left end, positive near the right end, and has a positive derivative at each of its zeros, has exactly one zero.
+
+\emph{The component $\Psi_3=-\varpi q$.} On $[t_{\mathrm{tr}},t_{Y\min}]$ we have $p\ge0$ and $p'\ge0$, not both zero, so $q>0$. On $[t_{\mathrm{cr}},t_{Y\max}]$ we have $p\le0$ and $p'\le0$, not both zero, so $q<0$. On $I_+\cup I_-$, $q=p(\mathfrak r-\theta)$. By \eqref{wk:eq:theta} and \eqref{wk:eq:ricc},
+\[
+(\theta-\mathfrak r)'=(\theta-\mathfrak r)(\theta+\mathfrak r-\mu)+\frac{y'}{p}+\mathfrak s ,
+\]
+so at every zero of $\theta-\mathfrak r$ its derivative equals $y'/p+\mathfrak s>0$. On each of $I_+$ and $I_-$ the function $\theta-\mathfrak r$ tends to $-\mathfrak r<0$ at the left end and to $+\infty$ at the right end. Hence it has exactly one zero $t_3^+\in I_+$ and exactly one zero $t_3^-\in I_-$, both simple. On $I_+$, where $p>0$, $q$ is positive before $t_3^+$ and negative after it; on $I_-$, where $p<0$, $q$ is negative before $t_3^-$ and positive after it. This proves \eqref{wk:eq:qsign}, the statements about $\Psi_3$, and the positions of $t_3^\pm$ in \eqref{wk:eq:twelve}.
+
+\emph{The component $\Psi_2=\varpi(y'+\mathfrak sp)$.} On $[t_{Z\min},t_{\mathrm{cr}}]$ we have $y'\ge0$ and $p\ge0$, not both zero, so $\Psi_2>0$. On $[t_{Z\max},t_{\mathrm{tr}}+T]$ we have $y'\le0$ and $p\le0$, not both zero, so $\Psi_2<0$. On the two remaining intervals $(t_{\mathrm{cr}},t_{Z\max})$ and $(t_{\mathrm{tr}},t_{Z\min})$ write $\Psi_2=\varpi\,p\,g_2$ with $g_2:=y'/p+\mathfrak s$. On both intervals $g_2\to-\infty$ at the left end, where $p\to0$ and $y'/p<0$, and $g_2=\mathfrak s>0$ at the right end, where $y'=0$. A computation with $y''=xp-y'$ and \eqref{wk:eq:ricc} gives
+\[
+g_2'=\frac{\mathfrak s\,q}{p}-g_2\Bigl(1+\frac{p'}{p}\Bigr),
+\]
+so at a zero of $g_2$ its derivative is $\mathfrak sq/p$. This is positive, because $q$ and $p$ have the same sign on each of the two intervals: both are negative on $(t_{\mathrm{cr}},t_{Z\max})\subset[t_{\mathrm{cr}},t_{Y\max}]$ and both are positive on $(t_{\mathrm{tr}},t_{Z\min})\subset[t_{\mathrm{tr}},t_{Y\min}]$, by the first step. Hence $g_2$ has exactly one zero in each interval, and it is simple. In $(t_{\mathrm{cr}},t_{Z\max})$, where $p<0$, $\Psi_2$ changes from positive to negative; in $(t_{\mathrm{tr}},t_{Z\min})$, where $p>0$, it changes from negative to positive.
+
+\emph{The component $\Psi_1=\varpi(\mathfrak ry'-\mathfrak sp')$.} On $[t_{Y\min},t_{Z\max}]$ we have $p'\le0\le y'$, not both zero, so $\Psi_1>0$. On $[t_{Y\max},t_{Z\min}+T]$ we have $p'\ge0\ge y'$, not both zero, so $\Psi_1<0$. On the two remaining intervals $(t_{Z\min},t_{Y\min})$ and $(t_{Z\max},t_{Y\max})$ write $\Psi_1=\varpi\,\mathfrak r\,p'\,g_1$ with $g_1:=y'/p'-\mathfrak s/\mathfrak r$. On both intervals $g_1=-\mathfrak s/\mathfrak r<0$ at the left end, where $y'=0$, and $g_1\to+\infty$ at the right end, where $p'\to0$ and $y'/p'>0$. A computation with $y''=xp-y'$, $p''=-\mu p'-y'$ and \eqref{wk:eq:ricc} gives
+\[
+g_1'=\frac{x\,q}{\mathfrak r\,p'}+g_1\Bigl(\mu-1+\frac{y'}{p'}+\frac{\mathfrak s}{\mathfrak r}\Bigr),
+\]
+so at a zero of $g_1$ its derivative is $xq/(\mathfrak rp')$. This is positive, because $q$ and $p'$ are both positive on $(t_{Z\min},t_{Y\min})\subset[t_{\mathrm{tr}},t_{Y\min}]$ and both negative on $(t_{Z\max},t_{Y\max})\subset[t_{\mathrm{cr}},t_{Y\max}]$. Hence $g_1$ has exactly one zero in each interval, and it is simple. In $(t_{Z\min},t_{Y\min})$, where $p'>0$, $\Psi_1$ changes from negative to positive; in $(t_{Z\max},t_{Y\max})$, where $p'<0$, it changes from positive to negative.
+
+For each component the two closed intervals on which it has a fixed sign and the two open intervals containing one zero each cover a full period. This gives the count of two zeros and the order \eqref{wk:eq:twelve}. The crest lies in $[t_{Y\min},t_{Z\max}]$, in $[t_{Z\min},t_{\mathrm{cr}}]$ and in the crest arc, so $\Psi>0$ there; the trough lies in $[t_{Y\max},t_{Z\min}+T]$, in $[t_{Z\max},t_{\mathrm{tr}}+T]$ and in the trough arc (modulo $T$), so $\Psi<0$ there.
+\end{proof}
+
+\subsection{Strong-stable planes support the cycle}
+\begin{lemma}[A supporting line of the projected cycle]\label{wk:lem:line}
+Let $t_\ast:=t_3^-\in I_-$ and
+\[
+L(u,v):=p'(t_\ast)\,\bigl(u-U(t_\ast)\bigr)-p(t_\ast)\,\bigl(v-p(t_\ast)\bigr).
+\]
+Then $L(U(t),p(t))>0$ for all $t\not\equiv t_\ast\pmod T$, and $L>0$ on the bounded component of $\R^2\setminus\pi(\Gamma)$. Moreover
+\begin{equation}\label{wk:eq:linedata}
+\begin{gathered}
+U(t_\ast)<0,\qquad L(0,0)=\Sg(t_\ast)>0,\\
+\frac{\mathrm d^2}{\mathrm dt^2}L\bigl(U(t),p(t)\bigr)\Big|_{t=t_\ast}=\Xg(t_\ast)=\bigl[p^2\,\mathfrak r(\mathfrak r-\mu)+p\,y'\bigr](t_\ast)>0 .
+\end{gathered}
+\end{equation}
+\end{lemma}
+The zero set of $L$ is the tangent line of the projected cycle at the phase $t_\ast$. The positivity of $\Sg$ and $\Xg$ at every phase, and with it the statement that every tangent line of the projected cycle is a strict supporting line, is part of Theorem~\ref{thm:gauges}. The proof below does not use that theorem; it uses Lemma~\ref{lem:strongstable}, the sign table, the Jordan-curve statement of Theorem~\ref{thm:geometry} and Corollary~\ref{cor:cones}.
+\begin{proof}
+Put $L_\Gamma(t):=L(U(t),p(t))$. Then $L_\Gamma'(t)=p'(t_\ast)p(t)-p(t_\ast)p'(t)$, which vanishes exactly when the nonzero vectors $(p,p')(t)$ and $(p,p')(t_\ast)$ are parallel. Since $p(t_\ast)<0<p'(t_\ast)$, this forces $p(t)p'(t)<0$, hence $t\in I_+\cup I_-$ modulo $T$, and $\theta(t)=\theta(t_\ast)=\mathfrak r(t_\ast)=:\theta_\ast$. On each of $I_+$ and $I_-$ the function $\theta$ runs from $0$ to $+\infty$, and at every point where $\theta=\theta_\ast$, \eqref{wk:eq:theta} and $\theta_\ast>\mu$ (Lemma~\ref{lem:strongstable}) give
+\[
+\theta'=\theta_\ast(\theta_\ast-\mu)+\frac{y'}{p}>0 .
+\]
+So the level $\theta_\ast$ is attained exactly once in $I_+$ and exactly once in $I_-$, the latter at $t_\ast$: the function $L_\Gamma$ has exactly two critical points per period. Using $p''=-\mu p'-y'$ and $p'(t_\ast)=-\mathfrak r(t_\ast)p(t_\ast)$,
+\[
+L_\Gamma''(t_\ast)=\bigl(p'^2-pp''\bigr)(t_\ast)=\bigl(p'^2+\mu pp'+py'\bigr)(t_\ast)=\bigl[p^2\,\mathfrak r(\mathfrak r-\mu)+p\,y'\bigr](t_\ast)>0,
+\]
+because $\mathfrak r>\mu$ and because $p<0$ and $y'<0$ on $I_-$. A nonconstant periodic $C^2$ function attains its maximum and its minimum at two critical points that are distinct modulo $T$. Here there are only two critical points per period, and the strict local minimum $t_\ast$ cannot be a point of maximum. Therefore $t_\ast$ is the unique point of minimum modulo $T$, and $L_\Gamma(t)>L_\Gamma(t_\ast)=0$ for $t\not\equiv t_\ast$.
+
+Let $w$ be a point of the bounded component of $\R^2\setminus\pi(\Gamma)$ and suppose $L(w)\le0$. The half-line from $w$ in the direction $-\nabla L$ lies, apart from $w$ itself, in $\{L<0\}$, which does not meet $\pi(\Gamma)\subset\{L\ge0\}$; and $w\notin\pi(\Gamma)$. So $w$ is joined to infinity in the complement of $\pi(\Gamma)$, a contradiction. Hence $L>0$ on the bounded component, which contains the origin by Theorem~\ref{thm:geometry}. This gives $L(0,0)=p(t_\ast)^2-U(t_\ast)p'(t_\ast)=\Sg(t_\ast)>0$.
+
+Finally, inequality \eqref{eq:equilibriumreverse} of Corollary~\ref{cor:cones}, that is $\LamE=(y-k)-\zeta_EU+\eta_Ep>0$, with $y-k=-p'-\mu p$ reads $-p'+(\eta_E-\mu)p-\zeta_EU>0$. At $t_\ast$ we have $p'>0$, $p<0$ and $\eta_E>\mu$, so $-\zeta_EU(t_\ast)>0$ and $U(t_\ast)<0$.
+\end{proof}
+
+\begin{theorem}[Strong-stable supporting planes]\label{thm:dualsupport}
+For every cycle $\Gamma$, every $t\in\R$ and every $\sigma\not\equiv0\pmod T$,
+\begin{equation}\label{wk:eq:DS}
+\begin{gathered}
+\det\bigl(\Gamma(t+\sigma)-\Gamma(t),\ \Gamma'(t),\ e_s(t)\bigr)<0,\qquad
+\det\bigl(E-\Gamma(t),\ \Gamma'(t),\ e_s(t)\bigr)<0,\\
+\det\bigl(\Gamma''(t),\ \Gamma'(t),\ e_s(t)\bigr)<0 .
+\end{gathered}
+\end{equation}
+Thus the affine plane $\Gamma(t)+\operatorname{span}\{\Gamma'(t),e_s(t)\}$ meets the cycle only at $\Gamma(t)$, the contact there is of exactly second order, and the rest of the cycle and the equilibrium lie strictly on one side of the plane. The first inequality remains true with $\Gamma(t+\sigma)$ replaced by $\tilde\Gamma(t)$, for every solution $\tilde\Gamma$ of \eqref{eq:logsystem} defined for all $t\in\R$ whose projection satisfies $L\bigl(\pi\tilde\Gamma(t_\ast+jT)\bigr)>0$ for all $j\in\mathbb Z$, with $L$ and $t_\ast$ as in Lemma~\ref{wk:lem:line}. In particular it holds, at all pairs of phases, for every cycle whose projection lies inside $\pi(\Gamma)$.
+\end{theorem}
+\begin{proof}
+By Lemma~\ref{wk:lem:weakadjoint}(b), $\Psi\cdot v=e^{At}\det(v,\Gamma',e_s)$. It therefore suffices to show $\mathcal B(t)<0$ for all $t$, where $\mathcal B:=\Psi\cdot d$ with $d=\tilde\Gamma-\Gamma$, or $\mathcal B:=\Psi\cdot\Gamma''$. By \eqref{wk:eq:chord}, $\mathcal B'$ is the product of $\Psi_3$ and a nonnegative function. By Theorem~\ref{thm:twelve} and \eqref{wk:eq:quasi}, for every $j\in\mathbb Z$ we have $\Psi_3\ge0$ on $[t_3^++jT,\,t_\ast+jT]$ and $\Psi_3\le0$ on $[t_\ast+jT,\,t_3^++(j+1)T]$. Hence on the window $[t_3^++jT,\,t_3^++(j+1)T]$ the function $\mathcal B$ attains its maximum at $t_\ast+jT$.
+
+At $t_\ast$ we have $\Psi_3=0$, and $\Psi\cdot\Gamma'=0$ then gives $\Psi(t_\ast)=\beta\,\bigl(p'(t_\ast),-p(t_\ast),0\bigr)^{\mathsf T}$ with $\beta=-\Psi_2(t_\ast)/p(t_\ast)$. By \eqref{wk:eq:psi}, $\Psi_2(t_\ast)=\varpi(y'+\mathfrak sp)(t_\ast)<0$, since $y'<0$ and $p<0$ on $I_-$; and $p(t_\ast)<0$. So $\beta<0$. By \eqref{wk:eq:quasi}, $\Psi(t_\ast+jT)=\beta_j\,(p'(t_\ast),-p(t_\ast),0)^{\mathsf T}$ with $\beta_j=e^{-j\lambda_cT}\beta<0$. Therefore
+\[
+\mathcal B(t_\ast+jT)=\beta_j\,L\bigl(\pi\tilde\Gamma(t_\ast+jT)\bigr)\quad\text{for }\mathcal B=\Psi\cdot d,\qquad
+\mathcal B(t_\ast+jT)=\beta_j\,L_\Gamma''(t_\ast)\quad\text{for }\mathcal B=\Psi\cdot\Gamma'' .
+\]
+The second expression is negative by \eqref{wk:eq:linedata}. The first is negative whenever $L(\pi\tilde\Gamma(t_\ast+jT))>0$. By Lemma~\ref{wk:lem:line} this holds for $\tilde\Gamma=\Gamma(\cdot+\sigma)$ with $\sigma\not\equiv0$, for $\tilde\Gamma\equiv E$, and for every solution whose projection lies in the bounded component of $\R^2\setminus\pi(\Gamma)$. The last case includes every cycle whose projection lies inside $\pi(\Gamma)$; projections of distinct cycles are disjoint and nested by Theorem~\ref{thm:geometry}, and every pair consisting of a phase of $\Gamma$ and a point of the inner cycle is obtained by a choice of the phase of the inner solution. In each case $\mathcal B<0$ at the maximiser of every window, hence for all $t$.
+\end{proof}
+
+\begin{remark}[Two families of supporting planes]\label{wk:rem:double}
+Theorem~\ref{thm:support} states that $n(t)\cdot\bigl(\tilde\Gamma(t)-\Gamma(t)\bigr)<0$ for the positive adjoint direction $n$, and Theorem~\ref{thm:dualsupport} that $\Psi(t)\cdot\bigl(\tilde\Gamma(t)-\Gamma(t)\bigr)<0$, in both cases for $\tilde\Gamma=\Gamma(\cdot+\sigma)$, $\sigma\not\equiv0$, and for $\tilde\Gamma\equiv E$. The functionals $n(t)$ and $\Psi(t)$ both vanish on $\Gamma'(t)$ and are linearly independent, because $n\cdot e_s=\zeta a+\eta b+c>0$ whereas $\Psi\cdot e_s=0$. So in the quotient of $\R^3$ by the tangent line, with the coordinates $(n\cdot v,\Psi\cdot v)$, the images of all chords of the cycle and of the vector to the equilibrium lie in the open negative quadrant. Equivalently, let $e_t(t)$ be any vector of the plane $n(t)^\perp$ with $\Psi(t)\cdot e_t(t)>0$; if $\lambda_c\ne0$ one may take the weak Floquet vector. In the frame $(\Gamma',e_t,e_s)$ every chord $\Gamma(t+\sigma)-\Gamma(t)$ and the vector $E-\Gamma(t)$ have negative $e_t$-coordinate and negative $e_s$-coordinate. In scalar terms, $\Gamma'$, $\Gamma''$ and $e_s$ are the vectors $v_\varphi=(\varphi,\varphi',-\varphi''-\mu\varphi')^{\mathsf T}$ for $\varphi=p,p',a$, so that $\det(\Gamma'',\Gamma',e_s)=-\mathrm{Wr}(p',p,a)$: the Wronskian of $p'$, $p$ and $a$ is positive for all $t$, while $\mathrm{Wr}(p,a)=pa'-p'a=-aq$ has exactly two simple zeros per period.
+\end{remark}
+
+\subsection{The crest return map away from the cycles}
+Proposition~\ref{prop:crestmap} concerns the return map near the crest of a cycle. The next statement shows that the first return to the crest section exists, is $C^1$ and has an entrywise positive derivative on an explicit region of the section, whether or not the point lies on a cycle.
+\begin{proposition}[Monotone crest return map]\label{prop:crestmonotone}
+Let $(\mu,k)\in\cP$. On the crest section $\{p=0,\ y>k\}$ use the coordinates $(U,y)$ and put
+\[
+\mathcal Q:=\bigl\{(U,y):\ ke^U\ge y>k\bigr\}.
+\]
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item For every $(U_0,y_0)\in\mathcal Q$ the solution of \eqref{eq:logsystem} through $(U_0,0,y_0)$ at $t=0$ has a first positive zero $t_a$ of $p$, with $p'(t_a)>0$, and a next zero $t_b>t_a$, with $p'(t_b)<0$. The first return map $P:(U_0,y_0)\mapsto(U(t_b),y(t_b))$ to the crest section is defined and $C^1$ on an open subset of the section that contains $\mathcal Q$.
+\item $P(\mathcal Q)$ is contained in the interior $\{ke^U>y>k\}$ of $\mathcal Q$.
+\item $DP$ is entrywise positive at every point of $\mathcal Q$. Consequently, if $(U_1,y_1)\le(U_2,y_2)$ are distinct points of $\mathcal Q$, ordered componentwise, then both components of $P(U_2,y_2)-P(U_1,y_1)$ are positive.
+\item The crest of every cycle is a fixed point of $P$ in the interior of $\mathcal Q$. There $DP$ is the matrix $M$ of Proposition~\ref{prop:crestmap}, its Perron eigenvalue is $m_t$, and its Perron eigenvector is $(1,\zeta(t_{\mathrm{cr}}))^{\mathsf T}$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+For a solution $(U,p,y)$ of \eqref{eq:logsystem} and a solution $v$ of the variational equation $v'=Jv$ along it, put
+\begin{equation}\label{wk:eq:wedge}
+w:=\bigl(v_2p-v_1p',\ \ v_1y'-v_3p,\ \ v_2y'-v_3p'\bigr)^{\mathsf T}.
+\end{equation}
+The tangent $(p,p',y')$ solves the same variational equation, and differentiation shows that $w$ satisfies the compound system \eqref{eq:compound}, $w'=Cw$, along every solution, not only along cycles. The matrix $C$ has nonnegative off-diagonal entries and is irreducible since $x>0$. Hence $w(0)\ge0$, $w(0)\ne0$ implies $w(t)>0$ componentwise for all $t>0$. At a point with $p=0$ and for $v=(\nu_U,0,\nu_y)^{\mathsf T}$,
+\begin{equation}\label{wk:eq:wedge0}
+w=\bigl((y-k)\nu_U,\ (x-y)\nu_U,\ (y-k)\nu_y\bigr)^{\mathsf T}.
+\end{equation}
+
+Fix $(U_0,y_0)\in\mathcal Q$, write $x_0=ke^{U_0}$, and let $(U,p,y)(t)$ be the solution through $(U_0,0,y_0)$. It exists for all $t\ge0$: $y>0$ is preserved, $p'\le k-\mu p$ bounds $p$ from above, hence $U$ and $x$ are bounded on bounded time intervals, and the linear equations for $y$ and $p$ then bound these as well.
+
+\emph{Step 1: $p$ has no zero on a solution that converges to $E$.} Let $\Gamma_1\not\equiv E$ be a solution with $\Gamma_1(t)\to E$ as $t\to+\infty$. The linearisation $J_E$ at $E$ has the characteristic polynomial $s^3+As^2+\mu s+k$. Its root $-\gamma_E$ is real and negative (Corollary~\ref{cor:cones}). The other two roots have sum $\gamma_E-A>0$ and product $k/\gamma_E>0$, hence positive real parts. So $E$ is hyperbolic with a one-dimensional stable manifold, tangent at $E$ to the eigenvector $v_s=(1,-\gamma_E,-\gamma_E(\gamma_E-\mu))^{\mathsf T}$, which lies in the interior of $C_+$ because $\gamma_E>A>\mu$. By the stable manifold theorem, $(\Gamma_1(t)-E)/|\Gamma_1(t)-E|$ converges to $v_s/|v_s|$ or to $-v_s/|v_s|$. Since $\Gamma_1'=J_E(\Gamma_1-E)+O(|\Gamma_1-E|^2)$, the vector $\Gamma_1'(t)/|\Gamma_1(t)-E|$ converges to $\mp\gamma_Ev_s/|v_s|$. Hence $\Gamma_1'(t)$ lies in the interior of $C_+$ or of $-C_+$ for all large $t$. Now $\Gamma_1'$ solves the variational equation along $\Gamma_1$. In the coordinates $Sv$ and in reversed time this is the system \eqref{wk:eq:abc}, whose coefficient matrix is nonnegative along every solution; it maps the open positive octant into itself. Therefore $\Gamma_1'(t)$ lies in the interior of $\pm C_+$ for every $t$ in the domain of $\Gamma_1$, and its first component $p$ never vanishes.
+
+\emph{Step 2: no tangency.} Let $v$ be the solution of the variational equation with $v(0)=(1,0,0)^{\mathsf T}$. By \eqref{wk:eq:wedge0}, $w(0)=(y_0-k,\ x_0-y_0,\ 0)^{\mathsf T}$ is nonnegative and nonzero, so $w(t)>0$ for $t>0$. At a time $t>0$ with $p=p'=0$ the first component $v_2p-v_1p'$ of $w$ would vanish. Hence $p$ and $p'$ do not vanish simultaneously at any $t>0$.
+
+\emph{Step 3: existence of $t_a$ and $t_b$.} Since $p(0)=0$ and $p'(0)=k-y_0<0$, we have $p<0$ on an interval $(0,\varepsilon)$. Suppose $p<0$ for all $t>0$. Then $U$ decreases. If $U\to-\infty$, then $x\to0$, so $y\to0$ by $y'=x-y$, and $p'=k-\mu p-y>k-y>k/2$ for all large $t$, which contradicts $p<0$. If $U$ is bounded below, then $U$ converges, $x$ and $y$ are bounded, and $p$ is bounded by its linear equation. The orbit is bounded and $U$ is constant on its $\omega$-limit set. An invariant set on which $U$ is constant has $p=0$, then $p'=0$ and $y=k$, then $y'=0$ and $x=k$; so the $\omega$-limit set is $\{E\}$ and the solution converges to $E$. It is not the equilibrium because $y_0>k$, and $p(0)=0$ contradicts Step~1. Hence $p$ has a first positive zero $t_a$. There $p'(t_a)\ge0$, and $p'(t_a)>0$ by Step~2. Now suppose $p>0$ for all $t>t_a$. Then $U$ increases on $(t_a,\infty)$. If $U\to+\infty$, then $x=ke^U$ increases to $+\infty$; since $y(t)\ge\int_{t-1}^te^{-(t-s)}x(s)\,\mathrm ds\ge(1-e^{-1})\,x(t-1)$ for $t\ge t_a+1$, also $y\to+\infty$; and $p'=k-\mu p-y\le k-y$ is then below $-1$ for all large $t$, so $p$ reaches zero in finite time, a contradiction. If $U$ is bounded above, then $U$ converges, $x$ is bounded, $y$ is bounded by its variation-of-constants formula, and $0<p\le\max(p(t_a+1),k/\mu)$ for $t\ge t_a+1$ because $p'\le k-\mu p$. The orbit is bounded and $U$ is constant on its $\omega$-limit set; as before that set is $\{E\}$, the solution converges to $E$ and is not the equilibrium, and $p(0)=0$ contradicts Step~1. So there is a next zero $t_b>t_a$, with $p'(t_b)<0$ by Step~2, that is, $y(t_b)>k$. At $t_a$ we have $y<k$, so $t_b$ is the first positive time at which the solution lies in the crest section.
+
+\emph{Step 4: regularity.} The zeros $t_a$ and $t_b$ are transversal. Near $t=0$, $p(t)=t\int_0^1p'(\vartheta t)\,\mathrm d\vartheta$ with $p'<0$ near $(U_0,0,y_0)$, so for all section points close to $(U_0,y_0)$ the function $p$ is negative on a common interval $(0,\varepsilon]$. Choose $\delta>0$ with $\varepsilon<t_a-\delta$ and $t_a+\delta<t_b-\delta$ such that $p'>0$ on $[t_a-\delta,t_a+\delta]$ and $p'<0$ on $[t_b-\delta,t_b+\delta]$. On the compact intervals $[\varepsilon,t_a-\delta]$ and $[t_a+\delta,t_b-\delta]$ the function $p$ is bounded away from zero, negative on the first and positive on the second, and $p(t_b+\delta)<0$. Solutions depend continuously, with their first derivatives, on the initial point, uniformly on $[0,t_b+\delta]$. Hence for all section points sufficiently close to $(U_0,y_0)$ the corresponding $p$ is negative on $(0,t_a-\delta]$, strictly increasing on $[t_a-\delta,t_a+\delta]$ with a sign change, positive on $[t_a+\delta,t_b-\delta]$, and strictly decreasing on $[t_b-\delta,t_b+\delta]$ with a sign change. It therefore has exactly one zero in each of the two short intervals and no other zero in $(0,t_b+\delta]$, and by the implicit function theorem the time of the second zero is a $C^1$ function of the initial point. Hence $P$ is defined and $C^1$ near $(U_0,y_0)$. This proves (a).
+
+\emph{Step 5: positivity.} Let $(U_1,y_1)=P(U_0,y_0)$ and $x_1=ke^{U_1}$; we know $y_1>k$. Let $\nu=(\nu_U,\nu_y)\ge0$ be a nonzero section vector, $v$ the solution of the variational equation with $v(0)=(\nu_U,0,\nu_y)^{\mathsf T}$, and $(\nu_U^1,\nu_y^1)^{\mathsf T}=DP\,\nu$. Then $(\nu_U^1,0,\nu_y^1)^{\mathsf T}$ equals $v(t_b)$ plus a multiple of the tangent at $t_b$, and adding a multiple of the tangent to $v$ does not change $w$ in \eqref{wk:eq:wedge}. By \eqref{wk:eq:wedge0}, $w(0)$ is nonnegative and nonzero, because $y_0>k$ and $x_0\ge y_0$. Hence
+\[
+w(t_b)=\bigl((y_1-k)\nu_U^1,\ (x_1-y_1)\nu_U^1,\ (y_1-k)\nu_y^1\bigr)^{\mathsf T}>0 .
+\]
+The first and third components give $\nu_U^1>0$ and $\nu_y^1>0$, and then the second gives $x_1>y_1$. Taking $\nu=(1,0)$ and $\nu=(0,1)$ shows that $DP$ is entrywise positive; $x_1>y_1>k$ is (b).
+
+For the order statement in (c), join $(U_1,y_1)$ to $(U_2,y_2)$ by the segment from $(U_1,y_1)$ to $(U_2,y_1)$ followed by the segment from $(U_2,y_1)$ to $(U_2,y_2)$. Both segments lie in $\mathcal Q$, since $k<y_1\le ke^{U_1}\le ke^{U}$ on the first and $k<y_1\le y\le y_2\le ke^{U_2}$ on the second. Integrating $DP$ along this path, at least one segment of which is nondegenerate, gives the claim.
+
+(d) At the crest of a cycle $x>y>k$ by \eqref{eq:crestidentities}. By Theorem~\ref{thm:geometry} the first positive zero of $p$ after the crest is the trough and the next is the crest one period later, so the crest is a fixed point of $P$ with $t_b=T$ and $DP=M$. By (c) and Proposition~\ref{prop:crestmap}, $M$ is a positive matrix with eigenvalues $m_s<m_t$; its Perron eigenvalue is $m_t$, with a positive eigenvector $\nu$. Let $v$ be the solution of the variational equation along the cycle with $v(t_{\mathrm{cr}})=(\nu_U,0,\nu_y)^{\mathsf T}$. Then $v(t_{\mathrm{cr}}+T)=m_tv(t_{\mathrm{cr}})+c\,\Gamma'(t_{\mathrm{cr}})$ for some $c\in\R$. Pairing with $n(t_{\mathrm{cr}})$ and using $n\cdot\Gamma'=0$, which is \eqref{eq:orthogonality}, together with \eqref{wk:eq:ndecay}, we obtain $m_s\,n\cdot v=m_t\,n\cdot v$ at $t_{\mathrm{cr}}$. Since $m_s<m_t$, $n\cdot v(t_{\mathrm{cr}})=\zeta\nu_U-\nu_y=0$.
+\end{proof}
+Part (c) makes $P$ a strictly monotone map of $\mathcal Q$ into its interior. Monotonicity does not bound the number of fixed points of $P$, and it gives no information on the sign of $m_t-1$ at a fixed point. Section~\ref{sec:negative} records the failure of the sublinearity property that would do so.
+
+\subsection{The rank-one window identity}
+Let $\mathcal L_3:=D^3+AD^2+\mu D+x$ be the scalar variational operator of \eqref{eq:factorisation} along the cycle. From \eqref{eq:scalar} and \eqref{eq:logsystem},
+\begin{equation}\label{wk:eq:L3values}
+\mathcal L_3[1]=x,\qquad \mathcal L_3[p]=0,\qquad \mathcal L_3[p']=-xp^2,\qquad \mathcal L_3[U]=k\,\psiU(U).
+\end{equation}
+\begin{proposition}[Rank-one window identity]\label{prop:rankone}
+Let $t_\ast=t_3^-$. For every $T$-periodic $\varphi\in C^3(\R)$,
+\begin{equation}\label{wk:eq:rankone}
+\int_{t_\ast}^{t_\ast+T}\Psi_3\,\mathcal L_3[\varphi]\dd
+=\bigl(e^{-\lambda_cT}-1\bigr)\,\bigl|\Psi_2(t_\ast)\bigr|\,\bigl(\varphi'+\mathfrak r\varphi\bigr)(t_\ast).
+\end{equation}
+Consequently, for every such $\varphi$ with $(\varphi'+\mathfrak r\varphi)(t_\ast)>0$,
+\[
+\sign\lambda_c=-\sign\int_{t_\ast}^{t_\ast+T}\Psi_3\,\mathcal L_3[\varphi]\dd ,
+\]
+and for every such $\varphi$ with $(\varphi'+\mathfrak r\varphi)(t_\ast)=0$ the integral vanishes. In particular each of the following inequalities is equivalent to $\lambda_c<0$:
+\begin{equation}\label{wk:eq:rankinstances}
+\begin{gathered}
+\int_{t_\ast}^{t_\ast+T}\!\Psi_3\,x\dd>0;\qquad
+\int_{t_\ast}^{t_\ast+T}\!\Psi_3\,x\,p^2\dd<0;\qquad
+\int_{t_\ast}^{t_\ast+T}\!\Psi_3\,\psiU(U)\dd<0;\\
+\int_{t_\ast}^{t_\ast+T}\!\Psi_3\,x\,\Rem\bigl(U(t+\sigma)-U(t)\bigr)\dd<0 ,
+\end{gathered}
+\end{equation}
+the last for any fixed $\sigma\not\equiv0\pmod T$.
+\end{proposition}
+\begin{proof}
+For $\varphi\in C^3$ put $v_\varphi:=(\varphi,\varphi',-\varphi''-\mu\varphi')^{\mathsf T}$. Then $v_\varphi'-Jv_\varphi=-\mathcal L_3[\varphi]\,e_3$, so by Lemma~\ref{wk:lem:weakadjoint}(a)
+\[
+(\Psi\cdot v_\varphi)'=-\Psi_3\,\mathcal L_3[\varphi].
+\]
+Integrate over $[t_\ast,t_\ast+T]$ and use the periodicity of $v_\varphi$ and \eqref{wk:eq:quasi}:
+\[
+\int_{t_\ast}^{t_\ast+T}\Psi_3\,\mathcal L_3[\varphi]\dd=-\bigl(e^{-\lambda_cT}-1\bigr)\,\Psi(t_\ast)\cdot v_\varphi(t_\ast).
+\]
+As in the proof of Theorem~\ref{thm:dualsupport}, $\Psi(t_\ast)=\beta\,(p'(t_\ast),-p(t_\ast),0)^{\mathsf T}$ with $\beta p(t_\ast)=-\Psi_2(t_\ast)=|\Psi_2(t_\ast)|$, and $p'(t_\ast)=-\mathfrak r(t_\ast)p(t_\ast)$. Hence
+\[
+\Psi(t_\ast)\cdot v_\varphi(t_\ast)=\beta\,\bigl(p'\varphi-p\varphi'\bigr)(t_\ast)=-\bigl|\Psi_2(t_\ast)\bigr|\,\bigl(\varphi'+\mathfrak r\varphi\bigr)(t_\ast),
+\]
+which gives \eqref{wk:eq:rankone}. The sign statement follows because $|\Psi_2(t_\ast)|>0$ and $e^{-\lambda_cT}-1$ has the sign of $-\lambda_c$.
+
+The first three instances in \eqref{wk:eq:rankinstances} use \eqref{wk:eq:L3values}. For $\varphi=1$, $(\varphi'+\mathfrak r\varphi)(t_\ast)=\mathfrak r(t_\ast)>0$. For $\varphi=p'$, $(p''+\mathfrak rp')(t_\ast)=\bigl((\mathfrak r-\mu)p'-y'\bigr)(t_\ast)>0$, since $\mathfrak r>\mu$, $p'>0$ and $y'<0$ at $t_\ast\in I_-$. For $\varphi=-U$, $-(p+\mathfrak rU)(t_\ast)>0$, since $p(t_\ast)<0$ and $U(t_\ast)<0$ by \eqref{wk:eq:linedata}. For the fourth instance integrate the first identity of \eqref{wk:eq:chord} with the periodic chord $d(t)=\Gamma(t+\sigma)-\Gamma(t)$ over the window:
+\[
+\int_{t_\ast}^{t_\ast+T}\Psi_3\,x\,\Rem\bigl(U(t+\sigma)-U(t)\bigr)\dd=\bigl(e^{-\lambda_cT}-1\bigr)\,\beta\,L\bigl(\pi\Gamma(t_\ast+\sigma)\bigr),
+\]
+and $\beta<0<L(\pi\Gamma(t_\ast+\sigma))$ by Lemma~\ref{wk:lem:line}.
+\end{proof}
+The integrals in \eqref{wk:eq:rankone} and \eqref{wk:eq:rankinstances} are taken with the quasi-periodic solution $\Psi$ of \eqref{wk:eq:psi} over the window that starts at $t_\ast$. Unless $\lambda_c=0$ they are not period averages of a periodic function, and they depend on the choice of window.
+
+\begin{remark}[Second-order form]\label{wk:rem:secondorder}
+By \eqref{wk:eq:rfactor}, $\mathcal L_3[\varphi]=\mathcal L_2[\varphi'+\mathfrak r\varphi]$ with
+\[
+\mathcal L_2:=D^2+(A-\mathfrak r)D+(\mathfrak r-1)(\mathfrak r-\mu)-2\mathfrak r' .
+\]
+Since $\varpi'=(A-\mathfrak r)\varpi$, the operator $\varpi\mathcal L_2$ is in Sturm--Liouville form, $\varpi\mathcal L_2[\chi]=(\varpi\chi')'+\varpi\bigl[(\mathfrak r-1)(\mathfrak r-\mu)-2\mathfrak r'\bigr]\chi$, and $\mathcal L_2[q]=\mathcal L_3[p]=0$. Identity \eqref{wk:eq:rankone} is the Lagrange identity
+\[
+\varpi\bigl(q\,\mathcal L_2[\chi]-\chi\,\mathcal L_2[q]\bigr)=\bigl(\varpi(q\chi'-q'\chi)\bigr)'
+\]
+for $\chi=\varphi'+\mathfrak r\varphi$, integrated between two consecutive translates of the zero $t_\ast$ of $q$; the boundary term is evaluated with $\varpi q'=-\Psi_2$ at $t_\ast$, which is the third equation of \eqref{wk:eq:psicomp}. Because $\avg{\mathfrak r}>0$, every $T$-periodic $\chi\in C^2$ is of the form $\varphi'+\mathfrak r\varphi$ with a $T$-periodic $\varphi$. Thus \eqref{wk:eq:rankone} is equivalent to
+\begin{equation}\label{wk:eq:ranktwo}
+\int_{t_\ast}^{t_\ast+T}\Psi_3\,\mathcal L_2[\chi]\dd=\bigl(e^{-\lambda_cT}-1\bigr)\,\bigl|\Psi_2(t_\ast)\bigr|\,\chi(t_\ast)
+\qquad\text{for all $T$-periodic }\chi\in C^2(\R).
+\end{equation}
+\end{remark}
+
+\paragraph{What the identity gives and what it does not give.}
+Proposition~\ref{prop:rankone} gives, for each periodic test function with $(\varphi'+\mathfrak r\varphi)(t_\ast)>0$, an exact equivalence between $\lambda_c<0$ and the sign of one window integral. By Theorem~\ref{thm:twelve} the weight $\Psi_3$ in that integral is negative on the trough arc $(t_3^-,t_3^++T)$ and positive on the crest arc $(t_3^++T,t_3^-+T)$. The identity does not give the sign of $\lambda_c$. On periodic functions the linear functional $\varphi\mapsto\int_{t_\ast}^{t_\ast+T}\Psi_3\,\mathcal L_3[\varphi]\dd$ has rank one: it is the point evaluation $(\varphi'+\mathfrak r\varphi)(t_\ast)$ multiplied by the single unknown factor $(e^{-\lambda_cT}-1)|\Psi_2(t_\ast)|$. Different test functions therefore carry no independent information. For example, $\varphi=p'-\alpha_\ast$ with the constant $\alpha_\ast=\bigl[(\mathfrak r-\mu)|p|+|y'|/\mathfrak r\bigr](t_\ast)$ has $(\varphi'+\mathfrak r\varphi)(t_\ast)=0$, so that $\int_{t_\ast}^{t_\ast+T}\Psi_3\,x\,(p^2+\alpha_\ast)\dd=0$ whatever the value of $\lambda_c$. For the test functions in \eqref{wk:eq:rankinstances} the factor multiplying $\Psi_3$ has one sign, the integrand changes sign at $t_3^\pm$, and the sign of the integral is a quantitative comparison of the two arcs; if $\lambda_c<0$, the crest arc dominates for the weight $x$ and the trough arc dominates for the weight $xp^2$. The identity would yield $\lambda_c<0$ without such a comparison from a periodic $\varphi$ with $(\varphi'+\mathfrak r\varphi)(t_\ast)>0$ and $\Psi_3\,\mathcal L_3[\varphi]\ge0$, not identically zero, on the window; by \eqref{wk:eq:ranktwo} this amounts to a periodic $\chi$ with $\chi(t_\ast)>0$ and $q\,\mathcal L_2[\chi]\le0$. Then $\mathcal L_3[\varphi]$ is nonnegative on the crest arc and nonpositive on the trough arc, so it can change sign only at the two tangency phases $t_3^\pm$. These phases are defined through the ratio $\mathfrak r$, which is not an explicit function of the state, and no such test function is known. The sign of $\lambda_c$ is thus left open by this section at general parameters in $\cP$. It is obtained for large gain in Section~\ref{sec:largegain} by different means.

@@ -1,0 +1,734 @@
+{
+ "schema_version": "3.0",
+ "name": "v3_largegain_constants_with_wrong_constant",
+ "kind": "high_precision_constant_check",
+ "passed": false,
+ "counts": {
+  "attempted": 55,
+  "passed": 53,
+  "failed": 2
+ },
+ "worst_residuals": {
+  "min_relative_margin_author_script": -0.005474371067245616,
+  "tightest_author_comparison": "c1: phi Psi_1(a3) - ell/K0 >= C1",
+  "author_script_exit_status": 1,
+  "referee_script_exit_status": 0
+ },
+ "parameters": {
+  "K0": 1000,
+  "range": "0 < mu <= 1, lambda >= K0"
+ },
+ "seconds": 0.006231334002222866,
+ "scope": "Scalar inequalities between explicitly computable numbers. They are the only numerical input of the large-gain proof; the proof itself is in the paper.",
+ "not_interval_certified": true,
+ "software": {
+  "mpmath": "1.3.0"
+ },
+ "precision_digits": {
+  "author_script": 40,
+  "referee_script": 50
+ },
+ "headline_constants_at_K0": {
+  "om0": {
+   "value": "8.04673846972",
+   "description": "omega_0(k_0): lower bound for the rotation frequency at the equilibrium"
+  },
+  "T0": {
+   "value": "5.89276716877",
+   "description": "T_0(k_0) = 2 pi - pi/omega_0: lower bound for the length of the negative lobe"
+  },
+  "Ri": {
+   "value": "1.4863029946",
+   "description": "Stage 1, case (i): lower bound for the rise time"
+  },
+  "Rii": {
+   "value": "1.48631853641",
+   "description": "Stage 1, case (ii): lower bound for the rise time"
+  },
+  "Ht": {
+   "value": "14.9211478821",
+   "description": "logarithmic majorant of mu H at k_0"
+  },
+  "eps1": {
+   "value": "0.210006282927",
+   "description": "epsilon_1-bar at k_0"
+  },
+  "d1": {
+   "value": "0.190152383248",
+   "description": "loss in the spike-mass lemma with p_k >= c_1 k, at k_0"
+  },
+  "T1": {
+   "value": "45.4434764167",
+   "description": "T_1(k_0): first lower bound for T_-"
+  },
+  "z10": {
+   "value": "10.633042925",
+   "description": "z_1(k_0) = 0.3 T_1(k_0) - 3"
+  },
+  "kap0": {
+   "value": "0.210187963932",
+   "description": "the constant of the bootstrap (kappa_0 in the research text)"
+  },
+  "Hhat": {
+   "value": "13.8175095586",
+   "description": "H-hat at lambda = k_0"
+  },
+  "Lhat": {
+   "value": "7.88858453199",
+   "description": "L-hat at lambda = k_0"
+  },
+  "e1": {
+   "value": "0.0663715301854",
+   "description": "epsilon_1-hat at lambda = k_0"
+  },
+  "dp": {
+   "value": "0.0777220789792",
+   "description": "delta' at lambda = k_0"
+  },
+  "ac": {
+   "value": "3.63454532415",
+   "description": "a_c at lambda = k_0"
+  },
+  "A1": {
+   "value": "23.1754547402",
+   "description": "A_1 at lambda = k_0"
+  },
+  "tau1": {
+   "value": "0.028297258535",
+   "description": "tau_1-bar at lambda = k_0"
+  },
+  "W": {
+   "value": "28135.2122521",
+   "description": "W-hat at lambda = k_0"
+  },
+  "vf": {
+   "value": "0.0400664544169",
+   "description": "v_f at lambda = k_0"
+  },
+  "tauc": {
+   "value": "0.087627655643",
+   "description": "crest-duration majorant at lambda = k_0"
+  },
+  "Ctau": {
+   "value": "71.7846496707",
+   "description": "C_tau(k_0)"
+  },
+  "cb_log": {
+   "value": "12.272347756",
+   "description": "coefficient of log(lambda) in C_tau"
+  },
+  "q": {
+   "value": "0.077177382973",
+   "description": "q(k_0)"
+  },
+  "Phi_": {
+   "value": "31.684146455",
+   "description": "final margin (c_T/4) k_0 - 2 Cbar_tau/(c_p sqrt(k_0)) - log(1 + 4 sqrt(k_0) + 16 k_0/3)"
+  },
+  "k0_ci_a1": {
+   "value": "1388.74033118",
+   "description": "k_0 c_i(a_1)"
+  },
+  "chi_ii_a2": {
+   "value": "102.426856859",
+   "description": "k_0 (a_2 - 1 + exp(-a_2))/(k_0^(1/3) + 1)"
+  },
+  "k0_cb_a4": {
+   "value": "2.36900388724",
+   "description": "k_0 c_b(a_4)"
+  },
+  "strip_ratio": {
+   "value": "2.3130352855",
+   "description": "ell/phi_ell"
+  },
+  "phi_ell": {
+   "value": "0.864664716763",
+   "description": "phi_ell = 1 - exp(-2)"
+  },
+  "c1_bound": {
+   "value": "0.374525628933",
+   "description": "phi_ell Psi_1(a_3) - ell/k_0, the bound for c_1"
+  },
+  "cp_bound": {
+   "value": "0.819431480925",
+   "description": "0.95 phi_ell (1 - exp(-c_sharp k_0)) - ell/k_0, the bound for c_p"
+  },
+  "cT": {
+   "value": "0.183333333333",
+   "description": "c_T = c_sharp/0.3"
+  },
+  "window_sum": {
+   "value": "5.89",
+   "description": "a_1 + a_2 + a_3 + a_4"
+  },
+  "margin_term_1": {
+   "value": "45.8333333333",
+   "description": "(c_T/4) k_0"
+  },
+  "margin_term_2": {
+   "value": "5.54383182475",
+   "description": "2 Cbar_tau(k_0)/(c_p sqrt(k_0))"
+  },
+  "margin_term_3": {
+   "value": "8.60535505363",
+   "description": "log(1 + 4 sqrt(k_0) + 16 k_0/3)"
+  }
+ },
+ "number_author_comparisons": 55,
+ "number_referee_checks": 0,
+ "override": {
+  "OVERRIDE_C1": "0.38"
+ },
+ "records": [
+  {
+   "source": "author script",
+   "id": "phi2 >= 0.7968",
+   "lhs": "0.79681213002002004616",
+   "op": ">=",
+   "rhs": "0.7968",
+   "margin": "1.213002002e-5",
+   "relative_margin": 1.213002002004616e-05,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "1-exp(-3) >= 0.95",
+   "lhs": "0.95021293163213605702",
+   "op": ">=",
+   "rhs": "0.95",
+   "margin": "0.000212931632136",
+   "relative_margin": 0.000212931632136057,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "c_i(3) e^{-3} >= 0.34",
+   "lhs": "0.34351211040015545618",
+   "op": ">=",
+   "rhs": "0.34",
+   "margin": "0.00351211040016",
+   "relative_margin": 0.0035121104001554562,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "max_{0<mu<=1} 3 mu log(1/mu) = 3/e <= 1.1037",
+   "lhs": "1.1036383235143269648",
+   "op": "<=",
+   "rhs": "1.1037",
+   "margin": "6.1676485673e-5",
+   "relative_margin": 5.5881567158680076e-05,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "ell/phi_ell (strip ratio) <= 2.3131",
+   "lhs": "2.3130352854993313036",
+   "op": "<=",
+   "rhs": "2.3131",
+   "margin": "6.47145006687e-5",
+   "relative_margin": 2.797738993934391e-05,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "s_+ lemma: 1.21 (1 - 1.1 sqrt(2/10)/3) >= 1",
+   "lhs": "1.0115862347965186609",
+   "op": ">=",
+   "rhs": "1.0",
+   "margin": "0.0115862347965",
+   "relative_margin": 0.011453531491409865,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "windows fit: a1+a2+a3+a4 <= T_0(K0)",
+   "lhs": "5.89",
+   "op": "<=",
+   "rhs": "5.892767168773150689",
+   "margin": "0.00276716877315",
+   "relative_margin": 0.0004695873252577196,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "K0 c_i(a1) >= 2",
+   "lhs": "1388.7403311802390721",
+   "op": ">=",
+   "rhs": "2.0",
+   "margin": "1386.74033118",
+   "relative_margin": 0.9985598459588912,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "kappa_ii(a2) = K0 (a2-1+e^{-a2})/(K0^{1/3}+1) >= 2",
+   "lhs": "102.42685685868398708",
+   "op": ">=",
+   "rhs": "2.0",
+   "margin": "100.426856859",
+   "relative_margin": 0.9804738711961126,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "K0 c_b(a4) >= ell/phi_ell",
+   "lhs": "2.3690038872436410458",
+   "op": ">=",
+   "rhs": "2.3130352854993313036",
+   "margin": "0.0559686017443",
+   "relative_margin": 0.02362537353597581,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "R_i >= a3",
+   "lhs": "1.4863029946040036777",
+   "op": ">=",
+   "rhs": "1.48",
+   "margin": "0.006302994604",
+   "relative_margin": 0.00424071984439686,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "R_ii >= a3",
+   "lhs": "1.4863185364080139169",
+   "op": ">=",
+   "rhs": "1.48",
+   "margin": "0.00631853640801",
+   "relative_margin": 0.004251132077841083,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "c1: phi Psi_1(a3) - ell/K0 >= C1",
+   "lhs": "0.37452562893275438446",
+   "op": ">=",
+   "rhs": "0.38",
+   "margin": "-0.00547437106725",
+   "relative_margin": -0.005474371067245616,
+   "passed": false
+  },
+  {
+   "source": "author script",
+   "id": "C1 K0 >= 10 (needed for the s_+ bound)",
+   "lhs": "380.0",
+   "op": ">=",
+   "rhs": "10.0",
+   "margin": "370.0",
+   "relative_margin": 0.9736842105263158,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "delta_1 < 1",
+   "lhs": "0.1901523832484521327",
+   "op": "<=",
+   "rhs": "0.999",
+   "margin": "0.808847616752",
+   "relative_margin": 0.8088476167515478,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "T_1(K0) >= 22",
+   "lhs": "45.44347641671850448",
+   "op": ">=",
+   "rhs": "22.0",
+   "margin": "23.4434764167",
+   "relative_margin": 0.5158821081763394,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "Stage-2 r_l: 0.89/1.89 >= 0.4708",
+   "lhs": "0.47089947089947089947",
+   "op": ">=",
+   "rhs": "0.4708",
+   "margin": "9.94708994709e-5",
+   "relative_margin": 9.947089947089946e-05,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "Stage-2 r_l: 1/1.89 <= 0.5292",
+   "lhs": "0.52910052910052910053",
+   "op": "<=",
+   "rhs": "0.5292",
+   "margin": "9.94708994709e-5",
+   "relative_margin": 9.947089947089946e-05,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "Stage-2 r_l: 0.4708*a4 + 0.5292 <= 0.6987",
+   "lhs": "0.698688",
+   "op": "<=",
+   "rhs": "0.6987",
+   "margin": "1.2e-5",
+   "relative_margin": 1.2e-05,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "Stage-2 r_l: 0.1708*22 - 0.9416 log 22 - 0.6987 >= 0",
+   "lhs": "0.14837442591780979236",
+   "op": ">=",
+   "rhs": "0.0",
+   "margin": "0.148374425918",
+   "relative_margin": 0.1483744259178098,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "Stage-2 r_l: derivative 0.1708 - 0.9416/22 >= 0",
+   "lhs": "0.128",
+   "op": ">=",
+   "rhs": "0.0",
+   "margin": "0.128",
+   "relative_margin": 0.128,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "Stage-2 r_l: T' = 22 - 2 log 22 - a4 >= 2.79 (case u<2)",
+   "lhs": "15.457915093283368293",
+   "op": ">=",
+   "rhs": "2.79",
+   "margin": "12.6679150933",
+   "relative_margin": 0.8195099414660205,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "Stage-2 r_l: 0.5292*2.79 >= 2 - 0.5292",
+   "lhs": "1.476468",
+   "op": ">=",
+   "rhs": "1.4708",
+   "margin": "0.005668",
+   "relative_margin": 0.0038388911916817704,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "Stage-2: 2 log 22 >= 3 (so c_i(a) >= 0.34 e^a)",
+   "lhs": "6.182084906716631707",
+   "op": ">=",
+   "rhs": "3.0",
+   "margin": "3.18208490672",
+   "relative_margin": 0.5147268202769912,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "Stage-2: sqrt(2*phi2*0.34 - 2 ell/(K0*22^2)) >= 0.73",
+   "lhs": "0.73608133758246451187",
+   "op": ">=",
+   "rhs": "0.73",
+   "margin": "0.00608133758246",
+   "relative_margin": 0.0060813375824645115,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "Stage-2: (0.89u-1)^2 <= 2 phi2 (u^2/2-1) - 2 ell/K0 at u=2",
+   "lhs": "0.6084",
+   "op": "<=",
+   "rhs": "1.5896",
+   "margin": "0.9812",
+   "relative_margin": 0.6172622043281328,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "Stage-2: coefficient phi2 - 0.89^2 >= 0 (monotone in u)",
+   "lhs": "0.0047",
+   "op": ">=",
+   "rhs": "0.0",
+   "margin": "0.0047",
+   "relative_margin": 0.0047,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "Stage-2: kappa_ii(2) >= 2",
+   "lhs": "103.21229847605569926",
+   "op": ">=",
+   "rhs": "2.0",
+   "margin": "101.212298476",
+   "relative_margin": 0.9806224642844866,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "z_1(K0) >= 3.6 (i.e. T_1 >= 22)",
+   "lhs": "10.633042925015551344",
+   "op": ">=",
+   "rhs": "3.6",
+   "margin": "7.03304292502",
+   "relative_margin": 0.6614327596166706,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "0.01 phi K0 z10/(1+z10) >= ell (0.95 -> 0.94)",
+   "lhs": "7.9033638131952652629",
+   "op": ">=",
+   "rhs": "2.0",
+   "margin": "5.9033638132",
+   "relative_margin": 0.7469431944078231,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "endpoint z_1: 0.3 kappa_0 - 0.3 C1^2 (1+1/z10)^2/sqrt8 >= 0",
+   "lhs": "0.044724172513787604721",
+   "op": ">=",
+   "rhs": "0.0",
+   "margin": "0.0447241725138",
+   "relative_margin": 0.0447241725137876,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "endpoint z^sharp: c#(1+3.15/(c# K0))(1+1/(c# K0))^2 <= 0.3 kappa_0",
+   "lhs": "0.060283768595041322314",
+   "op": "<=",
+   "rhs": "0.063056389179630231586",
+   "margin": "0.00277262058459",
+   "relative_margin": 0.0027726205845889093,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "c_p: 0.95 phi (1-exp(-c# K0)) - ell/K0 >= CP",
+   "lhs": "0.8194314809252179427",
+   "op": ">=",
+   "rhs": "0.819",
+   "margin": "0.000431480925218",
+   "relative_margin": 0.0004314809252179427,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "interval placement: 0.3 C1^2/sqrt8 <= 0.015 <= c#  (z_1(k) < z^sharp)",
+   "lhs": "0.015315932880500619379",
+   "op": "<=",
+   "rhs": "0.015",
+   "margin": "-0.000315932880501",
+   "relative_margin": -0.00031593288050061935,
+   "passed": false
+  },
+  {
+   "source": "author script",
+   "id": "interval placement: 0.015 <= c#",
+   "lhs": "0.015",
+   "op": "<=",
+   "rhs": "0.055",
+   "margin": "0.04",
+   "relative_margin": 0.04,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "delta' < 1",
+   "lhs": "0.077722078979160540809",
+   "op": "<=",
+   "rhs": "0.999",
+   "margin": "0.921277921021",
+   "relative_margin": 0.9212779210208395,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "(a) c_p^2 lam >= 2 Lhat  (p_k^2 >= 2 k L_0)",
+   "lhs": "670.761",
+   "op": ">=",
+   "rhs": "15.777169063987726578",
+   "margin": "654.983830936",
+   "relative_margin": 0.9764787024529039,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "(a') C_P lam >= 10",
+   "lhs": "819.0",
+   "op": ">=",
+   "rhs": "10.0",
+   "margin": "809.0",
+   "relative_margin": 0.9877899877899878,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "(c) v_c <= a_c/(c_p lam) <= 1",
+   "lhs": "0.004437784278570791142",
+   "op": "<=",
+   "rhs": "1.0",
+   "margin": "0.995562215721",
+   "relative_margin": 0.9955622157214292,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "(d) v_f <= log(1+What/lam)",
+   "lhs": "0.040066454416920071059",
+   "op": "<=",
+   "rhs": "3.3719474856922906008",
+   "margin": "3.33188103128",
+   "relative_margin": 0.9881177110299231,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "(e) b^2 [1-(2/3)(1+lam/What) v_f] >= 1",
+   "lhs": "1.0116221736768800439",
+   "op": ">=",
+   "rhs": "1.0",
+   "margin": "0.0116221736769",
+   "relative_margin": 0.011488650584474295,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "(e') v_f <= 1",
+   "lhs": "0.040066454416920071059",
+   "op": "<=",
+   "rhs": "1.0",
+   "margin": "0.959933545583",
+   "relative_margin": 0.95993354558308,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "monotonicity: Hhat(K0) >= 3",
+   "lhs": "13.81750955863044117",
+   "op": ">=",
+   "rhs": "3.0",
+   "margin": "10.8175095586",
+   "relative_margin": 0.7828841740785195,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "monotonicity: Hhat + Lhat >= 4",
+   "lhs": "21.706094090624304459",
+   "op": ">=",
+   "rhs": "4.0",
+   "margin": "17.7060940906",
+   "relative_margin": 0.8157199548062517,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "monotonicity: 2 < 2 log(2) + 3/e (Htilde_lam/lam decreasing for lam>=1)",
+   "lhs": "2.0",
+   "op": "<=",
+   "rhs": "2.4899326846342175836",
+   "margin": "0.489932684634",
+   "relative_margin": 0.19676543372343855,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "AM-GM majorant: c_p lam v_f <= kf (Hhat+Lhat+A1)",
+   "lhs": "32.814426167457538198",
+   "op": "<=",
+   "rhs": "32.832025866529845071",
+   "margin": "0.0175996990723",
+   "relative_margin": 0.000536052790158424,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "C_tau(K0) <= 71.79 and c_b <= 12.28 (majorant Cbar_tau)",
+   "lhs": "-0.0053503292979019538728",
+   "op": "<=",
+   "rhs": "0.0",
+   "margin": "0.0053503292979",
+   "relative_margin": 0.005350329297901954,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "C_tau/sqrt(lam) decreasing for lam>=K0:  c_b <= C_tau(K0)/2",
+   "lhs": "12.27234775601267147",
+   "op": "<=",
+   "rhs": "35.892324835351049023",
+   "margin": "23.6199770793",
+   "relative_margin": 0.6580787727652181,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "C_tau/lam decreasing (same criterion, weaker): c_b <= C_tau(K0)",
+   "lhs": "12.27234775601267147",
+   "op": "<=",
+   "rhs": "71.784649670702098046",
+   "margin": "59.5123019147",
+   "relative_margin": 0.8290393863826091,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "s = 2 sqrt(K0) >= sqrt(2)",
+   "lhs": "63.24555320336758664",
+   "op": ">=",
+   "rhs": "1.4142135623730950488",
+   "margin": "61.831339641",
+   "relative_margin": 0.9776393202250021,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "FINAL: (c_T/4) K0 - 2 C_tau(K0)/(c_p sqrt(K0)) - log(1+4 sqrt(K0)+16 K0/3) > 0",
+   "lhs": "31.684146454954384497",
+   "op": ">=",
+   "rhs": "1.0e-6",
+   "margin": "31.684145455",
+   "relative_margin": 0.9999999684384744,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "monotonicity of the final expression: c_T/4 >= 1/K0",
+   "lhs": "0.045833333333333333333",
+   "op": ">=",
+   "rhs": "0.001",
+   "margin": "0.0448333333333",
+   "relative_margin": 0.044833333333333336,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "q(K0) < 0.0772",
+   "lhs": "0.077177382972976084563",
+   "op": "<=",
+   "rhs": "0.0772",
+   "margin": "2.26170270239e-5",
+   "relative_margin": 2.2617027023915438e-05,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "majorant monotone: 12.28 <= Cbar/2",
+   "lhs": "12.28",
+   "op": "<=",
+   "rhs": "35.895",
+   "margin": "23.615",
+   "relative_margin": 0.65789107117983,
+   "passed": true
+  },
+  {
+   "source": "author script",
+   "id": "by-product: 3/4 + q <= 0.83",
+   "lhs": "0.82717738297297608456",
+   "op": "<=",
+   "rhs": "0.83",
+   "margin": "0.00282261702702",
+   "relative_margin": 0.0028226170270239156,
+   "passed": true
+  }
+ ]
+}

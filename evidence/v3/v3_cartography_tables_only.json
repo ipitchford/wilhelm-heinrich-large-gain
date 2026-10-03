@@ -1,0 +1,470 @@
+{
+ "schema_version": "3.0",
+ "name": "v3_cartography_tables_only",
+ "kind": "floating_point_table_recomputation",
+ "passed": true,
+ "counts": {
+  "attempted": 65,
+  "passed": 65,
+  "failed": 0
+ },
+ "worst_residuals": {
+  "grid_cycles": 300,
+  "grid_max_lambda_c": -1.9314583830113904e-06,
+  "grid_max_lambda_c_at": {
+   "mu": 0.002,
+   "rho": 1.001,
+   "log_mt": -0.00028291459939278063
+  },
+  "grid_max_log_mt": -0.00028291459939278063,
+  "grid_min_log_mt": -505.17702667126,
+  "grid_mu_range": [
+   0.002,
+   1.0
+  ],
+  "grid_rho_range": [
+   1.001,
+   200.0000000000001
+  ],
+  "grid_min_U": -25678818.155808154,
+  "grid_max_newton_residual": 9.637427235594079e-11,
+  "branch_cycles": 827,
+  "branch_max_lambda_c": -1.9749492145837433e-10,
+  "branch_max_rho": 279.9381781740955,
+  "hunt_points": 240,
+  "hunt_points_computed_directly": 239,
+  "hunt_max_log_mt": -0.0004174843569923481,
+  "hunt_mu_range": [
+   0.001015987038390975,
+   980.1563233845011
+  ],
+  "hunt_rho_range": [
+   1.0010370902912786,
+   284.9899827399587
+  ],
+  "hunt_pairs": 239103,
+  "hunt_long_runs": 1673,
+  "hunt_long_not_finished": 25,
+  "hunt_newton_starts": 2868,
+  "cycle_tests_cycles_with_negative_Ehat": 126,
+  "cycle_tests_cycles_with_zeta_over_eta_on_both_sides_of_1": 300,
+  "stests_parameter_pairs": 62,
+  "limit_map_rho_range": [
+   1.0001620938718334,
+   320.0
+  ]
+ },
+ "parameters": {
+  "tables": [
+   "README.md",
+   "branch_table.csv",
+   "cycle_tests.csv",
+   "dipscan.json",
+   "grid_log.txt",
+   "grid_table.csv",
+   "hunt_results.jsonl",
+   "hunt_results_pairs.npz",
+   "hunt_results_supplement.jsonl",
+   "hunt_stdout.txt",
+   "hunt_summary.txt",
+   "limit_map.csv",
+   "limit_map_stdout.txt",
+   "s3a_cycle_scan.json",
+   "stests_results.json",
+   "stests_stdout.txt",
+   "stests_summary.csv",
+   "tol_check_stdout.txt"
+  ]
+ },
+ "seconds": 0.02998525000293739,
+ "scope": "Shipped floating-point tables and a recomputed subsample. No interval enclosure; a search that finds no second cycle does not exclude one.",
+ "not_interval_certified": true,
+ "groups": {
+  "T shipped tables": {
+   "attempted": 65,
+   "passed": 65
+  }
+ },
+ "recomputation_included": false,
+ "second_cycle_found": false,
+ "counting_rule": "T: one count per table statement; R1: one per recomputed cycle; R2: one per recomputed hunt point",
+ "subsample": {
+  "grid_rho_indices": [
+   0,
+   6,
+   12,
+   18
+  ],
+  "grid_top_rho_for_mu": [
+   0.2,
+   0.5,
+   1.0
+  ],
+  "hunt_indices": [
+   0,
+   10,
+   20,
+   30,
+   40,
+   50,
+   60,
+   70,
+   80,
+   90,
+   100,
+   110,
+   120,
+   130,
+   140,
+   150,
+   160,
+   170,
+   180,
+   190,
+   200,
+   210,
+   220,
+   230
+  ],
+  "hunt_time_budget_seconds": 8.0
+ },
+ "records": [
+  {
+   "group": "T shipped tables",
+   "id": "grid: 300 rows on 12 mu x 25 rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid: lambda_c < 0 on every cycle",
+   "passed": true,
+   "cycles": 300
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.002: log m_t strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.002: lambda_c strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.005: log m_t strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.005: lambda_c strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.01: log m_t strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.01: lambda_c strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.02: log m_t strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.02: lambda_c strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.05: log m_t strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.05: lambda_c strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.1: log m_t strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.1: lambda_c strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.2: log m_t strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.2: lambda_c strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.3: log m_t strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.3: lambda_c strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.5: log m_t strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.5: lambda_c strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.7: log m_t strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.7: lambda_c strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.85: log m_t strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=0.85: lambda_c strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=1: log m_t strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid mu=1: lambda_c strictly decreasing in rho",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid: <U> + log rho < 0 on every cycle",
+   "passed": true,
+   "max_value": -0.003002159158810098
+  },
+  {
+   "group": "T shipped tables",
+   "id": "grid: Newton residual <= 1e-9 on every cycle",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch: 827 rows on 12 branches",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch: lambda_c < 0 on every cycle",
+   "passed": true,
+   "cycles": 827
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.002: rho strictly increasing in crest amplitude (no fold)",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.002: log m_t strictly decreasing in crest amplitude",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.005: rho strictly increasing in crest amplitude (no fold)",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.005: log m_t strictly decreasing in crest amplitude",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.01: rho strictly increasing in crest amplitude (no fold)",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.01: log m_t strictly decreasing in crest amplitude",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.02: rho strictly increasing in crest amplitude (no fold)",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.02: log m_t strictly decreasing in crest amplitude",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.05: rho strictly increasing in crest amplitude (no fold)",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.05: log m_t strictly decreasing in crest amplitude",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.1: rho strictly increasing in crest amplitude (no fold)",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.1: log m_t strictly decreasing in crest amplitude",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.2: rho strictly increasing in crest amplitude (no fold)",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.2: log m_t strictly decreasing in crest amplitude",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.3: rho strictly increasing in crest amplitude (no fold)",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.3: log m_t strictly decreasing in crest amplitude",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.5: rho strictly increasing in crest amplitude (no fold)",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.5: log m_t strictly decreasing in crest amplitude",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.7: rho strictly increasing in crest amplitude (no fold)",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.7: log m_t strictly decreasing in crest amplitude",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.85: rho strictly increasing in crest amplitude (no fold)",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=0.85: log m_t strictly decreasing in crest amplitude",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=1: rho strictly increasing in crest amplitude (no fold)",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "branch mu=1: log m_t strictly decreasing in crest amplitude",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "hunt: 240 points, 239 computed, 1 failure line",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "hunt: the failure is covered by the reciprocal-rate supplement",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "hunt: lambda_c < 0 at every computed point",
+   "passed": true,
+   "points": 240
+  },
+  {
+   "group": "T shipped tables",
+   "id": "hunt: no wrong-sign displacement pair",
+   "passed": true,
+   "pairs": 239103,
+   "pairs_with_supplement": 240107
+  },
+  {
+   "group": "T shipped tables",
+   "id": "hunt: no long run converging to a different crest",
+   "passed": true,
+   "long_runs": 1673,
+   "reached_primary": 1648,
+   "not_finished": 25
+  },
+  {
+   "group": "T shipped tables",
+   "id": "hunt: no new Newton fixed point",
+   "passed": true,
+   "newton_starts": 2868
+  },
+  {
+   "group": "T shipped tables",
+   "id": "hunt: rho increasing along every amplitude branch",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "cycle tests: each of the four pointwise candidates takes both signs on every grid cycle",
+   "passed": true,
+   "cycles": 300
+  },
+  {
+   "group": "T shipped tables",
+   "id": "cycle tests: projected cycle convex on every grid cycle",
+   "passed": true
+  },
+  {
+   "group": "T shipped tables",
+   "id": "limit map: Lambda strictly increasing",
+   "passed": true,
+   "rows": 85
+  },
+  {
+   "group": "T shipped tables",
+   "id": "limit map: 0 < m_0 < 1",
+   "passed": true
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+mu=1.0 rho=1.3 lam=-0.101270: worst residual 3.43e-06
+mu=0.5 rho=2.0 lam=-0.130351: worst residual 1.99e-06
+mu=0.2 rho=1.5 lam=-0.037038: worst residual 1.48e-06
+mu=3.0 rho=1.5 lam=-0.187752: worst residual 5.65e-07
+mu=1.0 rho=1.05 lam=-0.019578: worst residual 7.56e-07
+mu=0.3 rho=1.2 lam=-0.031669: worst residual 1.31e-06

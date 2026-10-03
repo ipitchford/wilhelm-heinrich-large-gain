@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "claim_boundary": "Finite numerical diagnostics, not interval certificates and not exhaustive cycle exclusion.",
+  "counts": {
+    "exact_equalities": [
+      50,
+      50
+    ],
+    "cycle_approximations": [
+      31,
+      31
+    ],
+    "cycle_geometry_and_adjoint_audits": [
+      31,
+      31
+    ],
+    "cross_method": [
+      4,
+      4
+    ],
+    "reciprocal_rates": [
+      12,
+      12
+    ],
+    "envelope": [
+      4,
+      4
+    ],
+    "negative_controls": [
+      4,
+      4
+    ]
+  },
+  "maxima": {
+    "exponent_cross_formulation": 3.525402192394722e-12,
+    "orthogonality_scaled": 9.847112195805492e-11,
+    "state_return_closure": 2.0936141709171352e-11,
+    "moment_relative_residual": 1.1589844094297405e-11,
+    "cross_method_matrix_difference": 2.446682856316329e-10,
+    "cross_method_exponent_difference": 5.684341886080802e-14,
+    "reciprocal_all_comparisons": 1.2899903367724619e-11,
+    "envelope_hessian_scaled_error": 1.8068565532658454e-09,
+    "envelope_defect_residual": 8.043329971206998e-12
+  },
+  "square_root_certificate_failures": 9,
+  "number_negative_computed_exponents": 31,
+  "phase_example": {
+    "X_max": 0.0,
+    "Z_max": 0.09065945125577783,
+    "Y_max": 0.20256966031182586,
+    "X_min": 0.4656511314427045,
+    "Z_min": 0.6429561512421307,
+    "Y_min": 0.7718174782982438
+  },
+  "false_radial_example": {
+    "mu": 0.3,
+    "amplitude": 0.01,
+    "square_root_test_ratios": [
+      1.000058142296389,
+      0.9995966739404488
+    ],
+    "weak_multiplier": 0.9999882842317784
+  },
+  "source_sha256": {
+    "exact_checks.json": "fd37d09994665e4920fdf692bf01c4c67872881cfa1039e7afadea3a53a06452",
+    "cycle_trials.json": "45f5ce4b0a4578e01b8d3fe31e58751582f81a0ba610dc94e56a91fc14f520bf",
+    "numerical_audit.json": "6ccb445e33ae7e1f63deac1a587c7661e00430c4a24760f5fc36277cf8268099",
+    "cross_method.json": "39d74477e894f50d570f5ec8231524980bdd2c41994fffc5ea95535470eee5cb",
+    "reciprocal_rates.json": "5d7e4f49df6189fbf264f9662f032114c09e05ae415b622b9b8eec33730a8cd4",
+    "envelope_checks.json": "398c9838afe74d9e35570918760b0af6f34c52645afa708e4ef34c0432405e7a",
+    "negative_controls.json": "55ab2413f16499552243d0dc2b48368a5958774d08be5ee6d80f26eec3d35af6"
+  },
+  "passed": true
+}

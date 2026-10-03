@@ -1,0 +1,316 @@
+{
+  "schema_version": "3.0",
+  "started_utc": "2026-10-03T19:28:11.886415+00:00",
+  "python": "3.13.5 (main, Jun 11 2025, 15:36:57) [Clang 17.0.0 (clang-1700.0.13.3)]",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "packages": {
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "numba": "0.65.0",
+    "llvmlite": "0.47.0"
+  },
+  "regenerated_cycles": true,
+  "quick": false,
+  "threads": 1,
+  "network_used": false,
+  "code_sha256": {
+    "code/additional_checks.py": "e886ef29899d1199ff44b2a21685c072512e41fb6cb86e232a3679ca92a98c25",
+    "code/check_consistency.py": "c19b29bc0f04eb1a709d0d46685501bf09efd75395b5df0ff746855834cac00d",
+    "code/cycles.py": "5a0cca12b3057afb666f7961f3b27f117024746abd806945e971414e67c1bc12",
+    "code/exact_checks.py": "20ab5b35055ed68b34b0450220830697fa20b4d92b9ec5f1d7ca4838d8c231ce",
+    "code/make_tables.py": "93fcfdefc689bc7148b5156c9a6428985b19e4e3859941c80ec67decf74bf60c",
+    "code/numerical_audit.py": "24b3aab612b006b3f56cf0a8daaf2da67d3ac4c6e727476f830fdb9da71cbbea",
+    "code/rational_interval_audit.py": "f4f18f5d8befc02b16cf2a52752d354fd7a512d1cdcf932249d8455177d10647",
+    "code/revision_controls.py": "d0f46dc9783b531e9722cb324d5db08d0643024ecde58a853b4d46ce37ad4946",
+    "code/run_all.py": "fbdb7f4604cd4113a80e5d2e8678fe3838292edfcbf7a8967bf31004f2b61022",
+    "code/verify_manifest.py": "5c49cd91bf497c9ff02bf060870b74b92d67cb4bea9caa1bde52fbdaf08df71d",
+    "code/v3/common.py": "0529795b65ba027dfdd94883176c5564fea23215863a48b571362a1d23ca5a9a",
+    "code/v3/cyclekit.py": "5a2121d05902276946dc65b843354248933f89d31505b78c54f71b2857d6b70f",
+    "code/v3/v3_attractor.py": "a52b9dc3c18eef938ec4ee0ab12508fc0ddc4d9e04f232eeda0d1e798c077990",
+    "code/v3/v3_cartography.py": "be2e723fdfc76d43f31a4669700119582472b87de65a68438095f46571cf35f7",
+    "code/v3/v3_controls.py": "8f79652ea5d4d3d00033227533b96ef7c0845bc68d45f3e9436782b4148ba7c8",
+    "code/v3/v3_exact_identities.py": "4cb2a1387721ce5fa9535a77afcc5ce2d3ae52718a2d1c0903dee9a40e27f901",
+    "code/v3/v3_gauges.py": "e96f8ee2a7896d53fd412f382c4099f883fc45641b9fb40e762e8460a2865cf2",
+    "code/v3/v3_largegain_constants.py": "3d857bd464e33e13462072a778f6328076126c3cd2a73ec3f3d47cdfb390b8fd",
+    "code/v3/v3_largegain_lemmas.py": "5b2706e5fd7aa97e3e6cdd1746214d9a7b5a5c514389ef48f92ae30c52d129d1",
+    "code/v3/v3_negative.py": "353758500c4b0cfcec7f20d90fd673cace5e140ae8b802e58e5b726967883ec5",
+    "code/v3/v3_weak_adjoint.py": "9d11ef48afd343afd982a837535da091babb25a28ba25f31b31cbcfcd548397d",
+    "code/v3/v3_wedge.py": "df452d1c6360b098f05f01f142abb89e72474f7cda5d7b2d200fe2d4523a4efe",
+    "code/v3/lib/ampcycle.py": "fae31d4c7a309a4c0b4ae463cf5a8380675343631af95f40ba9dac46c574b866",
+    "code/v3/lib/attractor_battery.py": "10f51734469e8c5f731423a5388a2e4fd036718d025d07fe8b0c0fef9840c25e",
+    "code/v3/lib/attractor_mu_gt1.py": "42e4ada13519fe2f1f8f7c7daf2c61517a075abeb6a30a53fd51aa867dc73f17",
+    "code/v3/lib/cart.py": "022a2c1f46dc9352a779252d3c91dfdd6d3083cff68844c111c35f70338a53db",
+    "code/v3/lib/cart_grid.py": "2e1f75aa7bff79af6250a898863833883e2a807e32007e8b8869a81f7b448722",
+    "code/v3/lib/cart_hunt.py": "bf519ca0a38221086191b938362c1386bd3f27a8f660f5e595155523c598404c",
+    "code/v3/lib/lg_check_lemmas.py": "bccfca9c9e59cfec95b7397efef2b53553d08106b607f4b0c7a4d695d003126c",
+    "code/v3/lib/lg_constants_author.py": "0cecd2e88492ec91fa666b8812c27230ac51155a6bc38ffdb75a884f5d4da561",
+    "code/v3/lib/lg_constants_referee.py": "637244df7d398c3fc3a49aa4904fab29811c2af6d73c8ffd126de8ea08d51c6f",
+    "code/v3/lib/lg_referee_cycles.py": "2a39213da4425523fe3699af4079ac4add0d7297b572deea8316510827ade705",
+    "code/v3/lib/lg_referee_segments.py": "4107dfff33f9f060ab454d70672632866062ccf5db725ac45797a69bd8a7d752",
+    "code/v3/lib/lg_referee_stage.py": "c7eb30cdeb2a1ff7ab4268f9e96a1902ae7f613d4cc9dcaf09f37103234f6576",
+    "code/v3/lib/lg_segments.py": "b2dc247fa8d7f7806838e53c5bea1aa0188565946147f4580303e6bd5ec5336a",
+    "code/v3/lib/lg_stage.py": "70ec2c9c499dfb5dd74cb6e1e3029947ea41d0ab2faf43b059d67d6840f2d100",
+    "code/v3/lib/lgcycle.py": "a6f8ea21d838cba7d32ed8fbabe7b61f4f3795fa8598dbfe3c57dd62f8961df7",
+    "code/v3/lib/mono_floquet.py": "e6a707f479e2cd6ecb6e1fd2650e459aa43d171d1d5ecc4629c5611f3f162b9f",
+    "code/v3/lib/mono_vlib.py": "7852cf03883374d0b68bba4db6c1d3d1e0e71b0baec8612640ea66197a6ca4c4",
+    "code/v3/lib/theoremA.py": "f67c1bed175f64121d783362996c63f1ecc3b7271d269ec56cf02ad11eea7cac",
+    "code/v3/lib/toda.py": "952e23f8c7468bbca234ae433d8e23bc981e9a0e2a21cbb5ded420128ad86d2d",
+    "code/v3/lib/vlog.py": "12c524076571b101db58aee79508928d0a90c335ea3300712da6f7a1a7fe97a7",
+    "code/v3/lib/wedge_identities.py": "be4ab7198769121baa24b60ef3868cc27dc8b2a33db80bb8a874adf1837dc985",
+    "code/v3/lib/whlib.py": "b4f9ad34e9e858ac1751e18d922c6e6b2dce494eb252c119b94c56eb38f1a5c2",
+    "code/v3/lib/whref.py": "a19ce3a130327b00d716fa51a3b74eebd198d2b013b9b32f1dc11e0811fa0390"
+  },
+  "steps": [
+    {
+      "name": "exact_checks",
+      "script": "code/exact_checks.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 0.972458167001605,
+      "log": "logs/exact_checks.log",
+      "peak_rss_mb_so_far": 71.25
+    },
+    {
+      "name": "cycle_regeneration",
+      "script": "code/cycles.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 1.3065542919794098,
+      "log": "logs/cycle_regeneration.log",
+      "peak_rss_mb_so_far": 120.25
+    },
+    {
+      "name": "numerical_audit",
+      "script": "code/numerical_audit.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 3.1744849999959115,
+      "log": "logs/numerical_audit.log",
+      "peak_rss_mb_so_far": 120.25
+    },
+    {
+      "name": "additional_checks",
+      "script": "code/additional_checks.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 7.866063875000691,
+      "log": "logs/additional_checks.log",
+      "peak_rss_mb_so_far": 120.25
+    },
+    {
+      "name": "v3_exact_identities",
+      "script": "code/v3/v3_exact_identities.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 1.2384346250037197,
+      "log": "logs/v3_exact_identities.log",
+      "peak_rss_mb_so_far": 120.25
+    },
+    {
+      "name": "v3_gauges",
+      "script": "code/v3/v3_gauges.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 41.250806042022305,
+      "log": "logs/v3_gauges.log",
+      "peak_rss_mb_so_far": 122.4375
+    },
+    {
+      "name": "v3_largegain_constants",
+      "script": "code/v3/v3_largegain_constants.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 1.9460074579983484,
+      "log": "logs/v3_largegain_constants.log",
+      "peak_rss_mb_so_far": 122.4375
+    },
+    {
+      "name": "v3_largegain_lemmas",
+      "script": "code/v3/v3_largegain_lemmas.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 33.20920879201731,
+      "log": "logs/v3_largegain_lemmas.log",
+      "peak_rss_mb_so_far": 264.828125
+    },
+    {
+      "name": "v3_attractor",
+      "script": "code/v3/v3_attractor.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 87.97997541699442,
+      "log": "logs/v3_attractor.log",
+      "peak_rss_mb_so_far": 336.015625
+    },
+    {
+      "name": "v3_weak_adjoint",
+      "script": "code/v3/v3_weak_adjoint.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 41.15342362501542,
+      "log": "logs/v3_weak_adjoint.log",
+      "peak_rss_mb_so_far": 405.75
+    },
+    {
+      "name": "v3_wedge",
+      "script": "code/v3/v3_wedge.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 89.26851158300997,
+      "log": "logs/v3_wedge.log",
+      "peak_rss_mb_so_far": 405.75
+    },
+    {
+      "name": "v3_cartography",
+      "script": "code/v3/v3_cartography.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 106.32446345797507,
+      "log": "logs/v3_cartography.log",
+      "peak_rss_mb_so_far": 405.75
+    },
+    {
+      "name": "v3_negative",
+      "script": "code/v3/v3_negative.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 21.843507541983854,
+      "log": "logs/v3_negative.log",
+      "peak_rss_mb_so_far": 405.75
+    },
+    {
+      "name": "v3_controls",
+      "script": "code/v3/v3_controls.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 3.2306914170039818,
+      "log": "logs/v3_controls.log",
+      "peak_rss_mb_so_far": 405.75
+    },
+    {
+      "name": "make_tables",
+      "script": "code/make_tables.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 0.3966185830067843,
+      "log": "logs/make_tables.log",
+      "peak_rss_mb_so_far": 405.75
+    },
+    {
+      "name": "check_consistency",
+      "script": "code/check_consistency.py",
+      "arguments": [],
+      "exit_status": 0,
+      "elapsed_seconds": 0.6288229159836192,
+      "log": "logs/check_consistency.log",
+      "peak_rss_mb_so_far": 405.75
+    }
+  ],
+  "passed": true,
+  "computation_seconds": 440.764591293002,
+  "peak_rss_mb": 405.75,
+  "receipts": {
+    "exact_checks": {
+      "kind": "exact_symbolic_equalities",
+      "passed": true,
+      "attempted": 50,
+      "n_passed": 50
+    },
+    "numerical_audit": {
+      "kind": "floating_point_identity_and_geometry_audit",
+      "passed": true,
+      "attempted": 31,
+      "n_passed": 31
+    },
+    "cross_method": {
+      "kind": "floating_point_solver_sensitivity",
+      "passed": true,
+      "attempted": 4,
+      "n_passed": 4
+    },
+    "reciprocal_rates": {
+      "kind": "floating_point_coordinate_symmetry",
+      "passed": true,
+      "attempted": 12,
+      "n_passed": 12
+    },
+    "envelope_checks": {
+      "kind": "floating_point_convex_envelope_diagnostic",
+      "passed": true,
+      "attempted": 4,
+      "n_passed": 4
+    },
+    "negative_controls": {
+      "kind": "deliberate_error_regression",
+      "passed": true,
+      "attempted": 4,
+      "n_passed": 4
+    },
+    "v3_exact_identities": {
+      "kind": "exact_symbolic_equality",
+      "passed": true,
+      "attempted": 148,
+      "n_passed": 148
+    },
+    "v3_gauges": {
+      "kind": "floating_point_diagnostic",
+      "passed": true,
+      "attempted": 66,
+      "n_passed": 66
+    },
+    "v3_largegain_constants": {
+      "kind": "high_precision_constant_check",
+      "passed": true,
+      "attempted": 141,
+      "n_passed": 141
+    },
+    "v3_largegain_lemmas": {
+      "kind": "floating_point_diagnostic",
+      "passed": true,
+      "attempted": 29561,
+      "n_passed": 29561
+    },
+    "v3_attractor": {
+      "kind": "floating_point_diagnostic",
+      "passed": true,
+      "attempted": 156,
+      "n_passed": 156
+    },
+    "v3_weak_adjoint": {
+      "kind": "floating_point_diagnostic",
+      "passed": true,
+      "attempted": 180,
+      "n_passed": 180
+    },
+    "v3_wedge": {
+      "kind": "floating_point_diagnostic",
+      "passed": true,
+      "attempted": 211,
+      "n_passed": 211
+    },
+    "v3_cartography": {
+      "kind": "floating_point_table_recomputation",
+      "passed": true,
+      "attempted": 140,
+      "n_passed": 140
+    },
+    "v3_negative": {
+      "kind": "floating_point_diagnostic",
+      "passed": true,
+      "attempted": 123,
+      "n_passed": 123
+    },
+    "v3_controls": {
+      "kind": "deliberate_error_regression",
+      "passed": true,
+      "attempted": 6,
+      "n_passed": 6
+    }
+  },
+  "problems": [],
+  "completed_utc": "2026-10-03T19:35:34.333284+00:00",
+  "scope": "All specified finite checks were executed. Exact symbolic equalities are exact; all other checks are floating-point or high-precision computations without interval enclosure. This is not a proof assistant.",
+  "total_seconds": 441.7900327919924
+}

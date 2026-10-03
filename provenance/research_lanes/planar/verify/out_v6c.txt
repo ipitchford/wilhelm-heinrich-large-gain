@@ -1,0 +1,6 @@
+flagged spiral point: t=1030.291  U=7.080943  p=10.205911125792511  log q=0.710048  (lam=12.239999999999998)
+   cycle at the same U: branch falling (p<0): p=-18.401497776154589  log q=3.422355;  spiral minus cycle: dp=2.861e+01,  d log q=-2.712e+00
+   cycle at the same U: branch rising (p>0): p=10.206054716595885  log q=0.709977;  spiral minus cycle: dp=-1.436e-04,  d log q=7.059e-05
+   neighbour sample t=1030.124: U=5.1864 p=11.965550915374614 inside=True
+   neighbour sample t=1030.458: U=8.1416 p=1.5010215292932116e-11 inside=True
+   EXACT cycle point at U=7.080943 on the rising branch (backward from crest, t=-0.16683): p_cycle=10.206211401436; spiral p=10.205911125793; spiral - cycle = -3.003e-04  -> spiral point is INSIDE (below the upper arc)

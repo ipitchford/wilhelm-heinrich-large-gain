@@ -1,0 +1,7 @@
+mu>1 check of V=p'^2-pp''>0 and lambda_c = -<pW/V>
+  mu=3    rho=1.1  lambda_c=-5.77117497e-02  -<pW/V>=-5.77117497e-02  V>0:True  minV/maxV=1.91e-01  minW=6.86e-01
+  mu=3    rho=2    lambda_c=-2.60792764e-01  -<pW/V>=-2.60792764e-01  V>0:True  minV/maxV=2.33e-03  minW=1.60e-02
+  mu=3    rho=5    lambda_c=-4.79933821e-01  -<pW/V>=-4.79933822e-01  V>0:True  minV/maxV=1.46e-06  minW=4.27e-09
+  mu=10   rho=1.1  lambda_c=-6.71577392e-02  -<pW/V>=-6.71577392e-02  V>0:True  minV/maxV=8.87e-02  minW=1.72e+00
+  mu=10   rho=2    lambda_c=-2.44110138e-01  -<pW/V>=-2.44110138e-01  V>0:True  minV/maxV=4.09e-04  minW=2.53e-07
+  mu=10   rho=5    lambda_c=-4.50559989e-01  -<pW/V>=-4.50559988e-01  V>0:True  minV/maxV=5.02e-07  minW=-2.69e-16

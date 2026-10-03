@@ -1,0 +1,20 @@
+{
+  "version": "2.0",
+  "date": "2026-10-02",
+  "status": "scoped_submission_candidate",
+  "title": "Finite-parameter obstructions and cycle geometry in the Wilhelm–Heinrich oscillator",
+  "original_all_parameter_conjecture_solved": false,
+  "certified_multicycle_counterexample": false,
+  "neutral_cycle_excluded": false,
+  "self_contained_for_stated_claims": true,
+  "current_independent_referee_review": false,
+  "priority_established": false,
+  "numeric_parameter_threshold_certified": false,
+  "active_evidence": "fresh exact finite algebra and floating-point diagnostics",
+  "historical_failed_receipts_preserved": true,
+  "remaining_target": "Exclude a nonconstant cycle with mean(eta)=mu, or produce and validate a genuine multiplicity mechanism.",
+  "pdf_pages": 17,
+  "active_full_suite_regenerated_and_passed": true,
+  "bookkeeping_checks_passed": 105,
+  "pdf_render_preflight_passed": true
+}

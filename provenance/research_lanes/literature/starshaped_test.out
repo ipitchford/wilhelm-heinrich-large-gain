@@ -1,0 +1,21 @@
+mu=1 rho=1.1: 349 p=0 crossings used for h(u,0); min G=3.80e-03 (should be >0), u*g>0 everywhere: True
+   on the cycle: S>0 at 2413 pts, S<0 at 1284 pts ; S range [-2.451e-01, 5.377e-01]
+      quadrant u>0,v>0 : S in [-1.707e-01, 1.487e-01]
+      quadrant u>0,v<0 : S in [-2.451e-01, -1.710e-01]
+      quadrant u<0,v<0 : S in [-1.344e-01, 5.085e-01]
+      quadrant u<0,v>0 : S in [1.916e-01, 5.377e-01]
+   raw-plane RAM quantity alpha = -v K on the cycle: min -5.106e-01 max 6.038e-01 (sign changes with v: True)
+mu=1 rho=1.3: 134 p=0 crossings used for h(u,0); min G=2.13e-02 (should be >0), u*g>0 everywhere: True
+   on the cycle: S>0 at 2765 pts, S<0 at 893 pts ; S range [-3.634e-01, 1.108e+00]
+      quadrant u>0,v>0 : S in [-1.919e-01, 2.615e-01]
+      quadrant u>0,v<0 : S in [-3.634e-01, -2.299e-01]
+      quadrant u<0,v<0 : S in [-2.354e-01, 1.081e+00]
+      quadrant u<0,v>0 : S in [3.480e-01, 1.108e+00]
+   raw-plane RAM quantity alpha = -v K on the cycle: min -2.442e+00 max 3.728e+00 (sign changes with v: True)
+mu=0.3 rho=1.1: 400 p=0 crossings used for h(u,0); min G=1.50e-03 (should be >0), u*g>0 everywhere: True
+   on the cycle: S>0 at 2366 pts, S<0 at 1325 pts ; S range [-2.135e-01, 5.755e-01]
+      quadrant u>0,v>0 : S in [-1.900e-01, 5.031e-02]
+      quadrant u>0,v<0 : S in [-2.135e-01, -1.054e-01]
+      quadrant u<0,v<0 : S in [-6.235e-02, 5.696e-01]
+      quadrant u<0,v>0 : S in [9.630e-02, 5.755e-01]
+   raw-plane RAM quantity alpha = -v K on the cycle: min -9.836e-02 max 1.420e-01 (sign changes with v: True)

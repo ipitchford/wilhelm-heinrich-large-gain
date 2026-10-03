@@ -1,0 +1,13 @@
+ADDITIONAL CONTEXT (proved in other sections of the paper; take as given).
+  (thm:gauges) on every cycle Sigma=p^2-Up'>0 and Xi=p'^2-pp''>0, Sigma'=(eta-mu)Sigma+pK, Xi'=(eta-mu)Xi+pW; lambda_c=-<pK/Sigma>=-<pW/Xi>; eta_0=[U(x-y)-p(y-k)]/Sigma has mean mu and eta-eta_0=-pK/Sigma.
+  (prop:kappa) kappa=K/Sigma solves kappa'=k psi(U)/Sigma-(1+2 eta_0-mu)kappa+p kappa^2.
+  (lem:strongstable) strong-stable Floquet vector e_s=(a,-b,-c), a,b,c>0, ratios r=b/a, s=c/a.
+  (prop:crestmonotone) the crest return map P on {p=0, k e^U>=y>k} exists, is C^1, DP entrywise positive.
+  (thm:attractor) for all mu,k>0 the union A of log-bounded entire orbits is a compact connected global attractor; pi(U,p,y)=(U,p) is injective on A; A is the graph y=h(U,p) over D=pi(A) of the restriction of a convex function H, h is C^1 in int D with grad h=(zeta,-eta), where (eta,zeta) are the positive adjoint ratios extended to A; the reduced planar field F(u,v)=(v,k-mu v-H(u,v)) has divergence eta-mu in int D. For k>k_H: E is a source in A; D is the closed Jordan domain bounded by the outermost projected cycle J_out; innermost and outermost cycles have lambda_c<=0; (cor:criterion) if every cycle has lambda_c<0 the cycle is unique and attracts every positive orbit off W^s(E); if there are two cycles one has lambda_c>=0.
+  (prop:crestaxis) on the crest half-axis {v=0,0<u<=xi_out} of D the first-return map R_1 is C^1 with R_1'(u)=g(u)exp(iota(u))/g(R_1(u)), g(u)=h(u,0)-k>0, iota(u)=integral of (eta-mu) dt over the turn from (u,0) to (R_1(u),0); fixed points of R_1 are the crests of cycles; in the energy coordinate G_*(u)=int_0^u g the return map R_* has derivative exp(iota).
+  (att:prop:scaling) for q in D and 0<=theta<=1: F(theta q)^F(q) = -v[theta(H(q)-k)+k-H(theta q)] with nonnegative bracket.
+  (att:cor:dulac) constraints on Dulac functions for the reduced flow.
+  (lem:statebox) all cycles lie in [beta_0,M_0]^3 in chemical variables, M_0=(lambda+mu)(lambda+1)/mu; (lem:eqseparation),(lem:speed),(thm:compact): uniform compactness of cycle families on compact subsets of P; (lem:collar): unique cycle near Hopf; (thm:neutral): count locally constant off the neutral set N.
+  (thm:largegain) for 0<mu<=1 and k>=1000 every cycle has <eta><=0.83 mu; (cor:lgreciprocal) same for mu>=1, k>=1000 mu^3.
+  (app:hopf) frequency-one time tau=sqrt(mu) t, sigma=(1+mu)/sqrt(mu): U_ttt+sigma U_tt+U_t+sigma rho(e^U-1)=0, rho=k/k_H; first Lyapunov coefficient l_1=-sigma/((sigma^2+1)(sigma^2+4))<0.
+=====================================================================

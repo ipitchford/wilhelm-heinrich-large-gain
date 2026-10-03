@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0",
+  "kind": "exact_symbolic_equalities",
+  "software": {
+    "sympy": "1.14.0"
+  },
+  "checks": [
+    {
+      "id": "adjoint_sign_conjugacy",
+      "passed": true,
+      "residual": "Matrix([[0, 0, 0], [0, 0, 0], [0, 0, 0]])"
+    },
+    {
+      "id": "projective_eta",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "projective_zeta",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "normal_adjoint_equation",
+      "passed": true,
+      "residual": "Matrix([[0], [0], [0]])"
+    },
+    {
+      "id": "orthogonality_transport",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "tangent_second_order",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "operator_D2",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "operator_D1",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "operator_D0",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "gain_primitive",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "gain_polynomial",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "support_equilibrium_primitive",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "support_curvature",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "weighted_tangent_primitive",
+      "passed": false,
+      "residual": "eta*p*(-eta*k + eta*mu*p + eta*y + p*zeta - x + y)"
+    },
+    {
+      "id": "strict_support_identity",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "crest_identity_x",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "filter_second_derivative",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "p_extremum_sign",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "compound_sign_conjugacy",
+      "passed": true,
+      "residual": "Matrix([[0, 0, 0], [0, 0, 0], [0, 0, 0]])"
+    },
+    {
+      "id": "crest_wedge",
+      "passed": true,
+      "residual": "Matrix([[0], [0], [0]])"
+    },
+    {
+      "id": "return_trace_sign",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "neutral_variance_expansion",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "neutral_variance_lower_integrand",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "stable_equilibrium_eigenvector",
+      "passed": true,
+      "residual": "Matrix([[0], [0], [0]])"
+    },
+    {
+      "id": "equilibrium_normal",
+      "passed": true,
+      "residual": "Matrix([[0], [0], [0]])"
+    },
+    {
+      "id": "equilibrium_characteristic",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "critical_characteristic",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "physical_Z_over_X",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "physical_Y_over_X",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "physical_transform_U",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "physical_transform_p",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "physical_transform_y",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "reciprocal_time_D2",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "reciprocal_time_D1",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "envelope_graph_defect",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "envelope_Hessian_rank_one",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "envelope_Hessian_tangent",
+      "passed": true,
+      "residual": "Matrix([[0], [0]])"
+    },
+    {
+      "id": "Hopf_right_eigenvector",
+      "passed": true,
+      "residual": "Matrix([[0], [0], [0]])"
+    },
+    {
+      "id": "Hopf_left_eigenvector",
+      "passed": true,
+      "residual": "Matrix([[0, 0, 0]])"
+    },
+    {
+      "id": "Hopf_normalisation",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "Hopf_G21",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "Hopf_l1",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "Hopf_transversality",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "centre_graph_10",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "centre_graph_01",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "centre_graph_20",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "centre_graph_11",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "centre_graph_02",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "radial_direction_mismatch",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "id": "radial_failure_coefficient",
+      "passed": true,
+      "residual": "0"
+    }
+  ],
+  "number_checked": 50,
+  "number_passed": 49,
+  "passed": false,
+  "scope": "Finite algebra only. Analysis and topology require the written proofs."
+}

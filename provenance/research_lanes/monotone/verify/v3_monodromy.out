@@ -1,0 +1,14 @@
+mu=1.0 rho=1.01: m_t=9.752e-01 m_s=3.429e-06 | (ii) max rel residual of Phi^T q = m_t q: 5.2e-12 | (i) Phi e_s = m_s e_s: 1.7e-07 | (iii) eig-vector vs (1,-r,-s): 8.5e-13
+mu=1.0 rho=1.5: m_t=3.340e-01 m_s=9.331e-07 | (ii) max rel residual of Phi^T q = m_t q: 6.3e-11 | (i) Phi e_s = m_s e_s: 6.1e-06 | (iii) eig-vector vs (1,-r,-s): 1.7e-12
+mu=1.0 rho=4.0: m_t=4.167e-03 m_s=2.278e-10 | (ii) max rel residual of Phi^T q = m_t q: 5.0e-07 | (i),(iii): m_s below roundoff of Phi, not resolvable
+mu=0.3 rho=1.01: m_t=9.779e-01 m_s=3.181e-07 | (ii) max rel residual of Phi^T q = m_t q: 4.7e-12 | (i) Phi e_s = m_s e_s: 2.1e-07 | (iii) eig-vector vs (1,-r,-s): 9.7e-14
+mu=0.3 rho=1.5: m_t=4.366e-01 m_s=1.144e-08 | (ii) max rel residual of Phi^T q = m_t q: 3.1e-11 | (i),(iii): m_s below roundoff of Phi, not resolvable
+mu=0.3 rho=4.0: m_t=2.313e-02 m_s=6.827e-16 | (ii) max rel residual of Phi^T q = m_t q: 1.6e-08 | (i),(iii): m_s below roundoff of Phi, not resolvable
+mu=0.02 rho=1.01: m_t=9.916e-01 m_s=2.787e-21 | (ii) max rel residual of Phi^T q = m_t q: 2.5e-12 | (i),(iii): m_s below roundoff of Phi, not resolvable
+mu=0.02 rho=1.5: m_t=6.544e-01 m_s=3.691e-58 | (ii) max rel residual of Phi^T q = m_t q: 5.1e-09 | (i),(iii): m_s below roundoff of Phi, not resolvable
+mu=0.02 rho=4.0: m_t=7.068e-02 m_s=1.524e-151 | (ii) max rel residual of Phi^T q = m_t q: 8.3e-06 | (i),(iii): m_s below roundoff of Phi, not resolvable
+mu=3.0 rho=1.01: m_t=9.774e-01 m_s=4.786e-07 | (ii) max rel residual of Phi^T q = m_t q: 2.1e-11 | (i) Phi e_s = m_s e_s: 9.6e-06 | (iii) eig-vector vs (1,-r,-s): 6.3e-12
+mu=3.0 rho=1.5: m_t=4.224e-01 m_s=2.513e-08 | (ii) max rel residual of Phi^T q = m_t q: 1.2e-10 | (i),(iii): m_s below roundoff of Phi, not resolvable
+mu=3.0 rho=4.0: m_t=2.034e-02 m_s=5.841e-15 | (ii) max rel residual of Phi^T q = m_t q: 2.2e-07 | (i),(iii): m_s below roundoff of Phi, not resolvable
+mu=0.1 rho=1.2: m_t=7.657e-01 m_s=2.398e-12 | (ii) max rel residual of Phi^T q = m_t q: 5.2e-12 | (i),(iii): m_s below roundoff of Phi, not resolvable
+mu=7.0 rho=2.5: m_t=2.002e-01 m_s=8.987e-19 | (ii) max rel residual of Phi^T q = m_t q: 1.2e-08 | (i),(iii): m_s below roundoff of Phi, not resolvable

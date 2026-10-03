@@ -1,0 +1,5 @@
+mu=0.02  rho=1.5   samples=151197  min V/r^2=9.218e-04  min Q/(p^2+pd^2)=2.008e-04  max|O|rel=1.0e+00  max|eta-eta0+p kappa|rel=9.7e-09  | near E: eta-mu in [0.009441,0.009452]  2sigma=0.009447  gammaE-A=0.009447
+mu=0.3   rho=1.01  samples=196826  min V/r^2=2.505e-01  min Q/(p^2+pd^2)=2.621e-01  max|O|rel=3.3e-11  max|eta-eta0+p kappa|rel=3.9e-11  | near E: eta-mu in [0.001930,0.001979]  2sigma=0.001955  gammaE-A=0.001955
+mu=0.3   rho=4.0   samples=144391  min V/r^2=2.884e-02  min Q/(p^2+pd^2)=5.407e-04  max|O|rel=4.3e-09  max|eta-eta0+p kappa|rel=3.2e-11  | near E: eta-mu in [0.376204,0.376251]  2sigma=0.376235  gammaE-A=0.376235
+mu=1.0   rho=1.5   samples=193342  min V/r^2=2.691e-01  min Q/(p^2+pd^2)=2.012e-01  max|O|rel=1.0e-10  max|eta-eta0+p kappa|rel=7.8e-11  | near E: eta-mu in [0.174529,0.174596]  2sigma=0.174559  gammaE-A=0.174559
+mu=1.0   rho=4.0   samples=151513  min V/r^2=6.740e-02  min Q/(p^2+pd^2)=9.338e-04  max|O|rel=5.4e-11  max|eta-eta0+p kappa|rel=3.3e-11  | near E: eta-mu in [0.716162,0.716235]  2sigma=0.716189  gammaE-A=0.716189

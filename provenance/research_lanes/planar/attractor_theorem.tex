@@ -1,0 +1,752 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\avg}[1]{\left\langle #1\right\rangle}
+\DeclareMathOperator{\inter}{int}
+\DeclareMathOperator{\diver}{div}
+\setlist{nosep,leftmargin=2.2em}
+\title{The global attractor of the Wilhelm--Heinrich oscillator\\ is a convex $C^1$ graph over a closed Jordan domain}
+\author{Anonymous (lane \texttt{planar}, working note)}
+\date{3 October 2026}
+\begin{document}
+\maketitle
+
+\noindent\textbf{Status.} Every step below is written out. The note proves the attractor-graph theorem
+(Theorem~\ref{thm:A}) and its corollaries. It does \emph{not} prove uniqueness of the limit cycle; it reduces that
+conjecture to a statement about a planar $C^1$ flow with a convex right-hand side. Imported results are listed in
+\S\ref{sec:inputs}; nothing else is assumed. Floating-point checks of every numerical consequence are reported in
+\S\ref{sec:numerics}; they are consistency tests and are not part of any proof.
+
+\section{Setting, imported inputs and the theorem}\label{sec:setting}
+
+Fix $\mu>0$, $k>0$ and put $A=1+\mu$, $\lambda=k/\mu$, $k_H=\mu(1+\mu)$. In logarithmic coordinates
+$z=(U,p,y)\in\R^3$ the Wilhelm--Heinrich system is
+\begin{equation}\label{eq:sys}
+U'=p,\qquad p'=k-\mu p-y,\qquad y'=ke^{U}-y ,
+\end{equation}
+with vector field $f$, flow $\varphi_t$, $x:=ke^{U}$, equilibrium $E=(0,0,k)$, and positive chemical domain
+$\cD=\{(U,p,y):y>0,\ p<\lambda\}$ (that is $X=x/k>0$, $Z=y/k>0$, $Y=1-p/\lambda>0$). Let $\pi(U,p,y)=(U,p)$.
+A \emph{log-bounded entire orbit} is a solution of \eqref{eq:sys} defined and bounded on all of $\R$.
+A \emph{cycle} is the image of a nonconstant periodic solution. Along a solution the Jacobian is
+\[
+J=\begin{pmatrix}0&1&0\\0&-\mu&-1\\x&0&-1\end{pmatrix},
+\]
+and the \emph{Riccati system} driven by a positive function $x(t)$ is
+\begin{equation}\label{eq:ric}
+\eta'=\zeta+(\mu-1)\eta-\eta^{2},\qquad \zeta'=x-(1+\eta)\zeta .
+\end{equation}
+For a pair $(\eta,\zeta)$ write $n=(\zeta,-\eta,-1)^{\mathsf T}$. A direct computation shows that \eqref{eq:ric} is
+equivalent to
+\begin{equation}\label{eq:normal}
+n'+J^{\mathsf T}n+(1+\eta)n=0 .
+\end{equation}
+(Indeed $J^{\mathsf T}n=(-x,\ \zeta+\mu\eta,\ \eta+1)^{\mathsf T}$, so the three components of the left side of
+\eqref{eq:normal} are $\zeta'-x+(1+\eta)\zeta$, $-\eta'+\zeta+(\mu-1)\eta-\eta^2$ and $0$.)
+
+\subsection{Imported inputs}\label{sec:inputs}
+\begin{enumerate}[label=(I\arabic*)]
+\item \emph{Birkhoff--Hopf theorem} (Birkhoff 1957; Hopf 1963; see Seneta, \emph{Non-negative Matrices and Markov
+Chains}, \S3.1, or Bushell 1973): an entrywise positive matrix $P$ contracts Hilbert's projective metric $d$ on
+$\inter\R^n_+$ by the factor $\tanh(\Delta(P)/4)$, where $\Delta(P)=\sup\{d(Pu,Pw):u,w\in\R^n_+\setminus\{0\}\}$.
+\item \emph{Classical planar theory} for $q'=F(q)$ with $F$ locally Lipschitz on $\R^2$ (Hartman, \emph{Ordinary
+Differential Equations}, Ch.~VII, \S4, Thms 4.1--4.2 and the transversal lemmas preceding them):
+\begin{enumerate}[label=(\alph*)]
+\item (Poincar\'e--Bendixson) if a forward orbit is bounded and its $\omega$-limit set $\omega(q)$ contains finitely
+many equilibria, then $\omega(q)$ is an equilibrium, or a periodic orbit, or consists of equilibria together with
+orbits each of which converges to an equilibrium as $t\to+\infty$ and as $t\to-\infty$;
+\item (monotonicity on transversals) successive intersections of an orbit with a transversal segment are monotone
+along the segment, and a periodic orbit meets a transversal segment in at most one point.
+\end{enumerate}
+\item \emph{Invariant manifolds}: the stable/unstable manifold theorem at a hyperbolic equilibrium and at a
+hyperbolic fixed point of a $C^1$ map (applied to Poincar\'e maps of hyperbolic cycles), and Lyapunov stability of
+a cycle all of whose transverse Floquet multipliers have modulus $<1$ (Hartman, Ch.~IX).
+\item \emph{Topology of the plane}: the Jordan curve theorem, the Schoenflies theorem, and the fact that a
+homeomorphism of the circle onto a Jordan curve has winding number $\pm1$ about each interior point.
+\item \emph{Whitney's extension theorem} in class $C^1$ (Whitney 1934) --- used only for the reformulation in
+Theorem~\ref{thm:A}(A8)(a) at the outermost cycle.
+\item From the v2.0 manuscript (\emph{Finite-parameter obstructions and cycle geometry in the Wilhelm--Heinrich
+oscillator}): only its Proposition 2.1 and Theorem 4.1, and both are re-derived here in the form needed
+(Lemma~\ref{lem:cyclegeom} and the first paragraph of \S\ref{sec:mult}), so the note does not depend on v2.0.
+\end{enumerate}
+\emph{Not needed, but consistent:} Smith (2012, Thms 1.3--1.4) proves that \eqref{eq:sys} has a compact attractor
+$A_1$ in the open positive octant attracting all compact subsets of the octant, and that for $k>k_H$ every positive
+orbit off the stable manifold of $E$ converges to a cycle, there being finitely many cycles (Thm 1.1(c), via the
+competitive Poincar\'e--Bendixson theorem and Zhu--Smith 1994). Lemma~\ref{lem:diss} re-proves the permanence
+statement directly so that the constants are explicit; the set $\cA$ below is Smith's $A_1$. The competitive
+Poincar\'e--Bendixson theorem and the finiteness of cycles are \emph{not} used: on $\cA$ the classical planar theory
+(I2) suffices.
+
+\subsection{Main result}
+\begin{theorem}[Attractor graph]\label{thm:A}
+Let $\mu>0$, $k>0$.
+\begin{enumerate}[label=\textup{(A\arabic*)}]
+\item \textup{(Global attractor.)} $\cD$ is forward invariant and the semiflow on $\cD$ has a compact, connected,
+invariant global attractor $\cA\subset\cD$ which attracts every compact subset of $\cD$. $\cA$ is exactly the union
+of all log-bounded entire orbits of \eqref{eq:sys} in $\R^3$.
+\item \textup{(Positive adjoint ratios.)} Along every log-bounded entire orbit $z(\cdot)$, with $x=ke^{U}$, the
+Riccati system \eqref{eq:ric} has exactly one solution on $\R$ with $\eta\ge0$, $\zeta\ge0$. It is bounded,
+\begin{equation}\label{eq:bounds}
+\eta_-\le\eta\le\eta_+,\qquad \zeta_-\le\zeta\le\zeta_+,\qquad \eta_->\max(0,\mu-1),\quad \zeta_->0,
+\end{equation}
+with the explicit constants \eqref{eq:constants}, which depend only on $\mu$ and on
+$x_-=\min_{\cA}ke^{U}$, $x_+=\max_{\cA}ke^{U}$. It attracts all nonnegative data in pull-back and forward sense at
+a uniform exponential rate \eqref{eq:pullback}. The resulting functions $\eta,\zeta:\cA\to(0,\infty)$,
+$a\mapsto(\eta,\zeta)(a)$ (value at time $0$ for the orbit through $a$) are continuous, and
+$t\mapsto(\eta,\zeta)(\varphi_t a)$ is the Riccati solution along the orbit of $a$. On a cycle they are the
+periodic Perron--Floquet ratios of v2.0; at $E$ they are the constants $\eta_E=\gamma_E-1$,
+$\zeta_E=(\gamma_E-1)(\gamma_E-\mu)$, $\gamma_E(\gamma_E-1)(\gamma_E-\mu)=k$, $\gamma_E>\max(1,\mu)$.
+\item \textup{(Supporting planes.)} For all $a\neq b$ in $\cA$,
+\begin{equation}\label{eq:support}
+y_b-y_a>\zeta(a)\,(U_b-U_a)-\eta(a)\,(p_b-p_a).
+\end{equation}
+\item \textup{(Convex $C^1$ graph.)} $\pi|_{\cA}$ is a homeomorphism onto the compact connected set $D=\pi(\cA)$.
+The function
+\[
+H(u,v)=\max_{a\in\cA}\bigl\{y_a+\zeta(a)(u-U_a)-\eta(a)(v-p_a)\bigr\}
+\]
+is convex and globally Lipschitz on $\R^2$, and $\cA=\{(u,v,h(u,v)):(u,v)\in D\}$ with $h=H|_D$. With
+$g:=(\zeta,-\eta)\circ(\pi|_\cA)^{-1}:D\to\R^2$ (continuous) one has, for all $q,q'\in D$,
+\begin{equation}\label{eq:whitney}
+0\le h(q')-h(q)-g(q)\cdot(q'-q)\le\bigl(g(q')-g(q)\bigr)\cdot(q'-q).
+\end{equation}
+Consequently $h$ is differentiable at every interior point of $D$, $h\in C^1(\inter D)$ and
+\[
+\nabla h=(\zeta,-\eta),\qquad h_u=\zeta>0,\qquad h_v=-\eta<-\max(0,\mu-1)\quad\text{on }\inter D,
+\]
+and $(h,g)$ is a Whitney $C^1$ jet on the compact set $D$.
+\item \textup{(Reduced planar flow.)} The field $F(u,v)=(v,\ k-\mu v-H(u,v))$ is globally Lipschitz on $\R^2$; its
+flow $\psi_t$ leaves $D$ invariant and $\pi\circ\varphi_t=\psi_t\circ\pi$ on $\cA$. Every $(u,v)\in D$ satisfies
+\begin{equation}\label{eq:pde}
+\zeta\,v-\eta\,(k-\mu v-h)=ke^{u}-h ,
+\end{equation}
+i.e.\ $h_uv+h_v(k-\mu v-h)=ke^{u}-h$ on $\inter D$. On $\inter D$ the field $F$ is $C^1$ with
+$\diver F=\eta-\mu$. Moreover $K:=\zeta U-\eta p-y+k>0$ and $W:=\zeta'p-\eta'p'>0$ on $\cA\setminus\{E\}$, where
+$'$ is the derivative along the flow, and $K'+(1+\eta)K=k(Ue^{U}-e^{U}+1)$, $W'+(1+\eta)W=xp^2$.
+\end{enumerate}
+Assume in addition $k>k_H$. Then:
+\begin{enumerate}[label=\textup{(A\arabic*)},resume]
+\item \textup{($E$ is a source in $\cA$.)} With $C_+=\{U\ge0,\ p\le0,\ y-k\le0\}$ and $C_-=-C_+$,
+$\cA\cap(E+C_\pm)=\{E\}$. No log-bounded entire orbit other than $E$ converges to $E$ as $t\to+\infty$. The
+two-dimensional unstable manifold $W^u(E)$ lies in $\cA$ and $(0,0)\in\inter D$. Every orbit in $\cA\setminus\{E\}$
+has a cycle as $\omega$-limit set; its $\alpha$-limit set is $\{E\}$ or a cycle; and no non-periodic orbit has the
+same cycle as $\alpha$- and $\omega$-limit set. In particular cycles exist.
+\item \textup{(The domain.)} The set of crests $\{u>0:(u,0)\text{ lies on a projected cycle}\}$ is a nonempty compact
+subset of $(0,\infty)$. Let $\Gamma_{\rm out}$ and $\Gamma_{\rm in}$ be the cycles with the largest and smallest
+crest. Then $D$ is exactly the closed Jordan domain bounded by $\pi(\Gamma_{\rm out})$:
+$\partial D=\pi(\Gamma_{\rm out})$, $\inter D$ is the bounded component of $\R^2\setminus\pi(\Gamma_{\rm out})$, and
+$\cA$ is a closed topological disc with boundary $\Gamma_{\rm out}$.
+\item \textup{(Multipliers.)} Let $\Gamma$ be a cycle with period $T$, $m_t=\exp\int_0^T(\eta-\mu)\,dt$,
+$\lambda_c=\avg\eta-\mu$.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item If $\pi(\Gamma)\subset\inter D$ (every cycle except $\Gamma_{\rm out}$), then $\pi(\Gamma)$ is a periodic orbit
+of the $C^1$ planar field $F$ and its planar Floquet multiplier $\exp\oint\diver F\,dt$ equals $m_t$. For
+$\Gamma_{\rm out}$ the same holds for the $C^1$ field $\widehat F=(v,k-\mu v-\widehat h)$, where $\widehat h$ is any
+Whitney extension of the jet $(h,g)$; $\widehat F=F$ on $D$.
+\item If $m_t>1$, no orbit in $\cA\setminus\Gamma$ has $\omega$-limit set $\Gamma$. If $m_t<1$, no orbit in
+$\cA\setminus\Gamma$ has $\alpha$-limit set $\Gamma$.
+\item $\lambda_c(\Gamma_{\rm in})\le0$ and $\lambda_c(\Gamma_{\rm out})\le0$.
+\item If every cycle has $\lambda_c<0$, there is exactly one cycle. Equivalently, if there are at least two cycles,
+some cycle has $\lambda_c\ge0$.
+\item If every cycle is hyperbolic ($\lambda_c\neq0$), the number of cycles is finite and odd, and ordered by
+nesting they alternate $\lambda_c<0$, $\lambda_c>0$, \dots, $\lambda_c<0$.
+\item \textup{(Dulac form.)} Let $\Lambda$ be a real function on the union of all cycles such that
+$t\mapsto\Lambda(\varphi_ta)$ is absolutely continuous with derivative $\mathbb D\Lambda$. If
+$\mathbb D\Lambda+\eta-\mu\le0$ on every cycle and is not a.e.\ zero on any cycle, the cycle is unique and
+hyperbolic attracting. The reverse inequality (with the same nondegeneracy) is impossible.
+\end{enumerate}
+\end{enumerate}
+\end{theorem}
+For $0<k\le k_H$ the equilibrium is globally asymptotically stable in $\cD$ (Smith 2012, Thm 1.1(b); Boros--Hofbauer
+2023, Thm 13 at $k=k_H$), so $\cA=\{E\}$ and (A1)--(A5) are trivial there.
+
+\section{Dissipativity and the global attractor: proof of (A1)}\label{sec:diss}
+Use $x=ke^{U}>0$, $q:=\lambda-p$ and $y$. Since $\mu\lambda=k$, \eqref{eq:sys} reads
+\begin{equation}\label{eq:xyq}
+x'=(\lambda-q)x,\qquad y'=x-y,\qquad q'=y-\mu q,
+\end{equation}
+and $\cD=\{x>0,\ y>0,\ q>0\}$.
+
+\begin{lemma}[Explicit absorbing box]\label{lem:diss}
+Every solution starting in $\cD$ exists for all $t\ge0$ and stays in $\cD$. There are constants
+$0<\delta_x<M_x$, $0<\delta_y<M_y$, $0<\delta_q<M_q$, depending only on $(\mu,k)$, such that every solution in $\cD$
+satisfies, for all sufficiently large $t$,
+\[
+(x,y,q)(t)\in B_0:=[\delta_x,M_x]\times[\delta_y,M_y]\times[\delta_q,M_q].
+\]
+\end{lemma}
+\begin{proof}
+On the maximal interval of existence $x(t)=x(0)\exp\int_0^t(\lambda-q)>0$ and, by variation of constants,
+\begin{equation}\label{eq:voc}
+y(t)=e^{-(t-s)}y(s)+\int_s^te^{-(t-r)}x(r)\,dr,\qquad q(t)=e^{-\mu(t-s)}q(s)+\int_s^te^{-\mu(t-r)}y(r)\,dr ,
+\end{equation}
+so $y,q>0$ persist. As long as $q>0$ we have $x'\le\lambda x$, so $x\le x(0)e^{\lambda t}$ and then $y,q$ are bounded
+on bounded intervals by \eqref{eq:voc}. Hence solutions are global and $\cD$ is forward invariant.
+
+\emph{Upper bounds.} From $x'/x\le\lambda$, $x(r)\ge x(t)e^{-\lambda(t-r)}$ for $0\le r\le t$. Dropping the
+nonnegative initial terms in \eqref{eq:voc} (with $s=0$) twice,
+\[
+q(t)\ge\int_0^te^{-\mu(t-s)}\!\!\int_0^se^{-(s-r)}x(r)\,dr\,ds\ \ge\ c(t)\,x(t),\qquad
+c(t):=\iint_{a,b\ge0,\ a+b\le t}e^{-\mu a}e^{-b}e^{-\lambda(a+b)}\,da\,db .
+\]
+The function $c$ is positive and nondecreasing; put $c_1=c(1)$. For $t\ge1$, $x'\le x(\lambda-c_1x)$, and comparison
+with the logistic equation gives $\limsup x\le\lambda/c_1$. Put $M_x=2\lambda/c_1$; then $x\le M_x$ for $t\ge t_1$.
+By \eqref{eq:voc}, $y(t)\le e^{-(t-t_1)}y(t_1)+M_x$, so $y\le M_y:=2M_x$ for $t\ge t_2$, and likewise
+$q\le M_q:=2M_y/\mu$ for $t\ge t_3$.
+
+\emph{Lower bounds.} Let $m=\min(1,\mu)$, $a=k/4$ (so $a/\mu=\lambda/4$), and choose $L>0$ with
+$(M_q+M_ys)e^{-ms}\le\lambda/4$ for all $s\ge L$. Put $\delta_x=a\,e^{-M_qL}$. Consider $t_0\ge t_3$ and an interval
+$[t_0,t_0+\sigma]$, $0<\sigma\le\infty$, on which $x\le a$. For $0\le s\le\sigma$, \eqref{eq:voc} gives
+$y(t_0+s)\le M_ye^{-s}+a$ and then
+\[
+q(t_0+s)\le M_qe^{-\mu s}+M_y\int_0^se^{-\mu(s-r)}e^{-r}dr+\frac a\mu\le(M_q+M_ys)e^{-ms}+\frac\lambda4 ,
+\]
+because $\int_0^se^{-\mu(s-r)}e^{-r}dr\le\int_0^se^{-m(s-r)}e^{-mr}dr=se^{-ms}$. Hence $q\le\lambda/2$ and
+$x'\ge(\lambda/2)x$ on $[t_0+L,t_0+\sigma]$. Consequently $\sigma<\infty$ (otherwise $x\to\infty$, contradicting
+$x\le a$): every maximal interval in $[t_3,\infty)$ on which $x\le a$ is bounded. Let $t_4\ge t_3$ be a time with
+$x(t_4)\ge a$, and let $[t_0,t_0+\sigma]\subset[t_4,\infty)$ be a maximal interval with $x\le a$; then $x(t_0)=a$.
+On $[t_0,t_0+\min(\sigma,L)]$, $x'/x=\lambda-q\ge-M_q$ gives $x\ge ae^{-M_qL}=\delta_x$; on the rest of the interval
+$x$ is nondecreasing. So $x\ge\delta_x$ on $[t_4,\infty)$. Then \eqref{eq:voc} gives
+$y(t)\ge\delta_x(1-e^{-(t-t_4)})\ge\delta_y:=\delta_x/2$ eventually and then $q\ge\delta_q:=\delta_y/(2\mu)$
+eventually.
+\end{proof}
+In the coordinates $(U,p,y)$, $B_0$ is the compact box
+$[\log(\delta_x/k),\log(M_x/k)]\times[\lambda-M_q,\lambda-\delta_q]\times[\delta_y,M_y]\subset\cD$.
+
+\begin{proof}[Proof of (A1)]
+Let $N\subset\cD$ be a compact box (in the coordinates $(U,p,y)$) whose interior contains $B_0$.
+
+\emph{(a) A compact forward-invariant absorbing set.} For $z\in\cD$ Lemma~\ref{lem:diss} gives $t_z\ge1$ with
+$\varphi_{t_z}(z)\in B_0\subset\inter N$, and by continuity an open $V_z\ni z$ with
+$\varphi_{t_z}(V_z)\subset\inter N$. Cover $N$ by finitely many $V_{z_i}$, let $\tau=\max t_{z_i}$, and put
+$B_1=\varphi([0,\tau]\times N)$, a compact subset of $\cD$. If $z\in N$ then $z\in V_{z_i}$ for some $i$,
+$\varphi_t(z)\in B_1$ for $0\le t\le t_{z_i}$ and $\varphi_{t_{z_i}}(z)\in N$; since $t_{z_i}\ge1$, induction gives
+$\varphi_t(z)\in B_1$ for all $t\ge0$. Hence $B_1$ is forward invariant. Any compact $C\subset\cD$ is covered by
+finitely many $V_z$, so $\varphi_t(C)\subset B_1$ for all $t\ge t_C$.
+
+\emph{(b) The attractor.} Put $\cA=\bigcap_{t\ge0}\varphi_t(B_1)$, a decreasing intersection of nonempty compact
+sets. Then $\operatorname{dist}(\varphi_t(B_1),\cA)\to0$, so $\cA$ attracts $B_1$ and, by (a), every compact subset
+of $\cD$. Invariance: if $z\in\cA$ and $s\ge0$ then $\varphi_s(z)\in\varphi_{s+t}(B_1)$ for all $t\ge0$ and
+$\varphi_s(z)\in\varphi_s(B_1)\subset\varphi_{t'}(B_1)$ for $t'\le s$, so $\varphi_s(\cA)\subset\cA$. Conversely,
+for $z\in\cA$ and $n\ge s$ write $z=\varphi_n(b_n)=\varphi_s(\varphi_{n-s}(b_n))$ with $b_n\in B_1$; by injectivity
+of $\varphi_s$ the point $w=\varphi_{n-s}(b_n)$ does not depend on $n$, lies in $\varphi_{n-s}(B_1)$ for all
+$n\ge s$, hence in $\cA$, and $\varphi_s(w)=z$. So $\varphi_s(\cA)=\cA$, and each point of $\cA$ lies on an entire
+orbit contained in the compact set $\cA$.
+
+\emph{(c) Characterisation.} Let $z(\cdot)$ be a solution of \eqref{eq:sys} on $\R$ that is bounded. Then
+$0<x_-\le x(t)\le x_+$. The bounded function $y$ solves $y'=x-y$ on $\R$, and two bounded solutions of this equation
+differ by $ce^{-t}$ with $c=0$; hence $y(t)=\int_{-\infty}^te^{-(t-s)}x(s)\,ds\ge x_-$. Likewise
+$q=\lambda-p=\int_{-\infty}^te^{-\mu(t-s)}y(s)\,ds\ge x_-/\mu$. So the closure $C$ of the orbit is a compact subset of
+$\cD$, and for every $s$ and every $t\ge0$, $z(s)=\varphi_t\bigl(\varphi_{t_C}(z(s-t-t_C))\bigr)\in\varphi_t(B_1)$.
+Thus $z(s)\in\cA$. With (b) this proves the characterisation.
+
+\emph{(d) Connectedness.} Let $N'\subset\cD$ be a compact box containing $B_1$. Then $\varphi_t(N')$ is connected,
+contains $\cA=\varphi_t(\cA)$, and lies in any prescribed neighbourhood of $\cA$ for large $t$. If $\cA$ were the
+union of two disjoint nonempty compact sets, separated by disjoint open sets $O_1,O_2$, then for large $t$ the
+connected set $\varphi_t(N')\subset O_1\cup O_2$ would meet both. Contradiction.
+\end{proof}
+
+\section{The positive adjoint direction: proof of (A2)}\label{sec:adjoint}
+Throughout this section $x:\R\to[x_-,x_+]$ is a continuous function with $0<x_-\le x_+$ (no dynamics is assumed).
+Consider
+\begin{equation}\label{eq:lin}
+\mathsf H'=B(t)\mathsf H,\qquad B(t)=\begin{pmatrix}0&0&x(t)\\1&\mu&0\\0&1&1\end{pmatrix},
+\end{equation}
+with evolution operator $\Phi(t,s)$. If $\mathsf H$ solves \eqref{eq:lin} with $\mathsf H_3>0$, then
+$\eta=\mathsf H_2/\mathsf H_3$, $\zeta=\mathsf H_1/\mathsf H_3$ solve \eqref{eq:ric}; conversely, if $(\eta,\zeta)$
+solves \eqref{eq:ric} on an interval, then $\mathsf H_3=\exp\int(1+\eta)$, $\mathsf H_2=\eta\mathsf H_3$,
+$\mathsf H_1=\zeta\mathsf H_3$ solves \eqref{eq:lin} (direct differentiation). Let $B_\pm$ be $B$ with $x$ replaced
+by $x_\pm$, and
+\[
+m_0=\min_{i,j}\bigl(e^{B_-}\bigr)_{ij},\quad M_0=\max_{i,j}\bigl(e^{B_+}\bigr)_{ij},\quad
+\Delta_0=2\log\frac{M_0}{m_0},\quad \tau_0=\tanh\frac{\Delta_0}{4}<1 .
+\]
+Let $d(u,w)=\log\bigl(\max_i\frac{u_i}{w_i}\,\max_i\frac{w_i}{u_i}\bigr)$ be Hilbert's projective metric on
+$\inter\R^3_+$.
+
+\begin{lemma}[Uniform positivity and contraction]\label{lem:cone}
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $m_0>0$, and for every $t$ all entries of $\Phi(t+1,t)$ lie in $[m_0,M_0]$. For $t\ge s$, $\Phi(t,s)$ is
+entrywise nonnegative.
+\item For $t-s\ge1$ and $u,w\in\R^3_+\setminus\{0\}$:
+$d\bigl(\Phi(t,s)u,\Phi(t,s)w\bigr)\le\Delta_0\,\tau_0^{\lfloor t-s\rfloor-1}$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(i) All entries of $B(t)$, $B_\pm$ are nonnegative (the diagonal is $0,\mu,1$) and $B_-\le B(t)\le B_+$ entrywise.
+The Peano--Baker series $\Phi(t,s)=I+\int_s^tB+\int_s^tB(t_1)\int_s^{t_1}B(t_2)+\cdots$ has nonnegative terms and is
+entrywise monotone in $B$, so $e^{(t-s)B_-}\le\Phi(t,s)\le e^{(t-s)B_+}$. The digraph of $B_-$ contains the cycle
+$1\to2\to3\to1$ (entries $(2,1)$, $(3,2)$, $(1,3)$ are positive), so $B_-$ is irreducible and
+$e^{B_-}=\sum_nB_-^n/n!$ is entrywise positive.
+
+(ii) Let $P$ have entries in $[m_0,M_0]$ and $u,w\in\R^3_+\setminus\{0\}$. Then
+$(Pu)_i/(Pw)_i\in\bigl[\tfrac{m_0|u|_1}{M_0|w|_1},\tfrac{M_0|u|_1}{m_0|w|_1}\bigr]$ for each $i$, hence
+$d(Pu,Pw)\le\Delta_0$ and $\Delta(P)\le\Delta_0$; by (I1), $P$ contracts $d$ by the factor $\tau_0$. Put
+$n=\lfloor t-s\rfloor\ge1$ and factor
+$\Phi(t,s)=\Phi(t,t-1)\cdots\Phi(t-n+2,t-n+1)\,\Phi(t-n+1,t-n)\,\Phi(t-n,s)$. The last factor maps
+$\R^3_+\setminus\{0\}$ into itself (nonnegative and invertible), the next one maps it into $\inter\R^3_+$ with image
+of $d$-diameter $\le\Delta_0$, and each of the remaining $n-1$ factors contracts $d$ by $\tau_0$.
+\end{proof}
+
+\begin{lemma}[Suprema of bounded $C^1$ functions]\label{lem:sup}
+If $\phi\in C^1(\R)$ is bounded, there are $t_n$ with $\phi(t_n)\to\sup\phi$ and $\phi'(t_n)\to0$ (and similarly
+for $\inf\phi$).
+\end{lemma}
+\begin{proof}
+Let $S=\sup\phi$, pick $\tau_n$ with $\phi(\tau_n)\ge S-n^{-2}$ and let $t_n$ be a maximum point of
+$\phi(t)-(t-\tau_n)^2/n$. Then $\phi(t_n)-(t_n-\tau_n)^2/n\ge\phi(\tau_n)\ge S-n^{-2}$, whence
+$\phi(t_n)\ge S-n^{-2}$, $(t_n-\tau_n)^2\le n^{-1}$ and $|\phi'(t_n)|=2|t_n-\tau_n|/n\le2n^{-3/2}$.
+\end{proof}
+
+\begin{proposition}[Unique positive entire Riccati solution]\label{prop:riccati}
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item There is exactly one solution $(\eta,\zeta)$ of \eqref{eq:ric} on $\R$ with $\eta\ge0$ and $\zeta\ge0$
+everywhere.
+\item It satisfies \eqref{eq:bounds} with
+\begin{equation}\label{eq:constants}
+\eta_+=\tfrac{\mu-1+\sqrt{(\mu-1)^2+4x_+}}2,\quad \zeta_-=\tfrac{x_-}{1+\eta_+},\quad
+\eta_-=\tfrac{\mu-1+\sqrt{(\mu-1)^2+4\zeta_-}}2,\quad \zeta_+=\tfrac{x_+}{1+\eta_-}.
+\end{equation}
+\item For every $s\in\R$ and $(\eta_0,\zeta_0)\in[0,\infty)^2$ the solution $(\tilde\eta,\tilde\zeta)$ of
+\eqref{eq:ric} with data $(\eta_0,\zeta_0)$ at time $s$ exists on $[s,\infty)$, and for $t\ge s+1$
+\begin{equation}\label{eq:pullback}
+\bigl|\log\tilde\eta(t)-\log\eta(t)\bigr|\le\Delta_0\tau_0^{\lfloor t-s\rfloor-1},\qquad
+\bigl|\log\tilde\zeta(t)-\log\zeta(t)\bigr|\le\Delta_0\tau_0^{\lfloor t-s\rfloor-1}.
+\end{equation}
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+\emph{Existence.} Let $\Sigma=\{u\in\R^3_+:u_1+u_2+u_3=1\}$ and, for $s<t$,
+$C(t,s)=\{\Phi(t,s)u/|\Phi(t,s)u|_1:u\in\Sigma\}$, a compact subset of $\Sigma$. Since
+$\Phi(t,s')=\Phi(t,s)\Phi(s,s')$ and $\Phi(s,s')$ maps $\R^3_+\setminus\{0\}$ into itself, $C(t,s')\subset C(t,s)$
+for $s'<s$. For $t-s\ge1$, $C(t,s)\subset\inter\Sigma$ and its $d$-diameter is at most
+$\Delta_0\tau_0^{\lfloor t-s\rfloor-1}$ by Lemma~\ref{lem:cone}. Hence $\bigcap_{s<t}C(t,s)$ is nonempty (nested
+compacta) and of $d$-diameter $0$, i.e.\ a single point $\hat{\mathsf h}(t)\in\inter\Sigma$ ($d$ is a metric on
+$\inter\Sigma$). For $t'>t$, $\Phi(t',t)\hat{\mathsf h}(t)$, normalised, lies in $C(t',s)$ for every $s<t$, hence in
+$\bigcap_{s<t}C(t',s)=\bigcap_{s<t'}C(t',s)=\{\hat{\mathsf h}(t')\}$. Therefore
+$\mathsf H^*(t):=\Phi(t,0)\hat{\mathsf h}(0)$ is, for every $t\in\R$, a positive multiple of $\hat{\mathsf h}(t)$:
+a positive entire solution of \eqref{eq:lin}. Its ratios $(\eta,\zeta)$ solve \eqref{eq:ric} on $\R$ and are
+positive.
+
+\emph{Uniqueness.} Let $(\tilde\eta,\tilde\zeta)$ be a solution on $\R$ with $\tilde\eta,\tilde\zeta\ge0$. The
+associated $\tilde{\mathsf H}$ is a solution of \eqref{eq:lin} with values in $\R^3_+\setminus\{0\}$, so
+$\tilde{\mathsf H}(t)=\Phi(t,s)\tilde{\mathsf H}(s)$ has normalisation in $C(t,s)$ for all $s<t$, i.e.\ equal to
+$\hat{\mathsf h}(t)$. Hence $(\tilde\eta,\tilde\zeta)=(\eta,\zeta)$.
+
+\emph{Bounds.} $\mathsf H^*(t)=\Phi(t,t-1)c$ with $c\in\R^3_+\setminus\{0\}$, so
+$m_0|c|_1\le\mathsf H^*_i(t)\le M_0|c|_1$ and $\eta,\zeta\in[m_0/M_0,M_0/m_0]$: both are bounded and bounded away
+from $0$; by \eqref{eq:ric} so are their derivatives. Write $\bar\phi=\sup\phi$, $\underline\phi=\inf\phi$.
+Lemma~\ref{lem:sup} applied to $\zeta$ gives $t_n$ with $x(t_n)-(1+\eta(t_n))\zeta(t_n)\to0$, $\zeta(t_n)\to\bar\zeta$,
+so $\bar\zeta\le x_+/(1+\underline\eta)\le x_+$. Applied to $\eta$ at its supremum:
+$\bar\eta(\bar\eta+1-\mu)=\lim\zeta(t_n)\le x_+$ and $\bar\eta>0$, so $\bar\eta\le\eta_+$. At the infimum of
+$\zeta$: $\underline\zeta=\lim x(t_n)/(1+\eta(t_n))\ge x_-/(1+\eta_+)=\zeta_-$. At the infimum of $\eta$:
+$\underline\eta(\underline\eta+1-\mu)=\lim\zeta(t_n)\ge\zeta_->0$ with $\underline\eta>0$; the quadratic
+$s(s+1-\mu)$ is $\le0$ on $[0,\max(0,\mu-1)]$ and increasing beyond, so $\underline\eta\ge\eta_->\max(0,\mu-1)$.
+Finally $\bar\zeta\le x_+/(1+\eta_-)=\zeta_+$.
+
+\emph{Attraction.} The solution of \eqref{eq:lin} with $\tilde{\mathsf H}(s)=(\zeta_0,\eta_0,1)^{\mathsf T}$ is
+nonnegative, and $\tilde{\mathsf H}_3'=\tilde{\mathsf H}_2+\tilde{\mathsf H}_3\ge\tilde{\mathsf H}_3$ keeps
+$\tilde{\mathsf H}_3>0$; its ratios are the (unique, since \eqref{eq:ric} is polynomial) solution of \eqref{eq:ric}
+with the given data, defined on $[s,\infty)$. By Lemma~\ref{lem:cone}(ii) with $u=\tilde{\mathsf H}(s)$,
+$w=\mathsf H^*(s)$, $d(\tilde{\mathsf H}(t),\mathsf H^*(t))\le\Delta_0\tau_0^{\lfloor t-s\rfloor-1}$, and
+$|\log(u_i/u_3)-\log(w_i/w_3)|=|\log(u_i/w_i)-\log(u_3/w_3)|\le d(u,w)$.
+\end{proof}
+
+\begin{proof}[Proof of (A2)]
+For $a\in\cA$ put $x_a(t)=k\exp U(\varphi_ta)$, $t\in\R$; then $x_-\le x_a\le x_+$ with $x_\pm$ the extreme values of
+$ke^{U}$ on the compact set $\cA$. Proposition~\ref{prop:riccati} gives the unique nonnegative entire solution
+$(\eta_a,\zeta_a)(t)$, the bounds, and \eqref{eq:pullback} with constants uniform in $a$. Define
+$(\eta,\zeta)(a)=(\eta_a,\zeta_a)(0)$. Since $x_{\varphi_sa}(t)=x_a(t+s)$, uniqueness gives
+$(\eta,\zeta)(\varphi_sa)=(\eta_a,\zeta_a)(s)$.
+
+\emph{Continuity.} For $s\ge1$ let $R_s(a)$ be the value at time $0$ of the solution of \eqref{eq:ric}, driven by
+$x_a$, with data $(1,1)$ at time $-s$. The flow restricted to the compact invariant set $\cA$ is a continuous action
+of $\R$, so $a\mapsto x_a|_{[-s,0]}$ is continuous into $C([-s,0])$ and, by continuous dependence, $R_s:\cA\to
+(0,\infty)^2$ is continuous. By \eqref{eq:pullback}, $\sup_{a\in\cA}|\log R_s(a)-\log(\eta,\zeta)(a)|\le
+\Delta_0\tau_0^{\lfloor s\rfloor-1}\to0$. A uniform limit of continuous functions is continuous.
+
+\emph{Cycles and $E$.} On a cycle, $(\eta,\zeta)(\cdot+T)$ is again a nonnegative entire solution, so
+$(\eta,\zeta)$ is $T$-periodic; the Perron--Floquet ratios of v2.0 are positive entire solutions and hence coincide
+with it. At $E$ the constant solutions of \eqref{eq:ric} with $x=k$ satisfy $\zeta=k/(1+\eta)$,
+$\eta(\eta+1-\mu)=\zeta$, i.e.\ $\gamma(\gamma-1)(\gamma-\mu)=k$ with $\gamma=1+\eta$; positivity of $\eta,\zeta$
+forces $\gamma>\max(1,\mu)$, where the cubic increases from $0$ to $\infty$.
+\end{proof}
+
+\section{Supporting planes: proof of (A3)}\label{sec:support}
+\begin{theorem}[Two-orbit comparison]\label{thm:support}
+Let $z_1,z_2$ be log-bounded entire solutions of \eqref{eq:sys} with $z_1\not\equiv z_2$, and let $(\eta,\zeta)$ be
+the positive entire Riccati solution along $z_1$, $n=(\zeta,-\eta,-1)^{\mathsf T}$. Then
+$\Delta:=n\cdot(z_2-z_1)=\zeta(U_2-U_1)-\eta(p_2-p_1)-(y_2-y_1)$ satisfies
+\begin{equation}\label{eq:deltaode}
+\Delta'+(1+\eta)\Delta=-x_1\bigl[e^{U_2-U_1}-1-(U_2-U_1)\bigr]=:-r(t)\le0
+\end{equation}
+and $\Delta(t)<0$ for all $t\in\R$.
+\end{theorem}
+\begin{proof}
+With $d=z_2-z_1$ one has $d'=f(z_2)-f(z_1)=J_1d+(0,0,r)^{\mathsf T}$, because the only nonlinear term of $f$ is
+$ke^{U}$ in the third component and $ke^{U_2}-ke^{U_1}=x_1(U_2-U_1)+r$. By \eqref{eq:normal},
+$\Delta'=n'\cdot d+n\cdot J_1d+n_3r=-(1+\eta)\Delta-r$. For $s<t$,
+\[
+\Delta(t)=\Delta(s)e^{-\int_s^t(1+\eta)}-\int_s^te^{-\int_\tau^t(1+\eta)}r(\tau)\,d\tau .
+\]
+$\Delta$ is bounded and $1+\eta\ge1$; letting $s\to-\infty$ gives
+$\Delta(t)=-\int_{-\infty}^te^{-\int_\tau^t(1+\eta)}r(\tau)\,d\tau\le0$. If $\Delta(t_0)=0$, then $r\equiv0$ on
+$(-\infty,t_0]$; as $x_1>0$ and $e^{s}-1-s>0$ for $s\ne0$, $U_2\equiv U_1$ there, hence $p_2=U_2'=p_1$ and
+$y_2=k-\mu p_2-p_2'=y_1$ there, and $z_2\equiv z_1$ by uniqueness. Contradiction.
+\end{proof}
+\begin{proof}[Proof of (A3)]
+For $a\ne b$ in $\cA$ apply Theorem~\ref{thm:support} to $z_1=\varphi_{\cdot}(a)$, $z_2=\varphi_{\cdot}(b)$ (distinct
+as functions, also when $b$ lies on the orbit of $a$) at $t=0$.
+\end{proof}
+
+\begin{lemma}[Gauges]\label{lem:gauges}
+On $\cA$: \textup{(i)} $O:=n\cdot f=\zeta p-\eta(k-\mu p-y)-(ke^{U}-y)=0$;
+\textup{(ii)} $K=\zeta U-\eta p-y+k>0$ off $E$, and $K'+(1+\eta)K=k(Ue^{U}-e^{U}+1)$;
+\textup{(iii)} $W=\zeta'p-\eta'p'>0$ off $E$, and $W'+(1+\eta)W=xp^2$;
+\textup{(iv)} $\zeta_EU-\eta_Ep-(y-k)<0$ off $E$.
+\end{lemma}
+\begin{proof}
+(i) Along an orbit in $\cA$, $z''=Jz'$, so by \eqref{eq:normal} $O'=(n'+J^{\mathsf T}n)\cdot z'=-(1+\eta)O$. $O$ is
+bounded on $\R$ and $O(t)=O(s)e^{-\int_s^t(1+\eta)}\to0$ as $s\to-\infty$. (ii) $K(a)=-n(a)\cdot(E-a)>0$ by
+\eqref{eq:support} with $b=E$, and the equation is \eqref{eq:deltaode} with $z_2\equiv E$:
+$r=x(e^{-U}-1+U)=k(1-e^{U}+Ue^{U})$. (iv) is \eqref{eq:support} with $a=E$. (iii) Using \eqref{eq:ric}, $p''=-\mu
+p'-(x-y)$ and (i) in the form $x-y=\zeta p-\eta p'$, i.e.\ $p''=(\eta-\mu)p'-\zeta p$:
+\begin{align*}
+W'&=\zeta''p+\zeta'p'-\eta''p'-\eta'p''\\
+&=\bigl(xp-\eta'\zeta-(1+\eta)\zeta'\bigr)p-\bigl((\mu-1)\eta'-2\eta\eta'\bigr)p'-\eta'\bigl((\eta-\mu)p'-\zeta p\bigr)\\
+&=xp^2-(1+\eta)\zeta'p+(1+\eta)\eta'p'=xp^2-(1+\eta)W .
+\end{align*}
+$W$ is bounded on $\R$, so $W(t)=\int_{-\infty}^te^{-\int_\tau^t(1+\eta)}xp^2\,d\tau\ge0$, with equality only if
+$p\equiv0$ on $(-\infty,t]$, which forces $y\equiv k$, $x\equiv k$: the orbit is $E$.
+\end{proof}
+
+\section{The graph and the reduced flow: proof of (A4), (A5)}\label{sec:graph}
+\begin{proof}[Proof of (A4)]
+By (A2), $a\mapsto(y_a,\zeta(a),\eta(a),\pi(a))$ is continuous on the compact set $\cA$; so $H$ is a maximum of
+affine functions with slopes in a compact set: convex, finite, Lipschitz with constant
+$\max_\cA|(\zeta,\eta)|$. For $b\in\cA$ the term $a=b$ equals $y_b$ at $\pi(b)$ and every other term is $<y_b$ there
+by \eqref{eq:support}; so $H(\pi(b))=y_b$. Hence $\pi|_\cA$ is injective, $\cA$ is the graph of $h=H|_D$, and
+$\pi|_\cA$, a continuous bijection of a compact space onto $D$, is a homeomorphism; $D$ is compact and connected by
+(A1). So $g=(\zeta,-\eta)\circ(\pi|_\cA)^{-1}$ is continuous on $D$. For $q=\pi(a)$, $q'=\pi(b)$, \eqref{eq:support}
+reads $h(q')-h(q)\ge g(q)\cdot(q'-q)$; exchanging $a$ and $b$, $h(q)-h(q')\ge g(q')\cdot(q-q')$. Together these are
+\eqref{eq:whitney}. Therefore, with $\omega_g$ the modulus of continuity of $g$ on $D$,
+\[
+\bigl|h(q')-h(q)-g(q)\cdot(q'-q)\bigr|\le\omega_g(|q'-q|)\,|q'-q|\qquad(q,q'\in D),
+\]
+which is Whitney's $C^1$ condition for the jet $(h,g)$ on $D$, and which at an interior point $q$ is
+differentiability of $h$ with $\nabla h(q)=g(q)$. Continuity of $g$ gives $h\in C^1(\inter D)$; the sign statements
+are \eqref{eq:bounds}.
+\end{proof}
+\begin{proof}[Proof of (A5)]
+$F$ is globally Lipschitz because $H$ is, so $\psi_t$ is a complete flow on $\R^2$. For $q\in D$ let
+$a=(q,h(q))\in\cA$ and $z(t)=\varphi_t(a)\in\cA$. Then $y(t)=H(U(t),p(t))$, so $(U,p)$ solves $q'=F(q)$; by
+uniqueness $\pi(\varphi_ta)=\psi_t(q)$, and $D$ is invariant. Equation \eqref{eq:pde} is Lemma~\ref{lem:gauges}(i)
+written at the point $(u,v,h(u,v))$; on $\inter D$, $(\zeta,-\eta)=\nabla h$. On $\inter D$, $F=(v,k-\mu v-h)$ with
+$h\in C^1$, and $\diver F=\partial_v(k-\mu v-h)=-\mu+\eta$. The gauges are Lemma~\ref{lem:gauges}.
+\end{proof}
+\begin{remark}\label{rem:convexgauges}
+In terms of $h$: $K=k-[h-uh_u-vh_v]$ is the height of $E$ above the tangent plane at $(u,v)$, and
+$W=\frac{d}{dt}\bigl(\nabla h(\psi_tq)\bigr)\cdot F$ is the second derivative of $h$ along the flow line (when it
+exists, $W=F^{\mathsf T}D^2h\,F$). Both are convexity gauges. Also, on $D\cap\{v=0\}$, \eqref{eq:pde} gives
+$h(u,0)-k=k(e^{u}-1)/(1+\eta(u,0))$, so $v'=-k(e^{u}-1)/(1+\eta)$ there: the reduced flow crosses the positive
+$u$-axis downwards and the negative $u$-axis upwards, and $(0,0)$ is the only equilibrium of $F$ in $D$ (if
+$F(q)=0$, $q\in D$, then $\psi_tq=q$, so $(q,h(q))$ is an equilibrium of \eqref{eq:sys}, i.e.\ $E$).
+\end{remark}
+
+\section{Above Hopf: proof of (A6), (A7)}\label{sec:above}
+Assume $k>k_H$. The characteristic polynomial of $J_E$ is $z^3+Az^2+\mu z+k$; it has the real root
+$-\gamma_E<-A$ (the cubic $\gamma(\gamma-1)(\gamma-\mu)$ equals $k_H<k$ at $\gamma=A$ and increases) and, since the
+remaining two roots have sum $\gamma_E-A>0$ and product $k/\gamma_E>0$ and cannot be nonnegative reals (positive
+coefficients), a pair with positive real part. So $E$ is hyperbolic with a one-dimensional stable manifold tangent
+to the eigenvector $v_s=(1,-\gamma_E,-\gamma_E(\gamma_E-\mu))^{\mathsf T}\in\inter C_+$ and a two-dimensional
+unstable manifold tangent to the real plane $E^u$. By \eqref{eq:normal} with constant $n_E=(\zeta_E,-\eta_E,-1)$,
+$J_E^{\mathsf T}n_E=-\gamma_En_E$; a left eigenvector for the simple eigenvalue $-\gamma_E$ annihilates the other
+eigenvectors, so
+\begin{equation}\label{eq:Eu}
+E^u=n_E^{\perp}=\{\delta y=\zeta_E\,\delta U-\eta_E\,\delta p\},
+\end{equation}
+a graph over the $(U,p)$-plane.
+
+\begin{proof}[Proof of (A6)]
+\emph{Cone exclusion.} Let $a\in\cA\setminus\{E\}$ and $r=a-E=(U,p,y-k)$. If $r\in C_+$ then
+$\zeta_EU-\eta_Ep-(y-k)\ge0$, contradicting Lemma~\ref{lem:gauges}(iv). If $r\in C_-$ then
+$K=\zeta U-\eta p-(y-k)\le0$ (as $\zeta,\eta>0$), contradicting Lemma~\ref{lem:gauges}(ii).
+
+\emph{No forward convergence to $E$.} If $a\in\cA\setminus\{E\}$ and $\varphi_t(a)\to E$, then by the stable manifold
+theorem $\varphi_t(a)$ lies on the local stable manifold for large $t$, a $C^1$ curve tangent to $v_s$; hence
+$(\varphi_t(a)-E)/|\varphi_t(a)-E|\to\pm v_s/|v_s|\in\inter C_+\cup\inter C_-$ and $\varphi_t(a)\in E+C_\pm$ for
+large $t$, contradicting cone exclusion.
+
+\emph{$W^u(E)\subset\cA$ and $(0,0)\in\inter D$.} A point of $W^u(E)$ has a backward orbit converging to $E$ (hence
+bounded and, near $E$, inside $\cD$) and a forward orbit which stays in $\cD$ and is bounded by
+Lemma~\ref{lem:diss}; by (A1) it lies in $\cA$. The local unstable manifold is a $C^1$ surface tangent at $E$ to
+$E^u$, on which $d\pi$ is injective by \eqref{eq:Eu}; by the inverse function theorem $\pi(W^u_{\rm loc}(E))$
+contains a neighbourhood $N_E$ of $(0,0)$ in $\R^2$. So $N_E\subset D$, and every point of $N_E\setminus\{0\}$ has
+$\alpha$-limit set $\{0\}$ under $\psi$; in particular $N_E$ contains no periodic point.
+
+\emph{Limit sets.} Let $q\in D\setminus\{0\}$. Its $\psi$-orbit lies in the compact invariant set $D$, in which $0$
+is the only equilibrium of $F$ (Remark~\ref{rem:convexgauges}). By (I2a), $\omega(q)$ is $\{0\}$, or a periodic
+orbit, or contains an orbit $\ne\{0\}$ in $D$ converging to $0$ as $t\to+\infty$. The first and third alternatives
+contradict the previous step (lift to $\cA$ by (A5)). So $\omega(q)$ is a periodic orbit of $\psi$ in $D$, i.e.\ the
+projection of a cycle. Applying (I2a) to $-F$: $\alpha(q)$ is $\{0\}$, or a periodic orbit, or contains an orbit
+$\ne\{0\}$ in $D$ which converges to $0$ as $t\to\pm\infty$ --- again excluded.
+
+\emph{$\alpha(q)\neq\omega(q)$ for non-periodic $q$.} Suppose $\alpha(q)=\omega(q)=J$ periodic, $q\notin J$. Take a
+transversal segment $S$ through a point $c\in J$. The orbit of $q$ lies in one component of $\R^2\setminus J$, so
+it meets $S$ only on one side of $c$; it meets $S$ at times $\to+\infty$ and at times $\to-\infty$ in points
+converging to $c$. By (I2b) these points, ordered by time, form a strictly monotone bi-infinite sequence on one
+side of $c$ (strict because $q$ is not periodic), which cannot converge to $c$ at both ends.
+
+\emph{Existence.} For $q\in N_E\setminus\{0\}$, $\omega(q)$ is the projection of a cycle.
+\end{proof}
+
+\begin{lemma}[Geometry of projected cycles; cf.\ v2.0, Theorem 4.1]\label{lem:cyclegeom}
+Let $J\subset D$ be a periodic orbit of $\psi$ (equivalently, by (A5), the projection of a cycle). Then $J$ is a
+Jordan curve with $0$ in its interior, traversed clockwise, and it meets the positive $u$-axis in exactly one point
+$(c,0)$, its \emph{crest}, and the negative $u$-axis in exactly one point. The points $(u,0)$ with $0<u<c$ lie inside
+$J$ and those with $u>c$ outside. Two such orbits with crests $c<c'$ are disjoint and satisfy
+$J\subset\operatorname{int}J'$, $J'\subset\operatorname{ext}J$.
+\end{lemma}
+\begin{proof}
+$J$ is a Jordan curve not through the equilibrium $0$. Since $u'=v$, the periodic function $u$ has extrema, where
+$v=0$. By Remark~\ref{rem:convexgauges}, on $D\cap\{v=0\}$ one has $v'=-k(e^{u}-1)/(1+\eta)$: every crossing of
+$\{v=0,u>0\}$ is transverse and downward, every crossing of $\{v=0,u<0\}$ transverse and upward, and $J$ does not
+meet $\{v=0,u=0\}$. At the maximum of $u$ along $J$, $v=0$ and $v'\le0$, so $u_{\max}>0$; likewise $u_{\min}<0$. The
+winding number of $J$ about $0$ is the signed number of its crossings of the ray $\{v=0,u>0\}$; it is $0$ or $\pm1$
+for a Jordan curve, and all crossings have the same sign and there is at least one; so there is exactly one, the
+winding number is $-1$ (clockwise) and $0$ is inside $J$. The same holds for the negative ray. The open segment from
+$0$ to $(c,0)$ does not meet $J$ and contains points near $0$, so it lies inside $J$; the ray beyond $(c,0)$ does not
+meet $J$ and is unbounded, so it lies outside. Distinct periodic orbits are disjoint; if $c<c'$, the point $(c,0)\in J$
+is inside $J'$ and the point $(c',0)\in J'$ is outside $J$, so by connectedness $J\subset\operatorname{int}J'$ and
+$J'\subset\operatorname{ext}J$.
+\end{proof}
+Write $J_c$ for the projected cycle with crest $c$, and let $\mathrm{Cr}\subset(0,\infty)$ be the set of crests.
+
+\begin{lemma}\label{lem:crests}
+$\mathrm{Cr}$ is nonempty and compact in $(0,\infty)$.
+\end{lemma}
+\begin{proof}
+Nonempty by (A6); bounded since $D$ is; bounded away from $0$ since $N_E$ contains no periodic point. Let
+$u_n\in\mathrm{Cr}$, $u_n\to\bar u$, and $\bar q=(\bar u,0)\in D\setminus\{0\}$. Suppose $\bar q$ is not periodic. By
+(A6), $\omega(\bar q)=J_{c_\omega}$ and $\alpha(\bar q)$ is $\{0\}$ (put $c_\alpha=0$, $J_0:=\{0\}$) or
+$J_{c_\alpha}$, with $c_\alpha\ne c_\omega$. Let $c_1<c_2$ be these two numbers. The orbit of $\bar q$ is disjoint
+from $J_{c_1}\cup J_{c_2}$ and accumulates on both, so it lies in the open annulus between them (inside $J_{c_1}$ it
+could not accumulate on $J_{c_2}\subset\operatorname{ext}J_{c_1}$, and outside $J_{c_2}$ it could not accumulate on
+$J_{c_1}$). Hence $c_1<\bar u<c_2$, and for large $n$ also $c_1<u_n<c_2$, so $J_{u_n}$ separates $J_{c_1}$ from
+$J_{c_2}$. The orbit of $\bar q$ is disjoint from the periodic orbit $J_{u_n}$, hence lies inside it or outside it,
+and then cannot accumulate on $J_{c_2}$, respectively on $J_{c_1}$. Contradiction; so $\bar u\in\mathrm{Cr}$.
+\end{proof}
+Let $c_{\rm out}=\max\mathrm{Cr}$, $c_{\rm in}=\min\mathrm{Cr}$, with cycles $\Gamma_{\rm out},\Gamma_{\rm in}$,
+$J_{\rm out}=\pi(\Gamma_{\rm out})$, and let $G$ be the bounded component of $\R^2\setminus J_{\rm out}$,
+$\overline G=G\cup J_{\rm out}$. Every projected cycle lies in $\overline G$.
+
+\begin{proof}[Proof of (A7)]
+\emph{$D\subset\overline G$.} Let $q\in D\setminus\overline G$. Its orbit stays in the exterior of $J_{\rm out}$, so
+$\alpha(q)$, $\omega(q)$ lie in $D\setminus G$. By (A6) both are projected cycles ($\{0\}$ is excluded since
+$0\in G$); every projected cycle lies in $\overline G$, so both equal $J_{\rm out}$, contradicting (A6).
+
+\emph{$\overline G\subset D$.} Suppose $q_0\in G\setminus D$. Let $y_{\min}=\min_\cA y>0$ and
+$g_0=\max(H,y_{\min})$ on $\overline G$; then $g_0=h$ on $J_{\rm out}$, and
+$S_0=\{(q,g_0(q)):q\in\overline G\}$ is a compact subset of $\cD$ ($y>0$; and $p<\lambda$ on $\overline G$ because
+the linear function $v$ attains its maximum over $\overline G$ on $J_{\rm out}\subset D$). For $t\ge0$ define the
+continuous map $\Theta_t:\overline G\to\R^2$, $\Theta_t(q)=\pi\varphi_t(q,g_0(q))$. On $J_{\rm out}$,
+$\Theta_t=\psi_t$ maps $J_{\rm out}$ onto itself. Fix $t$ and suppose $q_0\notin\Theta_t(\overline G)$. By
+Schoenflies there is a homeomorphism $\chi$ of the closed unit disc onto $\overline G$. The loops
+$\Theta_s\circ\chi|_{S^1}$, $0\le s\le t$, lie in $J_{\rm out}\subset\R^2\setminus\{q_0\}$ and form a homotopy from
+$\chi|_{S^1}$, which has winding number $\pm1$ about $q_0$ (I4), to $\Theta_t\circ\chi|_{S^1}$; but the latter
+extends to the map $\Theta_t\circ\chi$ of the disc into $\R^2\setminus\{q_0\}$ and so has winding number $0$.
+Contradiction. Hence for every $n\in\mathbb N$ there is $z_n\in\varphi_n(S_0)$ with $\pi(z_n)=q_0$. By (A1),
+$\operatorname{dist}(z_n,\cA)\to0$; a limit point $z\in\cA$ has $\pi(z)=q_0$, so $q_0\in D$. Contradiction.
+
+Thus $D=\overline G$, $\partial D=J_{\rm out}$, and $\cA=(\pi|_\cA)^{-1}(\overline G)$ is a closed topological disc
+with boundary $\Gamma_{\rm out}$. The crest statement is Lemma~\ref{lem:crests}.
+\end{proof}
+
+\section{Multipliers and corollaries: proof of (A8)}\label{sec:mult}
+Let $\Gamma$ be a cycle, $a_0\in\Gamma$, $T$ its period and $\mathsf M$ the monodromy matrix at $a_0$. By
+\eqref{eq:normal}, $\Psi(t)=e^{\int_0^t(1+\eta)}n(t)$ solves the adjoint equation $\Psi'=-J^{\mathsf T}\Psi$ along
+$\Gamma$, so $\Psi\cdot\delta$ is constant for every solution of $\delta'=J\delta$; with $n$ periodic this gives
+$\mathsf M^{\mathsf T}n(a_0)=m_s\,n(a_0)$, $m_s:=e^{-(1+\avg\eta)T}<1$. So $m_s$ is an eigenvalue of $\mathsf M$; another
+is $1$ (eigenvector $f(a_0)$), and by Liouville's formula the product of the three is $e^{-AT}$ ($\operatorname{tr}J=-A$).
+Hence the third is $m_t=e^{-AT}/m_s=e^{(\avg\eta-\mu)T}$ (this is v2.0, Proposition 2.1). Since
+$\eta>\max(0,\mu-1)$ by \eqref{eq:bounds}, $2\avg\eta>\mu-1$, i.e.\ $m_s<m_t$; also $m_s<1$. So $m_s$ is simple and
+\begin{equation}\label{eq:nperp}
+n(a_0)^\perp=\text{generalised eigenspace of }\mathsf M\text{ for }\{1,m_t\}\ni f(a_0),\qquad n(a_0)\cdot e_s\ne0,
+\end{equation}
+where $e_s$ is an eigenvector for $m_s$.
+
+\begin{proof}[Proof of (A8)]
+(a) By (A5), $\pi(\Gamma)$ is a periodic orbit of $\psi$ with period $T$. If it lies in $\inter D$, $F$ is $C^1$
+near it and the classical formula gives the multiplier $\exp\int_0^T\diver F\,dt=\exp\int_0^T(\eta-\mu)\,dt=m_t$
+($\eta$ on $\Gamma$ being the function of (A2)). For $\Gamma_{\rm out}$: by (A4) and (I5) there is
+$\widehat h\in C^1(\R^2)$ with $\widehat h=h$, $\nabla\widehat h=g$ on $D$. Then $\widehat F=F$ on $D$, each
+$\psi$-orbit in $D$ is a $\widehat F$-orbit (uniqueness for the $C^1$ field $\widehat F$), and
+$\diver\widehat F=\eta-\mu$ on $D$.
+
+(b) Let $m_t>1$ and suppose $b\in\cA\setminus\Gamma$ has $\omega(b)=\Gamma$. Take a small disc $\Sigma_3$ transverse
+to $f$ at $a_0$ with first-return map $P_3$; $DP_3(a_0)$ has eigenvalues $m_s<1<m_t$, with stable eigenvector
+$\bar e_s=e_s+c\,f(a_0)$. The orbit of $b$ meets $\Sigma_3$ in points $b_j=P_3^j(b_0)\to a_0$, $b_j\ne a_0$, which by
+(I3) lie on the local stable manifold of $a_0$ for $P_3$, a $C^1$ curve tangent to $\bar e_s$. Hence
+$(b_j-a_0)/|b_j-a_0|\to\pm\bar e_s/|\bar e_s|$. But $b_j,a_0\in\cA$, so by \eqref{eq:whitney}
+\[
+\bigl|n(a_0)\cdot(b_j-a_0)\bigr|=h(\pi b_j)-h(\pi a_0)-g(\pi a_0)\cdot(\pi b_j-\pi a_0)\le\omega_g(|b_j-a_0|)\,|b_j-a_0| ,
+\]
+so $n(a_0)\cdot\bar e_s=0$. By \eqref{eq:nperp} and Lemma~\ref{lem:gauges}(i), $n(a_0)\cdot\bar e_s=n(a_0)\cdot
+e_s\ne0$. Contradiction. If $m_t<1$, $\Gamma$ is Lyapunov stable (I3): every neighbourhood $V$ of $\Gamma$ contains a
+neighbourhood $V'$ whose forward orbits stay in $V$. If $\alpha(b)=\Gamma$ then $\varphi_{-t_j}(b)\in V'$ for some
+$t_j\to\infty$, so $b\in V$ for every $V$, i.e.\ $b\in\Gamma$.
+
+(c) Let $q\in N_E\setminus\{0\}$, so $\alpha(q)=\{0\}$ by (A6). The orbit of $q$ is not periodic, hence disjoint from
+$J_{\rm in}$, and it has the point $0\in\operatorname{int}J_{\rm in}$ in its closure; so it lies inside
+$J_{\rm in}$. By (A6), $\omega(q)$ is a projected cycle contained in $\overline{\operatorname{int}J_{\rm in}}$; its
+crest is $\le c_{\rm in}$, so $\omega(q)=J_{\rm in}$. Thus an orbit in $\cA\setminus\Gamma_{\rm in}$ has
+$\omega$-limit set $\Gamma_{\rm in}$, and (b) gives $m_t(\Gamma_{\rm in})\le1$. Suppose
+$m_t(\Gamma_{\rm out})>1$. Then $\Gamma_{\rm out}$ is hyperbolic with a two-dimensional local unstable manifold
+$W^u_{\rm loc}$, a $C^1$ surface containing $\Gamma_{\rm out}$ whose tangent plane at $a_0\in\Gamma_{\rm out}$ is
+spanned by $f(a_0)$ and the eigenvector for $m_t$, i.e.\ equals $n(a_0)^\perp$ by \eqref{eq:nperp}; since $n$ has
+third component $-1$, $d\pi$ is injective on it and $\pi(W^u_{\rm loc})$ contains a neighbourhood of
+$J_{\rm out}$ in $\R^2$. Points of $W^u_{\rm loc}$ have bounded backward orbits and (by Lemma~\ref{lem:diss})
+bounded forward orbits, so $W^u_{\rm loc}\subset\cA$ and $D$ contains points outside $J_{\rm out}$, contradicting
+(A7).
+
+(d) Suppose every cycle has $m_t<1$ and there are two cycles. Each crest is isolated in $\mathrm{Cr}$: cycles with
+crests $u_n\to c$ have crest points $(u_n,0,h(u_n,0))\to(c,0,h(c,0))$ which are fixed points of the first-return map
+to $\{p=0\}$ near the crest point of $J_c$ (each cycle has one crest), and a hyperbolic fixed point is isolated. A
+compact set of isolated points is finite, so there are adjacent crests $c_1<c_2$ with no crest between. The open
+annulus $R$ between $J_{c_1}$ and $J_{c_2}$ lies in $D$ by (A7) and contains no periodic point. For $q\in R$, (A6)
+gives $\alpha(q)\in\{J_{c_1},J_{c_2}\}$ (the orbit stays in $R$, so $\{0\}$ and other cycles are excluded). This
+contradicts (b), since both cycles have $m_t<1$.
+
+(e) If all cycles are hyperbolic, $\mathrm{Cr}=\{c_1<\dots<c_N\}$ is finite as in (d). For $q$ in the annulus
+between $J_{c_i}$ and $J_{c_{i+1}}$, $\{\alpha(q),\omega(q)\}=\{J_{c_i},J_{c_{i+1}}\}$ by (A6); by (b) the
+$\alpha$-limit cycle has $m_t>1$ and the $\omega$-limit cycle has $m_t<1$. So consecutive cycles have opposite
+stability, and by (c) the first and last have $m_t<1$; hence $N$ is odd.
+
+(f) On a cycle $\int_0^T\mathbb D\Lambda\,dt=0$, so $\lambda_cT=\int_0^T(\mathbb D\Lambda+\eta-\mu)\,dt<0$ for every
+cycle, and (d) applies. With the reverse inequality every cycle would have $\lambda_c>0$, contradicting (c), since
+cycles exist.
+\end{proof}
+
+\begin{remark}[What is and is not proved]
+Theorem~\ref{thm:A} reduces the uniqueness conjecture to the planar system $u'=v$, $v'=k-\mu v-h(u,v)$ on the
+closed Jordan domain $D$, with $h$ convex, $h_u=\zeta>0$, $h_v=-\eta<-\max(0,\mu-1)$, the first-order equation
+\eqref{eq:pde} and divergence $\eta-\mu$; and it shows that uniqueness at $(\mu,k)$ is \emph{equivalent} to
+$\lambda_c<0$ on every cycle there, up to the degenerate case $\lambda_c=0$ (by (A8)(d),(c): uniqueness follows
+from $\lambda_c<0$ on all cycles; conversely a unique cycle has $\lambda_c\le0$). It does not decide the sign of
+$\avg\eta-\mu$.
+\end{remark}
+
+\section{Two rigorous by-products for the uniqueness problem}\label{sec:byproducts}
+These statements are proved, but they are \emph{conditional} or \emph{reformulations}: they do not decide uniqueness.
+
+\begin{proposition}[Crest return map]\label{prop:return}
+Assume $k>k_H$. Let $\tilde g(u)=h(u,0)-k=k(e^{u}-1)/(1+\eta(u,0))$ and $\tilde G(u)=\int_0^u\tilde g$.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item For $0<u<c_{\rm out}$ the $\psi$-orbit of $(u,0)$ returns to $\{v=0,u>0\}$; the first return $R_1(u)$ and the
+return time $\tau(u)$ are $C^1$, $R_1$ is increasing, its fixed points are the crests in $(0,c_{\rm out})$, and $R_1$
+extends continuously by $R_1(c_{\rm out})=c_{\rm out}$.
+\item With $\iota(u)=\int_0^{\tau(u)}(\eta-\mu)(\psi_t(u,0))\,dt$,
+\[
+R_1'(u)=\frac{\tilde g(u)}{\tilde g(R_1(u))}\,e^{\iota(u)};\qquad\text{in the energy coordinate }e=\tilde G(u):\quad
+\frac{d}{de}\,\tilde G\bigl(R_1(\tilde G^{-1}(e))\bigr)=e^{\iota(u)}.
+\]
+\item If $u\mapsto R_1(u)/u$ is strictly decreasing on $(0,c_{\rm out}]$, or if $\iota$ is strictly decreasing on
+$(0,c_{\rm out})$ (equivalently, the energy return map is strictly concave), then the cycle is unique.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+(i) By (A7), $(u,0)\in\inter D\setminus\{0\}$; by (A6) its $\omega$-limit set is a projected cycle $J_c$, and the
+$u$-axis is transverse to $F$ at $(c,0)$, so the orbit meets $\{v=0,u>0\}$ at arbitrarily large times. All crossings
+of this half-axis are transverse (Remark~\ref{rem:convexgauges}) and $F\in C^1(\inter D)$, so the first return is
+$C^1$ by the implicit function theorem; it is increasing because orbits do not cross. Fixed points are periodic
+points on the half-axis, i.e.\ crests. Continuity at $c_{\rm out}$ follows from continuity of $\psi$ on $D$ and
+transversality at $(c_{\rm out},0)$.
+(ii) Let $q(t)=\psi_t(u,0)$ and $\mathsf J(t)=\partial_uq(t)$. The wedge $w=F(q)\wedge\mathsf J$ satisfies
+$w'=(\diver F)\,w$; $w(0)=(0,-\tilde g(u))\wedge(1,0)=\tilde g(u)$. Differentiating $\psi_{\tau(u)}(u,0)=(R_1(u),0)$
+gives $\mathsf J(\tau)+\tau'(u)F=(R_1'(u),0)$, and wedging with $F(q(\tau))=(0,-\tilde g(R_1(u)))$ gives
+$w(\tau)=\tilde g(R_1(u))R_1'(u)$. The second formula follows from $\tilde G'=\tilde g$.
+(iii) If $R_1(u)/u$ is strictly decreasing on $(0,c_{\rm out}]$, it equals $1$ only at $c_{\rm out}$. If $\iota$ is
+strictly decreasing, the energy map $\tilde R$ is strictly concave on $(0,\tilde G(c_{\rm out}))$ with
+$\tilde R(0^+)=0$ (near the equilibrium $0\in\inter D$ the $C^1$ field $F$ has an unstable focus, so return times
+stay bounded and $R_1(u)\to0$ as $u\to0^+$), so $\tilde R(e)/e$ is strictly decreasing there and tends to $1$ at the right end point; hence
+there is no fixed point in the open interval. In both cases $\Gamma_{\rm out}$ is the only cycle.
+\end{proof}
+\noindent Numerically (\texttt{job2\_a.py}, \texttt{job2\_a3.py}; 14 parameter pairs) $\iota$ is strictly decreasing
+and $R_1$ is concave and sublinear in the coordinate $u$; neither is proved. The analogous turn integral on the
+\emph{trough} half-axis is \emph{not} monotone, and $R_1$ is \emph{not} concave in the coordinates $x-k$ or $y-k$.
+
+\begin{remark}[Divergence in other planes of the attractor]\label{rem:planes}
+On $\inter D$ the maps $(U,p)\mapsto(U,y)$, $(p,y)$, $(y,m)$, $(U,s)$, with $y=h(U,p)$, $m=p+\mu U$,
+$s=p-(y-k)+\mu U$, are local $C^1$ diffeomorphisms (Jacobian determinants, up to sign, $\eta$, $\zeta$, $\zeta+\mu\eta$, $1+\eta$). In
+these planes the reduced field is, respectively,
+\[
+\begin{aligned}
+&U'=\mathfrak p(U,y),\ y'=ke^{U}-y;&&\diver=\zeta/\eta-1;\\
+&p'=k-\mu p-y,\ y'=ke^{\mathfrak U(p,y)}-y;&&\diver=x/\zeta-A;\\
+&y'=ke^{\mathcal U(y,m)}-y,\ m'=k-y;&&\diver=x/(\zeta+\mu\eta)-1;\\
+&U'=P(U,s),\ s'=-k(e^{U}-1);&&\diver=(\zeta-\mu)/(1+\eta),
+\end{aligned}
+\]
+where, by convexity of $H$ and the sign of its gradient, $\mathfrak p$ and $P$ are (restrictions of) convex functions
+and $\mathfrak U$, $\mathcal U$ of concave functions. Each divergence differs from $\eta-\mu$ by the flow derivative
+of the logarithm of the Jacobian: $\mathbb D\log\eta=\zeta/\eta+\mu-1-\eta$, $\mathbb D\log\zeta=x/\zeta-1-\eta$,
+$\mathbb D\log(\zeta+\mu\eta)=x/(\zeta+\mu\eta)-(1+\eta-\mu)$, $\mathbb D\log(1+\eta)=(\zeta-\mu)/(1+\eta)+\mu-\eta$.
+Hence on every cycle $\lambda_c=\avg\eta-\mu=\avg{\zeta/\eta}-1=\avg{x/\zeta}-A=\avg{x/(\zeta+\mu\eta)}-1
+=\avg{(\zeta-\mu)/(1+\eta)}$.
+\end{remark}
+
+\section{Numerical consistency checks (not part of the proof)}\label{sec:numerics}
+All in ordinary floating point (DOP853, tolerances $10^{-11}$--$10^{-12}$), scripts in the lane directory.
+\begin{itemize}
+\item \texttt{job1\_checks.py}, parameters $(\mu,\rho)\in\{(1,1.1),(1,2),(0.3,1.5),(3,1.3)\}$, $\rho=k/k_H$.
+Pull-back uniqueness: Riccati solutions started from $(10^{-3},10^{-3})$ and $(60,300)$ agree with the reference to
+$\le5\times10^{-9}$ after $25$ time units (initial gap $\approx360$). Generalised orthogonality $O=0$ on
+$W^u(E)$: relative residual $\le7\times10^{-11}$. Supporting planes \eqref{eq:support} for all ordered pairs among
+$3001$ attractor points ($9.0\times10^6$ pairs): no violation in three cases; in the case $(1,1.1)$ one pair of
+nearly coincident points gives $\Delta=+3\times10^{-10}$, at the integration-error level. Bounds
+\eqref{eq:bounds}: hold. Cone exclusion: no sampled point in $E+C_\pm$; $\min K$, $\min W$,
+$\min(y-k-\zeta_EU+\eta_Ep)>0$ on the sample.
+\item \texttt{job1\_section.py} (sharp test, event-refined; six parameter pairs). The crest points
+$(U,0,y;\eta,\zeta)$ of seven different spirals on $W^u(E)$ are merged and sorted by $U$. In every case $y$ is
+strictly increasing in $U$ (graph property) and neighbouring points --- always from \emph{different} spirals ---
+satisfy the convexity bracket $\zeta_i\le(y_{i+1}-y_i)/(U_{i+1}-U_i)\le\zeta_{i+1}$, with largest violation
+$\le1.2\times10^{-11}$ in $y$-units and none for pairs with $\Delta U>10^{-4}$. The same holds on $\{U=0,p>0\}$
+with slope $-\eta$. This checks $\nabla h=(\zeta,-\eta)$ across neighbouring spiral turns.
+\item \texttt{job1\_offattractor.py}. A held-out spiral lies on the Hermite-interpolated section curves to within
+$5\times10^{-13}k$--$4\times10^{-7}k$. Orbits started at an attractor crest with $y$ shifted by $\delta y$ have
+equal $(U,p)$ and distinct $y$ at $t=0$; at their next four section crossings the gap $y-h(U,p)$ equals
+$\delta y\,\exp(-\int_0^t(1+\eta))$ within about $1\%$ for $\delta y=\pm0.01k$, the rate predicted by
+\eqref{eq:deltaode}.
+\item \texttt{job1\_checks2.py}: local plane fits to $y$ over neighbours from other spirals reproduce
+$(\zeta,-\eta)$ with an error that decreases with the stencil radius; root-refined crests of successive turns of
+$W^u(E)$ increase monotonically to the cycle crest (consistent with (A6)--(A7) in the one-cycle case). A
+polyline-crossing test in the same script was discarded as invalid (chord artefacts).
+\end{itemize}
+
+\begin{thebibliography}{9}
+\bibitem{B} G.~Birkhoff, Extensions of Jentzsch's theorem, \emph{Trans.\ Amer.\ Math.\ Soc.} 85 (1957) 219--227.
+\bibitem{Bu} P.~J.~Bushell, Hilbert's metric and positive contraction mappings in a Banach space, \emph{Arch.\
+Rational Mech.\ Anal.} 52 (1973) 330--338.
+\bibitem{H} P.~Hartman, \emph{Ordinary Differential Equations}, Wiley 1964 (SIAM Classics 2002), Ch.~VII, IX.
+\bibitem{S} E.~Seneta, \emph{Non-negative Matrices and Markov Chains}, 2nd ed., Springer 1981, \S3.1.
+\bibitem{Sm} H.~L.~Smith, Global dynamics of the smallest chemical reaction system with Hopf bifurcation,
+\emph{J.\ Math.\ Chem.} 50 (2012) 989--995.
+\bibitem{BH} B.~Boros, J.~Hofbauer, Some minimal bimolecular mass-action systems with limit cycles,
+\emph{Nonlinear Anal.\ RWA} 72 (2023) 103839.
+\bibitem{W} H.~Whitney, Analytic extensions of differentiable functions defined in closed sets, \emph{Trans.\ Amer.\
+Math.\ Soc.} 36 (1934) 63--89.
+\end{thebibliography}
+\end{document}

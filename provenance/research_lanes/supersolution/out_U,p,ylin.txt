@@ -1,0 +1,9 @@
+features:      ('U',                                                                                         'p',
+mu             rho                                                                                           -lam_c       S*        S*/-lam
+Traceback      (most                                                                                         recent
+File           "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/supersolution/famA2.py",  line         <module>
+tY             =                                                                                             theta_Y(mu,  =         theta_c(mu,
+File           "/Users/admin/claude-sandbox/wilhelm-heinrich-2026-10-03/work/lanes/supersolution/cvx.py",    line         theta_Y
+t[0,           1                                                                                             +            1;        t[0,
+~~~~~~~~^^^^^
+ValueError:    'y'                                                                                           is           list

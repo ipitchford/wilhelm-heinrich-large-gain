@@ -1,0 +1,10 @@
+mu=0.05  rho=1.02  family G: t*/sigma  (R<=0): -2.0001   (R>=0): -2.0828   | max(zeta-y)/k=-4.82e-03  max(eta-(lam-p))=-8.14e-01
+mu=0.05  rho=1.5   family G: t*/sigma  (R<=0): -2.0000   (R>=0): -2.5193   | max(zeta-y)/k=-8.87e-16  max(eta-(lam-p))=-3.56e-01
+mu=0.05  rho=5.0   family G: t*/sigma  (R<=0): -2.0000   (R>=0): -0.6812   | max(zeta-y)/k=+2.65e-23  max(eta-(lam-p))=-1.05e-02
+mu=0.2   rho=1.05  family G: t*/sigma  (R<=0): -2.0000   (R>=0): -2.0977   | max(zeta-y)/k=-2.60e-02  max(eta-(lam-p))=-6.79e-01
+mu=0.2   rho=2.0   family G: t*/sigma  (R<=0): -2.0000   (R>=0): -2.1303   | max(zeta-y)/k=-8.47e-08  max(eta-(lam-p))=-1.74e-01
+mu=0.5   rho=1.2   family G: t*/sigma  (R<=0): -2.0000   (R>=0): -2.4648   | max(zeta-y)/k=-2.44e-02  max(eta-(lam-p))=-3.60e-01
+mu=0.5   rho=3.0   family G: t*/sigma  (R<=0): -2.0000   (R>=0): -1.7901   | max(zeta-y)/k=-5.80e-06  max(eta-(lam-p))=-2.67e-02
+mu=1.0   rho=1.02  family G: t*/sigma  (R<=0): -2.0000   (R>=0): -2.0215   | max(zeta-y)/k=-3.07e-01
+mu=1.0   rho=1.5   family G: t*/sigma  (R<=0): -2.0000   (R>=0): -1.9666   | max(zeta-y)/k=-2.64e-02
+mu=1.0   rho=5.0   family G: t*/sigma  (R<=0): -2.0000   (R>=0): -1.4333   | max(zeta-y)/k=-4.60e-06

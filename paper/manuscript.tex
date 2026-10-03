@@ -1,0 +1,45 @@
+\documentclass[11pt,a4paper]{article}
+\input{preamble}
+\hypersetup{pdftitle={Convex attractor geometry, exact stability formulas and large-gain uniqueness for the Wilhelm--Heinrich oscillator}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Wilhelm--Heinrich oscillator}
+\fancyhead[R]{\small Research candidate v3.1}
+\fancyfoot[C]{\thepage}
+\makeatletter\renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{3.0em}}\makeatother
+\IfFileExists{generated/evidence_macros.tex}{\input{generated/evidence_macros}}{}
+\IfFileExists{generated/v3_macros.tex}{\input{generated/v3_macros}}{}
+\title{Convex attractor geometry, exact stability formulas\\and large-gain uniqueness for the Wilhelm--Heinrich oscillator}
+\author{Anonymous}
+\date{3 October 2026 \quad Version 3.1 (unrefereed candidate)\\\small\url{https://doi.org/10.5281/zenodo.23126164}}
+\begin{document}
+\maketitle
+\thispagestyle{plain}
+\noindent\textbf{Scope.} This candidate gives a written proof of a unique cycle for sufficiently large gain, with an explicit threshold. Its positive-interior attractor is a graph of a convex function; above Hopf its domain is a planar disk. The graph need not be a convex subset of three-dimensional space. The paper does \emph{not} prove uniqueness at every oscillatory parameter. Between the Hopf collar and the explicit threshold the conjecture of Smith remains open; no counterexample was found. Recorded checks and model-based adversarial readings are internal assurance, not specialist peer review. Historical priority is not established.
+
+\begin{abstract}
+The Wilhelm--Heinrich system is the linear-chain form of the logistic equation with a two-stage distributed delay. Above its Hopf threshold, finiteness and existence of a stable cycle are known, but the inspected literature leaves the full cycle count open. We prove uniqueness for large gain: if $r_0\ge1000\max(a_0,b_0)^2/\min(a_0,b_0)$ in the original rates, every cycle is hyperbolic and attracting with explicit period and weak-exponent bounds. The unique cycle attracts every positive solution off the equilibrium's stable manifold. For all positive parameters the positive-interior attractor is a graph of a convex function. Above Hopf its domain is the closed Jordan domain bounded by the outermost projected cycle, with $C^1$ regularity in the interior; at and below Hopf the attractor is the equilibrium. The reduced divergence is $\eta-\mu$, where $\eta$ is a positive adjoint ratio, and every-cycle negativity of $\langle\eta\rangle-\mu$ gives uniqueness. Every cycle has a strictly convex, star-shaped projection, exact weak-exponent formulas involving two positive convexity gauges, and a fixed twelve-event weak-adjoint pattern. Supporting planes, six ordered extrema, compactness and the neutral-cycle obstruction complete the geometric framework. For small rate ratio, a convex-potential kurtosis bound gives local uniqueness in a fixed near-Hamiltonian energy ball; the required slow-graph property is derived from an explicitly checked persistence theorem. Several natural certificates are shown to fail. Exact symbolic checks, outward rational bounds for selected scalar constants, and finite floating-point experiments accompany the proofs. Uniqueness between the Hopf collar and the large-gain threshold remains unproved.
+\end{abstract}
+
+\tableofcontents
+
+\input{sections/s01_intro}
+\input{sections/s02_adjoint}
+\input{sections/s03_support}
+\input{sections/s04_geometry}
+\input{sections/s05_gauges}
+\input{sections/s06_weakadjoint}
+\input{sections/s07_attractor}
+\input{sections/s08_compactness}
+\input{sections/s09_obstruction}
+\input{sections/s10_largegain}
+\input{sections/s11_wedge}
+\input{sections/s12_negative}
+\input{sections/s13_evidence}
+\input{sections/s14_status}
+
+\appendix
+\input{sections/appA_hopf}
+\input{sections/appB_reproduce}
+
+\input{bibliography}
+\end{document}

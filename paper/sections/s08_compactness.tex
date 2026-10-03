@@ -1,0 +1,284 @@
+\section{Uniform compactness of cycle families}\label{sec:compact}
+We show that the cycles belonging to a compact set of strictly oscillatory parameters form a compact family: they lie in one compact subset of the positive chemical domain, keep a uniform distance from the equilibrium and have uniformly bounded least periods, and the family is sequentially compact once the phase is fixed at the crest. Every constant below is determined by the parameter set alone.
+
+\paragraph{Local symbols.}
+$Q$ is a compact set of parameters. Lemma~\ref{lem:statebox} uses the numbers $M_0$, $\beta_0$, $L_0$, $\mu_\wedge=\min(\mu,1)$ and the two-filter tail $\vartheta_\mu$. Lemma~\ref{lem:eqseparation} uses the Jacobian $J_E$ of \eqref{eq:logsystem} at $E$, its characteristic polynomial $\chi_E$, the stable eigenvector $v_E$, the left eigenvector $n_E$, the unstable eigenvalues $\alpha_E\pm i\omega_E$, the spectral projection $P_u$, the numbers $\Theta_E$ and $\nu_E$, the quadratic form $V$ and the nonlinear remainder $N$. As in Corollary~\ref{cor:cones}, $r=(U,p,y-k)$ is the displacement of a state from $E$. We write $|\cdot|$ for the Euclidean norm on $\R^3$ and $\|\cdot\|$ for the induced matrix norm. A constant carrying the subscript $Q$ depends only on $Q$.
+
+\paragraph{Dependencies.}
+\begin{itemize}
+\item Lemma~\ref{lem:statebox} uses only \eqref{eq:filters} and periodicity; it holds for all $\mu,k>0$.
+\item Lemma~\ref{lem:eqseparation} uses Corollary~\ref{cor:cones} and the linearisation at $E$; it does not use the state box.
+\item Lemma~\ref{lem:speed} uses the two preceding lemmas, Lemma~\ref{lem:projectivebounds} and \eqref{eq:orthogonality}. Theorem~\ref{thm:compact} uses the three lemmas, Theorem~\ref{thm:geometry}, the identities \eqref{eq:crestidentities} and the period bound in \eqref{eq:determinant}.
+\end{itemize}
+
+\subsection{A uniform physical state box}
+\begin{lemma}[Uniform physical state box]\label{lem:statebox}
+Let $\mu,k>0$, $\lambda=k/\mu$, and put
+\begin{gather*}
+M_0=\frac{(\lambda+\mu)(\lambda+1)}{\mu},\qquad
+\mu_\wedge=\min(\mu,1),\\
+L_0=\frac{2}{\mu_\wedge}\log(8M_0),\qquad
+\beta_0=\tfrac12\exp\{-\lambda(M_0-1)L_0\}.
+\end{gather*}
+Every positive periodic solution of \eqref{eq:filters} satisfies, at all times,
+\begin{equation}\label{eq:statebox}
+X,Y,Z\le M_0
+\end{equation}
+and
+\begin{equation}\label{eq:twosidedbox}
+(X,Y,Z)\in[\beta_0,M_0]^3.
+\end{equation}
+The functions $M_0$ and $\beta_0$ are positive and continuous on $\{\mu>0,\ k>0\}$. Consequently, for every compact $Q\subset\{\mu>0,\ k>0\}$ the numbers
+\[
+M_Q=\max_QM_0,\qquad \beta_Q=\min_Q\beta_0>0
+\]
+depend only on $Q$, not on the solution or its period, and every positive periodic solution with parameters in $Q$ lies in $[\beta_Q,M_Q]^3$.
+\end{lemma}
+\begin{proof}
+\emph{Upper bounds.} By \eqref{eq:filters} the positive periodic functions $R=Z/X$ and $S=Y/X$ satisfy
+\[
+R'=1-R\bigl(1+\lambda(1-Y)\bigr),\qquad
+S'=\mu R-S\bigl(\mu+\lambda(1-Y)\bigr).
+\]
+At a minimum of $R$ we have $R\,(1+\lambda(1-Y))=1$. The second factor is positive because $R>0$, and it is smaller than $1+\lambda$ because $Y>0$. Hence $R>1/(\lambda+1)$ at the minimum and therefore at all times. At a minimum of $S$ we have $S\,(\mu+\lambda(1-Y))=\mu R>\mu/(\lambda+1)$, and the second factor is positive and smaller than $\mu+\lambda$. Hence
+\[
+S>\frac{\mu}{(\lambda+\mu)(\lambda+1)}=\frac1{M_0}
+\]
+at all times. At a maximum of $X$ the first equation of \eqref{eq:filters} gives $Y=1$, so $\max X=1/S<M_0$. At a maximum of $Z$, $Z'=0$ gives $Z=X\le\max X$; at a maximum of $Y$, $Y'=0$ gives $Y=Z\le\max Z$. This proves \eqref{eq:statebox}. The same two relations at minima give
+\begin{equation}\label{cpt:eq:filtermin}
+\min Y\ge\min Z\ge\min X.
+\end{equation}
+
+\emph{The two-filter tail.} For $s\ge0$ put $I(s)=\int_0^s e^{-\mu(s-\sigma)-\sigma}\,\mathrm d\sigma$ and
+\[
+\vartheta_\mu(s)=e^{-\mu s}+\mu I(s)=e^{-s}+I(s).
+\]
+The two expressions agree because $(\mu-1)I(s)=e^{-s}-e^{-\mu s}$. The function $\vartheta_\mu$ is the response at time $s$ of the second of two filters with rates $1$ and $\mu$, both started at $1$, to zero input; equivalently, it is the survival function of the sum of two independent exponential waiting times with rates $1$ and $\mu$. Since $\mu(s-\sigma)+\sigma\ge\mu_\wedge s$ for $0\le\sigma\le s$, we have $I(s)\le se^{-\mu_\wedge s}$. Using the first expression for $\vartheta_\mu$ if $\mu\le1$ and the second if $\mu\ge1$,
+\begin{equation}\label{cpt:eq:tail}
+\vartheta_\mu(s)\le(1+\mu_\wedge s)e^{-\mu_\wedge s}\le2e^{-\mu_\wedge s/2}.
+\end{equation}
+The last inequality holds because $(1+v)e^{-v/2}$ attains its maximum on $v\ge0$ at $v=1$, where it equals $2e^{-1/2}<2$.
+
+\emph{Lower bounds.} Dividing the first equation of \eqref{eq:filters} by $X$ and averaging all three equations over a period gives $\avg Y=1$, $\avg Z=\avg Y$ and $\avg X=\avg Z$. Thus $\avg X=1$ and $\max X\ge1$.
+
+Suppose that $\min X<\tfrac12$, and let the minimum be attained at $t_m$. Let $(t_0,t_1)$ be the connected component of $\{t:X(t)<\tfrac12\}$ that contains $t_m$. It is bounded because $\max X\ge1$, and $X(t_0)=\tfrac12$, $X\le\tfrac12$ on $[t_0,t_1]$. On this interval $(Z-\tfrac12)'=X-\tfrac12-(Z-\tfrac12)\le-(Z-\tfrac12)$, so by \eqref{eq:statebox}
+\[
+Z(t_0+s)-\tfrac12\le\bigl(Z(t_0)-\tfrac12\bigr)e^{-s}\le(M_0-\tfrac12)e^{-s},\qquad 0\le s\le t_1-t_0.
+\]
+Inserting this into $(Y-\tfrac12)'=\mu(Z-\tfrac12)-\mu(Y-\tfrac12)$ and using variation of constants and \eqref{eq:statebox} again,
+\[
+Y(t_0+s)-\tfrac12\le\bigl(Y(t_0)-\tfrac12\bigr)e^{-\mu s}+\mu(M_0-\tfrac12)I(s)\le(M_0-\tfrac12)\,\vartheta_\mu(s),\qquad 0\le s\le t_1-t_0.
+\]
+By \eqref{cpt:eq:tail} and $e^{-\mu_\wedge L_0/2}=1/(8M_0)$, for $L_0\le s\le t_1-t_0$ we get
+\[
+Y(t_0+s)\le\tfrac12+\frac{M_0-\tfrac12}{4M_0}<\tfrac34,
+\]
+and hence $X'(t_0+s)=\lambda X(1-Y)>0$. At the interior minimum $t_m$ we have $X'(t_m)=0$; therefore $t_m-t_0<L_0$. By \eqref{eq:statebox}, $(\log X)'=\lambda(1-Y)\ge-\lambda(M_0-1)$, so
+\[
+\log X(t_m)\ge\log\tfrac12-\lambda(M_0-1)L_0=\log\beta_0 .
+\]
+If instead $\min X\ge\tfrac12$, then $\min X\ge\beta_0$ because $\beta_0\le\tfrac12$. With \eqref{cpt:eq:filtermin} and \eqref{eq:statebox} this proves \eqref{eq:twosidedbox}.
+
+\emph{Uniformity.} $M_0>1$, $L_0$ and $\beta_0$ are compositions of continuous functions of $(\mu,k)$ on $\{\mu>0,\ k>0\}$, so $M_Q$ and $\beta_Q$ exist as stated. No step of the argument involved the period.
+\end{proof}
+In the coordinates \eqref{eq:change}, \eqref{eq:twosidedbox} reads
+\begin{equation}\label{cpt:eq:logbox}
+\log\beta_0\le U\le\log M_0,\qquad
+-\lambda(M_0-1)\le p\le\lambda(1-\beta_0),\qquad
+k\beta_0\le x,\,y\le kM_0 .
+\end{equation}
+This is a compact subset of $\Dom$, with $x$ and $y$ bounded away from zero and $p$ bounded away from $\lambda$. The box is stated in the variables $(X,Y,Z)$ because their domain $(0,\infty)^3$ does not depend on the parameters; Lemma~\ref{lem:collar} uses this.
+
+\subsection{Uniform separation from the equilibrium}
+Let $(\mu,k)\in\cP$. The Jacobian of \eqref{eq:logsystem} at $E$ and its characteristic polynomial are
+\[
+J_E=\begin{pmatrix}0&1&0\\0&-\mu&-1\\k&0&-1\end{pmatrix},\qquad
+\chi_E(z)=z^3+Az^2+\mu z+k .
+\]
+With $f_\mu$ as in \eqref{eq:gainprimitive}, $\chi_E(-\gamma)=k-f_\mu(\gamma-1)$. Since
+\[
+f_\mu'(s)=(s+1)(s+1-\mu)+s(s+1-\mu)+s(s+1)>0\qquad\text{for }s>\max(0,\mu-1)
+\]
+and $f_\mu(\mu)=\kH<k$, the equation $f_\mu(\gamma-1)=k$ has exactly one root $\gamma_E$ in $(A,\infty)$. This is the number $\gamma_E$ of Corollary~\ref{cor:cones}, with $\eta_E=\gamma_E-1>\mu$ and $\zeta_E=(\gamma_E-1)(\gamma_E-\mu)$. It is a simple root and, by the implicit-function theorem, a continuous function of $(\mu,k)\in\cP$. The two remaining roots of $\chi_E$ have sum $\gamma_E-A>0$ and product $k/\gamma_E>0$. Two real numbers with positive sum and positive product are positive, whereas $\chi_E>0$ on $[0,\infty)$; hence the remaining roots are not real. They are
+\[
+\alpha_E\pm i\omega_E,\qquad
+\alpha_E=\tfrac12(\gamma_E-A)>0,\qquad
+\omega_E=\sqrt{k/\gamma_E-\alpha_E^2}>0,
+\]
+and $\alpha_E,\omega_E$ are continuous on $\cP$.
+
+Direct substitution, using $f_\mu(\gamma_E-1)=k$, shows that
+\[
+v_E=\bigl(1,\,-\gamma_E,\,-\gamma_E(\gamma_E-\mu)\bigr)^{\mathsf T},\qquad
+n_E=(\zeta_E,\,-\eta_E,\,-1)^{\mathsf T}
+\]
+satisfy $J_Ev_E=-\gamma_Ev_E$, $J_E^{\mathsf T}n_E=-\gamma_En_E$ and
+\[
+n_E\cdot v_E=f_\mu'(\eta_E)>0 .
+\]
+All three components of $v_E$ are nonzero with the signs $(+,-,-)$, because $\gamma_E>A>\mu$; thus $v_E$ lies in the interior of the cone $C_+$ of \eqref{eq:cones} and $-v_E$ in the interior of $C_-$. The unstable plane, that is, the real invariant plane of $\alpha_E\pm i\omega_E$, is $\{r:n_E\cdot r=0\}$, and the spectral projection onto it along $\R v_E$ is
+\begin{equation}\label{cpt:eq:Pu}
+P_ur=r-\frac{n_E\cdot r}{f_\mu'(\eta_E)}\,v_E
+=r+\frac{\LamE(r)}{f_\mu'(\eta_E)}\,v_E,\qquad
+\LamE(r)=(y-k)-\zeta_EU+\eta_Ep=-n_E\cdot r .
+\end{equation}
+$P_u$ commutes with $J_E$ and depends continuously on $(\mu,k)\in\cP$.
+
+On the unstable plane $(J_E-\alpha_EI)^2=-\omega_E^2I$, by the Cayley--Hamilton theorem for the restriction of $J_E$. Summing the exponential series therefore gives, for all real $t$,
+\begin{equation}\label{cpt:eq:expformula}
+e^{-J_Et}P_u=e^{-\alpha_Et}\Bigl[\cos(\omega_Et)\,P_u-\frac{\sin(\omega_Et)}{\omega_E}\,(J_E-\alpha_EI)P_u\Bigr],
+\end{equation}
+so that
+\begin{equation}\label{cpt:eq:decay}
+\|e^{-J_Et}P_u\|\le\Theta_Ee^{-\alpha_Et}\quad(t\ge0),\qquad
+\Theta_E=\|P_u\|+\frac{\|(J_E-\alpha_EI)P_u\|}{\omega_E}.
+\end{equation}
+Define the quadratic form
+\begin{equation}\label{cpt:eq:V}
+V(r)=\int_0^\infty\bigl|e^{-J_Et}P_ur\bigr|^2\dd,\qquad r\in\R^3 ,
+\end{equation}
+and put $\nu_E=\Theta_E^2/(2\alpha_E)$. The integral converges by \eqref{cpt:eq:decay}. Since $P_u^2=P_u$, \eqref{cpt:eq:decay} gives the upper bounds in
+\begin{equation}\label{cpt:eq:Vbounds}
+\frac{|P_ur|^2}{2\|J_E\|}\le V(r)\le\nu_E|P_ur|^2,\qquad
+|DV(r)h|\le2\nu_E\,|P_ur|\,|h|\qquad(r,h\in\R^3),
+\end{equation}
+where
+\[
+DV(r)h=2\int_0^\infty\bigl\langle e^{-J_Et}P_ur,\,e^{-J_Et}P_uh\bigr\rangle\dd .
+\]
+The lower bound follows from $|P_ur|=|e^{J_Et}e^{-J_Et}P_ur|\le e^{\|J_E\|t}\,|e^{-J_Et}P_ur|$, which gives $V(r)\ge|P_ur|^2\int_0^\infty e^{-2\|J_E\|t}\dd$. Finally, for every $r\in\R^3$,
+\begin{equation}\label{cpt:eq:Vlinear}
+DV(r)\,J_Er=|P_ur|^2 .
+\end{equation}
+Indeed $V(e^{J_Es}r)=\int_0^\infty|e^{-J_E(t-s)}P_ur|^2\dd=\int_{-s}^\infty|e^{-J_E\sigma}P_ur|^2\,\mathrm d\sigma$, and differentiation at $s=0$ gives \eqref{cpt:eq:Vlinear}.
+
+The quantities $|v_E|$, $\|J_E\|$, $\|P_u\|$, $\Theta_E$ and $\nu_E$ are continuous functions of $(\mu,k)$ on $\cP$, because $\gamma_E$, $\alpha_E>0$ and $\omega_E>0$ are. For a compact $Q\subset\cP$ put
+\begin{equation}\label{cpt:eq:constants}
+\begin{gathered}
+C_Q=\max_Q\bigl(1+|v_E|\bigr),\qquad
+\nu_Q=\max_Q\nu_E,\qquad
+k_Q=\max_Qk,\qquad
+c_Q=\frac1{2\nu_Q},\\
+\varepsilon_Q=\min\Bigl\{\frac1{C_Q},\ \frac1{2e\,k_Q\nu_QC_Q^2}\Bigr\},\qquad
+d_Q=\varepsilon_Q\Bigl[\max_Q\bigl(\|P_u\|\sqrt{2\|J_E\|\nu_E}\,\bigr)\Bigr]^{-1}.
+\end{gathered}
+\end{equation}
+
+\begin{lemma}[Uniform separation from the equilibrium]\label{lem:eqseparation}
+Let $Q$ be a compact subset of $\cP$. The constants $C_Q\ge1$, $\varepsilon_Q>0$, $c_Q>0$ and $d_Q>0$ of \eqref{cpt:eq:constants} depend only on $Q$, not on any cycle or its period. For every cycle with parameters $(\mu,k)\in Q$ and every point $r=(U,p,y-k)$ of it, with $P_u$ and $V$ taken at $(\mu,k)$:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item the stable component is dominated by the unstable one,
+\begin{equation}\label{eq:anglebound}
+|r|\le C_Q|P_ur| ;
+\end{equation}
+\item if $|P_ur|\le\varepsilon_Q$, then the derivative of $V$ along the flow satisfies $\Dt V\ge c_QV>0$ at that point;
+\item $|r|\ge d_Q$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(i) By \eqref{eq:equilibriumreverse}, $\LamE(r)>0$ at every cycle point. Put $c_r=\LamE(r)/f_\mu'(\eta_E)>0$ and $w=P_ur$. By \eqref{cpt:eq:Pu}, $r=w-c_rv_E$, that is,
+\[
+U=w_1-c_r,\qquad p=w_2+c_r\gamma_E,\qquad y-k=w_3+c_r\gamma_E(\gamma_E-\mu).
+\]
+By Corollary~\ref{cor:cones}, $r\notin C_-=\{U\le0,\ p\ge0,\ y-k\ge0\}$. Hence at least one of $U>0$, $p<0$, $y-k<0$ holds, which gives, respectively,
+\[
+c_r<w_1,\qquad c_r\gamma_E<-w_2,\qquad c_r\gamma_E(\gamma_E-\mu)<-w_3 .
+\]
+Since $\gamma_E>1$ and $\gamma_E-\mu>1$, each alternative implies $c_r<|w|$. Therefore
+\[
+|r|\le|w|+c_r|v_E|<(1+|v_E|)\,|P_ur|\le C_Q|P_ur| .
+\]
+In particular $P_ur\ne0$. Both conclusions of Corollary~\ref{cor:cones} were used: \eqref{eq:equilibriumreverse} fixes the sign of the stable component, and the exclusion of $C_-$ bounds its size.
+
+(ii) Along \eqref{eq:logsystem} the displacement satisfies
+\[
+r'=J_Er+N(r),\qquad N(r)=\bigl(0,\,0,\,k\,\Rem(U)\bigr)^{\mathsf T},
+\]
+because $(y-k)'=ke^U-y=kU-(y-k)+k(e^U-1-U)$. By \eqref{cpt:eq:Vlinear},
+\begin{equation}\label{cpt:eq:Vdot}
+\Dt V=DV(r)\bigl(J_Er+N(r)\bigr)=|P_ur|^2+DV(r)N(r).
+\end{equation}
+For $|U|\le1$ we have $0\le\Rem(U)=U^2\int_0^1(1-s)e^{sU}\,\mathrm ds\le\tfrac e2U^2$, so $|N(r)|\le\tfrac e2k|r|^2$ whenever $|r|\le1$. Let $r$ be a cycle point with $|P_ur|\le\varepsilon_Q$. By (i), $|r|\le C_Q|P_ur|\le1$, and by \eqref{cpt:eq:Vbounds},
+\[
+|DV(r)N(r)|\le2\nu_E|P_ur|\cdot\tfrac e2k|r|^2
+\le e\,k_Q\nu_Q\,|P_ur|\,|r|^2
+\le e\,k_Q\nu_QC_Q^2\,|P_ur|^3\le\tfrac12|P_ur|^2 .
+\]
+With \eqref{cpt:eq:Vdot} and \eqref{cpt:eq:Vbounds},
+\[
+\Dt V\ge\tfrac12|P_ur|^2\ge\frac{V(r)}{2\nu_E}\ge c_QV(r),\qquad
+V(r)\ge\frac{|P_ur|^2}{2\|J_E\|}>0 .
+\]
+
+(iii) Let $r(t)$ parametrise the cycle. The periodic $C^1$ function $t\mapsto V(r(t))$ attains its minimum at some $t_0$, where its derivative vanishes. By (ii) this is impossible if $|P_ur(t_0)|\le\varepsilon_Q$. Hence $|P_ur(t_0)|>\varepsilon_Q$, and by \eqref{cpt:eq:Vbounds}, for every $t$,
+\[
+\nu_E\|P_u\|^2|r(t)|^2\ge\nu_E|P_ur(t)|^2\ge V(r(t))\ge V(r(t_0))\ge\frac{|P_ur(t_0)|^2}{2\|J_E\|}>\frac{\varepsilon_Q^2}{2\|J_E\|} .
+\]
+Thus $|r(t)|>\varepsilon_Q\bigl(\|P_u\|\sqrt{2\|J_E\|\nu_E}\,\bigr)^{-1}\ge d_Q$.
+\end{proof}
+Instability of the equilibrium alone would not exclude approach of a cycle to $E$ along its stable line. Part (i), which rests on the two cone exclusions of Corollary~\ref{cor:cones}, supplies that exclusion: near $E$ a cycle point is controlled by its unstable component, and $V$ increases there.
+
+\subsection{Uniform projected speed}
+\begin{lemma}[Uniform projected speed]\label{lem:speed}
+Let $Q$ be a compact subset of $\cP$. Along every cycle with parameters in $Q$,
+\begin{equation}\label{eq:speedrelations}
+y-k=-\mu p-p',\qquad
+x-k=(\zeta-\mu)p-(1+\eta)p' .
+\end{equation}
+There are constants $C_Q'<\infty$ and $\sigma_Q>0$, depending only on $Q$ and not on the cycle or its period, such that at every point of every such cycle
+\begin{equation}\label{cpt:eq:speed}
+|r|\le C_Q'\sqrt{p^2+p'^2},\qquad
+\sqrt{p^2+p'^2}\ge\sigma_Q=\frac{d_Q}{C_Q'} .
+\end{equation}
+The left-hand quantity in the second inequality is the speed of the projected curve $t\mapsto(U,p)$.
+\end{lemma}
+\begin{proof}
+The first relation in \eqref{eq:speedrelations} is the second equation of \eqref{eq:logsystem}. Adding it to \eqref{eq:orthogonality}, written as $x-y=\zeta p-\eta p'$, gives the second.
+
+By Lemma~\ref{lem:statebox}, $x_-=k\beta_0\le x\le kM_0=x_+$ along the cycle. Lemma~\ref{lem:projectivebounds} with these values gives $0<\eta\le\eta_+$ and $0<\zeta\le\zeta_+$, where $\eta_+$ and $\zeta_+$ are continuous functions of $(\mu,k)$ that do not involve the period. By the Cauchy--Schwarz inequality and $|\zeta-\mu|\le\max(\zeta_+,\mu)$,
+\[
+(y-k)^2\le(\mu^2+1)(p^2+p'^2),\qquad
+(x-k)^2\le\bigl(\max(\zeta_+,\mu)^2+(1+\eta_+)^2\bigr)(p^2+p'^2).
+\]
+By the mean value theorem, $U=\log X$ with $X=x/k\in[\beta_0,M_0]$ satisfies $|U|=|X-1|/\xi$ for some $\xi$ between $X$ and $1$. Since $\xi\ge\beta_0$, we get $|U|\le|x-k|/(k\beta_0)$. Adding the three squares,
+\[
+|r|^2=U^2+p^2+(y-k)^2\le\Bigl[\,2+\mu^2+\frac{\max(\zeta_+,\mu)^2+(1+\eta_+)^2}{(k\beta_0)^2}\Bigr](p^2+p'^2).
+\]
+The bracket is a continuous function of $(\mu,k)$ on $\cP$; let $C_Q'^{\,2}$ be its maximum over $Q$. This is the first inequality in \eqref{cpt:eq:speed}. The second follows from Lemma~\ref{lem:eqseparation}(iii), and $(U',p')=(p,p')$ identifies the speed.
+\end{proof}
+
+\subsection{Compactness}
+\begin{theorem}[Properness after fixing crest phase]\label{thm:compact}
+Let $Q$ be a compact subset of $\cP$, with the constants $\beta_Q,M_Q$ of Lemma~\ref{lem:statebox}, $d_Q$ of Lemma~\ref{lem:eqseparation} and $\sigma_Q$ of Lemma~\ref{lem:speed}, and put $\lambda_Q=\max_Q\lambda$.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item \textup{(State box.)} Every cycle with parameters in $Q$ lies in the compact subset $\{(X,Y,Z)\in[\beta_Q,M_Q]^3\}$ of the positive chemical domain.
+\item \textup{(Separation.)} In log coordinates every point of such a cycle satisfies $|(U,p,y-k)|\ge d_Q$.
+\item \textup{(Periods.)} The least period of such a cycle satisfies
+\[
+\frac{2\pi}{\sqrt\mu}<T\le T_Q:=\frac{2\log(M_Q/\beta_Q)+2\lambda_Q(M_Q-\beta_Q)}{\sigma_Q}<\infty .
+\]
+\item \textup{(Sequential compactness.)} Let $(\mu_n,k_n)\in Q$, and let $z_n=(U_n,p_n,y_n)$ be a solution of \eqref{eq:logsystem} at $(\mu_n,k_n)$ that traces a cycle with least period $T_n$ and starts at its crest: $p_n(0)=0$ and $U_n(0)=\max U_n$. Then there is a subsequence along which
+\[
+(\mu_n,k_n)\to(\mu_*,k_*)\in Q,\qquad z_n(0)\to z_*^0,\qquad T_n\to T_*,
+\]
+the solution $z_*$ of \eqref{eq:logsystem} at $(\mu_*,k_*)$ with $z_*(0)=z_*^0$ traces a cycle whose least period is $T_*$ and whose crest is $z_*^0$, and $z_n\to z_*$ in $C^1$ uniformly on compact time intervals.
+\end{enumerate}
+The constants $\beta_Q,M_Q,d_Q,T_Q$ depend only on $Q$.
+\end{theorem}
+\begin{proof}
+(a) is Lemma~\ref{lem:statebox} and (b) is Lemma~\ref{lem:eqseparation}(iii).
+
+(c) \emph{Bounded length gives bounded period.} The lower bound is \eqref{eq:determinant}. By Theorem~\ref{thm:geometry}, in one least period each of $U$ and $p$ has exactly one local maximum and one local minimum, and is therefore monotone on the two arcs between them. Since $U'=p$,
+\[
+\int_0^T\sqrt{p^2+p'^2}\dd\le\int_0^T\bigl(|U'|+|p'|\bigr)\dd
+=2(\max U-\min U)+2(\max p-\min p).
+\]
+By \eqref{cpt:eq:logbox} the right side is at most $2\log(M_0/\beta_0)+2\lambda(M_0-\beta_0)\le2\log(M_Q/\beta_Q)+2\lambda_Q(M_Q-\beta_Q)$. By Lemma~\ref{lem:speed} the left side is at least $\sigma_QT$. This gives $T\le T_Q$.
+
+(d) \emph{Limits exist and are cycles.} By (a) and \eqref{cpt:eq:logbox} the initial states $z_n(0)$ lie in a compact subset of $\R^3$, and by (c) the periods lie in $[2\pi/\sqrt{\max_Q\mu},\,T_Q]$. Pass to a subsequence along which $(\mu_n,k_n)\to(\mu_*,k_*)\in Q$, $z_n(0)\to z_*^0$ and $T_n\to T_*>0$. The vector field of \eqref{eq:logsystem} is smooth in $(U,p,y,\mu,k)$. All $z_n(t)$, $t\in\R$, lie in the compact set described by \eqref{cpt:eq:logbox} with $\beta_Q,M_Q$ and $\lambda\in[\min_Q\lambda,\lambda_Q]$; hence, by continuous dependence on initial data and parameters, $z_*$ is defined for all $t\in\R$, lies in that set, and $z_n\to z_*$ uniformly on compact time intervals. The derivatives converge as well, because they are given by the vector field. In the limit, $z_*$ satisfies $x>0$, $y\ge k_*\beta_Q>0$ and $p\le\lambda_*(1-\beta_Q)<\lambda_*$, so it lies in the chemical domain at $(\mu_*,k_*)$. From $z_n(T_n)=z_n(0)$ we get $z_*(T_*)=z_*^0$, so $z_*$ is periodic. By (b), $|z_*^0-E|\ge d_Q>0$ with $E=(0,0,k_*)$, and $E$ is the only equilibrium of \eqref{eq:logsystem}; hence $z_*$ is not constant. Thus $z_*$ traces a cycle at $(\mu_*,k_*)\in Q$, and $T_*=jT_0$ for its least period $T_0$ and an integer $j\ge1$.
+
+\emph{The limit starts at its crest.} On any cycle, at a zero of $p$ the identities \eqref{eq:crestidentities} give $p'=k-y=-(x-k)/(1+\eta)$. Hence $U\ne0$ there, since otherwise $x=y=k$ and the point would be $E$; and $p'<0$ if $U>0$, $p'>0$ if $U<0$. By Theorem~\ref{thm:geometry}, $U$ has exactly one maximum and one minimum per least period, so $p=U'$ has exactly two zeros per least period: the crest, a downward zero, and the trough, an upward zero. Now $p_*(0)=\lim p_n(0)=0$ and $U_*(0)=\lim U_n(0)\ge0$. Therefore $z_*^0$ is the crest of the limiting cycle, and $p_*'(0)<0$.
+
+\emph{The limiting period is least.} Suppose $j\ge2$. Then $p_*(T_0)=0$ and $p_*'(T_0)<0$ with $0<T_0<T_*$. Choose $\epsilon\in(0,T_0/2)$ such that $p_*'<0$ on $[T_0-\epsilon,T_0+\epsilon]$; then $p_*(T_0-\epsilon)>0>p_*(T_0+\epsilon)$. For large $n$, uniform $C^1$ convergence gives $p_n(T_0-\epsilon)>0>p_n(T_0+\epsilon)$, $p_n'<0$ on the same interval, and $T_n>T_0+\epsilon$, because $T_n\to T_*\ge2T_0$. Hence $p_n$ has a downward zero at some $s_n\in(T_0-\epsilon,T_0+\epsilon)\subset(0,T_n)$. But the only downward zero of $p_n$ in $[0,T_n)$ is the crest $t=0$. This contradiction shows $j=1$, so $T_*$ is the least period of the limiting cycle.
+\end{proof}
+The bounds $\beta_Q$ and $M_Q$ are explicit. The constants $C_Q$, $\varepsilon_Q$, $d_Q$, $\sigma_Q$ and $T_Q$ are extrema over $Q$ of continuous functions of $(\mu,k)$ built from the spectral data of $J_E$ and from $\beta_0,M_0$; they are not evaluated here and are far from sharp. The theorem does not supply a validated covering mesh for $Q$. It makes no compactness assertion at the Hopf curve, where $\alpha_E\to0$ and therefore $\nu_E\to\infty$ and $d_Q\to0$, nor at zero filter rate or at infinity, where the state box degenerates.

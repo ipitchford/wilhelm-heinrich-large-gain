@@ -1,0 +1,279 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\title{Strong-stable supporting planes and the twelve-event order\\
+for cycles of the Wilhelm--Heinrich oscillator}
+\author{Anonymous (lane ``monotone'', working note)}
+\date{3 October 2026}
+\begin{document}
+\maketitle
+
+\noindent\textbf{Scope.} This note proves an \emph{intermediate} structural theorem about every
+positive cycle of the Wilhelm--Heinrich system. It does \emph{not} prove that the weak
+transverse exponent $\lambda_c$ is negative, and hence does not prove uniqueness of the cycle.
+Section~\ref{sec:obstruction} states exactly what is still missing.
+
+\section{Setting and imported facts}
+Fix $\mu>0$, $k>\mu(1+\mu)$, $A=1+\mu$. The system is
+\begin{equation}\label{sys}
+U'=p,\qquad p'=k-\mu p-y,\qquad y'=x-y,\qquad x=ke^{U},
+\end{equation}
+with equilibrium $E=(0,0,k)$ and Jacobian
+$J=\begin{psmallmatrix}0&1&0\\0&-\mu&-1\\x&0&-1\end{psmallmatrix}$.
+Let $z(t)=(U,p,y)(t)$ be a nonconstant periodic solution with least period $T$; $z'=(p,p',y')$,
+$p''=-\mu p'-y'$, $y''=xp-y'$.
+
+We use the following results of the v2.0 manuscript (``Finite-parameter obstructions and cycle
+geometry in the Wilhelm--Heinrich oscillator'').
+\begin{itemize}
+\item[(F1)] (Prop.~2.1) The Floquet multipliers are $1,m_t,m_s$ with $0<m_s<m_t$, $m_s<1$,
+$m_sm_t=e^{-AT}$; $\lambda_c:=T^{-1}\log m_t$.
+\item[(F2)] (Thm.~4.1) The projection $\gamma_\pi$ of the cycle to the $(U,p)$-plane is a regular
+Jordan curve enclosing $(0,0)$; in particular $(p,p')\neq(0,0)$ for all $t$.
+\item[(F3)] (Thm.~4.2) Each of $U,p,y$ has exactly one maximum and one minimum per period, all
+nondegenerate, at times
+\[
+t_{\rm tr}<t_{Z\min}<t_{Y\min}<t_{\rm cr}<t_{Z\max}<t_{Y\max}<t_{\rm tr}+T ,
+\]
+where $t_{\rm tr},t_{\rm cr}$ are the trough and crest of $U$ (zeros of $p$), $t_{Z\min},t_{Z\max}$
+the minimum and maximum of $y$ (zeros of $y'$), and $t_{Y\min},t_{Y\max}$ the \emph{maximum} and
+\emph{minimum} of $p$ (zeros of $p'$; the labels refer to the chemical variable $Y=1-p\mu/k$).
+Consequently
+\begin{align*}
+&p>0\text{ on }(t_{\rm tr},t_{\rm cr}),&&p<0\text{ on }(t_{\rm cr},t_{\rm tr}+T),\\
+&p'>0\text{ on }(t_{Y\max}-T,t_{Y\min}),&&p'<0\text{ on }(t_{Y\min},t_{Y\max}),\\
+&y'>0\text{ on }(t_{Z\min},t_{Z\max}),&&y'<0\text{ on }(t_{Z\max},t_{Z\min}+T).
+\end{align*}
+\item[(F4)] (Cor.~3.2) With $\gamma_E>A$ the root of $\gamma(\gamma-1)(\gamma-\mu)=k$,
+$\eta_E=\gamma_E-1>\mu$, $\zeta_E=(\gamma_E-1)(\gamma_E-\mu)>0$:
+$(y-k)-\zeta_EU+\eta_Ep>0$ on the cycle.
+\end{itemize}
+We write $C:=(t_{Y\min},t_{\rm cr})$ (there $p>0,\ p'<0,\ y'>0$) and
+$F:=(t_{Y\max},t_{\rm tr}+T)$ (there $p<0,\ p'>0,\ y'<0$). On $C\cup F$ put
+$\theta:=-p'/p>0$. Since $p''=-\mu p'-y'$,
+\begin{equation}\label{theta}
+\theta'=\theta^2-\mu\theta+\frac{y'}{p},\qquad \frac{y'}{p}>0\ \text{ on }C\cup F .
+\end{equation}
+
+\section{The strong-stable vector}
+\begin{lemma}\label{lem:es}
+The Floquet solution $e_s$ of $v'=Jv$ with multiplier $m_s$ can be normalised as
+$e_s=(a,-b,-c)$ with $a,b,c>0$ for all $t$. The periodic ratios $r=b/a$, $s=c/a$ satisfy
+\begin{equation}\label{ricc}
+r'=r^2-\mu r-s,\qquad s'=sr-s-x,\qquad r>\max(1,\mu),\quad s>0 .
+\end{equation}
+\end{lemma}
+\begin{proof}
+In the variables $(a,b,c)=(v_1,-v_2,-v_3)$ and reversed time $\tau=-t$ the variational system is
+$a_\tau=b$, $b_\tau=\mu b+c$, $c_\tau=xa+c$: a linear system with nonnegative off-diagonal
+entries which is irreducible because $x>0$. Its fundamental matrix over any positive
+$\tau$-interval is entrywise positive. The backward period map therefore has a simple dominant
+eigenvalue with a positive eigenvector; by (F1) the backward multipliers are $1,1/m_t,1/m_s$ and
+the dominant one is $1/m_s$. Propagating this eigenvector backward keeps it positive, and
+$e_s(t+T)=m_se_s(t)$, so $a,b,c>0$ for all $t$. Equations \eqref{ricc} follow from
+$a'=-b$, $b'=-\mu b-c$, $c'=-xa-c$. At a minimum of the positive periodic function $r$ we get
+$r(r-\mu)=s>0$, so $r>\mu$ everywhere.
+
+For $r>1$ put $\tilde c:=c+(\mu-1)b=-(b'+b)$. From $a'''+Aa''+\mu a'+xa=0$ one checks
+$a'=-b$, $b'=-b-\tilde c$, $\tilde c'=-xa-\mu\tilde c$, the same cooperative structure with the
+rates $1,\mu$ interchanged. Its dominant backward Floquet solution is positive and its first
+component is a Floquet solution of the same scalar equation with the simple multiplier $m_s$,
+hence a positive multiple of $a$; therefore $\tilde c>0$, and $r'=r^2-r-\tilde c/a$ gives
+$r>1$ at the minimum of $r$.
+\end{proof}
+
+\begin{lemma}[weak adjoint]\label{lem:psi}
+$\Psi:=e^{At}\,z'\times e_s$ solves $\Psi'=-J^{\mathsf T}\Psi$, satisfies
+$\Psi\cdot z'=\Psi\cdot e_s=0$ and $\Psi(t+T)=e^{-\lambda_cT}\Psi(t)$, and
+\begin{equation}\label{psi}
+\Psi=e^{At}a\,\bigl(ry'-sp',\ \ y'+sp,\ \ -(p'+rp)\bigr).
+\end{equation}
+For every solution $z_2$ of \eqref{sys} on an interval, with $d=z_2-z$ and
+$c(u)=e^u-1-u\ge0$,
+\begin{equation}\label{chord}
+\frac{d}{dt}\bigl(\Psi\cdot d\bigr)=\Psi_3\,x\,c(d_U),\qquad
+\frac{d}{dt}\bigl(\Psi\cdot z''\bigr)=\Psi_3\,x\,p^2 .
+\end{equation}
+\end{lemma}
+\begin{proof}
+For solutions $u,v$ of $v'=Jv$, $(u\times v)'=(\operatorname{tr}J-J^{\mathsf T})(u\times v)$ and
+$\operatorname{tr}J=-A$; this gives the adjoint equation. Quasi-periodicity follows from
+$e^{AT}m_s=1/m_t$. Formula \eqref{psi} is the cross product of $(p,p',y')$ and $(a,-b,-c)$.
+The vector field is affine except for $ke^U$ in the third component, so
+$d'=Jd+x\,c(d_U)e_3$, and $z'''=Jz''+xp^2e_3$; pair with $\Psi$.
+\end{proof}
+
+\section{The twelve-event order}
+\begin{theorem}\label{thm:twelve}
+Each component of the weak adjoint $\Psi$ has exactly two zeros per period, all simple, and they
+interlace the six extrema of (F3):
+\[
+t_{\rm tr}<\tau_2^+<t_{Z\min}<\tau_1^+<t_{Y\min}<t_2<t_{\rm cr}
+<\tau_2^-<t_{Z\max}<\tau_1^-<t_{Y\max}<t_1<t_{\rm tr}+T,
+\]
+where $\Psi_j$ changes from $-$ to $+$ at $\tau_j^+$ and from $+$ to $-$ at $\tau_j^-$
+($j=1,2$), and $\Psi_3$ changes from $-$ to $+$ at $t_2$ and from $+$ to $-$ at $t_1$.
+In particular $\Psi>0$ componentwise at the crest, $\Psi<0$ at the trough, and
+\[
+\psi_p:=p'+rp\ \begin{cases}>0&\text{on }(t_1-T,t_2)\quad\text{(``trough arc'')},\\
+<0&\text{on }(t_2,t_1)\quad\text{(``crest arc'')}.\end{cases}
+\]
+\end{theorem}
+\begin{proof}
+\emph{$\Psi_3=-e^{At}a\psi_p$.} On $[t_{\rm tr},t_{Y\min}]$ we have $p\ge0$, $p'\ge0$, not both
+zero, so $\psi_p>0$; on $[t_{\rm cr},t_{Y\max}]$, $\psi_p<0$. On $C\cup F$,
+$\psi_p=p(r-\theta)$. On $C$, $\theta\to0$ at $t_{Y\min}$ and $\theta\to+\infty$ at $t_{\rm cr}$,
+so $\theta-r$ changes sign. By \eqref{theta} and \eqref{ricc}, at any zero of $\theta-r$,
+\[
+(\theta-r)'=\frac{y'}{p}+s>0 .
+\]
+Hence there is exactly one zero $t_2\in C$, and it is simple. The same argument on $F$ gives
+exactly one zero $t_1\in F$. The signs of $\psi_p=p(r-\theta)$ follow.
+
+\emph{$\Psi_2=e^{At}a(y'+sp)$.} On $[t_{Z\min},t_{\rm cr}]$, $y'\ge0$, $p\ge0$, not both zero:
+$\Psi_2>0$; on $[t_{Z\max},t_{\rm tr}+T]$, $\Psi_2<0$. On $(t_{\rm cr},t_{Z\max})$ and on
+$(t_{\rm tr},t_{Z\min})$ write $\Psi_2=e^{At}a\,p\,g_2$, $g_2=y'/p+s$. In both intervals
+$g_2\to-\infty$ at the left end and $g_2=s>0$ at the right end. A direct computation with
+$y''=xp-y'$ and \eqref{ricc} gives, at a zero of $g_2$,
+\[
+g_2'=\frac{s\,\psi_p}{p},
+\]
+which is positive because $\psi_p$ and $p$ have the same sign on each of the two intervals
+(both negative on $(t_{\rm cr},t_{Z\max})\subset(t_{\rm cr},t_{Y\max})$, both positive on
+$(t_{\rm tr},t_{Z\min})\subset(t_{\rm tr},t_{Y\min})$). So $g_2$ has exactly one simple zero in
+each interval.
+
+\emph{$\Psi_1=e^{At}a(ry'-sp')$.} On $[t_{Y\min},t_{Z\max}]$, $p'\le0\le y'$, not both zero:
+$\Psi_1>0$; on $[t_{Y\max},t_{Z\min}+T]$, $\Psi_1<0$. On $(t_{Z\min},t_{Y\min})$ and
+$(t_{Z\max},t_{Y\max})$ write $\Psi_1=e^{At}a\,r\,p'\,g_1$, $g_1=y'/p'-s/r$. In both intervals
+$g_1=-s/r<0$ at the left end and $g_1\to+\infty$ at the right end, and at a zero of $g_1$
+\[
+g_1'=\frac{x\,\psi_p}{r\,p'}>0 ,
+\]
+since $\psi_p$ and $p'$ have the same sign there. So $g_1$ has exactly one simple zero in each
+interval. Collecting the locations gives the displayed order.
+\end{proof}
+
+\section{Strong-stable planes support the cycle}
+\begin{lemma}[one planar supporting line]\label{lem:line}
+Let $t_1\in F$ be the zero of $\psi_p$ from Theorem~\ref{thm:twelve} and
+\[
+L(u,v):=p'(t_1)\,(u-U(t_1))-p(t_1)\,(v-p(t_1)).
+\]
+Then $L(U(t),p(t))>0$ for all $t\not\equiv t_1\pmod T$, and $L>0$ on the bounded component of
+$\R^2\setminus\gamma_\pi$; in particular $L(0,0)>0$.
+\end{lemma}
+\begin{proof}
+Let $\ell(t)=L(U(t),p(t))$. Then $\ell'(t)=p'(t_1)p(t)-p(t_1)p'(t)$ vanishes exactly when
+$(p,p')(t)$ is parallel to $(p,p')(t_1)$ (both are nonzero by (F2)). As $p(t_1)<0<p'(t_1)$,
+this forces $t\in C\cup F$ and $\theta(t)=\theta(t_1)=r(t_1)=:\theta_1$. On each of $C$ and $F$,
+$\theta$ runs from $0$ to $+\infty$, and at every crossing of the level $\theta_1$,
+\eqref{theta} and $\theta_1>\mu$ (Lemma~\ref{lem:es}) give $\theta'=\theta_1(\theta_1-\mu)+y'/p>0$.
+So the level is crossed exactly once in $C$ and once in $F$ (at $t_1$): $\ell$ has exactly two
+critical points per period. Moreover, using $p'(t_1)=-r p(t_1)$,
+\[
+\ell''(t_1)=\bigl(p'^2-pp''\bigr)(t_1)=\bigl(p^2r(r-\mu)+p\,y'\bigr)(t_1)>0,
+\]
+because $p<0$ and $y'<0$ on $F$. A nonconstant periodic $C^2$ function with exactly two critical
+points per period, one of which is a strict local minimum, attains its global minimum only
+there. Hence $\ell(t)>\ell(t_1)=0$ for $t\not\equiv t_1$. The bounded complementary component of
+a Jordan curve lies in the interior of its convex hull, hence in $\{L>0\}$.
+(Directly: (F4) with $y-k=-p'-\mu p$ reads $-p'+(\eta_E-\mu)p-\zeta_EU>0$, which at $t_1$ forces
+$U(t_1)<0$, so $L(0,0)=p(t_1)^2-p'(t_1)U(t_1)>0$.)
+\end{proof}
+
+\begin{theorem}[strong-stable supporting planes]\label{thm:DS}
+For every cycle, every $t$ and every $s\not\equiv 0\pmod T$,
+\begin{equation}\label{DS}
+\begin{gathered}
+\det\bigl(z(t+s)-z(t),\,z'(t),\,e_s(t)\bigr)<0,\qquad
+\det\bigl(E-z(t),\,z'(t),\,e_s(t)\bigr)<0,\\
+\det\bigl(z''(t),\,z'(t),\,e_s(t)\bigr)<0 .
+\end{gathered}
+\end{equation}
+Thus the affine plane $z(t)+\operatorname{span}\{z'(t),e_s(t)\}$ meets the cycle only at $z(t)$,
+with nonvanishing normal curvature, and the rest of the cycle and the equilibrium lie strictly on
+one side of it. The same strict inequality holds with $z(t+s)$ replaced by $z_2(t)$ for any
+solution $z_2$ of \eqref{sys} defined for all $t\in\R$ whose $(U,p)$-projection satisfies
+$L>0$ at the times $t_1+jT$, $j\in\mathbb Z$; in particular for every cycle nested inside the
+given one.
+\end{theorem}
+\begin{proof}
+$\Psi\cdot v=e^{At}\det(v,z',e_s)$, so we must show $B<0$ for $B=\Psi\cdot d$, $d=z_2-z$,
+and for $B=\Psi\cdot z''$. By \eqref{chord}, $B'=\Psi_3w$ with $w\ge0$. By
+Theorem~\ref{thm:twelve}, $\Psi_3\ge0$ on $[t_2,t_1]$ and $\Psi_3\le0$ on $[t_1,t_2+T]$. Hence on
+every window $[t_2+jT,t_2+(j+1)T]$ the function $B$ attains its maximum at $t_1+jT$.
+There $\Psi_3=0$ and $\Psi\cdot z'=0$ give $\Psi(t_1)=\kappa\,(p'(t_1),-p(t_1),0)$ with
+$\kappa=-\Psi_2(t_1)/p(t_1)$; by \eqref{psi}, $\Psi_2(t_1)=e^{At_1}a(y'+sp)(t_1)<0$ and
+$p(t_1)<0$, so $\kappa<0$ (and likewise at $t_1+jT$, with $\kappa$ multiplied by
+$e^{-\lambda_cjT}>0$). Therefore
+\[
+B(t_1+jT)=\kappa_j\,L\bigl(U_2,p_2\bigr)(t_1+jT)<0\quad\text{for chords},\qquad
+B(t_1)=\kappa\,\ell''(t_1)<0\quad\text{for }z'' ,
+\]
+by Lemma~\ref{lem:line} (points of the cycle other than $z(t_1)$, the point $E$, and points
+inside $\gamma_\pi$ all have $L>0$; nested cycles have nested projections by (F2)).
+So $B<0$ on every window, i.e.\ for all $t$.
+\end{proof}
+
+\begin{corollary}\label{cor:frame}
+Normalise the weak Floquet vector $e_t$ by $\Psi\cdot e_t>0$. In the Floquet frame
+$(z',e_t,e_s)$ at $z(t)$, every chord $z(t+s)-z(t)$, $s\not\equiv0$, and the vector $E-z(t)$
+have strictly negative $e_t$-coordinate (Theorem~\ref{thm:DS}) and strictly negative
+$e_s$-coordinate (v2.0, Thm.~3.1). The scalar Wronskian $\mathrm{Wr}(p',p,a)$ of the
+tangent, its derivative and the strong-stable solution never vanishes, and
+$\mathrm{Wr}(p,a)$ has exactly two simple zeros per period.
+\end{corollary}
+
+\section{What the theorem does and does not give for $\lambda_c$}
+\label{sec:obstruction}
+Let $L_3=D^3+AD^2+\mu D+x$ be the scalar variational operator
+($L_3[1]=x$, $L_3[U]=k(1-e^U+Ue^U)$, $L_3[p]=0$, $L_3[p']=-xp^2$, $L_3[y]=x(k+p^2)$).
+\begin{proposition}[rank-one window identity]\label{prop:rank}
+For every $T$-periodic $\varphi\in C^3$,
+\begin{equation}\label{rank}
+\int_{t_1}^{t_1+T}\Psi_3\,L_3[\varphi]\,dt
+=\bigl(e^{-\lambda_cT}-1\bigr)\,\bigl|\Psi_2(t_1)\bigr|\,\bigl(\varphi'+r\varphi\bigr)(t_1).
+\end{equation}
+Consequently, for every such $\varphi$ with $(\varphi'+r\varphi)(t_1)>0$,
+$\operatorname{sign}\lambda_c=-\operatorname{sign}\int_{t_1}^{t_1+T}\Psi_3L_3[\varphi]\,dt$.
+In particular the following are equivalent to $\lambda_c<0$:
+\[
+\int_{t_1}^{t_1+T}\!\!\Psi_3\,x\,dt>0;\qquad
+\int_{t_1}^{t_1+T}\!\!\Psi_3\,x\,p^2\,dt<0;\qquad
+\int_{t_1}^{t_1+T}\!\!\Psi_3\,(1-e^U+Ue^U)\,dt<0 .
+\]
+\end{proposition}
+\begin{proof}
+With $\omega_\varphi=(\varphi,\varphi',-\varphi''-\mu\varphi')$ one has
+$\omega_\varphi'-J\omega_\varphi=-L_3[\varphi]e_3$, so
+$(\Psi\cdot\omega_\varphi)'=-\Psi_3L_3[\varphi]$. Integrate over the window and use
+$\Psi(t_1+T)=e^{-\lambda_cT}\Psi(t_1)$, $\Psi(t_1)=\kappa(p',-p,0)$, $p'(t_1)=-rp(t_1)$:
+$\Psi(t_1)\cdot\omega_\varphi(t_1)=-\kappa p(t_1)(\varphi'+r\varphi)(t_1)$ and
+$\kappa p(t_1)=-\Psi_2(t_1)=|\Psi_2(t_1)|$. The three special cases use
+$\varphi=1$ ($r>0$), $\varphi=p'$ ($(p''+rp')(t_1)=((r-\mu)p'-y')(t_1)>0$) and
+$\varphi=-U$ ($-(p+rU)(t_1)>0$).
+\end{proof}
+\begin{remark}[the precise obstruction]
+Identity \eqref{rank} shows that all identities obtained by pairing the weak adjoint with
+periodic test functions carry the \emph{same single} unknown sign, that of
+$e^{-\lambda_cT}-1$. Since $\Psi_3$ is positive on the crest arc and negative on the trough arc,
+the sign is decided only by a quantitative comparison of the two arcs, or by a periodic
+$\varphi$ with $(\varphi'+r\varphi)(t_1)>0$ for which $L_3[\varphi]$ changes sign \emph{exactly}
+at $t_1$ and $t_2$ (the tangency phases of the projected strong-stable direction). Because
+$t_1,t_2$ are defined through $r=-a'/a$, no test function built from the state alone is known to
+do this. Likewise, convexity and monotonicity of the backward time-$T$ map $F_T$ in the cone of
+$(U,-p,-(y-k))$ give $(DF_T-I)(z-E)\ge0$, $(DF_T-I)z''\le0$ and $(DF_T-I)(z(s)-z)\le0$, but these
+are dominated by the $e_s$-component (factor $e^{\gamma T}-1$) and only bound $|1/m_t-1|$; they do
+not determine its sign.
+\end{remark}
+\end{document}

@@ -1,0 +1,127 @@
+{
+  "pdf": "paper/manuscript.pdf",
+  "sha256": "c7a9a2f09ef81543c4a23180582990a8318527506aff80ab3984dd2e67cd0a28",
+  "pages": 17,
+  "all_pages_rendered_at_dpi": 120,
+  "all_pages_visually_inspected": true,
+  "full_page_extra_inspections": [
+    8,
+    10,
+    12,
+    15
+  ],
+  "contact_sheets": [
+    "review/render_contact_1.png",
+    "review/render_contact_2.png",
+    "review/render_contact_3.png"
+  ],
+  "text_outside_page": [],
+  "latex_overfull_warnings": false,
+  "latex_undefined_reference_warnings": false,
+  "pages_detail": [
+    {
+      "page": 1,
+      "text_characters": 2718,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 2,
+      "text_characters": 2290,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 3,
+      "text_characters": 2800,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 4,
+      "text_characters": 2312,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 5,
+      "text_characters": 2771,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 6,
+      "text_characters": 3323,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 7,
+      "text_characters": 2619,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 8,
+      "text_characters": 3264,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 9,
+      "text_characters": 2841,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 10,
+      "text_characters": 2845,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 11,
+      "text_characters": 3295,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 12,
+      "text_characters": 2850,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 13,
+      "text_characters": 2049,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 14,
+      "text_characters": 3022,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 15,
+      "text_characters": 3570,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 16,
+      "text_characters": 2621,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    },
+    {
+      "page": 17,
+      "text_characters": 2672,
+      "rendered": true,
+      "visually_inspected_in_contact_sheet": true
+    }
+  ],
+  "passed": true,
+  "scope": "Visual and mechanical PDF preflight; not independent mathematical review."
+}

@@ -1,0 +1,152 @@
+{
+  "kind": "floating_point_coordinate_symmetry",
+  "records": [
+    {
+      "mu_pair": [
+        0.1,
+        10.0
+      ],
+      "amplitude": 0.05,
+      "max_difference_U": 4.85722573273506e-17,
+      "max_difference_Y": 2.220446049250313e-16,
+      "difference_rho": 2.220446049250313e-16,
+      "difference_normalised_period": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "mu_pair": [
+        0.1,
+        10.0
+      ],
+      "amplitude": 0.2,
+      "max_difference_U": 9.448553051072395e-13,
+      "max_difference_Y": 3.4350300381902343e-13,
+      "difference_rho": 1.5276668818842154e-13,
+      "difference_normalised_period": 2.7347013542566856e-12,
+      "passed": true
+    },
+    {
+      "mu_pair": [
+        0.1,
+        10.0
+      ],
+      "amplitude": 0.5,
+      "max_difference_U": 1.93212112975516e-12,
+      "max_difference_Y": 3.9013237085328e-13,
+      "difference_rho": 7.402967128200544e-13,
+      "difference_normalised_period": 2.929212428171013e-12,
+      "passed": true
+    },
+    {
+      "mu_pair": [
+        0.1,
+        10.0
+      ],
+      "amplitude": 1.0,
+      "max_difference_U": 1.4577228313328305e-12,
+      "max_difference_Y": 1.0484946244559978e-12,
+      "difference_rho": 8.673062268371723e-13,
+      "difference_normalised_period": 1.2878587085651816e-12,
+      "passed": true
+    },
+    {
+      "mu_pair": [
+        0.1,
+        10.0
+      ],
+      "amplitude": 2.0,
+      "max_difference_U": 2.185807090882008e-12,
+      "max_difference_Y": 2.283950806258872e-12,
+      "difference_rho": 6.390443729742401e-13,
+      "difference_normalised_period": 1.0178524689763435e-12,
+      "passed": true
+    },
+    {
+      "mu_pair": [
+        0.1,
+        10.0
+      ],
+      "amplitude": 3.0,
+      "max_difference_U": 1.035971308738226e-11,
+      "max_difference_Y": 4.169553591282238e-12,
+      "difference_rho": 8.080203173221889e-13,
+      "difference_normalised_period": 8.775202786637237e-13,
+      "passed": true
+    },
+    {
+      "mu_pair": [
+        0.3,
+        3.3333333333333335
+      ],
+      "amplitude": 0.05,
+      "max_difference_U": 2.0816681711721685e-17,
+      "max_difference_Y": 2.220446049250313e-16,
+      "difference_rho": 0.0,
+      "difference_normalised_period": 8.881784197001252e-16,
+      "passed": true
+    },
+    {
+      "mu_pair": [
+        0.3,
+        3.3333333333333335
+      ],
+      "amplitude": 0.2,
+      "max_difference_U": 9.12797615271188e-13,
+      "max_difference_Y": 5.269118474870993e-13,
+      "difference_rho": 9.525713551283843e-14,
+      "difference_normalised_period": 2.1733725930062064e-12,
+      "passed": true
+    },
+    {
+      "mu_pair": [
+        0.3,
+        3.3333333333333335
+      ],
+      "amplitude": 0.5,
+      "max_difference_U": 2.0775603459810554e-12,
+      "max_difference_Y": 6.277200981230635e-13,
+      "difference_rho": 8.095746295566641e-13,
+      "difference_normalised_period": 3.0091484859440243e-12,
+      "passed": true
+    },
+    {
+      "mu_pair": [
+        0.3,
+        3.3333333333333335
+      ],
+      "amplitude": 1.0,
+      "max_difference_U": 2.0448087667546133e-12,
+      "max_difference_Y": 9.159339953157541e-13,
+      "difference_rho": 6.608047442568932e-13,
+      "difference_normalised_period": 1.2470025012589758e-12,
+      "passed": true
+    },
+    {
+      "mu_pair": [
+        0.3,
+        3.3333333333333335
+      ],
+      "amplitude": 2.0,
+      "max_difference_U": 4.741984582778969e-12,
+      "max_difference_Y": 3.523847880160247e-12,
+      "difference_rho": 4.141131881851834e-13,
+      "difference_normalised_period": 5.346834086594754e-13,
+      "passed": true
+    },
+    {
+      "mu_pair": [
+        0.3,
+        3.3333333333333335
+      ],
+      "amplitude": 3.0,
+      "max_difference_U": 1.2899903367724619e-11,
+      "max_difference_Y": 6.4863669990700146e-12,
+      "difference_rho": 5.369038547087257e-13,
+      "difference_normalised_period": 2.6645352591003757e-13,
+      "passed": true
+    }
+  ],
+  "number_checked": 12,
+  "number_passed": 12,
+  "passed": true
+}

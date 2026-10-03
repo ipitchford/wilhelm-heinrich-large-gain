@@ -1,0 +1,10 @@
+Queued: existing host workload leaves insufficient CPU headroom
+Started: wh-hamiltonian-tm2 (pid 85518)
+# warm-up / compile
+mu=1 k=2.4 T=0.500 delta=1e-04 orderQ=2 orderT=18 integ1: steps=4 reached t=0.500 (100%) time=3.26s  set widths at t_end U=2.59e-04 p=5.29e-04 y=1.96e-03
+mu=0.05 k=0.07875 T=56.663 delta=1e-04 orderQ=2 orderT=18 integ1: steps=116 reached t=56.663 (100%) time=7.05s  set widths at t_end U=2.15e-03 p=1.06e-02 y=1.86e-02
+mu=0.05 k=0.07875 T=56.663 delta=1e-03 orderQ=2 orderT=18 integ1: steps=120 reached t=56.663 (100%) time=7.28s  set widths at t_end U=1.92e-02 p=1.01e-01 y=1.81e-01
+mu=0.05 k=0.07875 T=56.663 delta=1e-02 orderQ=2 orderT=18 integ1: steps=117 reached t=56.663 (100%) time=6.45s  set widths at t_end U=1.82e-01 p=9.58e-01 y=1.78e+00
+mu=0.05 k=0.1575 T=112.133 delta=1e-04 orderQ=2 orderT=18 integ1: steps=180 reached t=112.133 (100%) time=9.59s  set widths at t_end U=9.20e-03 p=1.05e-01 y=3.41e-01
+mu=0.05 k=0.1575 T=112.133 delta=1e-03 orderQ=2 orderT=18 integ1: steps=182 reached t=112.133 (100%) time=9.27s  set widths at t_end U=9.71e-02 p=1.06e+00 y=3.48e+00
+mu=0.05 k=0.1575 T=112.133 delta=1e-02 orderQ=2 orderT=18 integ1: steps=186 reached t=112.133 (100%) time=9.57s  set widths at t_end U=1.26e+00 p=1.08e+01 y=3.93e+01

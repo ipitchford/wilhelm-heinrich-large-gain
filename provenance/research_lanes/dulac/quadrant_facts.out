@@ -1,0 +1,32 @@
+--- cycles ---
+mu=0.1  rho=1.001  max q on QI=-6.891e-03  min q on QIII=+7.210e-03  q(crest)=+1.257e-02 q(trough)=-1.194e-02 min eta0=+8.488e-02  max K/V=0.474 max W/Q=0.943
+mu=0.1  rho=1.1    max q on QI=-5.340e-02  min q on QIII=+8.351e-02  q(crest)=+1.553e-01 q(trough)=-8.593e-02 min eta0=-1.732e-02  max K/V=0.506 max W/Q=1.000
+mu=0.1  rho=2.5    max q on QI=-9.652e-02  min q on QIII=+2.283e-01  q(crest)=+1.151e+00 q(trough)=-1.000e-01 min eta0=-2.050e-02  max K/V=0.524 max W/Q=1.025
+mu=0.1  rho=8.0    max q on QI=-1.000e-01  min q on QIII=+2.103e-01  q(crest)=+4.507e+00 q(trough)=-1.000e-01 min eta0=-7.475e-03  max K/V=0.556 max W/Q=1.011
+mu=0.1  rho=20.0   max q on QI=-1.000e-01  min q on QIII=+2.015e-01  q(crest)=+1.175e+01 q(trough)=-1.000e-01 min eta0=-3.228e-03  max K/V=0.588 max W/Q=1.005
+mu=0.3  rho=1.001  max q on QI=-1.574e-02  min q on QIII=+1.582e-02  q(crest)=+1.899e-02 q(trough)=-1.847e-02 min eta0=+2.800e-01  max K/V=0.444 max W/Q=0.896
+mu=0.3  rho=1.1    max q on QI=-1.471e-01  min q on QIII=+1.585e-01  q(crest)=+2.144e-01 q(trough)=-1.597e-01 min eta0=+1.266e-01  max K/V=0.460 max W/Q=1.000
+mu=0.3  rho=2.5    max q on QI=-2.850e-01  min q on QIII=+4.344e-01  q(crest)=+1.367e+00 q(trough)=-2.850e-01 min eta0=+3.183e-03  max K/V=0.485 max W/Q=1.067
+mu=0.3  rho=8.0    max q on QI=-2.983e-01  min q on QIII=+4.164e-01  q(crest)=+5.318e+00 q(trough)=-2.983e-01 min eta0=-5.054e-03  max K/V=0.531 max W/Q=1.029
+mu=0.3  rho=20.0   max q on QI=-2.998e-01  min q on QIII=+3.977e-01  q(crest)=+1.388e+01 q(trough)=-2.998e-01 min eta0=-3.797e-03  max K/V=0.570 max W/Q=1.012
+mu=0.7  rho=1.001  max q on QI=-2.637e-02  min q on QIII=+2.614e-02  q(crest)=+2.697e-02 q(trough)=-2.635e-02 min eta0=+6.726e-01  max K/V=0.430 max W/Q=0.872
+mu=0.7  rho=1.1    max q on QI=-2.344e-01  min q on QIII=+2.498e-01  q(crest)=+2.991e-01 q(trough)=-2.344e-01 min eta0=+4.577e-01  max K/V=0.444 max W/Q=1.000
+mu=0.7  rho=2.5    max q on QI=-5.020e-01  min q on QIII=+6.816e-01  q(crest)=+1.793e+00 q(trough)=-5.019e-01 min eta0=+1.977e-01  max K/V=0.473 max W/Q=1.127
+mu=0.7  rho=8.0    max q on QI=-5.976e-01  min q on QIII=+6.626e-01  q(crest)=+6.948e+00 q(trough)=-5.976e-01 min eta0=+1.007e-01  max K/V=0.522 max W/Q=1.051
+mu=0.7  rho=20.0   max q on QI=-6.373e-01  min q on QIII=+6.306e-01  q(crest)=+1.815e+01 q(trough)=-6.372e-01 min eta0=+5.894e-02  max K/V=0.563 max W/Q=1.021
+mu=1.0  rho=1.001  max q on QI=-3.127e-02  min q on QIII=+3.146e-02  q(crest)=+3.198e-02 q(trough)=-3.127e-02 min eta0=+9.676e-01  max K/V=0.429 max W/Q=0.869
+mu=1.0  rho=1.1    max q on QI=-2.786e-01  min q on QIII=+2.994e-01  q(crest)=+3.542e-01 q(trough)=-2.785e-01 min eta0=+7.131e-01  max K/V=0.442 max W/Q=1.000
+mu=1.0  rho=2.5    max q on QI=-6.053e-01  min q on QIII=+8.171e-01  q(crest)=+2.110e+00 q(trough)=-6.052e-01 min eta0=+3.947e-01  max K/V=0.472 max W/Q=1.140
+mu=1.0  rho=8.0    max q on QI=-7.322e-01  min q on QIII=+7.957e-01  q(crest)=+8.173e+00 q(trough)=-7.322e-01 min eta0=+2.626e-01  max K/V=0.523 max W/Q=1.060
+mu=1.0  rho=20.0   max q on QI=-7.902e-01  min q on QIII=+7.612e-01  q(crest)=+2.136e+01 q(trough)=-7.900e-01 min eta0=+1.991e-01  max K/V=0.564 max W/Q=1.025
+--- whole disc (W^u(E) samples) ---
+mu=0.05  rho=1.02  max q on QI=+9.096e-04  min q on QIII=+9.096e-04  min eta0=-2.012e-03  max K/V=0.520 max W/Q=0.984  (2 sigma=9.096e-04)
+mu=0.05  rho=1.5   max q on QI=+2.189e-02  min q on QIII=+2.189e-02  min eta0=-4.211e-02  max K/V=0.551 max W/Q=1.012  (2 sigma=2.189e-02)
+mu=0.05  rho=5.0   max q on QI=+1.426e-01  min q on QIII=+1.373e-01  min eta0=-5.527e-02  max K/V=0.562 max W/Q=1.009  (2 sigma=1.426e-01)
+mu=0.2   rho=1.05  max q on QI=+7.240e-03  min q on QIII=+7.240e-03  min eta0=+8.631e-02  max K/V=0.470 max W/Q=0.977  (2 sigma=7.240e-03)
+mu=0.2   rho=2.0   max q on QI=+1.230e-01  min q on QIII=+1.230e-01  min eta0=-2.003e-02  max K/V=0.491 max W/Q=1.049  (2 sigma=1.230e-01)
+mu=0.5   rho=1.2   max q on QI=+5.159e-02  min q on QIII=+5.159e-02  min eta0=+2.253e-01  max K/V=0.452 max W/Q=1.043  (2 sigma=5.159e-02)
+mu=0.5   rho=3.0   max q on QI=+3.739e-01  min q on QIII=+3.739e-01  min eta0=+7.304e-02  max K/V=0.482 max W/Q=1.094  (2 sigma=3.739e-01)
+mu=1.0   rho=1.02  max q on QI=+7.949e-03  min q on QIII=+7.949e-03  min eta0=+8.611e-01  max K/V=0.435 max W/Q=0.922  (2 sigma=7.949e-03)
+mu=1.0   rho=1.5   max q on QI=+1.746e-01  min q on QIII=+1.746e-01  min eta0=+5.020e-01  max K/V=0.454 max W/Q=1.118  (2 sigma=1.746e-01)
+mu=1.0   rho=5.0   max q on QI=+8.675e-01  min q on QIII=+8.240e-01  min eta0=+3.074e-01  max K/V=0.502 max W/Q=1.092  (2 sigma=8.675e-01)
